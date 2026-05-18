@@ -23,7 +23,7 @@ const IMG = {
   facial: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
   'pacotes-tratamento': 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80',
   'depilacao-laser': 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
-  'pilates-clinico': 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80',
+  'pilates-clinico': 'assets/pilates.jpg',
   // Genéricos — fotos reais da clínica
   clinicInterior: 'assets/equipa-recepcao.png',
   clinicDetail: 'assets/rita-retrato.png',
