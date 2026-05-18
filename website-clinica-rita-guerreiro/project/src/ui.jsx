@@ -82,8 +82,20 @@ function Nav({ current = 'home' }) {
     { code: 'FR', flag: '🇫🇷' },
   ];
 
+  const [navHidden, setNavHidden] = React.useState(false);
+  const lastScrollY = React.useRef(0);
+
   React.useEffect(() => {
-    const onS = () => setScrolled(window.scrollY > 40);
+    const onS = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      if (y > lastScrollY.current && y > 120) {
+        setNavHidden(true);
+      } else {
+        setNavHidden(false);
+      }
+      lastScrollY.current = y;
+    };
     onS();
     window.addEventListener('scroll', onS, { passive: true });
     return () => window.removeEventListener('scroll', onS);
@@ -199,7 +211,7 @@ function Nav({ current = 'home' }) {
   return (
     <>
       {/* ── Header wrapper ── */}
-      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}`}>
+      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}${navHidden ? ' rg-header-hidden' : ''}`}>
 
         {/* Main nav row */}
         <div className="rg-nav-row">

@@ -7,10 +7,11 @@ function Hero() {
     <section style={{ position: 'relative', minHeight: 600, display: 'flex', alignItems: 'center', background: RG.white, overflow: 'hidden', paddingTop: 88 }}>
 
       {/* Imagem — painel direito, posição absoluta */}
-      <div style={{ position: 'absolute', inset: 0, left: '42%', zIndex: 0 }}>
+      <div style={{ position: 'absolute', inset: 0, left: '42%', zIndex: 0, overflow: 'hidden' }}>
         <img
           src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1400&q=85"
           alt="Tratamento de fisioterapia na Clínica Rita Guerreiro"
+          className="rg-ken-burns"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
           loading="eager" decoding="async"
         />
@@ -22,9 +23,29 @@ function Hero() {
         background: 'linear-gradient(to right, #ffffff 44%, rgba(255,255,255,0.92) 54%, rgba(255,255,255,0.0) 72%)',
       }} />
 
+      {/* Círculo decorativo canto inferior direito */}
+      <div aria-hidden="true" style={{
+        position: 'absolute', bottom: -80, right: -80, zIndex: 1,
+        width: 340, height: 340, borderRadius: '50%',
+        border: '1.5px solid rgba(111,181,176,0.18)',
+        pointerEvents: 'none',
+      }} />
+      <div aria-hidden="true" style={{
+        position: 'absolute', bottom: -40, right: -40, zIndex: 1,
+        width: 200, height: 200, borderRadius: '50%',
+        border: '1px solid rgba(111,181,176,0.12)',
+        pointerEvents: 'none',
+      }} />
+
       {/* Conteúdo */}
       <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '80px 48px 80px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 560 }}>
+        <div style={{ maxWidth: 560, position: 'relative', paddingLeft: 24 }}>
+          {/* Linha vertical decorativa */}
+          <div aria-hidden="true" style={{
+            position: 'absolute', left: 0, top: 0, bottom: 0,
+            width: 2, background: 'linear-gradient(to bottom, #6FB5B0 0%, rgba(111,181,176,0.15) 100%)',
+            borderRadius: 2,
+          }} />
 
           {/* Linha decorativa */}
           <Reveal delay={100}>
@@ -248,8 +269,14 @@ function ServicesOverview() {
           {cats.map((cat, ci) => (
             <Reveal key={cat.id} delay={ci * 60}>
               <a href={cat.href} className="rg-service-card" style={{ display: 'block', textDecoration: 'none', color: RG.ink }}>
-                <div style={{ aspectRatio: '4/3', marginBottom: 16, borderRadius: 12, overflow: 'hidden' }}>
+                <div style={{ aspectRatio: '4/3', marginBottom: 16, borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
                   <img src={cat.img} alt={cat.label} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <div className="rg-card-overlay" style={{
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(to top, rgba(20,20,18,0.55) 0%, rgba(20,20,18,0.1) 50%, transparent 100%)',
+                    opacity: 0, transition: 'opacity 350ms ease',
+                    borderRadius: 12,
+                  }} />
                 </div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
                   <span style={{ fontFamily: F_MONO, fontSize: 10, fontWeight: 500, letterSpacing: '0.14em', color: RG.muted }}>{cat.num}</span>
@@ -294,16 +321,23 @@ function Testimonials() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="rg-values-grid">
           {list.map((t, i) => (
             <Reveal key={i} delay={i * 80}>
-              <div className="rg-testimonial-card" style={{ background: RG.white, borderRadius: 16, padding: '28px 24px', border: `1px solid ${RG.line}` }}>
+              <div className="rg-testimonial-card" style={{ background: RG.white, borderRadius: 16, padding: '28px 24px', border: `1px solid ${RG.line}`, position: 'relative', overflow: 'hidden' }}>
+                {/* Quote mark decorativo */}
+                <div aria-hidden="true" style={{
+                  position: 'absolute', top: 12, right: 20,
+                  fontFamily: F_DISPLAY, fontSize: 96, lineHeight: 1,
+                  color: 'rgba(111,181,176,0.10)', fontWeight: 300, userSelect: 'none',
+                  pointerEvents: 'none',
+                }}>&ldquo;</div>
                 <Stars />
-                <div style={{ fontFamily: F_DISPLAY, fontSize: 19, fontWeight: 300, lineHeight: 1.45, color: RG.ink, letterSpacing: '-0.01em', fontStyle: 'italic' }}>&ldquo;{t.q}&rdquo;</div>
+                <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 300, lineHeight: 1.5, color: RG.ink, letterSpacing: '-0.01em', fontStyle: 'italic', position: 'relative' }}>&ldquo;{t.q}&rdquo;</div>
                 <div style={{ marginTop: 20, paddingTop: 16, borderTop: `1px solid ${RG.line}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{t.who}</div>
                     <div style={{ fontFamily: F_BODY, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.muted, marginTop: 2 }}>{t.what}</div>
                   </div>
-                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: t.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.tealDark }}>{t.initials}</span>
+                  <div style={{ width: 38, height: 38, borderRadius: '50%', background: t.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.tealDark }}>{t.initials}</span>
                   </div>
                 </div>
               </div>

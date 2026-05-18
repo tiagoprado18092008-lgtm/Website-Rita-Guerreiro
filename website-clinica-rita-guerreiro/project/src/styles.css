@@ -360,6 +360,7 @@ h3 { font-size: clamp(22px, 2.5vw, 28px); }
 .rg-service-card img { transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
 .rg-service-card:hover .rg-service-arrow { transform: translateX(5px); }
 .rg-service-arrow { transition: transform 240ms cubic-bezier(.2,.8,.2,1); }
+.rg-service-card:hover .rg-card-overlay { opacity: 1 !important; }
 
 /* ── Hero quick-service cards ───────────────────────────── */
 .rg-hero-scard {
@@ -559,6 +560,23 @@ input:focus, textarea:focus, select:focus {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
 }
+
+/* ── Ken Burns ───────────────────────────────────────────── */
+@keyframes rg-ken-burns {
+  0%   { transform: scale(1)    translate(0, 0); }
+  100% { transform: scale(1.07) translate(-1%, -1%); }
+}
+.rg-ken-burns {
+  animation: rg-ken-burns 9s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* ── Nav hide/show ao scroll ─────────────────────────────── */
+.rg-header-wrap {
+  transition: background 350ms ease, box-shadow 350ms ease,
+              padding 300ms ease, transform 400ms cubic-bezier(.2,.8,.2,1) !important;
+}
+.rg-header-hidden { transform: translateY(-100%) !important; }
 
 
 /* ── WhatsApp FAB — ripple ring ──────────────────────────── */
