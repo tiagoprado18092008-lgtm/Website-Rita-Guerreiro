@@ -1,7 +1,0 @@
-export const WA_URL = 'https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o.'
-export const TEL = '+351961899364'
-export const TEL_DISPLAY = '961 899 364'
-export const EMAIL = 'geral@ritaguerreiro.pt'
-export const ADDRESS = 'Rua Padre António Vieira 58, 8100-611 Loulé'
-export const MAPS_URL = 'https://maps.google.com/maps?q=R.+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9%2C+Portugal&output=embed&z=16'
-export const INSTAGRAM = 'https://www.instagram.com/centro_terapias_rita_guerreiro/'

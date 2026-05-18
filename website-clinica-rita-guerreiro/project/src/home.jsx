@@ -1,62 +1,78 @@
-// Home — improved with animations, stats strip, enhanced testimonials
+// Home — premium redesign · editorial, asymmetric, content-rich
+// Conteúdo marcado [REVER] foi escrito pelo agente para validação pelo cliente.
 
+// ────────────────────────────────────────────────────────────────────────────
+// HERO — split editorial com sala-tratamento (foto real), disponibilidade
+// ────────────────────────────────────────────────────────────────────────────
 function Hero() {
   const { t } = useLang();
   const h1Lines = t('hero.h1');
   return (
-    <section style={{ position: 'relative', minHeight: 600, display: 'flex', alignItems: 'center', background: RG.white, overflow: 'hidden', paddingTop: 88 }}>
+    <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
-      {/* Imagem — painel direito, posição absoluta */}
-      <div style={{ position: 'absolute', inset: 0, left: '42%', zIndex: 0, overflow: 'hidden' }}>
+      {/* Painel direito: foto real de tratamento na clínica */}
+      <div style={{ position: 'absolute', inset: 0, left: '46%', zIndex: 0, overflow: 'hidden' }}>
         <img
-          src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1400&q=85"
-          alt="Tratamento de fisioterapia na Clínica Rita Guerreiro"
+          src="assets/tratamento-movimento.png"
+          alt="Sessão de fisioterapia na Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
           loading="eager" decoding="async"
         />
+        {/* tonalização teal subtil para integrar com a paleta */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.06) 0%, rgba(31,72,70,0.18) 100%)' }} />
       </div>
 
-      {/* Gradiente fade da esquerda para a direita */}
+      {/* Cartão flutuante "Próxima disponibilidade" sobre a foto */}
+      <div style={{
+        position: 'absolute', zIndex: 3, right: 'clamp(24px, 4vw, 64px)', bottom: 'clamp(80px, 10vh, 120px)',
+        background: 'rgba(255,255,255,0.94)', backdropFilter: 'blur(12px)',
+        borderRadius: 14, padding: '14px 18px',
+        boxShadow: '0 24px 60px -20px rgba(20,20,18,0.28), 0 4px 12px rgba(20,20,18,0.08)',
+        border: '1px solid rgba(255,255,255,0.7)',
+        maxWidth: 280,
+      }} className="rg-hero-card">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 0 3px rgba(34,197,94,0.2)', flexShrink: 0 }} className="rg-pulse-dot" />
+          <span style={{ fontFamily: F_BODY, fontSize: 10.5, fontWeight: 700, color: RG.tealDeep, textTransform: 'uppercase', letterSpacing: '0.14em' }}>{t('hero.next_slot_label')}</span>
+        </div>
+        <div style={{ fontFamily: F_DISPLAY, fontSize: 17, fontWeight: 600, color: RG.ink, lineHeight: 1.25, letterSpacing: '-0.01em' }}>
+          {t('hero.next_slot_value')}
+        </div>
+        <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 4 }}>
+          {t('hero.next_slot_meta')}
+        </div>
+      </div>
+
+      {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 44%, rgba(255,255,255,0.92) 54%, rgba(255,255,255,0.0) 72%)',
-      }} />
+        background: 'linear-gradient(to right, #ffffff 42%, rgba(255,255,255,0.94) 52%, rgba(255,255,255,0.0) 70%)',
+      }} aria-hidden="true" />
 
-      {/* Círculo decorativo canto inferior direito */}
-      <div aria-hidden="true" style={{
-        position: 'absolute', bottom: -80, right: -80, zIndex: 1,
-        width: 340, height: 340, borderRadius: '50%',
-        border: '1.5px solid rgba(111,181,176,0.18)',
-        pointerEvents: 'none',
-      }} />
-      <div aria-hidden="true" style={{
-        position: 'absolute', bottom: -40, right: -40, zIndex: 1,
-        width: 200, height: 200, borderRadius: '50%',
-        border: '1px solid rgba(111,181,176,0.12)',
-        pointerEvents: 'none',
-      }} />
-
-      {/* Conteúdo */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '80px 48px 80px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 560, position: 'relative', paddingLeft: 24 }}>
+      {/* Conteúdo principal */}
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px', boxSizing: 'border-box' }}>
+        <div style={{ maxWidth: 580, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
-            width: 2, background: 'linear-gradient(to bottom, #6FB5B0 0%, rgba(111,181,176,0.15) 100%)',
+            width: 2, background: 'linear-gradient(to bottom, #6FB5B0 0%, rgba(111,181,176,0.0) 100%)',
             borderRadius: 2,
           }} />
 
-          {/* Linha decorativa */}
-          <Reveal delay={100}>
-            <div style={{ width: 40, height: 2, background: '#6FB5B0', marginBottom: 28 }} />
+          {/* Eyebrow com badge "Loulé desde 2022" */}
+          <Reveal delay={80}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '5px 12px 5px 8px', background: 'rgba(111,181,176,0.10)', borderRadius: 999, marginBottom: 20 }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#6FB5B0' }} />
+              <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.tealDeep, letterSpacing: '0.06em' }}>{t('hero.badge_v2')}</span>
+            </div>
           </Reveal>
 
           {/* Headline */}
-          <Reveal delay={180}>
-            <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 6vw, 80px)', fontWeight: 700, lineHeight: 1.04, letterSpacing: '-0.025em', margin: 0, color: RG.ink }}>
+          <Reveal delay={140}>
+            <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(48px, 5.6vw, 78px)', fontWeight: 700, lineHeight: 1.02, letterSpacing: '-0.028em', margin: 0, color: RG.ink }}>
               {Array.isArray(h1Lines) && h1Lines.map((line, li) => (
-                <span key={li} style={{ display: 'block', color: li === 2 ? '#6FB5B0' : undefined }}>
+                <span key={li} style={{ display: 'block', color: li === 2 ? '#2F6B68' : undefined }}>
                   {line.split(' ').map((w, i) => (
                     <React.Fragment key={i}><span className="rg-word" style={{ animationDelay: `${(li * 2 + i) * 80 + li * 120}ms` }}>{w}</span>{' '}</React.Fragment>
                   ))}
@@ -65,56 +81,64 @@ function Hero() {
             </h1>
           </Reveal>
 
-          {/* Descrição */}
-          <Reveal delay={520}>
-            <p style={{ fontFamily: F_BODY, fontSize: 15, color: RG.charcoal, lineHeight: 1.72, margin: '22px 0 0', maxWidth: '40ch' }}>
+          {/* Subtítulo */}
+          <Reveal delay={480}>
+            <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.68, margin: '24px 0 0', maxWidth: '44ch' }}>
               {t('hero.desc')}
             </p>
           </Reveal>
 
           {/* CTAs */}
-          <Reveal delay={640}>
+          <Reveal delay={620}>
             <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-              <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" className="rg-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 10,
                 fontFamily: F_BODY, fontSize: 14, fontWeight: 700,
                 color: RG.white, background: '#6FB5B0',
-                padding: '13px 26px', borderRadius: 999, textDecoration: 'none',
-                boxShadow: '0 8px 24px -6px rgba(111,181,176,0.55)',
+                padding: '14px 28px', borderRadius: 999, textDecoration: 'none',
+                boxShadow: '0 10px 28px -8px rgba(111,181,176,0.6)',
+                transition: 'transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms',
               }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
                 {t('hero.cta')}
               </a>
-              <a href="tel:+351961899364" style={{
+              <a href="#todos-servicos" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                fontFamily: F_BODY, fontSize: 14, fontWeight: 500,
-                color: RG.charcoal, background: 'transparent',
-                border: `1.5px solid rgba(20,20,18,0.15)`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
-              }}>
-                <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
-                961 899 364
+                fontFamily: F_BODY, fontSize: 14, fontWeight: 600,
+                color: RG.ink, background: 'transparent',
+                border: `1.5px solid rgba(20,20,18,0.16)`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
+                transition: 'border-color 200ms, background 200ms',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.4)'; e.currentTarget.style.background = 'rgba(20,20,18,0.03)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.16)'; e.currentTarget.style.background = 'transparent'; }}>
+                {t('hero.cta_secondary')}
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
             </div>
           </Reveal>
 
-          {/* Horário */}
-          <Reveal delay={760}>
-            <div style={{ marginTop: 28, display: 'flex', alignItems: 'center', gap: 6 }}>
-              <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 0 3px rgba(34,197,94,0.2)', flexShrink: 0 }} />
-              <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{t('hero.horario')}</span>
-            </div>
-          </Reveal>
-
-          {/* Prova social */}
-          <Reveal delay={860}>
-            <div style={{ marginTop: 18, display: 'flex', alignItems: 'center', gap: 10 }}>
-              <div style={{ display: 'flex', gap: 3 }}>
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="12" height="12" viewBox="0 0 12 12" fill="#6FB5B0">
-                    <path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/>
-                  </svg>
-                ))}
+          {/* Prova social ampliada */}
+          <Reveal delay={780}>
+            <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+              <a href="https://www.google.com/search?q=Clinica+Rita+Guerreiro+Loul%C3%A9" target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none',
+                padding: '6px 12px 6px 8px', borderRadius: 999, background: 'rgba(255,255,255,0.6)',
+                border: '1px solid rgba(20,20,18,0.06)',
+                transition: 'background 200ms, border-color 200ms',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.9)'; e.currentTarget.style.borderColor = 'rgba(20,20,18,0.12)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.6)'; e.currentTarget.style.borderColor = 'rgba(20,20,18,0.06)'; }}>
+                <div style={{ display: 'flex', gap: 2 }}>
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} width="13" height="13" viewBox="0 0 12 12" fill="#F5A623"><path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/></svg>
+                  ))}
+                </div>
+                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.ink }}>4.9</span>
+                <span style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted }}>· Google</span>
+              </a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{t('hero.social_proof_v2')}</span>
               </div>
-              <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{t('hero.social_proof')}</span>
             </div>
           </Reveal>
 
@@ -124,75 +148,170 @@ function Hero() {
   );
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// TRUST BAND — substitui o StatsStrip genérico
+// ────────────────────────────────────────────────────────────────────────────
 function StatsStrip() {
   const { t } = useLang();
-  const stats = t('stats');
   return (
-    <section style={{ background: RG.creamSoft, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '40px 0' }}>
+    <section style={{ background: RG.creamSoft, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '48px 0' }}>
       <Container>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0 }} className="rg-stats-grid">
-          {stats.map((s, i) => (
-            <div key={s.label} className="rg-stat" style={{ textAlign: 'center', padding: '0 24px', borderLeft: i > 0 ? `1px solid ${RG.line}` : 'none' }}>
-              <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 3.5vw, 52px)', fontWeight: 300, letterSpacing: '-0.02em', color: RG.tealDark, lineHeight: 1 }}>
-                {s.value}<span style={{ fontSize: '0.6em' }}>{s.suffix}</span>
-              </div>
-              <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 6 }}>{s.label}</div>
+        <div className="rg-trust-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1.2fr', gap: 40, alignItems: 'center' }}>
+          {/* Stat 1 — anos + credencial */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
+              <span style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(40px, 4vw, 56px)', fontWeight: 300, letterSpacing: '-0.025em', color: RG.tealDark, lineHeight: 1 }}>20<span style={{ fontSize: '0.55em', color: RG.tealDark }}>+</span></span>
+              <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{t('trust.anos')}</span>
             </div>
-          ))}
+            <p style={{ fontFamily: F_BODY, fontSize: 12.5, color: RG.muted, marginTop: 8, lineHeight: 1.55, maxWidth: '28ch' }}>
+              {t('trust.anos_desc')}
+            </p>
+          </div>
+
+          {/* Stat 2 — pacientes */}
+          <div style={{ borderLeft: `1px solid ${RG.line}`, paddingLeft: 32 }}>
+            <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 3.5vw, 48px)', fontWeight: 300, letterSpacing: '-0.025em', color: RG.tealDark, lineHeight: 1 }}>500<span style={{ fontSize: '0.55em' }}>+</span></div>
+            <p style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.muted, marginTop: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('trust.pacientes')}</p>
+          </div>
+
+          {/* Stat 3 — terapias */}
+          <div style={{ borderLeft: `1px solid ${RG.line}`, paddingLeft: 32 }}>
+            <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 3.5vw, 48px)', fontWeight: 300, letterSpacing: '-0.025em', color: RG.tealDark, lineHeight: 1 }}>25</div>
+            <p style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.muted, marginTop: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('trust.terapias')}</p>
+          </div>
+
+          {/* Credencial — cédula profissional */}
+          <div style={{ borderLeft: `1px solid ${RG.line}`, paddingLeft: 32 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={RG.tealDark} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="m9 12 2 2 4-4"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 5c0-1.66 4-3 9-3s9 1.34 9 3-4 3-9 3-9-1.34-9-3Z"/></svg>
+              <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.ink }}>{t('trust.cred_title')}</span>
+            </div>
+            <p style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, lineHeight: 1.55, maxWidth: '26ch' }}>
+              {t('trust.cred_desc')}
+            </p>
+          </div>
         </div>
       </Container>
     </section>
   );
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// SERVICES CARD — Editorial Menu (lista 01–04 + imagem reactiva)
+// ────────────────────────────────────────────────────────────────────────────
 function ServicesCard() {
   const { t } = useLang();
-  const featured = [
-    { name: 'Fisioterapia', href: 'servico-fisioterapia.html', img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80' },
-    { name: 'Pilates Clínico', href: 'servico-pilates-clinico.html', img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80' },
-    { name: 'Psicologia', href: 'servico-psicologia.html', img: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=400&q=80' },
-    { name: 'Massagem Assinatura RG', href: 'servico-massagem-assinatura-rg.html', img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80' },
+  const items = [
+    { num: '01', name: 'Fisioterapia', href: 'fisioterapia.html', img: IMG.fisioterapia, blurb: t('services_menu.01_blurb') },
+    { num: '02', name: 'Pilates Clínico', href: 'servico-pilates-clinico.html', img: IMG['pilates-clinico'], blurb: t('services_menu.02_blurb') },
+    { num: '03', name: 'Massagens Terapêuticas', href: 'massagens.html', img: IMG['massagem-relaxamento'], blurb: t('services_menu.03_blurb') },
+    { num: '04', name: 'Psicologia & Nutrição', href: 'servico-psicologia.html', img: IMG.psicologia, blurb: t('services_menu.04_blurb') },
   ];
+  const [active, setActive] = React.useState(0);
+
   return (
     <Section bg={RG.white} pad="lg">
       <Container>
         <Reveal>
-          <div style={{ background: RG.creamSoft, borderRadius: 20, padding: 'clamp(28px, 4vw, 52px)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'center' }} className="rg-hero-grid">
-            <div>
-              <Eyebrow style={{ marginBottom: 16 }}>{t('services_card.eyebrow')}</Eyebrow>
-              <Heading level="h2" style={{ maxWidth: '22ch', lineHeight: 1.1 }}>{t('services_card.heading')}</Heading>
-              <Body size={15} style={{ marginTop: 16, color: RG.charcoal, maxWidth: '38ch' }}>
-                {t('services_card.body')}
-              </Body>
-              <div style={{ marginTop: 24 }}>
-                <a href="#todos-servicos" className="rg-btn-primary" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 10,
-                  fontFamily: F_BODY, fontSize: 14, fontWeight: 600,
-                  color: RG.white, background: RG.tealDark,
-                  padding: '11px 20px', borderRadius: 999, textDecoration: 'none',
-                }}>
-                  {t('services_card.cta')}
-                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 20, height: 20, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', fontSize: 13 }}>→</span>
-                </a>
-              </div>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap', marginBottom: 56 }}>
+            <div style={{ maxWidth: 580 }}>
+              <Eyebrow style={{ marginBottom: 14 }}>{t('services_card.eyebrow')}</Eyebrow>
+              <Heading level="h2" style={{ maxWidth: '20ch', lineHeight: 1.05 }}>{t('services_card.heading')}</Heading>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-              {featured.map((s, i) => (
-                <Reveal key={s.name} delay={i * 60}>
-                  <a href={s.href} className="rg-icon-card" style={{
-                    display: 'block', textDecoration: 'none', borderRadius: 14,
-                    overflow: 'hidden', border: `1px solid ${RG.lineSoft}`,
-                    background: RG.white, position: 'relative',
-                  }}>
-                    <div style={{ aspectRatio: '3/2', overflow: 'hidden' }}>
-                      <img src={s.img} alt={s.name} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 400ms cubic-bezier(.16,1,.3,1)' }} className="rg-card-img" />
-                    </div>
-                    <div style={{ padding: '10px 14px 12px' }}>
-                      <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{s.name}</span>
-                    </div>
-                  </a>
-                </Reveal>
+            <a href="#todos-servicos" style={{
+              fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.tealDark,
+              textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '10px 0', borderBottom: `1px solid ${RG.tealDark}`,
+              transition: 'gap 200ms',
+            }}
+            onMouseEnter={e => e.currentTarget.style.gap = '12px'}
+            onMouseLeave={e => e.currentTarget.style.gap = '8px'}>
+              {t('services_card.cta')}
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal delay={60}>
+          <div className="rg-services-menu" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 56, alignItems: 'stretch' }}>
+            {/* Lista editorial */}
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {items.map((it, i) => {
+                const isActive = i === active;
+                return (
+                  <li key={it.num}
+                    onMouseEnter={() => setActive(i)}
+                    style={{ borderTop: i === 0 ? `1px solid ${RG.line}` : 'none', borderBottom: `1px solid ${RG.line}` }}>
+                    <a href={it.href} style={{ display: 'block', textDecoration: 'none', color: 'inherit', padding: '26px 4px', position: 'relative' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+                        <span style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, color: isActive ? RG.tealDark : RG.muted, letterSpacing: '0.12em', transition: 'color 220ms', minWidth: 24 }}>{it.num}</span>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16 }}>
+                            <h3 style={{
+                              fontFamily: F_DISPLAY,
+                              fontSize: 'clamp(26px, 2.4vw, 34px)',
+                              fontWeight: isActive ? 600 : 400,
+                              letterSpacing: '-0.02em',
+                              color: isActive ? RG.ink : RG.charcoal,
+                              margin: 0,
+                              transition: 'all 260ms cubic-bezier(.2,.8,.2,1)',
+                              transform: isActive ? 'translateX(4px)' : 'translateX(0)',
+                            }}>{it.name}</h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{
+                              color: isActive ? RG.tealDark : RG.muted,
+                              transform: isActive ? 'rotate(-45deg) scale(1.05)' : 'rotate(0deg) scale(1)',
+                              transition: 'all 260ms cubic-bezier(.2,.8,.2,1)',
+                              flexShrink: 0,
+                            }}><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          </div>
+                          {/* Blurb que aparece no item activo */}
+                          <div style={{
+                            maxHeight: isActive ? 60 : 0,
+                            opacity: isActive ? 1 : 0,
+                            overflow: 'hidden',
+                            transition: 'max-height 320ms cubic-bezier(.2,.8,.2,1), opacity 260ms ease, margin-top 320ms',
+                            marginTop: isActive ? 8 : 0,
+                          }}>
+                            <p style={{ fontFamily: F_BODY, fontSize: 14, color: RG.muted, lineHeight: 1.55, margin: 0, maxWidth: '46ch' }}>{it.blurb}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Painel imagem reactiva */}
+            <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', minHeight: 460, background: RG.creamSoft }}>
+              {items.map((it, i) => (
+                <img key={it.num}
+                  src={it.img}
+                  alt={it.name}
+                  loading="lazy" decoding="async"
+                  style={{
+                    position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+                    opacity: i === active ? 1 : 0,
+                    transform: i === active ? 'scale(1)' : 'scale(1.04)',
+                    transition: 'opacity 500ms ease, transform 800ms cubic-bezier(.2,.8,.2,1)',
+                  }} />
               ))}
+              {/* Overlay teal sutil */}
+              <div aria-hidden="true" style={{
+                position: 'absolute', inset: 0,
+                background: 'linear-gradient(180deg, rgba(20,20,18,0.0) 50%, rgba(20,20,18,0.25) 100%)',
+              }} />
+              {/* Badge índice/total no canto */}
+              <div style={{
+                position: 'absolute', bottom: 20, left: 20,
+                display: 'flex', alignItems: 'center', gap: 10,
+                padding: '8px 14px', borderRadius: 999,
+                background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(8px)',
+              }}>
+                <span style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 700, color: RG.tealDark, letterSpacing: '0.1em' }}>{items[active].num}</span>
+                <span style={{ width: 1, height: 12, background: RG.line }} />
+                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.ink }}>{items[active].name}</span>
+              </div>
             </div>
           </div>
         </Reveal>
@@ -201,6 +320,9 @@ function ServicesCard() {
   );
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// WHY US — accordion (mantém-se, é forte)
+// ────────────────────────────────────────────────────────────────────────────
 function WhyUs() {
   const { t } = useLang();
   const points = t('whyus.points');
@@ -240,7 +362,7 @@ function WhyUs() {
               ))}
             </div>
             <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/5' }}>
-              <img src="assets/sala-tratamento.png" alt="Sala de tratamento" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src="assets/equipa-recepcao.png" alt="Equipa da Clínica Rita Guerreiro na receção" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
             </div>
           </div>
         </Reveal>
@@ -249,6 +371,9 @@ function WhyUs() {
   );
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// SERVICES OVERVIEW — mantém grid mas com ajuste para o destaque editorial
+// ────────────────────────────────────────────────────────────────────────────
 function ServicesOverview() {
   const { t } = useLang();
   const cats = [
@@ -295,17 +420,95 @@ function ServicesOverview() {
   );
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// MEET RITA — nova secção humanizadora
+// ────────────────────────────────────────────────────────────────────────────
+function MeetRita() {
+  const { t } = useLang();
+  return (
+    <Section bg={RG.white} pad="lg">
+      <Container>
+        <Reveal>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
+            {/* Foto + card de credenciais */}
+            <div style={{ position: 'relative' }}>
+              <div style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
+                <img src="assets/rita-retrato.png" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              </div>
+              {/* Card de credenciais sobreposto */}
+              <div className="rg-meet-card" style={{
+                position: 'absolute', bottom: -28, right: -20,
+                background: RG.white, borderRadius: 14, padding: '18px 22px',
+                boxShadow: '0 20px 50px -15px rgba(20,20,18,0.22), 0 4px 12px rgba(20,20,18,0.06)',
+                border: `1px solid ${RG.lineSoft}`,
+                maxWidth: 260,
+              }}>
+                <div style={{ fontFamily: F_BODY, fontSize: 10.5, fontWeight: 700, color: RG.tealDark, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: 8 }}>
+                  {t('meet.card_label')}
+                </div>
+                <div style={{ fontFamily: F_DISPLAY, fontSize: 17, fontWeight: 600, color: RG.ink, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                  {t('meet.card_name')}
+                </div>
+                <div style={{ fontFamily: F_BODY, fontSize: 12.5, color: RG.muted, lineHeight: 1.5, marginTop: 8 }}>
+                  {t('meet.card_credentials')}
+                </div>
+              </div>
+            </div>
+
+            {/* Texto */}
+            <div>
+              <Eyebrow style={{ marginBottom: 14 }}>{t('meet.eyebrow')}</Eyebrow>
+              <Heading level="h2" style={{ maxWidth: '20ch', lineHeight: 1.05 }}>{t('meet.heading')}</Heading>
+              <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.7, marginTop: 24, maxWidth: '46ch' }}>
+                {t('meet.p1')}
+              </p>
+              <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.7, marginTop: 16, maxWidth: '46ch' }}>
+                {t('meet.p2')}
+              </p>
+              <div style={{ marginTop: 28, paddingTop: 24, borderTop: `1px solid ${RG.line}`, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+                {t('meet.facts').map((f, i) => (
+                  <div key={i}>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 600, color: RG.tealDark, letterSpacing: '-0.02em', lineHeight: 1 }}>{f.value}</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 6, lineHeight: 1.4 }}>{f.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 28 }}>
+                <a href="sobre.html" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.ink,
+                  textDecoration: 'none', padding: '12px 22px', borderRadius: 999,
+                  border: '1.5px solid rgba(20,20,18,0.16)',
+                  transition: 'all 200ms',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = RG.tealDark; e.currentTarget.style.color = RG.tealDark; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.16)'; e.currentTarget.style.color = RG.ink; }}>
+                  {t('meet.cta')}
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </Section>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// TESTIMONIALS — 1 destaque grande + 2 pequenos
+// ────────────────────────────────────────────────────────────────────────────
 function Testimonials() {
   const { t } = useLang();
-  const list = [
-    { q: 'A minha fisioterapeuta (Rita Guerreiro) é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da minha musculatura e aliviar dores.', who: 'Irina Mendes Martins', what: 'Fisioterapia', color: '#A8D8D4', initials: 'IM' },
-    { q: 'Durante anos e muitas dores crónicas de costas, a abordagem que a Rita Guerreiro fez ao problema foi sem dúvida como ter um corpo novo.', who: 'Miguel Moreira', what: 'Fisioterapia', color: '#C5E8E5', initials: 'MM' },
-    { q: 'Aulas de Pilates com a Rita Guerreiro são excelentes. A Rita tem uma componente humana aliada às terapias fundamental. Compreende os problemas e necessidades dos utentes.', who: 'Mitchelle Sousa', what: 'Pilates Clínico', color: '#B8D4D2', initials: 'MS' },
+  const featured = { q: 'Durante anos sofri de dores crónicas de costas. A abordagem que a Rita fez ao problema foi sem dúvida transformadora — é como ter um corpo novo. A diferença que isto fez na minha qualidade de vida é difícil de descrever.', who: 'Miguel Moreira', what: 'Fisioterapia · 18 meses de acompanhamento', initials: 'MM', color: '#C5E8E5' };
+  const others = [
+    { q: 'A minha fisioterapeuta é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da musculatura e aliviar dores.', who: 'Irina Mendes Martins', what: 'Fisioterapia', initials: 'IM', color: '#A8D8D4' },
+    { q: 'Aulas de Pilates com a Rita são excelentes — a componente humana aliada às terapias é fundamental. Compreende mesmo as necessidades de cada um.', who: 'Mitchelle Sousa', what: 'Pilates Clínico', initials: 'MS', color: '#B8D4D2' },
   ];
-  const Stars = () => (
+  const Stars = ({ size = 13 }) => (
     <div style={{ display: 'flex', gap: 3, marginBottom: 14 }}>
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="13" height="13" viewBox="0 0 12 12" fill={RG.tealDark}><path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/></svg>
+        <svg key={i} width={size} height={size} viewBox="0 0 12 12" fill="#F5A623"><path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/></svg>
       ))}
     </div>
   );
@@ -313,77 +516,182 @@ function Testimonials() {
     <Section bg={RG.creamSoft} pad="lg">
       <Container>
         <Reveal>
-          <div style={{ marginBottom: 48 }}>
-            <Eyebrow style={{ marginBottom: 12 }}>{t('testimonials.eyebrow')}</Eyebrow>
-            <Heading level="h2">{t('testimonials.heading')}</Heading>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap', marginBottom: 48 }}>
+            <div>
+              <Eyebrow style={{ marginBottom: 12 }}>{t('testimonials.eyebrow')}</Eyebrow>
+              <Heading level="h2" style={{ maxWidth: '22ch' }}>{t('testimonials.heading')}</Heading>
+            </div>
+            <a href="https://www.google.com/search?q=Clinica+Rita+Guerreiro+Loul%C3%A9" target="_blank" rel="noopener noreferrer" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 10, textDecoration: 'none',
+              fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.tealDark,
+              padding: '10px 0', borderBottom: `1px solid ${RG.tealDark}`,
+            }}>
+              {t('testimonials_v2.read_more')}
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
           </div>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="rg-values-grid">
-          {list.map((t, i) => (
-            <Reveal key={i} delay={i * 80}>
-              <div className="rg-testimonial-card" style={{ background: RG.white, borderRadius: 16, padding: '28px 24px', border: `1px solid ${RG.line}`, position: 'relative', overflow: 'hidden' }}>
-                {/* Quote mark decorativo */}
-                <div aria-hidden="true" style={{
-                  position: 'absolute', top: 12, right: 20,
-                  fontFamily: F_DISPLAY, fontSize: 96, lineHeight: 1,
-                  color: 'rgba(111,181,176,0.10)', fontWeight: 300, userSelect: 'none',
-                  pointerEvents: 'none',
-                }}>&ldquo;</div>
-                <Stars />
-                <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 300, lineHeight: 1.5, color: RG.ink, letterSpacing: '-0.01em', fontStyle: 'italic', position: 'relative' }}>&ldquo;{t.q}&rdquo;</div>
-                <div style={{ marginTop: 20, paddingTop: 16, borderTop: `1px solid ${RG.line}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{t.who}</div>
-                    <div style={{ fontFamily: F_BODY, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.muted, marginTop: 2 }}>{t.what}</div>
-                  </div>
-                  <div style={{ width: 38, height: 38, borderRadius: '50%', background: t.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.tealDark }}>{t.initials}</span>
-                  </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 24 }} className="rg-testimonials-grid">
+          {/* Destaque grande */}
+          <Reveal delay={80}>
+            <div style={{ background: RG.white, borderRadius: 20, padding: 'clamp(32px, 4vw, 48px)', border: `1px solid ${RG.line}`, position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+              <div aria-hidden="true" style={{
+                position: 'absolute', top: 24, right: 36,
+                fontFamily: F_DISPLAY, fontSize: 140, lineHeight: 1,
+                color: 'rgba(111,181,176,0.10)', fontWeight: 300, userSelect: 'none', pointerEvents: 'none',
+              }}>&ldquo;</div>
+              <Stars size={15} />
+              <blockquote style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(20px, 1.9vw, 26px)', fontWeight: 300, lineHeight: 1.45, color: RG.ink, letterSpacing: '-0.012em', fontStyle: 'italic', margin: 0, position: 'relative', flex: 1 }}>
+                &ldquo;{featured.q}&rdquo;
+              </blockquote>
+              <div style={{ marginTop: 28, paddingTop: 20, borderTop: `1px solid ${RG.line}`, display: 'flex', alignItems: 'center', gap: 14 }}>
+                <div style={{ width: 48, height: 48, borderRadius: '50%', background: featured.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <span style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 700, color: RG.tealDark }}>{featured.initials}</span>
+                </div>
+                <div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.ink }}>{featured.who}</div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.muted, marginTop: 3 }}>{featured.what}</div>
                 </div>
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+
+          {/* Coluna direita: 2 testemunhos empilhados */}
+          <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: 24 }}>
+            {others.map((tt, i) => (
+              <Reveal key={i} delay={140 + i * 80}>
+                <div style={{ background: RG.white, borderRadius: 16, padding: '24px 22px', border: `1px solid ${RG.line}`, height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <Stars />
+                  <p style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 300, lineHeight: 1.5, color: RG.ink, letterSpacing: '-0.005em', fontStyle: 'italic', margin: 0, flex: 1 }}>&ldquo;{tt.q}&rdquo;</p>
+                  <div style={{ marginTop: 18, paddingTop: 14, borderTop: `1px solid ${RG.line}`, display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div style={{ width: 34, height: 34, borderRadius: '50%', background: tt.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, color: RG.tealDark }}>{tt.initials}</span>
+                    </div>
+                    <div>
+                      <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{tt.who}</div>
+                      <div style={{ fontFamily: F_BODY, fontSize: 10.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.muted, marginTop: 2 }}>{tt.what}</div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Container>
     </Section>
   );
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// HOME CTA — 3 opções claras lado a lado
+// ────────────────────────────────────────────────────────────────────────────
 function HomeCTA() {
   const { t } = useLang();
+  const options = [
+    {
+      icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>,
+      title: t('homecta_v2.opt1_title'),
+      desc: t('homecta_v2.opt1_desc'),
+      cta: t('homecta_v2.opt1_cta'),
+      href: 'https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o.',
+      external: true,
+      featured: true,
+    },
+    {
+      icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>,
+      title: t('homecta_v2.opt2_title'),
+      desc: t('homecta_v2.opt2_desc'),
+      cta: t('homecta_v2.opt2_cta'),
+      href: 'tel:+351961899364',
+      external: false,
+      featured: false,
+    },
+    {
+      icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+      title: t('homecta_v2.opt3_title'),
+      desc: t('homecta_v2.opt3_desc'),
+      cta: t('homecta_v2.opt3_cta'),
+      href: 'https://www.google.com/maps/dir/?api=1&destination=Rua+Padre+António+Vieira+58,+8100-611+Loulé,+Portugal',
+      external: true,
+      featured: false,
+    },
+  ];
   return (
     <section style={{ background: 'linear-gradient(135deg, #2F6B68 0%, #1F4846 100%)', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
-      {/* Decorative orb */}
-      <div style={{ position: 'absolute', top: -120, right: -80, width: 480, height: 480, borderRadius: '50%', background: 'rgba(111,181,176,0.08)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: -100, left: -60, width: 320, height: 320, borderRadius: '50%', background: 'rgba(111,181,176,0.06)', pointerEvents: 'none' }} />
+      <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 480, height: 480, borderRadius: '50%', background: 'rgba(111,181,176,0.08)', pointerEvents: 'none' }} />
+      <div aria-hidden="true" style={{ position: 'absolute', bottom: -100, left: -60, width: 320, height: 320, borderRadius: '50%', background: 'rgba(111,181,176,0.06)', pointerEvents: 'none' }} />
       <Container>
         <Reveal>
-          <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto', position: 'relative' }}>
+          <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px', position: 'relative' }}>
             <Eyebrow color="rgba(111,181,176,0.85)" style={{ marginBottom: 16 }}>{t('homecta.eyebrow')}</Eyebrow>
-            <Heading level="h2" style={{ color: RG.white, marginBottom: 20 }}>
+            <Heading level="h2" style={{ color: RG.white, marginBottom: 18 }}>
               {t('homecta.heading')}
             </Heading>
-            <p style={{ fontFamily: F_BODY, fontSize: 16, color: 'rgba(255,255,255,0.75)', marginBottom: 10, lineHeight: 1.7 }}>
+            <p style={{ fontFamily: F_BODY, fontSize: 16, color: 'rgba(255,255,255,0.75)', margin: 0, lineHeight: 1.7 }}>
               {t('homecta.body')}
             </p>
-            <p style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 40, lineHeight: 1.6, letterSpacing: '0.01em' }}>
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="rg-cta-options" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, position: 'relative' }}>
+            {options.map((opt, i) => (
+              <a key={i}
+                href={opt.href}
+                {...(opt.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className="rg-cta-option"
+                style={{
+                  display: 'flex', flexDirection: 'column',
+                  background: opt.featured ? 'rgba(255,255,255,0.98)' : 'rgba(255,255,255,0.06)',
+                  border: opt.featured ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 18, padding: '28px 26px',
+                  textDecoration: 'none',
+                  boxShadow: opt.featured ? '0 24px 60px -20px rgba(0,0,0,0.4)' : 'none',
+                  transition: 'transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms, background 260ms',
+                }}>
+                <div style={{
+                  width: 48, height: 48, borderRadius: 14,
+                  background: opt.featured ? '#6FB5B0' : 'rgba(255,255,255,0.1)',
+                  color: opt.featured ? RG.white : 'rgba(255,255,255,0.85)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: 22,
+                  flexShrink: 0,
+                }}>{opt.icon}</div>
+                <h3 style={{
+                  fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 600, letterSpacing: '-0.015em',
+                  color: opt.featured ? RG.ink : RG.white,
+                  margin: 0, marginBottom: 10, lineHeight: 1.2,
+                }}>{opt.title}</h3>
+                <p style={{
+                  fontFamily: F_BODY, fontSize: 13.5,
+                  color: opt.featured ? RG.charcoal : 'rgba(255,255,255,0.65)',
+                  lineHeight: 1.6, margin: 0, marginBottom: 22, flex: 1,
+                }}>{opt.desc}</p>
+                <div style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  fontFamily: F_BODY, fontSize: 13, fontWeight: 700,
+                  color: opt.featured ? '#2F6B68' : RG.white,
+                }}>
+                  {opt.cta}
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="rg-cta-arrow"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* Linha de info abaixo */}
+        <Reveal delay={220}>
+          <div style={{ marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {t('homecta_v2.info_hours')}
+            </div>
+            <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'rgba(255,255,255,0.25)' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               {t('homecta.addr')}
-            </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" className="rg-btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 14, fontWeight: 700, color: RG.tealDeep, background: RG.white, padding: '15px 30px', borderRadius: 999, textDecoration: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
-                {t('homecta.wa')}
-              </a>
-              <a href="tel:+351961899364" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.white, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', padding: '15px 30px', borderRadius: 999, textDecoration: 'none', backdropFilter: 'blur(8px)' }}>
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-                961 899 364
-              </a>
-              <a href="https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: F_BODY, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', padding: '15px 16px', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.85)'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                {t('homecta.como_chegar')}
-              </a>
             </div>
           </div>
         </Reveal>
@@ -394,4 +702,4 @@ function HomeCTA() {
 
 function Values() { return null; }
 
-Object.assign(window, { Hero, StatsStrip, ServicesOverview, Values, ServicesCard, WhyUs, Testimonials, HomeCTA });
+Object.assign(window, { Hero, StatsStrip, ServicesOverview, Values, ServicesCard, WhyUs, MeetRita, Testimonials, HomeCTA });

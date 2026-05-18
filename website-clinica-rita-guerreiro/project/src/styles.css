@@ -630,3 +630,77 @@ input:focus, textarea:focus, select:focus {
   opacity: 1 !important;
   animation: rg-wafab-pulse 3s ease-in-out 0.6s infinite !important;
 }
+
+/* ── Home redesign v2 ──────────────────────────────────────── */
+
+/* Pulse dot (Hero next-slot card) */
+@keyframes rg-pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.20); }
+  50%      { box-shadow: 0 0 0 6px rgba(34,197,94,0.10); }
+}
+.rg-pulse-dot { animation: rg-pulse-dot 2.2s ease-in-out infinite; }
+
+/* Hero next-slot card float-in */
+@keyframes rg-hero-card-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.rg-hero-card { animation: rg-hero-card-in 720ms cubic-bezier(.2,.8,.2,1) 900ms both; }
+
+/* Primary CTA hover (Hero) */
+.rg-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -8px rgba(111,181,176,0.75);
+}
+
+/* Services menu — list interactive */
+.rg-services-menu ul li:hover h3 { transform: translateX(4px); }
+
+/* CTA options (HomeCTA v2) */
+.rg-cta-option:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px -22px rgba(0,0,0,0.5);
+}
+.rg-cta-option:hover .rg-cta-arrow { transform: translateX(4px); }
+.rg-cta-arrow { transition: transform 220ms cubic-bezier(.2,.8,.2,1); }
+
+/* Trust band — divider hide em mobile */
+@media (max-width: 880px) {
+  .rg-trust-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .rg-trust-grid > div { border-left: 0 !important; padding-left: 0 !important; }
+  .rg-trust-grid > div:nth-child(n+2) { padding-top: 24px; border-top: 1px solid #E8E6DF; }
+}
+
+/* Services menu responsive */
+@media (max-width: 960px) {
+  .rg-services-menu { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .rg-services-menu > div:last-child { min-height: 320px !important; }
+}
+
+/* Testimonials grid responsive */
+@media (max-width: 880px) {
+  .rg-testimonials-grid { grid-template-columns: 1fr !important; }
+}
+
+/* CTA options responsive */
+@media (max-width: 880px) {
+  .rg-cta-options { grid-template-columns: 1fr !important; }
+}
+
+/* Hero card position em mobile */
+@media (max-width: 880px) {
+  .rg-hero-card {
+    position: static !important;
+    margin: 24px 0 0 !important;
+    max-width: none !important;
+  }
+}
+
+/* Meet Rita responsive (usa rg-hero-grid já partilhado) */
+@media (max-width: 880px) {
+  .rg-meet-card {
+    position: static !important;
+    margin-top: 16px;
+    max-width: none !important;
+  }
+}
