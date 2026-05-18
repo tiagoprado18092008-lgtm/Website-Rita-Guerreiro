@@ -1,0 +1,518 @@
+// Design tokens — Rita Guerreiro · clean, white-first
+
+const RG = {
+  // Teal do logo (usada com parcimónia, como acento)
+  teal: '#6FB5B0',
+  tealDeep: '#4A8F8A',
+  tealDark: '#2F6B68',
+  tealInk: '#1F4846',
+  tealWash: '#F1F7F6',       // background wash muito ténue
+  // Neutros limpos
+  cream: '#FFFFFF',          // antes era #F6F1E9 — agora branco
+  creamSoft: '#FAFAF8',      // wash quase branco
+  white: '#FFFFFF',
+  ink: '#141412',
+  graphite: '#2B2B27',
+  charcoal: '#55554E',
+  muted: '#8A8A82',
+  line: '#E8E6DF',
+  lineSoft: '#F0EEE7',
+};
+
+const F_DISPLAY = '"Open Sans", system-ui, sans-serif';
+const F_BODY = '"DM Sans", -apple-system, BlinkMacSystemFont, sans-serif';
+const F_MONO = '"JetBrains Mono", ui-monospace, monospace';
+
+Object.assign(window, { RG, F_DISPLAY, F_BODY, F_MONO });
+
+// ── i18n ──────────────────────────────────────────────────────────────────────
+const TRANSLATIONS = {
+  PT: {
+    nav: { inicio: 'Início', servicos: 'Serviços', sobre: 'Sobre', contactos: 'Contactos' },
+    nav_mobile: { inicio: 'Início', servicos: 'Serviços', sobre: 'Sobre', contactos: 'Contactos' },
+    hero: {
+      badge: 'Loulé · Algarve',
+      h1: ['Recupera.', 'Equilibra.', 'Sente-te bem.'],
+      desc: 'Fisioterapia, Osteopatia, Pilates Clínico, Psicologia e muito mais — numa clínica em Loulé onde cada pessoa é tratada com atenção e cuidado real.',
+      cta: 'Marcar consulta',
+      cta_tel: 'Ligar agora',
+      horario: 'Seg–Sex 9h–19h · Sábados sob marcação',
+      social_proof: '+500 pacientes acompanhados · Google 5★',
+      card_name: 'Centro de Terapias Rita Guerreiro',
+      card_addr: 'Rua Padre António Vieira 58, Loulé',
+    },
+    stats: [
+      { value: '20', label: 'Anos de experiência', suffix: '+' },
+      { value: '500', label: 'Pacientes acompanhados', suffix: '+' },
+      { value: '25', label: 'Terapias disponíveis', suffix: '' },
+      { value: '100', label: 'Dedicação à tua saúde', suffix: '%' },
+    ],
+    services_card: {
+      eyebrow: 'Os nossos serviços',
+      heading: 'Dores, tensão, stress? Temos a resposta — e a pessoa certa para ti',
+      body: 'Fisioterapia, massagens, holísticas, psicologia, estética — tudo disponível na mesma clínica, em Loulé. Sem listas de espera longas, sem deslocações desnecessárias.',
+      cta: 'Ver todos os serviços',
+    },
+    whyus: {
+      eyebrow: 'Porquê a Clínica Rita Guerreiro',
+      heading: 'Porque a tua saúde merece mais do que uma consulta rápida',
+      points: [
+        { t: 'Tratamento feito para ti, não para a média', d: 'O teu corpo, a tua história, o teu ritmo. Cada plano de tratamento começa por ouvir — e só depois agir.' },
+        { t: 'Tudo no mesmo sítio, sem deslocações', d: 'Fisioterapia, psicologia, estética, nutrição — num só espaço em Loulé. Mais tempo para ti, menos stress logístico.' },
+        { t: 'Profissionais que te acompanham de verdade', d: 'Não mudas de terapeuta a cada consulta. A tua equipa conhece-te, acompanha-te e preocupa-se com os teus resultados.' },
+        { t: 'Sem listas de espera intermináveis', d: 'Marcação rápida por WhatsApp ou telefone. A maioria dos utentes consegue consulta na mesma semana.' },
+      ],
+    },
+    services_overview: {
+      eyebrow: 'Serviços',
+      heading: 'Seja qual for o motivo que te traz, temos alguém para ti',
+    },
+    testimonials: {
+      eyebrow: 'Testemunhos reais',
+      heading: 'O que dizem os que já sentiram a diferença',
+    },
+    homecta: {
+      eyebrow: 'Dá o primeiro passo hoje',
+      heading: 'A tua recuperação começa com uma mensagem',
+      body: 'Fala connosco agora — a maioria das marcações fica resolvida em menos de 5 minutos.',
+      addr: 'Rua Padre António Vieira 58, Loulé · Seg–Sex 9h–19h · Sáb sob marcação',
+      wa: 'WhatsApp agora',
+      como_chegar: 'Como chegar',
+    },
+    agendar: 'Agendar',
+    agendar_now: 'Agendar agora',
+    ligar: 'Ligar',
+    footer: {
+      tagline: 'Centro de Terapias & Bem-Estar em Loulé. Cuidamos de ti, corpo e mente.',
+      horario: 'Seg–Sex · 9h–19h · Sáb sob marcação',
+      direitos: 'Todos os direitos reservados',
+      col1: 'Fisioterapia & Saúde',
+      col2: 'Massagens & Holísticas',
+      col3: 'Horário & Contacto',
+      privacidade: 'Privacidade',
+      termos: 'Termos',
+      reclamacoes: 'Livro de Reclamações',
+      horario_item: 'Seg-Sex · 9:00-19:00',
+      sabado_item: 'Sábados · sob marcação',
+    },
+    servicos_cat: {
+      reabilitacao: 'Reabilitação',
+      bemestar: 'Bem-Estar',
+      movimento: 'Movimento',
+      estetica: 'Estética',
+    },
+    contactos_title: 'Fale Connosco',
+    contactos: {
+      eyebrow: 'Contactos',
+      heading: 'Vem ter connosco',
+      sub: 'No coração de Loulé — Algarve.',
+      morada_label: 'Morada',
+      telefone_label: 'Telefone',
+      horario_label: 'Horário',
+      morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
+      horario_val: 'Seg–Sex 9h–19h\nSábados sob marcação',
+      maps_link: 'Abrir no Google Maps',
+    },
+    form: {
+      nome: 'Nome', email: 'E-mail', telefone: 'Telefone',
+      servico: 'Serviço', mensagem: 'Mensagem',
+      seleciona: 'Seleciona', enviar: 'Enviar mensagem', enviado: 'Mensagem enviada!',
+    },
+    sobre: {
+      eyebrow: 'Sobre',
+      heading: 'A equipa que cuida de ti como se fosses da família',
+      sub: 'Na Clínica Rita Guerreiro dedicamo-nos a melhorar a tua saúde, bem-estar e qualidade de vida — com atenção, continuidade e respeito por quem és.',
+      mission_eyebrow: 'A nossa missão',
+      mission_heading: 'Ajudar cada pessoa a viver melhor, sem limitações',
+      mission_body: 'Em Loulé, reunimos uma equipa multidisciplinar pronta a receber qualquer pessoa — com ou sem histórico clínico, com mais ou menos urgência. Aqui não há casos simples nem complicados: há pessoas. E cada uma merece um plano pensado para ela.',
+      mission_cta: 'Ver serviços',
+      pillars: [
+        { t: 'Personalizado', d: 'Não há dois casos iguais. Cada plano começa por te ouvir.' },
+        { t: 'Clínica completa', d: 'Vários serviços de saúde e bem-estar no mesmo espaço.' },
+        { t: 'Uma equipa que se preocupa', d: 'Profissionais experientes com foco em ti.' },
+        { t: 'Respeito pela tua história', d: 'A tua vida e o teu corpo são sempre respeitados.' },
+      ],
+      story_eyebrow: 'História',
+      story_heading: 'Um projeto nascido do amor por cuidar das pessoas',
+      story_p1: 'A Clínica Rita Guerreiro nasceu da visão de criar um espaço diferente — onde a qualidade do cuidado é tão importante quanto a qualidade do tratamento.',
+      story_p2: 'Desde 2022 recebemos pessoas de todas as idades, com histórias muito diferentes. O que fica igual em todas elas é a forma como as recebemos: com escuta, com atenção e com continuidade.',
+      team_eyebrow: 'A nossa equipa',
+      team_heading: 'Especialistas que se preocupam com quem têm à frente',
+      team_body: 'A nossa equipa é composta por profissionais qualificados em diversas áreas da saúde, que trabalham juntos para te oferecer o melhor acompanhamento possível — coordenado, humano e eficaz.',
+      team_specialties: [
+        { role: 'Fisioterapia & Reabilitação', bio: 'Avaliação e tratamento de dor, lesão e disfunção músculo-esquelética com abordagem individual.' },
+        { role: 'Osteopatia & ATM', bio: 'Tratamento manual estrutural e visceral para aliviar a causa da dor, não apenas os sintomas.' },
+        { role: 'Acupuntura & Terapia Bowen', bio: 'Técnicas complementares para reequilíbrio do sistema nervoso e gestão da dor crónica.' },
+        { role: 'Psicologia & Nutrição', bio: 'Apoio à saúde mental e alimentar — para uma abordagem verdadeiramente integrada do bem-estar.' },
+      ],
+      team_join_heading: 'Tens paixão pela saúde e pelo cuidado das pessoas?',
+      team_join_body: 'Adorávamos conhecer-te. Estamos sempre abertos a receber profissionais apaixonados pelo bem-estar.',
+      team_join_cta: 'Entrar em contacto →',
+    },
+    category: {
+      inicio: 'Início',
+      cta_heading: 'Pronto para marcar?',
+      cta_body: 'Contacta-nos por WhatsApp, telefone ou presencialmente.',
+      cta_btn: 'Agendar agora',
+    },
+    service: {
+      inicio: 'Início',
+      info_eyebrow: 'Informações',
+      preco_label: 'Preço',
+      marcacoes_label: 'Marcações',
+      marcacoes_body: 'Por WhatsApp, telefone ou presencialmente na clínica.',
+      agendar_btn: 'Agendar agora',
+      ligar_btn: 'Ligar 961 899 364',
+      sobre_heading: 'Sobre este tratamento',
+      areas_label: 'Áreas de atuação',
+      processo_eyebrow: 'O processo',
+      processo_heading: 'Como funciona',
+      steps: [
+        { t: 'Primeira consulta', d: 'Falamos sobre o teu caso e historial de saúde.' },
+        { t: 'Avaliação', d: 'Diagnóstico preciso e identificação das causas.' },
+        { t: 'Plano personalizado', d: 'Criamos um plano adaptado aos teus objetivos.' },
+        { t: 'Tratamento', d: 'Sessões focadas com acompanhamento contínuo.' },
+        { t: 'Acompanhamento', d: 'Seguimos a tua evolução ao longo do tempo.' },
+      ],
+      outros_eyebrow_prefix: 'Outros serviços em',
+      outros_heading: 'Continua a explorar',
+      ver_todos_prefix: '→ Ver todos os serviços de',
+    },
+    sobre_title: 'Sobre a Clínica',
+    meta: { tagline: 'Terapias & Bem-Estar' },
+  },
+  EN: {
+    nav: { inicio: 'Home', servicos: 'Services', sobre: 'About', contactos: 'Contacts' },
+    nav_mobile: { inicio: 'Home', servicos: 'Services', sobre: 'About', contactos: 'Contacts' },
+    hero: {
+      badge: 'Loulé · Algarve · Since 2022',
+      h1: ['Recover.', 'Balance.', 'Feel good.'],
+      desc: 'Physiotherapy, Osteopathy, Clinical Pilates, Psychology and more — at a clinic in Loulé where every person is treated with genuine attention and care.',
+      cta: 'Book appointment',
+      cta_tel: 'Call now',
+      horario: 'Mon–Fri 9am–7pm · Saturdays by appointment',
+      social_proof: '+500 patients treated · Google 5★',
+      card_name: 'Rita Guerreiro Therapy Centre',
+      card_addr: 'Rua Padre António Vieira 58, Loulé',
+    },
+    stats: [
+      { value: '20', label: 'Years of experience', suffix: '+' },
+      { value: '500', label: 'Patients treated', suffix: '+' },
+      { value: '25', label: 'Therapies available', suffix: '' },
+      { value: '100', label: 'Commitment to your health', suffix: '%' },
+    ],
+    services_card: {
+      eyebrow: 'Our services',
+      heading: 'Pain, tension, stress? We have the answer — and the right person for you',
+      body: 'Physiotherapy, massage, holistic therapies, psychology, aesthetics — all available at one clinic in Loulé. No long waiting lists, no unnecessary trips.',
+      cta: 'View all services',
+    },
+    whyus: {
+      eyebrow: 'Why Rita Guerreiro Clinic',
+      heading: 'Because your health deserves more than a quick appointment',
+      points: [
+        { t: 'Treatment made for you, not the average', d: 'Your body, your story, your pace. Every treatment plan starts by listening — then acting.' },
+        { t: 'Everything in one place', d: 'Physiotherapy, psychology, aesthetics, nutrition — in one space in Loulé. More time for you, less logistical stress.' },
+        { t: 'Professionals who truly accompany you', d: "You don't change therapist every appointment. Your team knows you, follows your progress, and cares about your results." },
+        { t: 'No endless waiting lists', d: 'Quick booking via WhatsApp or phone. Most patients get an appointment within the same week.' },
+      ],
+    },
+    services_overview: {
+      eyebrow: 'Services',
+      heading: 'Whatever brings you here, we have someone for you',
+    },
+    testimonials: {
+      eyebrow: 'Real testimonials',
+      heading: 'What those who felt the difference have to say',
+    },
+    homecta: {
+      eyebrow: 'Take the first step today',
+      heading: 'Your recovery starts with a message',
+      body: 'Talk to us now — most bookings are sorted in under 5 minutes.',
+      addr: 'Rua Padre António Vieira 58, Loulé · Mon–Fri 9am–7pm · Sat by appointment',
+      wa: 'WhatsApp now',
+      como_chegar: 'Get directions',
+    },
+    agendar: 'Book',
+    agendar_now: 'Book now',
+    ligar: 'Call',
+    footer: {
+      tagline: 'Therapy & Wellness Centre in Loulé. We care for you, body and mind.',
+      horario: 'Mon–Fri · 9am–7pm · Sat by appointment',
+      direitos: 'All rights reserved',
+      col1: 'Physiotherapy & Health',
+      col2: 'Massages & Holistic',
+      col3: 'Hours & Contact',
+      privacidade: 'Privacy',
+      termos: 'Terms',
+      reclamacoes: 'Complaints Book',
+      horario_item: 'Mon–Fri · 9:00–19:00',
+      sabado_item: 'Saturdays · by appointment',
+    },
+    servicos_cat: {
+      reabilitacao: 'Rehabilitation',
+      bemestar: 'Wellness',
+      movimento: 'Movement',
+      estetica: 'Aesthetics',
+    },
+    contactos_title: 'Contact Us',
+    contactos: {
+      eyebrow: 'Contacts',
+      heading: 'Come find us',
+      sub: 'In the heart of Loulé — Algarve.',
+      morada_label: 'Address',
+      telefone_label: 'Phone',
+      horario_label: 'Hours',
+      morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
+      horario_val: 'Mon–Fri 9am–7pm\nSaturdays by appointment',
+      maps_link: 'Open in Google Maps',
+    },
+    form: {
+      nome: 'Name', email: 'E-mail', telefone: 'Phone',
+      servico: 'Service', mensagem: 'Message',
+      seleciona: 'Select', enviar: 'Send message', enviado: 'Message sent!',
+    },
+    sobre: {
+      eyebrow: 'About',
+      heading: 'The team that cares for you like family',
+      sub: 'At Rita Guerreiro Clinic we are dedicated to improving your health, well-being and quality of life — with attention, continuity and respect for who you are.',
+      mission_eyebrow: 'Our mission',
+      mission_heading: 'Helping each person live better, without limitations',
+      mission_body: 'In Loulé, we bring together a multidisciplinary team ready to welcome anyone — with or without a clinical history, with more or less urgency. There are no simple or complicated cases here: there are people. And each one deserves a plan made for them.',
+      mission_cta: 'View services',
+      pillars: [
+        { t: 'Personalised', d: 'No two cases are the same. Every plan starts by listening to you.' },
+        { t: 'Full clinic', d: 'Multiple health and wellness services in one space.' },
+        { t: 'A team that cares', d: 'Experienced professionals focused on you.' },
+        { t: 'Respect for your story', d: 'Your life and your body are always respected.' },
+      ],
+      story_eyebrow: 'Story',
+      story_heading: 'A project born from a love of caring for people',
+      story_p1: 'Rita Guerreiro Clinic was born from the vision of creating a different space — where the quality of care is as important as the quality of treatment.',
+      story_p2: 'Since 2022 we have welcomed people of all ages, with very different stories. What stays the same for all of them is the way we receive them: with listening, with attention and with continuity.',
+      team_eyebrow: 'Our team',
+      team_heading: 'Specialists who care about the person in front of them',
+      team_body: 'Our team is made up of qualified professionals in various health fields, working together to offer you the best possible support — coordinated, human and effective.',
+      team_specialties: [
+        { role: 'Physiotherapy & Rehabilitation', bio: 'Assessment and treatment of pain, injury and musculoskeletal dysfunction with an individual approach.' },
+        { role: 'Osteopathy & TMJ', bio: 'Structural and visceral manual treatment to relieve the cause of pain, not just the symptoms.' },
+        { role: 'Acupuncture & Bowen Therapy', bio: 'Complementary techniques for rebalancing the nervous system and managing chronic pain.' },
+        { role: 'Psychology & Nutrition', bio: 'Mental and nutritional health support — for a truly integrated approach to well-being.' },
+      ],
+      team_join_heading: 'Passionate about health and caring for people?',
+      team_join_body: "We'd love to meet you. We're always open to welcoming professionals passionate about well-being.",
+      team_join_cta: 'Get in touch →',
+    },
+    category: {
+      inicio: 'Home',
+      cta_heading: 'Ready to book?',
+      cta_body: 'Contact us via WhatsApp, phone or in person.',
+      cta_btn: 'Book now',
+    },
+    service: {
+      inicio: 'Home',
+      info_eyebrow: 'Information',
+      preco_label: 'Price',
+      marcacoes_label: 'Bookings',
+      marcacoes_body: 'Via WhatsApp, phone or in person at the clinic.',
+      agendar_btn: 'Book now',
+      ligar_btn: 'Call 961 899 364',
+      sobre_heading: 'About this treatment',
+      areas_label: 'Areas of focus',
+      processo_eyebrow: 'The process',
+      processo_heading: 'How it works',
+      steps: [
+        { t: 'First appointment', d: 'We talk about your case and health history.' },
+        { t: 'Assessment', d: 'Precise diagnosis and identification of causes.' },
+        { t: 'Personalised plan', d: 'We create a plan adapted to your goals.' },
+        { t: 'Treatment', d: 'Focused sessions with continuous monitoring.' },
+        { t: 'Follow-up', d: 'We follow your progress over time.' },
+      ],
+      outros_eyebrow_prefix: 'Other services in',
+      outros_heading: 'Keep exploring',
+      ver_todos_prefix: '→ View all services in',
+    },
+    sobre_title: 'About the Clinic',
+    meta: { tagline: 'Therapies & Wellness' },
+  },
+  FR: {
+    nav: { inicio: 'Accueil', servicos: 'Services', sobre: 'À propos', contactos: 'Contact' },
+    nav_mobile: { inicio: 'Accueil', servicos: 'Services', sobre: 'À propos', contactos: 'Contact' },
+    hero: {
+      badge: 'Loulé · Algarve · Depuis 2022',
+      h1: ['Récupérez.', 'Équilibrez.', 'Sentez-vous bien.'],
+      desc: 'Physiothérapie, Ostéopathie, Pilates Clinique, Psychologie et plus encore — dans une clinique à Loulé où chaque personne est traitée avec attention et soin réel.',
+      cta: 'Prendre rendez-vous',
+      cta_tel: 'Appeler',
+      horario: 'Lun–Ven 9h–19h · Sam sur rendez-vous',
+      social_proof: '+500 patients accompagnés · Google 5★',
+      card_name: 'Centre de Thérapies Rita Guerreiro',
+      card_addr: 'Rua Padre António Vieira 58, Loulé',
+    },
+    stats: [
+      { value: '20', label: "Années d'expérience", suffix: '+' },
+      { value: '500', label: 'Patients accompagnés', suffix: '+' },
+      { value: '25', label: 'Thérapies disponibles', suffix: '' },
+      { value: '100', label: 'Dédication à votre santé', suffix: '%' },
+    ],
+    services_card: {
+      eyebrow: 'Nos services',
+      heading: 'Douleurs, tensions, stress ? Nous avons la réponse — et la bonne personne pour vous',
+      body: "Physiothérapie, massages, thérapies holistiques, psychologie, esthétique — tout disponible dans une seule clinique à Loulé. Sans longues listes d'attente.",
+      cta: 'Voir tous les services',
+    },
+    whyus: {
+      eyebrow: 'Pourquoi la Clinique Rita Guerreiro',
+      heading: "Parce que votre santé mérite plus qu'une consultation rapide",
+      points: [
+        { t: 'Traitement fait pour vous', d: 'Votre corps, votre histoire, votre rythme. Chaque plan de traitement commence par vous écouter.' },
+        { t: 'Tout au même endroit', d: 'Physiothérapie, psychologie, esthétique, nutrition — dans un seul espace à Loulé.' },
+        { t: 'Des professionnels qui vous accompagnent vraiment', d: 'Vous ne changez pas de thérapeute à chaque consultation. Votre équipe vous connaît et se soucie de vos résultats.' },
+        { t: "Pas de longues listes d'attente", d: 'Prise de rendez-vous rapide par WhatsApp ou téléphone. La plupart des patients obtiennent un rendez-vous dans la semaine.' },
+      ],
+    },
+    services_overview: {
+      eyebrow: 'Services',
+      heading: "Quelle que soit la raison qui vous amène, nous avons quelqu'un pour vous",
+    },
+    testimonials: {
+      eyebrow: 'Témoignages réels',
+      heading: 'Ce que disent ceux qui ont déjà ressenti la différence',
+    },
+    homecta: {
+      eyebrow: "Faites le premier pas aujourd'hui",
+      heading: 'Votre récupération commence par un message',
+      body: 'Contactez-nous maintenant — la plupart des rendez-vous sont réglés en moins de 5 minutes.',
+      addr: 'Rua Padre António Vieira 58, Loulé · Lun–Ven 9h–19h · Sam sur rendez-vous',
+      wa: 'WhatsApp maintenant',
+      como_chegar: "Obtenir l'itinéraire",
+    },
+    agendar: 'Réserver',
+    agendar_now: 'Réserver maintenant',
+    ligar: 'Appeler',
+    footer: {
+      tagline: 'Centre de Thérapies & Bien-Être à Loulé. Nous prenons soin de vous, corps et âme.',
+      horario: 'Lun–Ven · 9h–19h · Sam sur rendez-vous',
+      direitos: 'Tous droits réservés',
+      col1: 'Physiothérapie & Santé',
+      col2: 'Massages & Holistique',
+      col3: 'Horaires & Contact',
+      privacidade: 'Confidentialité',
+      termos: 'Conditions',
+      reclamacoes: 'Livre de réclamations',
+      horario_item: 'Lun–Ven · 9:00–19:00',
+      sabado_item: 'Samedis · sur rendez-vous',
+    },
+    servicos_cat: {
+      reabilitacao: 'Rééducation',
+      bemestar: 'Bien-Être',
+      movimento: 'Mouvement',
+      estetica: 'Esthétique',
+    },
+    contactos_title: 'Nous Contacter',
+    contactos: {
+      eyebrow: 'Contact',
+      heading: 'Venez nous trouver',
+      sub: 'Au cœur de Loulé — Algarve.',
+      morada_label: 'Adresse',
+      telefone_label: 'Téléphone',
+      horario_label: 'Horaires',
+      morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
+      horario_val: 'Lun–Ven 9h–19h\nSamedis sur rendez-vous',
+      maps_link: 'Ouvrir dans Google Maps',
+    },
+    form: {
+      nome: 'Nom', email: 'E-mail', telefone: 'Téléphone',
+      servico: 'Service', mensagem: 'Message',
+      seleciona: 'Sélectionner', enviar: 'Envoyer', enviado: 'Message envoyé !',
+    },
+    sobre: {
+      eyebrow: 'À propos',
+      heading: "L'équipe qui prend soin de vous comme en famille",
+      sub: 'À la Clinique Rita Guerreiro, nous nous consacrons à améliorer votre santé, votre bien-être et votre qualité de vie — avec attention, continuité et respect.',
+      mission_eyebrow: 'Notre mission',
+      mission_heading: 'Aider chaque personne à mieux vivre, sans limitations',
+      mission_body: "À Loulé, nous réunissons une équipe multidisciplinaire prête à accueillir tout le monde. Il n'y a pas de cas simples ou compliqués ici : il y a des personnes. Et chacune mérite un plan pensé pour elle.",
+      mission_cta: 'Voir les services',
+      pillars: [
+        { t: 'Personnalisé', d: 'Pas deux cas identiques. Chaque plan commence par vous écouter.' },
+        { t: 'Clinique complète', d: 'Plusieurs services de santé et bien-être dans un même espace.' },
+        { t: 'Une équipe qui se soucie de vous', d: 'Des professionnels expérimentés centrés sur vous.' },
+        { t: 'Respect de votre histoire', d: 'Votre vie et votre corps sont toujours respectés.' },
+      ],
+      story_eyebrow: 'Histoire',
+      story_heading: "Un projet né de l'amour du soin des personnes",
+      story_p1: 'La Clinique Rita Guerreiro est née de la vision de créer un espace différent — où la qualité du soin est aussi importante que la qualité du traitement.',
+      story_p2: 'Depuis 2022, nous accueillons des personnes de tous âges, avec des histoires très différentes. Ce qui reste identique pour toutes : la façon dont nous les recevons — avec écoute, attention et continuité.',
+      team_eyebrow: 'Notre équipe',
+      team_heading: "Des spécialistes qui se soucient de la personne en face d'eux",
+      team_body: 'Notre équipe est composée de professionnels qualifiés dans divers domaines de la santé, travaillant ensemble pour vous offrir le meilleur accompagnement possible.',
+      team_specialties: [
+        { role: 'Physiothérapie & Réhabilitation', bio: 'Évaluation et traitement de la douleur, des blessures et des dysfonctions musculo-squelettiques.' },
+        { role: 'Ostéopathie & ATM', bio: 'Traitement manuel structurel et viscéral pour soulager la cause de la douleur.' },
+        { role: 'Acupuncture & Thérapie Bowen', bio: 'Techniques complémentaires pour rééquilibrer le système nerveux et gérer la douleur chronique.' },
+        { role: 'Psychologie & Nutrition', bio: 'Soutien à la santé mentale et alimentaire — pour une approche vraiment intégrée du bien-être.' },
+      ],
+      team_join_heading: 'Passionné par la santé et le soin des personnes ?',
+      team_join_body: 'Nous serions ravis de vous rencontrer. Nous sommes toujours ouverts à accueillir des professionnels passionnés par le bien-être.',
+      team_join_cta: 'Prendre contact →',
+    },
+    category: {
+      inicio: 'Accueil',
+      cta_heading: 'Prêt à prendre rendez-vous ?',
+      cta_body: 'Contactez-nous par WhatsApp, téléphone ou en personne.',
+      cta_btn: 'Réserver maintenant',
+    },
+    service: {
+      inicio: 'Accueil',
+      info_eyebrow: 'Informations',
+      preco_label: 'Prix',
+      marcacoes_label: 'Rendez-vous',
+      marcacoes_body: 'Par WhatsApp, téléphone ou en personne à la clinique.',
+      agendar_btn: 'Réserver maintenant',
+      ligar_btn: 'Appeler 961 899 364',
+      sobre_heading: 'À propos de ce traitement',
+      areas_label: "Domaines d'action",
+      processo_eyebrow: 'Le processus',
+      processo_heading: 'Comment ça marche',
+      steps: [
+        { t: 'Premier rendez-vous', d: 'Nous parlons de votre cas et de votre historique de santé.' },
+        { t: 'Évaluation', d: 'Diagnostic précis et identification des causes.' },
+        { t: 'Plan personnalisé', d: 'Nous créons un plan adapté à vos objectifs.' },
+        { t: 'Traitement', d: 'Séances ciblées avec un suivi continu.' },
+        { t: 'Suivi', d: 'Nous suivons votre évolution dans le temps.' },
+      ],
+      outros_eyebrow_prefix: 'Autres services en',
+      outros_heading: 'Continuez à explorer',
+      ver_todos_prefix: '→ Voir tous les services en',
+    },
+    sobre_title: 'À propos de la Clinique',
+    meta: { tagline: 'Thérapies & Bien-Être' },
+  },
+};
+
+const LangContext = React.createContext({ lang: 'PT', changeLang: () => {} });
+
+function useLang() {
+  const ctx = React.useContext(LangContext);
+  const lang = typeof ctx === 'string' ? ctx : ctx.lang;
+  const t = (path) => {
+    const keys = path.split('.');
+    let v = TRANSLATIONS[lang] || TRANSLATIONS.PT;
+    for (const k of keys) v = v?.[k];
+    return v ?? path;
+  };
+  return { lang, t };
+}
+
+function LangProvider({ children }) {
+  const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('rg_lang')) || 'PT';
+  const [lang, setLang] = React.useState(['PT','EN','FR'].includes(saved) ? saved : 'PT');
+  const changeLang = (code) => {
+    setLang(code);
+    localStorage.setItem('rg_lang', code);
+  };
+  return React.createElement(LangContext.Provider, { value: { lang, changeLang } }, children);
+}
+
+Object.assign(window, { TRANSLATIONS, LangContext, LangProvider, useLang });

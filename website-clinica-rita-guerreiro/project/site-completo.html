@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé</title>
+<meta name="description" content="Fisioterapia, massagens, holísticas, psicologia e estética numa clínica em Loulé. Recupera. Equilibra. Sente-te bem." />
+<meta property="og:title" content="Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé" />
+<meta property="og:description" content="Fisioterapia, massagens, holísticas, psicologia e estética numa clínica em Loulé. Recupera. Equilibra. Sente-te bem." />
+<meta property="og:image" content="https://www.ritaguerreiro.pt/rita_guerreiro_logo.png" />
+<meta property="og:url" content="https://www.ritaguerreiro.pt/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="rita_guerreiro_logo.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Centro de Terapias Rita Guerreiro",
+  "description": "Fisioterapia, massagens, holísticas, psicologia e estética em Loulé, Algarve.",
+  "url": "https://www.ritaguerreiro.pt",
+  "telephone": "+351961899364",
+  "email": "geral@ritaguerreiro.pt",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Padre António Vieira 58",
+    "postalCode": "8100-611",
+    "addressLocality": "Loulé",
+    "addressRegion": "Algarve",
+    "addressCountry": "PT"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "09:00",
+      "closes": "17:00",
+      "description": "Mediante marcação prévia"
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.1397,
+    "longitude": -8.0247
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<link rel="stylesheet" href="src/premium.css">
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- tokens -->
+<script type="text/babel" src="src/tokens.jsx"></script>
+<!-- logo -->
+<script type="text/babel" src="src/logo.jsx"></script>
+<!-- data -->
+<script type="text/babel" src="src/data.jsx"></script>
+<!-- ui (Nav, Footer, WAFab, etc) -->
+<script type="text/babel" src="src/ui.jsx"></script>
+<!-- page sections -->
+<script type="text/babel" src="src/home.jsx"></script>
+<script type="text/babel" src="src/sobre.jsx"></script>
+<script type="text/babel" src="src/pages.jsx"></script>
+
+<script type="text/babel">
+// ── Router SPA por hash ──────────────────────────────────────────────────────
+// Rotas:
+//   #/            → Homepage
+//   #/sobre       → Sobre
+//   #/contactos   → Contactos
+//   #/servicos/fisioterapia  → CategoryPage
+//   #/servicos/massagens     → CategoryPage
+//   #/servicos/holisticas    → CategoryPage
+//   #/servicos/<slug>        → ServicePage
+//   (qualquer outra coisa)   → Homepage
+
+// Patchamos todos os hrefs para usarem hash routing
+function patchHref(href) {
+  if (!href || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('#') || href.startsWith('https:')) return href;
+  // ficheiros html → hash routes
+  const map = {
+    'index.html': '#/',
+    'sobre.html': '#/sobre',
+    'contactos.html': '#/contactos',
+    'fisioterapia.html': '#/servicos/fisioterapia',
+    'massagens.html': '#/servicos/massagens',
+    'holisticas.html': '#/servicos/holisticas',
+  };
+  if (map[href]) return map[href];
+  // servico-<slug>.html
+  const m = href.match(/^servico-(.+)\.html$/);
+  if (m) return `#/servico/${m[1]}`;
+  return href;
+}
+
+// Componente Link — converte hrefs automaticamente
+function Link({ href, children, style, className, target, rel, onMouseEnter, onMouseLeave, onClick }) {
+  const converted = patchHref(href);
+  const handleClick = (e) => {
+    if (onClick) onClick(e);
+    if (converted && converted.startsWith('#/')) {
+      e.preventDefault();
+      window.location.hash = converted.slice(1); // sem o #
+      window.scrollTo(0,0);
+    }
+  };
+  return (
+    <a href={converted} style={style} className={className} target={target} rel={rel}
+      onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={handleClick}>
+      {children}
+    </a>
+  );
+}
+
+// Hook de routing
+function useRoute() {
+  const getRoute = () => {
+    const hash = window.location.hash || '#/';
+    return hash.startsWith('#') ? hash.slice(1) || '/' : '/';
+  };
+  const [route, setRoute] = React.useState(getRoute);
+  React.useEffect(() => {
+    const handler = () => { setRoute(getRoute()); window.scrollTo(0,0); };
+    window.addEventListener('hashchange', handler);
+    return () => window.removeEventListener('hashchange', handler);
+  }, []);
+  return route;
+}
+
+// Nav com hrefs adaptados para hash
+function NavSPA({ current }) {
+  const [openDrop, setOpenDrop] = React.useState(null);
+  const [mobile, setMobile] = React.useState(false);
+  const [mobileServicos, setMobileServicos] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const { lang, changeLang } = React.useContext(LangContext);
+  const { t } = useLang();
+  const [langOpen, setLangOpen] = React.useState(false);
+  const [activeCol, setActiveCol] = React.useState(null);
+  const langTimer = React.useRef(null);
+  const openLang = () => { if(langTimer.current) clearTimeout(langTimer.current); setLangOpen(true); };
+  const closeLang = () => { langTimer.current = setTimeout(()=>setLangOpen(false), 150); };
+  const langs = [{ code: 'PT', flag: '🇵🇹' }, { code: 'EN', flag: '🇬🇧' }, { code: 'FR', flag: '🇫🇷' }];
+  React.useEffect(() => {
+    const onS = () => setScrolled(window.scrollY > 40);
+    onS(); window.addEventListener('scroll', onS, { passive: true });
+    return () => window.removeEventListener('scroll', onS);
+  }, []);
+
+  const megaCols = [
+    { label: 'Fisioterapia', href: '#/servicos/fisioterapia', items: [
+      { label: 'Fisioterapia Geral', href: '#/servico/fisioterapia' },
+      { label: 'Fisioterapia ATM / Mesoterapia', href: '#/servico/mesoterapia' },
+      { label: 'Fisioterapia Vestibular / Acupuntura', href: '#/servico/acupuntura' },
+    ]},
+    { label: 'Cuidados de Saúde', href: '#/servicos/saude', items: [
+      { label: 'Nutrição', href: '#/servico/nutricao' },
+      { label: 'Terapia de Bowen', href: '#/servico/terapia-bowen' },
+      { label: 'Psicologia', href: '#/servico/psicologia' },
+    ]},
+    { label: 'Massagens', href: '#/servicos/massagens', items: [
+      { label: 'Massagem de Relaxamento', href: '#/servico/massagem-relaxamento' },
+      { label: 'Massagem para Crianças', href: '#/servico/massagem-criancas' },
+      { label: 'Massagem Assinatura RG', href: '#/servico/massagem-assinatura-rg' },
+      { label: 'Massagem Profunda', href: '#/servico/massagem-profunda' },
+      { label: 'Massagem Pré/Pós Natal', href: '#/servico/massagem-pre-pos-natal' },
+      { label: 'Massagem Sacro-Craniana', href: '#/servico/massagem-sacro-craniana' },
+      { label: 'Drenagem Linfática Manual', href: '#/servico/drenagem-linfatica' },
+      { label: 'Drenagem Pós-Op / Terapêutica', href: '#/servico/massagem-terapeutica' },
+    ]},
+    { label: 'Holísticas', href: '#/servicos/holisticas', items: [
+      { label: 'Reflexologia', href: '#/servico/reflexologia' },
+      { label: 'Shiatsu', href: '#/servico/shiatsu' },
+      { label: 'Massagem Indiana', href: '#/servico/massagem-indiana' },
+      { label: 'Head Spa', href: '#/servico/head-spa' },
+    ]},
+    { label: 'Estética & Tratamentos', href: '#/servicos/estetica', items: [
+      { label: 'Faciais', href: '#/servico/facial' },
+      { label: 'Pacotes de Tratamento', href: '#/servico/pacotes-tratamento' },
+      { label: 'Depilação a Laser', href: '#/servico/depilacao-laser' },
+      { label: 'Pilates Clínico', href: '#/servico/pilates-clinico' },
+    ]},
+  ];
+
+  // Hover state managers para dropdowns
+  const [leftHoveredCol, setLeftHoveredCol] = React.useState(null);
+  const [rightHoveredItem, setRightHoveredItem] = React.useState(null);
+
+  const navigate = (href) => { if (href && href.startsWith('#/')) { window.location.hash = href.slice(1); window.scrollTo(0,0); } };
+  const linkBase = { fontFamily: F_BODY, fontSize: 17, fontWeight: 500, color: 'rgba(255,255,255,0.82)', textDecoration: 'none', padding: '10px 15px', display: 'inline-flex', alignItems: 'center', gap: 6, letterSpacing: '0.01em', background: 'none', border: 'none', cursor: 'pointer' };
+
+  return (
+    <>
+      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}`}>
+        <div className="rg-nav-row">
+          <a href="#/" onClick={e=>{e.preventDefault();navigate('#/');}} className="rg-logo-link rg-header-logo">
+            <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" style={{ height: 110, width: 'auto', display: 'block' }} />
+          </a>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 0 }} className="rg-nav">
+            {[
+              { id: 'inicio', label: t('nav.inicio'), href: '#/' },
+              { id: 'servicos', label: t('nav.servicos'), mega: true },
+              { id: 'sobre', label: t('nav.sobre'), href: '#/sobre' },
+              { id: 'contactos', label: t('nav.contactos'), href: '#/contactos' },
+            ].map((link, li) => (
+              <div key={link.id} className={`rg-header-link-${li+1}`} style={{ position: 'relative' }}
+                onMouseEnter={() => { if (link.mega) { setOpenDrop('servicos'); setActiveCol(null); } }}
+                onMouseLeave={() => { if (link.mega) setOpenDrop(null); }}>
+                {link.href
+                  ? <a href={link.href} onClick={e=>{e.preventDefault();navigate(link.href);setMobile(false);}} className="rg-nav-link rg-nav-item" style={linkBase}>{link.label}</a>
+                  : <button className="rg-nav-link rg-nav-item" aria-expanded={openDrop === 'servicos'} aria-haspopup="true" style={linkBase}>
+                      {link.label}
+                      <svg width="9" height="9" viewBox="0 0 10 10" style={{ transform: openDrop==='servicos'?'rotate(180deg)':'none', transition: 'transform 240ms', opacity: 0.55 }}><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </button>
+                }
+                {link.mega && openDrop==='servicos' && (
+                  <div onMouseLeave={()=>setOpenDrop(null)} style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-130px)', zIndex: 1001, paddingTop: 6 }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+                      <div style={{ width: 260, flexShrink: 0, background: 'linear-gradient(180deg, #7ab5ae 0%, #6fa9a2 100%)', borderRadius: '0 0 16px 16px', overflow: 'hidden', boxShadow: '0 24px 56px -8px rgba(14,14,12,0.28), 0 0 1px rgba(255,255,255,0.15) inset' }}>
+                        {megaCols.map((col,ci) => (
+                          <div key={col.label}>
+                            <div
+                              onMouseEnter={()=>{setActiveCol(ci);setLeftHoveredCol(ci);}}
+                              onMouseLeave={()=>setLeftHoveredCol(null)}
+                              style={{
+                                display:'flex',
+                                justifyContent:'space-between',
+                                alignItems:'center',
+                                padding:'16px 22px',
+                                cursor:'pointer',
+                                background: activeCol===ci ? 'rgba(255,255,255,0.12)' : leftHoveredCol===ci ? 'rgba(255,255,255,0.08)' : 'transparent',
+                                transition:'background 140ms ease-out',
+                                borderLeft: activeCol===ci ? '3px solid rgba(255,255,255,0.6)' : '3px solid transparent'
+                              }}>
+                              <span style={{ fontFamily:F_BODY, fontSize:15, fontWeight:activeCol===ci?600:500, color:'white', letterSpacing:'-0.01em' }}>{col.label}</span>
+                              <svg width="14" height="14" viewBox="0 0 14 14" style={{ color:'rgba(255,255,255,0.7)', transform: activeCol===ci ? 'translateX(2px)' : 'none', transition:'transform 140ms ease-out' }}><path d="M5 3 L10 7 L5 11" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                            </div>
+                            {ci<megaCols.length-1 && <div style={{ height:'1px', background:'rgba(255,255,255,0.1)', margin:'0 12px' }}/>}
+                          </div>
+                        ))}
+                      </div>
+                      <div style={{ width:280, flexShrink:0, visibility:activeCol!==null?'visible':'hidden', opacity:activeCol!==null?1:0, background:'linear-gradient(180deg, #6fa9a2 0%, #5a9e97 100%)', borderRadius:'0 0 16px 16px', padding:'20px 24px', boxShadow:'0 24px 56px -8px rgba(14,14,12,0.28), 0 0 1px rgba(255,255,255,0.15) inset', transition:'opacity 140ms ease-out' }}>
+                        {activeCol!==null && <>
+                          <div style={{ fontFamily:F_BODY, fontSize:10, fontWeight:700, letterSpacing:'0.2em', textTransform:'uppercase', color:'rgba(255,255,255,0.5)', marginBottom:16 }}>{megaCols[activeCol].label}</div>
+                          {megaCols[activeCol].items.map((item,ii) => (
+                            <div key={item.href}>
+                              <a href={item.href} onClick={e=>{e.preventDefault();navigate(item.href);setOpenDrop(null);}}
+                                onMouseEnter={()=>setRightHoveredItem(ii)}
+                                onMouseLeave={()=>setRightHoveredItem(null)}
+                                style={{
+                                  display:'block',
+                                  padding:'11px 12px',
+                                  marginBottom:'4px',
+                                  fontFamily:F_BODY,
+                                  fontSize:15,
+                                  fontWeight:500,
+                                  color:rightHoveredItem===ii?'#ffffff':'rgba(255,255,255,0.85)',
+                                  textDecoration:'none',
+                                  background: rightHoveredItem===ii ? 'rgba(255,255,255,0.12)' : 'transparent',
+                                  borderRadius: '6px',
+                                  transition:'all 120ms ease-out',
+                                  letterSpacing:'-0.01em',
+                                  borderLeft: rightHoveredItem===ii ? '2px solid rgba(255,255,255,0.6)' : '2px solid transparent',
+                                  paddingLeft: rightHoveredItem===ii ? '12px' : '12px'
+                                }}>
+                                {item.label}
+                              </a>
+                              {ii<megaCols[activeCol].items.length-1 && <div style={{ height:'0.5px', background:'rgba(255,255,255,0.08)', margin:'2px 0' }}/>}
+                            </div>
+                          ))}
+                          {megaCols[activeCol].href && (
+                            <div style={{ marginTop:16, paddingTop:14, borderTop:'1px solid rgba(255,255,255,0.12)' }}>
+                              <a href={megaCols[activeCol].href} onClick={e=>{e.preventDefault();navigate(megaCols[activeCol].href);setOpenDrop(null);}}
+                                style={{ fontFamily:F_BODY, fontSize:13, fontWeight:700, color:'rgba(255,255,255,0.75)', textDecoration:'none', display:'inline-flex', alignItems:'center', gap:4, transition:'color 120ms' }}
+                                onMouseEnter={e=>e.currentTarget.style.color='#fff'}
+                                onMouseLeave={e=>e.currentTarget.style.color='rgba(255,255,255,0.75)'}>{t('service.ver_todos_prefix')} {megaCols[activeCol].label} →</a>
+                            </div>
+                          )}
+                        </>}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+          <div className="rg-header-cta" style={{ display:'flex', alignItems:'center', gap:10 }}>
+            <div style={{ position:'relative' }} onMouseEnter={openLang} onMouseLeave={closeLang}>
+              <button style={{ display:'inline-flex', alignItems:'center', gap:5, background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.15)', borderRadius:9, padding:'6px 10px', cursor:'pointer', transition:'background 200ms, border-color 200ms' }}
+                onMouseEnter={e=>{ e.currentTarget.style.background='rgba(255,255,255,0.14)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.28)'; }}
+                onMouseLeave={e=>{ e.currentTarget.style.background='rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.15)'; }}>
+                <span style={{ fontSize:17, lineHeight:1 }}>{langs.find(l=>l.code===lang).flag}</span>
+                <svg width="8" height="8" viewBox="0 0 10 10" style={{ transform:langOpen?'rotate(180deg)':'none', transition:'transform 220ms', opacity:0.5 }}><path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+              {langOpen && (
+                <div onMouseEnter={openLang} onMouseLeave={closeLang} style={{ position:'absolute', top:'100%', right:0, paddingTop:8, zIndex:30 }}>
+                  <div style={{ background:RG.white, borderRadius:12, padding:'8px', boxShadow:'0 20px 48px -8px rgba(14,14,12,0.18), 0 0 0 1px rgba(14,14,12,0.06)', minWidth:60 }}>
+                    {langs.filter(l=>l.code!==lang).map(l => (
+                      <button key={l.code} onClick={()=>{changeLang(l.code);setLangOpen(false);}} style={{ display:'flex', alignItems:'center', justifyContent:'center', width:'100%', padding:'8px', borderRadius:8, border:'none', background:'none', cursor:'pointer', transition:'background 150ms' }}
+                        onMouseEnter={e=>e.currentTarget.style.background=RG.tealWash} onMouseLeave={e=>e.currentTarget.style.background='none'}>
+                        <span style={{ fontSize:22, lineHeight:1 }}>{l.flag}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <a href="tel:+351961899364" className="rg-nav-tel rg-tel-link" style={{ fontFamily:F_BODY, fontSize:12.5, fontWeight:600, color:'rgba(255,255,255,0.75)', textDecoration:'none', display:'inline-flex', alignItems:'center', gap:6, padding:'8px 13px', borderRadius:9, border:'1px solid rgba(255,255,255,0.12)', letterSpacing:'0.02em' }}>
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
+              961 899 364
+            </a>
+            <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" className="rg-agendar-btn" style={{ fontFamily:F_BODY, fontSize:13, fontWeight:700, color:RG.tealDeep, background:'linear-gradient(135deg, #ffffff 0%, #f0faf9 100%)', padding:'10px 22px', borderRadius:999, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:7, boxShadow:'0 4px 16px rgba(0,0,0,0.14), 0 1px 0 rgba(255,255,255,0.8) inset', letterSpacing:'0.01em' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+              {t('agendar')}
+            </a>
+            <button className="rg-burger" onClick={()=>setMobile(!mobile)} style={{ display:'none', background:'none', border:'none', cursor:'pointer', padding:6 }} aria-label="Menu">
+              <svg width="22" height="22" viewBox="0 0 22 22"><path d={mobile?'M4 4 L18 18 M18 4 L4 18':'M3 7 L19 7 M3 15 L19 15'} stroke="white" strokeWidth="1.6" strokeLinecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      {mobile && (
+        <div style={{ position:'fixed', inset:0, zIndex:99, background:'linear-gradient(160deg, #1b413e 0%, #2a5a57 100%)', paddingTop:90, overflow:'auto', animation:'rg-fade-in 250ms ease both' }}>
+          <Container style={{ display:'flex', flexDirection:'column' }}>
+            {[
+              { href:'#/', label:t('nav.inicio') },
+              null,
+              { href:'#/sobre', label:t('nav.sobre') },
+              { href:'#/contactos', label:t('nav.contactos') },
+            ].map((item,i) => item===null ? (
+              <div key="servicos" style={{ borderTop:'1px solid rgba(255,255,255,0.1)', padding:'20px 0' }}>
+                <button onClick={()=>setMobileServicos(!mobileServicos)} style={{ fontFamily:'"Cormorant Garamond", Georgia, serif', fontSize:28, fontWeight:600, color:RG.white, background:'none', border:'none', cursor:'pointer', display:'flex', alignItems:'center', gap:12, padding:0 }}>
+                  {t('nav.servicos')}
+                  <svg width="14" height="14" viewBox="0 0 14 14" style={{ transform:mobileServicos?'rotate(90deg)':'none', transition:'transform 220ms' }}><path d="M4 3 L9 7 L4 11" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </button>
+                {mobileServicos && (
+                  <div style={{ marginTop:20, display:'flex', flexDirection:'column', gap:24, paddingLeft:2 }}>
+                    {megaCols.map(col => (
+                      <div key={col.label}>
+                        <div style={{ fontFamily:F_BODY, fontSize:9, fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:'rgba(111,181,176,0.7)', marginBottom:10 }}>{col.label}</div>
+                        <div style={{ display:'flex', flexDirection:'column', gap:6 }}>
+                          {col.items.map(it => (
+                            <a key={it.href} href={it.href} onClick={e=>{e.preventDefault();navigate(it.href);setMobile(false);}} style={{ fontFamily:F_BODY, fontSize:15, fontWeight:500, color:'rgba(255,255,255,0.75)', textDecoration:'none' }}>{it.label}</a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div key={item.href} style={{ borderTop:'1px solid rgba(255,255,255,0.1)', padding:'20px 0' }}>
+                <a href={item.href} onClick={e=>{e.preventDefault();navigate(item.href);setMobile(false);}} style={{ fontFamily:'"Cormorant Garamond", Georgia, serif', fontSize:28, fontWeight:600, color:RG.white, textDecoration:'none' }}>{item.label}</a>
+              </div>
+            ))}
+            <div style={{ borderTop:'1px solid rgba(255,255,255,0.1)', paddingTop:28, display:'flex', gap:12, flexWrap:'wrap' }}>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily:F_BODY, fontSize:14, fontWeight:700, color:RG.tealDeep, background:RG.white, padding:'13px 28px', borderRadius:999, textDecoration:'none' }}>{t('agendar')}</a>
+              <a href="tel:+351961899364" style={{ fontFamily:F_BODY, fontSize:14, fontWeight:600, color:'rgba(255,255,255,0.8)', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.2)', padding:'13px 28px', borderRadius:999, textDecoration:'none' }}>961 899 364</a>
+            </div>
+            <div style={{ paddingTop:24, display:'flex', gap:10 }}>
+              {langs.map(l => (
+                <button key={l.code} onClick={()=>changeLang(l.code)} style={{ background:lang===l.code?'rgba(255,255,255,0.15)':'none', border:lang===l.code?'1px solid rgba(255,255,255,0.3)':'1px solid rgba(255,255,255,0.1)', borderRadius:8, padding:'6px 10px', cursor:'pointer', fontSize:20, lineHeight:1 }}>{l.flag}</button>
+              ))}
+            </div>
+          </Container>
+        </div>
+      )}
+    </>
+  );
+}
+
+// Páginas inline (usando componentes dos JSX externos mas com hrefs patched)
+function HomePage() {
+  // Patch: substituir hrefs internos nos componentes via override de navegação
+  // Os componentes Home usam <a href="X.html"> — remapear cliques
+  React.useEffect(() => {
+    const handler = (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      const converted = patchHref(href);
+      if (converted && converted !== href && converted.startsWith('#/')) {
+        e.preventDefault();
+        window.location.hash = converted.slice(1);
+        window.scrollTo(0,0);
+      }
+    };
+    document.getElementById('root').addEventListener('click', handler);
+    return () => document.getElementById('root').removeEventListener('click', handler);
+  }, []);
+
+  return (<>
+    <NavSPA current="home" />
+    <Hero />
+    <StatsStrip />
+    <ServicesCard />
+    <WhyUs />
+    <ServicesOverview />
+    <Testimonials />
+    <HomeCTA />
+    <Footer />
+    <WAFab />
+  </>);
+}
+
+function SobrePage() {
+  return (<>
+    <NavSPA current="sobre" />
+    <SobreHero />
+    <Mission />
+    <Pillars />
+    <Story />
+    <Team />
+    <Footer />
+    <WAFab />
+  </>);
+}
+
+function ContactosPageWrapper() {
+  const { t } = useLang();
+  const contactItems = [
+    { k: t('contactos.morada_label'), v: t('contactos.morada_val') },
+    { k: t('contactos.telefone_label'), v: '(+351) 961 899 364', href: 'tel:+351961899364' },
+    { k: t('contactos.horario_label'), v: t('contactos.horario_val') },
+  ];
+  return (<>
+    <NavSPA current="contactos" />
+    <section style={{ paddingTop:130, paddingBottom:80, background:RG.cream }}>
+      <Container>
+        <Reveal><Eyebrow>{t('contactos.eyebrow')}</Eyebrow></Reveal>
+        <Reveal delay={80}>
+          <h1 style={{ fontFamily:F_DISPLAY, fontSize:'clamp(48px, 7vw, 112px)', fontWeight:700, lineHeight:0.95, letterSpacing:'-0.04em', margin:'20px 0 0', color:RG.ink, maxWidth:'16ch' }}>
+            {t('contactos.heading')}<span style={{ color:RG.tealDark }}>.</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={160}><Body size={18} style={{ marginTop:24 }}>{t('contactos.sub')}</Body></Reveal>
+      </Container>
+    </section>
+    <Section bg={RG.creamSoft} pad="lg">
+      <Container>
+        <Reveal>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:32 }} className="rg-values-grid">
+            {contactItems.map(it => (
+              <div key={it.k} style={{ background:RG.white, borderRadius:12, padding:'28px 24px', border:`1px solid ${RG.line}` }}>
+                <div style={{ fontFamily:F_BODY, fontSize:11, fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:RG.tealDark, marginBottom:12 }}>{it.k}</div>
+                {it.href
+                  ? <a href={it.href} style={{ fontFamily:F_DISPLAY, fontSize:20, fontWeight:300, color:RG.ink, lineHeight:1.35, letterSpacing:'-0.01em', textDecoration:'none', whiteSpace:'pre-line', display:'block' }}>{it.v}</a>
+                  : <div style={{ fontFamily:F_DISPLAY, fontSize:20, fontWeight:300, color:RG.ink, lineHeight:1.35, letterSpacing:'-0.01em', whiteSpace:'pre-line' }}>{it.v}</div>
+                }
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <div style={{ height:48 }}/>
+        <Reveal delay={120}>
+          <div style={{ marginTop:60, borderRadius:10, overflow:'hidden', border:`1px solid ${RG.lineSoft}`, position:'relative', height:400 }}>
+            <iframe title="Mapa" src="https://maps.google.com/maps?q=Rua+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9&t=&z=16&ie=UTF8&iwloc=&output=embed" style={{ width:'100%', height:'100%', border:0, filter:'grayscale(0.2)' }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/>
+            <div style={{ position:'absolute', top:20, left:20, background:RG.white, padding:20, borderRadius:8, boxShadow:'0 14px 30px -10px rgba(0,0,0,0.18)', maxWidth:280 }}>
+              <div style={{ fontFamily:F_DISPLAY, fontSize:18, fontWeight:700, letterSpacing:'-0.01em' }}>Rita Guerreiro</div>
+              <div style={{ fontFamily:F_BODY, fontSize:13, color:RG.muted, marginTop:4 }}>Rua Padre António Vieira 58, Loulé</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Antonio+Vieira+58+Loule" target="_blank" rel="noopener noreferrer" style={{ display:'inline-flex', alignItems:'center', gap:6, marginTop:12, fontFamily:F_BODY, fontSize:12, color:RG.tealDark, textDecoration:'none', fontWeight:700 }}>{t('contactos.maps_link')} →</a>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </Section>
+    <Footer />
+    <WAFab />
+  </>);
+}
+
+function CategoryPageWrapper({ categoryId }) {
+  const { t } = useLang();
+  const cat = SERVICES[categoryId];
+  if (!cat) return <div style={{ padding:120 }}>Categoria não encontrada.</div>;
+  const navigate = (href) => { window.location.hash = href.slice(1); window.scrollTo(0,0); };
+  return (<>
+    <NavSPA current={categoryId} />
+    <section style={{ paddingTop:130, paddingBottom:60, background:RG.cream }}>
+      <Container>
+        <Reveal>
+          <div style={{ fontFamily:F_BODY, fontSize:13, color:RG.muted, marginBottom:16 }}>
+            <a href="#/" onClick={e=>{e.preventDefault();navigate('#/');}} style={{ color:RG.muted, textDecoration:'none' }}>{t('category.inicio')}</a>
+            <span style={{ margin:'0 8px' }}>/</span>
+            <span style={{ color:RG.ink }}>{cat.label}</span>
+          </div>
+        </Reveal>
+        <Reveal delay={60}>
+          <h1 style={{ fontFamily:F_DISPLAY, fontSize:'clamp(52px, 8vw, 128px)', fontWeight:700, lineHeight:0.92, letterSpacing:'-0.045em', margin:0, color:RG.ink }}>{cat.label}<span style={{ color:RG.tealDark }}>.</span></h1>
+        </Reveal>
+        <Reveal delay={120}><Body size={20} style={{ marginTop:28, maxWidth:'54ch' }}>{cat.intro}</Body></Reveal>
+      </Container>
+    </section>
+    <Section bg={RG.creamSoft} pad="lg">
+      <Container>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))', gap:24 }}>
+          {cat.items.map((item,i) => (
+            <Reveal key={item.slug} delay={i*60}>
+              <a href={`#/servico/${item.slug}`} onClick={e=>{e.preventDefault();navigate(`#/servico/${item.slug}`);}} className="rg-service-card" style={{ display:'block', background:RG.white, textDecoration:'none', color:RG.ink, borderRadius:12, overflow:'hidden', border:`1px solid ${RG.line}` }}>
+                <div style={{ aspectRatio:'16/9', overflow:'hidden' }}>
+                  <Photo label={item.name} tone="teal" aspect="16/9" src={item.img}/>
+                </div>
+                <div style={{ padding:24 }}>
+                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:12, marginBottom:10 }}>
+                    <h2 style={{ fontFamily:F_DISPLAY, fontSize:22, fontWeight:700, letterSpacing:'-0.02em', margin:0 }}>{item.name}</h2>
+                    <svg className="rg-service-arrow" width="16" height="16" viewBox="0 0 16 16" style={{ flexShrink:0, marginTop:4, color:RG.tealDark }}><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                  <p style={{ fontFamily:F_BODY, fontSize:14, color:RG.charcoal, lineHeight:1.55, margin:'0 0 16px' }}>{item.blurb}</p>
+                  <div style={{ fontFamily:F_DISPLAY, fontSize:18, fontWeight:700, color:RG.tealDark, letterSpacing:'-0.02em' }}>{item.price}</div>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </Section>
+    <Section bg={RG.tealDark} pad="md">
+      <Container>
+        <Reveal>
+          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:32, flexWrap:'wrap' }}>
+            <div>
+              <Heading level="h3" style={{ color:RG.white, margin:0 }}>{t('category.cta_heading')}<span style={{ color:RG.teal }}>?</span></Heading>
+              <Body size={16} style={{ color:'rgba(255,255,255,0.7)', marginTop:8 }}>{t('category.cta_body')}</Body>
+            </div>
+            <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
+              <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('category.cta_btn')}</Button>
+              <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>961 899 364</Button>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </Section>
+    <Footer />
+    <WAFab />
+  </>);
+}
+
+function ServicePageWrapper({ slug }) {
+  const { t } = useLang();
+  const navigate = (href) => { window.location.hash = href.slice(1); window.scrollTo(0,0); };
+  const s = findService(slug);
+  if (!s) return <div style={{ padding:120 }}>Serviço não encontrado.</div>;
+  const detail = SERVICE_DETAIL[slug];
+  const catItems = SERVICES[s.categoryId].items.filter(i => i.slug !== slug);
+  const catHref = { fisioterapia:'#/servicos/fisioterapia', saude:'#/', massagens:'#/servicos/massagens', holisticas:'#/servicos/holisticas', estetica:'#/' }[s.categoryId] || '#/';
+  const steps = t('service.steps');
+
+  return (<>
+    <NavSPA current={s.categoryId} />
+    <section style={{ paddingTop:130, paddingBottom:60, background:RG.cream }}>
+      <Container>
+        <Reveal>
+          <div style={{ fontFamily:F_BODY, fontSize:13, color:RG.muted, marginBottom:16 }}>
+            <a href="#/" onClick={e=>{e.preventDefault();navigate('#/');}} style={{ color:RG.muted, textDecoration:'none' }}>{t('service.inicio')}</a>
+            <span style={{ margin:'0 8px' }}>/</span>
+            <a href={catHref} onClick={e=>{e.preventDefault();navigate(catHref);}} style={{ color:RG.muted, textDecoration:'none' }}>{s.category}</a>
+            <span style={{ margin:'0 8px' }}>/</span>
+            <span style={{ color:RG.ink }}>{s.name}</span>
+          </div>
+        </Reveal>
+        <Reveal delay={60}>
+          <h1 style={{ fontFamily:F_DISPLAY, fontSize:'clamp(52px, 8vw, 128px)', fontWeight:700, lineHeight:0.92, letterSpacing:'-0.045em', margin:0, color:RG.ink }}>{s.name}<span style={{ color:RG.tealDark }}>.</span></h1>
+        </Reveal>
+        <Reveal delay={120}><Body size={20} style={{ marginTop:28, maxWidth:'54ch' }}>{detail?.tagline || s.blurb}</Body></Reveal>
+        <Reveal delay={200}><div style={{ marginTop:48 }}><Photo aspect="21/9" label={`Foto — ${s.name}`} tone="teal" src={s.img} style={{ borderRadius:12 }}/></div></Reveal>
+      </Container>
+    </section>
+    <Section bg={RG.creamSoft} pad="lg">
+      <Container>
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 2fr', gap:60 }} className="rg-hero-grid">
+          <Reveal>
+            <div style={{ position:'sticky', top:120 }}>
+              <Eyebrow>{t('service.info_eyebrow')}</Eyebrow>
+              <div style={{ marginTop:24, display:'flex', flexDirection:'column', gap:20 }}>
+                <div style={{ paddingBottom:16, borderBottom:`1px solid ${RG.line}` }}>
+                  <div style={{ fontFamily:F_BODY, fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:RG.muted, marginBottom:6 }}>{t('service.preco_label')}</div>
+                  {detail?.prices ? (
+                    <div style={{ display:'flex', flexDirection:'column', gap:6 }}>
+                      {detail.prices.map((p,i) => (
+                        <div key={i} style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', gap:8 }}>
+                          <span style={{ fontFamily:F_BODY, fontSize:12, color:RG.charcoal }}>{p.label}</span>
+                          <span style={{ fontFamily:F_DISPLAY, fontSize:18, fontWeight:700, color:RG.tealDark, letterSpacing:'-0.02em', whiteSpace:'nowrap' }}>{p.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div style={{ fontFamily:F_DISPLAY, fontSize:24, fontWeight:700, color:RG.tealDark, letterSpacing:'-0.02em' }}>{s.price}</div>
+                  )}
+                </div>
+                <div>
+                  <div style={{ fontFamily:F_BODY, fontSize:11, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:RG.muted, marginBottom:10 }}>{t('service.marcacoes_label')}</div>
+                  <Body size={14} style={{ marginBottom:16 }}>{t('service.marcacoes_body')}</Body>
+                  <div style={{ display:'flex', flexDirection:'column', gap:10, alignItems:'flex-start' }}>
+                    <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('service.agendar_btn')}</Button>
+                    <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>{t('service.ligar_btn')}</Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <Heading level="h2">{t('service.sobre_heading')}<span style={{ color:RG.tealDark }}>.</span></Heading>
+            <Body size={17} style={{ marginTop:24 }}>{detail?.description || s.blurb}</Body>
+            {detail?.sub && (
+              <div style={{ marginTop:48 }}>
+                <div style={{ fontFamily:F_BODY, fontSize:13, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:RG.tealDark, marginBottom:24 }}>{t('service.areas_label')}</div>
+                <div style={{ display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:2, background:RG.line, border:`1px solid ${RG.line}` }} className="rg-values-grid">
+                  {detail.sub.map((x,i) => (
+                    <div key={i} style={{ background:RG.white, padding:24 }}>
+                      <div style={{ fontFamily:F_DISPLAY, fontSize:18, fontWeight:700, letterSpacing:'-0.015em', color:RG.ink, marginBottom:8 }}>{x.t}</div>
+                      <div style={{ fontFamily:F_BODY, fontSize:14, lineHeight:1.55, color:RG.charcoal }}>{x.d}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </Reveal>
+        </div>
+      </Container>
+    </Section>
+    <Section bg={RG.white} pad="lg">
+      <Container>
+        <Reveal><Eyebrow style={{ marginBottom:12 }}>{t('service.processo_eyebrow')}</Eyebrow><Heading level="h2">{t('service.processo_heading')}<span style={{ color:RG.tealDark }}>.</span></Heading></Reveal>
+        <div style={{ marginTop:56, position:'relative' }}>
+          <div style={{ position:'absolute', left:19, top:20, bottom:20, width:2, background:RG.teal, opacity:0.3 }}/>
+          {steps.map((step,i) => (
+            <Reveal key={i} delay={i*80}>
+              <div style={{ display:'flex', gap:24, alignItems:'flex-start', marginBottom:i<4?36:0, position:'relative' }}>
+                <div style={{ width:40, height:40, borderRadius:'50%', background:RG.tealDark, color:RG.white, flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:F_BODY, fontWeight:700, fontSize:14, position:'relative', zIndex:1 }}>{i+1}</div>
+                <div style={{ paddingTop:8 }}>
+                  <div style={{ fontFamily:F_DISPLAY, fontSize:20, fontWeight:300, letterSpacing:'-0.01em', color:RG.ink, lineHeight:1.2 }}>{step.t}</div>
+                  <div style={{ fontFamily:F_BODY, fontSize:14, color:RG.charcoal, lineHeight:1.6, marginTop:4 }}>{step.d}</div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </Section>
+    {catItems.length > 0 && (
+      <Section bg={RG.cream} pad="lg">
+        <Container>
+          <Reveal><Eyebrow>{t('service.outros_eyebrow_prefix')} {s.category}</Eyebrow></Reveal>
+          <Reveal delay={60}><Heading level="h3" style={{ marginTop:16 }}>{t('service.outros_heading')}<span style={{ color:RG.tealDark }}>.</span></Heading></Reveal>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:16, marginTop:36 }}>
+            {catItems.map(i => (
+              <a key={i.slug} href={`#/servico/${i.slug}`} onClick={e=>{e.preventDefault();navigate(`#/servico/${i.slug}`);}} className="rg-service-card" style={{ display:'block', background:RG.white, textDecoration:'none', color:RG.ink }}>
+                <div style={{ aspectRatio:'4/3', marginBottom:16, borderRadius:8, overflow:'hidden' }}><Photo label={i.name} tone="teal" aspect="4/3" src={i.img}/></div>
+                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', gap:12 }}>
+                  <h4 style={{ fontFamily:F_DISPLAY, fontSize:20, fontWeight:700, letterSpacing:'-0.02em', margin:0 }}>{i.name}</h4>
+                  <svg className="rg-service-arrow" width="16" height="16" viewBox="0 0 16 16" style={{ transition:'transform 240ms', color:RG.tealDark }}><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <p style={{ fontFamily:F_BODY, fontSize:13, color:RG.muted, lineHeight:1.5, margin:'8px 0 0' }}>{i.blurb}</p>
+              </a>
+            ))}
+          </div>
+        </Container>
+      </Section>
+    )}
+    <Footer />
+    <WAFab />
+  </>);
+}
+
+// Router principal
+function App() {
+  const route = useRoute();
+
+  // patch global de cliques para links que os componentes externos (Hero, ServicesCard, etc.) geram
+  React.useEffect(() => {
+    const handler = (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href) return;
+      const converted = patchHref(href);
+      if (converted && converted !== href && converted.startsWith('#/')) {
+        e.preventDefault();
+        window.location.hash = converted.slice(1);
+        window.scrollTo(0,0);
+      }
+    };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, []);
+
+  if (route === '/' || route === '') return <HomePage />;
+  if (route === '/sobre') return <SobrePage />;
+  if (route === '/contactos') return <ContactosPageWrapper />;
+  if (route === '/servicos/fisioterapia') return <CategoryPageWrapper categoryId="fisioterapia" />;
+  if (route === '/servicos/massagens') return <CategoryPageWrapper categoryId="massagens" />;
+  if (route === '/servicos/holisticas') return <CategoryPageWrapper categoryId="holisticas" />;
+  const serviceMatch = route.match(/^\/servico\/(.+)$/);
+  if (serviceMatch) return <ServicePageWrapper slug={serviceMatch[1]} />;
+  return <HomePage />;
+}
+
+const ready = () => {
+  const needed = ['RG','F_BODY','F_DISPLAY','F_MONO','TRANSLATIONS','LangContext','LangProvider','useLang',
+    'Container','Reveal','Eyebrow','Heading','Body','Button','Photo','Section','Footer','WAFab',
+    'SERVICES','SERVICE_DETAIL','IMG','findService',
+    'Hero','StatsStrip','ServicesCard','WhyUs','ServicesOverview','Testimonials','HomeCTA',
+    'SobreHero','Mission','Pillars','Story','Team'];
+  if (needed.every(k => window[k])) {
+    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><App /></LangProvider>);
+  } else {
+    setTimeout(ready, 40);
+  }
+};
+ready();
+</script>
+<script src="src/transitions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="src/premium.js" defer></script>
+</body>
+</html>

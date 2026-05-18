@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé</title>
+<meta name="description" content="Centro de Terapias & Bem-Estar em Loulé. Fisioterapia, osteopatia, Pilates clínico, psicologia e mais." />
+<meta property="og:title" content="Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé" />
+<meta property="og:description" content="Fisioterapia, massagens, holísticas, psicologia e estética numa clínica em Loulé. Recupera. Equilibra. Sente-te bem." />
+<meta property="og:image" content="https://www.ritaguerreiro.pt/rita_guerreiro_logo.png" />
+<meta property="og:url" content="https://www.ritaguerreiro.pt/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_PT" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="rita_guerreiro_logo.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Centro de Terapias Rita Guerreiro",
+  "description": "Fisioterapia, massagens, holísticas, psicologia e estética em Loulé, Algarve.",
+  "url": "https://www.ritaguerreiro.pt",
+  "telephone": "+351961899364",
+  "email": "geral@ritaguerreiro.pt",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Padre António Vieira 58",
+    "postalCode": "8100-611",
+    "addressLocality": "Loulé",
+    "addressRegion": "Algarve",
+    "addressCountry": "PT"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "09:00",
+      "closes": "17:00",
+      "description": "Mediante marcação prévia"
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.1397,
+    "longitude": -8.0247
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<link rel="stylesheet" href="src/premium.css">
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="src/tokens.jsx"></script>
+<script type="text/babel" src="src/logo.jsx"></script>
+<script type="text/babel" src="src/data.jsx"></script>
+<script type="text/babel" src="src/ui.jsx"></script>
+<script type="text/babel" src="src/home.jsx"></script>
+<script type="text/babel">
+function App() {
+  return (<>
+    <Nav current="home" />
+    <Hero />
+    <StatsStrip />
+    <ServicesCard />
+    <WhyUs />
+    <ServicesOverview />
+    <Testimonials />
+    <HomeCTA />
+    <Footer />
+    <WAFab />
+  </>);
+}
+const ready = () => {
+  if (window.Nav && window.Hero && window.StatsStrip && window.ServicesCard && window.WhyUs && window.ServicesOverview && window.Testimonials && window.HomeCTA && window.Footer && window.WAFab) {
+    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><App /></LangProvider>);
+  } else setTimeout(ready, 40);
+};
+ready();
+</script>
+<script src="src/transitions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="src/premium.js" defer></script>
+</body>
+</html>

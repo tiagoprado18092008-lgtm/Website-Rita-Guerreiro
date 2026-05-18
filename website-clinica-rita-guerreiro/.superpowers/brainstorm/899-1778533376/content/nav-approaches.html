@@ -1,0 +1,96 @@
+<h2>Como deve funcionar o menu de Serviços?</h2>
+<p class="subtitle">Tens 5 categorias (Fisioterapia, Saúde, Massagens, Holísticas, Estética) com vários serviços cada. Qual estrutura preferes?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:20px;background:#f8f6f2;font-family:sans-serif">
+      <div style="background:#2d4a47;color:white;padding:8px 16px;border-radius:4px 4px 0 0;font-size:12px;display:flex;gap:20px">
+        <span style="opacity:.6">Início</span>
+        <span style="border-bottom:2px solid #7ab5ae">Serviços ▾</span>
+        <span style="opacity:.6">Sobre</span>
+        <span style="opacity:.6">Contactos</span>
+      </div>
+      <div style="background:white;border:1px solid #e8e0d4;border-top:3px solid #7ab5ae;padding:16px;display:flex;gap:0;border-radius:0 0 8px 8px">
+        <div style="width:180px;border-right:1px solid #e8e0d4;padding-right:16px">
+          <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2d4a47;margin-bottom:8px">Categorias</div>
+          <div style="font-size:12px;padding:6px 8px;background:#f0f7f6;border-radius:4px;color:#2d4a47;font-weight:500;margin-bottom:2px">Fisioterapia</div>
+          <div style="font-size:12px;padding:6px 8px;color:#555;margin-bottom:2px">Cuidados de Saúde</div>
+          <div style="font-size:12px;padding:6px 8px;color:#555;margin-bottom:2px">Massagens</div>
+          <div style="font-size:12px;padding:6px 8px;color:#555;margin-bottom:2px">Holísticas</div>
+          <div style="font-size:12px;padding:6px 8px;color:#555">Estética</div>
+        </div>
+        <div style="padding-left:16px;flex:1">
+          <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2d4a47;margin-bottom:8px">Fisioterapia</div>
+          <div style="font-size:12px;padding:6px 8px;color:#333;margin-bottom:2px">Fisioterapia Geral</div>
+          <div style="font-size:12px;padding:6px 8px;color:#333;margin-bottom:2px">Fisioterapia ATM / Mesoterapia</div>
+          <div style="font-size:12px;padding:6px 8px;color:#333">Fisioterapia Vestibular / Acupuntura</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Mega-menu com dois painéis</h3>
+      <p>Hover na categoria → subserviços aparecem à direita. Igual à imagem que partilhaste. Funciona bem com muitos serviços.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:20px;background:#f8f6f2;font-family:sans-serif">
+      <div style="background:#2d4a47;color:white;padding:8px 16px;border-radius:4px 4px 0 0;font-size:12px;display:flex;gap:20px">
+        <span style="opacity:.6">Início</span>
+        <span style="border-bottom:2px solid #7ab5ae">Serviços ▾</span>
+        <span style="opacity:.6">Sobre</span>
+        <span style="opacity:.6">Contactos</span>
+      </div>
+      <div style="background:white;border:1px solid #e8e0d4;border-top:3px solid #7ab5ae;padding:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;border-radius:0 0 8px 8px">
+        <div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2d4a47;margin-bottom:8px">Fisioterapia</div>
+          <div style="font-size:11px;color:#555;margin-bottom:4px">Fisioterapia Geral</div>
+          <div style="font-size:11px;color:#555;margin-bottom:4px">ATM / Mesoterapia</div>
+          <div style="font-size:11px;color:#555">Vestibular / Acupuntura</div>
+        </div>
+        <div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2d4a47;margin-bottom:8px">Saúde</div>
+          <div style="font-size:11px;color:#555;margin-bottom:4px">Nutrição</div>
+          <div style="font-size:11px;color:#555;margin-bottom:4px">Terapia de Bowen</div>
+          <div style="font-size:11px;color:#555">Psicologia</div>
+        </div>
+        <div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2d4a47;margin-bottom:8px">Massagens</div>
+          <div style="font-size:11px;color:#555;margin-bottom:4px">Relaxamento</div>
+          <div style="font-size:11px;color:#555;margin-bottom:4px">Profunda</div>
+          <div style="font-size:11px;color:#555">→ Ver todas (8)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Mega-menu em grelha (como está agora)</h3>
+      <p>Todas as categorias visíveis de uma vez em colunas. Mais rápido a navegar, mas fica cheio com muitos itens.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:20px;background:#f8f6f2;font-family:sans-serif">
+      <div style="background:#2d4a47;color:white;padding:8px 16px;border-radius:4px 4px 0 0;font-size:12px;display:flex;gap:20px">
+        <span style="opacity:.6">Início</span>
+        <span style="border-bottom:2px solid #7ab5ae">Fisioterapia ▾</span>
+        <span style="border-bottom:2px solid #7ab5ae">Saúde ▾</span>
+        <span style="border-bottom:2px solid #7ab5ae">Massagens ▾</span>
+        <span style="border-bottom:2px solid #7ab5ae">Holísticas ▾</span>
+        <span style="opacity:.6">Sobre</span>
+      </div>
+      <div style="background:white;border:1px solid #e8e0d4;border-top:3px solid #7ab5ae;padding:12px;max-width:180px;border-radius:0 0 8px 8px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2d4a47;margin-bottom:8px">Massagens</div>
+        <div style="font-size:12px;color:#333;padding:5px 8px;margin-bottom:2px">Relaxamento</div>
+        <div style="font-size:12px;color:#333;padding:5px 8px;margin-bottom:2px">Profunda</div>
+        <div style="font-size:12px;color:#333;padding:5px 8px;margin-bottom:2px">Pré/Pós Natal</div>
+        <div style="font-size:12px;color:#7ab5ae;padding:5px 8px">→ Ver todas</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Uma entrada na nav por categoria</h3>
+      <p>Cada categoria vira um link direto na navbar. Dropdown simples por categoria. Mais limpo mas a navbar fica mais longa.</p>
+    </div>
+  </div>
+
+</div>

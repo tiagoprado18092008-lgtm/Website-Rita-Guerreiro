@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé</title>
+<meta name="description" content="Centro de Terapias & Bem-Estar em Loulé. Fisioterapia, Pilates Clínico, Psicologia, Massagens e muito mais." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ──────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#FFFFFF;color:#141412;font-family:"DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+::selection{background:#6FB5B0;color:#0E0E0C}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+
+/* ── Design Tokens ─────────────────────────────────────── */
+:root{
+  --teal:#6FB5B0;
+  --teal-deep:#4A8F8A;
+  --teal-dark:#2F6B68;
+  --teal-ink:#1F4846;
+  --teal-wash:#F1F7F6;
+  --cream:#FFFFFF;
+  --cream-soft:#FAFAF8;
+  --ink:#141412;
+  --graphite:#2B2B27;
+  --charcoal:#55554E;
+  --muted:#8A8A82;
+  --line:#E8E6DF;
+  --line-soft:#F0EEE7;
+  --f-display:"Open Sans",system-ui,sans-serif;
+  --f-body:"DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:300;letter-spacing:-0.02em;line-height:1.08;margin:0}
+h1{font-size:clamp(44px,6vw,80px)}
+h2{font-size:clamp(32px,4vw,56px)}
+h3{font-size:clamp(20px,2.5vw,28px)}
+
+/* ── Layout ────────────────────────────────────────────── */
+.container{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wordIn{from{opacity:0;transform:translateY(22px) skewY(2deg)}to{opacity:1;transform:translateY(0) skewY(0)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes logoIn{from{opacity:0;transform:translateX(-24px) scale(0.96)}to{opacity:1;transform:translateX(0) scale(1)}}
+@keyframes linkIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ctaIn{from{opacity:0;transform:scale(0.84) translateY(-6px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes dropIn{from{opacity:0;transform:translateY(-10px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes wafabPulse{0%,100%{box-shadow:0 12px 28px -6px rgba(37,211,102,0.5),0 4px 10px rgba(0,0,0,0.1)}50%{box-shadow:0 12px 28px -6px rgba(37,211,102,0.5),0 0 0 10px rgba(37,211,102,0.12)}}
+@keyframes ripple{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.75);opacity:0}}
+@keyframes countIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Reveal ────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 700ms cubic-bezier(.2,.7,.2,1),transform 700ms cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── Header ────────────────────────────────────────────── */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#6CBFBA;border-bottom:1px solid rgba(255,255,255,0.25);box-shadow:0 2px 20px rgba(0,0,0,0.12);transition:background 350ms,box-shadow 350ms,padding 300ms}
+.header.scrolled{background:#5AAFAA;box-shadow:0 4px 24px rgba(0,0,0,0.16)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:88px;transition:height 300ms}
+.header.scrolled .nav-row{height:64px}
+.logo-link{display:flex;align-items:center;gap:10px;flex-shrink:0;animation:logoIn 520ms cubic-bezier(.16,1.1,.44,1) 60ms both}
+.logo-link img{height:70px;width:auto}
+.nav-links{display:flex;align-items:center;gap:0}
+.nav-link{font-family:var(--f-body);font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.82);padding:10px 15px;display:inline-flex;align-items:center;gap:6px;letter-spacing:0.01em;background:none;border:none;cursor:pointer;border-radius:8px;position:relative;transition:background 200ms,color 200ms}
+.nav-link:hover{background:rgba(255,255,255,0.08);color:#fff}
+.nav-link::after{content:'';position:absolute;bottom:5px;left:14px;right:14px;height:1.5px;background:rgba(255,255,255,0.7);transform:scaleX(0);transform-origin:left;transition:transform 220ms cubic-bezier(.2,.8,.2,1)}
+.nav-link:hover::after{transform:scaleX(1)}
+.nav-link:nth-child(1){animation:linkIn 400ms cubic-bezier(.2,.8,.2,1) 180ms both}
+.nav-link:nth-child(2){animation:linkIn 400ms cubic-bezier(.2,.8,.2,1) 240ms both}
+.nav-link:nth-child(3){animation:linkIn 400ms cubic-bezier(.2,.8,.2,1) 300ms both}
+.nav-link:nth-child(4){animation:linkIn 400ms cubic-bezier(.2,.8,.2,1) 360ms both}
+
+/* Mega menu */
+.mega-wrap{position:relative}
+.mega-drop{position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-105px);z-index:1001;display:none;padding-top:4px}
+.mega-wrap:hover .mega-drop{display:flex;animation:dropIn 220ms cubic-bezier(.2,.8,.2,1) both}
+.mega-left{width:210px;flex-shrink:0;background:#7ab5ae;border-radius:0 0 14px 14px;overflow:hidden;box-shadow:0 20px 48px -8px rgba(14,14,12,0.22)}
+.mega-right{width:240px;flex-shrink:0;background:#5a9e97;border-radius:0 0 14px 14px;padding:16px 22px;box-shadow:0 20px 48px -8px rgba(14,14,12,0.22);display:none}
+.mega-cat{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;cursor:pointer;transition:background 150ms}
+.mega-cat:hover,.mega-cat.active{background:#5a9e97}
+.mega-cat:hover .mega-right-panel,.mega-cat.active .mega-right-panel{display:block}
+.mega-cat span{font-family:var(--f-body);font-size:13px;font-weight:400;color:white}
+.mega-cat.active span{font-weight:600}
+.mega-sep{height:1px;background:rgba(255,255,255,0.18)}
+.mega-sub-title{font-family:var(--f-body);font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:12px}
+.mega-sub-link{display:block;padding:8px 0;font-family:var(--f-body);font-size:13px;color:rgba(255,255,255,0.88);border-bottom:1px solid rgba(255,255,255,0.12)}
+.mega-sub-link:last-of-type{border-bottom:none}
+.mega-sub-link:hover{color:#fff}
+.mega-sub-all{display:block;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.18);font-family:var(--f-body);font-size:12px;font-weight:600;color:rgba(255,255,255,0.7)}
+.mega-sub-all:hover{color:#fff}
+
+/* Header CTA */
+.header-cta{display:flex;align-items:center;gap:10px;animation:ctaIn 460ms cubic-bezier(.34,1.4,.64,1) 440ms both}
+.tel-link{font-family:var(--f-body);font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.75);padding:8px 13px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);display:inline-flex;align-items:center;gap:6px;letter-spacing:0.02em;transition:background 200ms,border-color 200ms,color 200ms}
+.tel-link:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.25);color:#fff}
+.agendar-btn{font-family:var(--f-body);font-size:13px;font-weight:700;color:var(--teal-deep);background:linear-gradient(135deg,#fff 0%,#f0faf9 100%);padding:10px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;box-shadow:0 4px 16px rgba(0,0,0,0.14),0 1px 0 rgba(255,255,255,0.8) inset;letter-spacing:0.01em;transition:transform 220ms cubic-bezier(.34,1.2,.64,1),box-shadow 220ms;position:relative;overflow:hidden}
+.agendar-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 28px rgba(0,0,0,0.22),0 0 0 1px rgba(255,255,255,0.1) inset}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+
+/* Lang switcher */
+.lang-wrap{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:9px;padding:6px 10px;cursor:pointer;transition:background 200ms,border-color 200ms}
+.lang-btn:hover{background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.28)}
+.lang-drop{position:absolute;top:calc(100% + 6px);right:0;background:#fff;border-radius:12px;padding:8px;box-shadow:0 20px 48px -8px rgba(14,14,12,0.18),0 0 0 1px rgba(14,14,12,0.06);min-width:60px;z-index:30;display:none;animation:dropIn 220ms cubic-bezier(.2,.8,.2,1) both}
+.lang-wrap:hover .lang-drop{display:block}
+.lang-opt{display:flex;align-items:center;justify-content:center;width:100%;padding:8px;border-radius:8px;border:none;background:none;cursor:pointer;transition:background 150ms;font-size:22px;line-height:1}
+.lang-opt:hover{background:var(--teal-wash)}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:linear-gradient(160deg,#1b413e 0%,#2a5a57 100%);padding-top:90px;overflow:auto;animation:fadeIn 250ms ease both}
+.mobile-menu.open{display:block}
+.mobile-item{border-top:1px solid rgba(255,255,255,0.1);padding:20px 0}
+.mobile-link{font-family:Georgia,serif;font-size:28px;font-weight:600;color:#fff}
+.mobile-sub-links{margin-top:16px;display:flex;flex-direction:column;gap:8px;padding-left:2px}
+.mobile-sub-group{margin-bottom:16px}
+.mobile-sub-label{font-family:var(--f-body);font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,181,176,0.7);margin-bottom:8px}
+.mobile-sub-link{font-family:var(--f-body);font-size:15px;font-weight:500;color:rgba(255,255,255,0.75)}
+.mobile-sub-link:hover{color:#fff}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:600;border-radius:999px;padding:13px 24px;font-size:14px;transition:transform 200ms,box-shadow 200ms;position:relative;overflow:hidden;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -6px rgba(14,14,12,0.22)}
+.btn-teal{background:var(--teal-dark);color:#fff}
+.btn-teal:hover{transform:translateY(-2px);box-shadow:0 12px 28px -6px rgba(47,107,104,0.3)}
+.btn-outline{background:transparent;color:var(--charcoal);border-color:var(--line)}
+.btn-outline:hover{transform:translateY(-2px)}
+.btn-white-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,0.45)}
+.btn-white-outline:hover{transform:translateY(-2px)}
+
+/* ── Eyebrow ─────────────────────────────────────────── */
+.eyebrow{font-family:var(--f-body);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dark)}
+
+/* ── Hero ────────────────────────────────────────────── */
+.hero{padding-top:88px;background:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:500px;padding:48px 0 64px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;border:1.5px solid #5AAFAA;border-radius:100px;padding:6px 18px;margin-bottom:32px;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 60ms both}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#5AAFAA;flex-shrink:0}
+.hero-badge span{font-family:var(--f-body);font-size:12px;font-weight:500;color:var(--teal-dark);letter-spacing:0.1em;text-transform:uppercase}
+.hero-line{width:48px;height:2px;background:#5AAFAA;margin-bottom:24px;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 120ms both}
+.hero-h1{font-family:var(--f-display);font-size:clamp(52px,6vw,80px);font-weight:300;line-height:1.05;letter-spacing:-0.02em;color:var(--ink);animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 180ms both}
+.hero-h1 .accent{color:#5AAFAA}
+.hero-body{font-family:var(--f-body);font-size:16px;color:var(--charcoal);line-height:1.7;margin-top:24px;max-width:40ch;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 400ms both}
+.hero-actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 500ms both}
+.hero-status{margin-top:32px;display:flex;align-items:center;gap:6px;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 600ms both}
+.hero-status-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,0.2);flex-shrink:0;animation:wafabPulse 2s ease-in-out infinite}
+.hero-stars{margin-top:20px;display:flex;align-items:center;gap:10px;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 700ms both}
+.stars{display:flex;gap:3px}
+.star{color:var(--teal-dark);font-size:13px}
+.hero-img-wrap{border-radius:20px;overflow:hidden;height:520px;position:relative;background:#C5E8E5;animation:fadeUp 600ms cubic-bezier(.2,.7,.2,1) 100ms both}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover}
+.hero-img-overlay{position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to top,rgba(0,0,0,0.50) 0%,transparent 100%)}
+.hero-card{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-radius:12px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.hero-card-title{font-family:var(--f-body);font-size:12px;font-weight:700;color:var(--ink)}
+.hero-card-addr{font-family:var(--f-body);font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ── Stats Strip ─────────────────────────────────────── */
+.stats-strip{background:var(--cream-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{text-align:center;padding:0 24px}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat-value{font-family:var(--f-display);font-size:clamp(36px,3.5vw,52px);font-weight:300;letter-spacing:-0.02em;color:var(--teal-dark);line-height:1;animation:countIn 600ms cubic-bezier(.2,.8,.2,1) both}
+.stat:nth-child(1) .stat-value{animation-delay:0ms}
+.stat:nth-child(2) .stat-value{animation-delay:80ms}
+.stat:nth-child(3) .stat-value{animation-delay:160ms}
+.stat:nth-child(4) .stat-value{animation-delay:240ms}
+.stat-sup{font-size:0.6em}
+.stat-label{font-family:var(--f-body);font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:6px}
+
+/* ── Sections ────────────────────────────────────────── */
+.section{padding:112px 0}
+.section-sm{padding:64px 0}
+.section-lg{padding:112px 0}
+.section-xl{padding:140px 0}
+.bg-white{background:#fff}
+.bg-soft{background:var(--cream-soft)}
+
+/* ── Services Card ───────────────────────────────────── */
+.services-card-wrap{background:var(--cream-soft);border-radius:20px;padding:clamp(28px,4vw,52px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.feat-card{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line-soft);background:#fff;transition:transform 280ms cubic-bezier(.2,.8,.2,1),box-shadow 280ms,border-color 280ms}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px -8px rgba(47,107,104,0.18);border-color:var(--teal)}
+.feat-card-img{aspect-ratio:3/2;overflow:hidden}
+.feat-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 400ms cubic-bezier(.16,1,.3,1)}
+.feat-card:hover .feat-card-img img{transform:scale(1.06)}
+.feat-card-name{padding:10px 14px 12px;font-family:var(--f-body);font-size:13px;font-weight:600;color:var(--ink)}
+
+/* ── Why Us ──────────────────────────────────────────── */
+.whyus-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.whyus-item{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);cursor:pointer;background:none;border-left:none;border-right:none;border-top:none;width:100%;text-align:left}
+.whyus-item-title{font-family:var(--f-display);font-size:22px;font-weight:300;color:var(--charcoal);letter-spacing:-0.01em;transition:color 200ms}
+.whyus-item.active .whyus-item-title{color:var(--ink)}
+.whyus-item-body{font-family:var(--f-body);font-size:14px;color:var(--muted);line-height:1.6;margin-top:8px;max-width:36ch;animation:fadeUp 260ms cubic-bezier(.2,.8,.2,1) both}
+.whyus-icon{width:28px;height:28px;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:16px;transition:background 200ms}
+.whyus-item.active .whyus-icon{background:var(--teal-wash)}
+.whyus-arrow{transition:transform 220ms,color 200ms;color:var(--muted)}
+.whyus-item.active .whyus-arrow{transform:rotate(90deg);color:var(--teal-dark)}
+.whyus-photo{border-radius:20px;overflow:hidden;aspect-ratio:4/5}
+.whyus-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ── Services Overview ───────────────────────────────── */
+.services-overview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:64px}
+.service-card{display:block;border-radius:12px;transition:transform 320ms cubic-bezier(.2,.8,.2,1),box-shadow 320ms}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px -8px rgba(14,14,12,0.14)}
+.service-card-img{aspect-ratio:4/3;border-radius:12px;overflow:hidden;margin-bottom:16px}
+.service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 500ms cubic-bezier(.2,.7,.2,1)}
+.service-card:hover .service-card-img img{transform:scale(1.04)}
+.service-card-meta{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.service-card-num{font-family:var(--f-mono);font-size:10px;font-weight:500;letter-spacing:0.14em;color:var(--muted)}
+.service-card-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex:1}
+.service-card-name{font-family:var(--f-display);font-size:22px;font-weight:300;letter-spacing:-0.01em;color:var(--ink)}
+.service-card-arrow{color:var(--teal-dark);transition:transform 240ms cubic-bezier(.2,.8,.2,1);flex-shrink:0}
+.service-card:hover .service-card-arrow{transform:translateX(5px)}
+.service-card-intro{font-family:var(--f-body);font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ── Testimonials ────────────────────────────────────── */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:#fff;border-radius:16px;padding:28px 24px;border:1px solid var(--line);transition:transform 280ms cubic-bezier(.2,.8,.2,1),box-shadow 280ms}
+.testimonial-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px -10px rgba(14,14,12,0.12)}
+.testimonial-text{font-family:var(--f-display);font-size:19px;font-weight:300;line-height:1.45;color:var(--ink);letter-spacing:-0.01em;font-style:italic}
+.testimonial-footer{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.testimonial-name{font-family:var(--f-body);font-size:13px;font-weight:600;color:var(--ink)}
+.testimonial-service{font-family:var(--f-body);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--f-body);font-size:13px;font-weight:700;color:var(--teal-dark)}
+
+/* ── CTA Section ─────────────────────────────────────── */
+.cta-section{background:var(--teal);padding:80px 0}
+.cta-inner{text-align:center;max-width:640px;margin:0 auto}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:36px}
+
+/* ── Footer ──────────────────────────────────────────── */
+footer{background:var(--teal-deep);color:#fff;padding-top:72px;padding-bottom:28px}
+.footer-grid{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.15)}
+.footer-col-title{font-family:var(--f-body);font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:18px}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-link{font-family:var(--f-body);font-size:13px;color:rgba(255,255,255,0.8);transition:color 180ms,padding-left 180ms;display:block}
+.footer-link:hover{color:#F6F1E9;padding-left:4px}
+.footer-socials{display:flex;gap:10px;margin-bottom:24px}
+.footer-social{width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);display:inline-flex;align-items:center;justify-content:center;color:#fff;transition:background 200ms,border-color 200ms,transform 200ms}
+.footer-social:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.5);transform:translateY(-2px)}
+.footer-bottom{padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-copy{font-family:var(--f-body);font-size:12px;color:rgba(255,255,255,0.4)}
+.footer-legal{display:flex;align-items:center;gap:24px;font-family:var(--f-body);font-size:12px}
+.footer-legal-link{color:rgba(255,255,255,0.45)}
+.footer-legal-link:hover{color:rgba(255,255,255,0.8)}
+.footer-reclamacoes{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:6px 12px;transition:background 200ms,border-color 200ms}
+.footer-reclamacoes:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.45)}
+.footer-map{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.15)}
+
+/* ── WhatsApp FAB ────────────────────────────────────── */
+.wafab{position:fixed;bottom:22px;right:22px;z-index:95;width:56px;height:56px;border-radius:999px;background:#25D366;color:#fff;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -6px rgba(37,211,102,0.5),0 4px 10px rgba(0,0,0,0.1);transition:transform 220ms;transform:translateX(80px);opacity:0;transition:transform 600ms cubic-bezier(.34,1.4,.64,1),opacity 400ms ease}
+.wafab.visible{transform:translateX(0);opacity:1;animation:wafabPulse 3s ease-in-out 0.6s infinite}
+.wafab:hover{transform:scale(1.1)!important;animation:none!important}
+.wafab::before{content:'';position:absolute;inset:0;border-radius:999px;border:2px solid rgba(37,211,102,0.6);animation:ripple 3s ease-out 2.5s infinite;pointer-events:none}
+.wafab::after{content:'Fala connosco!';position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%) translateX(6px);background:#fff;color:var(--ink);font-family:var(--f-body);font-size:12px;font-weight:600;padding:6px 12px;border-radius:8px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,0.12);opacity:0;pointer-events:none;transition:opacity 200ms,transform 200ms}
+.wafab:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media(max-width:1180px){
+  .nav-links{display:none!important}
+  .burger{display:inline-flex!important}
+  .tel-link{display:none!important}
+}
+@media(max-width:900px){
+  .nav-row{padding:0 20px!important}
+  .footer-grid{grid-template-columns:1fr 1fr!important}
+  .hero-grid{grid-template-columns:1fr!important}
+  .hero-img-wrap{display:none}
+  .whyus-grid{grid-template-columns:1fr!important;gap:32px}
+  .services-card-wrap{grid-template-columns:1fr!important}
+  .testimonials-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:640px){
+  .stats-grid{grid-template-columns:1fr 1fr!important;row-gap:24px!important}
+  .footer-grid{grid-template-columns:1fr!important}
+  .featured-grid{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────── -->
+<header class="header" id="header">
+  <div class="nav-row">
+    <a href="index-html.html" class="logo-link">
+      <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div style="display:none;flex-direction:column;gap:2px">
+        <span style="font-family:var(--f-display);font-size:18px;font-weight:600;color:#fff;letter-spacing:0.04em">Rita Guerreiro</span>
+        <span style="font-family:var(--f-body);font-size:9px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.15em;text-transform:uppercase">Terapias &amp; Bem-Estar</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="index-html.html" class="nav-link">Início</a>
+
+      <div class="mega-wrap">
+        <span class="nav-link" style="cursor:default">
+          Serviços
+          <svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <div class="mega-drop" style="display:flex">
+          <div class="mega-left" id="mega-left">
+            <!-- Categorias injetadas por JS -->
+          </div>
+          <div class="mega-right" id="mega-right" style="display:none">
+            <!-- Subserviços injetados por JS -->
+          </div>
+        </div>
+      </div>
+
+      <a href="sobre-html.html" class="nav-link">Sobre</a>
+      <a href="contactos-html.html" class="nav-link">Contactos</a>
+    </nav>
+
+    <div class="header-cta">
+      <!-- Language switcher -->
+      <div class="lang-wrap">
+        <button class="lang-btn" id="lang-btn">
+          <span id="lang-flag" style="font-size:17px;line-height:1">🇵🇹</span>
+          <svg width="8" height="8" viewBox="0 0 10 10"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-drop" id="lang-drop">
+          <button class="lang-opt" data-lang="EN">🇬🇧</button>
+          <button class="lang-opt" data-lang="FR">🇫🇷</button>
+        </div>
+      </div>
+
+      <a href="tel:+351961899364" class="tel-link">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        961 899 364
+      </a>
+
+      <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" class="agendar-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+        Agendar
+      </a>
+
+      <button class="burger" id="burger" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" id="burger-icon">
+          <path d="M3 7 L19 7 M3 15 L19 15" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Mobile Menu ────────────────────────────────────── -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="container" style="display:flex;flex-direction:column">
+    <div class="mobile-item"><a href="index-html.html" class="mobile-link">Início</a></div>
+    <div class="mobile-item">
+      <button onclick="toggleMobileSubs(this)" style="font-family:Georgia,serif;font-size:28px;font-weight:600;color:#fff;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:12px">
+        Serviços
+        <svg width="14" height="14" viewBox="0 0 14 14" style="transition:transform 220ms" id="mobile-chevron"><path d="M4 3 L9 7 L4 11" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="mobile-subs" class="mobile-sub-links" style="display:none">
+        <div class="mobile-sub-group">
+          <div class="mobile-sub-label">Fisioterapia</div>
+          <a href="servico-fisioterapia.html" class="mobile-sub-link">Fisioterapia Geral</a>
+          <a href="servico-mesoterapia.html" class="mobile-sub-link">Fisioterapia ATM / Mesoterapia</a>
+          <a href="servico-acupuntura.html" class="mobile-sub-link">Fisioterapia Vestibular / Acupuntura</a>
+        </div>
+        <div class="mobile-sub-group">
+          <div class="mobile-sub-label">Cuidados de Saúde</div>
+          <a href="servico-nutricao.html" class="mobile-sub-link">Nutrição</a>
+          <a href="servico-terapia-bowen.html" class="mobile-sub-link">Terapia de Bowen</a>
+          <a href="servico-psicologia.html" class="mobile-sub-link">Psicologia</a>
+        </div>
+        <div class="mobile-sub-group">
+          <div class="mobile-sub-label">Massagens</div>
+          <a href="servico-massagem-relaxamento.html" class="mobile-sub-link">Massagem de Relaxamento</a>
+          <a href="servico-massagem-assinatura-rg.html" class="mobile-sub-link">Massagem Assinatura RG</a>
+          <a href="servico-massagem-profunda.html" class="mobile-sub-link">Massagem Profunda</a>
+          <a href="servico-drenagem-linfatica.html" class="mobile-sub-link">Drenagem Linfática Manual</a>
+        </div>
+        <div class="mobile-sub-group">
+          <div class="mobile-sub-label">Holísticas</div>
+          <a href="servico-reflexologia.html" class="mobile-sub-link">Reflexologia</a>
+          <a href="servico-shiatsu.html" class="mobile-sub-link">Shiatsu</a>
+          <a href="servico-head-spa.html" class="mobile-sub-link">Head Spa</a>
+        </div>
+        <div class="mobile-sub-group">
+          <div class="mobile-sub-label">Estética &amp; Tratamentos</div>
+          <a href="servico-facial.html" class="mobile-sub-link">Faciais</a>
+          <a href="servico-depilacao-laser.html" class="mobile-sub-link">Depilação a Laser</a>
+          <a href="servico-pilates-clinico.html" class="mobile-sub-link">Pilates Clínico</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-item"><a href="sobre-html.html" class="mobile-link">Sobre</a></div>
+    <div class="mobile-item"><a href="contactos-html.html" class="mobile-link">Contactos</a></div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style="font-family:var(--f-body);font-size:14px;font-weight:700;color:var(--teal-deep);background:#fff;padding:13px 28px;border-radius:999px">Agendar</a>
+      <a href="tel:+351961899364" style="font-family:var(--f-body);font-size:14px;font-weight:600;color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:13px 28px;border-radius:999px">961 899 364</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Content ───────────────────────────────────── -->
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left -->
+      <div>
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          <span>Loulé · Algarve · Desde 2022</span>
+        </div>
+        <div class="hero-line"></div>
+        <h1 class="hero-h1">
+          Recupera.<br>
+          Equilibra.<br>
+          <span class="accent">Sente-te bem.</span>
+        </h1>
+        <p class="hero-body">Fisioterapia, Osteopatia, Pilates Clínico, Psicologia e muito mais — numa clínica em Loulé onde cada pessoa é tratada com atenção e cuidado real.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Marcar consulta
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.18);font-size:14px">→</span>
+          </a>
+          <a href="tel:+351961899364" class="btn btn-outline" style="border-color:var(--line)">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            961 899 364
+          </a>
+        </div>
+        <div class="hero-status">
+          <div class="hero-status-dot"></div>
+          <span style="font-family:var(--f-body);font-size:12px;color:var(--muted)">Seg–Sex 9h–19h · Sábados sob marcação</span>
+        </div>
+        <div class="hero-stars">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <span style="font-family:var(--f-body);font-size:13px;color:var(--muted)">+500 pacientes acompanhados · Google 5★</span>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80" alt="Tratamento de fisioterapia" loading="eager" />
+        <div class="hero-img-overlay"></div>
+        <div class="hero-card">
+          <div>
+            <div class="hero-card-title">Centro de Terapias Rita Guerreiro</div>
+            <div class="hero-card-addr">Rua Padre António Vieira 58, Loulé</div>
+          </div>
+          <div style="display:flex;gap:3px">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-value">20<span class="stat-sup">+</span></div>
+        <div class="stat-label">Anos de experiência</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">500<span class="stat-sup">+</span></div>
+        <div class="stat-label">Pacientes acompanhados</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">25</div>
+        <div class="stat-label">Terapias disponíveis</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100<span class="stat-sup">%</span></div>
+        <div class="stat-label">Dedicação à tua saúde</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Card -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="reveal services-card-wrap">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px">Os nossos serviços</div>
+        <h2 style="max-width:22ch;line-height:1.1">Dores, tensão, stress? Temos a resposta — e a pessoa certa para ti.</h2>
+        <p style="font-family:var(--f-body);font-size:15px;color:var(--charcoal);margin-top:16px;max-width:38ch;line-height:1.6">Fisioterapia, massagens, holísticas, psicologia, estética — tudo disponível na mesma clínica, em Loulé.</p>
+        <div style="margin-top:24px">
+          <a href="#todos-servicos" class="btn btn-teal">
+            Ver todos os serviços
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.2);font-size:13px">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="featured-grid">
+        <a href="servico-fisioterapia.html" class="feat-card reveal">
+          <div class="feat-card-img"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="Fisioterapia" loading="lazy"/></div>
+          <div class="feat-card-name">Fisioterapia</div>
+        </a>
+        <a href="servico-pilates-clinico.html" class="feat-card reveal" style="transition-delay:60ms">
+          <div class="feat-card-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80" alt="Pilates Clínico" loading="lazy"/></div>
+          <div class="feat-card-name">Pilates Clínico</div>
+        </a>
+        <a href="servico-psicologia.html" class="feat-card reveal" style="transition-delay:120ms">
+          <div class="feat-card-img"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=400&q=80" alt="Psicologia" loading="lazy"/></div>
+          <div class="feat-card-name">Psicologia</div>
+        </a>
+        <a href="servico-massagem-assinatura-rg.html" class="feat-card reveal" style="transition-delay:180ms">
+          <div class="feat-card-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="Massagem Assinatura RG" loading="lazy"/></div>
+          <div class="feat-card-name">Massagem Assinatura RG</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px">
+      <div class="eyebrow" style="margin-bottom:12px">Porquê a Clínica Rita Guerreiro</div>
+      <h2 style="max-width:24ch;line-height:1.1">Porque a tua saúde merece mais do que uma consulta rápida.</h2>
+    </div>
+    <div class="whyus-grid reveal">
+      <div>
+        <button class="whyus-item active" onclick="toggleWhyUs(this,0)">
+          <div>
+            <div class="whyus-item-title">Tratamento feito para ti, não para a média</div>
+            <div class="whyus-item-body" id="whyus-0">O teu corpo, a tua história, o teu ritmo. Cada plano de tratamento começa por ouvir — e só depois agir.</div>
+          </div>
+          <div class="whyus-icon">
+            <svg class="whyus-arrow" width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M6 5 L11 9 L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <button class="whyus-item" onclick="toggleWhyUs(this,1)">
+          <div>
+            <div class="whyus-item-title">Tudo no mesmo sítio, sem deslocações</div>
+            <div class="whyus-item-body" id="whyus-1" style="display:none">Fisioterapia, psicologia, estética, nutrição — num só espaço em Loulé. Mais tempo para ti, menos stress logístico.</div>
+          </div>
+          <div class="whyus-icon">
+            <svg class="whyus-arrow" width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M6 5 L11 9 L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <button class="whyus-item" onclick="toggleWhyUs(this,2)">
+          <div>
+            <div class="whyus-item-title">Profissionais que te acompanham de verdade</div>
+            <div class="whyus-item-body" id="whyus-2" style="display:none">Não mudas de terapeuta a cada consulta. A tua equipa conhece-te, acompanha-te e preocupa-se com os teus resultados.</div>
+          </div>
+          <div class="whyus-icon">
+            <svg class="whyus-arrow" width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M6 5 L11 9 L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+        <button class="whyus-item" onclick="toggleWhyUs(this,3)">
+          <div>
+            <div class="whyus-item-title">Sem listas de espera intermináveis</div>
+            <div class="whyus-item-body" id="whyus-3" style="display:none">Marcação rápida por WhatsApp ou telefone. A maioria dos utentes consegue consulta na mesma semana.</div>
+          </div>
+          <div class="whyus-icon">
+            <svg class="whyus-arrow" width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M6 5 L11 9 L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </button>
+      </div>
+      <div class="whyus-photo">
+        <img src="assets/sala-tratamento.png" alt="Sala de tratamento" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="section-xl bg-soft" id="todos-servicos">
+  <div class="container">
+    <div class="reveal"><div class="eyebrow">Serviços</div></div>
+    <div class="reveal" style="transition-delay:60ms">
+      <h2 style="margin-top:12px;max-width:18ch">Seja qual for o motivo que te traz, temos alguém para ti.</h2>
+    </div>
+    <div class="services-overview-grid">
+      <a href="fisioterapia.html" class="service-card reveal">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80" alt="Fisioterapia" loading="lazy"/></div>
+        <div class="service-card-meta">
+          <span class="service-card-num">01</span>
+          <div class="service-card-row">
+            <h3 class="service-card-name">Fisioterapia</h3>
+            <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <p class="service-card-intro">Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.</p>
+      </a>
+      <a href="fisioterapia.html" class="service-card reveal" style="transition-delay:60ms">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80" alt="Cuidados de Saúde" loading="lazy"/></div>
+        <div class="service-card-meta">
+          <span class="service-card-num">02</span>
+          <div class="service-card-row">
+            <h3 class="service-card-name">Cuidados de Saúde</h3>
+            <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <p class="service-card-intro">Tratamentos clínicos especializados para saúde e bem-estar.</p>
+      </a>
+      <a href="massagens.html" class="service-card reveal" style="transition-delay:120ms">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Massagens" loading="lazy"/></div>
+        <div class="service-card-meta">
+          <span class="service-card-num">03</span>
+          <div class="service-card-row">
+            <h3 class="service-card-name">Massagens</h3>
+            <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <p class="service-card-intro">Terapias manuais para libertar tensão, recuperar e devolver equilíbrio.</p>
+      </a>
+      <a href="holisticas.html" class="service-card reveal" style="transition-delay:180ms">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80" alt="Holísticas" loading="lazy"/></div>
+        <div class="service-card-meta">
+          <span class="service-card-num">04</span>
+          <div class="service-card-row">
+            <h3 class="service-card-name">Holísticas</h3>
+            <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <p class="service-card-intro">Terapias holísticas para o equilíbrio do corpo e da mente.</p>
+      </a>
+      <a href="fisioterapia.html" class="service-card reveal" style="transition-delay:240ms">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80" alt="Estética & Tratamentos" loading="lazy"/></div>
+        <div class="service-card-meta">
+          <span class="service-card-num">05</span>
+          <div class="service-card-row">
+            <h3 class="service-card-name">Estética &amp; Tratamentos</h3>
+            <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <p class="service-card-intro">Cuidados estéticos e pacotes de tratamento com tecnologia avançada.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section-lg bg-soft">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px">
+      <div class="eyebrow" style="margin-bottom:12px">Testemunhos reais</div>
+      <h2>O que dizem quem já sentiu a diferença.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars" style="margin-bottom:14px">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-text">&ldquo;A minha fisioterapeuta (Rita Guerreiro) é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da minha musculatura e aliviar dores.&rdquo;</div>
+        <div class="testimonial-footer">
+          <div>
+            <div class="testimonial-name">Irina Mendes Martins</div>
+            <div class="testimonial-service">Fisioterapia</div>
+          </div>
+          <div class="testimonial-avatar" style="background:#A8D8D4">IM</div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:80ms">
+        <div class="stars" style="margin-bottom:14px">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-text">&ldquo;Durante anos e muitas dores crónicas de costas, a abordagem que a Rita Guerreiro fez ao problema foi sem dúvida como ter um corpo novo.&rdquo;</div>
+        <div class="testimonial-footer">
+          <div>
+            <div class="testimonial-name">Miguel Moreira</div>
+            <div class="testimonial-service">Fisioterapia</div>
+          </div>
+          <div class="testimonial-avatar" style="background:#C5E8E5">MM</div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:160ms">
+        <div class="stars" style="margin-bottom:14px">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-text">&ldquo;Aulas de Pilates com a Rita Guerreiro são excelentes. A Rita tem uma componente humana aliada às terapias fundamental. Compreende os problemas e necessidades dos utentes.&rdquo;</div>
+        <div class="testimonial-footer">
+          <div>
+            <div class="testimonial-name">Mitchelle Sousa</div>
+            <div class="testimonial-service">Pilates Clínico</div>
+          </div>
+          <div class="testimonial-avatar" style="background:#B8D4D2">MS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal cta-inner">
+      <div class="eyebrow" style="margin-bottom:16px;color:rgba(255,255,255,0.65)">Dá o primeiro passo hoje</div>
+      <h2 style="color:#fff;margin-bottom:16px">A tua recuperação começa com uma mensagem.</h2>
+      <p style="font-family:var(--f-body);font-size:16px;color:rgba(255,255,255,0.8);line-height:1.7">Fala connosco agora — a maioria das marcações fica resolvida em menos de 5 minutos.</p>
+      <p style="font-family:var(--f-body);font-size:14px;color:rgba(255,255,255,0.6);margin-top:8px;line-height:1.6">Rua Padre António Vieira 58, Loulé · Seg–Sex 9h–19h · Sáb sob marcação</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn" style="background:#fff;color:var(--teal-deep)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+          WhatsApp agora
+        </a>
+        <a href="tel:+351961899364" class="btn btn-white-outline">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          961 899 364
+        </a>
+        <a href="https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--f-body);font-size:13px;font-weight:500;color:rgba(255,255,255,0.7);padding:14px 16px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Como chegar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index-html.html" style="display:inline-block;margin-bottom:20px">
+          <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" style="height:60px;width:auto;filter:brightness(0) invert(1)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+          <span style="display:none;font-family:var(--f-display);font-size:20px;font-weight:600;color:#fff;letter-spacing:0.04em">Rita Guerreiro</span>
+        </a>
+        <p style="font-family:var(--f-body);font-size:14px;line-height:1.65;color:rgba(255,255,255,0.7);margin-bottom:20px;max-width:340px">Centro de Terapias &amp; Bem-Estar em Loulé. Cuidamos de ti, corpo e mente.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" class="footer-social">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/centro_terapias_rita_guerreiro/" target="_blank" rel="noopener noreferrer" class="footer-social">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+        </div>
+        <div class="footer-map">
+          <iframe src="https://maps.google.com/maps?q=R.+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9%2C+Portugal&output=embed&z=16" width="100%" height="180" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Rita Guerreiro"></iframe>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Fisioterapia &amp; Saúde</div>
+        <div class="footer-links">
+          <a href="fisioterapia.html" class="footer-link">Fisioterapia</a>
+          <a href="servico-nutricao.html" class="footer-link">Nutrição</a>
+          <a href="servico-psicologia.html" class="footer-link">Psicologia</a>
+          <a href="servico-terapia-bowen.html" class="footer-link">Terapia de Bowen</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Massagens &amp; Holísticas</div>
+        <div class="footer-links">
+          <a href="massagens.html" class="footer-link">Massagens</a>
+          <a href="holisticas.html" class="footer-link">Holísticas</a>
+          <a href="servico-depilacao-laser.html" class="footer-link">Depilação a Laser</a>
+          <a href="servico-pilates-clinico.html" class="footer-link">Pilates Clínico</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Horário &amp; Contacto</div>
+        <div class="footer-links">
+          <span class="footer-link" style="cursor:default">Seg–Sex · 9:00–19:00</span>
+          <span class="footer-link" style="cursor:default">Sábados · sob marcação</span>
+          <a href="tel:+351961899364" class="footer-link">961 899 364</a>
+          <a href="mailto:geral@ritaguerreiro.pt" class="footer-link">geral@ritaguerreiro.pt</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <a href="https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.55)">Rua Padre António Vieira 58, 8100-611 Loulé</a> · © 2026 Rita Guerreiro — Todos os direitos reservados
+      </div>
+      <div class="footer-legal">
+        <a href="#" class="footer-legal-link">Privacidade</a>
+        <a href="#" class="footer-legal-link">Termos</a>
+        <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener noreferrer" class="footer-reclamacoes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Livro de Reclamações
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WhatsApp FAB ────────────────────────────────────── -->
+<a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="wafab" id="wafab">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z"/></svg>
+</a>
+
+<script>
+// ── Header scroll ───────────────────────────────────────
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Mobile menu ─────────────────────────────────────────
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+const burgerIcon = document.getElementById('burger-icon');
+burger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  burgerIcon.querySelector('path').setAttribute('d', open
+    ? 'M4 4 L18 18 M18 4 L4 18'
+    : 'M3 7 L19 7 M3 15 L19 15');
+});
+
+// ── Mobile submenu ──────────────────────────────────────
+function toggleMobileSubs(btn) {
+  const subs = document.getElementById('mobile-subs');
+  const chevron = document.getElementById('mobile-chevron');
+  const open = subs.style.display === 'none';
+  subs.style.display = open ? 'flex' : 'none';
+  chevron.style.transform = open ? 'rotate(90deg)' : 'none';
+}
+
+// ── Mega menu ───────────────────────────────────────────
+const megaLeft = document.getElementById('mega-left');
+const megaRight = document.getElementById('mega-right');
+const megaCols = [
+  { label: 'Fisioterapia', href: 'fisioterapia.html', items: [
+    { label: 'Fisioterapia Geral', href: 'servico-fisioterapia.html' },
+    { label: 'Fisioterapia ATM / Mesoterapia', href: 'servico-mesoterapia.html' },
+    { label: 'Fisioterapia Vestibular / Acupuntura', href: 'servico-acupuntura.html' },
+  ]},
+  { label: 'Cuidados de Saúde', href: null, items: [
+    { label: 'Nutrição', href: 'servico-nutricao.html' },
+    { label: 'Terapia de Bowen', href: 'servico-terapia-bowen.html' },
+    { label: 'Psicologia', href: 'servico-psicologia.html' },
+  ]},
+  { label: 'Massagens', href: 'massagens.html', items: [
+    { label: 'Massagem de Relaxamento', href: 'servico-massagem-relaxamento.html' },
+    { label: 'Massagem para Crianças', href: 'servico-massagem-criancas.html' },
+    { label: 'Massagem Assinatura RG', href: 'servico-massagem-assinatura-rg.html' },
+    { label: 'Massagem Profunda', href: 'servico-massagem-profunda.html' },
+    { label: 'Massagem Pré/Pós Natal', href: 'servico-massagem-pre-pos-natal.html' },
+    { label: 'Massagem Sacro-Craniana', href: 'servico-massagem-sacro-craniana.html' },
+    { label: 'Drenagem Linfática Manual', href: 'servico-drenagem-linfatica.html' },
+    { label: 'Drenagem Pós-Op / Terapêutica', href: 'servico-massagem-terapeutica.html' },
+  ]},
+  { label: 'Holísticas', href: 'holisticas.html', items: [
+    { label: 'Reflexologia', href: 'servico-reflexologia.html' },
+    { label: 'Shiatsu', href: 'servico-shiatsu.html' },
+    { label: 'Massagem Indiana', href: 'servico-massagem-indiana.html' },
+    { label: 'Head Spa', href: 'servico-head-spa.html' },
+  ]},
+  { label: 'Estética & Tratamentos', href: null, items: [
+    { label: 'Faciais', href: 'servico-facial.html' },
+    { label: 'Pacotes de Tratamento', href: 'servico-pacotes-tratamento.html' },
+    { label: 'Depilação a Laser', href: 'servico-depilacao-laser.html' },
+    { label: 'Pilates Clínico', href: 'servico-pilates-clinico.html' },
+  ]},
+];
+
+megaCols.forEach((col, i) => {
+  const row = document.createElement('div');
+  row.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 18px;cursor:pointer;transition:background 150ms">
+    <span style="font-family:'DM Sans',sans-serif;font-size:13px;color:white">${col.label}</span>
+    <span style="color:rgba(255,255,255,0.65);font-size:15px">›</span>
+  </div>${i < megaCols.length - 1 ? '<div style="height:1px;background:rgba(255,255,255,0.18)"></div>' : ''}`;
+  row.firstElementChild.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.mega-cat-active').forEach(el => el.classList.remove('mega-cat-active'));
+    row.firstElementChild.style.background = '#5a9e97';
+    row.firstElementChild.querySelector('span').style.fontWeight = '600';
+    megaRight.style.display = 'block';
+    megaRight.innerHTML = `<div class="mega-sub-title">${col.label}</div>` +
+      col.items.map(item => `<a href="${item.href}" class="mega-sub-link">${item.label}</a>`).join('') +
+      (col.href ? `<a href="${col.href}" class="mega-sub-all">→ Ver todos os serviços de ${col.label}</a>` : '');
+  });
+  row.firstElementChild.addEventListener('mouseleave', () => {
+    row.firstElementChild.style.background = '';
+    row.firstElementChild.querySelector('span').style.fontWeight = '400';
+  });
+  megaLeft.appendChild(row);
+});
+
+// Hide mega-right when leaving the whole dropdown area
+document.querySelector('.mega-drop').addEventListener('mouseleave', () => {
+  megaRight.style.display = 'none';
+});
+
+// ── Why Us accordion ────────────────────────────────────
+function toggleWhyUs(btn, idx) {
+  document.querySelectorAll('.whyus-item').forEach((el, i) => {
+    el.classList.remove('active');
+    document.getElementById('whyus-' + i).style.display = 'none';
+  });
+  btn.classList.add('active');
+  document.getElementById('whyus-' + idx).style.display = 'block';
+}
+
+// ── Reveal on scroll ────────────────────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+reveals.forEach(el => {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight) el.classList.add('visible');
+  else revealObs.observe(el);
+});
+
+// ── WhatsApp FAB ────────────────────────────────────────
+setTimeout(() => document.getElementById('wafab').classList.add('visible'), 2000);
+
+// ── Lang switcher (UI only — no real i18n in plain HTML) ──
+document.querySelectorAll('.lang-opt').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const flags = { PT: '🇵🇹', EN: '🇬🇧', FR: '🇫🇷' };
+    const langs = { PT: '🇵🇹', EN: '🇬🇧', FR: '🇫🇷' };
+    const lang = btn.dataset.lang;
+    document.getElementById('lang-flag').textContent = flags[lang];
+    const drop = document.getElementById('lang-drop');
+    drop.innerHTML = Object.entries(flags).filter(([k]) => k !== lang).map(([k, f]) => `<button class="lang-opt" data-lang="${k}" onclick="...">${f}</button>`).join('');
+    drop.querySelectorAll('.lang-opt').forEach(b => b.addEventListener('click', function() {
+      document.getElementById('lang-flag').textContent = flags[this.dataset.lang];
+    }));
+  });
+});
+</script>
+</body>
+</html>

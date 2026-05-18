@@ -1,0 +1,85 @@
+<h2>Design final do mega-menu</h2>
+<p class="subtitle">Estrutura igual à imagem — cores do site Rita Guerreiro</p>
+
+<div class="mockup">
+  <div class="mockup-header">Preview: Mega-menu com cores do site</div>
+  <div class="mockup-body" style="padding:0;overflow:hidden;font-family:sans-serif">
+
+    <!-- Fake navbar -->
+    <div style="background:#1e3533;color:white;padding:10px 24px;display:flex;align-items:center;gap:24px;font-size:13px">
+      <span style="font-weight:700;font-size:15px">Rita Guerreiro</span>
+      <span style="opacity:.5">Início</span>
+      <span style="border-bottom:2px solid #7ab5ae;padding-bottom:2px;font-weight:500">Serviços ▾</span>
+      <span style="opacity:.5">Sobre</span>
+      <span style="opacity:.5">Contactos</span>
+      <span style="margin-left:auto;background:#7ab5ae;color:white;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600">Marcar consulta →</span>
+    </div>
+
+    <!-- Dropdown: dois painéis com fundo escuro -->
+    <div style="display:flex;min-height:300px">
+
+      <!-- Painel esquerdo: categorias -->
+      <div style="width:240px;background:#2d4a47;padding:8px 0;flex-shrink:0">
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 20px;background:#3a5e5a;color:white;cursor:pointer">
+          <span style="font-size:13.5px;font-weight:500">Fisioterapia</span>
+          <span style="font-size:11px;opacity:.7">›</span>
+        </div>
+        <div style="width:100%;height:1px;background:rgba(255,255,255,.08)"></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 20px;color:rgba(255,255,255,.75);cursor:pointer">
+          <span style="font-size:13.5px">Cuidados de Saúde</span>
+          <span style="font-size:11px;opacity:.5">›</span>
+        </div>
+        <div style="width:100%;height:1px;background:rgba(255,255,255,.08)"></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 20px;color:rgba(255,255,255,.75);cursor:pointer">
+          <span style="font-size:13.5px">Massagens</span>
+          <span style="font-size:11px;opacity:.5">›</span>
+        </div>
+        <div style="width:100%;height:1px;background:rgba(255,255,255,.08)"></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 20px;color:rgba(255,255,255,.75);cursor:pointer">
+          <span style="font-size:13.5px">Holísticas</span>
+          <span style="font-size:11px;opacity:.5">›</span>
+        </div>
+        <div style="width:100%;height:1px;background:rgba(255,255,255,.08)"></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 20px;color:rgba(255,255,255,.75);cursor:pointer">
+          <span style="font-size:13.5px">Estética &amp; Tratamentos</span>
+          <span style="font-size:11px;opacity:.5">›</span>
+        </div>
+
+      </div>
+
+      <!-- Painel direito: subserviços -->
+      <div style="flex:1;background:#243f3c;padding:16px 24px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#7ab5ae;margin-bottom:14px">Fisioterapia</div>
+
+        <div style="color:rgba(255,255,255,.85);font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer">Fisioterapia Geral</div>
+        <div style="color:rgba(255,255,255,.85);font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer">Fisioterapia ATM / Mesoterapia</div>
+        <div style="color:rgba(255,255,255,.85);font-size:13.5px;padding:9px 0;cursor:pointer">Fisioterapia Vestibular / Acupuntura</div>
+
+        <div style="margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)">
+          <a style="font-size:12px;color:#7ab5ae;font-weight:600;text-decoration:none">→ Ver todos os serviços de Fisioterapia</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h3>O que vai ser implementado</h3>
+  <ul>
+    <li>Fundo <strong>#2d4a47</strong> (verde-escuro do site) no painel das categorias</li>
+    <li>Fundo <strong>#243f3c</strong> (ligeiramente mais escuro) no painel dos subserviços</li>
+    <li>Separadores subtis entre categorias (como na imagem)</li>
+    <li>Categoria ativa com fundo mais claro e texto branco</li>
+    <li>Subserviços em lista simples com separadores finos</li>
+    <li>Link "Ver todos" em teal no fundo do painel direito</li>
+    <li>Hover nas categorias troca o painel direito (sem clique)</li>
+    <li>Só muda <code>ui.jsx</code></li>
+  </ul>
+</div>

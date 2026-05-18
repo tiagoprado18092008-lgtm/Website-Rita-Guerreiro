@@ -1,0 +1,11 @@
+{
+  "buildCommand": "echo 'Static site'",
+  "outputDirectory": "project",
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

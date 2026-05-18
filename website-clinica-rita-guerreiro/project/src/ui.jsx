@@ -1,0 +1,560 @@
+// Shared primitives — centropro-inspired: sans bold, dense, clinical
+
+function Container({ children, style = {}, maxWidth = 1280 }) {
+  return (
+    <div style={{ maxWidth, margin: '0 auto', padding: '0 clamp(20px, 4vw, 56px)', ...style }}>{children}</div>
+  );
+}
+
+function Reveal({ children, delay = 0, y = 20, as: Tag = 'div', style = {} }) {
+  const ref = React.useRef(null);
+  // Default to visible — only hide if element is below viewport on mount
+  const [seen, setSeen] = React.useState(true);
+  const [hidden, setHidden] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current; if (!el) return;
+    requestAnimationFrame(() => {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (r.top > vh - 20) {
+        setSeen(false);
+        setHidden(true);
+        const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { setSeen(true); io.unobserve(e.target); } }), { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+        io.observe(el);
+      }
+    });
+  }, []);
+  return <Tag ref={ref} style={{ opacity: seen ? 1 : 0, transform: seen ? 'translateY(0)' : `translateY(${y}px)`, transition: `opacity 700ms cubic-bezier(.2,.7,.2,1) ${delay}ms, transform 700ms cubic-bezier(.2,.7,.2,1) ${delay}ms`, ...style }}>{children}</Tag>;
+}
+
+function Eyebrow({ children, color = RG.tealDark, style = {} }) {
+  return <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color, ...style }}>{children}</div>;
+}
+
+function Heading({ children, level = 'h2', style = {} }) {
+  const sizes = { h1: 'clamp(52px, 6vw, 80px)', h2: 'clamp(36px, 4vw, 56px)', h3: 'clamp(22px, 2.5vw, 28px)' };
+  const Tag = level;
+  return <Tag style={{ fontFamily: F_DISPLAY, fontWeight: 300, fontSize: sizes[level], lineHeight: 1.08, letterSpacing: '-0.02em', margin: 0, textWrap: 'balance', color: RG.ink, ...style }}>{children}</Tag>;
+}
+
+function Body({ children, style = {}, size = 16 }) {
+  return <p style={{ fontFamily: F_BODY, fontSize: size, fontWeight: 400, lineHeight: 1.6, color: RG.charcoal, margin: 0, textWrap: 'pretty', maxWidth: '62ch', ...style }}>{children}</p>;
+}
+
+function Button({ children, href = '#', variant = 'primary', size = 'md', target, icon = true, onClick }) {
+  const [hv, setHv] = React.useState(false);
+  const base = { display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: F_BODY, fontWeight: 600, textDecoration: 'none', borderRadius: 999, transition: 'all 220ms', cursor: 'pointer', border: '1px solid transparent', whiteSpace: 'nowrap' };
+  const sz = { sm: { padding: '9px 16px', fontSize: 13 }, md: { padding: '14px 22px', fontSize: 14 }, lg: { padding: '18px 28px', fontSize: 15 } }[size];
+  const vars = {
+    primary: { background: RG.ink, color: RG.cream },
+    teal: { background: RG.tealDeep, color: RG.white },
+    outline: { background: 'transparent', color: RG.ink, borderColor: RG.ink },
+    outlineLight: { background: 'transparent', color: RG.cream, borderColor: 'rgba(246,241,233,0.5)' },
+    white: { background: RG.white, color: RG.ink, borderColor: RG.line },
+  };
+  const hover = hv ? (variant === 'white' ? { background: RG.cream } : { transform: 'translateY(-1px)', boxShadow: '0 10px 24px rgba(0,0,0,0.15)' }) : {};
+  return (
+    <a href={href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} onClick={onClick} onMouseEnter={() => setHv(true)} onMouseLeave={() => setHv(false)} className="rg-btn-primary" style={{ ...base, ...sz, ...vars[variant], ...hover }}>
+      {children}
+      {icon && <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ transform: hv ? 'translateX(4px)' : 'translateX(0)', transition: 'transform 240ms cubic-bezier(.2,.8,.2,1)' }}><path d="M2 6 L10 6 M7 3 L10 6 L7 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>}
+    </a>
+  );
+}
+
+// Navigation — premium luxury header
+function Nav({ current = 'home' }) {
+  const [openDrop, setOpenDrop] = React.useState(null);
+  const [mobile, setMobile] = React.useState(false);
+  const [mobileServicos, setMobileServicos] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const { lang, changeLang } = React.useContext(LangContext);
+  const { t } = useLang();
+  const [langOpen, setLangOpen] = React.useState(false);
+  const [activeCol, setActiveCol] = React.useState(null);
+  const dropTimerRef = React.useRef(null);
+
+  const openServicos = () => { if (dropTimerRef.current) clearTimeout(dropTimerRef.current); setOpenDrop('servicos'); };
+  const closeServicos = () => { dropTimerRef.current = setTimeout(() => { setOpenDrop(null); setActiveCol(null); }, 120); };
+
+  const langs = [
+    { code: 'PT', flag: '🇵🇹' },
+    { code: 'EN', flag: '🇬🇧' },
+    { code: 'FR', flag: '🇫🇷' },
+  ];
+
+  React.useEffect(() => {
+    const onS = () => setScrolled(window.scrollY > 40);
+    onS();
+    window.addEventListener('scroll', onS, { passive: true });
+    return () => window.removeEventListener('scroll', onS);
+  }, []);
+
+  const megaCols = [
+    {
+      label: 'Fisioterapia',
+      href: 'fisioterapia.html',
+      items: [
+        { label: 'Fisioterapia Geral', href: 'servico-fisioterapia.html' },
+        { label: 'Fisioterapia ATM / Mesoterapia', href: 'servico-mesoterapia.html' },
+        { label: 'Fisioterapia Vestibular / Acupuntura', href: 'servico-acupuntura.html' },
+      ],
+    },
+    {
+      label: 'Cuidados de Saúde',
+      href: null,
+      items: [
+        { label: 'Nutrição', href: 'servico-nutricao.html' },
+        { label: 'Terapia de Bowen', href: 'servico-terapia-bowen.html' },
+        { label: 'Psicologia', href: 'servico-psicologia.html' },
+      ],
+    },
+    {
+      label: 'Massagens',
+      href: 'massagens.html',
+      items: [
+        { label: 'Massagem de Relaxamento', href: 'servico-massagem-relaxamento.html' },
+        { label: 'Massagem para Crianças', href: 'servico-massagem-criancas.html' },
+        { label: 'Massagem Assinatura RG', href: 'servico-massagem-assinatura-rg.html' },
+        { label: 'Massagem Profunda', href: 'servico-massagem-profunda.html' },
+        { label: 'Massagem Pré/Pós Natal', href: 'servico-massagem-pre-pos-natal.html' },
+        { label: 'Massagem Sacro-Craniana', href: 'servico-massagem-sacro-craniana.html' },
+        { label: 'Drenagem Linfática Manual', href: 'servico-drenagem-linfatica.html' },
+        { label: 'Drenagem Pós-Op / Terapêutica', href: 'servico-massagem-terapeutica.html' },
+      ],
+    },
+    {
+      label: 'Holísticas',
+      href: 'holisticas.html',
+      items: [
+        { label: 'Reflexologia', href: 'servico-reflexologia.html' },
+        { label: 'Shiatsu', href: 'servico-shiatsu.html' },
+        { label: 'Massagem Indiana', href: 'servico-massagem-indiana.html' },
+        { label: 'Head Spa', href: 'servico-head-spa.html' },
+      ],
+    },
+    {
+      label: 'Estética & Tratamentos',
+      href: null,
+      items: [
+        { label: 'Faciais', href: 'servico-facial.html' },
+        { label: 'Pacotes de Tratamento', href: 'servico-pacotes-tratamento.html' },
+        { label: 'Depilação a Laser', href: 'servico-depilacao-laser.html' },
+        { label: 'Pilates Clínico', href: 'servico-pilates-clinico.html' },
+      ],
+    },
+  ];
+
+  const navLinks = [
+    { id: 'inicio', label: t('nav.inicio'), href: 'index.html' },
+    { id: 'servicos', label: t('nav.servicos'), mega: true },
+    { id: 'sobre', label: t('nav.sobre'), href: 'sobre.html' },
+    { id: 'contactos', label: t('nav.contactos'), href: 'contactos.html' },
+  ];
+
+  const linkBase = {
+    fontFamily: F_BODY, fontSize: 15, fontWeight: 500,
+    color: 'rgba(255,255,255,0.82)', textDecoration: 'none',
+    padding: '10px 15px', display: 'inline-flex', alignItems: 'center', gap: 6,
+    letterSpacing: '0.01em', background: 'none', border: 'none', cursor: 'pointer',
+  };
+
+  return (
+    <>
+      {/* ── Header wrapper ── */}
+      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}`}>
+
+        {/* Main nav row */}
+        <div className="rg-nav-row">
+
+          {/* ── Logo ── */}
+          <a href="index.html" className="rg-logo-link rg-header-logo">
+            <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" decoding="async" style={{ height: 110, width: 'auto', display: 'block' }} />
+          </a>
+
+          {/* ── Desktop nav links ── */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 0 }} className="rg-nav">
+            {navLinks.map((link, li) => (
+              <div key={link.id}
+                className={`rg-header-link-${li + 1}`}
+                style={{ position: 'relative' }}
+                onMouseEnter={() => { if (link.mega) openServicos(); }}
+                onMouseLeave={() => { if (link.mega) closeServicos(); }}
+              >
+                {link.href
+                  ? <a href={link.href} className="rg-nav-link rg-nav-item" style={linkBase}>{link.label}</a>
+                  : <button className="rg-nav-link rg-nav-item" aria-expanded={openDrop === 'servicos'} aria-haspopup="true" style={linkBase}>
+                      {link.label}
+                      <svg width="9" height="9" viewBox="0 0 10 10" style={{ transform: openDrop === 'servicos' ? 'rotate(180deg)' : 'none', transition: 'transform 240ms cubic-bezier(.2,.8,.2,1)', opacity: 0.55 }}>
+                        <path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                }
+                {link.mega && openDrop === 'servicos' && (
+                  <div
+                    onMouseEnter={openServicos}
+                    onMouseLeave={closeServicos}
+                    style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-105px)', zIndex: 1001, paddingTop: 4 }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
+                      {/* Painel esquerdo: categorias — largura fixa, nunca muda */}
+                      <div style={{ width: 210, flexShrink: 0, background: '#7ab5ae', borderRadius: '0 0 14px 14px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)' }}>
+                        {megaCols.map((col, ci) => (
+                          <div key={col.label}>
+                            <div
+                              onMouseEnter={() => setActiveCol(ci)}
+                              style={{
+                                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                                padding: '11px 18px', cursor: 'pointer',
+                                background: activeCol === ci ? '#5a9e97' : 'transparent',
+                                transition: 'background 150ms',
+                              }}
+                            >
+                              <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 400, color: 'white' }}>{col.label}</span>
+                              <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15 }}>›</span>
+                            </div>
+                            {ci < megaCols.length - 1 && <div style={{ height: 1, background: 'rgba(255,255,255,0.18)' }} />}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Painel direito: subserviços — aparece ao lado sem mexer o esquerdo */}
+                      <div style={{ width: 240, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: '#5a9e97', borderRadius: '0 0 14px 14px', padding: '16px 22px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)' }}>
+                        {activeCol !== null && <>
+                          <div style={{ fontFamily: F_BODY, fontSize: 9, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: 12 }}>{megaCols[activeCol].label}</div>
+                          {megaCols[activeCol].items.map((item, ii) => (
+                            <div key={item.href}>
+                              <a href={item.href} style={{ display: 'block', padding: '8px 0', fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.88)', textDecoration: 'none' }}
+                                onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.88)'}
+                              >{item.label}</a>
+                              {ii < megaCols[activeCol].items.length - 1 && <div style={{ height: 1, background: 'rgba(255,255,255,0.12)' }} />}
+                            </div>
+                          ))}
+                          {megaCols[activeCol].href && (
+                            <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(255,255,255,0.18)' }}>
+                              <a href={megaCols[activeCol].href} style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
+                                onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
+                              >{t('service.ver_todos_prefix')} {megaCols[activeCol].label}</a>
+                            </div>
+                          )}
+                        </>}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+
+
+          {/* ── Right side CTA ── */}
+          <div className="rg-header-cta" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+
+            {/* Language switcher */}
+            {(() => {
+              const langTimerRef = React.useRef(null);
+              const openLang = () => { if (langTimerRef.current) clearTimeout(langTimerRef.current); setLangOpen(true); };
+              const closeLang = () => { langTimerRef.current = setTimeout(() => setLangOpen(false), 150); };
+              return (
+                <div style={{ position: 'relative' }}
+                  onMouseEnter={openLang}
+                  onMouseLeave={closeLang}
+                >
+                  <button style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 5,
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    borderRadius: 9, padding: '6px 10px', cursor: 'pointer',
+                    transition: 'background 200ms, border-color 200ms',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.14)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.28)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
+                  >
+                    <span style={{ fontSize: 17, lineHeight: 1 }}>{langs.find(l => l.code === lang).flag}</span>
+                    <svg width="8" height="8" viewBox="0 0 10 10" style={{ transform: langOpen ? 'rotate(180deg)' : 'none', transition: 'transform 220ms', opacity: 0.5 }}>
+                      <path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  {langOpen && (
+                    <div
+                      onMouseEnter={openLang}
+                      onMouseLeave={closeLang}
+                      style={{
+                        position: 'absolute', top: '100%', right: 0,
+                        paddingTop: 8, zIndex: 30,
+                      }}
+                    >
+                      <div style={{
+                        background: RG.white, borderRadius: 12, padding: '8px',
+                        boxShadow: '0 20px 48px -8px rgba(14,14,12,0.18), 0 0 0 1px rgba(14,14,12,0.06)',
+                        minWidth: 60,
+                      }}>
+                        {langs.filter(l => l.code !== lang).map(l => (
+                          <button key={l.code} onClick={() => { changeLang(l.code); setLangOpen(false); }} style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%',
+                            padding: '8px', borderRadius: 8, border: 'none',
+                            background: 'none', cursor: 'pointer', transition: 'background 150ms',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.background = RG.tealWash}
+                          onMouseLeave={e => e.currentTarget.style.background = 'none'}
+                          >
+                            <span style={{ fontSize: 22, lineHeight: 1 }}>{l.flag}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* Telefone */}
+            <a href="tel:+351961899364" className="rg-nav-tel rg-tel-link" style={{
+              fontFamily: F_BODY, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.75)',
+              textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '8px 13px', borderRadius: 9,
+              border: '1px solid rgba(255,255,255,0.12)',
+              letterSpacing: '0.02em',
+            }}>
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+              961 899 364
+            </a>
+
+            {/* Agendar CTA */}
+            <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" className="rg-agendar-btn" style={{
+              fontFamily: F_BODY, fontSize: 13, fontWeight: 700,
+              color: RG.tealDeep,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0faf9 100%)',
+              padding: '10px 22px', borderRadius: 999, textDecoration: 'none',
+              display: 'inline-flex', alignItems: 'center', gap: 7,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.14), 0 1px 0 rgba(255,255,255,0.8) inset',
+              letterSpacing: '0.01em',
+            }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+              {t('agendar')}
+            </a>
+
+            {/* Burger */}
+            <button className="rg-burger" onClick={() => setMobile(!mobile)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 6 }} aria-label="Menu">
+              <svg width="22" height="22" viewBox="0 0 22 22">
+                <path d={mobile ? 'M4 4 L18 18 M18 4 L4 18' : 'M3 7 L19 7 M3 15 L19 15'} stroke="white" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+      </header>
+
+      {/* ── Mobile menu — full screen overlay ── */}
+      {mobile && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 99,
+          background: 'linear-gradient(160deg, #1b413e 0%, #2a5a57 100%)',
+          paddingTop: 90, overflow: 'auto',
+          animation: 'rg-fade-in 250ms ease both',
+        }}>
+          <Container style={{ display: 'flex', flexDirection: 'column' }}>
+            {[
+              { href: 'index.html', label: t('nav.inicio') },
+              null,
+              { href: 'sobre.html', label: t('nav.sobre') },
+              { href: 'contactos.html', label: t('nav.contactos') },
+            ].map((item, i) => item === null ? (
+              <div key="servicos" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 0' }}>
+                <button onClick={() => setMobileServicos(!mobileServicos)} style={{
+                  fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 28, fontWeight: 600,
+                  color: RG.white, background: 'none', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: 12, padding: 0,
+                }}>
+                  {t('nav.servicos')}
+                  <svg width="14" height="14" viewBox="0 0 14 14" style={{ transform: mobileServicos ? 'rotate(90deg)' : 'none', transition: 'transform 220ms' }}>
+                    <path d="M4 3 L9 7 L4 11" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {mobileServicos && (
+                  <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 24, paddingLeft: 2 }}>
+                    {megaCols.map(col => (
+                      <div key={col.label}>
+                        <div style={{ fontFamily: F_BODY, fontSize: 9, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(111,181,176,0.7)', marginBottom: 10 }}>{col.label}</div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                          {col.items.map(it => (
+                            <a key={it.href} href={it.href} style={{ fontFamily: F_BODY, fontSize: 15, fontWeight: 500, color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>{it.label}</a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div key={item.href} style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 0' }}>
+                <a href={item.href} style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 28, fontWeight: 600, color: RG.white, textDecoration: 'none' }}>{item.label}</a>
+              </div>
+            ))}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 700, color: RG.tealDeep, background: RG.white, padding: '13px 28px', borderRadius: 999, textDecoration: 'none' }}>{t('agendar')}</a>
+              <a href="tel:+351961899364" style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.8)', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', padding: '13px 28px', borderRadius: 999, textDecoration: 'none' }}>961 899 364</a>
+            </div>
+            {/* Language toggle mobile */}
+            <div style={{ paddingTop: 24, display: 'flex', gap: 10 }}>
+              {langs.map(l => (
+                <button key={l.code} onClick={() => changeLang(l.code)} style={{
+                  background: lang === l.code ? 'rgba(255,255,255,0.15)' : 'none',
+                  border: lang === l.code ? '1px solid rgba(255,255,255,0.3)' : '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: 8, padding: '6px 10px', cursor: 'pointer',
+                  fontSize: 20, lineHeight: 1,
+                }}>
+                  {l.flag}
+                </button>
+              ))}
+            </div>
+          </Container>
+        </div>
+      )}
+    </>
+  );
+}
+
+// Image — real photo if src given, otherwise colored placeholder
+function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {} }) {
+  if (src) {
+    return (
+      <div style={{ position: 'relative', width: '100%', aspectRatio: aspect, background: RG.cream, borderRadius: 6, overflow: 'hidden', ...style }}>
+        <img src={src} alt={label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      </div>
+    );
+  }
+  const colors = {
+    teal: { bg1: RG.teal, bg2: RG.tealDark, fg: 'rgba(255,255,255,0.7)' },
+    sand: { bg1: RG.cream, bg2: RG.line, fg: RG.muted },
+    ink: { bg1: RG.graphite, bg2: RG.ink, fg: 'rgba(255,255,255,0.5)' },
+  }[tone];
+  return (
+    <div style={{
+      position: 'relative', width: '100%', aspectRatio: aspect,
+      background: `linear-gradient(135deg, ${colors.bg1} 0%, ${colors.bg2} 100%)`,
+      borderRadius: 6, overflow: 'hidden', ...style,
+    }}>
+      {/* layered organic shapes */}
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+        <defs>
+          <radialGradient id={`g-${label}`} cx="30%" cy="25%"><stop offset="0%" stopColor="rgba(255,255,255,0.3)" /><stop offset="100%" stopColor="rgba(255,255,255,0)" /></radialGradient>
+        </defs>
+        <rect width="400" height="300" fill={`url(#g-${label})`} />
+        <circle cx="340" cy="240" r="80" fill="rgba(0,0,0,0.08)" />
+        <circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.05)" />
+      </svg>
+      <div style={{
+        position: 'absolute', top: 12, left: 12, padding: '4px 9px',
+        fontFamily: F_MONO, fontSize: 9, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase',
+        color: colors.fg, border: `1px solid ${colors.fg}`, borderRadius: 3,
+      }}>{label}</div>
+    </div>
+  );
+}
+
+// Section wrapper
+function Section({ id, bg = RG.white, color = RG.ink, pad = 'lg', children, style = {} }) {
+  const pads = { sm: '64px 0', md: '96px 0', lg: '112px 0', xl: '140px 0' };
+  return <section id={id} style={{ background: bg, color, padding: pads[pad], ...style }}>{children}</section>;
+}
+
+// Footer (shared)
+function Footer() {
+  const { t } = useLang();
+  return (
+    <footer style={{ background: RG.tealDeep, color: RG.white, paddingTop: 72, paddingBottom: 28 }}>
+      <Container>
+        <div style={{ display: 'grid', gridTemplateColumns: '2.5fr 1fr 1fr 1fr', gap: 40, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.15)' }} className="rg-footer-grid">
+          <div>
+            <a href="index.html" style={{ display: 'inline-block', marginBottom: 20 }}>
+              <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" loading="lazy" decoding="async" style={{ height: 80, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
+            </a>
+            <p style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.65, color: 'rgba(255,255,255,0.7)', marginTop: 0, marginBottom: 20, maxWidth: 340 }}>
+              {t('footer.tagline')}
+            </p>
+            <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" className="rg-footer-social" style={{ width: 40, height: 40, borderRadius: 999, border: '1px solid rgba(255,255,255,0.25)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: RG.white, transition: 'all 200ms' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
+              </a>
+              <a href="https://www.instagram.com/centro_terapias_rita_guerreiro/" target="_blank" rel="noopener noreferrer" className="rg-footer-social" style={{ width: 40, height: 40, borderRadius: 999, border: '1px solid rgba(255,255,255,0.25)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: RG.white, transition: 'all 200ms' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg>
+              </a>
+            </div>
+            <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
+              <iframe
+                src="https://maps.google.com/maps?q=R.+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9%2C+Portugal&output=embed&z=16"
+                width="100%"
+                height="180"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização Rita Guerreiro"
+              />
+            </div>
+          </div>
+          {[
+            { t: t('footer.col1'), l: [['Fisioterapia', 'fisioterapia.html'], ['Nutrição', 'servico-nutricao.html'], ['Psicologia', 'servico-psicologia.html'], ['Terapia de Bowen', 'servico-terapia-bowen.html']] },
+            { t: t('footer.col2'), l: [['Massagens', 'massagens.html'], ['Holísticas', 'holisticas.html'], ['Depilação a Laser', 'servico-depilacao-laser.html'], ['Pilates Clínico', 'servico-pilates-clinico.html']] },
+            { t: t('footer.col3'), l: [[t('footer.horario_item'), null], [t('footer.sabado_item'), null], ['961 899 364', 'tel:+351961899364'], ['geral@ritaguerreiro.pt', 'mailto:geral@ritaguerreiro.pt']] },
+          ].map(col => (
+            <div key={col.t}>
+              <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 18 }}>{col.t}</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+                {col.l.map(([n, h]) => h
+                  ? <a key={n} href={h} className="rg-footer-link" style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.8)', textDecoration: 'none', transition: 'color 180ms, padding-left 180ms' }}>{n}</a>
+                  : <span key={n} style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>{n}</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ paddingTop: 22, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ fontFamily: F_BODY, fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+            <a href="https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>Rua Padre António Vieira 58, 8100-611 Loulé</a> · © 2026 Rita Guerreiro — {t('footer.direitos')}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24, fontFamily: F_BODY, fontSize: 12 }}>
+            <a href="privacidade.html" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>{t('footer.privacidade')}</a>
+            <a href="termos.html" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>{t('footer.termos')}</a>
+            <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener noreferrer" className="rg-reclamacoes-btn" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              color: 'rgba(255,255,255,0.85)', textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.25)', borderRadius: 8,
+              padding: '6px 12px',
+              transition: 'background 200ms, border-color 200ms',
+            }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+              {t('footer.reclamacoes')}
+            </a>
+          </div>
+        </div>
+      </Container>
+    </footer>
+  );
+}
+
+// Floating WhatsApp
+function WAFab() {
+  return (
+    <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="rg-wafab" style={{
+      position: 'fixed', bottom: 22, right: 22, zIndex: 95,
+      width: 56, height: 56, borderRadius: 999, background: '#25D366', color: 'white',
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      boxShadow: '0 12px 28px -6px rgba(37,211,102,0.5), 0 4px 10px rgba(0,0,0,0.1)',
+      textDecoration: 'none', transition: 'transform 220ms',
+    }}>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
+    </a>
+  );
+}
+
+Object.assign(window, { Container, Reveal, Eyebrow, Heading, Body, Button, Nav, Photo, Section, Footer, WAFab });

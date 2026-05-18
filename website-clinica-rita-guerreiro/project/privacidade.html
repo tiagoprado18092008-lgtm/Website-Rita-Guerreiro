@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidade — Rita Guerreiro</title>
+  <meta name="description" content="Política de Privacidade e RGPD da Clínica Rita Guerreiro. Centro de Terapias & Bem-Estar em Loulé." />
+  <meta property="og:title" content="Política de Privacidade — Rita Guerreiro" />
+  <meta property="og:description" content="Política de Privacidade e RGPD da Clínica Rita Guerreiro em Loulé." />
+  <meta property="og:image" content="https://www.ritaguerreiro.pt/rita_guerreiro_logo.png" />
+  <meta property="og:url" content="https://www.ritaguerreiro.pt/privacidade.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="rita_guerreiro_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="src/premium.css">
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="src/tokens.jsx"></script>
+<script type="text/babel" src="src/logo.jsx"></script>
+<script type="text/babel" src="src/ui.jsx"></script>
+<script type="text/babel">
+function PrivacyPage() {
+  const { t } = useLang();
+  return (
+    <>
+      <nav style={{ background: '#1b413e', padding: '20px 0', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 clamp(20px, 4vw, 56px)' }}>
+          <a href="index.html" style={{ display: 'inline-block', textDecoration: 'none', color: 'white', fontWeight: 600 }}>← Voltar</a>
+        </div>
+      </nav>
+      <section style={{ background: '#F6F1E9', padding: '80px clamp(20px, 4vw, 56px)', maxWidth: 1280, margin: '0 auto' }}>
+        <h1 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '48px', fontWeight: 700, margin: '0 0 16px', color: '#141412' }}>Política de Privacidade</h1>
+        <p style={{ fontSize: '14px', color: '#8A8A82', margin: 0 }}>Última atualização: 2026</p>
+      </section>
+      <section style={{ padding: '80px clamp(20px, 4vw, 56px)', maxWidth: 900, margin: '0 auto', lineHeight: 1.8, color: '#55554E' }}>
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>1. Responsável pelo Tratamento</h2>
+        <p>
+          Centro de Terapias & Bem-Estar Rita Guerreiro<br/>
+          Rua Padre António Vieira 58<br/>
+          8100-611 Loulé, Portugal<br/>
+          Telefone: (+351) 961 899 364<br/>
+          E-mail: geral@ritaguerreiro.pt
+        </p>
+
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>2. Dados Pessoais Recolhidos</h2>
+        <p>
+          Recolhemos dados pessoais apenas quando necessário para prestar os nossos serviços:
+        </p>
+        <ul style={{ marginBottom: '16px' }}>
+          <li>Informações de contacto (nome, telefone, e-mail)</li>
+          <li>Dados de agendamento e histórico médico (quando relevante para o tratamento)</li>
+          <li>Informações de pagamento</li>
+        </ul>
+
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>3. Base Legal</h2>
+        <p>
+          Tratamos os seus dados com base no seu consentimento (artigo 6(1)(a) RGPD) e na execução de contrato para prestação de serviços (artigo 6(1)(b) RGPD).
+        </p>
+
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>4. Retenção de Dados</h2>
+        <p>
+          Os dados pessoais são retidos pelo período necessário para prestar os serviços e cumprir obrigações legais, normalmente até 10 anos conforme regulamentação de dados clínicos em Portugal.
+        </p>
+
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>5. Direitos dos Titulares</h2>
+        <p>
+          Tem direito a:
+        </p>
+        <ul>
+          <li>Acesso aos seus dados pessoais</li>
+          <li>Retificação de dados incorretos</li>
+          <li>Apagamento de dados ("direito ao esquecimento")</li>
+          <li>Limitação do tratamento</li>
+          <li>Portabilidade de dados</li>
+          <li>Oposição ao tratamento</li>
+        </ul>
+        <p>
+          Para exercer qualquer destes direitos, contacte-nos em geral@ritaguerreiro.pt ou 961 899 364.
+        </p>
+
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>6. Segurança dos Dados</h2>
+        <p>
+          Implementamos medidas técnicas e organizacionais apropriadas para proteger os seus dados contra acesso não autorizado, alteração ou destruição.
+        </p>
+
+        <h2 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '28px', fontWeight: 600, margin: '48px 0 16px', color: '#141412' }}>7. Contactos para Privacidade</h2>
+        <p>
+          Para questões sobre privacidade: geral@ritaguerreiro.pt<br/>
+          Autoridade de Supervisão: Comissão Nacional de Proteção de Dados (CNPD)
+        </p>
+      </section>
+    </>
+  );
+}
+
+const ready = () => {
+  if (window.LangContext && window.LangProvider && window.useLang) {
+    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><PrivacyPage /></LangProvider>);
+  } else {
+    setTimeout(ready, 40);
+  }
+};
+ready();
+</script>
+<script src="src/transitions.js"></script>
+</body>
+</html>

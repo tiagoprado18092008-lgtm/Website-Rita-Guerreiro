@@ -1,0 +1,614 @@
+/* Global styles for Rita Guerreiro site */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #FAFAF8;
+  color: #141412;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: #6FB5B0; color: #0E0E0C; }
+
+/* ── Premium typography ───────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+h1 { font-size: clamp(52px, 6vw, 80px); }
+h2 { font-size: clamp(36px, 4vw, 56px); }
+h3 { font-size: clamp(22px, 2.5vw, 28px); }
+
+/* eyebrow / label uppercase — DM Sans */
+.rg-eyebrow, [class*="eyebrow"] {
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Reveal animations ────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"] { transition-delay: 0.3s; }
+.reveal[data-delay="4"] { transition-delay: 0.4s; }
+.reveal[data-delay="5"] { transition-delay: 0.5s; }
+.reveal[data-delay="6"] { transition-delay: 0.6s; }
+
+/* ── Header premium animations ───────────────────────────── */
+@keyframes rg-header-logo {
+  from { opacity: 0; transform: translateX(-24px) scale(0.96); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes rg-header-link {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rg-header-cta {
+  from { opacity: 0; transform: scale(0.84) translateY(-6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes rg-topbar-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rg-logo-shimmer {
+  0%   { opacity: 0; left: -60%; }
+  40%  { opacity: 1; }
+  100% { opacity: 0; left: 130%; }
+}
+@keyframes rg-logo-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(111,181,176,0.3)); }
+  50%       { filter: drop-shadow(0 0 18px rgba(111,181,176,0.55)); }
+}
+
+.rg-header-topbar  { animation: rg-topbar-in   300ms cubic-bezier(.2,.8,.2,1) both; }
+.rg-header-logo    { animation: rg-header-logo  520ms cubic-bezier(.16,1.1,.44,1) 60ms both; }
+.rg-header-link-1  { animation: rg-header-link  400ms cubic-bezier(.2,.8,.2,1) 180ms both; }
+.rg-header-link-2  { animation: rg-header-link  400ms cubic-bezier(.2,.8,.2,1) 240ms both; }
+.rg-header-link-3  { animation: rg-header-link  400ms cubic-bezier(.2,.8,.2,1) 300ms both; }
+.rg-header-link-4  { animation: rg-header-link  400ms cubic-bezier(.2,.8,.2,1) 360ms both; }
+.rg-header-cta     { animation: rg-header-cta   460ms cubic-bezier(.34,1.4,.64,1) 440ms both; }
+
+/* Logo image glow pulse */
+.rg-logo-img-wrap { animation: rg-logo-glow 4s ease-in-out 1.2s infinite; }
+
+/* Logo shimmer sweep on hover */
+.rg-logo-link { position: relative; overflow: visible; }
+.rg-logo-link .rg-logo-sweep {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  left: -60%;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 99px;
+  transition: none;
+}
+.rg-logo-link:hover .rg-logo-sweep {
+  animation: rg-logo-shimmer 700ms cubic-bezier(.4,0,.2,1) both;
+}
+
+/* Header default — deep translucent teal */
+.rg-header-wrap {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: #6CBFBA;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+  transition: background 350ms ease, box-shadow 350ms ease, padding 300ms ease;
+}
+/* scroll state */
+.rg-header-wrap.rg-scrolled {
+  background: #5AAFAA !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.16) !important;
+  border-bottom-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Top utility bar */
+.rg-topbar {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 6px 48px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 28px;
+}
+.rg-topbar-text {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+}
+.rg-topbar-link {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 200ms;
+}
+.rg-topbar-link:hover { color: rgba(255,255,255,0.8); }
+.rg-topbar-dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Main nav row */
+.rg-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 88px;
+  transition: height 300ms ease;
+}
+.rg-scrolled .rg-nav-row { height: 64px; }
+
+/* Logo area */
+.rg-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.rg-logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1;
+}
+.rg-logo-img-wrap {
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rg-logo-img {
+  width: 90px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.rg-scrolled .rg-logo-img-wrap { width: 30px; height: 30px; }
+.rg-logo-name {
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.rg-logo-tagline {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.72;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Nav links */
+.rg-nav-item {
+  border-radius: 8px;
+  transition: background 200ms !important;
+}
+.rg-nav-item:hover { background: rgba(255,255,255,0.08) !important; }
+
+.rg-nav-link {
+  position: relative;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.01em;
+}
+.rg-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px; left: 14px; right: 14px;
+  height: 1px;
+  background: rgba(111,181,176,0.7);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 250ms cubic-bezier(.2,.8,.2,1);
+}
+.rg-nav-link:hover { color: rgba(255,255,255,1) !important; }
+.rg-nav-link:hover::after,
+.rg-nav-link.active::after { transform: scaleX(1); }
+
+/* telefone */
+.rg-tel-link {
+  transition: background 200ms, border-color 200ms, color 200ms !important;
+}
+.rg-tel-link:hover {
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  color: #fff !important;
+}
+
+/* botão agendar premium */
+.rg-agendar-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms cubic-bezier(.34,1.2,.64,1), box-shadow 220ms !important;
+}
+.rg-agendar-btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 220ms;
+}
+.rg-agendar-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.1) inset !important;
+}
+.rg-agendar-btn:hover::before { opacity: 1; }
+
+/* Mega-menu entrada */
+@keyframes rg-drop {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.rg-mega { animation: rg-drop 220ms cubic-bezier(.2,.8,.2,1) both; }
+
+/* mega-menu label bar */
+@keyframes rg-bar-in {
+  from { width: 0; }
+  to   { width: 12px; }
+}
+.rg-mega .rg-mega-bar { animation: rg-bar-in 300ms cubic-bezier(.2,.8,.2,1) both; }
+
+/* logo icon hover — kept for compat */
+.rg-logo-link:hover .rg-logo-icon-wrap {
+  background: rgba(255,255,255,0.2) !important;
+  transform: scale(1.05);
+}
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes rg-drop {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+@keyframes rg-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes rg-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rg-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes rg-scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes rg-wafab-pulse {
+  0%, 100% { box-shadow: 0 12px 28px -6px rgba(37,211,102,0.5), 0 4px 10px rgba(0,0,0,0.1); }
+  50%       { box-shadow: 0 12px 28px -6px rgba(37,211,102,0.5), 0 0 0 10px rgba(37,211,102,0.12); }
+}
+@keyframes rg-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes rg-underline-in {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Mega-menu entrada ──────────────────────────────────── */
+.rg-mega { animation: rg-drop 200ms cubic-bezier(.2,.8,.2,1) both; }
+
+/* ── Drop items ─────────────────────────────────────────── */
+.rg-drop-item {
+  position: relative;
+  transition: background 150ms, color 150ms, padding-left 150ms !important;
+}
+.rg-drop-item:hover {
+  background: #F1F7F6 !important;
+  color: #2F6B68 !important;
+  padding-left: 14px !important;
+}
+
+/* ── Service cards ──────────────────────────────────────── */
+.rg-service-card {
+  transition: transform 320ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 320ms cubic-bezier(.2,.8,.2,1) !important;
+  border-radius: 12px;
+}
+.rg-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px -8px rgba(14,14,12,0.14);
+}
+.rg-service-card:hover img {
+  transform: scale(1.04);
+  transition: transform 500ms cubic-bezier(.2,.7,.2,1);
+}
+.rg-service-card img { transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
+.rg-service-card:hover .rg-service-arrow { transform: translateX(5px); }
+.rg-service-arrow { transition: transform 240ms cubic-bezier(.2,.8,.2,1); }
+
+/* ── Hero quick-service cards ───────────────────────────── */
+.rg-hero-scard {
+  transition: transform 340ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 340ms cubic-bezier(.2,.8,.2,1);
+}
+.rg-hero-scard:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 48px -10px rgba(14,14,12,0.22);
+}
+.rg-hero-scard img { transition: transform 600ms cubic-bezier(.2,.7,.2,1); }
+.rg-hero-scard:hover img { transform: scale(1.06); }
+
+/* ── Buttons ────────────────────────────────────────────── */
+.rg-btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 200ms, box-shadow 200ms !important;
+}
+.rg-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+  background-size: 200% auto;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.rg-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(14,14,12,0.22) !important; }
+.rg-btn-primary:hover::after { opacity: 1; animation: rg-shimmer 600ms linear; }
+
+/* ── Nav links — underline animado ─────────────────────── */
+.rg-nav-link {
+  position: relative;
+}
+.rg-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 14px; right: 14px;
+  height: 1.5px;
+  background: rgba(255,255,255,0.7);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+.rg-nav-link:hover::after,
+.rg-nav-link.active::after { transform: scaleX(1); }
+
+/* ── Footer ─────────────────────────────────────────────── */
+.rg-footer-link {
+  transition: color 180ms, padding-left 180ms !important;
+  display: block;
+}
+.rg-footer-link:hover { color: #F6F1E9 !important; padding-left: 4px; }
+.rg-footer-social {
+  transition: background 200ms, border-color 200ms, transform 200ms !important;
+}
+.rg-footer-social:hover {
+  background: rgba(255,255,255,0.2) !important;
+  border-color: rgba(255,255,255,0.5) !important;
+  transform: translateY(-2px);
+}
+
+/* ── WhatsApp FAB ───────────────────────────────────────── */
+.rg-wafab {
+  animation: rg-wafab-pulse 3s ease-in-out 2s infinite;
+  transition: transform 220ms !important;
+}
+.rg-wafab:hover {
+  transform: scale(1.1) !important;
+  animation: none;
+}
+
+/* ── Team cards ─────────────────────────────────────────── */
+.rg-team-card img,
+.rg-team-card .rg-team-photo { transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
+.rg-team-card:hover .rg-team-photo { transform: scale(1.04); }
+
+/* ── Photo grid hover (WhyUs) ───────────────────────────── */
+.rg-photo-grid-item {
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 320ms cubic-bezier(.2,.8,.2,1), box-shadow 320ms;
+}
+.rg-photo-grid-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px -6px rgba(14,14,12,0.15);
+}
+.rg-photo-grid-item img { transition: transform 600ms cubic-bezier(.2,.7,.2,1); }
+.rg-photo-grid-item:hover img { transform: scale(1.06); }
+
+/* ── Featured service icon cards ───────────────────────── */
+.rg-icon-card {
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 280ms, border-color 280ms !important;
+}
+.rg-icon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -8px rgba(47,107,104,0.18);
+  border-color: #6FB5B0 !important;
+}
+
+/* ── Stats strip ─────────────────────────────────────────── */
+@keyframes rg-count-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rg-stat { animation: rg-count-in 600ms cubic-bezier(.2,.8,.2,1) both; }
+.rg-stat:nth-child(1) { animation-delay: 0ms; }
+.rg-stat:nth-child(2) { animation-delay: 80ms; }
+.rg-stat:nth-child(3) { animation-delay: 160ms; }
+.rg-stat:nth-child(4) { animation-delay: 240ms; }
+
+/* ── Testimonials ─────────────────────────────────────────── */
+.rg-testimonial-card {
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), box-shadow 280ms !important;
+}
+.rg-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -10px rgba(14,14,12,0.12) !important;
+}
+
+/* ── Word reveal (hero title) ─────────────────────────────── */
+@keyframes rg-word {
+  from { opacity: 0; transform: translateY(22px) skewY(2deg); }
+  to   { opacity: 1; transform: translateY(0) skewY(0deg); }
+}
+.rg-word { display: inline-block; animation: rg-word 500ms cubic-bezier(.2,.8,.2,1) both; }
+
+/* ── CTA gradient animation ───────────────────────────────── */
+@keyframes rg-cta-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.rg-cta-animated {
+  background: linear-gradient(135deg, #141412 0%, #1F4846 40%, #2F6B68 70%, #141412 100%);
+  background-size: 300% 300%;
+  animation: rg-cta-gradient 8s ease infinite;
+}
+
+/* ── Section fade-up (for Reveal-less sections) ─────────── */
+.rg-animate-in { animation: rg-fade-up 700ms cubic-bezier(.2,.7,.2,1) both; }
+
+/* ── Forms ───────────────────────────────────────────────── */
+input:focus, textarea:focus, select:focus {
+  border-color: #2F6B68 !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(111,181,176,0.18);
+  transition: box-shadow 200ms, border-color 200ms;
+}
+
+/* ── Livro de reclamações ────────────────────────────────── */
+.rg-reclamacoes-btn:hover {
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.45) !important;
+}
+
+/* ── Stats strip responsive ─────────────────────────────── */
+@media (max-width: 640px) {
+  .rg-stats-grid { grid-template-columns: 1fr 1fr !important; row-gap: 24px !important; }
+}
+
+/* ── Responsive nav ─────────────────────────────────────── */
+@media (max-width: 1180px) {
+  .rg-nav { display: none !important; }
+  .rg-burger { display: inline-flex !important; }
+  .rg-nav-tel { display: none !important; }
+}
+@media (max-width: 900px) {
+  .rg-nav-row { padding: 0 20px !important; }
+  .rg-topbar { padding: 6px 20px !important; }
+}
+@media (max-width: 900px) {
+  .rg-footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 640px) {
+  .rg-footer-grid { grid-template-columns: 1fr !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Hero panel float animations ────────────────────────── */
+@keyframes rg-float-1 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes rg-float-2 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(10px); }
+}
+@keyframes rg-float-3 {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+
+/* ── WhatsApp FAB — ripple ring ──────────────────────────── */
+@keyframes rg-ripple {
+  0%   { transform: scale(1);    opacity: 0.8; }
+  100% { transform: scale(1.75); opacity: 0; }
+}
+.rg-wafab::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(37,211,102,0.6);
+  animation: rg-ripple 3s ease-out 2.5s infinite;
+  pointer-events: none;
+}
+
+/* ── WhatsApp FAB — tooltip ──────────────────────────────── */
+.rg-wafab::after {
+  content: 'Fala connosco!';
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: white;
+  color: #141412;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms, transform 200ms;
+}
+.rg-wafab:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── WhatsApp FAB — slide-in de entrada ─────────────────── */
+.rg-wafab {
+  transform: translateX(80px) !important;
+  opacity: 0 !important;
+  transition: transform 600ms cubic-bezier(.34,1.4,.64,1), opacity 400ms ease !important;
+  animation: none !important;
+}
+.rg-wafab.rg-wafab-visible {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  animation: rg-wafab-pulse 3s ease-in-out 0.6s infinite !important;
+}

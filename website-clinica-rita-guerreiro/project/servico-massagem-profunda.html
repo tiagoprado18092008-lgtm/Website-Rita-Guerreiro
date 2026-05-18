@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="pt-PT"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Massagem Profunda — Rita Guerreiro</title>
+<meta name="description" content="Massagem Profunda — Rita Guerreiro em Loulé. Agende a sua sessão online ou por telefone." />
+<meta property="og:title" content="Massagem Profunda — Rita Guerreiro · Rita Guerreiro" />
+<meta property="og:description" content="Massagem Profunda — Rita Guerreiro em Loulé. Agende a sua sessão online ou por telefone." />
+<meta property="og:image" content="https://www.ritaguerreiro.pt/rita_guerreiro_logo.png" />
+<meta property="og:url" content="https://www.ritaguerreiro.pt/servico-massagem-profunda.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="rita_guerreiro_logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<link rel="stylesheet" href="src/premium.css">
+</head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="src/tokens.jsx"></script>
+<script type="text/babel" src="src/logo.jsx"></script>
+<script type="text/babel" src="src/data.jsx"></script>
+<script type="text/babel" src="src/ui.jsx"></script>
+<script type="text/babel" src="src/pages.jsx"></script>
+<script type="text/babel">
+const ready = () => {
+  if (window.Nav && window.ServicePage && window.Footer && window.WAFab) {
+    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><ServicePage slug="massagem-profunda" /></LangProvider>);
+  } else setTimeout(ready, 40);
+};
+ready();
+</script>
+<script src="src/transitions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="src/premium.js" defer></script></body></html>

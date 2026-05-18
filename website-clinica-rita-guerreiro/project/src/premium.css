@@ -1,0 +1,456 @@
+/* ==========================================================================
+   premium.css — Camada de sobreposição não-destrutiva
+   Carregado DEPOIS de styles.css para melhorar spacing, tipografia e animações.
+   NÃO altera cores da marca, footer ou nav.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS Variables
+   ========================================================================== */
+:root {
+  --rg-surface-1: #FFFFFF;
+  --rg-surface-2: #FAFAF8;
+  --rg-surface-3: #F1F7F6;
+  --rg-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --rg-shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --rg-shadow-lg: 0 20px 48px rgba(0,0,0,0.10), 0 8px 16px rgba(0,0,0,0.06);
+  --rg-gradient-teal: linear-gradient(135deg, #6FB5B0 0%, #2F6B68 100%);
+  --rg-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --rg-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. Tipografia global
+   ========================================================================== */
+h1 {
+  font-size: clamp(64px, 7vw, 96px);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(40px, 4.5vw, 64px);
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  letter-spacing: -0.01em;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+section p {
+  max-width: 52ch;
+}
+
+/* ==========================================================================
+   3. Spacing de secções
+   ========================================================================== */
+section {
+  padding-top: clamp(80px, 10vw, 140px);
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+
+/* Exceção: Stats strip — padding menor */
+.rg-stats-grid {
+  gap: 0 !important;
+}
+
+/* ==========================================================================
+   4. Hero section premium
+   ========================================================================== */
+/* Hero section — a hero tem paddingTop: 88 inline no JSX, usamos isso como âncora */
+/* Não usar section:has(.rg-hero-grid) — ServicesCard também usa essa classe */
+
+/* Linha decorativa vertical — injetada via JS com classe .rg-hero-line */
+.rg-hero-line {
+  width: 2px;
+  height: 80px;
+  background: #6FB5B0;
+  margin-bottom: 24px;
+  animation: rg-line-grow 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both;
+  transform-origin: top;
+  display: block;
+}
+
+@keyframes rg-line-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* ==========================================================================
+   5. Nav scrolled effect
+   ========================================================================== */
+.rg-header-wrap {
+  transition: background 300ms var(--rg-ease-standard),
+              box-shadow 300ms var(--rg-ease-standard),
+              backdrop-filter 300ms var(--rg-ease-standard);
+}
+
+.rg-header-wrap.rg-scrolled {
+  background: rgba(20, 20, 18, 0.92) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+}
+
+/* Nav links — underline animado no hover */
+.rg-nav-link {
+  position: relative;
+}
+
+.rg-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 15px;
+  right: 15px;
+  height: 1px;
+  background: #6FB5B0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms var(--rg-ease-standard);
+}
+
+.rg-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   6. Cards de serviços (.rg-service-card)
+   ========================================================================== */
+.rg-service-card {
+  border-radius: 20px !important;
+  border: 1px solid #E8E6DF !important;
+  background: #FFFFFF !important;
+  padding: 16px !important;
+  transition: transform 400ms var(--rg-ease-out),
+              box-shadow 400ms var(--rg-ease-out),
+              border-color 400ms var(--rg-ease-out) !important;
+  will-change: transform;
+}
+
+.rg-service-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--rg-shadow-lg) !important;
+  border-color: #6FB5B0 !important;
+}
+
+/* Arrow no hover */
+.rg-service-arrow {
+  transition: transform 240ms var(--rg-ease-out);
+}
+
+.rg-service-card:hover .rg-service-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   7. Icon cards (.rg-icon-card)
+   ========================================================================== */
+.rg-icon-card {
+  border-radius: 16px !important;
+  transition: transform 300ms var(--rg-ease-out),
+              box-shadow 300ms var(--rg-ease-out) !important;
+  will-change: transform;
+}
+
+.rg-icon-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--rg-shadow-md) !important;
+}
+
+/* ==========================================================================
+   8. Testimonial cards (.rg-testimonial-card)
+   ========================================================================== */
+.rg-testimonial-card {
+  border-radius: 20px !important;
+  box-shadow: var(--rg-shadow-md) !important;
+  padding: 40px !important;
+  position: relative;
+  transition: transform 300ms var(--rg-ease-out),
+              box-shadow 300ms var(--rg-ease-out);
+}
+
+.rg-testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--rg-shadow-lg) !important;
+}
+
+.rg-testimonial-card::before {
+  content: '\201C';
+  font-family: 'Open Sans', sans-serif;
+  font-size: 120px;
+  font-weight: 300;
+  color: #F1F7F6;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   9. Stats strip premium
+   ========================================================================== */
+.rg-stat {
+  padding: 24px 32px !important;
+}
+
+/* ==========================================================================
+   10. Botões premium (.rg-btn-primary)
+   ========================================================================== */
+.rg-btn-primary {
+  transition: transform 220ms var(--rg-ease-out),
+              box-shadow 220ms var(--rg-ease-out) !important;
+}
+
+.rg-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--rg-shadow-lg) !important;
+}
+
+/* ==========================================================================
+   11. Footer social links
+   ========================================================================== */
+.rg-footer-social:hover {
+  background: rgba(111,181,176,0.15) !important;
+  border-color: #6FB5B0 !important;
+}
+
+/* ==========================================================================
+   12. Section dividers
+   ========================================================================== */
+.rg-section-divider {
+  height: 1px;
+  background: #E8E6DF;
+  mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+  margin: 0;
+}
+
+/* ==========================================================================
+   13. Scroll indicator (adicionado ao DOM pelo premium.js)
+   ========================================================================== */
+.rg-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  animation: rg-bounce 1.5s ease-in-out infinite;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+@keyframes rg-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+.rg-scroll-indicator svg {
+  display: block;
+}
+
+/* ==========================================================================
+   14. Animação de entrada para palavras (.rg-word já existe no JSX)
+   ========================================================================== */
+.rg-word {
+  display: inline-block;
+  animation: rg-word-in 0.7s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+@keyframes rg-word-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   15. Mobile responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .rg-hero-grid > div:last-child {
+    border-radius: 0 !important;
+    min-height: 55svh;
+  }
+
+  .rg-hero-grid > div:first-child {
+    padding-left: 16px;
+  }
+
+  section {
+    padding-top: clamp(56px, 8vw, 100px);
+    padding-bottom: clamp(56px, 8vw, 100px);
+  }
+
+  h1 { font-size: clamp(40px, 9vw, 56px) !important; }
+  h2 { font-size: clamp(32px, 6vw, 48px) !important; }
+
+  .rg-testimonial-card {
+    padding: 28px 24px !important;
+  }
+
+  .rg-testimonial-card::before {
+    font-size: 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-word,
+  .rg-hero-grid > div:first-child::before,
+  .rg-scroll-indicator {
+    animation: none !important;
+  }
+
+  .rg-service-card,
+  .rg-icon-card,
+  .rg-testimonial-card,
+  .rg-btn-primary {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   Cards de serviços featured — hover zoom + elevação
+   ========================================================================== */
+.rg-icon-card {
+  transition: transform 320ms cubic-bezier(.16,1,.3,1), box-shadow 320ms cubic-bezier(.16,1,.3,1) !important;
+}
+.rg-icon-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10) !important;
+}
+.rg-icon-card:hover .rg-card-img {
+  transform: scale(1.05);
+}
+
+/* Hero image — mobile height */
+@media (max-width: 700px) {
+  .rg-hero-img-wrap {
+    height: 320px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Section divider */
+#todos-servicos {
+  border-top: 1px solid #E8E6DF;
+}
+
+/* Nav telefone — esconde em mobile (já existe rg-nav-tel mas garantir) */
+@media (max-width: 860px) {
+  .rg-nav-tel { display: none !important; }
+}
+
+/* ==========================================================================
+   Footer links — hover refinado
+   ========================================================================== */
+.rg-footer-link {
+  position: relative;
+  display: inline-block;
+  transition: color 180ms ease, padding-left 180ms ease !important;
+}
+
+.rg-footer-link:hover {
+  color: #ffffff !important;
+  padding-left: 6px !important;
+}
+
+/* ==========================================================================
+   Livro de Reclamações
+   ========================================================================== */
+.rg-reclamacoes-btn:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.4) !important;
+}
+
+/* ==========================================================================
+   WhatsApp FAB — melhorada
+   ========================================================================== */
+.rg-wafab:hover {
+  transform: translateY(-3px) scale(1.06) !important;
+}
+
+/* ==========================================================================
+   Nav agendar button — highlight extra
+   ========================================================================== */
+.rg-agendar-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18) !important;
+}
+
+/* ==========================================================================
+   Testimonial cards — refinados
+   ========================================================================== */
+.rg-testimonial-card {
+  transition: transform 280ms cubic-bezier(.16,1,.3,1),
+              box-shadow 280ms cubic-bezier(.16,1,.3,1) !important;
+}
+
+/* ==========================================================================
+   Service card image — transição mais suave
+   ========================================================================== */
+.rg-service-card img {
+  transition: transform 500ms cubic-bezier(.16,1,.3,1);
+}
+
+.rg-service-card:hover img {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   Focus visible — acessibilidade
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #6FB5B0;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   WhyUs — linha de separação estilizada
+   ========================================================================== */
+.rg-whyus-item {
+  position: relative;
+}
+
+/* ==========================================================================
+   Heading lead — primeira linha maior para ritmo visual
+   ========================================================================== */
+.rg-section-lead {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+/* ==========================================================================
+   Logo nav — transição ao scroll
+   ========================================================================== */
+.rg-header-logo img {
+  transition: height 300ms cubic-bezier(.2,.8,.2,1), opacity 300ms ease;
+}
+
+.rg-scrolled .rg-header-logo img {
+  height: 80px !important;
+}
+
+/* ==========================================================================
+   Smooth scroll
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Selection color — marca
+   ========================================================================== */
+::selection {
+  background: rgba(111,181,176,0.25);
+  color: #141412;
+}
