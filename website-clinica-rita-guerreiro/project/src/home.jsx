@@ -4,123 +4,101 @@ function Hero() {
   const { t } = useLang();
   const h1Lines = t('hero.h1');
   return (
-    <section style={{ paddingTop: 88, paddingBottom: 0, background: RG.white, overflow: 'hidden' }}>
-      <Container>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 48,
-          alignItems: 'center',
-          minHeight: 500,
-          paddingBottom: 64,
-        }} className="rg-hero-grid">
+    <section style={{ position: 'relative', minHeight: 600, display: 'flex', alignItems: 'center', background: RG.white, overflow: 'hidden', paddingTop: 88 }}>
 
-          {/* Left — headline + info + CTA */}
-          <div>
-            {/* Linha decorativa */}
-            <Reveal delay={120}>
-              <div style={{ width: 48, height: 2, background: '#5AAFAA', marginBottom: 24 }} />
-            </Reveal>
+      {/* Imagem — painel direito, posição absoluta */}
+      <div style={{ position: 'absolute', inset: 0, left: '42%', zIndex: 0 }}>
+        <img
+          src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1400&q=85"
+          alt="Tratamento de fisioterapia na Clínica Rita Guerreiro"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+          loading="eager" decoding="async"
+        />
+      </div>
 
-            {/* Headline — word stagger */}
-            <Reveal delay={180}>
-              <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 6vw, 80px)', fontWeight: 300, lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, color: RG.ink }}>
-                {Array.isArray(h1Lines) && h1Lines.map((line, li) => (
-                  <span key={li} style={{ display: 'block', color: li === 2 ? '#5AAFAA' : undefined }}>
-                    {line.split(' ').map((w, i) => (
-                      <React.Fragment key={i}><span className="rg-word" style={{ animationDelay: `${(li * 2 + i) * 80 + li * 120}ms` }}>{w}</span>{' '}</React.Fragment>
-                    ))}
-                  </span>
-                ))}
-              </h1>
-            </Reveal>
-            <Reveal delay={600}>
-              <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.7, margin: '24px 0 0', maxWidth: '40ch' }}>
-                {t('hero.desc')}
-              </p>
-            </Reveal>
-            <Reveal delay={720}>
-              <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-                <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" className="rg-btn-primary" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 10,
-                  fontFamily: F_BODY, fontSize: 14, fontWeight: 600,
-                  color: RG.white, background: RG.ink,
-                  padding: '13px 24px', borderRadius: 999, textDecoration: 'none',
-                }}>
-                  {t('hero.cta')}
-                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 22, height: 22, borderRadius: '50%', background: 'rgba(255,255,255,0.18)', fontSize: 14 }}>→</span>
-                </a>
-                <a href="tel:+351961899364" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  fontFamily: F_BODY, fontSize: 14, fontWeight: 500,
-                  color: RG.charcoal, background: 'transparent',
-                  border: `1px solid ${RG.line}`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
-                }}>
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
-                  961 899 364
-                </a>
-              </div>
-            </Reveal>
-            <Reveal delay={820}>
-              <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 0 3px rgba(34,197,94,0.2)', animation: 'rg-wafab-pulse 2s ease-in-out infinite', flexShrink: 0 }} />
-                <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{t('hero.horario')}</span>
-              </div>
-            </Reveal>
-            <Reveal delay={900}>
-              <div style={{ marginTop: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ display: 'flex', gap: 3 }}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="12" height="12" viewBox="0 0 12 12" fill={RG.tealDark}>
-                      <path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/>
-                    </svg>
+      {/* Gradiente fade da esquerda para a direita */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 1,
+        background: 'linear-gradient(to right, #ffffff 44%, rgba(255,255,255,0.92) 54%, rgba(255,255,255,0.0) 72%)',
+      }} />
+
+      {/* Conteúdo */}
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '80px 48px 80px', boxSizing: 'border-box' }}>
+        <div style={{ maxWidth: 560 }}>
+
+          {/* Linha decorativa */}
+          <Reveal delay={100}>
+            <div style={{ width: 40, height: 2, background: '#6FB5B0', marginBottom: 28 }} />
+          </Reveal>
+
+          {/* Headline */}
+          <Reveal delay={180}>
+            <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 6vw, 80px)', fontWeight: 700, lineHeight: 1.04, letterSpacing: '-0.025em', margin: 0, color: RG.ink }}>
+              {Array.isArray(h1Lines) && h1Lines.map((line, li) => (
+                <span key={li} style={{ display: 'block', color: li === 2 ? '#6FB5B0' : undefined }}>
+                  {line.split(' ').map((w, i) => (
+                    <React.Fragment key={i}><span className="rg-word" style={{ animationDelay: `${(li * 2 + i) * 80 + li * 120}ms` }}>{w}</span>{' '}</React.Fragment>
                   ))}
-                </div>
-                <span style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted }}>{t('hero.social_proof')}</span>
-              </div>
-            </Reveal>
-          </div>
+                </span>
+              ))}
+            </h1>
+          </Reveal>
 
-          {/* Right — foto profissional */}
-          <Reveal y={24} delay={100}>
-            <div style={{
-              borderRadius: 20, overflow: 'hidden', height: 520,
-              position: 'relative', background: '#C5E8E5',
-            }} className="rg-hero-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80"
-                alt="Tratamento de fisioterapia na Clínica Rita Guerreiro"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="eager" decoding="async"
-              />
-              {/* Overlay gradiente suave na base */}
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0, height: 140,
-                background: 'linear-gradient(to top, rgba(0,0,0,0.50) 0%, transparent 100%)',
-              }} />
-              {/* Card de credenciais */}
-              <div style={{
-                position: 'absolute', bottom: 20, left: 20, right: 20,
-                background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(10px)',
-                borderRadius: 12, padding: '14px 18px',
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          {/* Descrição */}
+          <Reveal delay={520}>
+            <p style={{ fontFamily: F_BODY, fontSize: 15, color: RG.charcoal, lineHeight: 1.72, margin: '22px 0 0', maxWidth: '40ch' }}>
+              {t('hero.desc')}
+            </p>
+          </Reveal>
+
+          {/* CTAs */}
+          <Reveal delay={640}>
+            <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+              <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 10,
+                fontFamily: F_BODY, fontSize: 14, fontWeight: 700,
+                color: RG.white, background: '#6FB5B0',
+                padding: '13px 26px', borderRadius: 999, textDecoration: 'none',
+                boxShadow: '0 8px 24px -6px rgba(111,181,176,0.55)',
               }}>
-                <div>
-                  <div style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.ink }}>{t('hero.card_name')}</div>
-                  <div style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted, marginTop: 2 }}>{t('hero.card_addr')}</div>
-                </div>
-                <div style={{ display: 'flex', gap: 4 }}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="10" height="10" viewBox="0 0 12 12" fill={RG.tealDark}>
-                      <path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/>
-                    </svg>
-                  ))}
-                </div>
-              </div>
+                {t('hero.cta')}
+              </a>
+              <a href="tel:+351961899364" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                fontFamily: F_BODY, fontSize: 14, fontWeight: 500,
+                color: RG.charcoal, background: 'transparent',
+                border: `1.5px solid rgba(20,20,18,0.15)`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
+              }}>
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+                961 899 364
+              </a>
             </div>
           </Reveal>
+
+          {/* Horário */}
+          <Reveal delay={760}>
+            <div style={{ marginTop: 28, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 0 3px rgba(34,197,94,0.2)', flexShrink: 0 }} />
+              <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{t('hero.horario')}</span>
+            </div>
+          </Reveal>
+
+          {/* Prova social */}
+          <Reveal delay={860}>
+            <div style={{ marginTop: 18, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ display: 'flex', gap: 3 }}>
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="12" height="12" viewBox="0 0 12 12" fill="#6FB5B0">
+                    <path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/>
+                  </svg>
+                ))}
+              </div>
+              <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{t('hero.social_proof')}</span>
+            </div>
+          </Reveal>
+
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
