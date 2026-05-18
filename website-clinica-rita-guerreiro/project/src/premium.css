@@ -89,12 +89,6 @@ section {
               backdrop-filter 300ms var(--rg-ease-standard);
 }
 
-.rg-header-wrap.rg-scrolled {
-  background: rgba(20, 20, 18, 0.92) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 24px rgba(0,0,0,0.18);
-}
 
 /* Nav links — underline animado no hover */
 .rg-nav-link {
