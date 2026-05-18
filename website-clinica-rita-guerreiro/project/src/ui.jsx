@@ -102,97 +102,58 @@ function Nav({ current = 'home' }) {
   }, []);
 
   const megaIcons = {
-    'Fisioterapia': (
+    'fisioterapia': (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18.5 5.5a2.121 2.121 0 0 1 0 3L7 20a2.121 2.121 0 0 1-3-3L15.5 5.5a2.121 2.121 0 0 1 3 0z"/>
         <path d="M5.5 5.5a2 2 0 0 0 0 2.828l.707.707"/><path d="M18.5 18.5a2 2 0 0 0 0-2.828l-.707-.707"/>
       </svg>
     ),
-    'Cuidados de Saúde': (
+    'saude': (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
       </svg>
     ),
-    'Massagens': (
+    'massagens': (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
         <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
       </svg>
     ),
-    'Holísticas': (
+    'holisticas': (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
       </svg>
     ),
-    'Estética & Tratamentos': (
+    'estetica': (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a5 5 0 0 1 5 5c0 3.5-5 13-5 13S7 10.5 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/>
       </svg>
     ),
   };
 
-  const megaDescs = {
-    'Fisioterapia': 'Reabilitação e movimento',
-    'Cuidados de Saúde': 'Bem-estar integral',
-    'Massagens': 'Relaxamento e terapia',
-    'Holísticas': 'Equilíbrio e energia',
-    'Estética & Tratamentos': 'Beleza e cuidado',
+  // Constrói o mega-menu dinamicamente a partir do catálogo localizado.
+  // Mantém URLs estáveis (independentes de idioma) e devolve labels traduzidos.
+  const servicesByLang = getServices(lang);
+  const CATEGORY_HREF = {
+    fisioterapia: 'fisioterapia.html',
+    saude: null,
+    massagens: 'massagens.html',
+    holisticas: 'holisticas.html',
+    estetica: null,
   };
-
-  const megaCols = [
-    {
-      label: 'Fisioterapia',
-      href: 'fisioterapia.html',
-      items: [
-        { label: 'Fisioterapia Geral', href: 'servico-fisioterapia.html' },
-        { label: 'Fisioterapia ATM / Mesoterapia', href: 'servico-mesoterapia.html' },
-        { label: 'Fisioterapia Vestibular / Acupuntura', href: 'servico-acupuntura.html' },
-      ],
-    },
-    {
-      label: 'Cuidados de Saúde',
-      href: null,
-      items: [
-        { label: 'Nutrição', href: 'servico-nutricao.html' },
-        { label: 'Terapia de Bowen', href: 'servico-terapia-bowen.html' },
-        { label: 'Psicologia', href: 'servico-psicologia.html' },
-      ],
-    },
-    {
-      label: 'Massagens',
-      href: 'massagens.html',
-      items: [
-        { label: 'Massagem de Relaxamento', href: 'servico-massagem-relaxamento.html' },
-        { label: 'Massagem para Crianças', href: 'servico-massagem-criancas.html' },
-        { label: 'Massagem Assinatura RG', href: 'servico-massagem-assinatura-rg.html' },
-        { label: 'Massagem Profunda', href: 'servico-massagem-profunda.html' },
-        { label: 'Massagem Pré/Pós Natal', href: 'servico-massagem-pre-pos-natal.html' },
-        { label: 'Massagem Sacro-Craniana', href: 'servico-massagem-sacro-craniana.html' },
-        { label: 'Drenagem Linfática Manual', href: 'servico-drenagem-linfatica.html' },
-        { label: 'Drenagem Pós-Op / Terapêutica', href: 'servico-massagem-terapeutica.html' },
-      ],
-    },
-    {
-      label: 'Holísticas',
-      href: 'holisticas.html',
-      items: [
-        { label: 'Reflexologia', href: 'servico-reflexologia.html' },
-        { label: 'Shiatsu', href: 'servico-shiatsu.html' },
-        { label: 'Massagem Indiana', href: 'servico-massagem-indiana.html' },
-        { label: 'Head Spa', href: 'servico-head-spa.html' },
-      ],
-    },
-    {
-      label: 'Estética & Tratamentos',
-      href: null,
-      items: [
-        { label: 'Faciais', href: 'servico-facial.html' },
-        { label: 'Pacotes de Tratamento', href: 'servico-pacotes-tratamento.html' },
-        { label: 'Depilação a Laser', href: 'servico-depilacao-laser.html' },
-        { label: 'Pilates Clínico', href: 'servico-pilates-clinico.html' },
-      ],
-    },
-  ];
+  const megaCols = Object.keys(servicesByLang).map(catId => ({
+    id: catId,
+    label: servicesByLang[catId].label,
+    href: CATEGORY_HREF[catId] ?? null,
+    items: servicesByLang[catId].items.map(it => ({
+      label: it.name,
+      href: `servico-${it.slug}.html`,
+    })),
+  }));
+  const megaDescs = {};
+  for (const cat of megaCols) {
+    megaDescs[cat.id] = t(`nav.mega_descs.${cat.id}`);
+  }
 
   const navLinks = [
     { id: 'inicio', label: t('nav.inicio'), href: 'index.html' },
@@ -249,7 +210,7 @@ function Nav({ current = 'home' }) {
                       {/* Painel esquerdo: categorias com ícones */}
                       <div style={{ width: 230, flexShrink: 0, background: 'white', borderRadius: '0 0 16px 16px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF' }}>
                         {megaCols.map((col, ci) => (
-                          <div key={col.label}>
+                          <div key={col.id}>
                             <div
                               onMouseEnter={() => setActiveCol(ci)}
                               style={{
@@ -261,7 +222,7 @@ function Nav({ current = 'home' }) {
                             >
                               <div style={{ flex: 1 }}>
                                 <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 500, color: activeCol === ci ? RG.tealDark : RG.charcoal, lineHeight: 1.2 }}>{col.label}</div>
-                                <div style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.label]}</div>
+                                <div style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
                               </div>
                               <svg width="8" height="8" viewBox="0 0 10 10" style={{ marginLeft: 'auto', opacity: activeCol === ci ? 0.7 : 0.3 }}>
                                 <path d="M3 2 L7 5 L3 8" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
@@ -448,14 +409,14 @@ function Nav({ current = 'home' }) {
                 {mobileServicos && (
                   <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {megaCols.map(col => (
-                      <div key={col.label} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+                      <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(255,255,255,0.06)' }}>
                           <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
-                            {megaIcons[col.label]}
+                            {megaIcons[col.id]}
                           </span>
                           <div>
                             <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(111,181,176,0.85)' }}>{col.label}</div>
-                            <div style={{ fontFamily: F_BODY, fontSize: 10, color: 'rgba(255,255,255,0.35)', marginTop: 1 }}>{megaDescs[col.label]}</div>
+                            <div style={{ fontFamily: F_BODY, fontSize: 10, color: 'rgba(255,255,255,0.35)', marginTop: 1 }}>{megaDescs[col.id]}</div>
                           </div>
                         </div>
                         <div style={{ padding: '8px' }}>

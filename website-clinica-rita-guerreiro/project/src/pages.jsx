@@ -1,19 +1,22 @@
 // Service detail page + Contactos page
 
-function findService(slug) {
-  for (const k of Object.keys(SERVICES)) {
-    const item = SERVICES[k].items.find(i => i.slug === slug);
-    if (item) return { ...item, category: SERVICES[k].label, categoryId: k };
+function findService(slug, services) {
+  const SVC = services || SERVICES;
+  for (const k of Object.keys(SVC)) {
+    const item = SVC[k].items.find(i => i.slug === slug);
+    if (item) return { ...item, category: SVC[k].label, categoryId: k };
   }
   return null;
 }
 
 function ServicePage({ slug }) {
-  const { t } = useLang();
-  const s = findService(slug);
+  const { lang, t } = useLang();
+  const services = getServices(lang);
+  const serviceDetail = getServiceDetail(lang);
+  const s = findService(slug, services);
   if (!s) return <div style={{ padding: 120 }}>Serviço não encontrado.</div>;
-  const detail = SERVICE_DETAIL[slug];
-  const catItems = SERVICES[s.categoryId].items.filter(i => i.slug !== slug);
+  const detail = serviceDetail[slug];
+  const catItems = services[s.categoryId].items.filter(i => i.slug !== slug);
   const steps = t('service.steps');
 
   return (<>
@@ -30,7 +33,7 @@ function ServicePage({ slug }) {
           </div>
         </Reveal>
         <Reveal delay={60}>
-          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.ink }}>{s.name}<span style={{ color: RG.tealDark }}>.</span></h1>
+          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.ink }}>{s.name}</h1>
         </Reveal>
         <Reveal delay={120}>
           <Body size={20} style={{ marginTop: 28, maxWidth: '54ch' }}>{detail?.tagline || s.blurb}</Body>
@@ -75,7 +78,7 @@ function ServicePage({ slug }) {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <Heading level="h2">{t('service.sobre_heading')}<span style={{ color: RG.tealDark }}>.</span></Heading>
+            <Heading level="h2">{t('service.sobre_heading')}</Heading>
             <Body size={17} style={{ marginTop: 24 }}>{detail?.description || s.blurb}</Body>
             {detail?.sub && (
               <div style={{ marginTop: 48 }}>
@@ -101,8 +104,7 @@ function ServicePage({ slug }) {
         <Reveal>
           <Eyebrow style={{ marginBottom: 12 }}>{t('service.processo_eyebrow')}</Eyebrow>
           <Heading level="h2">
-            {t('service.processo_heading')}<span style={{ color: RG.tealDark }}>.</span>
-          </Heading>
+            {t('service.processo_heading')}          </Heading>
         </Reveal>
         <div style={{ marginTop: 56, position: 'relative' }}>
           <div style={{
@@ -143,7 +145,7 @@ function ServicePage({ slug }) {
       <Section bg={RG.cream} pad="lg">
         <Container>
           <Reveal><Eyebrow>{t('service.outros_eyebrow_prefix')} {s.category}</Eyebrow></Reveal>
-          <Reveal delay={60}><Heading level="h3" style={{ marginTop: 16 }}>{t('service.outros_heading')}<span style={{ color: RG.tealDark }}>.</span></Heading></Reveal>
+          <Reveal delay={60}><Heading level="h3" style={{ marginTop: 16 }}>{t('service.outros_heading')}</Heading></Reveal>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16, marginTop: 36 }}>
             {catItems.map(i => (
               <a key={i.slug} href={`servico-${i.slug}.html`} className="rg-service-card" style={{ display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink }}>
@@ -167,8 +169,9 @@ function ServicePage({ slug }) {
 
 // Category page — lists all services in a category
 function CategoryPage({ categoryId }) {
-  const { t } = useLang();
-  const cat = SERVICES[categoryId];
+  const { lang, t } = useLang();
+  const services = getServices(lang);
+  const cat = services[categoryId];
   if (!cat) return <div style={{ padding: 120 }}>Categoria não encontrada.</div>;
 
   return (<>
@@ -183,7 +186,7 @@ function CategoryPage({ categoryId }) {
           </div>
         </Reveal>
         <Reveal delay={60}>
-          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.ink }}>{cat.label}<span style={{ color: RG.tealDark }}>.</span></h1>
+          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.ink }}>{cat.label}</h1>
         </Reveal>
         <Reveal delay={120}>
           <Body size={20} style={{ marginTop: 28, maxWidth: '54ch' }}>{cat.intro}</Body>
@@ -252,8 +255,7 @@ function ContactosPage() {
         <Reveal><Eyebrow>{t('contactos.eyebrow')}</Eyebrow></Reveal>
         <Reveal delay={80}>
           <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(48px, 7vw, 112px)', fontWeight: 700, lineHeight: 0.95, letterSpacing: '-0.04em', margin: '20px 0 0', color: RG.ink, maxWidth: '16ch' }}>
-            {t('contactos.heading')}<span style={{ color: RG.tealDark }}>.</span>
-          </h1>
+            {t('contactos.heading')}          </h1>
         </Reveal>
         <Reveal delay={160}>
           <Body size={18} style={{ marginTop: 24 }}>{t('contactos.sub')}</Body>

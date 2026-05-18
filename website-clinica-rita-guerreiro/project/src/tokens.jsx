@@ -28,12 +28,21 @@ Object.assign(window, { RG, F_DISPLAY, F_BODY, F_MONO });
 // ── i18n ──────────────────────────────────────────────────────────────────────
 const TRANSLATIONS = {
   PT: {
-    nav: { inicio: 'Início', servicos: 'Serviços', sobre: 'Sobre', contactos: 'Contactos' },
+    nav: {
+      inicio: 'Início', servicos: 'Serviços', sobre: 'Sobre', contactos: 'Contactos',
+      mega_descs: {
+        fisioterapia: 'Reabilitação e movimento',
+        saude: 'Bem-estar integral',
+        massagens: 'Relaxamento e terapia',
+        holisticas: 'Equilíbrio e energia',
+        estetica: 'Beleza e cuidado',
+      },
+    },
     nav_mobile: { inicio: 'Início', servicos: 'Serviços', sobre: 'Sobre', contactos: 'Contactos' },
     hero: {
       badge: 'Loulé · Algarve',
       badge_v2: 'Em Loulé desde 2022',
-      h1: ['Recupera.', 'Equilibra.', 'Sente-te bem.'],
+      h1: ['Recupera', 'Equilibra', 'Sente-te bem'],
       desc: 'Fisioterapia, Osteopatia, Pilates Clínico, Psicologia e muito mais — numa clínica em Loulé onde cada pessoa é tratada com atenção e cuidado real.',
       cta: 'Marcar consulta',
       cta_secondary: 'Conhecer tratamentos',
@@ -56,6 +65,10 @@ const TRANSLATIONS = {
       cred_desc: 'Fisioterapeuta inscrita na Ordem dos Fisioterapeutas Portugueses. [REVER nº cédula]',
     },
     services_menu: {
+      '01_name': 'Fisioterapia',
+      '02_name': 'Pilates Clínico',
+      '03_name': 'Massagens Terapêuticas',
+      '04_name': 'Psicologia & Nutrição',
       '01_blurb': 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos. Sessões de 50 a 80 minutos.',
       '02_blurb': 'Movimento consciente supervisionado por fisioterapeuta — adaptado a dor lombar, gravidez, pós-operatório e prevenção de lesões.',
       '03_blurb': 'Massagens terapêuticas, deep tissue, pré/pós-natal, sacro-craniana e a exclusiva Massagem Assinatura RG (80 min).',
@@ -78,6 +91,12 @@ const TRANSLATIONS = {
     },
     testimonials_v2: {
       read_more: 'Ler mais avaliações no Google',
+      featured_q: 'Durante anos sofri de dores crónicas de costas. A abordagem que a Rita fez ao problema foi sem dúvida transformadora — é como ter um corpo novo. A diferença que isto fez na minha qualidade de vida é difícil de descrever',
+      featured_what: 'Fisioterapia · 18 meses de acompanhamento',
+      t1_q: 'A minha fisioterapeuta é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da musculatura e aliviar dores',
+      t1_what: 'Fisioterapia',
+      t2_q: 'Aulas de Pilates com a Rita são excelentes — a componente humana aliada às terapias é fundamental. Compreende mesmo as necessidades de cada um',
+      t2_what: 'Pilates Clínico',
     },
     homecta_v2: {
       opt1_title: 'WhatsApp agora',
@@ -232,12 +251,21 @@ const TRANSLATIONS = {
     meta: { tagline: 'Terapias & Bem-Estar' },
   },
   EN: {
-    nav: { inicio: 'Home', servicos: 'Services', sobre: 'About', contactos: 'Contacts' },
+    nav: {
+      inicio: 'Home', servicos: 'Services', sobre: 'About', contactos: 'Contacts',
+      mega_descs: {
+        fisioterapia: 'Rehabilitation and movement',
+        saude: 'Integral wellbeing',
+        massagens: 'Relaxation and therapy',
+        holisticas: 'Balance and energy',
+        estetica: 'Beauty and care',
+      },
+    },
     nav_mobile: { inicio: 'Home', servicos: 'Services', sobre: 'About', contactos: 'Contacts' },
     hero: {
       badge: 'Loulé · Algarve · Since 2022',
       badge_v2: 'In Loulé since 2022',
-      h1: ['Recover.', 'Balance.', 'Feel good.'],
+      h1: ['Recover', 'Balance', 'Feel good'],
       desc: 'Physiotherapy, Osteopathy, Clinical Pilates, Psychology and more — at a clinic in Loulé where every person is treated with genuine attention and care.',
       cta: 'Book appointment',
       cta_secondary: 'Explore treatments',
@@ -260,6 +288,10 @@ const TRANSLATIONS = {
       cred_desc: 'Physiotherapist registered with the Portuguese Order of Physiotherapists.',
     },
     services_menu: {
+      '01_name': 'Physiotherapy',
+      '02_name': 'Clinical Pilates',
+      '03_name': 'Therapeutic Massage',
+      '04_name': 'Psychology & Nutrition',
       '01_blurb': 'Individual assessment and treatment of pain, injury and dysfunction — for children and adults. Sessions of 50 to 80 minutes.',
       '02_blurb': 'Mindful movement supervised by a physiotherapist — adapted to back pain, pregnancy, post-surgery and injury prevention.',
       '03_blurb': 'Therapeutic massages, deep tissue, pre/post-natal, craniosacral and the exclusive RG Signature Massage (80 min).',
@@ -272,7 +304,7 @@ const TRANSLATIONS = {
       p2: 'Today she leads a multidisciplinary team working together so you no longer need to change clinic for each need. Everything in one place, with continuity and respect for your story.',
       card_label: 'Founder · Physiotherapist',
       card_name: 'Rita Guerreiro',
-      card_credentials: 'Physiotherapist · Specialised in TMJ, Vestibular and Clinical Pilates.',
+      card_credentials: 'Physiotherapist · Specialised in TMJ, Vestibular and Clinical Pilates',
       facts: [
         { value: '2002', label: 'Start of clinical practice' },
         { value: '2022', label: 'Clinic founded in Loulé' },
@@ -280,7 +312,15 @@ const TRANSLATIONS = {
       ],
       cta: 'Meet the full team',
     },
-    testimonials_v2: { read_more: 'Read more reviews on Google' },
+    testimonials_v2: {
+      read_more: 'Read more reviews on Google',
+      featured_q: 'For years I suffered from chronic back pain. The way Rita approached the problem was truly transformative — it feels like having a new body. The difference it has made to my quality of life is hard to describe',
+      featured_what: 'Physiotherapy · 18 months of treatment',
+      t1_q: 'My physiotherapist is a key part of my life. I see her every week to care for my muscles and ease pain',
+      t1_what: 'Physiotherapy',
+      t2_q: 'Pilates classes with Rita are excellent — the human side combined with the therapies makes all the difference. She truly understands each person’s needs',
+      t2_what: 'Clinical Pilates',
+    },
     homecta_v2: {
       opt1_title: 'WhatsApp now',
       opt1_desc: 'The fastest way to book. Most messages are answered in under 5 minutes during clinic hours.',
@@ -434,12 +474,21 @@ const TRANSLATIONS = {
     meta: { tagline: 'Therapies & Wellness' },
   },
   FR: {
-    nav: { inicio: 'Accueil', servicos: 'Services', sobre: 'À propos', contactos: 'Contact' },
+    nav: {
+      inicio: 'Accueil', servicos: 'Services', sobre: 'À propos', contactos: 'Contact',
+      mega_descs: {
+        fisioterapia: 'Rééducation et mouvement',
+        saude: 'Bien-être intégral',
+        massagens: 'Relaxation et thérapie',
+        holisticas: 'Équilibre et énergie',
+        estetica: 'Beauté et soin',
+      },
+    },
     nav_mobile: { inicio: 'Accueil', servicos: 'Services', sobre: 'À propos', contactos: 'Contact' },
     hero: {
       badge: 'Loulé · Algarve · Depuis 2022',
       badge_v2: 'À Loulé depuis 2022',
-      h1: ['Récupérez.', 'Équilibrez.', 'Sentez-vous bien.'],
+      h1: ['Récupérez', 'Équilibrez', 'Sentez-vous bien'],
       desc: 'Physiothérapie, Ostéopathie, Pilates Clinique, Psychologie et plus encore — dans une clinique à Loulé où chaque personne est traitée avec attention et soin réel.',
       cta: 'Prendre rendez-vous',
       cta_secondary: 'Voir les traitements',
@@ -462,6 +511,10 @@ const TRANSLATIONS = {
       cred_desc: 'Physiothérapeute inscrite à l\'Ordre des Physiothérapeutes du Portugal.',
     },
     services_menu: {
+      '01_name': 'Physiothérapie',
+      '02_name': 'Pilates Clinique',
+      '03_name': 'Massages Thérapeutiques',
+      '04_name': 'Psychologie & Nutrition',
       '01_blurb': 'Évaluation et traitement individuel de la douleur, blessure et dysfonction — pour enfants et adultes. Séances de 50 à 80 minutes.',
       '02_blurb': 'Mouvement conscient supervisé par un physiothérapeute — adapté aux douleurs lombaires, grossesse, post-opératoire et prévention des blessures.',
       '03_blurb': 'Massages thérapeutiques, deep tissue, pré/post-natal, sacro-crânien et le Massage Signature RG exclusif (80 min).',
@@ -474,7 +527,7 @@ const TRANSLATIONS = {
       p2: 'Aujourd\'hui, elle dirige une équipe pluridisciplinaire qui travaille ensemble pour que vous n\'ayez plus à changer de clinique selon le besoin. Tout au même endroit, avec continuité et respect pour votre histoire.',
       card_label: 'Fondatrice · Physiothérapeute',
       card_name: 'Rita Guerreiro',
-      card_credentials: 'Physiothérapeute · Spécialisée en ATM, Vestibulaire et Pilates Clinique.',
+      card_credentials: 'Physiothérapeute · Spécialisée en ATM, Vestibulaire et Pilates Clinique',
       facts: [
         { value: '2002', label: 'Début de la pratique clinique' },
         { value: '2022', label: 'Création du centre à Loulé' },
@@ -482,7 +535,15 @@ const TRANSLATIONS = {
       ],
       cta: 'Rencontrer toute l\'équipe',
     },
-    testimonials_v2: { read_more: 'Lire plus d\'avis sur Google' },
+    testimonials_v2: {
+      read_more: 'Lire plus d\'avis sur Google',
+      featured_q: 'Pendant des années j\'ai souffert de douleurs chroniques au dos. L\'approche que Rita a faite du problème a été sans aucun doute transformatrice — c\'est comme avoir un nouveau corps. La différence que cela a faite dans ma qualité de vie est difficile à décrire',
+      featured_what: 'Physiothérapie · 18 mois de suivi',
+      t1_q: 'Ma physiothérapeute est une pièce fondamentale dans ma vie. Je la consulte toutes les semaines pour prendre soin de ma musculature et soulager les douleurs',
+      t1_what: 'Physiothérapie',
+      t2_q: 'Les cours de Pilates avec Rita sont excellents — l\'aspect humain allié aux thérapies est fondamental. Elle comprend vraiment les besoins de chacun',
+      t2_what: 'Pilates Clinique',
+    },
     homecta_v2: {
       opt1_title: 'WhatsApp maintenant',
       opt1_desc: 'Le moyen le plus rapide. La plupart des messages sont répondus en moins de 5 minutes pendant les heures d\'ouverture.',

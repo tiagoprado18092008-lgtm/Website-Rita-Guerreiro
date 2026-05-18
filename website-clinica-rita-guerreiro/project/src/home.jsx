@@ -181,10 +181,10 @@ function StatsStrip() {
 function ServicesCard() {
   const { t } = useLang();
   const items = [
-    { num: '01', name: 'Fisioterapia', href: 'fisioterapia.html', img: IMG.fisioterapia, blurb: t('services_menu.01_blurb') },
-    { num: '02', name: 'Pilates Clínico', href: 'servico-pilates-clinico.html', img: IMG['pilates-clinico'], blurb: t('services_menu.02_blurb') },
-    { num: '03', name: 'Massagens Terapêuticas', href: 'massagens.html', img: IMG['massagem-relaxamento'], blurb: t('services_menu.03_blurb') },
-    { num: '04', name: 'Psicologia & Nutrição', href: 'servico-psicologia.html', img: IMG.psicologia, blurb: t('services_menu.04_blurb') },
+    { num: '01', name: t('services_menu.01_name'), href: 'fisioterapia.html', img: IMG.fisioterapia, blurb: t('services_menu.01_blurb') },
+    { num: '02', name: t('services_menu.02_name'), href: 'servico-pilates-clinico.html', img: IMG['pilates-clinico'], blurb: t('services_menu.02_blurb') },
+    { num: '03', name: t('services_menu.03_name'), href: 'massagens.html', img: IMG['massagem-relaxamento'], blurb: t('services_menu.03_blurb') },
+    { num: '04', name: t('services_menu.04_name'), href: 'servico-psicologia.html', img: IMG.psicologia, blurb: t('services_menu.04_blurb') },
   ];
   const [active, setActive] = React.useState(0);
 
@@ -354,13 +354,14 @@ function WhyUs() {
 // SERVICES OVERVIEW — mantém grid mas com ajuste para o destaque editorial
 // ────────────────────────────────────────────────────────────────────────────
 function ServicesOverview() {
-  const { t } = useLang();
+  const { lang, t } = useLang();
+  const SVC = getServices(lang);
   const cats = [
-    { id: 'fisioterapia', num: '01', href: 'fisioterapia.html', img: IMG.fisioterapia, ...SERVICES.fisioterapia },
-    { id: 'saude', num: '02', href: 'servico-nutricao.html', img: IMG.psicologia, ...SERVICES.saude },
-    { id: 'massagens', num: '03', href: 'massagens.html', img: IMG['massagem-relaxamento'], ...SERVICES.massagens },
-    { id: 'holisticas', num: '04', href: 'holisticas.html', img: IMG.reflexologia, ...SERVICES.holisticas },
-    { id: 'estetica', num: '05', href: 'servico-facial.html', img: IMG['pilates-clinico'], ...SERVICES.estetica },
+    { id: 'fisioterapia', num: '01', href: 'fisioterapia.html', img: IMG.fisioterapia, ...SVC.fisioterapia },
+    { id: 'saude', num: '02', href: 'servico-nutricao.html', img: IMG.psicologia, ...SVC.saude },
+    { id: 'massagens', num: '03', href: 'massagens.html', img: IMG['massagem-relaxamento'], ...SVC.massagens },
+    { id: 'holisticas', num: '04', href: 'holisticas.html', img: IMG.reflexologia, ...SVC.holisticas },
+    { id: 'estetica', num: '05', href: 'servico-facial.html', img: IMG['pilates-clinico'], ...SVC.estetica },
   ];
   return (
     <Section id="todos-servicos" bg={RG.creamSoft} pad="md">
@@ -479,10 +480,10 @@ function MeetRita() {
 // ────────────────────────────────────────────────────────────────────────────
 function Testimonials() {
   const { t } = useLang();
-  const featured = { q: 'Durante anos sofri de dores crónicas de costas. A abordagem que a Rita fez ao problema foi sem dúvida transformadora — é como ter um corpo novo. A diferença que isto fez na minha qualidade de vida é difícil de descrever.', who: 'Miguel Moreira', what: 'Fisioterapia · 18 meses de acompanhamento', initials: 'MM', color: '#C5E8E5' };
+  const featured = { q: t('testimonials_v2.featured_q'), who: 'Miguel Moreira', what: t('testimonials_v2.featured_what'), initials: 'MM', color: '#C5E8E5' };
   const others = [
-    { q: 'A minha fisioterapeuta é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da musculatura e aliviar dores.', who: 'Irina Mendes Martins', what: 'Fisioterapia', initials: 'IM', color: '#A8D8D4' },
-    { q: 'Aulas de Pilates com a Rita são excelentes — a componente humana aliada às terapias é fundamental. Compreende mesmo as necessidades de cada um.', who: 'Mitchelle Sousa', what: 'Pilates Clínico', initials: 'MS', color: '#B8D4D2' },
+    { q: t('testimonials_v2.t1_q'), who: 'Irina Mendes Martins', what: t('testimonials_v2.t1_what'), initials: 'IM', color: '#A8D8D4' },
+    { q: t('testimonials_v2.t2_q'), who: 'Mitchelle Sousa', what: t('testimonials_v2.t2_what'), initials: 'MS', color: '#B8D4D2' },
   ];
   const Stars = ({ size = 13 }) => (
     <div style={{ display: 'flex', gap: 3, marginBottom: 14 }}>

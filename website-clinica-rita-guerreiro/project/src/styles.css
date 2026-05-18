@@ -704,3 +704,112 @@ input:focus, textarea:focus, select:focus {
     max-width: none !important;
   }
 }
+
+/* ── Mobile audit fixes ─────────────────────────────────────── */
+
+/* Stop horizontal scroll globally */
+html, body { overflow-x: clip !important; max-width: 100% !important; }
+
+/* Two-column hero/grids collapse to single column on small screens */
+@media (max-width: 880px) {
+  .rg-hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .rg-values-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Homepage Hero (split with absolute right image panel) — collapse on mobile.
+   React serializa o style inline assim: `min-height: calc(0px + 100vh)` e
+   `inset: 0px 0px 0px 46%`. Os selectores têm de bater nesses valores serializados. */
+@media (max-width: 880px) {
+  section[style*="min-height: calc(0px + 100vh)"] > div[style*="inset: 0px 0px 0px 46%"] {
+    /* Em mobile, painel da foto colapsa para fundo e fica transparente */
+    inset: auto 0 0 0 !important;
+    height: 40% !important;
+    opacity: 0.22 !important;
+  }
+  /* Hero content padding tighter */
+  section[style*="min-height: calc(0px + 100vh)"] > div:last-child {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* Em mobile, o gradient esbranquiçado tem de cobrir toda a largura */
+  section[style*="min-height: calc(0px + 100vh)"] > div[style*="linear-gradient(to right"] {
+    background: linear-gradient(to bottom, #ffffff 60%, rgba(255,255,255,0.85) 75%, rgba(255,255,255,0.3) 100%) !important;
+  }
+}
+
+/* Service detail two-column (sticky info + content) → single col */
+@media (max-width: 880px) {
+  section[style*="padding-top: 130px"] + section .rg-hero-grid > div:first-child > div {
+    position: static !important;
+  }
+}
+
+/* Contactos cards: 3 → 1 */
+@media (max-width: 880px) {
+  section .rg-values-grid[style*="repeat(3"] { grid-template-columns: 1fr !important; }
+}
+
+/* Long category h1 / service h1: tighter sizing on mobile */
+@media (max-width: 480px) {
+  h1[style*="clamp(52px"] { font-size: clamp(40px, 11vw, 64px) !important; line-height: 0.95 !important; }
+  h1[style*="clamp(48px"] { font-size: clamp(38px, 10vw, 56px) !important; line-height: 0.98 !important; }
+  h1[style*="clamp(44px"] { font-size: clamp(36px, 9vw, 52px) !important; line-height: 1 !important; }
+}
+
+/* Hero headline tighter on mobile */
+@media (max-width: 480px) {
+  h1[style*="clamp(48px, 5.6vw"] { font-size: clamp(38px, 10vw, 56px) !important; }
+}
+
+/* Map block in Contactos — keep card on screen */
+@media (max-width: 640px) {
+  section iframe[title="Mapa"] + div {
+    position: static !important;
+    margin: 16px !important;
+    max-width: none !important;
+  }
+}
+
+/* Generic Section padding tighter on phones */
+@media (max-width: 640px) {
+  section[style*="padding-top: 130px"],
+  section[style*="padding-top: 140px"] { padding-top: 100px !important; }
+}
+
+/* WhyUs / Meet right-side card area — already collapses via rg-hero-grid;
+   ensure the absolute-positioned `rg-meet-card` doesn't overflow the photo */
+@media (max-width: 880px) {
+  .rg-meet-card { right: 0 !important; }
+}
+
+/* Trust band on 375px: stack 2x2 still too cramped → 1 column */
+@media (max-width: 420px) {
+  .rg-trust-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
+  .rg-trust-grid > div:nth-child(n+2) {
+    border-top: 1px solid #E8E6DF;
+    padding-top: 16px;
+  }
+}
+
+/* Service step list: shrink number bubble margin on phones */
+@media (max-width: 480px) {
+  section .rg-hero-grid + div > div[style*="left: 19"] { left: 15px !important; }
+}
+
+/* Footer columns already handled at 640px; keep social row from overflowing */
+@media (max-width: 480px) {
+  .rg-wafab::after { display: none; }
+}
+
+/* HomeCTA dark section — info line items stack on narrow */
+@media (max-width: 480px) {
+  section[style*="linear-gradient(135deg, #2F6B68"] > div[style*="flexWrap"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+/* Service detail areas grid: 2 → 1 on phones */
+@media (max-width: 640px) {
+  .rg-values-grid[style*="repeat(2"] { grid-template-columns: 1fr !important; }
+}
