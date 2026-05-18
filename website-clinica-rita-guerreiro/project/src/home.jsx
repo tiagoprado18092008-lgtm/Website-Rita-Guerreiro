@@ -17,14 +17,6 @@ function Hero() {
 
           {/* Left — headline + info + CTA */}
           <div>
-            {/* Badge premium */}
-            <Reveal delay={60}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'transparent', border: '1.5px solid #5AAFAA', borderRadius: 100, padding: '6px 18px', marginBottom: 32 }}>
-                <svg width="6" height="6" viewBox="0 0 10 10" fill="#5AAFAA"><circle cx="5" cy="5" r="5"/></svg>
-                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 500, color: '#2F6B68', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('hero.badge')}</span>
-              </div>
-            </Reveal>
-
             {/* Linha decorativa */}
             <Reveal delay={120}>
               <div style={{ width: 48, height: 2, background: '#5AAFAA', marginBottom: 24 }} />
