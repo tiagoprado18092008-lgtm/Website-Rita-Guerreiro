@@ -87,20 +87,21 @@ interface NavProps {
   transparent?: boolean
 }
 
+const LANGS = [
+  { code: 'PT', flag: '🇵🇹' },
+  { code: 'EN', flag: '🇬🇧' },
+  { code: 'FR', flag: '🇫🇷' },
+]
+
 export default function Nav({ transparent = true }: NavProps) {
-  const [scrolled, setScrolled] = useState(false)
   const [megaOpen, setMegaOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicos, setMobileServicos] = useState(false)
+  const [activeLang, setActiveLang] = useState('PT')
+  const [langOpen, setLangOpen] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const langTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
@@ -116,17 +117,23 @@ export default function Nav({ transparent = true }: NavProps) {
     closeTimer.current = setTimeout(() => setMegaOpen(false), 120)
   }
 
-  const isGlass = transparent && !scrolled
+  const handleLangEnter = () => {
+    if (langTimer.current) clearTimeout(langTimer.current)
+    setLangOpen(true)
+  }
+
+  const handleLangLeave = () => {
+    langTimer.current = setTimeout(() => setLangOpen(false), 120)
+  }
 
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
+        className="fixed top-0 left-0 right-0 z-50"
         style={{
-          background: isGlass ? 'transparent' : 'rgba(13,20,18,0.92)',
-          backdropFilter: isGlass ? 'none' : 'blur(20px)',
-          borderBottom: isGlass ? 'none' : '1px solid rgba(111,181,176,0.10)',
-          height: scrolled ? 56 : 60,
+          background: '#6FB5B0',
+          boxShadow: '0 2px 16px rgba(0,0,0,0.12)',
+          height: 64,
         }}
       >
         <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between gap-6">
@@ -136,8 +143,7 @@ export default function Nav({ transparent = true }: NavProps) {
             <img
               src="/logo.png"
               alt="Rita Guerreiro"
-              className="h-14 w-auto"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-12 w-auto"
             />
           </Link>
 
@@ -153,18 +159,15 @@ export default function Nav({ transparent = true }: NavProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 font-body text-[13.5px] font-medium transition-colors duration-300 rounded-lg ${
+                  className={`relative px-4 py-2 font-body text-[13.5px] font-medium transition-colors duration-200 rounded-lg ${
                     isActive
                       ? 'text-white'
-                      : 'text-white/75 hover:text-white hover:bg-white/5'
+                      : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span
-                      className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-teal"
-                      style={{ boxShadow: '0 0 8px rgba(111,181,176,0.6)' }}
-                    />
+                    <span className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-white/70" />
                   )}
                 </Link>
               )
@@ -173,14 +176,14 @@ export default function Nav({ transparent = true }: NavProps) {
             {/* Serviços trigger */}
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <button
-                className="px-4 py-2 font-body text-[13.5px] font-medium text-white/75 hover:text-white transition-colors duration-200 flex items-center gap-1.5 rounded-lg hover:bg-white/5"
+                className="px-4 py-2 font-body text-[13.5px] font-medium text-white/80 hover:text-white transition-colors duration-200 flex items-center gap-1.5 rounded-lg hover:bg-white/10"
               >
                 Serviços
                 <motion.svg
                   width="9" height="9" viewBox="0 0 10 10"
                   animate={{ rotate: megaOpen ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
-                  style={{ opacity: 0.55 }}
+                  style={{ opacity: 0.7 }}
                 >
                   <path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                 </motion.svg>
@@ -277,28 +280,64 @@ export default function Nav({ transparent = true }: NavProps) {
 
           {/* Right CTAs */}
           <div className="hidden md:flex items-center gap-3">
+
+            {/* Language selector */}
+            <div className="relative" onMouseEnter={handleLangEnter} onMouseLeave={handleLangLeave}>
+              <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-200">
+                <span className="text-base leading-none">{LANGS.find(l => l.code === activeLang)?.flag}</span>
+                <span className="font-body text-[12px] font-600">{activeLang}</span>
+                <svg width="8" height="8" viewBox="0 0 10 10" style={{ opacity: 0.6 }}>
+                  <path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <AnimatePresence>
+                {langOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg overflow-hidden"
+                    style={{ minWidth: 90, border: '1px solid rgba(0,0,0,0.08)' }}
+                  >
+                    {LANGS.map(lang => (
+                      <button
+                        key={lang.code}
+                        onClick={() => { setActiveLang(lang.code); setLangOpen(false) }}
+                        className={`w-full flex items-center gap-2 px-3 py-2 font-body text-[12.5px] font-medium transition-colors duration-150 ${
+                          activeLang === lang.code
+                            ? 'bg-tealWash text-tealDark font-semibold'
+                            : 'text-charcoal hover:bg-tealWash hover:text-tealDark'
+                        }`}
+                      >
+                        <span className="text-base leading-none">{lang.flag}</span>
+                        {lang.code}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Phone icon */}
             <a
               href={`tel:${TEL}`}
-              className="font-body text-[12.5px] font-semibold text-white/70 hover:text-white transition-all duration-200 flex items-center gap-2 px-3.5 py-2 rounded-lg border border-white/10 hover:border-white/25 hover:bg-white/5 group"
+              className="flex items-center justify-center w-9 h-9 rounded-lg border border-white/40 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/60 transition-all duration-200"
+              aria-label={TEL_DISPLAY}
             >
-              <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white/50 group-hover:text-white/80 transition-colors" style={{ background: 'rgba(255,255,255,0.08)' }}>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
-                </svg>
-              </span>
-              {TEL_DISPLAY}
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+              </svg>
             </a>
+
+            {/* CTA */}
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-[13px] font-bold text-tealDark flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
-              style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0faf9 100%)', boxShadow: '0 4px 16px rgba(0,0,0,0.14)' }}
+              className="font-body text-[13px] font-bold text-white border-2 border-white/80 px-5 py-2 rounded-lg transition-all duration-200 hover:bg-white hover:text-tealDark active:scale-95"
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/>
-              </svg>
-              Agendar
+              Agendar Consulta
             </a>
           </div>
 

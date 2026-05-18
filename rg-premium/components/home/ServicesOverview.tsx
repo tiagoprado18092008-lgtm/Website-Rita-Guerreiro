@@ -1,3 +1,5 @@
+'use client'
+
 import Reveal from '@/components/Reveal'
 import Link from 'next/link'
 
