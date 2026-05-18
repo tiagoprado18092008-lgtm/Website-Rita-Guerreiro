@@ -6,11 +6,42 @@ import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { WA_URL, TEL, TEL_DISPLAY } from '@/lib/tokens'
 
+const IconBone = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18.5 5.5a2.121 2.121 0 0 1 0 3L7 20a2.121 2.121 0 0 1-3-3L15.5 5.5a2.121 2.121 0 0 1 3 0z"/>
+    <path d="M5.5 5.5a2 2 0 0 0 0 2.828l.707.707"/>
+    <path d="M18.5 18.5a2 2 0 0 0 0-2.828l-.707-.707"/>
+  </svg>
+)
+
+const IconHealth = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+  </svg>
+)
+
+const IconHands = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+    <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+    <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+    <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+  </svg>
+)
+
+const IconLeaf = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+  </svg>
+)
+
 const megaCols = [
   {
     label: 'Fisioterapia',
     href: '/fisioterapia',
-    icon: '🦴',
+    Icon: IconBone,
+    desc: 'Reabilitação e movimento',
     items: [
       { label: 'Fisioterapia Geral', href: '/servicos/fisioterapia' },
       { label: 'ATM / Mesoterapia', href: '/servicos/mesoterapia' },
@@ -20,7 +51,8 @@ const megaCols = [
   {
     label: 'Cuidados de Saúde',
     href: '/#servicos',
-    icon: '🩺',
+    Icon: IconHealth,
+    desc: 'Bem-estar integral',
     items: [
       { label: 'Nutrição', href: '/servicos/nutricao' },
       { label: 'Terapia de Bowen', href: '/servicos/terapia-bowen' },
@@ -30,7 +62,8 @@ const megaCols = [
   {
     label: 'Massagens',
     href: '/massagens',
-    icon: '✋',
+    Icon: IconHands,
+    desc: 'Relaxamento e terapia',
     items: [
       { label: 'Ver todas as massagens', href: '/massagens' },
     ],
@@ -38,7 +71,8 @@ const megaCols = [
   {
     label: 'Holísticas & Estética',
     href: '/holisticas',
-    icon: '✨',
+    Icon: IconLeaf,
+    desc: 'Equilíbrio e beleza',
     items: [
       { label: 'Terapias Holísticas', href: '/holisticas' },
       { label: 'Tratamentos Faciais', href: '/servicos/facial' },
@@ -180,34 +214,37 @@ export default function Nav({ transparent = true }: NavProps) {
                         </div>
 
                         {/* Columns */}
-                        <div className="grid grid-cols-4 divide-x divide-line">
+                        <div className="grid grid-cols-4 gap-4 p-5">
                           {megaCols.map((col) => (
-                            <div key={col.label} className="p-6 flex flex-col gap-3">
+                            <div key={col.label} className="flex flex-col gap-1 rounded-xl overflow-hidden" style={{ border: '1px solid #E8E6DF' }}>
                               {/* Column header */}
                               <Link
                                 href={col.href}
-                                className="group flex items-center gap-2 mb-1"
+                                className="group flex items-center gap-3 p-4 hover:bg-tealWash transition-colors duration-150"
+                                style={{ borderBottom: '1px solid #E8E6DF', background: '#F8FAF9' }}
                                 onClick={() => setMegaOpen(false)}
                               >
-                                <span className="text-[15px] leading-none">{col.icon}</span>
-                                <span className="font-body text-[11px] font-bold tracking-[0.14em] uppercase text-tealDark group-hover:text-tealDeep transition-colors">
-                                  {col.label}
+                                <span className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-tealDark group-hover:bg-tealDark group-hover:text-white transition-all duration-200" style={{ background: 'rgba(111,181,176,0.15)' }}>
+                                  <col.Icon />
                                 </span>
+                                <div>
+                                  <div className="font-body text-[11.5px] font-bold text-tealDark group-hover:text-tealDeep transition-colors leading-tight">
+                                    {col.label}
+                                  </div>
+                                  <div className="font-body text-[10.5px] text-muted leading-tight mt-0.5">{col.desc}</div>
+                                </div>
                               </Link>
 
                               {/* Items */}
-                              <div className="flex flex-col gap-0.5">
-                                {col.items.map((item, idx) => (
+                              <div className="flex flex-col p-2">
+                                {col.items.map((item) => (
                                   <Link
                                     key={item.href}
                                     href={item.href}
                                     onClick={() => setMegaOpen(false)}
                                     className="group flex items-center gap-2 px-3 py-2 rounded-lg font-body text-[13px] font-medium text-charcoal hover:bg-tealWash hover:text-tealDark transition-all duration-150"
-                                    style={{ animationDelay: `${idx * 30}ms` }}
                                   >
-                                    <span
-                                      className="w-1 h-1 rounded-full bg-teal/40 group-hover:bg-tealDark flex-shrink-0 transition-colors"
-                                    />
+                                    <span className="w-3 h-px bg-line group-hover:bg-tealDark group-hover:w-4 flex-shrink-0 transition-all duration-300 inline-block" />
                                     {item.label}
                                   </Link>
                                 ))}
@@ -242,11 +279,13 @@ export default function Nav({ transparent = true }: NavProps) {
           <div className="hidden md:flex items-center gap-3">
             <a
               href={`tel:${TEL}`}
-              className="font-body text-[12.5px] font-semibold text-white/70 hover:text-white transition-colors duration-200 flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/10 hover:border-white/20"
+              className="font-body text-[12.5px] font-semibold text-white/70 hover:text-white transition-all duration-200 flex items-center gap-2 px-3.5 py-2 rounded-lg border border-white/10 hover:border-white/25 hover:bg-white/5 group"
             >
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                <path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
-              </svg>
+              <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white/50 group-hover:text-white/80 transition-colors" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+                </svg>
+              </span>
               {TEL_DISPLAY}
             </a>
             <a
@@ -326,22 +365,29 @@ export default function Nav({ transparent = true }: NavProps) {
                       className="overflow-hidden mt-4 flex flex-col gap-5"
                     >
                       {megaCols.map(col => (
-                        <div key={col.label}>
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="text-[13px]">{col.icon}</span>
-                            <span className="text-[9px] font-body font-bold tracking-[0.22em] uppercase text-teal/70">{col.label}</span>
+                        <div key={col.label} className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                          <div className="flex items-center gap-3 px-4 py-3" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                            <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 text-teal" style={{ background: 'rgba(111,181,176,0.15)' }}>
+                              <col.Icon />
+                            </span>
+                            <div>
+                              <div className="font-body text-[11px] font-bold tracking-[0.18em] uppercase text-teal/80">{col.label}</div>
+                              <div className="font-body text-[10px] text-white/35">{col.desc}</div>
+                            </div>
                           </div>
-                          {col.items.map(it => (
-                            <Link
-                              key={it.href}
-                              href={it.href}
-                              onClick={() => setMobileOpen(false)}
-                              className="flex items-center gap-2 font-body text-[15px] font-medium text-white/75 hover:text-white py-1.5 transition-colors"
-                            >
-                              <span className="w-1 h-1 rounded-full bg-teal/40 flex-shrink-0" />
-                              {it.label}
-                            </Link>
-                          ))}
+                          <div className="px-3 py-2 flex flex-col gap-0.5">
+                            {col.items.map(it => (
+                              <Link
+                                key={it.href}
+                                href={it.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="flex items-center gap-2 font-body text-[14.5px] font-medium text-white/70 hover:text-white px-2 py-1.5 rounded-lg hover:bg-white/5 transition-colors"
+                              >
+                                <span className="w-3 h-px bg-white/20 flex-shrink-0 inline-block" />
+                                {it.label}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </motion.div>
