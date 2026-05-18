@@ -1,0 +1,307 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Rita Guerreiro" [ref=e5] [cursor=pointer]:
+        - /url: index.html
+        - img "Rita Guerreiro" [ref=e6]
+      - generic [ref=e7]:
+        - button "🇵🇹" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]: 🇵🇹
+          - img [ref=e11]
+        - link "Agendar" [ref=e13] [cursor=pointer]:
+          - /url: https://wa.me/351961899364
+          - img [ref=e14]
+          - text: Agendar
+        - button "Menu" [ref=e16] [cursor=pointer]:
+          - img [ref=e17]
+  - generic [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e24]:
+          - img [ref=e25]
+          - generic [ref=e27]: Loulé · Algarve
+        - heading "Recupera. Equilibra. Sente-te bem." [level=1] [ref=e31]:
+          - generic [ref=e33]: Recupera.
+          - generic [ref=e35]: Equilibra.
+          - generic [ref=e36]:
+            - generic [ref=e37]: Sente-te
+            - generic [ref=e38]: bem.
+        - paragraph [ref=e40]: Fisioterapia, Osteopatia, Pilates Clínico, Psicologia e muito mais — numa clínica em Loulé onde cada pessoa é tratada com atenção e cuidado real.
+        - generic [ref=e42]:
+          - link "Marcar consulta →" [ref=e43] [cursor=pointer]:
+            - /url: https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o.
+            - text: Marcar consulta
+            - generic [ref=e44]: →
+          - link "961 899 364" [ref=e45] [cursor=pointer]:
+            - /url: tel:+351961899364
+            - img [ref=e46]
+            - text: 961 899 364
+        - generic [ref=e51]: Seg–Sex 9h–19h · Sábados sob marcação
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - img [ref=e55]
+            - img [ref=e57]
+            - img [ref=e59]
+            - img [ref=e61]
+            - img [ref=e63]
+          - generic [ref=e65]: +500 pacientes acompanhados · Google 5★
+      - generic [ref=e67]:
+        - img "Tratamento de fisioterapia na Clínica Rita Guerreiro" [ref=e68]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: Centro de Terapias Rita Guerreiro
+            - generic [ref=e73]: Rua Padre António Vieira 58, Loulé
+          - generic [ref=e74]:
+            - img [ref=e75]
+            - img [ref=e77]
+            - img [ref=e79]
+            - img [ref=e81]
+            - img [ref=e83]
+    - generic [ref=e85]:
+      - img [ref=e86]
+      - img [ref=e88]
+  - generic [ref=e92]:
+    - generic [ref=e93]:
+      - generic [ref=e94]: 20+
+      - generic [ref=e95]: Anos de experiência
+    - generic [ref=e96]:
+      - generic [ref=e97]: 500+
+      - generic [ref=e98]: Pacientes acompanhados
+    - generic [ref=e99]:
+      - generic [ref=e100]: "25"
+      - generic [ref=e101]: Terapias disponíveis
+    - generic [ref=e102]:
+      - generic [ref=e103]: 100%
+      - generic [ref=e104]: Dedicação à tua saúde
+  - generic [ref=e108]:
+    - generic [ref=e109]:
+      - generic [ref=e110]: Os nossos serviços
+      - heading "Dores, tensão, stress? Temos a resposta — e a pessoa certa para ti." [level=2] [ref=e111]
+      - paragraph [ref=e112]: Fisioterapia, massagens, holísticas, psicologia, estética — tudo disponível na mesma clínica, em Loulé. Sem listas de espera longas, sem deslocações desnecessárias.
+      - link "Ver todos os serviços →" [ref=e114] [cursor=pointer]:
+        - /url: "#todos-servicos"
+        - text: Ver todos os serviços
+        - generic [ref=e115]: →
+    - generic [ref=e116]:
+      - link "Fisioterapia Fisioterapia" [ref=e118] [cursor=pointer]:
+        - /url: servico-fisioterapia.html
+        - img "Fisioterapia" [ref=e120]
+        - generic [ref=e121]: Fisioterapia
+      - link "Pilates Clínico Pilates Clínico" [ref=e123] [cursor=pointer]:
+        - /url: servico-pilates-clinico.html
+        - img "Pilates Clínico" [ref=e125]
+        - generic [ref=e126]: Pilates Clínico
+      - link "Psicologia Psicologia" [ref=e128] [cursor=pointer]:
+        - /url: servico-psicologia.html
+        - img "Psicologia" [ref=e130]
+        - generic [ref=e131]: Psicologia
+      - link "Massagem Assinatura RG Massagem Assinatura RG" [ref=e133] [cursor=pointer]:
+        - /url: servico-massagem-assinatura-rg.html
+        - img "Massagem Assinatura RG" [ref=e135]
+        - generic [ref=e136]: Massagem Assinatura RG
+  - generic [ref=e138]:
+    - generic [ref=e140]:
+      - generic [ref=e141]: Porquê a Clínica Rita Guerreiro
+      - heading "Porque a tua saúde merece mais do que uma consulta rápida." [level=2] [ref=e142]
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - button "Tratamento feito para ti, não para a média O teu corpo, a tua história, o teu ritmo. Cada plano de tratamento começa por ouvir — e só depois agir." [ref=e146] [cursor=pointer]:
+          - generic [ref=e147]:
+            - generic [ref=e148]: Tratamento feito para ti, não para a média
+            - generic [ref=e149]: O teu corpo, a tua história, o teu ritmo. Cada plano de tratamento começa por ouvir — e só depois agir.
+          - img [ref=e151]
+        - button "Tudo no mesmo sítio, sem deslocações" [ref=e153] [cursor=pointer]:
+          - generic [ref=e155]: Tudo no mesmo sítio, sem deslocações
+          - img [ref=e157]
+        - button "Profissionais que te acompanham de verdade" [ref=e159] [cursor=pointer]:
+          - generic [ref=e161]: Profissionais que te acompanham de verdade
+          - img [ref=e163]
+        - button "Sem listas de espera intermináveis" [ref=e165] [cursor=pointer]:
+          - generic [ref=e167]: Sem listas de espera intermináveis
+          - img [ref=e169]
+      - img "Sala de tratamento" [ref=e172]
+  - generic [ref=e174]:
+    - generic [ref=e176]: Serviços
+    - heading "Seja qual for o motivo que te traz, temos alguém para ti." [level=2] [ref=e178]
+    - generic [ref=e179]:
+      - link "Fisioterapia 01 Fisioterapia Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos." [ref=e181] [cursor=pointer]:
+        - /url: fisioterapia.html
+        - img "Fisioterapia" [ref=e183]
+        - generic [ref=e184]:
+          - generic [ref=e185]: "01"
+          - generic [ref=e186]:
+            - heading "Fisioterapia" [level=3] [ref=e187]
+            - img [ref=e188]
+        - paragraph [ref=e190]: Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.
+      - link "Cuidados de Saúde 02 Cuidados de Saúde Tratamentos clínicos especializados para saúde e bem-estar." [ref=e192] [cursor=pointer]:
+        - /url: fisioterapia.html
+        - img "Cuidados de Saúde" [ref=e194]
+        - generic [ref=e195]:
+          - generic [ref=e196]: "02"
+          - generic [ref=e197]:
+            - heading "Cuidados de Saúde" [level=3] [ref=e198]
+            - img [ref=e199]
+        - paragraph [ref=e201]: Tratamentos clínicos especializados para saúde e bem-estar.
+      - link "Massagens 03 Massagens Terapias manuais para libertar tensão, recuperar e devolver equilíbrio." [ref=e203] [cursor=pointer]:
+        - /url: massagens.html
+        - img "Massagens" [ref=e205]
+        - generic [ref=e206]:
+          - generic [ref=e207]: "03"
+          - generic [ref=e208]:
+            - heading "Massagens" [level=3] [ref=e209]
+            - img [ref=e210]
+        - paragraph [ref=e212]: Terapias manuais para libertar tensão, recuperar e devolver equilíbrio.
+      - link "Holísticas 04 Holísticas Terapias holísticas para o equilíbrio do corpo e da mente." [ref=e214] [cursor=pointer]:
+        - /url: holisticas.html
+        - img "Holísticas" [ref=e216]
+        - generic [ref=e217]:
+          - generic [ref=e218]: "04"
+          - generic [ref=e219]:
+            - heading "Holísticas" [level=3] [ref=e220]
+            - img [ref=e221]
+        - paragraph [ref=e223]: Terapias holísticas para o equilíbrio do corpo e da mente.
+      - link "Estética & Tratamentos 05 Estética & Tratamentos Cuidados estéticos e pacotes de tratamento com tecnologia avançada." [ref=e225] [cursor=pointer]:
+        - /url: fisioterapia.html
+        - img "Estética & Tratamentos" [ref=e227]
+        - generic [ref=e228]:
+          - generic [ref=e229]: "05"
+          - generic [ref=e230]:
+            - heading "Estética & Tratamentos" [level=3] [ref=e231]
+            - img [ref=e232]
+        - paragraph [ref=e234]: Cuidados estéticos e pacotes de tratamento com tecnologia avançada.
+  - generic [ref=e236]:
+    - generic [ref=e238]:
+      - generic [ref=e239]: Testemunhos reais
+      - heading "O que dizem quem já sentiu a diferença." [level=2] [ref=e240]
+    - generic [ref=e241]:
+      - generic [ref=e243]:
+        - text: “
+        - generic [ref=e244]:
+          - img [ref=e245]
+          - img [ref=e247]
+          - img [ref=e249]
+          - img [ref=e251]
+          - img [ref=e253]
+        - generic [ref=e255]: “A minha fisioterapeuta (Rita Guerreiro) é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da minha musculatura e aliviar dores.”
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - generic [ref=e258]: Irina Mendes Martins
+            - generic [ref=e259]: Fisioterapia
+          - generic [ref=e261]: IM
+      - generic [ref=e263]:
+        - text: “
+        - generic [ref=e264]:
+          - img [ref=e265]
+          - img [ref=e267]
+          - img [ref=e269]
+          - img [ref=e271]
+          - img [ref=e273]
+        - generic [ref=e275]: “Durante anos e muitas dores crónicas de costas, a abordagem que a Rita Guerreiro fez ao problema foi sem dúvida como ter um corpo novo.”
+        - generic [ref=e276]:
+          - generic [ref=e277]:
+            - generic [ref=e278]: Miguel Moreira
+            - generic [ref=e279]: Fisioterapia
+          - generic [ref=e281]: MM
+      - generic [ref=e283]:
+        - text: “
+        - generic [ref=e284]:
+          - img [ref=e285]
+          - img [ref=e287]
+          - img [ref=e289]
+          - img [ref=e291]
+          - img [ref=e293]
+        - generic [ref=e295]: “Aulas de Pilates com a Rita Guerreiro são excelentes. A Rita tem uma componente humana aliada às terapias fundamental. Compreende os problemas e necessidades dos utentes.”
+        - generic [ref=e296]:
+          - generic [ref=e297]:
+            - generic [ref=e298]: Mitchelle Sousa
+            - generic [ref=e299]: Pilates Clínico
+          - generic [ref=e301]: MS
+  - generic [ref=e305]:
+    - generic [ref=e306]: Dá o primeiro passo hoje
+    - heading "A tua recuperação começa com uma mensagem." [level=2] [ref=e307]
+    - paragraph [ref=e308]: Fala connosco agora — a maioria das marcações fica resolvida em menos de 5 minutos.
+    - paragraph [ref=e309]: Rua Padre António Vieira 58, Loulé · Seg–Sex 9h–19h · Sáb sob marcação
+    - generic [ref=e310]:
+      - link "WhatsApp agora" [ref=e311] [cursor=pointer]:
+        - /url: https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o.
+        - img [ref=e312]
+        - text: WhatsApp agora
+      - link "961 899 364" [ref=e314] [cursor=pointer]:
+        - /url: tel:+351961899364
+        - img [ref=e315]
+        - text: 961 899 364
+      - link "Como chegar" [ref=e317] [cursor=pointer]:
+        - /url: https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé
+        - img [ref=e318]
+        - text: Como chegar
+  - contentinfo [ref=e320]:
+    - generic [ref=e321]:
+      - generic [ref=e322]:
+        - generic [ref=e323]:
+          - link "Rita Guerreiro" [ref=e324] [cursor=pointer]:
+            - /url: index.html
+            - img "Rita Guerreiro" [ref=e325]
+          - paragraph [ref=e326]: Centro de Terapias & Bem-Estar em Loulé. Cuidamos de ti, corpo e mente.
+          - generic [ref=e327]:
+            - link [ref=e328] [cursor=pointer]:
+              - /url: https://wa.me/351961899364
+              - img [ref=e329]
+            - link [ref=e331] [cursor=pointer]:
+              - /url: https://www.instagram.com/centro_terapias_rita_guerreiro/
+              - img [ref=e332]
+            - link [ref=e336] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e337]
+          - iframe [ref=e340]:
+            
+        - generic [ref=e341]:
+          - generic [ref=e342]: Fisioterapia & Saúde
+          - generic [ref=e343]:
+            - link "Fisioterapia" [ref=e344] [cursor=pointer]:
+              - /url: fisioterapia.html
+            - link "Nutrição" [ref=e345] [cursor=pointer]:
+              - /url: servico-nutricao.html
+            - link "Psicologia" [ref=e346] [cursor=pointer]:
+              - /url: servico-psicologia.html
+            - link "Terapia de Bowen" [ref=e347] [cursor=pointer]:
+              - /url: servico-terapia-bowen.html
+        - generic [ref=e348]:
+          - generic [ref=e349]: Massagens & Holísticas
+          - generic [ref=e350]:
+            - link "Massagens" [ref=e351] [cursor=pointer]:
+              - /url: massagens.html
+            - link "Holísticas" [ref=e352] [cursor=pointer]:
+              - /url: holisticas.html
+            - link "Depilação a Laser" [ref=e353] [cursor=pointer]:
+              - /url: servico-depilacao-laser.html
+            - link "Pilates Clínico" [ref=e354] [cursor=pointer]:
+              - /url: servico-pilates-clinico.html
+        - generic [ref=e355]:
+          - generic [ref=e356]: Horário & Contacto
+          - generic [ref=e357]:
+            - link "Seg-Sex · 9:00-19:00" [ref=e358] [cursor=pointer]:
+              - /url: "#"
+            - link "Sábados · sob marcação" [ref=e359] [cursor=pointer]:
+              - /url: "#"
+            - link "961 899 364" [ref=e360] [cursor=pointer]:
+              - /url: tel:+351961899364
+            - link "geral@ritaguerreiro.pt" [ref=e361] [cursor=pointer]:
+              - /url: mailto:geral@ritaguerreiro.pt
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - link "Rua Padre António Vieira 58, 8100-611 Loulé" [ref=e364] [cursor=pointer]:
+            - /url: https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé
+          - text: · © 2026 Rita Guerreiro — Todos os direitos reservados
+        - generic [ref=e365]:
+          - link "Privacidade" [ref=e366] [cursor=pointer]:
+            - /url: "#"
+          - link "Termos" [ref=e367] [cursor=pointer]:
+            - /url: "#"
+          - link "Livro de Reclamações" [ref=e368] [cursor=pointer]:
+            - /url: https://www.livroreclamacoes.pt/
+            - img [ref=e369]
+            - text: Livro de Reclamações
+  - link "WhatsApp" [ref=e372] [cursor=pointer]:
+    - /url: https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o.
+    - img [ref=e373]
+    - text: Fala connosco!
