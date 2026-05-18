@@ -23,27 +23,6 @@ function Hero() {
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.06) 0%, rgba(31,72,70,0.18) 100%)' }} />
       </div>
 
-      {/* Cartão flutuante "Próxima disponibilidade" sobre a foto */}
-      <div style={{
-        position: 'absolute', zIndex: 3, right: 'clamp(24px, 4vw, 64px)', bottom: 'clamp(80px, 10vh, 120px)',
-        background: 'rgba(255,255,255,0.94)', backdropFilter: 'blur(12px)',
-        borderRadius: 14, padding: '14px 18px',
-        boxShadow: '0 24px 60px -20px rgba(20,20,18,0.28), 0 4px 12px rgba(20,20,18,0.08)',
-        border: '1px solid rgba(255,255,255,0.7)',
-        maxWidth: 280,
-      }} className="rg-hero-card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 0 3px rgba(34,197,94,0.2)', flexShrink: 0 }} className="rg-pulse-dot" />
-          <span style={{ fontFamily: F_BODY, fontSize: 10.5, fontWeight: 700, color: RG.tealDeep, textTransform: 'uppercase', letterSpacing: '0.14em' }}>{t('hero.next_slot_label')}</span>
-        </div>
-        <div style={{ fontFamily: F_DISPLAY, fontSize: 17, fontWeight: 600, color: RG.ink, lineHeight: 1.25, letterSpacing: '-0.01em' }}>
-          {t('hero.next_slot_value')}
-        </div>
-        <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 4 }}>
-          {t('hero.next_slot_meta')}
-        </div>
-      </div>
-
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,

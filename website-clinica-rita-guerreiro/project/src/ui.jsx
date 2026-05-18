@@ -259,16 +259,7 @@ function Nav({ current = 'home' }) {
                                 transition: 'background 150ms',
                               }}
                             >
-                              <span style={{
-                                width: 32, height: 32, borderRadius: 8, flexShrink: 0,
-                                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                                background: activeCol === ci ? RG.tealDark : 'rgba(111,181,176,0.15)',
-                                color: activeCol === ci ? 'white' : RG.tealDark,
-                                transition: 'background 150ms, color 150ms',
-                              }}>
-                                {megaIcons[col.label]}
-                              </span>
-                              <div>
+                              <div style={{ flex: 1 }}>
                                 <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 500, color: activeCol === ci ? RG.tealDark : RG.charcoal, lineHeight: 1.2 }}>{col.label}</div>
                                 <div style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.label]}</div>
                               </div>
@@ -284,10 +275,7 @@ function Nav({ current = 'home' }) {
                       {/* Painel direito: subserviços */}
                       <div style={{ width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
                         {activeCol !== null && <>
-                          <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF', display: 'flex', alignItems: 'center', gap: 10 }}>
-                            <span style={{ width: 28, height: 28, borderRadius: 7, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.15)', color: RG.tealDark, flexShrink: 0 }}>
-                              {megaIcons[megaCols[activeCol].label]}
-                            </span>
+                          <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF' }}>
                             <div style={{ fontFamily: F_BODY, fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
                           </div>
                           <div style={{ padding: '8px' }}>
