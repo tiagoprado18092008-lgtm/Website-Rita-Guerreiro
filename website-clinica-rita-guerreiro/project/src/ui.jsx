@@ -89,6 +89,44 @@ function Nav({ current = 'home' }) {
     return () => window.removeEventListener('scroll', onS);
   }, []);
 
+  const megaIcons = {
+    'Fisioterapia': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18.5 5.5a2.121 2.121 0 0 1 0 3L7 20a2.121 2.121 0 0 1-3-3L15.5 5.5a2.121 2.121 0 0 1 3 0z"/>
+        <path d="M5.5 5.5a2 2 0 0 0 0 2.828l.707.707"/><path d="M18.5 18.5a2 2 0 0 0 0-2.828l-.707-.707"/>
+      </svg>
+    ),
+    'Cuidados de Saúde': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+    ),
+    'Massagens': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+        <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+      </svg>
+    ),
+    'Holísticas': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </svg>
+    ),
+    'Estética & Tratamentos': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a5 5 0 0 1 5 5c0 3.5-5 13-5 13S7 10.5 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/>
+      </svg>
+    ),
+  };
+
+  const megaDescs = {
+    'Fisioterapia': 'Reabilitação e movimento',
+    'Cuidados de Saúde': 'Bem-estar integral',
+    'Massagens': 'Relaxamento e terapia',
+    'Holísticas': 'Equilíbrio e energia',
+    'Estética & Tratamentos': 'Beleza e cuidado',
+  };
+
   const megaCols = [
     {
       label: 'Fisioterapia',
@@ -196,46 +234,72 @@ function Nav({ current = 'home' }) {
                     style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-105px)', zIndex: 1001, paddingTop: 4 }}
                   >
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
-                      {/* Painel esquerdo: categorias — largura fixa, nunca muda */}
-                      <div style={{ width: 210, flexShrink: 0, background: '#7ab5ae', borderRadius: '0 0 14px 14px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)' }}>
+                      {/* Painel esquerdo: categorias com ícones */}
+                      <div style={{ width: 230, flexShrink: 0, background: 'white', borderRadius: '0 0 16px 16px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF' }}>
                         {megaCols.map((col, ci) => (
                           <div key={col.label}>
                             <div
                               onMouseEnter={() => setActiveCol(ci)}
                               style={{
-                                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                                padding: '11px 18px', cursor: 'pointer',
-                                background: activeCol === ci ? '#5a9e97' : 'transparent',
+                                display: 'flex', alignItems: 'center', gap: 12,
+                                padding: '11px 16px', cursor: 'pointer',
+                                background: activeCol === ci ? '#F1F7F6' : 'transparent',
                                 transition: 'background 150ms',
                               }}
                             >
-                              <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 400, color: 'white' }}>{col.label}</span>
-                              <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15 }}>›</span>
+                              <span style={{
+                                width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+                                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                                background: activeCol === ci ? RG.tealDark : 'rgba(111,181,176,0.15)',
+                                color: activeCol === ci ? 'white' : RG.tealDark,
+                                transition: 'background 150ms, color 150ms',
+                              }}>
+                                {megaIcons[col.label]}
+                              </span>
+                              <div>
+                                <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 500, color: activeCol === ci ? RG.tealDark : RG.charcoal, lineHeight: 1.2 }}>{col.label}</div>
+                                <div style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.label]}</div>
+                              </div>
+                              <svg width="8" height="8" viewBox="0 0 10 10" style={{ marginLeft: 'auto', opacity: activeCol === ci ? 0.7 : 0.3 }}>
+                                <path d="M3 2 L7 5 L3 8" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
                             </div>
-                            {ci < megaCols.length - 1 && <div style={{ height: 1, background: 'rgba(255,255,255,0.18)' }} />}
+                            {ci < megaCols.length - 1 && <div style={{ height: 1, background: '#E8E6DF', margin: '0 12px' }} />}
                           </div>
                         ))}
                       </div>
 
-                      {/* Painel direito: subserviços — aparece ao lado sem mexer o esquerdo */}
-                      <div style={{ width: 240, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: '#5a9e97', borderRadius: '0 0 14px 14px', padding: '16px 22px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)' }}>
+                      {/* Painel direito: subserviços */}
+                      <div style={{ width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
                         {activeCol !== null && <>
-                          <div style={{ fontFamily: F_BODY, fontSize: 9, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginBottom: 12 }}>{megaCols[activeCol].label}</div>
-                          {megaCols[activeCol].items.map((item, ii) => (
-                            <div key={item.href}>
-                              <a href={item.href} style={{ display: 'block', padding: '8px 0', fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.88)', textDecoration: 'none' }}
-                                onMouseEnter={e => e.currentTarget.style.color = '#fff'}
-                                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.88)'}
-                              >{item.label}</a>
-                              {ii < megaCols[activeCol].items.length - 1 && <div style={{ height: 1, background: 'rgba(255,255,255,0.12)' }} />}
-                            </div>
-                          ))}
+                          <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF', display: 'flex', alignItems: 'center', gap: 10 }}>
+                            <span style={{ width: 28, height: 28, borderRadius: 7, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.15)', color: RG.tealDark, flexShrink: 0 }}>
+                              {megaIcons[megaCols[activeCol].label]}
+                            </span>
+                            <div style={{ fontFamily: F_BODY, fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
+                          </div>
+                          <div style={{ padding: '8px' }}>
+                            {megaCols[activeCol].items.map((item) => (
+                              <a key={item.href} href={item.href}
+                                style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', fontFamily: F_BODY, fontSize: 13, color: RG.charcoal, textDecoration: 'none', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
+                                onMouseEnter={e => { e.currentTarget.style.background = '#F1F7F6'; e.currentTarget.style.color = RG.tealDark; }}
+                                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.charcoal; }}
+                              >
+                                <span style={{ width: 12, height: 1, background: '#D0CAC0', display: 'inline-block', flexShrink: 0 }} />
+                                {item.label}
+                              </a>
+                            ))}
+                          </div>
                           {megaCols[activeCol].href && (
-                            <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(255,255,255,0.18)' }}>
-                              <a href={megaCols[activeCol].href} style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-                                onMouseEnter={e => e.currentTarget.style.color = '#fff'}
-                                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
-                              >{t('service.ver_todos_prefix')} {megaCols[activeCol].label}</a>
+                            <div style={{ padding: '10px 16px 14px', borderTop: '1px solid #E8E6DF' }}>
+                              <a href={megaCols[activeCol].href}
+                                style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.tealDark, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
+                                onMouseEnter={e => e.currentTarget.style.color = RG.tealDeep}
+                                onMouseLeave={e => e.currentTarget.style.color = RG.tealDark}
+                              >
+                                {t('service.ver_todos_prefix')} {megaCols[activeCol].label}
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 5h5M5.5 3l2 2-2 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                              </a>
                             </div>
                           )}
                         </>}
@@ -312,12 +376,20 @@ function Nav({ current = 'home' }) {
             {/* Telefone */}
             <a href="tel:+351961899364" className="rg-nav-tel rg-tel-link" style={{
               fontFamily: F_BODY, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.75)',
-              textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '8px 13px', borderRadius: 9,
+              textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '7px 13px 7px 8px', borderRadius: 9,
               border: '1px solid rgba(255,255,255,0.12)',
               letterSpacing: '0.02em',
-            }}>
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 3 L3 5 Q 3 11 11 13 L 13 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+              transition: 'background 200ms, border-color 200ms, color 200ms',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'white'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}
+            >
+              <span style={{ width: 26, height: 26, borderRadius: 999, background: 'rgba(255,255,255,0.1)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+                </svg>
+              </span>
               961 899 364
             </a>
 
@@ -374,13 +446,27 @@ function Nav({ current = 'home' }) {
                   </svg>
                 </button>
                 {mobileServicos && (
-                  <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 24, paddingLeft: 2 }}>
+                  <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {megaCols.map(col => (
-                      <div key={col.label}>
-                        <div style={{ fontFamily: F_BODY, fontSize: 9, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(111,181,176,0.7)', marginBottom: 10 }}>{col.label}</div>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <div key={col.label} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(255,255,255,0.06)' }}>
+                          <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
+                            {megaIcons[col.label]}
+                          </span>
+                          <div>
+                            <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(111,181,176,0.85)' }}>{col.label}</div>
+                            <div style={{ fontFamily: F_BODY, fontSize: 10, color: 'rgba(255,255,255,0.35)', marginTop: 1 }}>{megaDescs[col.label]}</div>
+                          </div>
+                        </div>
+                        <div style={{ padding: '8px' }}>
                           {col.items.map(it => (
-                            <a key={it.href} href={it.href} style={{ fontFamily: F_BODY, fontSize: 15, fontWeight: 500, color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>{it.label}</a>
+                            <a key={it.href} href={it.href} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 14, fontWeight: 500, color: 'rgba(255,255,255,0.7)', textDecoration: 'none', padding: '7px 10px', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
+                              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'white'; }}
+                              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}
+                            >
+                              <span style={{ width: 12, height: 1, background: 'rgba(255,255,255,0.2)', display: 'inline-block', flexShrink: 0 }} />
+                              {it.label}
+                            </a>
                           ))}
                         </div>
                       </div>
@@ -465,73 +551,154 @@ function Section({ id, bg = RG.white, color = RG.ink, pad = 'lg', children, styl
 function Footer() {
   const { t } = useLang();
   return (
-    <footer style={{ background: RG.tealDeep, color: RG.white, paddingTop: 72, paddingBottom: 28 }}>
+    <footer style={{ background: '#2A5E5B', color: RG.white, paddingTop: 64, paddingBottom: 0 }}>
       <Container>
-        <div style={{ display: 'grid', gridTemplateColumns: '2.5fr 1fr 1fr 1fr', gap: 40, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.15)' }} className="rg-footer-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1.4fr', gap: 40, paddingBottom: 56, borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="rg-footer-grid">
+          {/* Brand col */}
           <div>
-            <a href="index.html" style={{ display: 'inline-block', marginBottom: 20 }}>
-              <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" loading="lazy" decoding="async" style={{ height: 80, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
+            <a href="index.html" style={{ display: 'inline-block', marginBottom: 22 }}>
+              <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" loading="lazy" decoding="async" style={{ height: 48, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
             </a>
-            <p style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.65, color: 'rgba(255,255,255,0.7)', marginTop: 0, marginBottom: 20, maxWidth: 340 }}>
+            <p style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontSize: 18, lineHeight: 1.4, color: 'rgba(255,255,255,0.7)', marginTop: 0, marginBottom: 24, maxWidth: 280 }}>
               {t('footer.tagline')}
             </p>
-            <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
-              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" className="rg-footer-social" style={{ width: 40, height: 40, borderRadius: 999, border: '1px solid rgba(255,255,255,0.25)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: RG.white, transition: 'all 200ms' }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
-              </a>
-              <a href="https://www.instagram.com/centro_terapias_rita_guerreiro/" target="_blank" rel="noopener noreferrer" className="rg-footer-social" style={{ width: 40, height: 40, borderRadius: 999, border: '1px solid rgba(255,255,255,0.25)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: RG.white, transition: 'all 200ms' }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg>
-              </a>
+            <div style={{ display: 'flex', gap: 10, marginBottom: 28 }}>
+              {[
+                { href: 'https://wa.me/351961899364', icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg> },
+                { href: 'https://www.instagram.com/centro_terapias_rita_guerreiro/', icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> },
+              ].map(({ href, icon }) => (
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="rg-footer-social"
+                  style={{ width: 36, height: 36, borderRadius: 999, border: '1px solid rgba(255,255,255,0.2)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.7)', transition: 'all 200ms' }}
+                  onMouseEnter={e => { e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.background = 'transparent'; }}
+                >{icon}</a>
+              ))}
             </div>
-            <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)' }}>
+            {/* Map with integrated address bar */}
+            <div style={{ borderRadius: 16, overflow: 'hidden', boxShadow: '0 0 0 1px rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.25)' }}>
               <iframe
                 src="https://maps.google.com/maps?q=R.+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9%2C+Portugal&output=embed&z=16"
-                width="100%"
-                height="180"
+                width="100%" height="185"
                 style={{ border: 0, display: 'block' }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                 title="Localização Rita Guerreiro"
               />
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Padre+António+Vieira+58,+8100-611+Loulé,+Portugal"
+                target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '11px 16px', background: 'rgba(255,255,255,0.06)', borderTop: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none', transition: 'background 200ms' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span style={{ fontFamily: F_BODY, fontSize: 12.5, fontWeight: 500, color: 'rgba(255,255,255,0.75)', flex: 1 }}>Rua Padre António Vieira 58, Loulé</span>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
+
+          {/* Nav cols */}
           {[
             { t: t('footer.col1'), l: [['Fisioterapia', 'fisioterapia.html'], ['Nutrição', 'servico-nutricao.html'], ['Psicologia', 'servico-psicologia.html'], ['Terapia de Bowen', 'servico-terapia-bowen.html']] },
             { t: t('footer.col2'), l: [['Massagens', 'massagens.html'], ['Holísticas', 'holisticas.html'], ['Depilação a Laser', 'servico-depilacao-laser.html'], ['Pilates Clínico', 'servico-pilates-clinico.html']] },
-            { t: t('footer.col3'), l: [[t('footer.horario_item'), null], [t('footer.sabado_item'), null], ['961 899 364', 'tel:+351961899364'], ['geral@ritaguerreiro.pt', 'mailto:geral@ritaguerreiro.pt']] },
           ].map(col => (
             <div key={col.t}>
-              <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 18 }}>{col.t}</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
-                {col.l.map(([n, h]) => h
-                  ? <a key={n} href={h} className="rg-footer-link" style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.8)', textDecoration: 'none', transition: 'color 180ms, padding-left 180ms' }}>{n}</a>
-                  : <span key={n} style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>{n}</span>
-                )}
+              <div style={{ fontFamily: F_BODY, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>{col.t}</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {col.l.map(([n, h]) => (
+                  <a key={n} href={h} className="rg-footer-link"
+                    style={{ fontFamily: F_BODY, fontSize: 14, color: 'rgba(255,255,255,0.65)', textDecoration: 'none', padding: '6px 0', display: 'flex', alignItems: 'center', gap: 8, transition: 'color 200ms, padding-left 200ms' }}
+                    onMouseEnter={e => { e.currentTarget.style.color = 'white'; e.currentTarget.querySelector('span').style.width = '16px'; e.currentTarget.querySelector('span').style.background = 'rgba(255,255,255,0.6)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; e.currentTarget.querySelector('span').style.width = '12px'; e.currentTarget.querySelector('span').style.background = 'rgba(255,255,255,0.2)'; }}
+                  >
+                    <span style={{ width: 12, height: 1, background: 'rgba(255,255,255,0.2)', display: 'inline-block', flexShrink: 0, transition: 'all 300ms' }} />
+                    {n}
+                  </a>
+                ))}
               </div>
             </div>
           ))}
-        </div>
-        <div style={{ paddingTop: 22, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-          <div style={{ fontFamily: F_BODY, fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
-            <a href="https://maps.google.com/?q=Rua+Padre+António+Vieira+58+Loulé" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>Rua Padre António Vieira 58, 8100-611 Loulé</a> · © 2026 Rita Guerreiro — {t('footer.direitos')}
+
+          {/* Contact col with cards */}
+          <div>
+            <div style={{ fontFamily: F_BODY, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>{t('footer.col3')}</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {/* Hours card */}
+              <div style={{ borderRadius: 14, overflow: 'hidden', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '14px 16px 12px' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: 2, flexShrink: 0 }}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>Seg–Sex</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>9:00 – 19:00</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 16px 14px', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: 2, flexShrink: 0 }}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>Sábados</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>Sob marcação</div>
+                  </div>
+                </div>
+              </div>
+              {/* Phone card */}
+              <a href="tel:+351961899364"
+                style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '13px 16px', borderRadius: 14, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none', transition: 'background 200ms' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
+              >
+                <span style={{ width: 32, height: 32, borderRadius: 999, background: 'rgba(255,255,255,0.1)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'rgba(255,255,255,0.7)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+                </span>
+                <div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 10.5, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginBottom: 2 }}>Telefone</div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>961 899 364</div>
+                </div>
+              </a>
+              {/* Email card */}
+              <a href="mailto:geral@ritaguerreiro.pt"
+                style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '13px 16px', borderRadius: 14, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none', transition: 'background 200ms' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
+              >
+                <span style={{ width: 32, height: 32, borderRadius: 999, background: 'rgba(255,255,255,0.1)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'rgba(255,255,255,0.7)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                <div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 10.5, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginBottom: 2 }}>Email</div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.85)', wordBreak: 'break-all' }}>geral@ritaguerreiro.pt</div>
+                </div>
+              </a>
+            </div>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 24, fontFamily: F_BODY, fontSize: 12 }}>
-            <a href="privacidade.html" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>{t('footer.privacidade')}</a>
-            <a href="termos.html" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>{t('footer.termos')}</a>
+        </div>
+        <div style={{ paddingTop: 20, paddingBottom: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ fontFamily: F_BODY, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
+            © 2026 Rita Guerreiro — {t('footer.direitos')}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: F_BODY, fontSize: 12 }}>
+            <a href="privacidade.html" style={{ color: 'rgba(255,255,255,0.35)', textDecoration: 'none', padding: '4px 10px', transition: 'color 180ms' }}
+              onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.65)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.35)'}
+            >{t('footer.privacidade')}</a>
+            <span style={{ color: 'rgba(255,255,255,0.15)', fontSize: 10 }}>·</span>
+            <a href="termos.html" style={{ color: 'rgba(255,255,255,0.35)', textDecoration: 'none', padding: '4px 10px', transition: 'color 180ms' }}
+              onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.65)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.35)'}
+            >{t('footer.termos')}</a>
+            <span style={{ color: 'rgba(255,255,255,0.15)', fontSize: 10 }}>·</span>
             <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener noreferrer" className="rg-reclamacoes-btn" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              color: 'rgba(255,255,255,0.85)', textDecoration: 'none',
-              border: '1px solid rgba(255,255,255,0.25)', borderRadius: 8,
-              padding: '6px 12px',
-              transition: 'background 200ms, border-color 200ms',
-            }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              display: 'inline-flex', alignItems: 'center', gap: 6, marginLeft: 4,
+              color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8,
+              padding: '5px 11px', transition: 'background 200ms, border-color 200ms, color 200ms',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.28)'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                 <polyline points="14 2 14 8 20 8"/>
                 <line x1="16" y1="13" x2="8" y2="13"/>
                 <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
               </svg>
               {t('footer.reclamacoes')}
             </a>
