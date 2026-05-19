@@ -43,7 +43,7 @@ function Body({ children, style = {}, size = 16 }) {
 
 function Button({ children, href = '#', variant = 'primary', size = 'md', target, icon = true, onClick }) {
   const [hv, setHv] = React.useState(false);
-  const base = { display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: F_BODY, fontWeight: 600, textDecoration: 'none', borderRadius: 999, transition: 'all 220ms', cursor: 'pointer', border: '1px solid transparent', whiteSpace: 'nowrap' };
+  const base = { display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: F_DISPLAY, fontWeight: 400, textDecoration: 'none', borderRadius: 999, transition: 'all 220ms', cursor: 'pointer', border: '1px solid transparent', whiteSpace: 'nowrap' };
   const sz = { sm: { padding: '9px 16px', fontSize: 13 }, md: { padding: '14px 22px', fontSize: 14 }, lg: { padding: '18px 28px', fontSize: 15 } }[size];
   const vars = {
     primary: { background: RG.ink, color: RG.cream },
@@ -163,7 +163,7 @@ function Nav({ current = 'home' }) {
   ];
 
   const linkBase = {
-    fontFamily: F_BODY, fontSize: 15, fontWeight: 500,
+    fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 400,
     color: 'rgba(255,255,255,0.82)', textDecoration: 'none',
     padding: '10px 15px', display: 'inline-flex', alignItems: 'center', gap: 6,
     letterSpacing: '0.01em', background: 'none', border: 'none', cursor: 'pointer',
@@ -221,8 +221,8 @@ function Nav({ current = 'home' }) {
                               }}
                             >
                               <div style={{ flex: 1 }}>
-                                <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 500, color: activeCol === ci ? RG.tealDark : RG.charcoal, lineHeight: 1.2 }}>{col.label}</div>
-                                <div style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 400, color: activeCol === ci ? RG.tealDark : RG.charcoal, lineHeight: 1.2 }}>{col.label}</div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
                               </div>
                               <svg width="8" height="8" viewBox="0 0 10 10" style={{ marginLeft: 'auto', opacity: activeCol === ci ? 0.7 : 0.3 }}>
                                 <path d="M3 2 L7 5 L3 8" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
@@ -237,12 +237,12 @@ function Nav({ current = 'home' }) {
                       <div style={{ width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
                         {activeCol !== null && <>
                           <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF' }}>
-                            <div style={{ fontFamily: F_BODY, fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
+                            <div style={{ fontFamily: F_DISPLAY, fontSize: 10, fontWeight: 400, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
                           </div>
                           <div style={{ padding: '8px' }}>
                             {megaCols[activeCol].items.map((item) => (
                               <a key={item.href} href={item.href}
-                                style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', fontFamily: F_BODY, fontSize: 13, color: RG.charcoal, textDecoration: 'none', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
+                                style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', fontFamily: F_DISPLAY, fontSize: 13, color: RG.charcoal, textDecoration: 'none', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
                                 onMouseEnter={e => { e.currentTarget.style.background = '#F1F7F6'; e.currentTarget.style.color = RG.tealDark; }}
                                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.charcoal; }}
                               >
@@ -253,7 +253,7 @@ function Nav({ current = 'home' }) {
                           {megaCols[activeCol].href && (
                             <div style={{ padding: '10px 16px 14px', borderTop: '1px solid #E8E6DF' }}>
                               <a href={megaCols[activeCol].href}
-                                style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.tealDark, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
+                                style={{ fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 400, color: RG.tealDark, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
                                 onMouseEnter={e => e.currentTarget.style.color = RG.tealDeep}
                                 onMouseLeave={e => e.currentTarget.style.color = RG.tealDark}
                               >
@@ -335,7 +335,7 @@ function Nav({ current = 'home' }) {
 
             {/* Telefone */}
             <a href="tel:+351961899364" className="rg-nav-tel rg-tel-link" style={{
-              fontFamily: F_BODY, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.75)',
+              fontFamily: F_DISPLAY, fontSize: 12.5, fontWeight: 400, color: 'rgba(255,255,255,0.75)',
               textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '7px 13px 7px 8px', borderRadius: 9,
               border: '1px solid rgba(255,255,255,0.12)',
@@ -355,7 +355,7 @@ function Nav({ current = 'home' }) {
 
             {/* Agendar CTA */}
             <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" className="rg-agendar-btn" style={{
-              fontFamily: F_BODY, fontSize: 13, fontWeight: 700,
+              fontFamily: F_DISPLAY, fontSize: 13, fontWeight: 400,
               color: RG.tealDeep,
               background: 'linear-gradient(135deg, #ffffff 0%, #f0faf9 100%)',
               padding: '10px 22px', borderRadius: 999, textDecoration: 'none',
@@ -414,13 +414,13 @@ function Nav({ current = 'home' }) {
                             {megaIcons[col.id]}
                           </span>
                           <div>
-                            <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(111,181,176,0.85)' }}>{col.label}</div>
-                            <div style={{ fontFamily: F_BODY, fontSize: 10, color: 'rgba(255,255,255,0.35)', marginTop: 1 }}>{megaDescs[col.id]}</div>
+                            <div style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 400, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(111,181,176,0.85)' }}>{col.label}</div>
+                            <div style={{ fontFamily: F_DISPLAY, fontSize: 10, color: 'rgba(255,255,255,0.35)', marginTop: 1 }}>{megaDescs[col.id]}</div>
                           </div>
                         </div>
                         <div style={{ padding: '8px' }}>
                           {col.items.map(it => (
-                            <a key={it.href} href={it.href} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 14, fontWeight: 500, color: 'rgba(255,255,255,0.7)', textDecoration: 'none', padding: '7px 10px', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
+                            <a key={it.href} href={it.href} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: 'rgba(255,255,255,0.7)', textDecoration: 'none', padding: '7px 10px', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
                               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'white'; }}
                               onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}
                             >
@@ -439,8 +439,8 @@ function Nav({ current = 'home' }) {
               </div>
             ))}
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 700, color: RG.tealDeep, background: RG.white, padding: '13px 28px', borderRadius: 999, textDecoration: 'none' }}>{t('agendar')}</a>
-              <a href="tel:+351961899364" style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.8)', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', padding: '13px 28px', borderRadius: 999, textDecoration: 'none' }}>961 899 364</a>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: RG.tealDeep, background: RG.white, padding: '13px 28px', borderRadius: 999, textDecoration: 'none' }}>{t('agendar')}</a>
+              <a href="tel:+351961899364" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: 'rgba(255,255,255,0.8)', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', padding: '13px 28px', borderRadius: 999, textDecoration: 'none' }}>961 899 364</a>
             </div>
             {/* Language toggle mobile */}
             <div style={{ paddingTop: 24, display: 'flex', gap: 10 }}>
