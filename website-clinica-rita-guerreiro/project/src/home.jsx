@@ -72,7 +72,7 @@ function Hero() {
             <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
               <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" className="rg-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 10,
-                fontFamily: F_BODY, fontSize: 14, fontWeight: 700,
+                fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 700,
                 color: RG.white, background: '#6FB5B0',
                 padding: '14px 28px', borderRadius: 999, textDecoration: 'none',
                 boxShadow: '0 10px 28px -8px rgba(111,181,176,0.6)',
@@ -83,7 +83,7 @@ function Hero() {
               </a>
               <a href="#todos-servicos" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                fontFamily: F_BODY, fontSize: 14, fontWeight: 600,
+                fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 600,
                 color: RG.ink, background: 'transparent',
                 border: `1.5px solid rgba(20,20,18,0.16)`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
                 transition: 'border-color 200ms, background 200ms',
@@ -159,16 +159,6 @@ function StatsStrip() {
             <p style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.muted, marginTop: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('trust.terapias')}</p>
           </div>
 
-          {/* Credencial — cédula profissional */}
-          <div style={{ borderLeft: `1px solid ${RG.line}`, paddingLeft: 32 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={RG.tealDark} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="m9 12 2 2 4-4"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 5c0-1.66 4-3 9-3s9 1.34 9 3-4 3-9 3-9-1.34-9-3Z"/></svg>
-              <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.ink }}>{t('trust.cred_title')}</span>
-            </div>
-            <p style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, lineHeight: 1.55, maxWidth: '26ch' }}>
-              {t('trust.cred_desc')}
-            </p>
-          </div>
         </div>
       </Container>
     </section>
