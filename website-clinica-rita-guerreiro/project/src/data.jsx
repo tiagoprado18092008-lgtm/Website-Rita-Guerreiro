@@ -38,8 +38,8 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Fisioterapia para crianças e adultos — avaliação e tratamento de dor, lesão ou disfunção músculo-esquelética.', price: '45€ / 50€ / 90€' },
-      { slug: 'mesoterapia', name: 'Fisioterapia ATM / Mesoterapia', img: IMG.mesoterapia, blurb: 'Tratamento especializado da articulação temporomandibular e mesoterapia para dor e inflamação localizada.', price: '50€ / 55€' },
+      { slug: 'fisioterapia', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Fisioterapia para crianças e adultos — avaliação e tratamento de dor, lesão ou disfunção músculo-esquelética.', price: '50€ / 45€ / 85€' },
+      { slug: 'mesoterapia', name: 'Fisioterapia ATM / Mesoterapia', img: IMG.mesoterapia, blurb: 'Tratamento especializado da articulação temporomandibular e mesoterapia para dor e inflamação localizada.', price: '60€ / 55€ / 50€' },
       { slug: 'acupuntura', name: 'Fisioterapia Vestibular / Acupuntura', img: IMG.acupuntura, blurb: 'Reabilitação vestibular para tonturas e vertigens, e acupuntura para dor, stress e bem-estar geral.', price: '45€' },
     ],
   },
@@ -63,7 +63,7 @@ const SERVICES = {
       { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], blurb: 'Massagem adaptada para grávidas e mães recentes — conforto, relaxamento e recuperação.', price: '45€' },
       { slug: 'massagem-sacro-craniana', name: 'Massagem Sacro-Craniana', img: IMG['massagem-sacro-craniana'], blurb: 'Técnica suave sobre o sistema sacro-craniano — alívio de tensão, cefaleias e stress.', price: '40€' },
       { slug: 'drenagem-linfatica', name: 'Drenagem Linfática Manual', img: IMG['drenagem-linfatica'], blurb: 'Método Vodder para reduzir inchaço, melhorar circulação e desintoxicar o organismo.', price: '45€ / 50€' },
-      { slug: 'massagem-terapeutica', name: 'Drenagem Pós-Operatório / Terapêutica', img: IMG['massagem-terapeutica'], blurb: 'Drenagem linfática pós-operatória e massagem terapêutica para recuperação e dor muscular.', price: '30€ – 70€' },
+      { slug: 'massagem-terapeutica', name: 'Drenagem Pós-Operatório / Terapêutica', img: IMG['massagem-terapeutica'], blurb: 'Drenagem linfática pós-operatória e massagem terapêutica para recuperação e dor muscular.', price: '60€ / 80€' },
     ],
   },
   holisticas: {
@@ -73,7 +73,7 @@ const SERVICES = {
       { slug: 'reflexologia', name: 'Reflexologia', img: IMG.reflexologia, blurb: 'Estimulação de pontos reflexos nos pés para reequilíbrio dos sistemas do organismo.', price: '45€' },
       { slug: 'shiatsu', name: 'Shiatsu', img: IMG.shiatsu, blurb: 'Técnica japonesa de pressão sobre meridianos energéticos — equilíbrio e vitalidade.', price: '45€' },
       { slug: 'massagem-indiana', name: 'Massagem Indiana', img: IMG['massagem-indiana'], blurb: 'Indian Head Massage — massagem na cabeça, pescoço e ombros para stress e tensão.', price: '35€' },
-      { slug: 'head-spa', name: 'Head Spa', img: IMG['head-spa'], blurb: 'Tratamento profundo do couro cabeludo — limpeza, nutrição e relaxamento total.', price: '75€' },
+      { slug: 'head-spa', name: 'Head Spa', img: IMG['head-spa'], blurb: 'Tratamento profundo do couro cabeludo — limpeza, nutrição e relaxamento total.', price: '80€' },
     ],
   },
   estetica: {
@@ -95,7 +95,7 @@ const SERVICE_DETAIL = {
     prices: [
       { label: 'Crianças (50min)', value: '50€' },
       { label: 'Adultos (50min)', value: '45€' },
-      { label: 'Adultos (80min)', value: '90€' },
+      { label: 'Pack 10 sessões', value: '85€/sessão' },
     ],
     sub: [
       { t: 'Dor lombar e cervical', d: 'Avaliação postural, terapia manual e exercício progressivo para dor crónica ou aguda da coluna.' },
@@ -110,8 +110,8 @@ const SERVICE_DETAIL = {
     tagline: 'Tratamento especializado da ATM e mesoterapia para dor e inflamação localizada.',
     description: 'A Fisioterapia ATM trata as disfunções da articulação temporomandibular — dor, bloqueio, cliques ou rangido na mandíbula — com abordagem manual especializada. A Mesoterapia consiste na aplicação de microinjeções de substâncias ativas diretamente nas camadas superficiais da pele ou tecido subcutâneo, com ação localizada para dor articular, contraturas e tratamentos estéticos.',
     prices: [
-      { label: 'Fisioterapia ATM (50min)', value: '55€' },
-      { label: 'Mesoterapia (50min)', value: '50€' },
+      { label: 'Fisioterapia ATM (50min)', value: '60€' },
+      { label: 'Mesoterapia (50min)', value: '55€ / 50€' },
     ],
     sub: [
       { t: 'ATM — Articulação Temporomandibular', d: 'Tratamento de dor, bloqueio, cliques ou rangido na mandíbula e alívio de cefaleias associadas.' },
@@ -279,9 +279,9 @@ const SERVICE_DETAIL = {
     tagline: 'Desintoxica, desinchaça e revitaliza — com a técnica manual Método Vodder.',
     description: 'A Drenagem Linfática Manual segundo o Método Vodder é a técnica de referência internacional para estimular o sistema linfático. Através de movimentos suaves, rítmicos e precisos sobre a pele, ativa a circulação linfática, reduz o edema e favorece a eliminação de toxinas. Indicada tanto em contexto clínico como de bem-estar.',
     prices: [
-      { label: 'Manual (50min)', value: '45€ / 50€' },
-      { label: 'Pós-Operatório 50min', value: '55€' },
-      { label: 'Pós-Operatório 80min', value: '70€' },
+      { label: 'Manual (50min)', value: '50€ / 45€ (Pack 10)' },
+      { label: 'Pós-Operatório 50min', value: '60€' },
+      { label: 'Pós-Operatório 80min', value: '80€' },
     ],
     sub: [
       { t: 'Retenção de líquidos', d: 'Redução do inchaço nas pernas, tornozelos e barriga causado por retenção hídrica.' },
@@ -296,9 +296,9 @@ const SERVICE_DETAIL = {
     tagline: 'Drenagem pós-operatória e massagem terapêutica — recuperação e alívio da dor.',
     description: 'A Drenagem Linfática Pós-Operatória é essencial para uma recuperação rápida e sem complicações após cirurgia — reduz edema, melhora cicatrizes e restaura a circulação. A Massagem Terapêutica trabalha zonas de tensão crónica, contraturas e dor muscular persistente, com técnicas adaptadas à condição de cada pessoa.',
     prices: [
-      { label: 'Terapêutica 30-50min', value: '30€ – 45€' },
-      { label: 'Drenagem Pós-Op 50min', value: '55€' },
-      { label: 'Drenagem Pós-Op 80min', value: '70€' },
+      { label: 'Terapêutica 30-50min', value: '30€ – 45€ / 40€' },
+      { label: 'Drenagem Pós-Op 50min', value: '60€' },
+      { label: 'Drenagem Pós-Op 80min', value: '80€' },
     ],
     sub: [
       { t: 'Recuperação pós-cirurgia', d: 'Redução de edema e melhoria da qualidade das cicatrizes após intervenção cirúrgica.' },
@@ -358,7 +358,7 @@ const SERVICE_DETAIL = {
     tagline: 'Tratamento profundo do couro cabeludo — limpeza, nutrição e relaxamento total.',
     description: 'O Head Spa é um tratamento de luxo para o couro cabeludo que combina limpeza profunda, nutrição intensiva e massagem relaxante. Remove o excesso de sebo e impurezas, equilibra o pH do couro cabeludo, fortalece os folículos capilares e proporciona uma sensação de frescura e leveza incomparável. O resultado visível no cabelo vem acompanhado de um estado de relaxamento profundo.',
     prices: [
-      { label: 'Sessão completa (90min)', value: '75€' },
+      { label: 'Sessão completa (90min)', value: '80€' },
     ],
     sub: [
       { t: 'Limpeza profunda', d: 'Remoção do excesso de sebo, células mortas e impurezas do couro cabeludo.' },
