@@ -1,0 +1,5 @@
+{
+  "buildCommand": "echo 'Static site'",
+  "outputDirectory": "website-clinica-rita-guerreiro/project",
+  "cleanUrls": true
+}
