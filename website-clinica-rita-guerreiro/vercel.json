@@ -1,11 +1,5 @@
 {
-  "buildCommand": "echo 'Static site'",
-  "outputDirectory": "project",
-  "cleanUrls": true,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "buildCommand": "mkdir -p public && cp -r project/. public/",
+  "outputDirectory": "public",
+  "cleanUrls": true
 }
