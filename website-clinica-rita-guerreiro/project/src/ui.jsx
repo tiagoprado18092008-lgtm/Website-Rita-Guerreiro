@@ -296,7 +296,7 @@ function Nav({ current = 'home' }) {
                   onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
                   >
                     <span style={{ fontSize: 16, lineHeight: 1 }}>{langs.find(l => l.code === lang)?.flag}</span>
-                    <span style={{ fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em', fontFamily: F_DISPLAY }}>{lang}</span>
+                    <span style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.06em', fontFamily: F_DISPLAY }}>{lang}</span>
                     <svg width="8" height="8" viewBox="0 0 10 10" style={{ transform: langOpen ? 'rotate(180deg)' : 'none', transition: 'transform 220ms', opacity: 0.5 }}>
                       <path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -311,21 +311,21 @@ function Nav({ current = 'home' }) {
                       }}
                     >
                       <div style={{
-                        background: '#1a2a2a', borderRadius: 12, padding: '6px',
-                        boxShadow: '0 20px 48px -8px rgba(14,14,12,0.32), 0 0 0 1px rgba(255,255,255,0.08)',
-                        minWidth: 80,
+                        background: RG.white, borderRadius: 12, padding: '6px',
+                        boxShadow: '0 20px 48px -8px rgba(14,14,12,0.18), 0 0 0 1px rgba(14,14,12,0.06)',
+                        minWidth: 90,
                       }}>
                         {langs.filter(l => l.code !== lang).map(l => (
                           <button key={l.code} onClick={() => { changeLang(l.code); setLangOpen(false); }} style={{
                             display: 'flex', alignItems: 'center', gap: 8, width: '100%',
-                            padding: '8px 10px', borderRadius: 8, border: 'none',
+                            padding: '8px 12px', borderRadius: 8, border: 'none',
                             background: 'none', cursor: 'pointer', transition: 'background 150ms',
                           }}
-                          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                          onMouseEnter={e => e.currentTarget.style.background = RG.tealWash}
                           onMouseLeave={e => e.currentTarget.style.background = 'none'}
                           >
                             <span style={{ fontSize: 18, lineHeight: 1 }}>{l.flag}</span>
-                            <span style={{ fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em', fontFamily: F_DISPLAY }}>{l.label}</span>
+                            <span style={{ fontSize: 11, fontWeight: 600, color: RG.dark, letterSpacing: '0.06em', fontFamily: F_DISPLAY }}>{l.label}</span>
                           </button>
                         ))}
                       </div>
