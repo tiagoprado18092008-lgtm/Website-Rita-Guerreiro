@@ -33,7 +33,7 @@ function ServicePage({ slug }) {
           </div>
         </Reveal>
         <Reveal delay={60}>
-          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.ink }}>{s.name}</h1>
+          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.tealDark }}>{s.name}</h1>
         </Reveal>
         <Reveal delay={120}>
           <Body size={20} style={{ marginTop: 28, maxWidth: '54ch' }}>{detail?.tagline || s.blurb}</Body>
@@ -186,7 +186,7 @@ function CategoryPage({ categoryId }) {
           </div>
         </Reveal>
         <Reveal delay={60}>
-          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.ink }}>{cat.label}</h1>
+          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.tealDark }}>{cat.label}</h1>
         </Reveal>
         <Reveal delay={120}>
           <Body size={20} style={{ marginTop: 28, maxWidth: '54ch' }}>{cat.intro}</Body>
