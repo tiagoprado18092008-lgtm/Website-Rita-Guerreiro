@@ -9,6 +9,15 @@ function findService(slug, services) {
   return null;
 }
 
+// Category accent colors for visual differentiation
+const CAT_ACCENT = {
+  fisioterapia: { bg: '#EBF4F3', border: '#6FB5B0', dot: '#2F6B68' },
+  saude:        { bg: '#EFF6F0', border: '#7DBF8A', dot: '#3D7A4A' },
+  massagens:    { bg: '#F5F0EC', border: '#C4A882', dot: '#8A6540' },
+  holisticas:   { bg: '#F0EDF6', border: '#A08CC0', dot: '#5E3F8F' },
+  estetica:     { bg: '#F6EFF3', border: '#C487AA', dot: '#8F3F63' },
+};
+
 function ServicePage({ slug }) {
   const { lang, t } = useLang();
   const services = getServices(lang);
@@ -18,122 +27,199 @@ function ServicePage({ slug }) {
   const detail = serviceDetail[slug];
   const catItems = services[s.categoryId].items.filter(i => i.slug !== slug);
   const steps = t('service.steps');
+  const accent = CAT_ACCENT[s.categoryId] || CAT_ACCENT.fisioterapia;
 
   return (<>
     <Nav current={s.categoryId} />
-    <section style={{ paddingTop: 130, paddingBottom: 60, background: RG.cream }}>
+
+    {/* ── Hero ── */}
+    <section style={{ paddingTop: 130, paddingBottom: 0, background: RG.white }}>
       <Container>
+        {/* Breadcrumb */}
         <Reveal>
-          <div style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, marginBottom: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: F_BODY, fontSize: 13, color: RG.muted, marginBottom: 32 }}>
             <a href="index.html" style={{ color: RG.muted, textDecoration: 'none' }}>{t('service.inicio')}</a>
-            <span style={{ margin: '0 8px' }}>/</span>
+            <span style={{ opacity: 0.4 }}>/</span>
             <span>{s.category}</span>
-            <span style={{ margin: '0 8px' }}>/</span>
-            <span style={{ color: RG.ink }}>{s.name}</span>
+            <span style={{ opacity: 0.4 }}>/</span>
+            <span style={{ color: RG.ink, fontWeight: 500 }}>{s.name}</span>
           </div>
         </Reveal>
-        <Reveal delay={60}>
-          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(52px, 8vw, 128px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: 0, color: RG.tealDark }}>{s.name}</h1>
-        </Reveal>
-        <Reveal delay={120}>
-          <Body size={20} style={{ marginTop: 28, maxWidth: '54ch' }}>{detail?.tagline || s.blurb}</Body>
-        </Reveal>
-        <Reveal delay={200}>
-          <div style={{ marginTop: 48 }}><Photo aspect="21/9" label={`Foto — ${s.name}`} tone="teal" src={s.img} style={{ borderRadius: 12 }} /></div>
-        </Reveal>
-      </Container>
-    </section>
 
-    <Section bg={RG.creamSoft} pad="lg">
-      <Container>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 60 }} className="rg-hero-grid">
-          <Reveal>
-            <div style={{ position: 'sticky', top: 120 }}>
-              <Eyebrow>{t('service.info_eyebrow')}</Eyebrow>
-              <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <div style={{ paddingBottom: 16, borderBottom: `1px solid ${RG.line}` }}>
-                  <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.muted, marginBottom: 6 }}>{t('service.preco_label')}</div>
-                  {detail?.prices ? (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                      {detail.prices.map((p, i) => (
-                        <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
-                          <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.charcoal }}>{p.label}</span>
-                          <span style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{p.value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.02em' }}>{s.price}</div>
-                  )}
-                </div>
-                <div>
-                  <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.muted, marginBottom: 10 }}>{t('service.marcacoes_label')}</div>
-                  <Body size={14} style={{ marginBottom: 16 }}>{t('service.marcacoes_body')}</Body>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start' }}>
-                    <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('service.agendar_btn')}</Button>
-                    <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>{t('service.ligar_btn')}</Button>
-                  </div>
-                </div>
+        {/* Hero layout: text left, image right */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', paddingBottom: 72 }} className="rg-hero-grid">
+          <div>
+            {/* Category badge */}
+            <Reveal>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: accent.bg, border: `1px solid ${accent.border}`,
+                borderRadius: 100, padding: '6px 14px', marginBottom: 28,
+              }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: accent.dot, flexShrink: 0 }} />
+                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: accent.dot, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{s.category}</span>
               </div>
+            </Reveal>
+
+            <Reveal delay={60}>
+              <h1 style={{
+                fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 5vw, 72px)',
+                fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.035em',
+                margin: 0, color: RG.ink,
+              }}>{s.name}</h1>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <p style={{
+                fontFamily: F_BODY, fontSize: 18, lineHeight: 1.65,
+                color: RG.charcoal, marginTop: 20, marginBottom: 0,
+                maxWidth: '42ch',
+              }}>{detail?.tagline || s.blurb}</p>
+            </Reveal>
+
+            {/* Price pill */}
+            <Reveal delay={180}>
+              <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+                {detail?.prices ? (
+                  detail.prices.slice(0, 2).map((p, i) => (
+                    <div key={i} style={{
+                      background: i === 0 ? RG.tealDark : RG.white,
+                      color: i === 0 ? RG.white : RG.ink,
+                      border: `1px solid ${i === 0 ? RG.tealDark : RG.line}`,
+                      borderRadius: 8, padding: '10px 18px',
+                    }}>
+                      <div style={{ fontFamily: F_BODY, fontSize: 11, opacity: 0.7, marginBottom: 2 }}>{p.label}</div>
+                      <div style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>{p.value}</div>
+                    </div>
+                  ))
+                ) : (
+                  <div style={{
+                    background: RG.tealDark, color: RG.white,
+                    borderRadius: 8, padding: '10px 18px',
+                  }}>
+                    <div style={{ fontFamily: F_BODY, fontSize: 11, opacity: 0.7, marginBottom: 2 }}>{t('service.preco_label')}</div>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>{s.price}</div>
+                  </div>
+                )}
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('service.agendar_btn')}</Button>
+                <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>{t('service.ligar_btn')}</Button>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Image */}
+          <Reveal delay={100}>
+            <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/3', position: 'relative' }}>
+              <Photo aspect="4/3" label={`Foto — ${s.name}`} tone="teal" src={s.img} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </Reveal>
-          <Reveal delay={100}>
-            <Heading level="h2">{t('service.sobre_heading')}</Heading>
-            <Body size={17} style={{ marginTop: 24 }}>{detail?.description || s.blurb}</Body>
-            {detail?.sub && (
-              <div style={{ marginTop: 48 }}>
-                <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 24 }}>{t('service.areas_label')}</div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2, background: RG.line, border: `1px solid ${RG.line}` }} className="rg-values-grid">
-                  {detail.sub.map((x, i) => (
-                    <div key={i} style={{ background: RG.white, padding: 24 }}>
-                      <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 8 }}>{x.t}</div>
-                      <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.55, color: RG.charcoal }}>{x.d}</div>
+        </div>
+      </Container>
+
+      {/* Full-width accent stripe */}
+      <div style={{ height: 4, background: `linear-gradient(90deg, ${accent.border}, ${RG.teal}, transparent)` }} />
+    </section>
+
+    {/* ── Descrição + Áreas de Atuação ── */}
+    <Section bg={RG.white} pad="lg">
+      <Container>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-start' }} className="rg-hero-grid">
+          {/* Texto descritivo */}
+          <Reveal>
+            <div style={{
+              display: 'inline-block', fontFamily: F_BODY, fontSize: 11,
+              fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
+              color: accent.dot, marginBottom: 20,
+            }}>{t('service.sobre_heading')}</div>
+            <p style={{
+              fontFamily: F_BODY, fontSize: 17, lineHeight: 1.75,
+              color: RG.charcoal, margin: 0,
+            }}>{detail?.description || s.blurb}</p>
+
+            {/* Preços completos */}
+            {detail?.prices && detail.prices.length > 0 && (
+              <div style={{ marginTop: 40, padding: 24, background: RG.creamSoft, borderRadius: 12, border: `1px solid ${RG.line}` }}>
+                <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.muted, marginBottom: 16 }}>{t('service.preco_label')}</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {detail.prices.map((p, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, paddingBottom: i < detail.prices.length - 1 ? 10 : 0, borderBottom: i < detail.prices.length - 1 ? `1px solid ${RG.line}` : 'none' }}>
+                      <span style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal }}>{p.label}</span>
+                      <span style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{p.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
           </Reveal>
+
+          {/* Áreas de atuação */}
+          {detail?.sub && (
+            <Reveal delay={80}>
+              <div style={{
+                display: 'inline-block', fontFamily: F_BODY, fontSize: 11,
+                fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: accent.dot, marginBottom: 20,
+              }}>{t('service.areas_label')}</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {detail.sub.map((x, i) => (
+                  <div key={i} style={{
+                    display: 'flex', gap: 16, alignItems: 'flex-start',
+                    padding: '18px 0',
+                    borderBottom: i < detail.sub.length - 1 ? `1px solid ${RG.line}` : 'none',
+                  }}>
+                    <div style={{
+                      width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
+                      background: accent.bg, border: `1px solid ${accent.border}`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: F_BODY, fontSize: 11, fontWeight: 700, color: accent.dot,
+                      marginTop: 2,
+                    }}>{i + 1}</div>
+                    <div>
+                      <div style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: RG.ink, marginBottom: 4 }}>{x.t}</div>
+                      <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.6, color: RG.charcoal }}>{x.d}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
         </div>
       </Container>
     </Section>
 
-    {/* Secção: Como funciona */}
-    <Section bg={RG.white} pad="lg">
+    {/* ── Como funciona ── */}
+    <Section bg={accent.bg} pad="lg">
       <Container>
         <Reveal>
-          <Eyebrow style={{ marginBottom: 12 }}>{t('service.processo_eyebrow')}</Eyebrow>
-          <Heading level="h2">
-            {t('service.processo_heading')}          </Heading>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+            <div style={{ width: 32, height: 2, background: accent.border }} />
+            <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent.dot }}>{t('service.processo_eyebrow')}</span>
+          </div>
+          <h2 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, letterSpacing: '-0.03em', margin: 0, color: RG.ink }}>
+            {t('service.processo_heading')}
+          </h2>
         </Reveal>
-        <div style={{ marginTop: 56, position: 'relative' }}>
-          <div style={{
-            position: 'absolute', left: 19, top: 20, bottom: 20,
-            width: 2, background: RG.teal, opacity: 0.3,
-          }} />
+
+        <div style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 2 }} className="rg-steps-grid">
           {steps.map((step, i) => (
-            <Reveal key={i} delay={i * 80}>
+            <Reveal key={i} delay={i * 60}>
               <div style={{
-                display: 'flex', gap: 24, alignItems: 'flex-start',
-                marginBottom: i < 4 ? 36 : 0, position: 'relative',
+                background: RG.white, padding: '28px 24px',
+                borderTop: `3px solid ${i === 0 ? accent.dot : 'transparent'}`,
+                position: 'relative',
               }}>
                 <div style={{
-                  width: 40, height: 40, borderRadius: '50%',
-                  background: RG.tealDark, color: RG.white, flexShrink: 0,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: F_BODY, fontWeight: 700, fontSize: 14,
-                  position: 'relative', zIndex: 1,
-                }}>{i + 1}</div>
-                <div style={{ paddingTop: 8 }}>
-                  <div style={{
-                    fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 300,
-                    letterSpacing: '-0.01em', color: RG.ink, lineHeight: 1.2,
-                  }}>{step.t}</div>
-                  <div style={{
-                    fontFamily: F_BODY, fontSize: 14, color: RG.charcoal,
-                    lineHeight: 1.6, marginTop: 4,
-                  }}>{step.d}</div>
-                </div>
+                  fontFamily: F_DISPLAY, fontSize: 40, fontWeight: 700,
+                  letterSpacing: '-0.05em', color: accent.border,
+                  lineHeight: 1, marginBottom: 16, opacity: 0.5,
+                }}>0{i + 1}</div>
+                <div style={{ fontFamily: F_DISPLAY, fontSize: 17, fontWeight: 700, letterSpacing: '-0.01em', color: RG.ink, marginBottom: 8 }}>{step.t}</div>
+                <div style={{ fontFamily: F_BODY, fontSize: 13, lineHeight: 1.6, color: RG.charcoal }}>{step.d}</div>
               </div>
             </Reveal>
           ))}
@@ -141,21 +227,60 @@ function ServicePage({ slug }) {
       </Container>
     </Section>
 
+    {/* ── CTA Marcação ── */}
+    <section style={{ background: RG.tealDark, padding: '60px 0' }}>
+      <Container>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap' }}>
+            <div>
+              <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal, marginBottom: 12 }}>{t('service.marcacoes_label')}</div>
+              <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.white, lineHeight: 1.2 }}>
+                Pronto para marcar a tua sessão?
+              </div>
+              <div style={{ fontFamily: F_BODY, fontSize: 14, color: 'rgba(255,255,255,0.65)', marginTop: 10 }}>{t('service.marcacoes_body')}</div>
+            </div>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('service.agendar_btn')}</Button>
+              <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>{t('service.ligar_btn')}</Button>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </section>
+
+    {/* ── Outros serviços ── */}
     {catItems.length > 0 && (
-      <Section bg={RG.cream} pad="lg">
+      <Section bg={RG.creamSoft} pad="lg">
         <Container>
-          <Reveal><Eyebrow>{t('service.outros_eyebrow_prefix')} {s.category}</Eyebrow></Reveal>
-          <Reveal delay={60}><Heading level="h3" style={{ marginTop: 16 }}>{t('service.outros_heading')}</Heading></Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16, marginTop: 36 }}>
-            {catItems.map(i => (
-              <a key={i.slug} href={`servico-${i.slug}.html`} className="rg-service-card" style={{ display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink }}>
-                <div style={{ aspectRatio: '4/3', marginBottom: 16, borderRadius: 8, overflow: 'hidden' }}><Photo label={i.name} tone="teal" aspect="4/3" src={i.img} /></div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 }}>
-                  <h4 style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 700, letterSpacing: '-0.02em', margin: 0 }}>{i.name}</h4>
-                  <svg className="rg-service-arrow" width="16" height="16" viewBox="0 0 16 16" style={{ transition: 'transform 240ms', color: RG.tealDark }}><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </div>
-                <p style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.5, margin: '8px 0 0' }}>{i.blurb}</p>
-              </a>
+          <Reveal>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+              <div style={{ width: 32, height: 2, background: RG.teal }} />
+              <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{t('service.outros_eyebrow_prefix')} {s.category}</span>
+            </div>
+          </Reveal>
+          <Reveal delay={60}>
+            <h3 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 36px', color: RG.ink }}>{t('service.outros_heading')}</h3>
+          </Reveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
+            {catItems.map((item, idx) => (
+              <Reveal key={item.slug} delay={idx * 60}>
+                <a href={`servico-${item.slug}.html`} className="rg-service-card" style={{
+                  display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink,
+                  borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}`,
+                }}>
+                  <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
+                    <Photo label={item.name} tone="teal" aspect="16/9" src={item.img} />
+                  </div>
+                  <div style={{ padding: '20px 20px 24px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, marginBottom: 8 }}>
+                      <h4 style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.02em', margin: 0, lineHeight: 1.2 }}>{item.name}</h4>
+                      <svg className="rg-service-arrow" width="16" height="16" viewBox="0 0 16 16" style={{ flexShrink: 0, marginTop: 2, color: RG.tealDark }}><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </div>
+                    <p style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.5, margin: '0 0 12px' }}>{item.blurb}</p>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.01em' }}>{item.price}</div>
+                  </div>
+                </a>
+              </Reveal>
             ))}
           </div>
         </Container>

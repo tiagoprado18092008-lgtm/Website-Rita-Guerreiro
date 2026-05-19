@@ -813,3 +813,13 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
 @media (max-width: 640px) {
   .rg-values-grid[style*="repeat(2"] { grid-template-columns: 1fr !important; }
 }
+
+/* Service page steps grid — single col on small phones */
+@media (max-width: 480px) {
+  .rg-steps-grid { grid-template-columns: 1fr !important; gap: 2px !important; }
+}
+
+/* Service page hero: image order swapped on mobile — text first */
+@media (max-width: 880px) {
+  .rg-hero-grid > div:last-child { order: -1; }
+}
