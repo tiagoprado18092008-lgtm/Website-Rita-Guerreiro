@@ -246,7 +246,6 @@ function Nav({ current = 'home' }) {
                                 onMouseEnter={e => { e.currentTarget.style.background = '#F1F7F6'; e.currentTarget.style.color = RG.tealDark; }}
                                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.charcoal; }}
                               >
-                                <span style={{ width: 12, height: 1, background: '#D0CAC0', display: 'inline-block', flexShrink: 0 }} />
                                 {item.label}
                               </a>
                             ))}
