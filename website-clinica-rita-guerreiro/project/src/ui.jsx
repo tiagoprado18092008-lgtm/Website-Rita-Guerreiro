@@ -82,20 +82,8 @@ function Nav({ current = 'home' }) {
     { code: 'ES', label: 'Español',   flagUrl: 'https://flagcdn.com/w40/es.png' },
   ];
 
-  const [navHidden, setNavHidden] = React.useState(false);
-  const lastScrollY = React.useRef(0);
-
   React.useEffect(() => {
-    const onS = () => {
-      const y = window.scrollY;
-      setScrolled(y > 40);
-      if (y > lastScrollY.current && y > 120) {
-        setNavHidden(true);
-      } else {
-        setNavHidden(false);
-      }
-      lastScrollY.current = y;
-    };
+    const onS = () => setScrolled(window.scrollY > 40);
     onS();
     window.addEventListener('scroll', onS, { passive: true });
     return () => window.removeEventListener('scroll', onS);
@@ -172,7 +160,7 @@ function Nav({ current = 'home' }) {
   return (
     <>
       {/* ── Header wrapper ── */}
-      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}${navHidden ? ' rg-header-hidden' : ''}`}>
+      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}`}>
 
         {/* Main nav row */}
         <div className="rg-nav-row">
@@ -715,13 +703,6 @@ function Footer() {
               <div>{L_.segSex}</div>
               <div>{L_.sabado}</div>
             </div>
-            {/* Mini-card "agora aberto/fechado" — opcional, sóbrio */}
-            <div style={{ marginTop: 24, display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 12px', borderRadius: 999, background: 'rgba(111,181,176,0.10)', border: '1px solid rgba(111,181,176,0.25)' }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#6FB5B0', boxShadow: '0 0 8px rgba(111,181,176,0.6)' }} />
-              <span style={{ fontFamily: F_MONO, fontSize: 10.5, color: '#A8D8D4', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>
-                {lang === 'EN' ? 'By appointment' : lang === 'FR' ? 'Sur rendez-vous' : 'Marcação prévia'}
-              </span>
-            </div>
           </div>
 
           {/* COL 4 — Acessibilidade */}
@@ -738,39 +719,27 @@ function Footer() {
           </div>
         </div>
 
-        {/* SUB-FAIXA — info legal + livro reclamações */}
+        {/* SUB-FAIXA — livro de reclamações */}
         <div style={{
-          display: 'grid', gridTemplateColumns: '1.6fr 1fr', gap: 32,
-          paddingTop: 32, paddingBottom: 32,
+          display: 'flex', justifyContent: 'flex-end',
+          paddingTop: 28, paddingBottom: 28,
           borderTop: '1px solid rgba(244,241,233,0.10)',
-          alignItems: 'start',
         }} className="rg-footer-legal">
-          <div style={{ fontFamily: F_BODY, fontSize: 12, color: 'rgba(244,241,233,0.45)', lineHeight: 1.7 }}>
-            <div>{L_.direcao}</div>
-            <div>{L_.registo} nº E125184</div>
-            <div>{L_.licenca} nº 9335/2015</div>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start' }}>
-            <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: 10,
-                padding: '8px 14px', borderRadius: 10,
-                background: 'rgba(244,241,233,0.04)',
-                border: '1px solid rgba(244,241,233,0.12)',
-                textDecoration: 'none',
-                color: 'rgba(244,241,233,0.7)',
-                transition: 'all 200ms',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(244,241,233,0.08)'; e.currentTarget.style.borderColor = 'rgba(244,241,233,0.28)'; e.currentTarget.style.color = '#F4F1E9'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(244,241,233,0.04)'; e.currentTarget.style.borderColor = 'rgba(244,241,233,0.12)'; e.currentTarget.style.color = 'rgba(244,241,233,0.7)'; }}
-            >
-              <img src="https://www.livroreclamacoes.pt/Images/Logo_Livro.png" alt="Livro de Reclamações"
-                width="56" height="20"
-                style={{ display: 'block', height: 20, width: 'auto', borderRadius: 2 }}
-                loading="lazy" />
-              <span style={{ fontFamily: F_BODY, fontSize: 11.5, fontWeight: 500, letterSpacing: '0.04em' }}>{t('footer.reclamacoes')}</span>
-            </a>
-          </div>
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações" title="Livro de Reclamações"
+            style={{
+              display: 'inline-flex', alignItems: 'center',
+              padding: 6, borderRadius: 8,
+              textDecoration: 'none',
+              transition: 'opacity 200ms, transform 200ms',
+              opacity: 0.9,
+            }}
+            onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'translateY(0)'; }}
+          >
+            <img src="livro-reclamacoes.png" alt="Livro de Reclamações"
+              style={{ display: 'block', height: 56, width: 'auto' }}
+              loading="lazy" />
+          </a>
         </div>
 
         {/* BARRA FINAL — copy + desenvolvido por + links legais */}
