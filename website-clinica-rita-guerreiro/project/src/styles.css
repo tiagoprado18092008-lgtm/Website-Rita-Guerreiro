@@ -535,10 +535,13 @@ input:focus, textarea:focus, select:focus {
   .rg-topbar { padding: 6px 20px !important; }
 }
 @media (max-width: 900px) {
-  .rg-footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .rg-footer-grid { grid-template-columns: 1fr 1fr !important; gap: 36px !important; }
+  .rg-footer-legal { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .rg-footer-legal > div:last-child { justify-content: flex-start !important; }
 }
 @media (max-width: 640px) {
-  .rg-footer-grid { grid-template-columns: 1fr !important; }
+  .rg-footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .rg-footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -666,9 +669,10 @@ input:focus, textarea:focus, select:focus {
 
 /* Trust band — divider hide em mobile */
 @media (max-width: 880px) {
-  .rg-trust-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
-  .rg-trust-grid > div { border-left: 0 !important; padding-left: 0 !important; }
-  .rg-trust-grid > div:nth-child(n+2) { padding-top: 24px; border-top: 1px solid #E8E6DF; }
+  .rg-trust-grid { grid-template-columns: 1fr 1fr !important; gap: 36px 24px !important; }
+  .rg-trust-grid > div { border-left: 0 !important; padding: 16px 12px !important; }
+  .rg-trust-grid > div:nth-child(n+2) { border-top: 1px solid #E8E6DF; }
+  .rg-trust-grid > div:nth-child(2) { border-top: 0; border-left: 1px solid #E8E6DF !important; }
 }
 
 /* Services menu responsive */
@@ -784,11 +788,9 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
 
 /* Trust band on 375px: stack 2x2 still too cramped → 1 column */
 @media (max-width: 420px) {
-  .rg-trust-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
-  .rg-trust-grid > div:nth-child(n+2) {
-    border-top: 1px solid #E8E6DF;
-    padding-top: 16px;
-  }
+  .rg-trust-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .rg-trust-grid > div { border-left: 0 !important; padding: 16px 0 !important; }
+  .rg-trust-grid > div:nth-child(n+2) { border-top: 1px solid #E8E6DF; }
 }
 
 /* Service step list: shrink number bubble margin on phones */

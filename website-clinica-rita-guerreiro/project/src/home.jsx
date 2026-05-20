@@ -132,33 +132,93 @@ function Hero() {
 // ────────────────────────────────────────────────────────────────────────────
 function StatsStrip() {
   const { t } = useLang();
+
+  const items = [
+    {
+      value: '20',
+      suffix: '+',
+      label: t('trust.anos'),
+      desc: t('trust.anos_desc'),
+    },
+    {
+      value: '500',
+      suffix: '+',
+      label: t('trust.pacientes'),
+      desc: null,
+    },
+    {
+      value: '25',
+      suffix: '',
+      label: t('trust.terapias'),
+      desc: null,
+    },
+  ];
+
   return (
-    <section style={{ background: RG.creamSoft, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '48px 0' }}>
+    <section style={{ position: 'relative', background: RG.creamSoft, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '72px 0', overflow: 'hidden' }}>
+      {/* Subtle teal accent line on top */}
+      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 56, height: 2, background: RG.tealDark }} />
+
       <Container>
-        <div className="rg-trust-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1.2fr', gap: 40, alignItems: 'center' }}>
-          {/* Stat 1 — anos + credencial */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-              <span style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(40px, 4vw, 56px)', fontWeight: 300, letterSpacing: '-0.025em', color: RG.tealDark, lineHeight: 1 }}>20<span style={{ fontSize: '0.55em', color: RG.tealDark }}>+</span></span>
-              <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{t('trust.anos')}</span>
+        <div className="rg-trust-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, alignItems: 'stretch' }}>
+          {items.map((it, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'relative',
+                padding: '8px 40px',
+                borderLeft: i === 0 ? 'none' : `1px solid ${RG.line}`,
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+              }}
+            >
+              <div style={{
+                fontFamily: F_DISPLAY,
+                fontSize: 'clamp(56px, 6vw, 84px)',
+                fontWeight: 200,
+                letterSpacing: '-0.04em',
+                color: RG.tealDark,
+                lineHeight: 1,
+                display: 'flex',
+                alignItems: 'flex-start',
+              }}>
+                {it.value}
+                {it.suffix && (
+                  <span style={{ fontSize: '0.45em', fontWeight: 300, marginTop: '0.15em', marginLeft: 2, color: RG.teal }}>{it.suffix}</span>
+                )}
+              </div>
+
+              <div style={{ width: 24, height: 1, background: RG.tealDark, opacity: 0.4, marginTop: 18, marginBottom: 14 }} />
+
+              <p style={{
+                fontFamily: F_BODY,
+                fontSize: 11,
+                fontWeight: 700,
+                color: RG.ink,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                margin: 0,
+              }}>
+                {it.label}
+              </p>
+
+              {it.desc && (
+                <p style={{
+                  fontFamily: F_BODY,
+                  fontSize: 13,
+                  color: RG.muted,
+                  marginTop: 10,
+                  lineHeight: 1.55,
+                  maxWidth: '32ch',
+                }}>
+                  {it.desc}
+                </p>
+              )}
             </div>
-            <p style={{ fontFamily: F_BODY, fontSize: 12.5, color: RG.muted, marginTop: 8, lineHeight: 1.55, maxWidth: '28ch' }}>
-              {t('trust.anos_desc')}
-            </p>
-          </div>
-
-          {/* Stat 2 — pacientes */}
-          <div style={{ borderLeft: `1px solid ${RG.line}`, paddingLeft: 32 }}>
-            <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 3.5vw, 48px)', fontWeight: 300, letterSpacing: '-0.025em', color: RG.tealDark, lineHeight: 1 }}>500<span style={{ fontSize: '0.55em' }}>+</span></div>
-            <p style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.muted, marginTop: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('trust.pacientes')}</p>
-          </div>
-
-          {/* Stat 3 — terapias */}
-          <div style={{ borderLeft: `1px solid ${RG.line}`, paddingLeft: 32 }}>
-            <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 3.5vw, 48px)', fontWeight: 300, letterSpacing: '-0.025em', color: RG.tealDark, lineHeight: 1 }}>25</div>
-            <p style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.muted, marginTop: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('trust.terapias')}</p>
-          </div>
-
+          ))}
         </div>
       </Container>
     </section>
@@ -317,7 +377,7 @@ function WhyUs() {
                   borderBottom: `1px solid ${RG.line}`, textAlign: 'left',
                 }}>
                   <div>
-                    <div style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 300, color: active === i ? RG.ink : RG.charcoal, letterSpacing: '-0.01em', transition: 'all 200ms' }}>{p.t}</div>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 600, color: active === i ? RG.ink : RG.charcoal, letterSpacing: '-0.01em', transition: 'all 200ms' }}>{p.t}</div>
                     {active === i && (
                       <div style={{ fontFamily: F_BODY, fontSize: 14, color: RG.muted, lineHeight: 1.6, marginTop: 8, maxWidth: '36ch', animation: 'rg-fade-up 260ms cubic-bezier(.2,.8,.2,1) both' }}>{p.d}</div>
                     )}
