@@ -687,11 +687,11 @@ function Footer() {
             </div>
             <div style={itemRow}>
               <span style={iconWrap}>{IcoMail}</span>
-              <a href="mailto:geral@ritaguerreiro.pt" style={itemText}
+              <a href="mailto:fisioritaguerreiro@gmail.com" style={itemText}
                 onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.78)'}
               >
-                geral@ritaguerreiro.pt
+                fisioritaguerreiro@gmail.com
               </a>
             </div>
           </div>

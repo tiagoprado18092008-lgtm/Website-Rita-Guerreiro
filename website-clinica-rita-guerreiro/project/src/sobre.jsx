@@ -132,7 +132,7 @@ function Team() {
               <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, color: RG.tealDark }}>{t('sobre.team_join_heading')}</div>
               <div style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, marginTop: 6 }}>{t('sobre.team_join_body')}</div>
             </div>
-            <a href="mailto:geral@ritaguerreiro.pt" style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.tealDark, textDecoration: 'none', whiteSpace: 'nowrap', padding: '10px 20px', border: `1px solid ${RG.tealDark}`, borderRadius: 999 }}>{t('sobre.team_join_cta')}</a>
+            <a href="mailto:fisioritaguerreiro@gmail.com" style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.tealDark, textDecoration: 'none', whiteSpace: 'nowrap', padding: '10px 20px', border: `1px solid ${RG.tealDark}`, borderRadius: 999 }}>{t('sobre.team_join_cta')}</a>
           </div>
         </Reveal>
       </Container>
