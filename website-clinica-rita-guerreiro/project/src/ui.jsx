@@ -736,7 +736,7 @@ function Footer() {
             onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
             onMouseLeave={e => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
-            <img src="livro-reclamacoes.png" alt="Livro de Reclamações"
+            <img src="assets/livro-reclamacoes.png" alt="Livro de Reclamações"
               style={{ display: 'block', height: 56, width: 'auto' }}
               loading="lazy" />
           </a>
