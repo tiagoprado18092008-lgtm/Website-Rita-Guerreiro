@@ -17,7 +17,7 @@ function SobreHero() {
           </Body>
         </Reveal>
         <Reveal delay={220}>
-          <div style={{ marginTop: 56 }}><Photo aspect="16/10" label="Equipa à recepção" src="assets/equipa-recepcao.png" style={{ borderRadius: 12 }} /></div>
+          <div style={{ marginTop: 56 }}><Photo aspect="16/10" label="Receção da clínica" src="assets/clinica/recepcao.jpg" style={{ borderRadius: 12 }} /></div>
         </Reveal>
       </Container>
     </section>
@@ -140,4 +140,35 @@ function Team() {
   );
 }
 
-Object.assign(window, { SobreHero, Mission, Pillars, Story, Team });
+function Espaco() {
+  const { t } = useLang();
+  const photos = t('sobre.espaco_photos');
+  return (
+    <Section bg={RG.white} pad="lg">
+      <Container>
+        <div style={{ borderTop: `1px solid ${RG.line}`, paddingTop: 64 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 60, alignItems: 'start', marginBottom: 56 }} className="rg-hero-grid">
+            <Reveal><Eyebrow>{t('sobre.espaco_eyebrow')}</Eyebrow></Reveal>
+            <div>
+              <Reveal><Heading level="h2" style={{ maxWidth: '20ch' }}>{t('sobre.espaco_heading')}</Heading></Reveal>
+              <Reveal delay={80}>
+                <Body size={17} style={{ marginTop: 24, color: RG.charcoal }}>{t('sobre.espaco_body')}</Body>
+              </Reveal>
+            </div>
+          </div>
+          <Reveal delay={120}>
+            <div className="rg-espaco-grid" style={{ columnCount: 3, columnGap: 16 }}>
+              {photos.map((p, i) => (
+                <div key={i} style={{ breakInside: 'avoid', marginBottom: 16, borderRadius: 12, overflow: 'hidden', background: RG.cream }}>
+                  <img src={p.src} alt={p.label} loading="lazy" decoding="async" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
+Object.assign(window, { SobreHero, Mission, Pillars, Story, Team, Espaco });
