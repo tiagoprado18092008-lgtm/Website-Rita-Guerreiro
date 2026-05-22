@@ -16,7 +16,7 @@ function Hero() {
           src="assets/foto-equipa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '35% center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '10% center', display: 'block' }}
           loading="eager" decoding="async"
         />
         {/* tonalização teal subtil para integrar com a paleta */}
