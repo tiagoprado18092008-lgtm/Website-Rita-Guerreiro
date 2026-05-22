@@ -803,7 +803,7 @@ function Footer() {
             <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 9 }}
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}
             >
               <span style={{
                 fontFamily: F_BODY, fontSize: 9, fontWeight: 500,
