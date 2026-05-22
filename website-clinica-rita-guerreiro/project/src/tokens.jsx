@@ -781,11 +781,21 @@ function useLang() {
 
 function LangProvider({ children }) {
   const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('rg_lang')) || 'PT';
-  const [lang, setLang] = React.useState(['PT','EN','FR'].includes(saved) ? saved : 'PT');
+  const [lang, setLang] = React.useState(['PT','EN','FR','ES'].includes(saved) ? saved : 'PT');
   const changeLang = (code) => {
     setLang(code);
+    if (typeof document !== 'undefined') {
+      const map = { PT: 'pt-PT', EN: 'en', FR: 'fr', ES: 'es' };
+      document.documentElement.lang = map[code] || 'pt-PT';
+    }
     localStorage.setItem('rg_lang', code);
   };
+  React.useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const map = { PT: 'pt-PT', EN: 'en', FR: 'fr', ES: 'es' };
+      document.documentElement.lang = map[lang] || 'pt-PT';
+    }
+  }, [lang]);
   return React.createElement(LangContext.Provider, { value: { lang, changeLang } }, children);
 }
 

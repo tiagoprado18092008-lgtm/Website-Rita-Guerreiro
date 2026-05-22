@@ -783,24 +783,37 @@ function Footer() {
           gap: 20, flexWrap: 'wrap',
           borderTop: '1px solid rgba(244,241,233,0.10)',
         }} className="rg-footer-bottom">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', fontFamily: F_BODY, fontSize: 11.5, color: 'rgba(244,241,233,0.4)', letterSpacing: '0.02em' }}>
-            <span>{L_.copy}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: F_BODY, fontSize: 11.5, color: 'rgba(244,241,233,0.4)', letterSpacing: '0.02em' }}>{L_.copy}</span>
             <span style={{ width: 1, height: 12, background: 'rgba(244,241,233,0.18)' }} />
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              {L_.desenvolvido}
-              <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
-                style={{
-                  color: 'rgba(244,241,233,0.7)', textDecoration: 'none',
-                  fontFamily: F_DISPLAY, fontWeight: 600, letterSpacing: '0.02em',
-                  borderBottom: '1px solid rgba(244,241,233,0.2)',
-                  paddingBottom: 1, transition: 'all 200ms',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.color = '#6FB5B0'; e.currentTarget.style.borderBottomColor = '#6FB5B0'; }}
-                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(244,241,233,0.7)'; e.currentTarget.style.borderBottomColor = 'rgba(244,241,233,0.2)'; }}
-              >
-                AlphaScale AI
-              </a>
-            </span>
+            <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
+              style={{ textDecoration: 'none', display: 'inline-flex', flexDirection: 'column', gap: 2 }}
+              onMouseEnter={e => { e.currentTarget.querySelector('.asa-brand').style.opacity = '1'; }}
+              onMouseLeave={e => { e.currentTarget.querySelector('.asa-brand').style.opacity = '0.82'; }}
+            >
+              <span style={{
+                fontFamily: F_BODY, fontSize: 8.5, fontWeight: 600,
+                letterSpacing: '0.18em', textTransform: 'uppercase',
+                color: 'rgba(244,241,233,0.35)',
+              }}>{L_.desenvolvido}</span>
+              <span className="asa-brand" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 7,
+                opacity: 0.82, transition: 'opacity 220ms',
+              }}>
+                {/* AlphaScale AI icon — simplified triangle+nodes */}
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                  <path d="M3 18 L11 4 L19 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <circle cx="11" cy="10" r="2" fill="#38BDF8"/>
+                  <circle cx="16" cy="16" r="1.5" fill="#7DD3FC"/>
+                  <circle cx="7" cy="16" r="1.2" fill="rgba(255,255,255,0.5)"/>
+                  <line x1="11" y1="10" x2="16" y2="16" stroke="rgba(56,189,248,0.6)" strokeWidth="1"/>
+                  <line x1="11" y1="10" x2="7" y2="16" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
+                </svg>
+                <span style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 700, letterSpacing: '-0.01em', color: '#F4F1E9' }}>
+                  AlphaScale<span style={{ color: '#38BDF8' }}>AI</span>
+                </span>
+              </span>
+            </a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontFamily: F_BODY, fontSize: 11.5 }}>
             <a href="privacidade.html"
