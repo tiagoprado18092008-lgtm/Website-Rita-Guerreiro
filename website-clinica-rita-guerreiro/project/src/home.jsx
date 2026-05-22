@@ -109,7 +109,7 @@ function Hero() {
               onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.6)'; e.currentTarget.style.borderColor = 'rgba(20,20,18,0.06)'; }}>
                 <div style={{ display: 'flex', gap: 2 }}>
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="13" height="13" viewBox="0 0 12 12" fill="#F5A623"><path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/></svg>
+                    <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
                   ))}
                 </div>
                 <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.ink }}>4.9</span>
