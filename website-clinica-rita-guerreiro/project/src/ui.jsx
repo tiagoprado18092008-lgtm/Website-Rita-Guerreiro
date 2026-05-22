@@ -814,7 +814,7 @@ function Footer() {
                 src="assets/logo-alphascale-footer.png"
                 alt="AlphaScale AI"
                 className="rg-footer-devby-logo"
-                style={{ height: 80, width: 'auto', display: 'block' }}
+                style={{ height: 130, width: 'auto', display: 'block' }}
               />
             </a>
           </div>
