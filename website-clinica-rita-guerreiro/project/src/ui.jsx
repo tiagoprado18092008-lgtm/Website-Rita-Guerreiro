@@ -6,25 +6,25 @@ function Container({ children, style = {}, maxWidth = 1280 }) {
   );
 }
 
-function Reveal({ children, delay = 0, y = 20, as: Tag = 'div', style = {} }) {
+function Reveal({ children, delay = 0, y = 28, as: Tag = 'div', style = {} }) {
   const ref = React.useRef(null);
-  // Default to visible — only hide if element is below viewport on mount
   const [seen, setSeen] = React.useState(true);
-  const [hidden, setHidden] = React.useState(false);
   React.useEffect(() => {
     const el = ref.current; if (!el) return;
     requestAnimationFrame(() => {
       const r = el.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      if (r.top > vh - 20) {
+      if (r.top > vh * 0.85) {
         setSeen(false);
-        setHidden(true);
-        const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { setSeen(true); io.unobserve(e.target); } }), { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+        const io = new IntersectionObserver(
+          (es) => es.forEach(e => { if (e.isIntersecting) { setSeen(true); io.unobserve(e.target); } }),
+          { threshold: 0.12, rootMargin: '0px 0px -64px 0px' }
+        );
         io.observe(el);
       }
     });
   }, []);
-  return <Tag ref={ref} style={{ opacity: seen ? 1 : 0, transform: seen ? 'translateY(0)' : `translateY(${y}px)`, transition: `opacity 700ms cubic-bezier(.2,.7,.2,1) ${delay}ms, transform 700ms cubic-bezier(.2,.7,.2,1) ${delay}ms`, ...style }}>{children}</Tag>;
+  return <Tag ref={ref} style={{ opacity: seen ? 1 : 0, transform: seen ? 'translateY(0)' : `translateY(${y}px)`, transition: `opacity 800ms cubic-bezier(.16,.8,.2,1) ${delay}ms, transform 800ms cubic-bezier(.16,.8,.2,1) ${delay}ms`, ...style }}>{children}</Tag>;
 }
 
 function Eyebrow({ children, color = RG.tealDark, style = {} }) {

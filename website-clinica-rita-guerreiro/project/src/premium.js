@@ -88,90 +88,48 @@
   }
 
   // ── Scroll reveals para secções ─────────────────────────────
+  // Nota: a maioria dos elementos são animados pelo componente <Reveal> em ui.jsx
+  // (IntersectionObserver + CSS transitions). O GSAP aqui cobre apenas elementos
+  // que não estão dentro de wrappers <Reveal>: stats strip e menu de serviços.
   function initScrollReveals() {
     if (typeof ScrollTrigger === 'undefined') return;
 
     const heroGrid = document.querySelector('.rg-hero-grid');
     const heroSection = heroGrid ? heroGrid.closest('section') : null;
 
-    // Parâmetros base para uma clínica: suave, discreto, quase imperceptível
-    const BASE = {
-      y: 16,
-      opacity: 0,
-      duration: 0.85,
-      ease: 'power2.out',
-    };
-    const START = 'top 82%';
-
     function outsideHero(el) {
       return !(heroSection && heroSection.contains(el));
     }
 
-    // Anima grupo de elementos com stagger (grids, listas de cards)
-    function animateGroup(selector, extra) {
+    // Anima grupo de elementos irmãos com stagger
+    function animateGroup(selector, props) {
       var els = Array.from(document.querySelectorAll(selector)).filter(outsideHero);
       if (!els.length) return;
-
-      // Agrupar por pai direto para que o stagger seja por linha/grid
       var parents = [];
       els.forEach(function(el) {
         var p = el.parentElement;
         if (!parents.includes(p)) parents.push(p);
       });
-
       parents.forEach(function(parent) {
         var group = els.filter(function(el) { return el.parentElement === parent; });
-        gsap.from(group, Object.assign({}, BASE, extra || {}, {
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: parent,
-            start: START,
-            once: true,
-          }
+        gsap.from(group, Object.assign({ y: 16, opacity: 0, duration: 0.85, ease: 'power2.out', stagger: 0.12 }, props || {}, {
+          scrollTrigger: { trigger: parent, start: 'top 82%', once: true }
         }));
       });
     }
 
-    // Anima elemento individual (sem stagger)
-    function animateSingle(selector, extra) {
-      document.querySelectorAll(selector).forEach(function(el) {
-        if (!outsideHero(el)) return;
-        gsap.from(el, Object.assign({}, BASE, extra || {}, {
-          scrollTrigger: {
-            trigger: el,
-            start: START,
-            once: true,
-          }
-        }));
-      });
-    }
-
-    // Eyebrow labels — entram antes do h2
-    animateSingle('.rg-eyebrow', { y: 12, duration: 0.7 });
-
-    // Headings h2
-    animateSingle('section h2', { y: 14, duration: 0.9 });
-
-    // Parágrafos lead fora da hero
-    animateSingle('section p', { y: 12, duration: 0.8 });
-
-    // Cards de serviços, testemunhos, icon cards — com stagger por grid
-    animateGroup('.rg-service-card');
-    animateGroup('.rg-icon-card');
-    animateGroup('.rg-testimonial-card');
-
-    // Stats
+    // Stats strip — sem wrapper Reveal no JSX
     animateGroup('.rg-stat');
 
-    // Opções CTA
-    animateGroup('.rg-cta-option');
-
-    // Card da fisioterapeuta
-    animateSingle('.rg-meet-card');
+    // Itens da lista do menu de serviços (ServicesCard) — sem wrapper Reveal individual
+    animateGroup('.rg-services-menu li');
 
     // Passos e valores (páginas de serviço / sobre)
     animateGroup('.rg-steps-grid > *');
     animateGroup('.rg-values-grid > *');
+
+    // Icon cards (páginas de categoria)
+    animateGroup('.rg-icon-card');
   }
 
   // ── Counter animation para stats ────────────────────────────
