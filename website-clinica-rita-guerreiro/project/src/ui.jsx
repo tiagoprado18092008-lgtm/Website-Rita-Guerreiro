@@ -783,50 +783,48 @@ function Footer() {
           gap: 20, flexWrap: 'wrap',
           borderTop: '1px solid rgba(244,241,233,0.10)',
         }} className="rg-footer-bottom">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
             <span style={{ fontFamily: F_BODY, fontSize: 11.5, color: 'rgba(244,241,233,0.4)', letterSpacing: '0.02em' }}>{L_.copy}</span>
-            <span style={{ width: 1, height: 12, background: 'rgba(244,241,233,0.18)' }} />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontFamily: F_BODY, fontSize: 11.5 }}>
+              <a href="privacidade.html"
+                style={{ color: 'rgba(244,241,233,0.45)', textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.45)'}
+              >{t('footer.privacidade')}</a>
+              <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
+              <a href="termos.html"
+                style={{ color: 'rgba(244,241,233,0.45)', textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.45)'}
+              >{t('footer.termos')}</a>
+            </div>
+            <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
-              style={{ textDecoration: 'none', display: 'inline-flex', flexDirection: 'column', gap: 2 }}
-              onMouseEnter={e => { e.currentTarget.querySelector('.asa-brand').style.opacity = '1'; }}
-              onMouseLeave={e => { e.currentTarget.querySelector('.asa-brand').style.opacity = '0.82'; }}
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, opacity: 0.75, transition: 'opacity 220ms' }}
+              onMouseEnter={e => e.currentTarget.style.opacity = '1'}
+              onMouseLeave={e => e.currentTarget.style.opacity = '0.75'}
             >
               <span style={{
-                fontFamily: F_BODY, fontSize: 8.5, fontWeight: 600,
-                letterSpacing: '0.18em', textTransform: 'uppercase',
-                color: 'rgba(244,241,233,0.35)',
+                fontFamily: F_BODY, fontSize: 9, fontWeight: 500,
+                letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: 'rgba(244,241,233,0.5)',
               }}>{L_.desenvolvido}</span>
-              <span className="asa-brand" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 7,
-                opacity: 0.82, transition: 'opacity 220ms',
-              }}>
-                {/* AlphaScale AI icon — simplified triangle+nodes */}
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
-                  <path d="M3 18 L11 4 L19 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <circle cx="11" cy="10" r="2" fill="#38BDF8"/>
-                  <circle cx="16" cy="16" r="1.5" fill="#7DD3FC"/>
-                  <circle cx="7" cy="16" r="1.2" fill="rgba(255,255,255,0.5)"/>
-                  <line x1="11" y1="10" x2="16" y2="16" stroke="rgba(56,189,248,0.6)" strokeWidth="1"/>
-                  <line x1="11" y1="10" x2="7" y2="16" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
-                </svg>
-                <span style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 700, letterSpacing: '-0.01em', color: '#F4F1E9' }}>
-                  AlphaScale<span style={{ color: '#38BDF8' }}>AI</span>
-                </span>
-              </span>
+              {/* AlphaScale AI logo — C-bracket + nodes, matching brand */}
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                <path d="M72 14 Q30 14 22 50 Q14 86 72 86" stroke="white" strokeWidth="11" strokeLinecap="round" fill="none"/>
+                <circle cx="63" cy="32" r="8" fill="#38BDF8"/>
+                <circle cx="80" cy="52" r="6" fill="#7DD3FC"/>
+                <circle cx="58" cy="68" r="5" fill="rgba(255,255,255,0.6)"/>
+                <line x1="63" y1="32" x2="80" y2="52" stroke="rgba(56,189,248,0.7)" strokeWidth="3.5" strokeLinecap="round"/>
+                <line x1="80" y1="52" x2="58" y2="68" stroke="rgba(125,211,252,0.5)" strokeWidth="3" strokeLinecap="round"/>
+              </svg>
+              <span style={{
+                fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 700,
+                letterSpacing: '0.01em', color: '#F4F1E9',
+              }}>AlphaScale<span style={{ color: '#38BDF8' }}>AI</span></span>
             </a>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontFamily: F_BODY, fontSize: 11.5 }}>
-            <a href="privacidade.html"
-              style={{ color: 'rgba(244,241,233,0.45)', textDecoration: 'none', transition: 'color 180ms' }}
-              onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.45)'}
-            >{t('footer.privacidade')}</a>
-            <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
-            <a href="termos.html"
-              style={{ color: 'rgba(244,241,233,0.45)', textDecoration: 'none', transition: 'color 180ms' }}
-              onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.45)'}
-            >{t('footer.termos')}</a>
           </div>
         </div>
       </Container>
