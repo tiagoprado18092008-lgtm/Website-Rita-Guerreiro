@@ -124,10 +124,10 @@ function Nav({ current = 'home' }) {
   const servicesByLang = getServices(lang);
   const CATEGORY_HREF = {
     fisioterapia: 'fisioterapia.html',
-    saude: null,
+    saude: 'saude.html',
     massagens: 'massagens.html',
     holisticas: 'holisticas.html',
-    estetica: null,
+    estetica: 'estetica.html',
   };
   const megaCols = Object.keys(servicesByLang).map(catId => ({
     id: catId,
