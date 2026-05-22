@@ -25,7 +25,7 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 12%, rgba(255,255,255,0.0) 22%)',
+        background: 'linear-gradient(to right, #ffffff 0%, #ffffff 28%, rgba(255,255,255,0.6) 44%, rgba(255,255,255,0.0) 58%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
