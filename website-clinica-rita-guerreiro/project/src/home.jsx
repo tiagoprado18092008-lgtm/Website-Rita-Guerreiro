@@ -10,28 +10,28 @@ function Hero() {
   return (
     <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
-      {/* Painel direito: foto real de tratamento na clínica */}
-      <div style={{ position: 'absolute', inset: 0, left: '46%', zIndex: 0, overflow: 'hidden' }}>
+      {/* Painel direito: foto real da equipa */}
+      <div style={{ position: 'absolute', inset: 0, left: '28%', zIndex: 0, overflow: 'hidden' }}>
         <img
           src="assets/foto-equipa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '35% center', display: 'block' }}
           loading="eager" decoding="async"
         />
         {/* tonalização teal subtil para integrar com a paleta */}
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.06) 0%, rgba(31,72,70,0.18) 100%)' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.04) 0%, rgba(31,72,70,0.14) 100%)' }} />
       </div>
 
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 42%, rgba(255,255,255,0.94) 52%, rgba(255,255,255,0.0) 70%)',
+        background: 'linear-gradient(to right, #ffffff 24%, rgba(255,255,255,0.92) 34%, rgba(255,255,255,0.0) 50%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
       <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 580, position: 'relative', paddingLeft: 28 }}>
+        <div style={{ maxWidth: 400, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
@@ -49,7 +49,7 @@ function Hero() {
 
           {/* Headline */}
           <Reveal delay={140}>
-            <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(48px, 5.6vw, 78px)', fontWeight: 700, lineHeight: 1.02, letterSpacing: '-0.028em', margin: 0, color: RG.ink }}>
+            <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(40px, 4.4vw, 64px)', fontWeight: 700, lineHeight: 1.02, letterSpacing: '-0.028em', margin: 0, color: RG.ink }}>
               {Array.isArray(h1Lines) && h1Lines.map((line, li) => (
                 <span key={li} style={{ display: 'block', color: li === 2 ? '#2F6B68' : undefined }}>
                   {line.split(' ').map((w, i) => (
@@ -62,7 +62,7 @@ function Hero() {
 
           {/* Subtítulo */}
           <Reveal delay={480}>
-            <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.68, margin: '24px 0 0', maxWidth: '44ch' }}>
+            <p style={{ fontFamily: F_BODY, fontSize: 15, color: RG.charcoal, lineHeight: 1.68, margin: '24px 0 0', maxWidth: '34ch' }}>
               {t('hero.desc')}
             </p>
           </Reveal>
