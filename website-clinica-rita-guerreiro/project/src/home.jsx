@@ -30,7 +30,7 @@ function Hero() {
 
       {/* Conteúdo principal */}
       <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 32px 80px 16px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 340, position: 'relative', paddingLeft: 24 }}>
+        <div style={{ maxWidth: 340, position: 'relative', paddingLeft: 24, background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(8px)', borderRadius: 16, padding: '32px 28px 32px 28px' }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
