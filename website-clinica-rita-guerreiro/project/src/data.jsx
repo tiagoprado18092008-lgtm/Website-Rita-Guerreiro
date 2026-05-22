@@ -2,27 +2,48 @@
 
 // Photos — Unsplash (free, no attribution required for display)
 const IMG = {
+  // Fisioterapia — terapeuta a trabalhar em ombro/coluna de paciente
   fisioterapia: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+  // Acupuntura — agulhas sobre pele
   acupuntura: 'https://images.unsplash.com/photo-1611073615830-9f114b2f0fa7?w=800&q=80',
+  // Mesoterapia — agulha/injeção médica
   mesoterapia: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80',
+  // Psicologia — consulta/conversa empática
   psicologia: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80',
+  // Nutrição — prato colorido e saudável
   nutricao: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
-  'terapia-bowen': 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80',
+  // Terapia de Bowen — toque suave nas costas
+  'terapia-bowen': 'https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=800&q=80',
+  // Drenagem Linfática — mãos em movimento leve sobre braço/perna
   'drenagem-linfatica': 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80',
+  // Massagem Relaxamento — massagem às costas em ambiente de spa
   'massagem-relaxamento': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
+  // Massagem Crianças — toque delicado em bebé/criança
   'massagem-criancas': 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80',
-  'massagem-assinatura-rg': 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80',
+  // Massagem Assinatura RG — luxo, spa premium, velas
+  'massagem-assinatura-rg': 'https://images.unsplash.com/photo-1540555700478-4be290741340?w=800&q=80',
+  // Massagem Profunda — deep tissue, pressão intensa nas costas
   'massagem-profunda': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
-  'massagem-pre-pos-natal': 'https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?w=800&q=80',
-  'massagem-sacro-craniana': 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80',
-  'massagem-terapeutica': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
-  reflexologia: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80',
-  shiatsu: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
-  'massagem-indiana': 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80',
+  // Massagem Pré/Pós Natal — grávida em repouso/massagem lateral
+  'massagem-pre-pos-natal': 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80',
+  // Massagem Sacro-Craniana — mãos suaves na cabeça/crânio
+  'massagem-sacro-craniana': 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=800&q=80',
+  // Drenagem Pós-Op / Terapêutica — massagem terapêutica em perna/abdómen
+  'massagem-terapeutica': 'https://images.unsplash.com/photo-1617339860579-9a4a2ea5f4d3?w=800&q=80',
+  // Reflexologia — mãos a pressionar planta do pé
+  reflexologia: 'https://images.unsplash.com/photo-1574258495973-f010f27d6e5f?w=800&q=80',
+  // Shiatsu — pressão com polegar em zona lombar/meridiano
+  shiatsu: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80',
+  // Massagem Indiana — mãos em ombros/cabeça
+  'massagem-indiana': 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80',
+  // Head Spa — tratamento de couro cabeludo, cabelos lavados em bacia
   'head-spa': 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80',
+  // Faciais — tratamento facial com máscara/creme
   facial: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
-  'pacotes-tratamento': 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80',
-  'depilacao-laser': 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
+  // Pacotes de Tratamento — corpo em tratamento estético (electroestimulação/pressoterapia)
+  'pacotes-tratamento': 'https://images.unsplash.com/photo-1559595500-e15296b8c0ff?w=800&q=80',
+  // Depilação a Laser — equipamento laser sobre pele
+  'depilacao-laser': 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=800&q=80',
   'pilates-clinico': 'assets/pilates.jpg',
   // Genéricos — fotos reais da clínica
   clinicInterior: 'assets/equipa-recepcao.png',
