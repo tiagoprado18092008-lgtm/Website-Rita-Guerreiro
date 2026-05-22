@@ -16,7 +16,7 @@ function Hero() {
           src="assets/foto-equipa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
           loading="eager" decoding="async"
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.04) 0%, rgba(31,72,70,0.14) 100%)' }} />
@@ -25,7 +25,7 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(255,255,255,0.82) 34%, rgba(255,255,255,0.3) 46%, rgba(255,255,255,0.0) 58%)',
+        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 14%, rgba(255,255,255,0.55) 24%, rgba(255,255,255,0.0) 34%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
@@ -464,27 +464,23 @@ function ServicesOverview() {
         <Reveal delay={60}>
           <Heading level="h2" style={{ marginTop: 12, maxWidth: '18ch' }}>{t('services_overview.heading')}</Heading>
         </Reveal>
-        <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
+        <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
           {cats.map((cat, ci) => (
             <Reveal key={cat.id} delay={ci * 60}>
-              <a href={cat.href} className="rg-service-card" style={{ display: 'block', textDecoration: 'none', color: RG.ink }}>
-                <div style={{ aspectRatio: '4/3', marginBottom: 16, borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
-                  <img src={cat.img} alt={cat.label} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  <div className="rg-card-overlay" style={{
-                    position: 'absolute', inset: 0,
-                    background: 'linear-gradient(to top, rgba(20,20,18,0.55) 0%, rgba(20,20,18,0.1) 50%, transparent 100%)',
-                    opacity: 0, transition: 'opacity 350ms ease',
-                    borderRadius: 12,
-                  }} />
+              <a href={cat.href} className="rg-service-card" style={{
+                display: 'block', textDecoration: 'none', color: RG.ink,
+                background: RG.white,
+                padding: '28px 26px 26px',
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+                  <span style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', color: RG.teal }}>{cat.num}</span>
+                  <svg className="rg-service-arrow" width="15" height="15" viewBox="0 0 16 16" fill="none" style={{ color: RG.tealDark, flexShrink: 0 }}>
+                    <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
-                  <span style={{ fontFamily: F_MONO, fontSize: 10, fontWeight: 500, letterSpacing: '0.14em', color: RG.muted }}>{cat.num}</span>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 10, flex: 1 }}>
-                    <h3 style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 300, letterSpacing: '-0.01em', margin: 0, color: RG.ink }}>{cat.label}</h3>
-                    <svg className="rg-service-arrow" width="14" height="14" viewBox="0 0 16 16" style={{ transition: 'transform 240ms', flexShrink: 0, color: RG.tealDark }}><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </div>
-                </div>
-                <p style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.5, margin: 0 }}>{cat.intro}</p>
+                <div className="rg-card-line" />
+                <h3 style={{ fontFamily: F_DISPLAY, fontSize: 21, fontWeight: 400, letterSpacing: '-0.02em', margin: '0 0 12px 0', color: RG.ink, lineHeight: 1.2 }}>{cat.label}</h3>
+                <p style={{ fontFamily: F_BODY, fontSize: 13.5, color: RG.muted, lineHeight: 1.6, margin: 0 }}>{cat.intro}</p>
               </a>
             </Reveal>
           ))}
