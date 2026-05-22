@@ -450,6 +450,43 @@ function WhyUs() {
 function ServicesOverview() {
   const { lang, t } = useLang();
   const SVC = getServices(lang);
+  const ICONS = {
+    fisioterapia: (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="16" cy="7" r="3"/>
+        <path d="M10 14c0-3.3 2.7-6 6-6s6 2.7 6 6v5h-3v7a1 1 0 01-1 1h-4a1 1 0 01-1-1v-7h-3v-5z"/>
+        <path d="M7 20l3-1M25 20l-3-1"/>
+      </svg>
+    ),
+    saude: (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 27S5 20 5 12.5A6.5 6.5 0 0116 8.2 6.5 6.5 0 0127 12.5C27 20 16 27 16 27z"/>
+        <path d="M13 16h6M16 13v6"/>
+      </svg>
+    ),
+    massagens: (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 22c2-4 5-7 10-7s8 3 10 7"/>
+        <path d="M10 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+        <path d="M8 26c2-2 4-3 8-3s6 1 8 3"/>
+        <ellipse cx="16" cy="10" rx="3" ry="2"/>
+      </svg>
+    ),
+    holisticas: (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="16" cy="16" r="4"/>
+        <path d="M16 4v4M16 24v4M4 16h4M24 16h4"/>
+        <path d="M7.8 7.8l2.8 2.8M21.4 21.4l2.8 2.8M7.8 24.2l2.8-2.8M21.4 10.6l2.8-2.8"/>
+      </svg>
+    ),
+    estetica: (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 5l2 5h5l-4 3 1.5 5L16 15l-4.5 3 1.5-5-4-3h5z"/>
+        <path d="M10 24c1.5-2 3.5-3 6-3s4.5 1 6 3"/>
+        <path d="M16 22v4"/>
+      </svg>
+    ),
+  };
   const cats = [
     { id: 'fisioterapia', num: '01', href: 'fisioterapia.html', img: IMG.fisioterapia, ...SVC.fisioterapia },
     { id: 'saude', num: '02', href: 'servico-nutricao.html', img: IMG.psicologia, ...SVC.saude },
@@ -479,6 +516,14 @@ function ServicesOverview() {
                   </svg>
                 </div>
                 <div className="rg-card-line" />
+                <div style={{
+                  width: 52, height: 52, borderRadius: 14,
+                  background: RG.tealWash,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: RG.tealDark, marginBottom: 18,
+                }}>
+                  {ICONS[cat.id]}
+                </div>
                 <h3 style={{ fontFamily: F_DISPLAY, fontSize: 21, fontWeight: 400, letterSpacing: '-0.02em', margin: '0 0 12px 0', color: RG.ink, lineHeight: 1.2 }}>{cat.label}</h3>
                 <p style={{ fontFamily: F_BODY, fontSize: 13.5, color: RG.muted, lineHeight: 1.6, margin: 0 }}>{cat.intro}</p>
               </a>
