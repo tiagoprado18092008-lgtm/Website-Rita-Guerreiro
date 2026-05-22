@@ -16,7 +16,7 @@ function Hero() {
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#d6cec6', display: 'block' }}
           loading="eager" decoding="async"
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.04) 0%, rgba(31,72,70,0.14) 100%)' }} />
@@ -25,7 +25,7 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 16%, rgba(255,255,255,0.72) 28%, rgba(255,255,255,0.18) 42%, rgba(255,255,255,0.0) 52%)',
+        background: 'linear-gradient(to right, #ffffff 0%, #ffffff 38%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.0) 62%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
