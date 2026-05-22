@@ -13,8 +13,8 @@ function Hero() {
       {/* Painel direito: foto real de tratamento na clínica */}
       <div style={{ position: 'absolute', inset: 0, left: '46%', zIndex: 0, overflow: 'hidden' }}>
         <img
-          src="assets/tratamento-movimento.png"
-          alt="Sessão de fisioterapia na Clínica Rita Guerreiro em Loulé"
+          src="assets/foto-equipa.jpg"
+          alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
           loading="eager" decoding="async"
