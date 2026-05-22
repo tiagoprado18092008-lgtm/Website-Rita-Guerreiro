@@ -25,7 +25,7 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 0%, #ffffff 38%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.0) 62%)',
+        background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 12%, rgba(255,255,255,0.0) 22%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
@@ -473,7 +473,7 @@ function ServicesOverview() {
                 padding: 0, overflow: 'hidden',
               }}>
                 {/* Área de imagem com placeholder gradient */}
-                <div style={{ position: 'relative', aspectRatio: '16/9', background: 'linear-gradient(135deg, #e8f2f1 0%, #d0e8e6 50%, #b8dbd8 100%)', overflow: 'hidden' }}>
+                <div style={{ position: 'relative', aspectRatio: '4/3', background: 'linear-gradient(135deg, #e8f2f1 0%, #d0e8e6 50%, #b8dbd8 100%)', overflow: 'hidden' }}>
                   <img src={cat.img} alt={cat.label} loading="lazy" decoding="async"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     onError={e => { e.currentTarget.style.display = 'none'; }}
