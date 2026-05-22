@@ -29,7 +29,7 @@ function Hero() {
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 32px 80px', boxSizing: 'border-box' }}>
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 32px 80px 16px', boxSizing: 'border-box' }}>
         <div style={{ maxWidth: 340, position: 'relative', paddingLeft: 24 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
