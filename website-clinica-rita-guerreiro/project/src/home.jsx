@@ -11,12 +11,12 @@ function Hero() {
     <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
       {/* Painel direito: foto real da equipa */}
-      <div style={{ position: 'absolute', inset: 0, left: '28%', zIndex: 0, overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, left: '36%', zIndex: 0, overflow: 'hidden' }}>
         <img
           src="assets/foto-equipa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '10% center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center', display: 'block' }}
           loading="eager" decoding="async"
         />
         {/* tonalização teal subtil para integrar com a paleta */}
@@ -26,12 +26,12 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 24%, rgba(255,255,255,0.92) 34%, rgba(255,255,255,0.0) 50%)',
+        background: 'linear-gradient(to right, #ffffff 30%, rgba(255,255,255,0.85) 38%, rgba(255,255,255,0.0) 48%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 400, position: 'relative', paddingLeft: 28 }}>
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 32px 80px', boxSizing: 'border-box' }}>
+        <div style={{ maxWidth: 340, position: 'relative', paddingLeft: 24 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
