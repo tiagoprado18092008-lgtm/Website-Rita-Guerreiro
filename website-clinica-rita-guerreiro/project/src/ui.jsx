@@ -201,9 +201,10 @@ function Nav({ current = 'home' }) {
                           <div key={col.id}>
                             <div
                               onMouseEnter={() => setActiveCol(ci)}
+                              onClick={() => { if (col.href) window.location.href = col.href; }}
                               style={{
                                 display: 'flex', alignItems: 'center', gap: 12,
-                                padding: '11px 16px', cursor: 'pointer',
+                                padding: '11px 16px', cursor: col.href ? 'pointer' : 'default',
                                 background: activeCol === ci ? '#F1F7F6' : 'transparent',
                                 transition: 'background 150ms',
                               }}
@@ -397,15 +398,26 @@ function Nav({ current = 'home' }) {
                   <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
                     {megaCols.map(col => (
                       <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(42,90,87,0.1)', background: 'white' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(111,181,176,0.08)' }}>
-                          <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
-                            {megaIcons[col.id]}
-                          </span>
-                          <div>
-                            <div style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal }}>{col.label}</div>
-                            <div style={{ fontFamily: F_DISPLAY, fontSize: 10, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
-                          </div>
-                        </div>
+                        {col.href
+                          ? <a href={col.href} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(111,181,176,0.08)', textDecoration: 'none' }}>
+                              <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
+                                {megaIcons[col.id]}
+                              </span>
+                              <div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal }}>{col.label}</div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 10, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
+                              </div>
+                            </a>
+                          : <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(111,181,176,0.08)' }}>
+                              <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
+                                {megaIcons[col.id]}
+                              </span>
+                              <div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal }}>{col.label}</div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 10, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
+                              </div>
+                            </div>
+                        }
                         <div style={{ padding: '8px' }}>
                           {col.items.map(it => (
                             <a key={it.href} href={it.href} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: RG.tealDark, textDecoration: 'none', padding: '8px 10px', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
@@ -517,6 +529,7 @@ function Footer() {
       licenca: 'Licença de Funcionamento',
       copy: '© 2026 Clínica Rita Guerreiro — Centro de Terapias & Bem-Estar',
       desenvolvido: 'Desenvolvido por',
+      itinerario: 'Ver no mapa',
     },
     EN: {
       endereco: 'Address',
@@ -535,6 +548,7 @@ function Footer() {
       licenca: 'Operating Licence',
       copy: '© 2026 Clínica Rita Guerreiro — Therapy & Wellness Centre',
       desenvolvido: 'Developed by',
+      itinerario: 'Get directions',
     },
     FR: {
       endereco: 'Adresse',
@@ -553,6 +567,26 @@ function Footer() {
       licenca: 'Licence d’Exploitation',
       copy: '© 2026 Clínica Rita Guerreiro — Centre de Thérapies & Bien-Être',
       desenvolvido: 'Développé par',
+      itinerario: 'Itinéraire',
+    },
+    ES: {
+      endereco: 'Dirección',
+      marcacao: 'Reservas',
+      horario: 'Horario de apertura',
+      acessibilidade: 'Accesibilidad',
+      precoFixa: '(coste llamada: red fija)',
+      precoMovel: '(coste llamada: red móvil)',
+      segSex: 'Lun a Vie: 9:00 – 19:00',
+      sabado: 'Sábados: con cita previa',
+      parking: 'Aparcamiento gratuito en la zona',
+      transportes: 'Transporte: parada Loulé Centro a 3 min a pie',
+      acesso: 'Acceso facilitado para personas con movilidad reducida',
+      direcao: 'Dirección Clínica: Rita Guerreiro — Cédula Profesional 12345',
+      registo: 'Registro en la Entidad Reguladora de Salud',
+      licenca: 'Licencia de Funcionamiento',
+      copy: '© 2026 Clínica Rita Guerreiro — Centro de Terapias & Bienestar',
+      desenvolvido: 'Desarrollado por',
+      itinerario: 'Cómo llegar',
     },
   };
   const L_ = L[lang] || L.PT;
@@ -642,7 +676,7 @@ function Footer() {
                   onMouseEnter={e => e.currentTarget.style.color = '#A8D8D4'}
                   onMouseLeave={e => e.currentTarget.style.color = '#6FB5B0'}
                 >
-                  {lang === 'EN' ? 'Get directions' : lang === 'FR' ? 'Itinéraire' : 'Ver no mapa'}
+                  {L_.itinerario}
                   <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
