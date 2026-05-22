@@ -112,7 +112,7 @@ function Hero() {
                     <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
                   ))}
                 </div>
-                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.ink }}>4.9</span>
+                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.ink }}>5.0</span>
                 <span style={{ fontFamily: F_BODY, fontSize: 11, color: RG.muted }}>· Google</span>
               </a>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -155,68 +155,49 @@ function StatsStrip() {
   ];
 
   return (
-    <section style={{ position: 'relative', background: RG.creamSoft, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '72px 0', overflow: 'hidden' }}>
-      {/* Subtle teal accent line on top */}
-      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 56, height: 2, background: RG.tealDark }} />
-
+    <section style={{ background: RG.white, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '28px 0' }}>
       <Container>
-        <div className="rg-trust-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, alignItems: 'stretch' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'center' }}>
           {items.map((it, i) => (
             <div
               key={i}
               style={{
-                position: 'relative',
-                padding: '8px 40px',
-                borderLeft: i === 0 ? 'none' : `1px solid ${RG.line}`,
-                textAlign: 'center',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'flex-start',
+                justifyContent: 'center',
+                gap: 16,
+                padding: '0 32px',
+                borderLeft: i === 0 ? 'none' : `1px solid ${RG.line}`,
               }}
             >
               <div style={{
                 fontFamily: F_DISPLAY,
-                fontSize: 'clamp(56px, 6vw, 84px)',
+                fontSize: 'clamp(32px, 3.5vw, 44px)',
                 fontWeight: 200,
-                letterSpacing: '-0.04em',
+                letterSpacing: '-0.03em',
                 color: RG.tealDark,
                 lineHeight: 1,
                 display: 'flex',
                 alignItems: 'flex-start',
+                flexShrink: 0,
               }}>
                 {it.value}
                 {it.suffix && (
-                  <span style={{ fontSize: '0.45em', fontWeight: 300, marginTop: '0.15em', marginLeft: 2, color: RG.teal }}>{it.suffix}</span>
+                  <span style={{ fontSize: '0.5em', fontWeight: 300, marginTop: '0.1em', marginLeft: 1, color: RG.teal }}>{it.suffix}</span>
                 )}
               </div>
-
-              <div style={{ width: 24, height: 1, background: RG.tealDark, opacity: 0.4, marginTop: 18, marginBottom: 14 }} />
-
               <p style={{
                 fontFamily: F_BODY,
-                fontSize: 11,
+                fontSize: 10,
                 fontWeight: 700,
                 color: RG.ink,
-                letterSpacing: '0.18em',
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
                 margin: 0,
+                lineHeight: 1.4,
               }}>
                 {it.label}
               </p>
-
-              {it.desc && (
-                <p style={{
-                  fontFamily: F_BODY,
-                  fontSize: 13,
-                  color: RG.muted,
-                  marginTop: 10,
-                  lineHeight: 1.55,
-                  maxWidth: '32ch',
-                }}>
-                  {it.desc}
-                </p>
-              )}
             </div>
           ))}
         </div>
