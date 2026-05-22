@@ -480,15 +480,8 @@ function ServicesOverview() {
                   />
                 </div>
                 {/* Conteúdo */}
-                <div style={{ padding: '20px 22px 22px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                    <span style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', color: RG.teal }}>{cat.num}</span>
-                    <svg className="rg-service-arrow" width="15" height="15" viewBox="0 0 16 16" fill="none" style={{ color: RG.tealDark, flexShrink: 0 }}>
-                      <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="rg-card-line" />
-                  <h3 style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 400, letterSpacing: '-0.02em', margin: '0 0 10px 0', color: RG.ink, lineHeight: 1.2 }}>{cat.label}</h3>
+                <div style={{ padding: '18px 22px 22px' }}>
+                  <h3 style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 600, letterSpacing: '-0.01em', margin: '0 0 10px 0', color: RG.tealDark, lineHeight: 1.2 }}>{cat.label}</h3>
                   <p style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.55, margin: 0 }}>{cat.intro}</p>
                 </div>
               </a>
