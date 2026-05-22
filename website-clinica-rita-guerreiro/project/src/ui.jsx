@@ -802,28 +802,20 @@ function Footer() {
             </div>
             <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, opacity: 0.75, transition: 'opacity 220ms' }}
-              onMouseEnter={e => e.currentTarget.style.opacity = '1'}
-              onMouseLeave={e => e.currentTarget.style.opacity = '0.75'}
+              className="rg-footer-devby"
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 9 }}
             >
               <span style={{
                 fontFamily: F_BODY, fontSize: 9, fontWeight: 500,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
-                color: 'rgba(244,241,233,0.5)',
+                color: 'rgba(244,241,233,0.45)',
               }}>{L_.desenvolvido}</span>
-              {/* AlphaScale AI logo — C-bracket + nodes, matching brand */}
-              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
-                <path d="M72 14 Q30 14 22 50 Q14 86 72 86" stroke="white" strokeWidth="11" strokeLinecap="round" fill="none"/>
-                <circle cx="63" cy="32" r="8" fill="#38BDF8"/>
-                <circle cx="80" cy="52" r="6" fill="#7DD3FC"/>
-                <circle cx="58" cy="68" r="5" fill="rgba(255,255,255,0.6)"/>
-                <line x1="63" y1="32" x2="80" y2="52" stroke="rgba(56,189,248,0.7)" strokeWidth="3.5" strokeLinecap="round"/>
-                <line x1="80" y1="52" x2="58" y2="68" stroke="rgba(125,211,252,0.5)" strokeWidth="3" strokeLinecap="round"/>
-              </svg>
-              <span style={{
-                fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 700,
-                letterSpacing: '0.01em', color: '#F4F1E9',
-              }}>AlphaScale<span style={{ color: '#38BDF8' }}>AI</span></span>
+              <img
+                src="assets/logo-alphascale-footer.png"
+                alt="AlphaScale AI"
+                className="rg-footer-devby-logo"
+                style={{ height: 20, width: 'auto', display: 'block' }}
+              />
             </a>
           </div>
         </div>

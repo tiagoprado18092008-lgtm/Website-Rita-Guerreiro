@@ -91,54 +91,87 @@
   function initScrollReveals() {
     if (typeof ScrollTrigger === 'undefined') return;
 
-    // Elementos alvo para reveal — excluir hero (já tem animações próprias)
     const heroGrid = document.querySelector('.rg-hero-grid');
     const heroSection = heroGrid ? heroGrid.closest('section') : null;
 
-    // Selecionar elementos para animar
-    const revealSelectors = [
-      '.rg-stat',
-      '.rg-service-card',
-      '.rg-icon-card',
-      '.rg-testimonial-card',
-    ];
+    // Parâmetros base para uma clínica: suave, discreto, quase imperceptível
+    const BASE = {
+      y: 16,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+    };
+    const START = 'top 82%';
 
-    revealSelectors.forEach(function(selector) {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach(function(el) {
-        // Ignorar elementos dentro da hero
-        if (heroSection && heroSection.contains(el)) return;
+    function outsideHero(el) {
+      return !(heroSection && heroSection.contains(el));
+    }
 
-        gsap.from(el, {
-          y: 32,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
+    // Anima grupo de elementos com stagger (grids, listas de cards)
+    function animateGroup(selector, extra) {
+      var els = Array.from(document.querySelectorAll(selector)).filter(outsideHero);
+      if (!els.length) return;
+
+      // Agrupar por pai direto para que o stagger seja por linha/grid
+      var parents = [];
+      els.forEach(function(el) {
+        var p = el.parentElement;
+        if (!parents.includes(p)) parents.push(p);
+      });
+
+      parents.forEach(function(parent) {
+        var group = els.filter(function(el) { return el.parentElement === parent; });
+        gsap.from(group, Object.assign({}, BASE, extra || {}, {
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: parent,
+            start: START,
+            once: true,
+          }
+        }));
+      });
+    }
+
+    // Anima elemento individual (sem stagger)
+    function animateSingle(selector, extra) {
+      document.querySelectorAll(selector).forEach(function(el) {
+        if (!outsideHero(el)) return;
+        gsap.from(el, Object.assign({}, BASE, extra || {}, {
           scrollTrigger: {
             trigger: el,
-            start: 'top 88%',
-            once: true
+            start: START,
+            once: true,
           }
-        });
+        }));
       });
-    });
+    }
 
-    // Reveals para headings h2 fora da hero
-    document.querySelectorAll('section h2').forEach(function(el) {
-      if (heroSection && heroSection.contains(el)) return;
+    // Eyebrow labels — entram antes do h2
+    animateSingle('.rg-eyebrow', { y: 12, duration: 0.7 });
 
-      gsap.from(el, {
-        y: 24,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 88%',
-          once: true
-        }
-      });
-    });
+    // Headings h2
+    animateSingle('section h2', { y: 14, duration: 0.9 });
+
+    // Parágrafos lead fora da hero
+    animateSingle('section p', { y: 12, duration: 0.8 });
+
+    // Cards de serviços, testemunhos, icon cards — com stagger por grid
+    animateGroup('.rg-service-card');
+    animateGroup('.rg-icon-card');
+    animateGroup('.rg-testimonial-card');
+
+    // Stats
+    animateGroup('.rg-stat');
+
+    // Opções CTA
+    animateGroup('.rg-cta-option');
+
+    // Card da fisioterapeuta
+    animateSingle('.rg-meet-card');
+
+    // Passos e valores (páginas de serviço / sobre)
+    animateGroup('.rg-steps-grid > *');
+    animateGroup('.rg-values-grid > *');
   }
 
   // ── Counter animation para stats ────────────────────────────
