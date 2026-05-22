@@ -11,22 +11,21 @@ function Hero() {
     <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
       {/* Painel direito: foto real da equipa */}
-      <div style={{ position: 'absolute', inset: 0, left: '36%', zIndex: 0, overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, left: 0, zIndex: 0, overflow: 'hidden' }}>
         <img
           src="assets/foto-equipa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '55% center', display: 'block' }}
           loading="eager" decoding="async"
         />
-        {/* tonalização teal subtil para integrar com a paleta */}
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.04) 0%, rgba(31,72,70,0.14) 100%)' }} />
       </div>
 
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, rgba(255,255,255,1) 18%, rgba(255,255,255,0.75) 30%, rgba(255,255,255,0.35) 42%, rgba(255,255,255,0.0) 58%)',
+        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(255,255,255,0.82) 34%, rgba(255,255,255,0.3) 46%, rgba(255,255,255,0.0) 58%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
