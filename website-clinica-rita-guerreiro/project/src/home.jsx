@@ -239,69 +239,113 @@ function ServicesCard() {
   const [active, setActive] = React.useState(0);
 
   return (
-    <Section bg={RG.white} pad="lg">
+    <Section bg={RG.creamSoft} pad="lg">
       <Container>
         <Reveal>
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap', marginBottom: 56 }}>
-            <div style={{ maxWidth: 580 }}>
-              <Eyebrow style={{ marginBottom: 14 }}>{t('services_card.eyebrow')}</Eyebrow>
-              <Heading level="h2" style={{ maxWidth: '20ch', lineHeight: 1.05 }}>{t('services_card.heading')}</Heading>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap', marginBottom: 64 }}>
+            <div style={{ maxWidth: 600 }}>
+              <Eyebrow style={{ marginBottom: 16 }}>{t('services_card.eyebrow')}</Eyebrow>
+              <Heading level="h2" style={{ maxWidth: '22ch', lineHeight: 1.05, fontWeight: 500 }}>{t('services_card.heading')}</Heading>
             </div>
             <a href="#todos-servicos" style={{
               fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.tealDark,
               textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '10px 0', borderBottom: `1px solid ${RG.tealDark}`,
-              transition: 'gap 200ms',
+              padding: '11px 20px', borderRadius: 999,
+              border: `1.5px solid ${RG.tealDark}`,
+              transition: 'background 220ms, color 220ms',
             }}
-            onMouseEnter={e => e.currentTarget.style.gap = '12px'}
-            onMouseLeave={e => e.currentTarget.style.gap = '8px'}>
+            onMouseEnter={e => { e.currentTarget.style.background = RG.tealDark; e.currentTarget.style.color = '#fff'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.tealDark; }}>
               {t('services_card.cta')}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
           </div>
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="rg-services-menu" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 56, alignItems: 'stretch' }}>
-            {/* Lista editorial */}
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          <div className="rg-services-menu" style={{ display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 64, alignItems: 'stretch' }}>
+
+            {/* Lista editorial com ghost numeral */}
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, alignSelf: 'center' }}>
               {items.map((it, i) => {
                 const isActive = i === active;
                 return (
                   <li key={it.num}
                     onMouseEnter={() => setActive(i)}
-                    style={{ borderTop: i === 0 ? `1px solid ${RG.line}` : 'none', borderBottom: `1px solid ${RG.line}` }}>
-                    <a href={it.href} style={{ display: 'block', textDecoration: 'none', color: 'inherit', padding: '26px 4px', position: 'relative' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-                        <span style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, color: isActive ? RG.tealDark : RG.muted, letterSpacing: '0.12em', transition: 'color 220ms', minWidth: 24 }}>{it.num}</span>
+                    style={{
+                      borderBottom: `1px solid ${RG.line}`,
+                      borderTop: i === 0 ? `1px solid ${RG.line}` : 'none',
+                      position: 'relative',
+                      overflow: 'hidden',
+                    }}>
+
+                    {/* Ghost numeral watermark */}
+                    <div aria-hidden="true" style={{
+                      position: 'absolute', right: -8, top: '50%',
+                      transform: isActive ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.85)',
+                      fontFamily: F_MONO, fontSize: 96, fontWeight: 700, lineHeight: 1,
+                      color: RG.teal,
+                      opacity: isActive ? 0.07 : 0,
+                      transition: 'opacity 400ms ease, transform 400ms cubic-bezier(.2,.8,.2,1)',
+                      userSelect: 'none', pointerEvents: 'none',
+                      letterSpacing: '-0.04em',
+                    }}>{it.num}</div>
+
+                    {/* Teal left-border accent */}
+                    <div aria-hidden="true" style={{
+                      position: 'absolute', left: 0, top: 0, bottom: 0,
+                      width: 3, borderRadius: 2,
+                      background: RG.tealDark,
+                      transform: isActive ? 'scaleY(1)' : 'scaleY(0)',
+                      transformOrigin: 'top',
+                      transition: 'transform 320ms cubic-bezier(.2,.8,.2,1)',
+                    }} />
+
+                    <a href={it.href} style={{
+                      display: 'block', textDecoration: 'none', color: 'inherit',
+                      padding: '28px 12px 28px 20px', position: 'relative',
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
+                        <span style={{
+                          fontFamily: F_MONO, fontSize: 10, fontWeight: 600,
+                          color: isActive ? RG.tealDark : RG.muted,
+                          letterSpacing: '0.14em', transition: 'color 240ms', minWidth: 22,
+                        }}>{it.num}</span>
                         <div style={{ flex: 1 }}>
-                          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
                             <h3 style={{
                               fontFamily: F_DISPLAY,
-                              fontSize: 'clamp(26px, 2.4vw, 34px)',
-                              fontWeight: isActive ? 600 : 400,
+                              fontSize: 'clamp(24px, 2.2vw, 32px)',
+                              fontWeight: isActive ? 600 : 300,
                               letterSpacing: '-0.02em',
                               color: isActive ? RG.ink : RG.charcoal,
                               margin: 0,
-                              transition: 'all 260ms cubic-bezier(.2,.8,.2,1)',
-                              transform: isActive ? 'translateX(4px)' : 'translateX(0)',
+                              transition: 'all 280ms cubic-bezier(.2,.8,.2,1)',
+                              transform: isActive ? 'translateX(2px)' : 'translateX(0)',
                             }}>{it.name}</h3>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{
-                              color: isActive ? RG.tealDark : RG.muted,
-                              transform: isActive ? 'rotate(-45deg) scale(1.05)' : 'rotate(0deg) scale(1)',
-                              transition: 'all 260ms cubic-bezier(.2,.8,.2,1)',
+                            <div style={{
+                              width: 36, height: 36, borderRadius: '50%',
+                              display: 'flex', alignItems: 'center', justifyContent: 'center',
                               flexShrink: 0,
-                            }}><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                              background: isActive ? RG.tealDark : 'transparent',
+                              border: isActive ? 'none' : `1.5px solid ${RG.line}`,
+                              transition: 'all 260ms cubic-bezier(.2,.8,.2,1)',
+                            }}>
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{
+                                color: isActive ? '#fff' : RG.muted,
+                                transform: isActive ? 'rotate(-45deg)' : 'rotate(0deg)',
+                                transition: 'all 260ms cubic-bezier(.2,.8,.2,1)',
+                              }}><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                            </div>
                           </div>
-                          {/* Blurb que aparece no item activo */}
                           <div style={{
-                            maxHeight: isActive ? 60 : 0,
+                            maxHeight: isActive ? 72 : 0,
                             opacity: isActive ? 1 : 0,
                             overflow: 'hidden',
-                            transition: 'max-height 320ms cubic-bezier(.2,.8,.2,1), opacity 260ms ease, margin-top 320ms',
-                            marginTop: isActive ? 8 : 0,
+                            transition: 'max-height 360ms cubic-bezier(.2,.8,.2,1), opacity 280ms ease',
+                            marginTop: isActive ? 10 : 0,
                           }}>
-                            <p style={{ fontFamily: F_BODY, fontSize: 14, color: RG.muted, lineHeight: 1.55, margin: 0, maxWidth: '46ch' }}>{it.blurb}</p>
+                            <p style={{ fontFamily: F_BODY, fontSize: 14, color: RG.muted, lineHeight: 1.6, margin: 0, maxWidth: '44ch' }}>{it.blurb}</p>
                           </div>
                         </div>
                       </div>
@@ -312,7 +356,7 @@ function ServicesCard() {
             </ul>
 
             {/* Painel imagem reactiva */}
-            <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', minHeight: 460, background: RG.creamSoft }}>
+            <div style={{ position: 'relative', borderRadius: 20, overflow: 'hidden', minHeight: 500, background: RG.tealWash }}>
               {items.map((it, i) => (
                 <img key={it.num}
                   src={it.img}
@@ -321,27 +365,47 @@ function ServicesCard() {
                   style={{
                     position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
                     opacity: i === active ? 1 : 0,
-                    transform: i === active ? 'scale(1)' : 'scale(1.04)',
-                    transition: 'opacity 500ms ease, transform 800ms cubic-bezier(.2,.8,.2,1)',
+                    transform: i === active ? 'scale(1)' : 'scale(1.06)',
+                    transition: 'opacity 600ms ease, transform 900ms cubic-bezier(.2,.8,.2,1)',
                   }} />
               ))}
-              {/* Overlay teal sutil */}
+
+              {/* Gradient overlay — top e bottom */}
               <div aria-hidden="true" style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(180deg, rgba(20,20,18,0.0) 50%, rgba(20,20,18,0.25) 100%)',
+                background: 'linear-gradient(160deg, rgba(47,107,104,0.12) 0%, transparent 40%, rgba(20,20,18,0.32) 100%)',
+                pointerEvents: 'none',
               }} />
-              {/* Badge índice/total no canto */}
+
+              {/* Nome do serviço ativo no canto inferior esquerdo */}
               <div style={{
-                position: 'absolute', bottom: 20, left: 20,
-                display: 'flex', alignItems: 'center', gap: 10,
-                padding: '8px 14px', borderRadius: 999,
-                background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(8px)',
+                position: 'absolute', bottom: 24, left: 24, right: 24,
+                display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 12,
               }}>
-                <span style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 700, color: RG.tealDark, letterSpacing: '0.1em' }}>{items[active].num}</span>
-                <span style={{ width: 1, height: 12, background: RG.line }} />
-                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.ink }}>{items[active].name}</span>
+                <div style={{
+                  padding: '10px 16px', borderRadius: 12,
+                  background: 'rgba(255,255,255,0.94)', backdropFilter: 'blur(10px)',
+                  display: 'flex', alignItems: 'center', gap: 10,
+                }}>
+                  <span style={{ fontFamily: F_MONO, fontSize: 10, fontWeight: 700, color: RG.tealDark, letterSpacing: '0.12em' }}>{items[active].num}</span>
+                  <div style={{ width: 1, height: 14, background: RG.line }} />
+                  <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{items[active].name}</span>
+                </div>
+
+                {/* Indicador de progresso — segmentos */}
+                <div style={{ display: 'flex', gap: 5, alignItems: 'center' }}>
+                  {items.map((_, i) => (
+                    <button key={i} onClick={() => setActive(i)} aria-label={items[i].name} style={{
+                      width: i === active ? 28 : 8,
+                      height: 4, borderRadius: 2, border: 'none', cursor: 'pointer', padding: 0,
+                      background: i === active ? RG.tealDark : 'rgba(255,255,255,0.55)',
+                      transition: 'width 320ms cubic-bezier(.2,.8,.2,1), background 320ms',
+                    }} />
+                  ))}
+                </div>
               </div>
             </div>
+
           </div>
         </Reveal>
       </Container>
