@@ -13,10 +13,10 @@ function Hero() {
       {/* Painel direito: foto real da equipa */}
       <div style={{ position: 'absolute', inset: 0, left: 0, zIndex: 0, overflow: 'hidden' }}>
         <img
-          src="assets/foto-equipa.jpg"
+          src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '25% center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
           loading="eager" decoding="async"
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.04) 0%, rgba(31,72,70,0.14) 100%)' }} />
@@ -25,7 +25,7 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 14%, rgba(255,255,255,0.55) 24%, rgba(255,255,255,0.0) 34%)',
+        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 16%, rgba(255,255,255,0.72) 28%, rgba(255,255,255,0.18) 42%, rgba(255,255,255,0.0) 52%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
