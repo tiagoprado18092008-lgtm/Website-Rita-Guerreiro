@@ -89,6 +89,15 @@ function Nav({ current = 'home' }) {
     return () => window.removeEventListener('scroll', onS);
   }, []);
 
+  React.useEffect(() => {
+    if (mobile) {
+      document.body.classList.add('rg-mobile-open');
+    } else {
+      document.body.classList.remove('rg-mobile-open');
+    }
+    return () => document.body.classList.remove('rg-mobile-open');
+  }, [mobile]);
+
   const megaIcons = {
     'fisioterapia': (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -370,7 +379,7 @@ function Nav({ current = 'home' }) {
 
       {/* ── Mobile menu — full screen overlay ── */}
       {mobile && (
-        <div style={{
+        <div className="rg-mobile-overlay" style={{
           position: 'fixed', inset: 0, zIndex: 99,
           background: '#f7f5f2',
           paddingTop: 90, overflow: 'auto',

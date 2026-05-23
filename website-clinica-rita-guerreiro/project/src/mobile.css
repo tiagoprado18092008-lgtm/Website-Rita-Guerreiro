@@ -1,0 +1,838 @@
+/* ──────────────────────────────────────────────────────────
+   mobile.css — Redesign mobile-first para Clínica Rita Guerreiro
+   Aplica-se de 320px a 768px. Carregado APÓS styles.css e premium.css.
+
+   Breakpoints:
+     ≤ 768px   entrada em modo mobile (tablet + phone)
+     ≤ 480px   phone padrão (375–430px)
+     ≤ 360px   phone pequeno (iPhone SE 1ª gen)
+
+   Princípios:
+     - desktop ≥ 1180px intocado
+     - !important onde necessário (React inline styles têm alta especificidade)
+     - touch targets ≥ 44px
+     - sem horizontal scroll
+   ────────────────────────────────────────────────────────── */
+
+
+/* ─── GLOBAL / BODY ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+    -webkit-tap-highlight-color: rgba(111,181,176,0.2);
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* Reduce hero/section paddings globally */
+  section { box-sizing: border-box; }
+
+  /* Touch targets — qualquer link/botão clicável fica com hit-area decente */
+  a, button { -webkit-tap-highlight-color: rgba(111,181,176,0.2); }
+
+  /* Container padding tighter on phones */
+  .rg-nav-row,
+  [style*="max-width: 1280px"] { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Reveal animations: anti-jank no mobile (forçar GPU-friendly) */
+  .rg-word { animation-duration: 320ms !important; }
+}
+
+
+/* ─── HEADER & NAV ───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Top utility bar — esconder em mobile */
+  .rg-topbar { display: none !important; }
+
+  /* Header altura reduzida */
+  .rg-nav-row {
+    height: 64px !important;
+    padding: 0 16px !important;
+  }
+  .rg-scrolled .rg-nav-row { height: 56px !important; }
+
+  /* Logo menor */
+  .rg-header-logo img {
+    height: 56px !important;
+  }
+  .rg-scrolled .rg-header-logo img { height: 48px !important; }
+
+  /* Esconder telefone do header em mobile (já tem rg-nav-tel) */
+  .rg-nav-tel { display: none !important; }
+
+  /* Esconder lang switcher (passa para dentro do menu) */
+  .rg-header-cta > div:first-child { display: none !important; }
+
+  /* Esconder "Agendar" CTA do header em mobile (passa para dentro do menu) */
+  .rg-agendar-btn { display: none !important; }
+
+  /* Burger: touch target 44x44 */
+  .rg-burger {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    margin-right: -8px;
+  }
+  .rg-burger svg { width: 24px; height: 24px; }
+}
+
+
+/* ─── MOBILE OVERLAY MENU ────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Lock body scroll quando overlay aberto — adicionado via JS no setMobile(true) */
+  body.rg-mobile-open { overflow: hidden !important; }
+
+  /* Overlay (selector geral pelo z-index 99 e position fixed inset:0) */
+  /* O JSX usa style inline; precisamos vencer com classes adicionadas */
+  /* Será apanhado via .rg-mobile-overlay (a adicionar em ui.jsx) */
+  .rg-mobile-overlay {
+    background: #0F2A2A !important;
+    color: #F6F1E9 !important;
+    padding-top: 72px !important;
+    animation: rg-mobile-slide-in 360ms cubic-bezier(.2,.8,.2,1) both !important;
+  }
+
+  @keyframes rg-mobile-slide-in {
+    from { transform: translateX(100%); opacity: 0.6; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+  .rg-mobile-overlay [style*="max-width: 1280px"] {
+    padding: 0 24px !important;
+  }
+
+  /* Items do menu — borders cream translucent */
+  .rg-mobile-overlay [style*="borderTop"] {
+    border-top: 1px solid rgba(246,241,233,0.15) !important;
+  }
+
+  /* Textos do menu em cream/branco */
+  .rg-mobile-overlay a,
+  .rg-mobile-overlay button {
+    color: #F6F1E9 !important;
+  }
+
+  /* Items principais maiores */
+  .rg-mobile-overlay a[style*="Cormorant"],
+  .rg-mobile-overlay button[style*="Cormorant"] {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Submenu de serviços: cards com fundo escurinho */
+  .rg-mobile-overlay [style*="borderRadius: 14px"] {
+    background: rgba(246,241,233,0.06) !important;
+    border-color: rgba(246,241,233,0.15) !important;
+  }
+
+  /* Cabeçalho da categoria dentro do mobile menu */
+  .rg-mobile-overlay [style*="rgba(111,181,176,0.08)"] {
+    background: rgba(111,181,176,0.18) !important;
+  }
+
+  /* Links de subserviços */
+  .rg-mobile-overlay [style*="rgba(111,181,176,0.1)"] {
+    background: rgba(111,181,176,0.15) !important;
+  }
+
+  /* CTAs área inferior — largura cheia, empilhados */
+  .rg-mobile-overlay [style*="paddingTop: 28px"] {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .rg-mobile-overlay [style*="paddingTop: 28px"] > a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+    box-sizing: border-box;
+  }
+
+  /* Language toggle no fundo, centrado */
+  .rg-mobile-overlay [style*="paddingTop: 24px"] {
+    justify-content: center !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+
+/* ─── HOMEPAGE HERO — REDESIGN COMPLETO ─────────────────── */
+
+/* Eyebrow pill escondida por defeito (desktop) — só aparece em ≤768px */
+.rg-hero-home-eyebrow { display: none; }
+
+/* Scroll indicator (chevron animado adicionado via JS no hero) — esconder em mobile */
+@media (max-width: 768px) {
+  .rg-scroll-indicator { display: none !important; }
+}
+
+@media (max-width: 768px) {
+
+  /* Apanha o <section> do Hero: minHeight calc(100vh - 0px), background cream */
+  .rg-hero-home {
+    min-height: auto !important;
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  /* Foto bloco — 45vh */
+  .rg-hero-home-photo {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 48vh !important;
+    min-height: 320px !important;
+    max-height: 480px !important;
+    margin-top: 64px; /* compensa header fixo */
+    overflow: hidden !important;
+  }
+  .rg-hero-home-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 25% !important;
+    background: #f5f0eb !important;
+  }
+  /* Gradiente em baixo para transição suave */
+  .rg-hero-home-photo::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.92) 80%, #ffffff 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  /* Eyebrow pill sobreposta ao topo da foto */
+  .rg-hero-home-eyebrow {
+    position: absolute !important;
+    top: 16px !important;
+    left: 16px !important;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(15,42,42,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #F6F1E9;
+  }
+  .rg-hero-home-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #6FB5B0;
+    box-shadow: 0 0 0 3px rgba(111,181,176,0.3);
+  }
+
+  /* Conteúdo (texto + CTAs) — bloco branco abaixo */
+  .rg-hero-home-content {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 28px 20px 40px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    z-index: 4 !important;
+  }
+
+  /* Inner box: remove paddings e linha decorativa */
+  .rg-hero-home-content > div {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+  }
+  .rg-hero-home-content > div > div[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Headline */
+  .rg-hero-home-content h1 {
+    font-size: clamp(32px, 8.5vw, 44px) !important;
+    line-height: 1.05 !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.025em !important;
+    max-width: 100% !important;
+  }
+  .rg-hero-home-content h1 span { display: block; }
+
+  /* Subtítulo */
+  .rg-hero-home-content p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+    margin-top: 18px !important;
+  }
+
+  /* CTAs — empilhados full-width */
+  .rg-hero-home-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: 24px !important;
+  }
+  .rg-hero-home-ctas > a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 15px 22px !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box;
+  }
+
+  /* Prova social (rating Google) — alinhada à esquerda */
+  .rg-hero-home-social {
+    margin-top: 22px !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .rg-hero-home-photo {
+    height: 42vh !important;
+    min-height: 280px !important;
+  }
+  .rg-hero-home-content { padding: 24px 16px 32px !important; }
+  .rg-hero-home-content h1 { font-size: 30px !important; }
+}
+
+
+/* ─── TRUST BAND (StatsStrip) ────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* O grid de stats é repeat(3, 1fr); apanhamos pelo border-top/bottom + padding 28px */
+  section[style*="border-top"][style*="padding: 28px"] [style*="repeat(3, 1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 24px !important;
+    column-gap: 12px !important;
+  }
+  section[style*="border-top"][style*="padding: 28px"] [style*="repeat(3, 1fr)"] > div {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 8px 6px !important;
+    gap: 6px !important;
+    border-left: none !important;
+  }
+  section[style*="border-top"][style*="padding: 28px"] [style*="repeat(3, 1fr)"] > div:nth-child(2) {
+    border-left: 1px solid #E8E6DF !important;
+  }
+  section[style*="border-top"][style*="padding: 28px"] [style*="repeat(3, 1fr)"] > div > div {
+    font-size: 36px !important;
+  }
+  section[style*="border-top"][style*="padding: 28px"] [style*="repeat(3, 1fr)"] > div > p {
+    font-size: 9.5px !important;
+    letter-spacing: 0.14em !important;
+  }
+}
+
+
+/* ─── SERVICES MENU (ServicesCard) ──────────────────────── */
+
+@media (max-width: 768px) {
+
+  .rg-services-menu {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Painel de imagem reactiva esconde em mobile */
+  .rg-services-menu > div:last-child {
+    display: none !important;
+  }
+
+  /* Items da lista — padding mais apertado */
+  .rg-services-menu ul li a {
+    padding: 22px 12px 22px 16px !important;
+  }
+  .rg-services-menu ul li h3 {
+    font-size: 22px !important;
+    font-weight: 500 !important;
+  }
+  .rg-services-menu ul li [style*="ghost"], .rg-services-menu ul li [aria-hidden="true"][style*="fontSize: 96"] {
+    display: none !important;
+  }
+  /* Sempre mostrar a descrição em mobile (não depender de hover) */
+  .rg-services-menu ul li [style*="maxHeight"] {
+    max-height: 200px !important;
+    opacity: 1 !important;
+    margin-top: 8px !important;
+  }
+}
+
+
+/* ─── WHY US (accordion) ────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* já existe .rg-hero-grid → 1col; foto desce. Garantir aspect */
+  /* Botões do accordion: padding maior */
+  section [style*="padding: 20px 0"][style*="borderBottom: 1px solid"]:has(> div) {
+    padding: 18px 0 !important;
+  }
+}
+
+
+/* ─── MEET RITA ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* já tem .rg-hero-grid → 1col, .rg-meet-card static */
+  .rg-meet-card {
+    position: static !important;
+    margin: -12px 12px 0 12px !important;
+    right: auto !important;
+    bottom: auto !important;
+    max-width: none !important;
+  }
+
+  /* Grid de facts 3col → 1col em mobile */
+  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 12px !important;
+  }
+  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] > div {
+    text-align: center;
+  }
+  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] > div > div:first-child {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Em phones muito pequenos, 3 facts inline ficam apertados — passa a 1col */
+  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+
+/* ─── TESTIMONIALS ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .rg-testimonials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .rg-testimonials-grid > div > div {
+    padding: 24px 22px !important;
+  }
+  .rg-testimonials-grid blockquote {
+    font-size: 18px !important;
+  }
+}
+
+
+/* ─── HOME CTA (3 opções) ───────────────────────────────── */
+
+@media (max-width: 768px) {
+  .rg-cta-options {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .rg-cta-option {
+    padding: 24px 22px !important;
+  }
+  /* Info line bottom: stack vertical */
+  section[style*="linear-gradient(135deg, #2F6B68"] [style*="flexWrap: wrap"][style*="justifyContent: center"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  section[style*="linear-gradient(135deg, #2F6B68"] [style*="flexWrap: wrap"][style*="justifyContent: center"] > span {
+    display: none !important;
+  }
+}
+
+
+/* ─── SERVICES OVERVIEW (cards de categoria) ────────────── */
+
+@media (max-width: 768px) {
+  section#todos-servicos [style*="auto-fill, minmax(260px"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  section#todos-servicos .rg-service-card {
+    border-radius: 12px;
+  }
+  section#todos-servicos .rg-service-card h3 {
+    font-size: 18px !important;
+  }
+}
+
+
+/* ─── SOBRE PAGE ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* SobreHero */
+  section[style*="paddingTop: 140px"][style*="paddingBottom: 60"] {
+    padding-top: 100px !important;
+    padding-bottom: 32px !important;
+  }
+  section[style*="paddingTop: 140px"][style*="paddingBottom: 60"] h1 {
+    font-size: clamp(36px, 10vw, 56px) !important;
+    line-height: 0.98 !important;
+  }
+  section[style*="paddingTop: 140px"][style*="paddingBottom: 60"] p {
+    font-size: 16px !important;
+    margin-top: 18px !important;
+  }
+
+  /* Mission, Story — grid → 1col já com rg-hero-grid */
+  /* Pillars (4col) */
+  .rg-values-grid {
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Pillars 4col → 2col */
+  section [style*="repeat(4, 1fr)"].rg-values-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Pillars 2col → 1col */
+  section [style*="repeat(4, 1fr)"].rg-values-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Team: 2col → 1col em ≤480px (já com rg-values-grid) */
+  section [style*="repeat(2, 1fr)"].rg-values-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+
+/* ─── CONTACTOS PAGE ─────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Hero (paddingTop 130) */
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] {
+    padding-top: 96px !important;
+    padding-bottom: 40px !important;
+  }
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] h1 {
+    font-size: clamp(38px, 10vw, 64px) !important;
+    line-height: 0.96 !important;
+  }
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] p {
+    font-size: 16px !important;
+    margin-top: 18px !important;
+  }
+  /* Info column border-left → border-top em mobile */
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] [style*="borderLeft: 3px solid"] {
+    border-left: 0 !important;
+    border-top: 2px solid #6FB5B0 !important;
+    padding-left: 0 !important;
+    padding-top: 28px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Canais de contacto (2 cards) → 1col, min-height menor */
+  section[style*="background"][style*="tealWash"] [style*="grid-template-columns: 1fr 1fr"],
+  section .rg-hero-grid > a[style*="WhatsApp"],
+  section .rg-hero-grid > a[style*="tel:"] {
+    /* via rg-hero-grid já é 1col */
+  }
+  section a[href*="wa.me"][style*="minHeight: 240"],
+  section a[href*="tel:"][style*="minHeight: 240"] {
+    min-height: auto !important;
+    padding: 32px 28px !important;
+  }
+
+  /* Mapa altura menor */
+  div[style*="position: relative"][style*="height: 500px"] {
+    height: 320px !important;
+  }
+  iframe[title="Mapa"] {
+    filter: none !important;
+  }
+
+  /* "Como chegar" 3 cards → 1col (já com auto-fit 200px ajustar) */
+  section [style*="auto-fit, minmax(200px"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+
+/* ─── CATEGORY PAGE ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Hero da categoria */
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 60"] {
+    padding-top: 100px !important;
+    padding-bottom: 32px !important;
+  }
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 60"] h1 {
+    font-size: clamp(40px, 11vw, 72px) !important;
+    line-height: 0.95 !important;
+  }
+  section[style*="paddingTop: 130px"][style*="paddingBottom: 60"] p {
+    font-size: 16px !important;
+    margin-top: 16px !important;
+  }
+
+  /* Grid 300px min → 1col em ≤480px */
+}
+
+@media (max-width: 480px) {
+  section [style*="auto-fill, minmax(300px"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* CTA banner final stack vertical */
+  section[style*="tealDark"] [style*="flexWrap: wrap"][style*="justifyContent: space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  section[style*="tealDark"] h3 {
+    font-size: 26px !important;
+  }
+  /* Botões da CTA full-width */
+  section[style*="tealDark"] [style*="display: flex"][style*="gap: 12px"][style*="flexWrap: wrap"] {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  section[style*="tealDark"] [style*="display: flex"][style*="gap: 12px"][style*="flexWrap: wrap"] > a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+
+/* ─── SERVICE DETAIL PAGE ────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Hero do serviço (paddingTop 130) */
+  section[style*="paddingTop: 130px"][style*="background"] {
+    padding-top: 92px !important;
+  }
+  section[style*="paddingTop: 130px"] .rg-hero-grid {
+    gap: 28px !important;
+    padding-bottom: 32px !important;
+  }
+  section[style*="paddingTop: 130px"] h1 {
+    font-size: clamp(32px, 9vw, 52px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.025em !important;
+  }
+  section[style*="paddingTop: 130px"] p[style*="fontSize: 18"] {
+    font-size: 15.5px !important;
+    margin-top: 14px !important;
+  }
+
+  /* Imagem do hero ordem -1 (já tem em rg-hero-grid > :last-child) */
+
+  /* Price pill: empilhar verticalmente em ≤480px */
+}
+
+@media (max-width: 480px) {
+  /* Price pills */
+  section[style*="paddingTop: 130px"] [style*="flexWrap: wrap"][style*="marginTop: 32px"] {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  section[style*="paddingTop: 130px"] [style*="flexWrap: wrap"][style*="marginTop: 32px"] > div {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 120px;
+  }
+
+  /* CTAs do hero — full width */
+  section[style*="paddingTop: 130px"] [style*="display: flex"][style*="marginTop: 32px"][style*="flexWrap: wrap"]:not([style*="alignItems"]) {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  section[style*="paddingTop: 130px"] [style*="display: flex"][style*="marginTop: 32px"][style*="flexWrap: wrap"]:not([style*="alignItems"]) > a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* "Sobre o serviço" + "Áreas de atuação" 2col → 1col (já com rg-hero-grid) */
+
+  /* Steps grid */
+  .rg-steps-grid {
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .rg-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* "Outros serviços" cards */
+}
+
+@media (max-width: 480px) {
+  /* Outros serviços 1col */
+  section.rg-other-services [style*="auto-fill, minmax(260px"],
+  section [style*="auto-fill, minmax(260px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  footer {
+    padding-top: 56px !important;
+  }
+
+  /* Grid 4col → 2col → 1col já existe; reforçar */
+  .rg-footer-grid {
+    gap: 36px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .rg-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Col titles centrados */
+  .rg-footer-grid [style*="fontSize: 13px"][style*="textTransform: uppercase"] {
+    border-bottom-width: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Sub-faixa legal (multibanco + livro reclamações) */
+  .rg-footer-legal {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Barra final */
+  .rg-footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+    padding-top: 18px !important;
+    padding-bottom: 28px !important;
+  }
+  .rg-footer-bottom span {
+    font-size: 12.5px !important;
+  }
+  .rg-footer-bottom [style*="display: flex"][style*="alignItems: center"] {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  /* Logo AlphaScale menor */
+  .rg-footer-devby-logo {
+    height: 80px !important;
+  }
+}
+
+
+/* ─── WHATSAPP FAB ───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .rg-wafab {
+    bottom: 18px !important;
+    right: 18px !important;
+    width: 54px !important;
+    height: 54px !important;
+  }
+  .rg-wafab svg { width: 24px !important; height: 24px !important; }
+  /* Tooltip desligado em mobile (já estava); FAB visível mas com padding-bottom para body */
+}
+
+
+/* ─── ESPACO (Sobre — masonry) ──────────────────────────── */
+
+@media (max-width: 768px) {
+  .rg-espaco-grid {
+    column-count: 2 !important;
+    column-gap: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .rg-espaco-grid {
+    column-count: 1 !important;
+  }
+}
+
+
+/* ─── PRIVACIDADE / TERMOS ───────────────────────────────── */
+/* Estas páginas usam o mesmo Nav/Footer; os ajustes genéricos
+   já cobrem a maioria. Sem regras específicas. */
+
+
+/* ─── REDUCED MOTION ─────────────────────────────────────── */
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ─── SAFETY OVERRIDES — sem overflow inesperado ─────────── */
+
+@media (max-width: 768px) {
+  /* Forçar todas as imagens a respeitarem o container */
+  img { max-width: 100%; height: auto; }
+
+  /* Garantir que iframes (mapa) não estouram */
+  iframe { max-width: 100%; }
+
+  /* Reveal items: garantir que não introduzem horizontal scroll */
+  [style*="transform: translateY"] { will-change: opacity, transform; }
+}

@@ -15,8 +15,12 @@
       gsap.registerPlugin(ScrollTrigger);
     }
 
-    initScrollIndicator();
-    initHeroParallax();
+    var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (!isMobile) {
+      initScrollIndicator();
+      initHeroParallax();
+    }
     initScrollReveals();
     initCounters();
   }

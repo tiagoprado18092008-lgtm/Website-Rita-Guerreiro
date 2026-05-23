@@ -8,10 +8,10 @@ function Hero() {
   const { t } = useLang();
   const h1Lines = t('hero.h1');
   return (
-    <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
+    <section className="rg-hero-home" style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
       {/* Foto de fundo — cobre toda a secção, gradiente faz a transição */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
+      <div className="rg-hero-home-photo" style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
         <img
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
@@ -19,10 +19,12 @@ function Hero() {
           style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
           loading="eager" decoding="async"
         />
+        {/* Eyebrow pill — visível só em mobile via CSS */}
+        <span className="rg-hero-home-eyebrow" aria-hidden="true">Centro de Terapias & Bem-Estar</span>
       </div>
 
 {/* Conteúdo principal */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 0 0 0', padding: '40px 48px 80px 64px', boxSizing: 'border-box' }}>
+      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 0 0 0', padding: '40px 48px 80px 64px', boxSizing: 'border-box' }}>
         <div style={{ maxWidth: 520, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
@@ -53,7 +55,7 @@ function Hero() {
 
           {/* CTAs */}
           <Reveal delay={620}>
-            <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+            <div className="rg-hero-home-ctas" style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
               <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" className="rg-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 10,
                 fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 700,
@@ -82,7 +84,7 @@ function Hero() {
 
           {/* Prova social ampliada */}
           <Reveal delay={780}>
-            <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <div className="rg-hero-home-social" style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
               <a href="https://www.google.com/search?q=Clinica+Rita+Guerreiro+Loul%C3%A9" target="_blank" rel="noopener noreferrer" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none',
                 padding: '6px 12px 6px 8px', borderRadius: 999, background: 'rgba(255,255,255,0.6)',
