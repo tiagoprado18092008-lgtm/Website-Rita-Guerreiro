@@ -591,12 +591,18 @@ function Footer() {
   };
   const L_ = L[lang] || L.PT;
 
-  // Estilos partilhados — tipografia editorial, cores cream sobre teal escuro
+  // Estilos — footer creme claro com botânica, tipografia teal escuro
+  const FG = '#1A3C3D';       // teal escuro para texto
+  const FA = '#3B7B78';       // teal médio para links/accents
+  const FB = 'rgba(26,60,61,0.55)'; // texto secundário
+  const FC = 'rgba(26,60,61,0.30)'; // texto muted
+  const FD = 'rgba(26,60,61,0.14)'; // divisores
+
   const colTitle = {
-    fontFamily: F_DISPLAY, fontSize: 13, fontWeight: 600,
-    letterSpacing: '0.18em', textTransform: 'uppercase',
-    color: '#F4F1E9', marginBottom: 22, lineHeight: 1.2,
-    paddingBottom: 10, borderBottom: '1px solid rgba(244,241,233,0.18)',
+    fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 700,
+    letterSpacing: '0.2em', textTransform: 'uppercase',
+    color: FA, marginBottom: 22, lineHeight: 1.2,
+    paddingBottom: 10, borderBottom: `1px solid ${FD}`,
     display: 'inline-block', minWidth: 120,
   };
   const itemRow = {
@@ -605,16 +611,16 @@ function Footer() {
   };
   const iconWrap = {
     width: 22, height: 22, borderRadius: 999,
-    border: '1px solid rgba(111,181,176,0.45)',
+    border: `1px solid rgba(59,123,120,0.35)`,
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-    color: '#6FB5B0', flexShrink: 0, marginTop: 2,
+    color: FA, flexShrink: 0, marginTop: 2,
   };
   const itemText = {
-    fontFamily: F_BODY, fontSize: 13.5, color: 'rgba(244,241,233,0.78)',
+    fontFamily: F_BODY, fontSize: 13.5, color: FB,
     lineHeight: 1.55, textDecoration: 'none',
   };
   const itemMuted = {
-    fontFamily: F_BODY, fontSize: 11.5, color: 'rgba(244,241,233,0.42)',
+    fontFamily: F_BODY, fontSize: 11.5, color: FC,
     lineHeight: 1.5, marginTop: 2, display: 'block',
   };
 
@@ -635,52 +641,33 @@ function Footer() {
   return (
     <footer style={{
       position: 'relative',
-      background: '#122E2F',
-      color: '#F4F1E9',
-      paddingTop: 340, paddingBottom: 0, overflow: 'hidden',
+      background: '#EEF0EB',
+      color: FG,
+      paddingTop: 96, paddingBottom: 0, overflow: 'hidden',
     }}>
-      {/* MOSAICO — faixa de fotos da clínica no topo do footer */}
+      {/* BOTÂNICA — multiply: fundo branco da imagem desaparece, folhas ficam */}
       <div aria-hidden="true" style={{
-        position: 'absolute', top: 0, left: 0, right: 0, height: 320,
-        display: 'flex', overflow: 'hidden', pointerEvents: 'none',
+        position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden',
       }}>
-        {['assets/clinica/recepcao.jpg','assets/clinica/sala-massagem.jpg','assets/clinica/estudio-pilates.jpg','assets/clinica/sala-holistica.jpg','assets/clinica/sala-relaxamento.jpg','assets/clinica/sala-clinica.jpg'].map((src, i) => (
-          <div key={i} style={{
-            flex: i === 0 ? '1.4 0 0' : i === 2 ? '1.2 0 0' : '1 0 0',
-            overflow: 'hidden', position: 'relative',
-          }}>
-            <img src={src} alt="" loading="lazy" style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center',
-              filter: 'saturate(0.55) brightness(0.62)',
-              transform: 'scale(1.04)',
-            }} />
-            {/* separador subtil entre fotos */}
-            {i > 0 && <div style={{ position: 'absolute', top: 0, left: 0, width: 1, height: '100%', background: 'rgba(18,46,47,0.55)' }} />}
-          </div>
-        ))}
-        {/* gradiente descendente que funde mosaico → fundo teal escuro */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0, height: '70%',
-          background: 'linear-gradient(to bottom, rgba(18,46,47,0) 0%, rgba(18,46,47,0.72) 55%, #122E2F 100%)',
+        <img src="assets/footer-botanica.png" alt="" loading="lazy" style={{
+          position: 'absolute', bottom: 0, left: 0, width: '100%', height: '90%',
+          objectFit: 'cover', objectPosition: 'bottom center',
+          mixBlendMode: 'multiply',
+          opacity: 0.55,
         }} />
-        {/* véu teal sobre toda a faixa para afinidade cromática */}
+        {/* gradiente topo — transição suave de #EEF0EB para transparente */}
         <div style={{
-          position: 'absolute', inset: 0,
-          background: 'rgba(20,55,55,0.38)',
+          position: 'absolute', top: 0, left: 0, right: 0, height: '42%',
+          background: 'linear-gradient(to bottom, #EEF0EB 0%, rgba(238,240,235,0) 100%)',
         }} />
-        {/* hairline topo luminoso */}
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(to right, transparent, rgba(111,181,176,0.35) 30%, rgba(111,181,176,0.35) 70%, transparent)' }} />
       </div>
 
-      {/* Halo teal atmosférico (mantido) */}
+      {/* Hairline topo teal */}
       <div aria-hidden="true" style={{
-        position: 'absolute', top: '-20%', right: '-10%', width: 640, height: 640,
-        background: 'radial-gradient(circle at center, rgba(111,181,176,0.10) 0%, rgba(111,181,176,0) 60%)',
-        pointerEvents: 'none',
+        position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+        background: `linear-gradient(to right, transparent, ${FA} 30%, ${FA} 70%, transparent)`,
+        opacity: 0.4,
       }} />
-      {/* Hairline topo */}
-      <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(to right, transparent, rgba(244,241,233,0.18) 30%, rgba(244,241,233,0.18) 70%, transparent)' }} />
 
       <Container>
         {/* GRID 4 colunas editorial */}
@@ -701,9 +688,9 @@ function Footer() {
                 <div style={itemText}>8100-611 Loulé</div>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Padre+António+Vieira+58,+8100-611+Loulé,+Portugal"
                   target="_blank" rel="noopener noreferrer"
-                  style={{ ...itemMuted, color: '#6FB5B0', marginTop: 8, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600 }}
-                  onMouseEnter={e => e.currentTarget.style.color = '#A8D8D4'}
-                  onMouseLeave={e => e.currentTarget.style.color = '#6FB5B0'}
+                  style={{ color: FA, marginTop: 8, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 700, fontFamily: F_DISPLAY, transition: 'color 180ms' }}
+                  onMouseEnter={e => e.currentTarget.style.color = FG}
+                  onMouseLeave={e => e.currentTarget.style.color = FA}
                 >
                   {L_.itinerario}
                   <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -717,9 +704,9 @@ function Footer() {
                 { href: 'https://www.instagram.com/centro_terapias_rita_guerreiro/', label: 'Instagram', icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> },
               ].map(({ href, label, icon }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                  style={{ width: 30, height: 30, borderRadius: 999, border: '1px solid rgba(244,241,233,0.18)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(244,241,233,0.6)', textDecoration: 'none', transition: 'all 200ms' }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#6FB5B0'; e.currentTarget.style.borderColor = '#6FB5B0'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = 'rgba(244,241,233,0.6)'; e.currentTarget.style.borderColor = 'rgba(244,241,233,0.18)'; }}
+                  style={{ width: 30, height: 30, borderRadius: 999, border: `1px solid rgba(59,123,120,0.3)`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: FA, textDecoration: 'none', transition: 'all 200ms', background: 'rgba(59,123,120,0.06)' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = FA; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = FA; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(59,123,120,0.06)'; e.currentTarget.style.color = FA; e.currentTarget.style.borderColor = 'rgba(59,123,120,0.3)'; }}
                 >{icon}</a>
               ))}
             </div>
@@ -731,8 +718,8 @@ function Footer() {
             <div style={itemRow}>
               <span style={iconWrap}>{IcoPhone}</span>
               <a href="tel:+351289000000" style={itemText}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.78)'}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
               >
                 289 000 000
                 <span style={itemMuted}>{L_.precoFixa}</span>
@@ -741,8 +728,8 @@ function Footer() {
             <div style={itemRow}>
               <span style={iconWrap}>{IcoWA}</span>
               <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={itemText}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.78)'}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
               >
                 961 899 364
                 <span style={itemMuted}>{L_.precoMovel}</span>
@@ -751,8 +738,8 @@ function Footer() {
             <div style={itemRow}>
               <span style={iconWrap}>{IcoMail}</span>
               <a href="mailto:fisioritaguerreiro@gmail.com" style={itemText}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.78)'}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
               >
                 fisioritaguerreiro@gmail.com
               </a>
@@ -762,7 +749,7 @@ function Footer() {
           {/* COL 3 — Horário */}
           <div>
             <div style={colTitle}>{L_.horario}</div>
-            <div style={{ fontFamily: F_BODY, fontSize: 13.5, color: 'rgba(244,241,233,0.78)', lineHeight: 1.9 }}>
+            <div style={{ fontFamily: F_BODY, fontSize: 13.5, color: FB, lineHeight: 1.9 }}>
               <div>{L_.segSex}</div>
               <div>{L_.sabado}</div>
             </div>
@@ -771,10 +758,10 @@ function Footer() {
           {/* COL 4 — Acessibilidade */}
           <div>
             <div style={colTitle}>{L_.acessibilidade}</div>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontFamily: F_BODY, fontSize: 13.5, color: 'rgba(244,241,233,0.78)', lineHeight: 1.7 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontFamily: F_BODY, fontSize: 13.5, color: FB, lineHeight: 1.7 }}>
               {[L_.parking, L_.transportes, L_.acesso].map((line, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 12 }}>
-                  <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#6FB5B0', marginTop: 9, flexShrink: 0 }} />
+                  <span style={{ width: 4, height: 4, borderRadius: '50%', background: FA, marginTop: 9, flexShrink: 0 }} />
                   <span>{line}</span>
                 </li>
               ))}
@@ -786,7 +773,7 @@ function Footer() {
         <div style={{
           display: 'flex', justifyContent: 'flex-end',
           paddingTop: 28, paddingBottom: 28,
-          borderTop: '1px solid rgba(244,241,233,0.10)',
+          borderTop: `1px solid ${FD}`,
         }} className="rg-footer-legal">
           <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações" title="Livro de Reclamações"
             style={{
@@ -794,10 +781,10 @@ function Footer() {
               padding: 6, borderRadius: 8,
               textDecoration: 'none',
               transition: 'opacity 200ms, transform 200ms',
-              opacity: 0.9,
+              opacity: 0.85,
             }}
             onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = '0.85'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
             <img src="assets/livro-reclamacoes.png" alt="Livro de Reclamações"
               style={{ display: 'block', height: 56, width: 'auto' }}
@@ -810,26 +797,26 @@ function Footer() {
           paddingTop: 22, paddingBottom: 28,
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           gap: 20, flexWrap: 'wrap',
-          borderTop: '1px solid rgba(244,241,233,0.10)',
+          borderTop: `1px solid ${FD}`,
         }} className="rg-footer-bottom">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: F_BODY, fontSize: 11.5, color: 'rgba(244,241,233,0.4)', letterSpacing: '0.02em' }}>{L_.copy}</span>
+            <span style={{ fontFamily: F_BODY, fontSize: 11.5, color: FC, letterSpacing: '0.02em' }}>{L_.copy}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontFamily: F_BODY, fontSize: 11.5 }}>
               <a href="privacidade.html"
-                style={{ color: 'rgba(244,241,233,0.45)', textDecoration: 'none', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.45)'}
+                style={{ color: FC, textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FC}
               >{t('footer.privacidade')}</a>
-              <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
+              <span style={{ width: 1, height: 10, background: FD }} />
               <a href="termos.html"
-                style={{ color: 'rgba(244,241,233,0.45)', textDecoration: 'none', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.45)'}
+                style={{ color: FC, textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FC}
               >{t('footer.termos')}</a>
             </div>
-            <span style={{ width: 1, height: 10, background: 'rgba(244,241,233,0.18)' }} />
+            <span style={{ width: 1, height: 10, background: FD }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
               style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}
@@ -837,7 +824,7 @@ function Footer() {
               <span style={{
                 fontFamily: F_BODY, fontSize: 9, fontWeight: 500,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
-                color: 'rgba(244,241,233,0.45)',
+                color: FC,
               }}>{L_.desenvolvido}</span>
               <img
                 src="assets/logo-alphascale-footer.png"
