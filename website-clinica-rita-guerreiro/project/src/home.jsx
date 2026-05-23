@@ -21,13 +21,7 @@ function Hero() {
         />
       </div>
 
-      {/* Gradiente suave: branco sólido à esquerda, desvanece para transparente */}
-      <div style={{
-        position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 38%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.0) 70%)',
-      }} aria-hidden="true" />
-
-      {/* Conteúdo principal */}
+{/* Conteúdo principal */}
       <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 0 0 0', padding: '40px 48px 80px 64px', boxSizing: 'border-box' }}>
         <div style={{ maxWidth: 520, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
