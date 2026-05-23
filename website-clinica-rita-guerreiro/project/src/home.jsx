@@ -16,7 +16,7 @@ function Hero() {
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center right', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
           loading="eager" decoding="async"
         />
       </div>
@@ -690,7 +690,7 @@ function HomeCTA() {
     },
   ];
   return (
-    <section style={{ background: 'linear-gradient(135deg, #2F6B68 0%, #1F4846 100%)', padding: '96px 0 0', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ background: 'linear-gradient(135deg, #2F6B68 0%, #1F4846 100%)', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
       <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 480, height: 480, borderRadius: '50%', background: 'rgba(111,181,176,0.08)', pointerEvents: 'none' }} />
       <div aria-hidden="true" style={{ position: 'absolute', bottom: -100, left: -60, width: 320, height: 320, borderRadius: '50%', background: 'rgba(111,181,176,0.06)', pointerEvents: 'none' }} />
       <Container>
@@ -768,12 +768,6 @@ function HomeCTA() {
           </div>
         </Reveal>
       </Container>
-      {/* fade para o creme do footer — sem linha de separação */}
-      <div aria-hidden="true" style={{
-        height: 100, marginTop: 48,
-        background: 'linear-gradient(to bottom, rgba(31,72,70,0) 0%, #E8EDE8 100%)',
-        pointerEvents: 'none',
-      }} />
     </section>
   );
 }
