@@ -17,7 +17,7 @@ function SobreHero() {
           </Body>
         </Reveal>
         <Reveal delay={220}>
-          <div style={{ marginTop: 56 }}><Photo aspect="16/10" label="Receção da clínica" src="assets/clinica/recepcao.jpg" style={{ borderRadius: 12 }} /></div>
+          <div style={{ marginTop: 56 }}><Photo aspect="16/10" label="Equipa da Clínica Rita Guerreiro" src="assets/foto-equipa.png" style={{ borderRadius: 12 }} /></div>
         </Reveal>
       </Container>
     </section>
