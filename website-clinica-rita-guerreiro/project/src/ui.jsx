@@ -721,12 +721,12 @@ function Footer() {
             <div style={colTitle}>{L_.marcacao}</div>
             <div style={itemRow}>
               <span style={iconWrap}>{IcoPhone}</span>
-              <a href="tel:+351289000000" style={itemText}
+              <a href="tel:+351961899364" style={itemText}
                 onMouseEnter={e => e.currentTarget.style.color = FG}
                 onMouseLeave={e => e.currentTarget.style.color = FB}
               >
-                289 000 000
-                <span style={itemMuted}>{L_.precoFixa}</span>
+                961 899 364
+                <span style={itemMuted}>{L_.precoMovel}</span>
               </a>
             </div>
             <div style={itemRow}>
