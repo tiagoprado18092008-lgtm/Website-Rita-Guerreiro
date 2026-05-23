@@ -711,9 +711,9 @@ function Footer() {
                 { href: 'https://www.instagram.com/centro_terapias_rita_guerreiro/', label: 'Instagram', icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> },
               ].map(({ href, label, icon, wa }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                  style={{ width: 30, height: 30, borderRadius: 999, border: wa ? '1px solid #25D366' : `1px solid rgba(59,123,120,0.3)`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: wa ? '#fff' : FA, textDecoration: 'none', transition: 'all 200ms', background: wa ? '#25D366' : 'rgba(59,123,120,0.06)' }}
-                  onMouseEnter={e => { e.currentTarget.style.background = wa ? '#1ebe5d' : FA; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = wa ? '#1ebe5d' : FA; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = wa ? '#25D366' : 'rgba(59,123,120,0.06)'; e.currentTarget.style.color = wa ? '#fff' : FA; e.currentTarget.style.borderColor = wa ? '#25D366' : 'rgba(59,123,120,0.3)'; }}
+                  style={{ width: 30, height: 30, borderRadius: 999, border: wa ? '1px solid #25D366' : `1px solid ${FA}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#fff', textDecoration: 'none', transition: 'all 200ms', background: wa ? '#25D366' : FA }}
+                  onMouseEnter={e => { e.currentTarget.style.background = wa ? '#1ebe5d' : RG.tealDark; e.currentTarget.style.borderColor = wa ? '#1ebe5d' : RG.tealDark; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = wa ? '#25D366' : FA; e.currentTarget.style.borderColor = wa ? '#25D366' : FA; }}
                 >{icon}</a>
               ))}
             </div>
