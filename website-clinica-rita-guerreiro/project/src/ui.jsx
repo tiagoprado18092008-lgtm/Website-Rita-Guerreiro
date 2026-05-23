@@ -635,20 +635,49 @@ function Footer() {
   return (
     <footer style={{
       position: 'relative',
-      background: 'linear-gradient(180deg, #1F4846 0%, #18393A 60%, #122E2F 100%)',
+      background: '#122E2F',
       color: '#F4F1E9',
-      paddingTop: 96, paddingBottom: 0, overflow: 'hidden',
+      paddingTop: 340, paddingBottom: 0, overflow: 'hidden',
     }}>
-      {/* Atmosfera — halo teal canto direito */}
+      {/* MOSAICO — faixa de fotos da clínica no topo do footer */}
+      <div aria-hidden="true" style={{
+        position: 'absolute', top: 0, left: 0, right: 0, height: 320,
+        display: 'flex', overflow: 'hidden', pointerEvents: 'none',
+      }}>
+        {['assets/clinica/recepcao.jpg','assets/clinica/sala-massagem.jpg','assets/clinica/estudio-pilates.jpg','assets/clinica/sala-holistica.jpg','assets/clinica/sala-relaxamento.jpg','assets/clinica/sala-clinica.jpg'].map((src, i) => (
+          <div key={i} style={{
+            flex: i === 0 ? '1.4 0 0' : i === 2 ? '1.2 0 0' : '1 0 0',
+            overflow: 'hidden', position: 'relative',
+          }}>
+            <img src={src} alt="" loading="lazy" style={{
+              position: 'absolute', inset: 0, width: '100%', height: '100%',
+              objectFit: 'cover', objectPosition: 'center',
+              filter: 'saturate(0.55) brightness(0.62)',
+              transform: 'scale(1.04)',
+            }} />
+            {/* separador subtil entre fotos */}
+            {i > 0 && <div style={{ position: 'absolute', top: 0, left: 0, width: 1, height: '100%', background: 'rgba(18,46,47,0.55)' }} />}
+          </div>
+        ))}
+        {/* gradiente descendente que funde mosaico → fundo teal escuro */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: '70%',
+          background: 'linear-gradient(to bottom, rgba(18,46,47,0) 0%, rgba(18,46,47,0.72) 55%, #122E2F 100%)',
+        }} />
+        {/* véu teal sobre toda a faixa para afinidade cromática */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'rgba(20,55,55,0.38)',
+        }} />
+        {/* hairline topo luminoso */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(to right, transparent, rgba(111,181,176,0.35) 30%, rgba(111,181,176,0.35) 70%, transparent)' }} />
+      </div>
+
+      {/* Halo teal atmosférico (mantido) */}
       <div aria-hidden="true" style={{
         position: 'absolute', top: '-20%', right: '-10%', width: 640, height: 640,
-        background: 'radial-gradient(circle at center, rgba(111,181,176,0.14) 0%, rgba(111,181,176,0) 60%)',
+        background: 'radial-gradient(circle at center, rgba(111,181,176,0.10) 0%, rgba(111,181,176,0) 60%)',
         pointerEvents: 'none',
-      }} />
-      {/* Padrão diagonal subtil */}
-      <div aria-hidden="true" style={{
-        position: 'absolute', inset: 0, opacity: 0.05, pointerEvents: 'none',
-        backgroundImage: 'repeating-linear-gradient(135deg, rgba(244,241,233,0.5) 0 1px, transparent 1px 14px)',
       }} />
       {/* Hairline topo */}
       <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(to right, transparent, rgba(244,241,233,0.18) 30%, rgba(244,241,233,0.18) 70%, transparent)' }} />
