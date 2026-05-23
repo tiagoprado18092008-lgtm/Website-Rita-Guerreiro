@@ -641,33 +641,30 @@ function Footer() {
   return (
     <footer style={{
       position: 'relative',
-      background: '#EEF0EB',
+      background: '#E8EDE8',
       color: FG,
       paddingTop: 96, paddingBottom: 0, overflow: 'hidden',
+      marginTop: -4,
     }}>
-      {/* BOTÂNICA — multiply: fundo branco da imagem desaparece, folhas ficam */}
+      {/* BOTÂNICA — multiply: fundo branco desaparece, folhas ficam */}
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden',
       }}>
         <img src="assets/footer-botanica.png" alt="" loading="lazy" style={{
-          position: 'absolute', bottom: 0, left: 0, width: '100%', height: '90%',
-          objectFit: 'cover', objectPosition: 'bottom center',
+          position: 'absolute', bottom: 0, left: '50%',
+          transform: 'translateX(-50%)',
+          width: '100%', minWidth: 900,
+          height: 'auto',
           mixBlendMode: 'multiply',
-          opacity: 0.55,
+          opacity: 0.7,
         }} />
-        {/* gradiente topo — transição suave de #EEF0EB para transparente */}
+        {/* gradiente topo — entra suavemente */}
         <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, height: '42%',
-          background: 'linear-gradient(to bottom, #EEF0EB 0%, rgba(238,240,235,0) 100%)',
+          position: 'absolute', top: 0, left: 0, right: 0, height: '55%',
+          background: 'linear-gradient(to bottom, #E8EDE8 0%, rgba(232,237,232,0) 100%)',
         }} />
       </div>
 
-      {/* Hairline topo teal */}
-      <div aria-hidden="true" style={{
-        position: 'absolute', top: 0, left: 0, right: 0, height: 2,
-        background: `linear-gradient(to right, transparent, ${FA} 30%, ${FA} 70%, transparent)`,
-        opacity: 0.4,
-      }} />
 
       <Container>
         {/* GRID 4 colunas editorial */}
@@ -677,9 +674,21 @@ function Footer() {
           gap: 48,
           paddingBottom: 64,
           position: 'relative',
+          /* véu translúcido por baixo do texto — preserva botânica mas garante legibilidade */
+          backdropFilter: 'none',
         }}>
+          {/* véu de leitura */}
+          <div aria-hidden="true" style={{
+            position: 'absolute', inset: '-24px -32px',
+            background: 'rgba(232,237,232,0.72)',
+            backdropFilter: 'blur(2px)',
+            WebkitBackdropFilter: 'blur(2px)',
+            borderRadius: 4,
+            pointerEvents: 'none',
+            zIndex: 0,
+          }} />
           {/* COL 1 — Endereço */}
-          <div>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={colTitle}>{L_.endereco}</div>
             <div style={itemRow}>
               <span style={iconWrap}>{IcoPin}</span>
@@ -713,7 +722,7 @@ function Footer() {
           </div>
 
           {/* COL 2 — Marcação de consultas */}
-          <div>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={colTitle}>{L_.marcacao}</div>
             <div style={itemRow}>
               <span style={iconWrap}>{IcoPhone}</span>
@@ -747,7 +756,7 @@ function Footer() {
           </div>
 
           {/* COL 3 — Horário */}
-          <div>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={colTitle}>{L_.horario}</div>
             <div style={{ fontFamily: F_BODY, fontSize: 13.5, color: FB, lineHeight: 1.9 }}>
               <div>{L_.segSex}</div>
@@ -756,7 +765,7 @@ function Footer() {
           </div>
 
           {/* COL 4 — Acessibilidade */}
-          <div>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={colTitle}>{L_.acessibilidade}</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontFamily: F_BODY, fontSize: 13.5, color: FB, lineHeight: 1.7 }}>
               {[L_.parking, L_.transportes, L_.acesso].map((line, i) => (

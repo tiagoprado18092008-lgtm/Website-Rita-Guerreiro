@@ -3,7 +3,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: #FAFAF8;
+  background: #E8EDE8;
   color: #141412;
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
@@ -600,12 +600,12 @@ input:focus, textarea:focus, select:focus {
 
 /* ── Ken Burns ───────────────────────────────────────────── */
 @keyframes rg-ken-burns {
-  0%   { transform: scale(1)    translate(0, 0); }
-  100% { transform: scale(1.07) translate(-1%, -1%); }
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1) translate(0, 0); }
 }
 .rg-ken-burns {
-  animation: rg-ken-burns 9s ease-in-out infinite alternate;
-  will-change: transform;
+  animation: none;
+  will-change: auto;
 }
 
 /* ── Nav hide/show ao scroll ─────────────────────────────── */
