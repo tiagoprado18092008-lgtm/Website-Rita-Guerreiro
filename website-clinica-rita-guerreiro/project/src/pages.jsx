@@ -368,55 +368,182 @@ function CategoryPage({ categoryId }) {
 // Contactos page
 function ContactosPage() {
   const { t } = useLang();
-  const contactItems = [
-    { k: t('contactos.morada_label'), v: t('contactos.morada_val') },
-    { k: t('contactos.telefone_label'), v: '(+351) 961 899 364', href: 'tel:+351961899364' },
-    { k: t('contactos.horario_label'), v: t('contactos.horario_val') },
-  ];
+
+  const ArrowRight = () => React.createElement('svg', { width: 14, height: 14, viewBox: '0 0 16 16', fill: 'none' },
+    React.createElement('path', { d: 'M3 8 L13 8 M9 4 L13 8 L9 12', stroke: 'currentColor', strokeWidth: '1.8', strokeLinecap: 'round', strokeLinejoin: 'round' })
+  );
+
   return (<>
     <Nav current="contactos" />
-    <section style={{ paddingTop: 130, paddingBottom: 80, background: RG.cream }}>
+
+    {/* ── Hero 2 colunas ── */}
+    <section style={{ paddingTop: 130, paddingBottom: 80, background: RG.white, position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${RG.tealDark}, ${RG.teal} 40%, transparent)` }} />
       <Container>
-        <Reveal><Eyebrow>{t('contactos.eyebrow')}</Eyebrow></Reveal>
-        <Reveal delay={80}>
-          <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(48px, 7vw, 112px)', fontWeight: 700, lineHeight: 0.95, letterSpacing: '-0.04em', margin: '20px 0 0', color: RG.ink, maxWidth: '16ch' }}>
-            {t('contactos.heading')}          </h1>
-        </Reveal>
-        <Reveal delay={160}>
-          <Body size={18} style={{ marginTop: 24 }}>{t('contactos.sub')}</Body>
-        </Reveal>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-end' }} className="rg-hero-grid">
+          <div>
+            <Reveal><Eyebrow>{t('contactos.eyebrow')}</Eyebrow></Reveal>
+            <Reveal delay={80}>
+              <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(48px, 7vw, 100px)', fontWeight: 700, lineHeight: 0.92, letterSpacing: '-0.045em', margin: '16px 0 0', color: RG.ink }}>
+                {t('contactos.heading')}
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p style={{ fontFamily: F_BODY, fontSize: 18, color: RG.charcoal, marginTop: 24, lineHeight: 1.65, maxWidth: '34ch' }}>
+                {t('contactos.sub')}
+              </p>
+            </Reveal>
+            <Reveal delay={220}>
+              <div style={{ display: 'flex', gap: 12, marginTop: 36, flexWrap: 'wrap' }}>
+                <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">WhatsApp</Button>
+                <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>961 899 364</Button>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Info column with left border accent */}
+          <Reveal delay={100}>
+            <div style={{ borderLeft: `3px solid ${RG.teal}`, paddingLeft: 40 }}>
+              {[
+                { label: t('contactos.morada_label'), value: t('contactos.morada_val'), href: null },
+                { label: t('contactos.telefone_label'), value: '(+351) 961 899 364', href: 'tel:+351961899364' },
+                { label: t('contactos.horario_label'), value: t('contactos.horario_val'), href: null },
+              ].map((item, i) => (
+                <div key={i} style={{ paddingTop: i > 0 ? 28 : 0, paddingBottom: 28, borderBottom: i < 2 ? `1px solid ${RG.line}` : 'none' }}>
+                  <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 8 }}>{item.label}</div>
+                  {item.href
+                    ? <a href={item.href} style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 300, color: RG.ink, letterSpacing: '-0.02em', textDecoration: 'none', lineHeight: 1.35, whiteSpace: 'pre-line', display: 'block' }}>{item.value}</a>
+                    : <div style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 300, color: RG.ink, letterSpacing: '-0.02em', lineHeight: 1.35, whiteSpace: 'pre-line' }}>{item.value}</div>
+                  }
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </Container>
     </section>
 
+    {/* ── Canais de contacto ── */}
+    <Section bg={RG.tealWash} pad="lg">
+      <Container>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="rg-hero-grid">
+
+          {/* WhatsApp */}
+          <Reveal>
+            <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: RG.tealDark, borderRadius: 16, padding: '40px 40px 36px', color: RG.white, position: 'relative', overflow: 'hidden', minHeight: 240 }}>
+              <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: 'rgba(255,255,255,0.04)' }} />
+              <div style={{ position: 'absolute', top: -20, right: 20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 20, flexShrink: 0 }}>
+                <path d="M17.47 14.38c-.26-.13-1.55-.77-1.79-.85-.24-.09-.41-.13-.59.13-.17.26-.68.85-.83 1.03-.15.17-.31.19-.57.06-.26-.13-1.09-.4-2.08-1.28-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.47.13-.16.17-.27.26-.44.09-.17.04-.33-.02-.46-.06-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.5-.01-.17 0-.46.06-.7.33-.24.26-.91.89-.91 2.17s.93 2.51 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.55-.63 1.76-1.24.22-.61.22-1.14.16-1.24-.07-.11-.24-.17-.5-.3zM12.03 2C6.52 2 2 6.52 2 12.03c0 1.86.5 3.6 1.37 5.1L2 22l5.01-1.31A9.97 9.97 0 0 0 12.03 22C17.54 22 22 17.48 22 11.97 22 6.52 17.54 2 12.03 2z" fill="white" fillOpacity="0.9"/>
+              </svg>
+              <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 12 }}>WhatsApp</div>
+              <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', flex: 1, marginBottom: 28 }}>
+                A forma mais rápida. A maioria das marcações resolve-se em menos de 5 minutos durante o horário da clínica.
+              </div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.teal }}>
+                Enviar mensagem <ArrowRight />
+              </div>
+            </a>
+          </Reveal>
+
+          {/* Telefone */}
+          <Reveal delay={80}>
+            <a href="tel:+351961899364" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: RG.white, borderRadius: 16, padding: '40px 40px 36px', border: `1px solid ${RG.line}`, minHeight: 240, position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: RG.tealWash }} />
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 20, flexShrink: 0 }}>
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill={RG.tealDark}/>
+              </svg>
+              <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: RG.ink, marginBottom: 6 }}>961 899 364</div>
+              <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginBottom: 12 }}>Chamada nacional</div>
+              <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: RG.charcoal, flex: 1, marginBottom: 28 }}>
+                Preferes falar? Liga durante o horário de funcionamento e tratamos tudo contigo.
+              </div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.tealDark }}>
+                Ligar agora <ArrowRight />
+              </div>
+            </a>
+          </Reveal>
+        </div>
+      </Container>
+    </Section>
+
+    {/* ── Mapa full-width ── */}
+    <div style={{ position: 'relative', height: 500 }}>
+      <iframe
+        title="Mapa"
+        src="https://maps.google.com/maps?q=Rua+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+        style={{ width: '100%', height: '100%', border: 0, display: 'block', filter: 'grayscale(0.15) contrast(1.02)' }}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+      />
+      {/* Floating info card */}
+      <div style={{ position: 'absolute', top: 32, left: 32, background: RG.white, padding: '28px 32px', borderRadius: 12, boxShadow: '0 24px 64px -12px rgba(0,0,0,0.22)', maxWidth: 290, borderTop: `3px solid ${RG.teal}` }}>
+        <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 6 }}>Rita Guerreiro</div>
+        <div style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.55 }}>Rua Padre António Vieira 58<br />8100-611 Loulé</div>
+        <div style={{ margin: '16px 0', height: 1, background: RG.line }} />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 18 }}>
+          {[['Seg–Sex', '9h–19h'], ['Sábados', 'sob marcação']].map(([d, h]) => (
+            <div key={d} style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}>
+              <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{d}</span>
+              <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.ink }}>{h}</span>
+            </div>
+          ))}
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Antonio+Vieira+58+Loule" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.tealDark, textDecoration: 'none' }}>
+          {t('contactos.maps_link')} →
+        </a>
+      </div>
+    </div>
+
+    {/* ── Como chegar ── */}
     <Section bg={RG.creamSoft} pad="lg">
       <Container>
         <Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }} className="rg-values-grid">
-            {contactItems.map(it => (
-              <div key={it.k} style={{ background: RG.white, borderRadius: 12, padding: '28px 24px', border: `1px solid ${RG.line}` }}>
-                <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 12 }}>{it.k}</div>
-                {it.href
-                  ? <a href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 300, color: RG.ink, lineHeight: 1.35, letterSpacing: '-0.01em', textDecoration: 'none', whiteSpace: 'pre-line', display: 'block' }}>{it.v}</a>
-                  : <div style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 300, color: RG.ink, lineHeight: 1.35, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>{it.v}</div>
-                }
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+            <div style={{ width: 32, height: 2, background: RG.teal }} />
+            <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>Como chegar</span>
+          </div>
+          <h2 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 3.5vw, 44px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 48px', color: RG.ink }}>No coração de Loulé</h2>
+        </Reveal>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
+          {[
+            {
+              icon: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none' },
+                React.createElement('path', { d: 'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z', fill: RG.tealDark })
+              ),
+              title: 'De carro',
+              body: 'Estacionamento disponível nas ruas envolventes. Centro de Loulé a 2 minutos a pé.',
+            },
+            {
+              icon: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none' },
+                React.createElement('path', { d: 'M17 8C8 10 5.9 16.17 3.82 21h2.79c.6-1.25 1.25-2.46 2.09-3.47C10.77 15.23 14.2 14 17 14v4l5-5-5-5v4z', fill: RG.tealDark })
+              ),
+              title: 'De autocarro',
+              body: 'Terminal rodoviário de Loulé a 5 minutos. Várias carreiras do Algarve passam por Loulé.',
+            },
+            {
+              icon: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none' },
+                React.createElement('path', { d: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z', fill: RG.tealDark })
+              ),
+              title: 'Referências próximas',
+              body: 'A 300m do Castelo de Loulé e do Mercado Municipal.',
+            },
+          ].map((item, i) => (
+            <Reveal key={i} delay={i * 60}>
+              <div style={{ background: RG.white, borderRadius: 12, padding: '28px 24px', border: `1px solid ${RG.line}` }}>
+                <div style={{ width: 44, height: 44, borderRadius: 10, background: RG.tealWash, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
+                  {item.icon}
+                </div>
+                <div style={{ fontFamily: F_DISPLAY, fontSize: 17, fontWeight: 700, letterSpacing: '-0.01em', color: RG.ink, marginBottom: 8 }}>{item.title}</div>
+                <div style={{ fontFamily: F_BODY, fontSize: 13, lineHeight: 1.65, color: RG.charcoal }}>{item.body}</div>
               </div>
-            ))}
-          </div>
-        </Reveal>
-        <div style={{ height: 48 }} />
-
-        <Reveal delay={120}>
-          <div style={{ marginTop: 60, borderRadius: 10, overflow: 'hidden', border: `1px solid ${RG.lineSoft}`, position: 'relative', height: 400 }}>
-            <iframe title="Mapa" src="https://maps.google.com/maps?q=Rua+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style={{ width: '100%', height: '100%', border: 0, filter: 'grayscale(0.2)' }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
-            <div style={{ position: 'absolute', top: 20, left: 20, background: RG.white, padding: 20, borderRadius: 8, boxShadow: '0 14px 30px -10px rgba(0,0,0,0.18)', maxWidth: 280 }}>
-              <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.01em' }}>Rita Guerreiro</div>
-              <div style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, marginTop: 4 }}>Rua Padre António Vieira 58, Loulé</div>
-              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Antonio+Vieira+58+Loule" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontFamily: F_BODY, fontSize: 12, color: RG.tealDark, textDecoration: 'none', fontWeight: 700 }}>{t('contactos.maps_link')} →</a>
-            </div>
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </Section>
+
     <Footer />
     <WAFab />
   </>);
