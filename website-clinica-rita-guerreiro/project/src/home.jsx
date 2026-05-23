@@ -31,15 +31,7 @@ function Hero() {
             borderRadius: 2,
           }} />
 
-          {/* Eyebrow com badge "Loulé desde 2022" */}
-          <Reveal delay={80}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '5px 12px 5px 8px', background: 'rgba(111,181,176,0.10)', borderRadius: 999, marginBottom: 20 }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#6FB5B0' }} />
-              <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 600, color: RG.tealDeep, letterSpacing: '0.06em' }}>{t('hero.badge_v2')}</span>
-            </div>
-          </Reveal>
-
-          {/* Headline */}
+{/* Headline */}
           <Reveal delay={140}>
             <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(40px, 4.4vw, 64px)', fontWeight: 700, lineHeight: 1.02, letterSpacing: '-0.028em', margin: 0, color: RG.ink }}>
               {Array.isArray(h1Lines) && h1Lines.map((line, li) => (
