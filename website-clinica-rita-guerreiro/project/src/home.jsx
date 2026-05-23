@@ -133,7 +133,7 @@ function StatsStrip() {
 
   const items = [
     {
-      value: '20',
+      value: '10',
       suffix: '+',
       label: t('trust.anos'),
       desc: t('trust.anos_desc'),
