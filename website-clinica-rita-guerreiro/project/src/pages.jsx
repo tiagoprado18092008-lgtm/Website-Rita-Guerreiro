@@ -192,6 +192,54 @@ function ServicePage({ slug }) {
       </Container>
     </Section>
 
+    {/* ── Tecnologia (ex: Winback) ── */}
+    {detail?.tech && (
+      <Section bg={RG.creamSoft} pad="lg">
+        <Container>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
+            {/* Imagem */}
+            <Reveal>
+              <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/5', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
+                <img src={detail.tech.img} alt={detail.tech.name} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+              </div>
+            </Reveal>
+
+            {/* Texto */}
+            <Reveal delay={80}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                <div style={{ width: 32, height: 2, background: accent.border }} />
+                <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent.dot }}>{detail.tech.eyebrow || 'Tecnologia'}</span>
+              </div>
+              <h2 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, letterSpacing: '-0.03em', margin: 0, color: RG.ink }}>
+                {detail.tech.name}
+              </h2>
+              {detail.tech.tagline && (
+                <p style={{ fontFamily: F_BODY, fontSize: 17, lineHeight: 1.6, color: RG.charcoal, marginTop: 12, marginBottom: 0, fontWeight: 500 }}>
+                  {detail.tech.tagline}
+                </p>
+              )}
+              <p style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.75, color: RG.charcoal, marginTop: 20, marginBottom: 0 }}>
+                {detail.tech.description}
+              </p>
+
+              {detail.tech.benefits && detail.tech.benefits.length > 0 && (
+                <ul style={{ marginTop: 24, padding: 0, listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10 }}>
+                  {detail.tech.benefits.map((b, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, lineHeight: 1.5 }}>
+                      <svg width="16" height="16" viewBox="0 0 16 16" style={{ flexShrink: 0, marginTop: 3, color: accent.dot }}>
+                        <path d="M3 8.5 L6.5 12 L13 4.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+    )}
+
     {/* ── Como funciona ── */}
     <Section bg={accent.bg} pad="lg">
       <Container>
