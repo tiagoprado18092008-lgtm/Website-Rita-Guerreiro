@@ -83,7 +83,7 @@ const TRANSLATIONS = {
       card_name: 'Rita Guerreiro',
       card_credentials: 'Fisioterapeuta · Especialização em ATM, Vestibular e Pilates Clínico. [REVER credenciais]',
       facts: [
-        { value: '2002', label: 'Início da prática clínica [REVER]' },
+        { value: '2015', label: 'Início da prática clínica [REVER]' },
         { value: '2022', label: 'Fundação do centro em Loulé' },
         { value: '6+', label: 'Especialidades coordenadas' },
       ],
@@ -334,7 +334,7 @@ const TRANSLATIONS = {
       card_name: 'Rita Guerreiro',
       card_credentials: 'Physiotherapist · Specialised in TMJ, Vestibular and Clinical Pilates',
       facts: [
-        { value: '2002', label: 'Start of clinical practice' },
+        { value: '2015', label: 'Start of clinical practice' },
         { value: '2022', label: 'Clinic founded in Loulé' },
         { value: '6+', label: 'Coordinated specialties' },
       ],
@@ -568,7 +568,7 @@ const TRANSLATIONS = {
       card_name: 'Rita Guerreiro',
       card_credentials: 'Fisioterapeuta · Especializada en ATM, Vestibular y Pilates Clínico',
       facts: [
-        { value: '2002', label: 'Inicio de la práctica clínica' },
+        { value: '2015', label: 'Inicio de la práctica clínica' },
         { value: '2022', label: 'Fundación del centro en Loulé' },
         { value: '6+', label: 'Especialidades coordinadas' },
       ],
