@@ -599,9 +599,9 @@ function Footer() {
   const FD = 'rgba(15,42,43,0.18)'; // divisores
 
   const colTitle = {
-    fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 700,
-    letterSpacing: '0.2em', textTransform: 'uppercase',
-    color: FA, marginBottom: 22, lineHeight: 1.2,
+    fontFamily: F_DISPLAY, fontSize: 13, fontWeight: 800,
+    letterSpacing: '0.18em', textTransform: 'uppercase',
+    color: FG, marginBottom: 22, lineHeight: 1.2,
     paddingBottom: 10, borderBottom: `1px solid ${FD}`,
     display: 'inline-block', minWidth: 120,
   };
@@ -610,17 +610,17 @@ function Footer() {
     marginBottom: 14,
   };
   const iconWrap = {
-    width: 22, height: 22, borderRadius: 999,
-    border: `1px solid rgba(59,123,120,0.35)`,
+    width: 24, height: 24, borderRadius: 999,
+    border: `1.5px solid rgba(42,99,96,0.5)`,
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
     color: FA, flexShrink: 0, marginTop: 2,
   };
   const itemText = {
-    fontFamily: F_BODY, fontSize: 13.5, color: FB,
-    lineHeight: 1.55, textDecoration: 'none',
+    fontFamily: F_BODY, fontSize: 15, color: FG,
+    lineHeight: 1.6, textDecoration: 'none', fontWeight: 500,
   };
   const itemMuted = {
-    fontFamily: F_BODY, fontSize: 11.5, color: FC,
+    fontFamily: F_BODY, fontSize: 12.5, color: FB,
     lineHeight: 1.5, marginTop: 2, display: 'block',
   };
 
@@ -796,54 +796,45 @@ function Footer() {
           </a>
         </div>
 
-      </Container>
-
-      {/* BARRA FINAL — fora do Container, full-width com fundo sólido */}
-      <div style={{
-        position: 'relative', zIndex: 2,
-        background: '#1F4846',
-        borderTop: '1px solid rgba(255,255,255,0.10)',
-      }} className="rg-footer-bottom">
+        {/* BARRA FINAL */}
         <div style={{
-          maxWidth: 1200, margin: '0 auto', padding: '20px 48px',
+          paddingTop: 22, paddingBottom: 32,
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           gap: 20, flexWrap: 'wrap',
-        }}>
-          <span style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(244,241,233,0.65)', letterSpacing: '0.01em', fontWeight: 400 }}>{L_.copy}</span>
+          borderTop: `1px solid ${FD}`,
+          position: 'relative', zIndex: 1,
+        }} className="rg-footer-bottom">
+          <span style={{ fontFamily: F_BODY, fontSize: 14, color: FG, fontWeight: 600 }}>{L_.copy}</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontFamily: F_BODY, fontSize: 13, fontWeight: 500 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontFamily: F_BODY, fontSize: 14, fontWeight: 600 }}>
               <a href="privacidade.html"
-                style={{ color: 'rgba(244,241,233,0.65)', textDecoration: 'none', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.65)'}
+                style={{ color: FG, textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = FA}
+                onMouseLeave={e => e.currentTarget.style.color = FG}
               >{t('footer.privacidade')}</a>
-              <span style={{ width: 1, height: 12, background: 'rgba(244,241,233,0.20)' }} />
+              <span style={{ width: 1, height: 14, background: FD }} />
               <a href="termos.html"
-                style={{ color: 'rgba(244,241,233,0.65)', textDecoration: 'none', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.65)'}
+                style={{ color: FG, textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = FA}
+                onMouseLeave={e => e.currentTarget.style.color = FG}
               >{t('footer.termos')}</a>
             </div>
-            <span style={{ width: 1, height: 12, background: 'rgba(244,241,233,0.20)' }} />
+            <span style={{ width: 1, height: 14, background: FD }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
               style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}
             >
               <span style={{
-                fontFamily: F_BODY, fontSize: 11, fontWeight: 600,
-                letterSpacing: '0.14em', textTransform: 'uppercase',
-                color: 'rgba(244,241,233,0.55)',
+                fontFamily: F_BODY, fontSize: 12, fontWeight: 600,
+                letterSpacing: '0.12em', textTransform: 'uppercase', color: FB,
               }}>{L_.desenvolvido}</span>
-              <img
-                src="assets/logo-alphascale-footer.png"
-                alt="AlphaScale AI"
+              <img src="assets/logo-alphascale-footer.png" alt="AlphaScale AI"
                 className="rg-footer-devby-logo"
-                style={{ height: 130, width: 'auto', display: 'block' }}
-              />
+                style={{ height: 130, width: 'auto', display: 'block' }} />
             </a>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }
