@@ -16,7 +16,7 @@ function Hero() {
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center right', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
           loading="eager" decoding="async"
         />
       </div>
