@@ -111,6 +111,19 @@ const SERVICE_DETAIL = {
       { t: 'Gravidez e pós-parto', d: 'Prevenção e alívio de desconfortos durante a gravidez e recuperação do pavimento pélvico após o parto.' },
       { t: 'Dor crónica', d: 'Abordagem integrada de dor persistente com terapia manual, exercício e educação em dor.' },
     ],
+    tech: {
+      name: 'Winback BACK3',
+      eyebrow: 'Tecnologia',
+      tagline: 'Tecarterapia de última geração para acelerar a recuperação.',
+      description: 'Integramos nas sessões de fisioterapia a tecnologia Winback BACK3 — um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ativa o metabolismo dos tecidos em profundidade, reduz dor e inflamação, acelera a regeneração e devolve mobilidade em menos tempo. Particularmente eficaz em lesões músculo-esqueléticas agudas e crónicas, recuperação pós-lesão, pós-cirurgia e dor desportiva.',
+      img: 'assets/winback-back3.jpg',
+      benefits: [
+        'Alívio rápido da dor e da inflamação',
+        'Aceleração da regeneração de tecidos',
+        'Recuperação muscular pós-esforço',
+        'Tratamento de tendinopatias e contraturas',
+      ],
+    },
   },
   'fisioterapia-pediatrica': {
     tagline: 'Fisioterapia adaptada às diferentes fases do desenvolvimento — para bebés, crianças e adolescentes.',
