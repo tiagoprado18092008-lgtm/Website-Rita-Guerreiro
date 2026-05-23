@@ -10,22 +10,21 @@ function Hero() {
   return (
     <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
-      {/* Painel direito: foto real da equipa */}
-      <div style={{ position: 'absolute', inset: 0, left: '46%', zIndex: 0, overflow: 'hidden' }}>
+      {/* Foto de fundo — cobre toda a secção, gradiente faz a transição */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
         <img
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center right', display: 'block' }}
           loading="eager" decoding="async"
         />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.06) 0%, rgba(31,72,70,0.18) 100%)' }} />
       </div>
 
-      {/* Gradiente cream → foto */}
+      {/* Gradiente suave: branco sólido à esquerda, desvanece para transparente */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 34%, rgba(255,255,255,0.88) 44%, rgba(255,255,255,0.0) 56%)',
+        background: 'linear-gradient(to right, #ffffff 28%, rgba(255,255,255,0.92) 40%, rgba(255,255,255,0.5) 52%, rgba(255,255,255,0.0) 62%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
