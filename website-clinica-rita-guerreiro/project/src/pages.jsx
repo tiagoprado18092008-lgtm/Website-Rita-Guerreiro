@@ -477,23 +477,6 @@ function ContactosPage() {
         referrerPolicy="no-referrer-when-downgrade"
         allowFullScreen
       />
-      {/* Floating info card */}
-      <div style={{ position: 'absolute', top: 32, left: 32, background: RG.white, padding: '28px 32px', borderRadius: 12, boxShadow: '0 24px 64px -12px rgba(0,0,0,0.22)', maxWidth: 290, borderTop: `3px solid ${RG.teal}` }}>
-        <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 6 }}>Rita Guerreiro</div>
-        <div style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.55 }}>Rua Padre António Vieira 58<br />8100-611 Loulé</div>
-        <div style={{ margin: '16px 0', height: 1, background: RG.line }} />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 18 }}>
-          {[['Seg–Sex', '9h–19h'], ['Sábados', 'sob marcação']].map(([d, h]) => (
-            <div key={d} style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}>
-              <span style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted }}>{d}</span>
-              <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.ink }}>{h}</span>
-            </div>
-          ))}
-        </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Antonio+Vieira+58+Loule" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: F_BODY, fontSize: 12, fontWeight: 700, color: RG.tealDark, textDecoration: 'none' }}>
-          {t('contactos.maps_link')} →
-        </a>
-      </div>
     </div>
 
     {/* ── Como chegar ── */}
