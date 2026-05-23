@@ -796,31 +796,35 @@ function Footer() {
           </a>
         </div>
 
-        {/* BARRA FINAL — copy + desenvolvido por + links legais */}
+      </Container>
+
+      {/* BARRA FINAL — fora do Container, full-width com fundo sólido */}
+      <div style={{
+        position: 'relative', zIndex: 2,
+        background: '#1F4846',
+        borderTop: '1px solid rgba(255,255,255,0.10)',
+      }} className="rg-footer-bottom">
         <div style={{
-          paddingTop: 22, paddingBottom: 28,
+          maxWidth: 1200, margin: '0 auto', padding: '20px 48px',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           gap: 20, flexWrap: 'wrap',
-          borderTop: `1px solid ${FD}`,
-        }} className="rg-footer-bottom">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: F_BODY, fontSize: 13, color: FB, letterSpacing: '0.01em', fontWeight: 500 }}>{L_.copy}</span>
-          </div>
+        }}>
+          <span style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(244,241,233,0.65)', letterSpacing: '0.01em', fontWeight: 400 }}>{L_.copy}</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontFamily: F_BODY, fontSize: 13, fontWeight: 500 }}>
               <a href="privacidade.html"
-                style={{ color: FB, textDecoration: 'none', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = FG}
-                onMouseLeave={e => e.currentTarget.style.color = FB}
+                style={{ color: 'rgba(244,241,233,0.65)', textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.65)'}
               >{t('footer.privacidade')}</a>
-              <span style={{ width: 1, height: 12, background: FD }} />
+              <span style={{ width: 1, height: 12, background: 'rgba(244,241,233,0.20)' }} />
               <a href="termos.html"
-                style={{ color: FB, textDecoration: 'none', transition: 'color 180ms' }}
-                onMouseEnter={e => e.currentTarget.style.color = FG}
-                onMouseLeave={e => e.currentTarget.style.color = FB}
+                style={{ color: 'rgba(244,241,233,0.65)', textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#F4F1E9'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(244,241,233,0.65)'}
               >{t('footer.termos')}</a>
             </div>
-            <span style={{ width: 1, height: 12, background: FD }} />
+            <span style={{ width: 1, height: 12, background: 'rgba(244,241,233,0.20)' }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
               style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}
@@ -828,7 +832,7 @@ function Footer() {
               <span style={{
                 fontFamily: F_BODY, fontSize: 11, fontWeight: 600,
                 letterSpacing: '0.14em', textTransform: 'uppercase',
-                color: FB,
+                color: 'rgba(244,241,233,0.55)',
               }}>{L_.desenvolvido}</span>
               <img
                 src="assets/logo-alphascale-footer.png"
@@ -839,7 +843,7 @@ function Footer() {
             </a>
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }
