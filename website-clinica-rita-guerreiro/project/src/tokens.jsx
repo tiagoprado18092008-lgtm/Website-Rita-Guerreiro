@@ -248,7 +248,7 @@ const TRANSLATIONS = {
     },
     category: {
       inicio: 'Início',
-      cta_heading: 'Pronto para marcar?',
+      cta_heading: 'Pronto para marcar',
       cta_body: 'Contacta-nos por WhatsApp, telefone ou presencialmente.',
       cta_btn: 'Agendar agora',
     },
