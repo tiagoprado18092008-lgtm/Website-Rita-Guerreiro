@@ -11,26 +11,26 @@ function Hero() {
     <section style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
       {/* Painel direito: foto real da equipa */}
-      <div style={{ position: 'absolute', inset: 0, left: 0, zIndex: 0, overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, left: '46%', zIndex: 0, overflow: 'hidden' }}>
         <img
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#d6cec6', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
           loading="eager" decoding="async"
         />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.04) 0%, rgba(31,72,70,0.14) 100%)' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(31,72,70,0.06) 0%, rgba(31,72,70,0.18) 100%)' }} />
       </div>
 
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 0%, #ffffff 28%, rgba(255,255,255,0.6) 44%, rgba(255,255,255,0.0) 58%)',
+        background: 'linear-gradient(to right, #ffffff 42%, rgba(255,255,255,0.94) 52%, rgba(255,255,255,0.0) 70%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 32px 80px 16px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 340, position: 'relative', paddingLeft: 24, background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(8px)', borderRadius: 16, padding: '32px 28px 32px 28px' }}>
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px', boxSizing: 'border-box' }}>
+        <div style={{ maxWidth: 580, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
