@@ -592,11 +592,11 @@ function Footer() {
   const L_ = L[lang] || L.PT;
 
   // Estilos — footer creme claro com botânica, tipografia teal escuro
-  const FG = '#1A3C3D';       // teal escuro para texto
-  const FA = '#3B7B78';       // teal médio para links/accents
-  const FB = 'rgba(26,60,61,0.55)'; // texto secundário
-  const FC = 'rgba(26,60,61,0.30)'; // texto muted
-  const FD = 'rgba(26,60,61,0.14)'; // divisores
+  const FG = '#0F2A2B';       // teal escuro para texto
+  const FA = '#2A6360';       // teal médio para links/accents
+  const FB = 'rgba(15,42,43,0.80)'; // texto secundário — bem legível
+  const FC = 'rgba(15,42,43,0.60)'; // texto muted — mais escuro que antes
+  const FD = 'rgba(15,42,43,0.18)'; // divisores
 
   const colTitle = {
     fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 700,
@@ -646,22 +646,17 @@ function Footer() {
       paddingTop: 96, paddingBottom: 0, overflow: 'hidden',
       marginTop: -4,
     }}>
-      {/* BOTÂNICA — multiply: fundo branco desaparece, folhas ficam */}
+      {/* BOTÂNICA — multiply: fundo branco desaparece, folhas ficam vivas */}
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden',
       }}>
         <img src="assets/footer-botanica.png" alt="" loading="lazy" style={{
           position: 'absolute', bottom: 0, left: '50%',
           transform: 'translateX(-50%)',
-          width: '100%', minWidth: 900,
+          width: '100%', minWidth: 1000,
           height: 'auto',
           mixBlendMode: 'multiply',
-          opacity: 0.7,
-        }} />
-        {/* gradiente topo — entra suavemente */}
-        <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, height: '55%',
-          background: 'linear-gradient(to bottom, #E8EDE8 0%, rgba(232,237,232,0) 100%)',
+          opacity: 0.85,
         }} />
       </div>
 
@@ -809,31 +804,31 @@ function Footer() {
           borderTop: `1px solid ${FD}`,
         }} className="rg-footer-bottom">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: F_BODY, fontSize: 11.5, color: FC, letterSpacing: '0.02em' }}>{L_.copy}</span>
+            <span style={{ fontFamily: F_BODY, fontSize: 13, color: FB, letterSpacing: '0.01em', fontWeight: 500 }}>{L_.copy}</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontFamily: F_BODY, fontSize: 11.5 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontFamily: F_BODY, fontSize: 13, fontWeight: 500 }}>
               <a href="privacidade.html"
-                style={{ color: FC, textDecoration: 'none', transition: 'color 180ms' }}
+                style={{ color: FB, textDecoration: 'none', transition: 'color 180ms' }}
                 onMouseEnter={e => e.currentTarget.style.color = FG}
-                onMouseLeave={e => e.currentTarget.style.color = FC}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
               >{t('footer.privacidade')}</a>
-              <span style={{ width: 1, height: 10, background: FD }} />
+              <span style={{ width: 1, height: 12, background: FD }} />
               <a href="termos.html"
-                style={{ color: FC, textDecoration: 'none', transition: 'color 180ms' }}
+                style={{ color: FB, textDecoration: 'none', transition: 'color 180ms' }}
                 onMouseEnter={e => e.currentTarget.style.color = FG}
-                onMouseLeave={e => e.currentTarget.style.color = FC}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
               >{t('footer.termos')}</a>
             </div>
-            <span style={{ width: 1, height: 10, background: FD }} />
+            <span style={{ width: 1, height: 12, background: FD }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}
             >
               <span style={{
-                fontFamily: F_BODY, fontSize: 9, fontWeight: 500,
-                letterSpacing: '0.16em', textTransform: 'uppercase',
-                color: FC,
+                fontFamily: F_BODY, fontSize: 11, fontWeight: 600,
+                letterSpacing: '0.14em', textTransform: 'uppercase',
+                color: FB,
               }}>{L_.desenvolvido}</span>
               <img
                 src="assets/logo-alphascale-footer.png"
