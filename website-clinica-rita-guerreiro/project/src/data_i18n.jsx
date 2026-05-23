@@ -284,7 +284,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'A gentle technique with surprising results — for children and adults',
       description: 'Bowen Therapy is a holistic, non-invasive approach that works on the neuromuscular system through precise movements on muscles, tendons and fascia. The touch is gentle — without force or manipulation — and the effects are often deep and long-lasting. Suitable for all ages, including children from 5 years old.',
       prices: [
-        { label: 'Children 5-12 (60min)', value: '20€ / 30€' },
+        { label: 'Children up to 5 (60min)', value: '20€' },
+        { label: 'Children 5-12 (60min)', value: '30€' },
         { label: 'Adults 12+ (60min)', value: '60€' },
       ],
       sub: [
@@ -658,7 +659,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Une technique douce aux résultats surprenants — pour enfants et adultes',
       description: 'La Thérapie Bowen est une approche holistique et non invasive qui agit sur le système neuromusculaire par des mouvements précis sur les muscles, tendons et fascias. Le toucher est doux — sans force ni manipulation — et les effets sont souvent profonds et durables. Indiquée à tous les âges, y compris les enfants à partir de 5 ans.',
       prices: [
-        { label: 'Enfants 5-12 ans (60min)', value: '20€ / 30€' },
+        { label: 'Enfants jusqu\'à 5 ans (60min)', value: '20€' },
+        { label: 'Enfants 5-12 ans (60min)', value: '30€' },
         { label: 'Adultes +12 ans (60min)', value: '60€' },
       ],
       sub: [
@@ -1032,7 +1034,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Una técnica suave con resultados sorprendentes — para niños y adultos',
       description: 'La Terapia Bowen es un enfoque holístico y no invasivo que actúa sobre el sistema neuromuscular mediante movimientos precisos en músculos, tendones y fascias. El toque es suave — sin fuerza ni manipulación — y los efectos son a menudo profundos y duraderos. Apta para todas las edades, incluyendo niños a partir de 5 años.',
       prices: [
-        { label: 'Niños 5-12 (60min)', value: '20€ / 30€' },
+        { label: 'Niños hasta 5 años (60min)', value: '20€' },
+        { label: 'Niños 5-12 (60min)', value: '30€' },
         { label: 'Adultos 12+ (60min)', value: '60€' },
       ],
       sub: [

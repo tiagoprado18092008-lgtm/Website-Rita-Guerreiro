@@ -222,7 +222,8 @@ const SERVICE_DETAIL = {
     tagline: 'Uma técnica suave com resultados surpreendentes — para crianças e adultos.',
     description: 'A Terapia Bowen é uma abordagem holística e não invasiva que trabalha sobre o sistema neuromuscular através de movimentos precisos sobre músculos, tendões e fáscia. O toque é suave — sem força nem manipulação — e os efeitos são frequentemente profundos e duradouros. Indicada para todas as idades, incluindo crianças a partir dos 5 anos.',
     prices: [
-      { label: 'Crianças 5-12 anos (60min)', value: '20€ / 30€' },
+      { label: 'Crianças até 5 anos (60min)', value: '20€' },
+      { label: 'Crianças 5-12 anos (60min)', value: '30€' },
       { label: 'Adultos +12 anos (60min)', value: '60€' },
     ],
     sub: [
