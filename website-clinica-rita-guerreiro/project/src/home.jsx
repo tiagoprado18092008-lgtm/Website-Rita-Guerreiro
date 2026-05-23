@@ -25,11 +25,11 @@ function Hero() {
       {/* Gradiente cream → foto */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 1,
-        background: 'linear-gradient(to right, #ffffff 42%, rgba(255,255,255,0.94) 52%, rgba(255,255,255,0.0) 70%)',
+        background: 'linear-gradient(to right, #ffffff 34%, rgba(255,255,255,0.88) 44%, rgba(255,255,255,0.0) 56%)',
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px', boxSizing: 'border-box' }}>
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px 24px', boxSizing: 'border-box' }}>
         <div style={{ maxWidth: 580, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
