@@ -1335,6 +1335,7 @@ function getServiceDetail(lang) {
       description: tr.description || src.description,
       prices: tr.prices || src.prices,
       sub: tr.sub || src.sub,
+      tech: src.tech,
     };
   }
   return out;
