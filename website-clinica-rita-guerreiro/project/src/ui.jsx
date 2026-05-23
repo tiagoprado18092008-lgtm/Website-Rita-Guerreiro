@@ -773,12 +773,15 @@ function Footer() {
           </div>
         </div>
 
-        {/* SUB-FAIXA — livro de reclamações */}
+        {/* SUB-FAIXA — livro de reclamações + aviso multibanco */}
         <div style={{
-          display: 'flex', justifyContent: 'flex-end',
+          display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 18,
           paddingTop: 28, paddingBottom: 28,
           borderTop: `1px solid ${FD}`,
         }} className="rg-footer-legal">
+          <img src="assets/sem-multibanco.png" alt="Não aceitamos Multibanco" title="Não aceitamos Multibanco"
+            style={{ display: 'block', height: 38, width: 'auto', opacity: 0.9 }}
+            loading="lazy" />
           <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações" title="Livro de Reclamações"
             style={{
               display: 'inline-flex', alignItems: 'center',

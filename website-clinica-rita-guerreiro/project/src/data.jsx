@@ -124,7 +124,7 @@ const SERVICE_DETAIL = {
   },
   acupuntura: {
     tagline: 'Reabilitação vestibular e acupuntura — equilíbrio, dor e bem-estar em cada sessão.',
-    description: 'A Fisioterapia Vestibular trata tonturas, vertigens e desequilíbrios através de manobras específicas e exercícios de reabilitação. A Acupuntura é um dos pilares da Medicina Tradicional Chinesa com evidência crescente na gestão da dor, stress, ansiedade e insónia. Na Rita Guerreiro, cada sessão é precedida de avaliação do estado de saúde global para uma intervenção verdadeiramente personalizada.',
+    description: 'A Fisioterapia Vestibular trata tonturas, vertigens e desequilíbrios através de manobras específicas e exercícios de reabilitação. A Acupuntura é um dos pilares da Medicina Tradicional Chinesa com evidência crescente na gestão da dor, stress, ansiedade e insónia. Na clínica Rita Guerreiro, cada sessão é precedida de avaliação do estado de saúde global para uma intervenção verdadeiramente personalizada.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
     ],
@@ -139,7 +139,7 @@ const SERVICE_DETAIL = {
   },
   nutricao: {
     tagline: 'Alimentação que funciona para a tua vida — sem dietas restritivas nem soluções de prateleira.',
-    description: 'A consulta de nutrição na Rita Guerreiro começa por perceber quem és: os teus hábitos, o teu ritmo, o que funciona e o que não funciona. A partir daí, criamos um plano alimentar personalizado, realista e sustentável. Trabalhamos perda de peso, ganho de massa muscular, saúde digestiva, nutrição desportiva e alimentação adaptada a condições clínicas específicas.',
+    description: 'A consulta de nutrição na clínica Rita Guerreiro começa por perceber quem és: os teus hábitos, o teu ritmo, o que funciona e o que não funciona. A partir daí, criamos um plano alimentar personalizado, realista e sustentável. Trabalhamos perda de peso, ganho de massa muscular, saúde digestiva, nutrição desportiva e alimentação adaptada a condições clínicas específicas.',
     prices: [
       { label: 'Consulta 30-50min', value: '40€ / 45€' },
     ],
@@ -170,7 +170,7 @@ const SERVICE_DETAIL = {
   },
   psicologia: {
     tagline: 'Acompanhamento psicológico especializado para criança, adolescente e adulto.',
-    description: 'A saúde mental é tão importante quanto a física — e merece a mesma atenção e cuidado. Na Rita Guerreiro, a consulta de psicologia é um espaço seguro, confidencial e sem julgamentos, onde podes explorar o que te preocupa com o apoio de um profissional especializado. Trabalhamos com crianças, adolescentes e adultos em diferentes momentos da vida.',
+    description: 'A saúde mental é tão importante quanto a física — e merece a mesma atenção e cuidado. Na clínica Rita Guerreiro, a consulta de psicologia é um espaço seguro, confidencial e sem julgamentos, onde podes explorar o que te preocupa com o apoio de um profissional especializado. Trabalhamos com crianças, adolescentes e adultos em diferentes momentos da vida.',
     prices: [
       { label: 'Consulta (60min)', value: '45€' },
     ],
@@ -405,7 +405,7 @@ const SERVICE_DETAIL = {
   },
   'depilacao-laser': {
     tagline: 'Depilação definitiva com tecnologia de última geração — para mulher e homem.',
-    description: 'A depilação a laser é hoje a solução mais eficaz e duradoura para a eliminação do pelo indesejado. Na Rita Guerreiro utilizamos equipamento de última geração, com tecnologia que se adapta a diferentes tons de pele e tipos de pelo. O processo é progressivo — em cada sessão o pelo fica mais fino e esparso, até à eliminação permanente.',
+    description: 'A depilação a laser é hoje a solução mais eficaz e duradoura para a eliminação do pelo indesejado. Na clínica Rita Guerreiro utilizamos equipamento de última geração, com tecnologia que se adapta a diferentes tons de pele e tipos de pelo. O processo é progressivo — em cada sessão o pelo fica mais fino e esparso, até à eliminação permanente.',
     prices: [
       { label: 'Mulher — 1 zona', value: '20€' },
       { label: 'Mulher — Combi 3 zonas', value: '50€' },
@@ -425,7 +425,7 @@ const SERVICE_DETAIL = {
   },
   'pilates-clinico': {
     tagline: 'Movimento consciente supervisionado por fisioterapeuta — corpo forte e livre de dor.',
-    description: 'O Pilates Clínico distingue-se do Pilates convencional por ser supervisionado por um fisioterapeuta e adaptado a condições clínicas específicas — dor lombar, hérnias, pós-operatório, gravidez, osteoporose ou qualquer outra limitação. Na Rita Guerreiro, cada programa é desenhado individualmente com exercícios progressivos.',
+    description: 'O Pilates Clínico distingue-se do Pilates convencional por ser supervisionado por um fisioterapeuta e adaptado a condições clínicas específicas — dor lombar, hérnias, pós-operatório, gravidez, osteoporose ou qualquer outra limitação. Na clínica Rita Guerreiro, cada programa é desenhado individualmente com exercícios progressivos.',
     prices: [
       { label: 'Mensalidade', value: '35€ / 60€' },
       { label: 'Seguro Anual', value: '10€' },
