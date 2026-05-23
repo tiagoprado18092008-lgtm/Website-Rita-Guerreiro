@@ -82,12 +82,12 @@ function Hero() {
               <a href="#todos-servicos" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 600,
-                color: RG.ink, background: 'transparent',
+                color: RG.ink, background: 'rgba(255,255,255,0.92)',
                 border: `1.5px solid rgba(20,20,18,0.16)`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
                 transition: 'border-color 200ms, background 200ms',
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.4)'; e.currentTarget.style.background = 'rgba(20,20,18,0.03)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.16)'; e.currentTarget.style.background = 'transparent'; }}>
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.4)'; e.currentTarget.style.background = 'rgba(255,255,255,1)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.16)'; e.currentTarget.style.background = 'rgba(255,255,255,0.92)'; }}>
                 {t('hero.cta_secondary')}
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
