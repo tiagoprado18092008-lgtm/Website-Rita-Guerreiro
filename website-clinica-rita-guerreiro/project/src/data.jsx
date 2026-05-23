@@ -5,6 +5,8 @@ const IMG = {
   fisioterapia: null,
   acupuntura: null,
   mesoterapia: null,
+  'fisioterapia-atm': null,
+  'fisioterapia-vestibular': null,
   psicologia: null,
   nutricao: null,
   'terapia-bowen': null,
@@ -39,8 +41,9 @@ const SERVICES = {
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
       { slug: 'fisioterapia', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Fisioterapia para crianças e adultos — avaliação e tratamento de dor, lesão ou disfunção músculo-esquelética.', price: '50€ / 45€ / 85€' },
-      { slug: 'mesoterapia', name: 'Fisioterapia ATM / Mesoterapia', img: IMG.mesoterapia, blurb: 'Tratamento especializado da articulação temporomandibular e mesoterapia para dor e inflamação localizada.', price: '60€ / 55€ / 50€' },
-      { slug: 'acupuntura', name: 'Fisioterapia Vestibular / Acupuntura', img: IMG.acupuntura, blurb: 'Reabilitação vestibular para tonturas e vertigens, e acupuntura para dor, stress e bem-estar geral.', price: '45€' },
+      { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Tratamento manual especializado da articulação temporomandibular — dor, bloqueio, cliques ou rangido na mandíbula.', price: '60€' },
+      { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções de substâncias ativas para dor articular, contraturas e tratamentos estéticos localizados.', price: '55€ / 50€' },
+      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Reabilitação vestibular para tonturas, vertigens e desequilíbrios — manobras específicas e exercícios.', price: '45€' },
     ],
   },
   saude: {
@@ -74,6 +77,7 @@ const SERVICES = {
       { slug: 'shiatsu', name: 'Shiatsu', img: IMG.shiatsu, blurb: 'Técnica japonesa de pressão sobre meridianos energéticos — equilíbrio e vitalidade.', price: '45€' },
       { slug: 'massagem-indiana', name: 'Massagem Indiana', img: IMG['massagem-indiana'], blurb: 'Indian Head Massage — massagem na cabeça, pescoço e ombros para stress e tensão.', price: '35€' },
       { slug: 'head-spa', name: 'Head Spa', img: IMG['head-spa'], blurb: 'Tratamento profundo do couro cabeludo — limpeza, nutrição e relaxamento total.', price: '80€' },
+      { slug: 'acupuntura', name: 'Acupuntura', img: IMG.acupuntura, blurb: 'Medicina Tradicional Chinesa — gestão da dor, stress, ansiedade, insónia e bem-estar geral.', price: '45€' },
     ],
   },
   estetica: {
@@ -106,35 +110,64 @@ const SERVICE_DETAIL = {
       { t: 'Fisioterapia pediátrica', d: 'Tratamento adaptado para crianças em diferentes fases do desenvolvimento.' },
     ],
   },
-  mesoterapia: {
-    tagline: 'Tratamento especializado da ATM e mesoterapia para dor e inflamação localizada.',
-    description: 'A Fisioterapia ATM trata as disfunções da articulação temporomandibular — dor, bloqueio, cliques ou rangido na mandíbula — com abordagem manual especializada. A Mesoterapia consiste na aplicação de microinjeções de substâncias ativas diretamente nas camadas superficiais da pele ou tecido subcutâneo, com ação localizada para dor articular, contraturas e tratamentos estéticos.',
+  'fisioterapia-atm': {
+    tagline: 'Tratamento especializado da articulação temporomandibular — dor, bloqueio e desconforto na mandíbula.',
+    description: 'A Fisioterapia ATM trata as disfunções da articulação temporomandibular — dor, bloqueio, cliques ou rangido na mandíbula — com abordagem manual especializada. Inclui avaliação articular e muscular, terapia manual intraoral e extraoral, e exercícios específicos para devolver função e conforto à mandíbula. Muitas vezes está associada a cefaleias, tensão cervical e bruxismo — abordamos o problema na sua raiz.',
     prices: [
       { label: 'Fisioterapia ATM (50min)', value: '60€' },
-      { label: 'Mesoterapia (50min)', value: '55€ / 50€' },
     ],
     sub: [
-      { t: 'ATM — Articulação Temporomandibular', d: 'Tratamento de dor, bloqueio, cliques ou rangido na mandíbula e alívio de cefaleias associadas.' },
+      { t: 'Dor na mandíbula', d: 'Alívio de dor articular, muscular ou ao mastigar através de terapia manual especializada.' },
+      { t: 'Cliques e rangido', d: 'Avaliação e tratamento dos estalidos, cliques ou crepitações na articulação ao abrir ou fechar a boca.' },
+      { t: 'Bloqueio articular', d: 'Recuperação da amplitude de movimento da mandíbula em casos de bloqueio ou limitação de abertura.' },
+      { t: 'Cefaleias e tensão cervical', d: 'Abordagem integrada entre ATM, cervical e cefaleias — muitas vezes interligadas.' },
+      { t: 'Bruxismo', d: 'Gestão da tensão muscular e proteção articular em casos de bruxismo diurno ou noturno.' },
+      { t: 'Pós-ortodontia ou pós-cirurgia', d: 'Recuperação funcional da ATM após tratamentos dentários, ortodônticos ou cirúrgicos.' },
+    ],
+  },
+  mesoterapia: {
+    tagline: 'Microinjeções de substâncias ativas para dor, inflamação e tratamentos estéticos localizados.',
+    description: 'A Mesoterapia consiste na aplicação de microinjeções de substâncias ativas diretamente nas camadas superficiais da pele ou tecido subcutâneo. Permite uma ação altamente localizada — chega à zona exata da dor, contratura ou da preocupação estética com pouca difusão sistémica. Aplicada por fisioterapeuta com formação específica, é uma técnica versátil tanto em contexto clínico (dor articular, contraturas) como estético (celulite, flacidez, rejuvenescimento).',
+    prices: [
+      { label: 'Sessão (50min)', value: '55€ / 50€' },
+    ],
+    sub: [
       { t: 'Dor e inflamação articular', d: 'Aplicação localizada de anti-inflamatórios para alívio rápido em joelhos, ombros ou coluna.' },
       { t: 'Contraturas musculares', d: 'Libertação de pontos de tensão muscular persistentes resistentes a outras técnicas.' },
       { t: 'Celulite e gordura localizada', d: 'Melhoria da circulação local e redução de acumulações de gordura em zonas específicas.' },
       { t: 'Flacidez cutânea', d: 'Estimulação da produção de colagénio para firmeza e tonicidade da pele.' },
       { t: 'Rejuvenescimento facial', d: 'Hidratação profunda e revitalização da pele do rosto com ácido hialurónico e vitaminas.' },
+      { t: 'Queda de cabelo', d: 'Estimulação do couro cabeludo para fortalecimento capilar e travagem da queda.' },
     ],
   },
-  acupuntura: {
-    tagline: 'Reabilitação vestibular e acupuntura — equilíbrio, dor e bem-estar em cada sessão.',
-    description: 'A Fisioterapia Vestibular trata tonturas, vertigens e desequilíbrios através de manobras específicas e exercícios de reabilitação. A Acupuntura é um dos pilares da Medicina Tradicional Chinesa com evidência crescente na gestão da dor, stress, ansiedade e insónia. Na clínica Rita Guerreiro, cada sessão é precedida de avaliação do estado de saúde global para uma intervenção verdadeiramente personalizada.',
+  'fisioterapia-vestibular': {
+    tagline: 'Reabilitação para tonturas, vertigens e desequilíbrios — recupera a estabilidade e a confiança.',
+    description: 'A Fisioterapia Vestibular é uma área especializada da fisioterapia que trata tonturas, vertigens e desequilíbrios. Através de avaliação rigorosa, manobras de reposicionamento (eficazes em VPPB) e exercícios específicos de habituação e estabilização do olhar, ajudamos o sistema vestibular a recuperar ou compensar. Os resultados são frequentemente rápidos — em alguns casos com alívio significativo logo na primeira sessão.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
     ],
     sub: [
-      { t: 'Vertigens e tonturas', d: 'Manobras de reposicionamento e exercícios de reabilitação vestibular para equilíbrio.' },
+      { t: 'Vertigem Posicional (VPPB)', d: 'Manobras de reposicionamento de otólitos — resolução frequente em 1 a 3 sessões.' },
+      { t: 'Tonturas crónicas', d: 'Exercícios de habituação e estabilização do olhar para reduzir tonturas persistentes.' },
+      { t: 'Neurite vestibular', d: 'Reabilitação após inflamação do nervo vestibular para recuperar equilíbrio e estabilidade.' },
+      { t: 'Doença de Ménière', d: 'Apoio na gestão de crises vertiginosas e melhoria do equilíbrio entre episódios.' },
+      { t: 'Desequilíbrio no idoso', d: 'Treino de equilíbrio e prevenção de quedas em populações com risco aumentado.' },
+      { t: 'Tonturas pós-traumáticas', d: 'Recuperação após traumatismo craniano ou cervical com sintomas vestibulares.' },
+    ],
+  },
+  acupuntura: {
+    tagline: 'Medicina Tradicional Chinesa — dor, stress, ansiedade, insónia e bem-estar geral.',
+    description: 'A Acupuntura é um dos pilares da Medicina Tradicional Chinesa com evidência crescente na gestão da dor, stress, ansiedade e insónia. Através da estimulação precisa de pontos específicos, regula o sistema nervoso, estimula a libertação de endorfinas e promove o equilíbrio energético. Na clínica Rita Guerreiro, cada sessão é precedida de avaliação do estado de saúde global para uma intervenção verdadeiramente personalizada.',
+    prices: [
+      { label: 'Por sessão (50min)', value: '45€' },
+    ],
+    sub: [
       { t: 'Dor crónica', d: 'Lombalgias, cervicalgias, cefaleias e dores articulares com resposta comprovada à acupuntura.' },
       { t: 'Stress e ansiedade', d: 'Regulação do sistema nervoso autónomo para reduzir tensão, irritabilidade e fadiga mental.' },
       { t: 'Insónia', d: 'Tratamento das causas subjacentes ao sono perturbado através do equilíbrio energético.' },
       { t: 'Saúde digestiva', d: 'Colon irritável, refluxo e outros desequilíbrios do sistema digestivo.' },
       { t: 'Fertilidade e ciclo menstrual', d: 'Regulação hormonal e apoio em processos de fertilidade ou desconfortos menstruais.' },
+      { t: 'Bem-estar geral', d: 'Equilíbrio energético e bem-estar global como prática preventiva e de saúde.' },
     ],
   },
   nutricao: {
