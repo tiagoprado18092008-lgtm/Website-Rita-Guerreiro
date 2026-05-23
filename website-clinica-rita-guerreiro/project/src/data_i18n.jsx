@@ -8,7 +8,8 @@ const SERVICES_I18N = {
       label: 'Physiotherapy',
       intro: 'Individual assessment and treatment of pain, injury and dysfunction — for children and adults',
       items: {
-        fisioterapia: { name: 'General Physiotherapy', blurb: 'Physiotherapy for children and adults — assessment and treatment of pain, injury or musculoskeletal dysfunction' },
+        fisioterapia: { name: 'General Physiotherapy', blurb: 'Assessment and treatment of pain, injury or musculoskeletal dysfunction in adults' },
+        'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted for children — motor development, injuries and paediatric musculoskeletal disorders' },
         'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Specialised manual treatment of the temporomandibular joint — jaw pain, locking, clicking or grinding' },
         mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections of active substances for joint pain, contractures and localised aesthetic treatments' },
         'fisioterapia-vestibular': { name: 'Vestibular Physiotherapy', blurb: 'Vestibular rehabilitation for dizziness, vertigo and balance disorders — specific manoeuvres and exercises' },
@@ -64,7 +65,8 @@ const SERVICES_I18N = {
       label: 'Physiothérapie',
       intro: 'Évaluation et traitement individuel de la douleur, des blessures et des dysfonctionnements — pour enfants et adultes',
       items: {
-        fisioterapia: { name: 'Physiothérapie générale', blurb: 'Physiothérapie pour enfants et adultes — évaluation et traitement de la douleur, blessure ou dysfonction musculo-squelettique' },
+        fisioterapia: { name: 'Physiothérapie générale', blurb: 'Évaluation et traitement de la douleur, blessure ou dysfonction musculo-squelettique chez l’adulte' },
+        'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée aux enfants — développement moteur, blessures et troubles musculo-squelettiques pédiatriques' },
         'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: 'Traitement manuel spécialisé de l’articulation temporo-mandibulaire — douleur, blocage, claquements ou grincements de la mâchoire' },
         mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour douleur articulaire, contractures et traitements esthétiques localisés' },
         'fisioterapia-vestibular': { name: 'Physiothérapie vestibulaire', blurb: 'Réadaptation vestibulaire pour vertiges, étourdissements et troubles de l’équilibre — manœuvres et exercices spécifiques' },
@@ -120,7 +122,8 @@ const SERVICES_I18N = {
       label: 'Fisioterapia',
       intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción — para niños y adultos',
       items: {
-        fisioterapia: { name: 'Fisioterapia General', blurb: 'Fisioterapia para niños y adultos — evaluación y tratamiento del dolor, lesión o disfunción musculoesquelética' },
+        fisioterapia: { name: 'Fisioterapia General', blurb: 'Evaluación y tratamiento del dolor, lesión o disfunción musculoesquelética en adultos' },
+        'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a niños — desarrollo motor, lesiones y trastornos musculoesqueléticos pediátricos' },
         'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: 'Tratamiento manual especializado de la articulación temporomandibular — dolor, bloqueo, chasquidos o rechinar de la mandíbula' },
         mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones de sustancias activas para dolor articular, contracturas y tratamientos estéticos localizados' },
         'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Rehabilitación vestibular para mareos, vértigo y trastornos del equilibrio — maniobras y ejercicios específicos' },
@@ -176,12 +179,12 @@ const SERVICES_I18N = {
 const SERVICE_DETAIL_I18N = {
   EN: {
     fisioterapia: {
-      tagline: 'Assessment, treatment and recovery for pain or injury — for children and adults',
-      description: 'Our physiotherapy is designed person by person. We start with a careful assessment — we listen to your story, understand the source of pain or dysfunction, and from there we build a realistic plan for your recovery. We work with children and adults in sessions of 50 to 80 minutes, combining manual therapy, therapeutic exercise and, whenever appropriate, integration with other services at the centre.',
+      tagline: 'Assessment, treatment and recovery for pain or injury — for adults',
+      description: 'Our physiotherapy is designed person by person. We start with a careful assessment — we listen to your story, understand the source of pain or dysfunction, and from there we build a realistic plan for your recovery. 50-minute sessions combining manual therapy, therapeutic exercise and, whenever appropriate, integration with other services at the centre.',
       prices: [
-        { label: 'Children (50min)', value: '50€' },
-        { label: 'Adults (50min)', value: '45€' },
-        { label: 'Adults (80min)', value: '90€' },
+        { label: 'Session (50min)', value: '50€' },
+        { label: '5-session pack', value: '225€' },
+        { label: '10-session pack', value: '450€' },
       ],
       sub: [
         { t: 'Lower back and neck pain', d: 'Postural assessment, manual therapy and progressive exercise for chronic or acute spinal pain' },
@@ -189,7 +192,24 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Sports physiotherapy', d: 'Prevention and treatment of sport-related injuries, with a focus on safe return to practice' },
         { t: 'Post-operative', d: 'Reduction of swelling, mobility gains and strength recovery after orthopaedic or other surgery' },
         { t: 'Pregnancy and postpartum', d: 'Prevention and relief of discomfort during pregnancy and pelvic floor recovery after birth' },
-        { t: 'Paediatric physiotherapy', d: 'Treatment adapted to children at different stages of development' },
+        { t: 'Chronic pain', d: 'Integrated approach to persistent pain with manual therapy, exercise and pain education' },
+      ],
+    },
+    'fisioterapia-pediatrica': {
+      tagline: 'Physiotherapy adapted to the different stages of development — for babies, children and adolescents',
+      description: 'Paediatric Physiotherapy is a specialised area working with babies, children and adolescents at different stages of development. We assess and treat delays in motor development, postural changes, musculoskeletal injuries and neurological conditions in a safe, adapted and playful environment. Each session is designed for the pace, age and specific needs of the child — with active family involvement whenever it makes sense.',
+      prices: [
+        { label: 'Session (50min)', value: '50€' },
+        { label: '5-session pack', value: '225€' },
+        { label: '10-session pack', value: '450€' },
+      ],
+      sub: [
+        { t: 'Motor development', d: 'Assessment and stimulation of motor development in babies and children with delay or alterations' },
+        { t: 'Postural changes', d: 'Scoliosis, kyphosis, flat feet and other postural changes in childhood and adolescence' },
+        { t: 'Musculoskeletal injuries', d: 'Recovery from sports, traumatic or overuse injuries in children and young people' },
+        { t: 'Congenital torticollis', d: 'Manual treatment and specific exercises for muscular torticollis in babies' },
+        { t: 'Plagiocephaly', d: 'Support in correcting skull asymmetries in babies through positioning and mobilisation' },
+        { t: 'Neurological conditions', d: 'Follow-up of children with cerebral palsy, global delay or other neurological conditions' },
       ],
     },
     'fisioterapia-atm': {
@@ -247,7 +267,10 @@ const SERVICE_DETAIL_I18N = {
     nutricao: {
       tagline: 'Nutrition that works for your life — no restrictive diets or off-the-shelf solutions',
       description: 'Nutrition consultation at Rita Guerreiro starts with understanding who you are: your habits, your pace, what works and what doesn’t. From there we create a personalised, realistic and sustainable meal plan. We work on weight loss, muscle gain, digestive health, sports nutrition and meal plans adapted to specific clinical conditions.',
-      prices: [{ label: 'Consultation 30-50min', value: '40€ / 45€' }],
+      prices: [
+        { label: '1st consultation (up to 50min)', value: '45€' },
+        { label: 'Follow-up (30min)', value: '40€' },
+      ],
       sub: [
         { t: 'Sustainable weight loss', d: 'A real meal plan adapted to your lifestyle — to lose weight and keep it off' },
         { t: 'Sports nutrition', d: 'Optimising nutrition for performance, recovery and body composition' },
@@ -530,12 +553,12 @@ const SERVICE_DETAIL_I18N = {
   },
   FR: {
     fisioterapia: {
-      tagline: 'Évaluation, traitement et récupération en cas de douleur ou de blessure — pour enfants et adultes',
-      description: 'Notre physiothérapie est conçue personne par personne. Nous commençons par une évaluation soignée — nous écoutons votre histoire, comprenons l’origine de la douleur ou du dysfonctionnement et, à partir de là, nous construisons un plan réaliste pour votre récupération. Nous travaillons avec des enfants et des adultes, lors de séances de 50 à 80 minutes, en combinant thérapie manuelle, exercice thérapeutique et, lorsque cela a du sens, l’intégration avec d’autres services du centre.',
+      tagline: 'Évaluation, traitement et récupération en cas de douleur ou de blessure — pour adultes',
+      description: 'Notre physiothérapie est conçue personne par personne. Nous commençons par une évaluation soignée — nous écoutons votre histoire, comprenons l’origine de la douleur ou du dysfonctionnement et, à partir de là, nous construisons un plan réaliste pour votre récupération. Séances de 50 minutes combinant thérapie manuelle, exercice thérapeutique et, lorsque cela a du sens, l’intégration avec d’autres services du centre.',
       prices: [
-        { label: 'Enfants (50min)', value: '50€' },
-        { label: 'Adultes (50min)', value: '45€' },
-        { label: 'Adultes (80min)', value: '90€' },
+        { label: 'Séance (50min)', value: '50€' },
+        { label: 'Pack 5 séances', value: '225€' },
+        { label: 'Pack 10 séances', value: '450€' },
       ],
       sub: [
         { t: 'Douleur lombaire et cervicale', d: 'Évaluation posturale, thérapie manuelle et exercice progressif pour la douleur chronique ou aiguë du dos' },
@@ -543,7 +566,24 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Physiothérapie sportive', d: 'Prévention et traitement des blessures liées au sport, avec un accent sur le retour sûr à la pratique' },
         { t: 'Post-opératoire', d: 'Réduction de l’œdème, gain de mobilité et récupération de la force après chirurgie orthopédique ou autre' },
         { t: 'Grossesse et post-partum', d: 'Prévention et soulagement des inconforts pendant la grossesse et récupération du plancher pelvien après l’accouchement' },
-        { t: 'Physiothérapie pédiatrique', d: 'Traitement adapté aux enfants à différentes étapes du développement' },
+        { t: 'Douleur chronique', d: 'Approche intégrée de la douleur persistante avec thérapie manuelle, exercice et éducation à la douleur' },
+      ],
+    },
+    'fisioterapia-pediatrica': {
+      tagline: 'Physiothérapie adaptée aux différentes étapes du développement — pour bébés, enfants et adolescents',
+      description: 'La Physiothérapie Pédiatrique est un domaine spécialisé qui travaille avec des bébés, enfants et adolescents à différentes étapes du développement. Nous évaluons et traitons les retards de développement moteur, les altérations posturales, les blessures musculo-squelettiques et les conditions neurologiques, dans un environnement sûr, adapté et ludique. Chaque séance est conçue pour le rythme, l’âge et les besoins spécifiques de l’enfant — avec une implication active de la famille lorsque cela a du sens.',
+      prices: [
+        { label: 'Séance (50min)', value: '50€' },
+        { label: 'Pack 5 séances', value: '225€' },
+        { label: 'Pack 10 séances', value: '450€' },
+      ],
+      sub: [
+        { t: 'Développement moteur', d: 'Évaluation et stimulation du développement moteur chez les bébés et enfants avec retard ou altérations' },
+        { t: 'Altérations posturales', d: 'Scoliose, cyphose, pieds plats et autres altérations posturales de l’enfance et de l’adolescence' },
+        { t: 'Blessures musculo-squelettiques', d: 'Récupération des blessures sportives, traumatiques ou de surutilisation chez les enfants et les jeunes' },
+        { t: 'Torticolis congénital', d: 'Traitement manuel et exercices spécifiques pour le torticolis musculaire du bébé' },
+        { t: 'Plagiocéphalie', d: 'Aide à la correction des asymétries du crâne chez les bébés par le positionnement et la mobilisation' },
+        { t: 'Conditions neurologiques', d: 'Suivi des enfants avec paralysie cérébrale, retard global ou autres conditions neurologiques' },
       ],
     },
     'fisioterapia-atm': {
@@ -601,7 +641,10 @@ const SERVICE_DETAIL_I18N = {
     nutricao: {
       tagline: 'Une alimentation qui fonctionne pour votre vie — sans régimes restrictifs ni solutions toutes faites',
       description: 'La consultation de nutrition à la Rita Guerreiro commence par comprendre qui vous êtes : vos habitudes, votre rythme, ce qui fonctionne et ce qui ne fonctionne pas. À partir de là, nous créons un plan alimentaire personnalisé, réaliste et durable. Nous travaillons la perte de poids, la prise de masse musculaire, la santé digestive, la nutrition sportive et l’alimentation adaptée à des conditions cliniques spécifiques.',
-      prices: [{ label: 'Consultation 30-50min', value: '40€ / 45€' }],
+      prices: [
+        { label: '1ʳᵉ consultation (jusqu’à 50min)', value: '45€' },
+        { label: 'Suivantes (30min)', value: '40€' },
+      ],
       sub: [
         { t: 'Perte de poids durable', d: 'Un plan alimentaire réel adapté à votre style de vie — pour perdre et maintenir' },
         { t: 'Nutrition sportive', d: 'Optimisation de l’alimentation pour la performance, la récupération et la composition corporelle' },
@@ -884,12 +927,12 @@ const SERVICE_DETAIL_I18N = {
   },
   ES: {
     fisioterapia: {
-      tagline: 'Evaluación, tratamiento y recuperación del dolor o lesión — para niños y adultos',
-      description: 'Nuestra fisioterapia se diseña persona a persona. Comenzamos con una evaluación cuidadosa — escuchamos tu historia, entendemos el origen del dolor o disfunción, y a partir de ahí construimos un plan realista para tu recuperación. Trabajamos con niños y adultos en sesiones de 50 a 80 minutos, combinando terapia manual, ejercicio terapéutico y, cuando es adecuado, la integración con otros servicios del centro.',
+      tagline: 'Evaluación, tratamiento y recuperación del dolor o lesión — para adultos',
+      description: 'Nuestra fisioterapia se diseña persona a persona. Comenzamos con una evaluación cuidadosa — escuchamos tu historia, entendemos el origen del dolor o disfunción, y a partir de ahí construimos un plan realista para tu recuperación. Sesiones de 50 minutos combinando terapia manual, ejercicio terapéutico y, cuando es adecuado, la integración con otros servicios del centro.',
       prices: [
-        { label: 'Niños (50min)', value: '50€' },
-        { label: 'Adultos (50min)', value: '45€' },
-        { label: 'Adultos (80min)', value: '90€' },
+        { label: 'Sesión (50min)', value: '50€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
+        { label: 'Pack 10 sesiones', value: '450€' },
       ],
       sub: [
         { t: 'Dolor lumbar y cervical', d: 'Evaluación postural, terapia manual y ejercicio progresivo para el dolor crónico o agudo de columna' },
@@ -897,7 +940,24 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Fisioterapia deportiva', d: 'Prevención y tratamiento de lesiones deportivas, con foco en el retorno seguro a la práctica' },
         { t: 'Posoperatorio', d: 'Reducción de la hinchazón, ganancia de movilidad y recuperación de la fuerza tras cirugía ortopédica u otra' },
         { t: 'Embarazo y posparto', d: 'Prevención y alivio de molestias durante el embarazo y recuperación del suelo pélvico tras el parto' },
-        { t: 'Fisioterapia pediátrica', d: 'Tratamiento adaptado a niños en diferentes etapas del desarrollo' },
+        { t: 'Dolor crónico', d: 'Enfoque integrado del dolor persistente con terapia manual, ejercicio y educación en dolor' },
+      ],
+    },
+    'fisioterapia-pediatrica': {
+      tagline: 'Fisioterapia adaptada a las diferentes etapas del desarrollo — para bebés, niños y adolescentes',
+      description: 'La Fisioterapia Pediátrica es un área especializada que trabaja con bebés, niños y adolescentes en diferentes etapas del desarrollo. Evaluamos y tratamos retrasos en el desarrollo motor, alteraciones posturales, lesiones musculoesqueléticas y condiciones neurológicas, en un entorno seguro, adaptado y lúdico. Cada sesión está diseñada para el ritmo, edad y necesidades específicas del niño — con participación activa de la familia siempre que tenga sentido.',
+      prices: [
+        { label: 'Sesión (50min)', value: '50€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
+        { label: 'Pack 10 sesiones', value: '450€' },
+      ],
+      sub: [
+        { t: 'Desarrollo motor', d: 'Evaluación y estimulación del desarrollo motor en bebés y niños con retraso o alteraciones' },
+        { t: 'Alteraciones posturales', d: 'Escoliosis, cifosis, pies planos y otras alteraciones posturales en la infancia y adolescencia' },
+        { t: 'Lesiones musculoesqueléticas', d: 'Recuperación de lesiones deportivas, traumáticas o por sobreuso en niños y jóvenes' },
+        { t: 'Tortícolis congénita', d: 'Tratamiento manual y ejercicios específicos para tortícolis muscular del bebé' },
+        { t: 'Plagiocefalia', d: 'Ayuda en la corrección de asimetrías del cráneo en bebés mediante posicionamiento y movilización' },
+        { t: 'Condiciones neurológicas', d: 'Seguimiento de niños con parálisis cerebral, retraso global u otras condiciones neurológicas' },
       ],
     },
     'fisioterapia-atm': {
@@ -955,7 +1015,10 @@ const SERVICE_DETAIL_I18N = {
     nutricao: {
       tagline: 'Nutrición que funciona para tu vida — sin dietas restrictivas ni soluciones genéricas',
       description: 'La consulta de nutrición en Rita Guerreiro comienza por entender quién eres: tus hábitos, tu ritmo, qué funciona y qué no. A partir de ahí creamos un plan alimentario personalizado, realista y sostenible. Trabajamos pérdida de peso, ganancia muscular, salud digestiva, nutrición deportiva y planes alimentarios adaptados a condiciones clínicas específicas.',
-      prices: [{ label: 'Consulta 30-50min', value: '40€ / 45€' }],
+      prices: [
+        { label: '1ª consulta (hasta 50min)', value: '45€' },
+        { label: 'Siguientes (30min)', value: '40€' },
+      ],
       sub: [
         { t: 'Pérdida de peso sostenible', d: 'Un plan alimentario real adaptado a tu estilo de vida — para perder peso y mantenerlo' },
         { t: 'Nutrición deportiva', d: 'Optimización de la nutrición para el rendimiento, recuperación y composición corporal' },

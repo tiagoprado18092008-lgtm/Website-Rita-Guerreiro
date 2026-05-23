@@ -6,6 +6,7 @@ const IMG = {
   acupuntura: null,
   mesoterapia: null,
   'fisioterapia-atm': null,
+  'fisioterapia-pediatrica': null,
   'fisioterapia-vestibular': null,
   psicologia: null,
   nutricao: null,
@@ -40,7 +41,8 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Fisioterapia para crianças e adultos — avaliação e tratamento de dor, lesão ou disfunção músculo-esquelética.', price: '50€ / 45€ / 85€' },
+      { slug: 'fisioterapia', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Avaliação e tratamento de dor, lesão ou disfunção músculo-esquelética em adultos.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada a crianças — desenvolvimento motor, lesões e disfunções músculo-esqueléticas pediátricas.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Tratamento manual especializado da articulação temporomandibular — dor, bloqueio, cliques ou rangido na mandíbula.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções de substâncias ativas para dor articular, contraturas e tratamentos estéticos localizados.', price: '55€ / 50€' },
       { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Reabilitação vestibular para tonturas, vertigens e desequilíbrios — manobras específicas e exercícios.', price: '45€' },
@@ -50,7 +52,7 @@ const SERVICES = {
     label: 'Cuidados de Saúde',
     intro: 'Tratamentos clínicos especializados para saúde e bem-estar.',
     items: [
-      { slug: 'nutricao', name: 'Nutrição', img: IMG.nutricao, blurb: 'Consulta nutricional personalizada para perda de peso, performance ou saúde geral.', price: '40€ / 45€' },
+      { slug: 'nutricao', name: 'Nutrição', img: IMG.nutricao, blurb: 'Consulta nutricional personalizada para perda de peso, performance ou saúde geral.', price: '45€ / 40€' },
       { slug: 'terapia-bowen', name: 'Terapia de Bowen', img: IMG['terapia-bowen'], blurb: 'Técnica neuromuscular suave para crianças e adultos — dor crónica, tensão e equilíbrio.', price: '20€ / 30€ / 60€' },
       { slug: 'psicologia', name: 'Psicologia', img: IMG.psicologia, blurb: 'Acompanhamento psicológico para crianças, adolescentes e adultos.', price: '45€' },
     ],
@@ -94,12 +96,12 @@ const SERVICES = {
 
 const SERVICE_DETAIL = {
   fisioterapia: {
-    tagline: 'Avaliação, tratamento e recuperação para dor ou lesão — para crianças e adultos.',
-    description: 'A nossa fisioterapia é pensada pessoa a pessoa. Começamos por uma avaliação cuidada — ouvimos a tua história, percebemos a origem da dor ou disfunção e, a partir daí, construímos um plano realista para a tua recuperação. Trabalhamos com crianças e adultos, em sessões de 50 a 80 minutos, combinando terapia manual, exercício terapêutico e, sempre que fizer sentido, a integração com outros serviços do centro.',
+    tagline: 'Avaliação, tratamento e recuperação para dor ou lesão — em adultos.',
+    description: 'A nossa fisioterapia é pensada pessoa a pessoa. Começamos por uma avaliação cuidada — ouvimos a tua história, percebemos a origem da dor ou disfunção e, a partir daí, construímos um plano realista para a tua recuperação. Sessões de 50 minutos, combinando terapia manual, exercício terapêutico e, sempre que fizer sentido, a integração com outros serviços do centro.',
     prices: [
-      { label: 'Crianças (50min)', value: '50€' },
-      { label: 'Adultos (50min)', value: '45€' },
-      { label: 'Pack 10 sessões', value: '85€/sessão' },
+      { label: 'Sessão (50min)', value: '50€' },
+      { label: 'Pack 5 sessões', value: '225€' },
+      { label: 'Pack 10 sessões', value: '450€' },
     ],
     sub: [
       { t: 'Dor lombar e cervical', d: 'Avaliação postural, terapia manual e exercício progressivo para dor crónica ou aguda da coluna.' },
@@ -107,7 +109,24 @@ const SERVICE_DETAIL = {
       { t: 'Fisioterapia desportiva', d: 'Prevenção e tratamento de lesões associadas ao desporto, com foco no retorno seguro à prática.' },
       { t: 'Pós-operatório', d: 'Redução de edema, ganho de mobilidade e recuperação de força após cirurgia ortopédica ou outra.' },
       { t: 'Gravidez e pós-parto', d: 'Prevenção e alívio de desconfortos durante a gravidez e recuperação do pavimento pélvico após o parto.' },
-      { t: 'Fisioterapia pediátrica', d: 'Tratamento adaptado para crianças em diferentes fases do desenvolvimento.' },
+      { t: 'Dor crónica', d: 'Abordagem integrada de dor persistente com terapia manual, exercício e educação em dor.' },
+    ],
+  },
+  'fisioterapia-pediatrica': {
+    tagline: 'Fisioterapia adaptada às diferentes fases do desenvolvimento — para bebés, crianças e adolescentes.',
+    description: 'A Fisioterapia Pediátrica é uma área especializada que trabalha com bebés, crianças e adolescentes em diferentes fases do desenvolvimento. Avaliamos e tratamos atrasos no desenvolvimento motor, alterações posturais, lesões músculo-esqueléticas e condições neurológicas, num ambiente seguro, adaptado e lúdico. Cada sessão é desenhada para o ritmo, idade e necessidades específicas da criança — com envolvimento ativo da família sempre que faz sentido.',
+    prices: [
+      { label: 'Sessão (50min)', value: '50€' },
+      { label: 'Pack 5 sessões', value: '225€' },
+      { label: 'Pack 10 sessões', value: '450€' },
+    ],
+    sub: [
+      { t: 'Desenvolvimento motor', d: 'Avaliação e estimulação do desenvolvimento motor em bebés e crianças com atraso ou alterações.' },
+      { t: 'Alterações posturais', d: 'Escoliose, cifose, pés planos e outras alterações posturais da infância e adolescência.' },
+      { t: 'Lesões músculo-esqueléticas', d: 'Recuperação de lesões desportivas, traumáticas ou por sobrecarga em crianças e jovens.' },
+      { t: 'Torcicolo congénito', d: 'Tratamento manual e exercícios específicos para torcicolo muscular do bebé.' },
+      { t: 'Plagiocefalia', d: 'Apoio na correção de assimetrias do crânio em bebés através de posicionamento e mobilização.' },
+      { t: 'Condições neurológicas', d: 'Acompanhamento de crianças com paralisia cerebral, atraso global ou outras condições neurológicas.' },
     ],
   },
   'fisioterapia-atm': {
@@ -174,7 +193,8 @@ const SERVICE_DETAIL = {
     tagline: 'Alimentação que funciona para a tua vida — sem dietas restritivas nem soluções de prateleira.',
     description: 'A consulta de nutrição na clínica Rita Guerreiro começa por perceber quem és: os teus hábitos, o teu ritmo, o que funciona e o que não funciona. A partir daí, criamos um plano alimentar personalizado, realista e sustentável. Trabalhamos perda de peso, ganho de massa muscular, saúde digestiva, nutrição desportiva e alimentação adaptada a condições clínicas específicas.',
     prices: [
-      { label: 'Consulta 30-50min', value: '40€ / 45€' },
+      { label: '1ª consulta (até 50min)', value: '45€' },
+      { label: 'Seguintes (30min)', value: '40€' },
     ],
     sub: [
       { t: 'Perda de peso sustentável', d: 'Plano alimentar real e adaptado ao teu estilo de vida — para perder e manter.' },
