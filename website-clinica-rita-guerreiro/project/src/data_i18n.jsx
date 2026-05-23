@@ -8,55 +8,55 @@ const SERVICES_I18N = {
       label: 'Physiotherapy',
       intro: 'Individual assessment and treatment of pain, injury and dysfunction — for children and adults',
       items: {
-        fisioterapia: { name: 'General Physiotherapy', blurb: 'Assessment and treatment of pain, injury or musculoskeletal dysfunction in adults' },
-        'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted for children — motor development, injuries and paediatric musculoskeletal disorders' },
-        'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Specialised manual treatment of the temporomandibular joint — jaw pain, locking, clicking or grinding' },
-        mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections of active substances for joint pain, contractures and localised aesthetic treatments' },
-        'fisioterapia-vestibular': { name: 'Vestibular Physiotherapy', blurb: 'Vestibular rehabilitation for dizziness, vertigo and balance disorders — specific manoeuvres and exercises' },
+        fisioterapia: { name: 'General Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
+        'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted to each stage of growth — for babies, children and adolescents, in a safe, age-appropriate setting' },
+        'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Pain, locking or clicking in your jaw? We treat the temporomandibular joint with specialised manual technique' },
+        mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
+        'fisioterapia-vestibular': { name: 'Vestibular Physiotherapy', blurb: 'Dizziness, vertigo and imbalance can be treated — with specific manoeuvres and exercises that restore your stability' },
       },
     },
     saude: {
       label: 'Health Care',
-      intro: 'Specialised clinical treatments for health and wellbeing',
+      intro: 'Specialised clinical care for your health and wellbeing — always with time and attention for each person',
       items: {
-        nutricao: { name: 'Nutrition', blurb: 'Personalised nutritional consultation for weight loss, performance or general health' },
-        'terapia-bowen': { name: 'Bowen Therapy', blurb: 'Gentle neuromuscular technique for children and adults — chronic pain, tension and balance' },
-        psicologia: { name: 'Psychology', blurb: 'Psychological support for children, adolescents and adults' },
+        nutricao: { name: 'Nutrition', blurb: 'A nutrition plan built for your real life — no restrictive diets, clear goals and close follow-up' },
+        'terapia-bowen': { name: 'Bowen Therapy', blurb: 'A gentle neuromuscular technique with often profound results — safe for children and adults' },
+        psicologia: { name: 'Psychology', blurb: 'A safe, confidential space to talk about what concerns you — for children, adolescents and adults' },
       },
     },
     massagens: {
       label: 'Massages',
-      intro: 'Manual therapies to release tension, recover and restore balance',
+      intro: 'Manual therapies to release tension, recover and restore balance — with the right technique for each moment',
       items: {
-        'massagem-relaxamento': { name: 'Relaxation Massage', blurb: 'Full-body massage to relieve built-up tension and restore balance' },
-        'massagem-criancas': { name: "Children's Massage", blurb: 'Gentle massage tailored to the youngest — relaxation, sleep and child wellbeing' },
-        'massagem-assinatura-rg': { name: 'RG Signature Massage', blurb: 'The signature massage of the Rita Guerreiro clinic — 80 minutes of a unique experience' },
-        'massagem-profunda': { name: 'Deep Tissue / Sports Massage', blurb: 'Deep tissue and sport massage — deep muscular work for recovery and performance' },
-        'massagem-pre-pos-natal': { name: 'Pre/Post-Natal Massage', blurb: 'Massage adapted for pregnant women and new mothers — comfort, relaxation and recovery' },
-        'massagem-sacro-craniana': { name: 'Craniosacral Massage', blurb: 'Gentle technique on the craniosacral system — relief from tension, headaches and stress' },
-        'drenagem-linfatica': { name: 'Manual Lymphatic Drainage', blurb: 'Vodder method to reduce swelling, improve circulation and detoxify the body' },
-        'massagem-terapeutica': { name: 'Post-Op Drainage / Therapeutic', blurb: 'Post-operative lymphatic drainage and therapeutic massage for recovery and muscle pain' },
+        'massagem-relaxamento': { name: 'Relaxation Massage', blurb: 'A space to pause — full-body massage that releases built-up tension and restores balance' },
+        'massagem-criancas': { name: "Children's Massage", blurb: 'A gentle massage tailored to the youngest — to promote sleep, calm and wellbeing' },
+        'massagem-assinatura-rg': { name: 'RG Signature Massage', blurb: 'The flagship massage of the clinic — 80 minutes combining deep relaxation and muscle work' },
+        'massagem-profunda': { name: 'Deep Tissue / Sports Massage', blurb: 'Deep tissue and sport massage — deep muscular work for those who demand more from their body, in training or everyday life' },
+        'massagem-pre-pos-natal': { name: 'Pre/Post-Natal Massage', blurb: 'Adapted to the body changes of pregnancy and postpartum recovery — with comfort and safe positioning' },
+        'massagem-sacro-craniana': { name: 'Craniosacral Massage', blurb: 'A gentle touch on the craniosacral system — relieves tension, headaches and stress effortlessly' },
+        'drenagem-linfatica': { name: 'Manual Lymphatic Drainage', blurb: 'Vodder method — the reference technique to reduce swelling, activate circulation and restore lightness' },
+        'massagem-terapeutica': { name: 'Post-Op Drainage / Therapeutic', blurb: 'Post-surgical recovery and relief from chronic muscle tension — with technique adapted to your condition' },
       },
     },
     holisticas: {
       label: 'Holistic',
-      intro: 'Holistic therapies for balance of body and mind',
+      intro: 'Holistic therapies to rebalance body and mind — with techniques refined over centuries and results that are truly felt',
       items: {
-        reflexologia: { name: 'Reflexology', blurb: "Stimulation of reflex points on the feet to rebalance the body's systems" },
-        shiatsu: { name: 'Shiatsu', blurb: 'Japanese technique of pressure along energy meridians — balance and vitality' },
-        'massagem-indiana': { name: 'Indian Massage', blurb: 'Indian Head Massage — head, neck and shoulder massage for stress and tension' },
-        'head-spa': { name: 'Head Spa', blurb: 'Deep scalp treatment — cleansing, nourishment and total relaxation' },
-        acupuntura: { name: 'Acupuncture', blurb: 'Traditional Chinese Medicine — pain management, stress, anxiety, insomnia and general wellbeing' },
+        reflexologia: { name: 'Reflexology', blurb: "Precise stimulation of reflex points on the feet to rebalance the body's systems" },
+        shiatsu: { name: 'Shiatsu', blurb: 'A Japanese technique of pressure along energy meridians — to restore balance and vitality' },
+        'massagem-indiana': { name: 'Indian Massage', blurb: 'Indian Head Massage — deep relaxation of head, neck and shoulders, with Ayurvedic roots' },
+        'head-spa': { name: 'Head Spa', blurb: 'Deep scalp treatment — cleansing, nourishment and a sense of relaxation felt throughout the body' },
+        acupuntura: { name: 'Acupuncture', blurb: 'Traditional Chinese Medicine for pain, stress, anxiety, insomnia and general wellbeing — with growing evidence' },
       },
     },
     estetica: {
       label: 'Aesthetics & Treatments',
-      intro: 'Aesthetic care and treatment packages with advanced technology',
+      intro: 'Aesthetic care and body treatments with advanced technology — always with prior assessment and a personalised protocol',
       items: {
-        facial: { name: 'Facials', blurb: 'Skin cleansing, extraction and personalised facials for healthy, radiant skin' },
-        'pacotes-tratamento': { name: 'Treatment Packages', blurb: 'Cavitation, radiofrequency, lipolaser, electrostimulation and pressotherapy' },
-        'depilacao-laser': { name: 'Laser Hair Removal', blurb: 'Permanent laser hair removal — for women and men, all body areas' },
-        'pilates-clinico': { name: 'Clinical Pilates', blurb: 'Pilates supervised by a physiotherapist, adapted to injuries and rehabilitation' },
+        facial: { name: 'Facials', blurb: 'Skin cleansing, extraction and personalised facials — for healthy, balanced skin' },
+        'pacotes-tratamento': { name: 'Treatment Packages', blurb: 'Cavitation, radiofrequency, lipolaser, electrostimulation and pressotherapy — technology at the service of your body' },
+        'depilacao-laser': { name: 'Laser Hair Removal', blurb: 'Permanent hair removal with state-of-the-art technology — for women and men, all body areas' },
+        'pilates-clinico': { name: 'Clinical Pilates', blurb: 'Pilates supervised by a physiotherapist — exercise adapted to injuries, chronic pain or rehabilitation' },
       },
     },
   },
@@ -65,55 +65,55 @@ const SERVICES_I18N = {
       label: 'Physiothérapie',
       intro: 'Évaluation et traitement individuel de la douleur, des blessures et des dysfonctionnements — pour enfants et adultes',
       items: {
-        fisioterapia: { name: 'Physiothérapie générale', blurb: "Évaluation et traitement de la douleur, blessure ou dysfonction musculo-squelettique chez l'adulte" },
-        'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée aux enfants — développement moteur, blessures et troubles musculo-squelettiques pédiatriques' },
-        'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: "Traitement manuel spécialisé de l'articulation temporo-mandibulaire — douleur, blocage, claquements ou grincements de la mâchoire" },
-        mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour douleur articulaire, contractures et traitements esthétiques localisés' },
-        'fisioterapia-vestibular': { name: 'Physiothérapie vestibulaire', blurb: "Réadaptation vestibulaire pour vertiges, étourdissements et troubles de l'équilibre — manœuvres et exercices spécifiques" },
+        fisioterapia: { name: 'Physiothérapie générale', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
+        'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée à chaque étape de la croissance — pour bébés, enfants et adolescents, dans un environnement sûr et adapté à chaque âge' },
+        'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: 'Douleur, blocage ou claquements de la mâchoire ? Nous traitons l’articulation temporo-mandibulaire avec une technique manuelle spécialisée' },
+        mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
+        'fisioterapia-vestibular': { name: 'Physiothérapie vestibulaire', blurb: 'Vertiges, étourdissements et troubles de l’équilibre peuvent être traités — avec des manœuvres spécifiques et des exercices qui rétablissent votre stabilité' },
       },
     },
     saude: {
       label: 'Soins de santé',
-      intro: 'Traitements cliniques spécialisés pour la santé et le bien-être',
+      intro: 'Soins cliniques spécialisés pour votre santé et votre bien-être — toujours avec du temps et de l’attention pour chaque personne',
       items: {
-        nutricao: { name: 'Nutrition', blurb: 'Consultation nutritionnelle personnalisée pour la perte de poids, la performance ou la santé générale' },
-        'terapia-bowen': { name: 'Thérapie Bowen', blurb: 'Technique neuromusculaire douce pour enfants et adultes — douleur chronique, tension et équilibre' },
-        psicologia: { name: 'Psychologie', blurb: 'Accompagnement psychologique pour enfants, adolescents et adultes' },
+        nutricao: { name: 'Nutrition', blurb: 'Un plan alimentaire conçu pour votre vie réelle — sans régimes restrictifs, avec des objectifs clairs et un suivi rapproché' },
+        'terapia-bowen': { name: 'Thérapie Bowen', blurb: 'Une technique neuromusculaire douce aux résultats souvent profonds — sûre pour enfants et adultes' },
+        psicologia: { name: 'Psychologie', blurb: 'Un espace sûr et confidentiel pour parler de ce qui vous préoccupe — pour enfants, adolescents et adultes' },
       },
     },
     massagens: {
       label: 'Massages',
-      intro: "Thérapies manuelles pour libérer les tensions, récupérer et retrouver l'équilibre",
+      intro: 'Thérapies manuelles pour libérer les tensions, récupérer et retrouver l’équilibre — avec la bonne technique pour chaque moment',
       items: {
-        'massagem-relaxamento': { name: 'Massage relaxant', blurb: "Massage du corps entier pour soulager les tensions accumulées et restaurer l'équilibre" },
-        'massagem-criancas': { name: 'Massage pour enfants', blurb: 'Massage doux et adapté aux plus petits — relaxation, sommeil et bien-être infantile' },
-        'massagem-assinatura-rg': { name: 'Massage Signature RG', blurb: "Le massage d'exception de la clinique Rita Guerreiro — 80 minutes d'une expérience unique" },
-        'massagem-profunda': { name: 'Massage Profond / Sportif', blurb: 'Deep tissue et sport massage — travail musculaire profond pour la récupération et la performance' },
-        'massagem-pre-pos-natal': { name: 'Massage pré/post-natal', blurb: 'Massage adapté aux femmes enceintes et aux jeunes mères — confort, relaxation et récupération' },
-        'massagem-sacro-craniana': { name: 'Massage crânio-sacré', blurb: 'Technique douce sur le système crânio-sacré — soulagement des tensions, céphalées et stress' },
-        'drenagem-linfatica': { name: 'Drainage lymphatique manuel', blurb: "Méthode Vodder pour réduire le gonflement, améliorer la circulation et détoxifier l'organisme" },
-        'massagem-terapeutica': { name: 'Drainage post-opératoire / Thérapeutique', blurb: 'Drainage lymphatique post-opératoire et massage thérapeutique pour récupération et douleur musculaire' },
+        'massagem-relaxamento': { name: 'Massage relaxant', blurb: 'Un espace pour faire une pause — massage du corps entier qui libère les tensions accumulées et restaure l’équilibre' },
+        'massagem-criancas': { name: 'Massage pour enfants', blurb: 'Massage doux et adapté aux plus petits — pour favoriser le sommeil, le calme et le bien-être' },
+        'massagem-assinatura-rg': { name: 'Massage Signature RG', blurb: 'Le massage phare de la clinique — 80 minutes combinant détente profonde et travail musculaire' },
+        'massagem-profunda': { name: 'Massage Profond / Sportif', blurb: 'Deep tissue et sport massage — travail musculaire profond pour ceux qui exigent davantage de leur corps, à l’entraînement ou au quotidien' },
+        'massagem-pre-pos-natal': { name: 'Massage pré/post-natal', blurb: 'Adapté aux changements du corps pendant la grossesse et à la récupération post-partum — avec confort et positionnement sûr' },
+        'massagem-sacro-craniana': { name: 'Massage crânio-sacré', blurb: 'Un toucher doux sur le système crânio-sacré — soulage tensions, céphalées et stress sans effort' },
+        'drenagem-linfatica': { name: 'Drainage lymphatique manuel', blurb: 'Méthode Vodder — la technique de référence pour réduire le gonflement, activer la circulation et restaurer la légèreté' },
+        'massagem-terapeutica': { name: 'Drainage post-opératoire / Thérapeutique', blurb: 'Récupération post-chirurgicale et soulagement de la tension musculaire chronique — avec une technique adaptée à votre condition' },
       },
     },
     holisticas: {
       label: 'Holistique',
-      intro: "Thérapies holistiques pour l'équilibre du corps et de l'esprit",
+      intro: 'Thérapies holistiques pour rééquilibrer corps et esprit — avec des techniques affinées au fil des siècles et des résultats véritablement ressentis',
       items: {
-        reflexologia: { name: 'Réflexologie', blurb: "Stimulation des points réflexes des pieds pour rééquilibrer les systèmes de l'organisme" },
-        shiatsu: { name: 'Shiatsu', blurb: 'Technique japonaise de pression sur les méridiens énergétiques — équilibre et vitalité' },
-        'massagem-indiana': { name: 'Massage indien', blurb: 'Indian Head Massage — massage de la tête, du cou et des épaules pour le stress et la tension' },
-        'head-spa': { name: 'Head Spa', blurb: 'Traitement profond du cuir chevelu — nettoyage, nutrition et détente totale' },
-        acupuntura: { name: 'Acupuncture', blurb: 'Médecine traditionnelle chinoise — gestion de la douleur, stress, anxiété, insomnie et bien-être général' },
+        reflexologia: { name: 'Réflexologie', blurb: 'Stimulation précise des points réflexes des pieds pour rééquilibrer les systèmes de l’organisme' },
+        shiatsu: { name: 'Shiatsu', blurb: 'Technique japonaise de pression sur les méridiens énergétiques — pour retrouver équilibre et vitalité' },
+        'massagem-indiana': { name: 'Massage indien', blurb: 'Indian Head Massage — détente profonde de la tête, du cou et des épaules, aux racines ayurvédiques' },
+        'head-spa': { name: 'Head Spa', blurb: 'Traitement profond du cuir chevelu — nettoyage, nutrition et une détente ressentie dans tout le corps' },
+        acupuntura: { name: 'Acupuncture', blurb: 'Médecine traditionnelle chinoise pour la douleur, le stress, l’anxiété, l’insomnie et le bien-être général — avec des preuves croissantes' },
       },
     },
     estetica: {
       label: 'Esthétique & Traitements',
-      intro: 'Soins esthétiques et forfaits de traitement avec technologie avancée',
+      intro: 'Soins esthétiques et traitements corporels avec technologie avancée — toujours avec évaluation préalable et protocole personnalisé',
       items: {
-        facial: { name: 'Soins du visage', blurb: 'Nettoyage de peau, extraction et soin facial personnalisé pour une peau saine et éclatante' },
-        'pacotes-tratamento': { name: 'Forfaits de traitement', blurb: 'Cavitation, radiofréquence, lipolaser, électrostimulation et pressothérapie' },
-        'depilacao-laser': { name: 'Épilation au laser', blurb: 'Épilation définitive au laser — femme et homme, toutes les zones du corps' },
-        'pilates-clinico': { name: 'Pilates clinique', blurb: 'Pilates supervisé par un physiothérapeute, adapté aux blessures et à la réadaptation' },
+        facial: { name: 'Soins du visage', blurb: 'Nettoyage de peau, extraction et soin facial personnalisé — pour une peau saine et équilibrée' },
+        'pacotes-tratamento': { name: 'Forfaits de traitement', blurb: 'Cavitation, radiofréquence, lipolaser, électrostimulation et pressothérapie — la technologie au service de votre corps' },
+        'depilacao-laser': { name: 'Épilation au laser', blurb: 'Épilation définitive avec une technologie de dernière génération — pour femme et homme, toutes les zones du corps' },
+        'pilates-clinico': { name: 'Pilates clinique', blurb: 'Pilates supervisé par un physiothérapeute — exercice adapté aux blessures, douleur chronique ou réadaptation' },
       },
     },
   },
@@ -122,55 +122,55 @@ const SERVICES_I18N = {
       label: 'Fisioterapia',
       intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción — para niños y adultos',
       items: {
-        fisioterapia: { name: 'Fisioterapia General', blurb: 'Evaluación y tratamiento del dolor, lesión o disfunción musculoesquelética en adultos' },
-        'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a niños — desarrollo motor, lesiones y trastornos musculoesqueléticos pediátricos' },
-        'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: 'Tratamiento manual especializado de la articulación temporomandibular — dolor, bloqueo, chasquidos o rechinar de la mandíbula' },
-        mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones de sustancias activas para dolor articular, contracturas y tratamientos estéticos localizados' },
-        'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Rehabilitación vestibular para mareos, vértigo y trastornos del equilibrio — maniobras y ejercicios específicos' },
+        fisioterapia: { name: 'Fisioterapia General', blurb: 'Cuando el dolor o la lesión te limitan el día a día, te ayudamos a recuperarte — con evaluación rigurosa y un plan pensado para ti' },
+        'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a cada etapa del crecimiento — para bebés, niños y adolescentes, en un entorno seguro y adecuado a cada edad' },
+        'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: '¿Dolor, bloqueo o chasquidos en la mandíbula? Tratamos la articulación temporomandibular con técnica manual especializada' },
+        mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
+        'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Mareos, vértigos y desequilibrios tienen tratamiento — con maniobras específicas y ejercicios que recuperan tu estabilidad' },
       },
     },
     saude: {
       label: 'Salud y Bienestar',
-      intro: 'Tratamientos clínicos especializados para la salud y el bienestar',
+      intro: 'Cuidados clínicos especializados para tu salud y bienestar — siempre con tiempo y atención a cada persona',
       items: {
-        nutricao: { name: 'Nutrición', blurb: 'Consulta nutricional personalizada para pérdida de peso, rendimiento o salud general' },
-        'terapia-bowen': { name: 'Terapia Bowen', blurb: 'Técnica neuromuscular suave para niños y adultos — dolor crónico, tensión y equilibrio' },
-        psicologia: { name: 'Psicología', blurb: 'Apoyo psicológico para niños, adolescentes y adultos' },
+        nutricao: { name: 'Nutrición', blurb: 'Un plan alimentario pensado para tu vida real — sin dietas restrictivas, con objetivos claros y seguimiento cercano' },
+        'terapia-bowen': { name: 'Terapia Bowen', blurb: 'Técnica neuromuscular suave con resultados a menudo profundos — segura para niños y adultos' },
+        psicologia: { name: 'Psicología', blurb: 'Un espacio seguro y confidencial para hablar de lo que te preocupa — para niños, adolescentes y adultos' },
       },
     },
     massagens: {
       label: 'Masajes',
-      intro: 'Terapias manuales para liberar tensiones, recuperarte y restaurar el equilibrio',
+      intro: 'Terapias manuales para liberar tensiones, recuperarte y restaurar el equilibrio — con la técnica adecuada para cada momento',
       items: {
-        'massagem-relaxamento': { name: 'Masaje Relajante', blurb: 'Masaje de cuerpo entero para aliviar la tensión acumulada y restaurar el equilibrio' },
-        'massagem-criancas': { name: 'Masaje Infantil', blurb: 'Masaje suave adaptado a los más pequeños — relajación, sueño y bienestar infantil' },
-        'massagem-assinatura-rg': { name: 'Masaje Firma RG', blurb: 'El masaje exclusivo de la clínica Rita Guerreiro — 80 minutos de una experiencia única' },
-        'massagem-profunda': { name: 'Masaje Profundo / Deportivo', blurb: 'Deep tissue y sport massage — trabajo muscular profundo para recuperación y rendimiento' },
-        'massagem-pre-pos-natal': { name: 'Masaje Pre/Postnatal', blurb: 'Masaje adaptado a embarazadas y madres recientes — confort, relajación y recuperación' },
-        'massagem-sacro-craniana': { name: 'Masaje Sacrocraneal', blurb: 'Técnica suave sobre el sistema sacrocraneal — alivio de tensiones, dolores de cabeza y estrés' },
-        'drenagem-linfatica': { name: 'Drenaje Linfático Manual', blurb: 'Método Vodder para reducir la hinchazón, mejorar la circulación y desintoxicar el organismo' },
-        'massagem-terapeutica': { name: 'Drenaje Postoperatorio / Terapéutico', blurb: 'Drenaje linfático postoperatorio y masaje terapéutico para recuperación y dolor muscular' },
+        'massagem-relaxamento': { name: 'Masaje Relajante', blurb: 'Un espacio para parar — masaje de cuerpo entero que libera la tensión acumulada y devuelve el equilibrio' },
+        'massagem-criancas': { name: 'Masaje Infantil', blurb: 'Masaje suave adaptado a los más pequeños — para promover sueño, calma y bienestar' },
+        'massagem-assinatura-rg': { name: 'Masaje Firma RG', blurb: 'El masaje insignia de la clínica — 80 minutos para combinar relajación profunda y trabajo muscular' },
+        'massagem-profunda': { name: 'Masaje Profundo / Deportivo', blurb: 'Deep tissue y sport massage — trabajo muscular profundo para quien exige más de su cuerpo, en el entrenamiento o el día a día' },
+        'massagem-pre-pos-natal': { name: 'Masaje Pre/Postnatal', blurb: 'Adaptado a los cambios del cuerpo durante el embarazo y a la recuperación posparto — con confort y posicionamiento seguro' },
+        'massagem-sacro-craniana': { name: 'Masaje Sacrocraneal', blurb: 'Técnica de toque suave sobre el sistema sacrocraneal — alivia tensiones, cefaleas y estrés sin esfuerzo' },
+        'drenagem-linfatica': { name: 'Drenaje Linfático Manual', blurb: 'Método Vodder — la técnica de referencia para reducir la hinchazón, activar la circulación y devolver ligereza' },
+        'massagem-terapeutica': { name: 'Drenaje Postoperatorio / Terapéutico', blurb: 'Recuperación postquirúrgica y alivio de tensión muscular crónica — con técnica adaptada a tu condición' },
       },
     },
     holisticas: {
       label: 'Holísticas',
-      intro: 'Terapias holísticas para el equilibrio del cuerpo y la mente',
+      intro: 'Terapias holísticas para reequilibrar cuerpo y mente — con técnicas con siglos de práctica y resultados que se sienten',
       items: {
-        reflexologia: { name: 'Reflexología', blurb: 'Estimulación de puntos reflejos en los pies para reequilibrar los sistemas del organismo' },
-        shiatsu: { name: 'Shiatsu', blurb: 'Técnica japonesa de presión sobre los meridianos energéticos — equilibrio y vitalidad' },
-        'massagem-indiana': { name: 'Masaje Indio', blurb: 'Indian Head Massage — masaje de cabeza, cuello y hombros para el estrés y la tensión' },
-        'head-spa': { name: 'Head Spa', blurb: 'Tratamiento profundo del cuero cabelludo — limpieza, nutrición y relajación total' },
-        acupuntura: { name: 'Acupuntura', blurb: 'Medicina Tradicional China — manejo del dolor, estrés, ansiedad, insomnio y bienestar general' },
+        reflexologia: { name: 'Reflexología', blurb: 'Estimulación precisa de puntos reflejos en los pies para reequilibrar los sistemas del organismo' },
+        shiatsu: { name: 'Shiatsu', blurb: 'Técnica japonesa de presión sobre los meridianos energéticos — para devolver equilibrio y vitalidad' },
+        'massagem-indiana': { name: 'Masaje Indio', blurb: 'Indian Head Massage — relajación profunda de cabeza, cuello y hombros, con raíces ayurvédicas' },
+        'head-spa': { name: 'Head Spa', blurb: 'Tratamiento profundo del cuero cabelludo — limpieza, nutrición y una relajación que se siente en todo el cuerpo' },
+        acupuntura: { name: 'Acupuntura', blurb: 'Medicina Tradicional China para gestionar dolor, estrés, ansiedad, insomnio y bienestar general — con evidencia creciente' },
       },
     },
     estetica: {
       label: 'Estética & Tratamientos',
-      intro: 'Cuidado estético y paquetes de tratamiento con tecnología avanzada',
+      intro: 'Cuidado estético y tratamientos corporales con tecnología avanzada — siempre con evaluación previa y protocolo personalizado',
       items: {
-        facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado para una piel sana y radiante' },
-        'pacotes-tratamento': { name: 'Paquetes de Tratamiento', blurb: 'Cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia' },
-        'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación láser definitiva — para mujer y hombre, todas las zonas del cuerpo' },
-        'pilates-clinico': { name: 'Pilates Clínico', blurb: 'Pilates supervisado por un fisioterapeuta, adaptado a lesiones y rehabilitación' },
+        facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado — para una piel sana y equilibrada' },
+        'pacotes-tratamento': { name: 'Paquetes de Tratamiento', blurb: 'Cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia — tecnología al servicio de tu cuerpo' },
+        'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación definitiva con tecnología de última generación — para mujer y hombre, todas las zonas' },
+        'pilates-clinico': { name: 'Pilates Clínico', blurb: 'Pilates supervisado por un fisioterapeuta — ejercicio adaptado a lesiones, dolor crónico o rehabilitación' },
       },
     },
   },
@@ -179,8 +179,8 @@ const SERVICES_I18N = {
 const SERVICE_DETAIL_I18N = {
   EN: {
     fisioterapia: {
-      tagline: 'Assessment, treatment and recovery for pain or injury — for adults',
-      description: 'Our physiotherapy is designed person by person. We start with a careful assessment — we listen to your story, understand the source of pain or dysfunction, and from there we build a realistic plan for your recovery. 50-minute sessions combining manual therapy, therapeutic exercise and, whenever appropriate, integration with other services at the centre.',
+      tagline: 'Careful assessment, a plan tailored to you — to move with confidence again',
+      description: 'Our physiotherapy always starts with time to listen: what you feel, what you have already tried, what you want to do again. From there we build a realistic plan, in 50-minute sessions combining manual therapy, therapeutic exercise and, when it makes sense, coordination with other services at the centre. No generic protocols — because every body and every story is different.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
         { label: '5-session pack', value: '225€' },
@@ -196,8 +196,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-pediatrica': {
-      tagline: 'Physiotherapy adapted to the different stages of development — for babies, children and adolescents',
-      description: 'Paediatric Physiotherapy is a specialised area working with babies, children and adolescents at different stages of development. We assess and treat delays in motor development, postural changes, musculoskeletal injuries and neurological conditions in a safe, adapted and playful environment. Each session is designed for the pace, age and specific needs of the child — with active family involvement whenever it makes sense.',
+      tagline: 'Physiotherapy adapted to each stage of growth — with care, safety and time for every child',
+      description: 'Paediatric Physiotherapy supports babies, children and adolescents at different stages of development. We assess and treat delays in motor development, postural changes, musculoskeletal injuries and neurological conditions — always in a safe environment, adapted to the age of each child. Every session is designed around the pace of the child, with family involvement whenever it makes sense.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
         { label: '5-session pack', value: '225€' },
@@ -213,8 +213,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-atm': {
-      tagline: 'Specialised treatment of the temporomandibular joint — jaw pain, locking and discomfort',
-      description: 'TMJ Physiotherapy treats dysfunctions of the temporomandibular joint — pain, locking, clicking or grinding of the jaw — with a specialised manual approach. It includes joint and muscle assessment, intraoral and extraoral manual therapy, and specific exercises to restore function and comfort to the jaw. It is often linked to headaches, neck tension and bruxism — we address the problem at its root.',
+      tagline: 'When your jaw hurts, locks or clicks — we treat the TMJ at its root',
+      description: 'TMJ Physiotherapy treats dysfunctions of the temporomandibular joint — pain, locking, clicking or grinding — with a specialised manual approach. It includes joint and muscle assessment, intraoral and extraoral manual therapy, and specific exercises to restore function and comfort to the jaw. Because the TMJ is often linked to headaches, neck tension and bruxism, we address the problem at its origin — not just the symptom.',
       prices: [{ label: 'TMJ Physiotherapy (50min)', value: '55€' }],
       sub: [
         { t: 'Jaw pain', d: 'Relief of joint, muscular or chewing pain through specialised manual therapy' },
@@ -226,8 +226,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     mesoterapia: {
-      tagline: 'Micro-injections of active substances for pain, inflammation and localised aesthetic treatments',
-      description: 'Mesotherapy consists of applying micro-injections of active substances directly into the superficial layers of the skin or subcutaneous tissue. It allows highly localised action — reaching the exact area of pain, contracture or aesthetic concern with little systemic diffusion. Administered by a physiotherapist with specific training, it is a versatile technique both in clinical contexts (joint pain, contractures) and aesthetic ones (cellulite, laxity, rejuvenation).',
+      tagline: 'Targeted action where you need it most — for pain, inflammation or aesthetic care',
+      description: 'Mesotherapy consists of applying micro-injections of active substances directly into the superficial layers of the skin or subcutaneous tissue. It allows highly localised action — reaching the exact area of pain, contracture or aesthetic concern, with little systemic diffusion. Administered by a physiotherapist with specific training, it is a versatile technique both in clinical contexts (joint pain, contractures) and aesthetic ones (cellulite, laxity, rejuvenation).',
       prices: [{ label: 'Session (50min)', value: '50€' }],
       sub: [
         { t: 'Joint pain and inflammation', d: 'Localised application of anti-inflammatories for quick relief in knees, shoulders or spine' },
@@ -239,8 +239,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-vestibular': {
-      tagline: 'Rehabilitation for dizziness, vertigo and balance disorders — regain stability and confidence',
-      description: 'Vestibular Physiotherapy is a specialised area of physiotherapy that treats dizziness, vertigo and imbalance. Through rigorous assessment, repositioning manoeuvres (effective in BPPV) and specific habituation and gaze stabilisation exercises, we help the vestibular system recover or compensate. Results are often quick — in some cases with significant relief from the very first session.',
+      tagline: 'Regain stability — and trust your body’s balance again',
+      description: 'Vestibular Physiotherapy is a specialised area of physiotherapy that treats dizziness, vertigo and imbalance. Through rigorous assessment, repositioning manoeuvres (effective in BPPV) and specific habituation and gaze stabilisation exercises, we help the vestibular system recover or compensate. Results are often quick — in many cases, with significant relief from the very first session.',
       prices: [{ label: 'Per session (50min)', value: '45€' }],
       sub: [
         { t: 'Positional vertigo (BPPV)', d: 'Otolith repositioning manoeuvres — frequent resolution in 1 to 3 sessions' },
@@ -252,8 +252,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     acupuntura: {
-      tagline: 'Traditional Chinese Medicine — pain, stress, anxiety, insomnia and general wellbeing',
-      description: 'Acupuncture is one of the pillars of Traditional Chinese Medicine with growing evidence in managing pain, stress, anxiety and insomnia. Through precise stimulation of specific points, it regulates the nervous system, stimulates endorphin release and promotes energy balance. At Rita Guerreiro, every session is preceded by an overall health assessment for a truly personalised intervention.',
+      tagline: 'A medicine refined over centuries — and growing evidence for your wellbeing',
+      description: 'Acupuncture is one of the pillars of Traditional Chinese Medicine, with growing evidence in managing pain, stress, anxiety and insomnia. Through precise stimulation of specific points, it regulates the nervous system, stimulates endorphin release and promotes energy balance. At Rita Guerreiro, every session is preceded by an overall health assessment — for a truly personalised intervention.',
       prices: [{ label: 'Per session (50min)', value: '45€' }],
       sub: [
         { t: 'Chronic pain', d: 'Lower back pain, neck pain, headaches and joint pain with proven response to acupuncture' },
@@ -265,8 +265,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     nutricao: {
-      tagline: 'Nutrition that works for your life — no restrictive diets or off-the-shelf solutions',
-      description: "Nutrition consultation at Rita Guerreiro starts with understanding who you are: your habits, your pace, what works and what doesn't. From there we create a personalised, realistic and sustainable meal plan. We work on weight loss, muscle gain, digestive health, sports nutrition and meal plans adapted to specific clinical conditions.",
+      tagline: 'Real nutrition for real life — no restrictive diets, no generic solutions',
+      description: "Nutrition consultation starts with understanding who you are: your habits, your pace, what works and what doesn't work for you. From there we create a personalised, realistic and sustainable meal plan — for weight loss, muscle gain, digestive health, sports nutrition or adapted to specific clinical conditions. No off-the-shelf promises: just serious nutrition, tailored to you.",
       prices: [
         { label: '1st consultation (up to 50min)', value: '45€' },
         { label: 'Follow-up (30min)', value: '40€' },
@@ -281,8 +281,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'terapia-bowen': {
-      tagline: 'A gentle technique with surprising results — for children and adults',
-      description: 'Bowen Therapy is a holistic, non-invasive approach that works on the neuromuscular system through precise movements on muscles, tendons and fascia. The touch is gentle — without force or manipulation — and the effects are often deep and long-lasting. Suitable for all ages, including children from 5 years old.',
+      tagline: 'Gentle in touch, effective in result — for all ages',
+      description: 'Bowen Therapy is a non-invasive approach that works on the neuromuscular system through precise movements on muscles, tendons and fascia. The touch is gentle — without force or manipulation — and the effects are often deep and long-lasting. Suitable for all ages, including children from 5 years old.',
       prices: [
         { label: 'Children up to 5 (60min)', value: '20€' },
         { label: 'Children 5-12 (60min)', value: '30€' },
@@ -298,8 +298,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     psicologia: {
-      tagline: 'Specialised psychological support for children, adolescents and adults',
-      description: 'Mental health is as important as physical health — and deserves the same attention and care. At Rita Guerreiro, the psychology consultation is a safe, confidential and non-judgmental space where you can explore what concerns you with the support of a specialised professional. We work with children, adolescents and adults at different moments in life.',
+      tagline: 'A safe space to talk about what concerns you — for children, adolescents and adults',
+      description: 'Mental health is as important as physical health — and deserves the same attention and care. The psychology consultation at Rita Guerreiro is a safe, confidential and non-judgmental space where you can explore what concerns you with the support of a specialised professional. We work with children, adolescents and adults at different moments in life.',
       prices: [{ label: 'Consultation (60min)', value: '45€' }],
       sub: [
         { t: 'Anxiety and stress', d: 'Practical tools for managing excessive worry, tension and associated physical symptoms' },
@@ -311,8 +311,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-relaxamento': {
-      tagline: 'For when the body asks to stop — and the mind needs to breathe',
-      description: 'The Relaxation Massage is a space of complete pause. With a gentle and continuous rhythm, we work the whole body to release accumulated tension, relieve muscular overload and induce a state of deep wellbeing. The effects go far beyond the immediate sensation — regular massage reduces cortisol, improves sleep and has a positive impact on the immune system.',
+      tagline: 'Time to pause — with technique and care',
+      description: 'The Relaxation Massage is a space of real pause. With a gentle and continuous rhythm, we work the whole body to release accumulated tension, relieve muscular overload and bring calm to the mind. The effects last beyond the session: regular massage reduces cortisol, improves sleep and strengthens the immune system.',
       prices: [
         { label: '50 minutes', value: '40€' },
         { label: '80 minutes', value: '65€' },
@@ -327,7 +327,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-criancas': {
-      tagline: 'Gentle massage tailored to the youngest — relaxation, sleep and child wellbeing',
+      tagline: 'A gentle, safe touch — for the wellbeing of the youngest',
       description: 'Massage for children is a gentle, safe technique adapted to the needs of the youngest. It promotes relaxation, improves sleep, reduces anxiety and strengthens the emotional bond. Delivered by professionals with specific training in paediatric massage, each session is adapted to the age and needs of the child.',
       prices: [{ label: 'Per session (40min)', value: '30€' }],
       sub: [
@@ -340,8 +340,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-assinatura-rg': {
-      tagline: 'The flagship massage experience of the Rita Guerreiro clinic — 80 unique minutes',
-      description: 'The RG Signature Massage is the ultimate experience the Rita Guerreiro clinic has to offer. An 80-minute session carefully designed to combine the best techniques of deep relaxation, muscle work and overall wellbeing. A personalised experience from start to finish.',
+      tagline: 'Eighty minutes designed in detail — the signature experience of the house',
+      description: 'The RG Signature Massage is the most complete experience the Rita Guerreiro clinic offers. An 80-minute session, carefully designed to combine deep relaxation, specific muscle work and overall wellbeing. Every moment is personalised to you — from start to finish.',
       prices: [{ label: 'Full session (80min)', value: '75€' }],
       sub: [
         { t: 'Total relaxation', d: 'A combination of gentle techniques to induce a state of deep calm' },
@@ -353,8 +353,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-profunda': {
-      tagline: 'Deep tissue, sport massage and deep muscular work — real recovery for those who demand more from their body.',
-      description: 'The Deep Tissue / Sports Massage is a high-intensity therapeutic approach combining deep tissue and sport massage techniques. We work the deepest muscle layers to release chronic contractures, dissolve muscle knots and restore mobility. The sports side is especially suited for athletes — whether in pre-competition preparation to activate and loosen the muscle, or in post-training recovery to speed up regeneration and reduce inflammation. Effective for both high-performance athletes and those suffering from deep muscle tension resistant to other approaches.',
+      tagline: 'Deep muscular work — for those who demand more from their body, in training or everyday life',
+      description: 'The Deep Tissue / Sports Massage is a high-intensity therapeutic approach combining deep tissue and sport massage techniques. We work the deepest muscle layers to release chronic contractures, dissolve muscle knots and restore mobility. The sports side is especially suited for athletes — whether in pre-competition preparation (to activate and loosen the muscle), or in post-training recovery (to speed up regeneration and reduce inflammation). Effective for both high-performance athletes and those suffering from deep muscle tension resistant to other approaches.',
       prices: [
         { label: '50 minutes', value: '45€' },
         { label: '80 minutes', value: '75€' },
@@ -369,8 +369,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-pre-pos-natal': {
-      tagline: 'Care and comfort for pregnant women and new mothers — a moment just for you',
-      description: "The Pre/Post-Natal Massage is specifically adapted to the body's transformations during pregnancy and after birth. It relieves lower back pain, swelling and muscle tension accumulated during pregnancy. Postpartum, it helps with the mother's physical and emotional recovery, at a time of so many changes and demands.",
+      tagline: 'Support and comfort during pregnancy and postpartum — adapted to each phase',
+      description: "The Pre/Post-Natal Massage is specifically adapted to the body's transformations during pregnancy and after birth. It relieves lower back pain, swelling and muscle tension accumulated during pregnancy, with safe positioning at every stage. Postpartum, it supports the mother's physical recovery at a time of so many changes and demands.",
       prices: [{ label: 'Per session (50min)', value: '45€' }],
       sub: [
         { t: 'Lower back pain in pregnancy', d: 'Relief of lower back and pelvic pain typical of pregnancy, with safe positioning' },
@@ -382,7 +382,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-sacro-craniana': {
-      tagline: 'Gentle technique on the craniosacral system — deep relief without effort',
+      tagline: 'An almost imperceptible touch with deep effects on the nervous system',
       description: 'Craniosacral Massage is an extremely gentle manual technique that works on the craniosacral system — the link between the sacrum and the skull through the spine. With an almost imperceptible touch, it releases restrictions in the membranes and cerebrospinal fluid, promoting balance of the central nervous system and relief from accumulated tension.',
       prices: [{ label: 'Per session (50min)', value: '40€' }],
       sub: [
@@ -395,7 +395,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'drenagem-linfatica': {
-      tagline: 'Detoxify, reduce swelling and revitalise — with the Vodder manual technique',
+      tagline: 'Reduce swelling, activate circulation, restore lightness — with the Vodder Method',
       description: 'Manual Lymphatic Drainage according to the Vodder Method is the international reference technique for stimulating the lymphatic system. Through gentle, rhythmic and precise movements on the skin, it activates lymphatic circulation, reduces oedema and promotes the elimination of toxins. Suitable both in clinical and wellbeing contexts.',
       prices: [
         { label: 'Manual (50min)', value: '45€ / 50€' },
@@ -412,8 +412,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-terapeutica': {
-      tagline: 'Post-operative drainage and therapeutic massage — recovery and pain relief',
-      description: "Post-operative Lymphatic Drainage is essential for fast, complication-free recovery after surgery — it reduces oedema, improves scars and restores circulation. Therapeutic Massage works on areas of chronic tension, contractures and persistent muscle pain, with techniques adapted to each person's condition.",
+      tagline: 'To recover after surgery — and to release the tension that won’t go away',
+      description: "Post-operative Lymphatic Drainage is essential for fast, complication-free recovery after surgery — it reduces oedema, improves scar quality and restores circulation. Therapeutic Massage works on areas of chronic tension, contractures and persistent muscle pain, with techniques adapted to each person's condition.",
       prices: [
         { label: 'Therapeutic 30-50min', value: '30€ – 45€' },
         { label: 'Post-Op Drainage 50min', value: '55€' },
@@ -429,8 +429,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     reflexologia: {
-      tagline: "Stimulation of reflex points on the feet to rebalance the body's systems",
-      description: 'Reflexology is a natural therapy that works on reflex points located on the feet, hands or ears, corresponding to different organs and systems of the body. Through precise and rhythmic pressure, it stimulates organic rebalance, relieves tension and promotes general wellbeing. A non-invasive technique with deep effects.',
+      tagline: 'The whole body in your feet — a non-invasive therapy with deep effects',
+      description: 'Reflexology is a natural therapy that works on reflex points located on the feet, hands or ears, corresponding to different organs and systems of the body. Through precise and rhythmic pressure, it stimulates organic rebalance, relieves tension and promotes general wellbeing. A non-invasive and deeply relaxing technique.',
       prices: [{ label: 'Per session (50min)', value: '45€' }],
       sub: [
         { t: 'Stress and anxiety', d: 'Stimulation of the parasympathetic nervous system to reduce tension and anxiety' },
@@ -442,7 +442,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     shiatsu: {
-      tagline: 'Japanese technique of pressure on energy meridians — balance and vitality',
+      tagline: 'Precise pressure on the meridians — to restore balance and vitality',
       description: "Shiatsu is a Japanese therapy that applies pressure with the thumbs, palms and elbows on the body's energy meridians. Based on the principles of Traditional Chinese Medicine, it promotes the flow of vital energy (Ki), relieves tension and pain, and restores physical and emotional balance. Delivered over comfortable clothing, without oils.",
       prices: [{ label: 'Per session (50min)', value: '45€' }],
       sub: [
@@ -455,7 +455,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-indiana': {
-      tagline: 'Indian Head Massage — deep relaxation of head, neck and shoulders',
+      tagline: 'Indian Head Massage — deep relaxation of head, neck and shoulders, without having to undress',
       description: 'Indian Massage, or Indian Head Massage, is a technique of Ayurvedic origin focused on the head, neck, shoulders and face. It works on the chakras of the upper body to release accumulated tension, relieve headaches, improve scalp circulation and induce a state of deep relaxation. Performed seated, without the need to undress.',
       prices: [{ label: 'Per session (40min)', value: '35€' }],
       sub: [
@@ -468,8 +468,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'head-spa': {
-      tagline: 'Deep scalp treatment — cleansing, nourishment and total relaxation',
-      description: "The Head Spa is a luxury scalp treatment that combines deep cleansing, intensive nourishment and a relaxing massage. It removes excess sebum and impurities, balances the scalp's pH, strengthens hair follicles and provides an unparalleled feeling of freshness and lightness. Visible results in the hair come together with a state of deep relaxation.",
+      tagline: 'Caring for the scalp is caring for the hair — and relaxing like you haven’t in a long time',
+      description: "The Head Spa is a complete scalp treatment that combines deep cleansing, intensive nourishment and a relaxing massage. It removes excess sebum and impurities, balances the scalp's pH, strengthens hair follicles and provides an unparalleled feeling of freshness and lightness. Visible results in the hair come together with a state of deep relaxation.",
       prices: [{ label: 'Full session (90min)', value: '75€' }],
       sub: [
         { t: 'Deep cleansing', d: 'Removal of excess sebum, dead cells and impurities from the scalp' },
@@ -481,8 +481,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     facial: {
-      tagline: 'Skin cleansing, extraction and personalised facials for healthy, radiant skin',
-      description: "Our facial treatments are delivered by specialised professionals, with high-quality products adapted to each client's skin type. From the simplest skin cleansing to the most complete personalised facial — each session is designed to maximise visible results and skin wellbeing.",
+      tagline: 'Professional care for every skin type — for visible, lasting results',
+      description: "Our facial treatments are delivered by specialised professionals, with high-quality products adapted to each person's skin type. From the simplest skin cleansing to the most complete personalised facial — each session is designed to maximise visible results and the wellbeing of your skin.",
       prices: [
         { label: 'Skin cleansing', value: '50€' },
         { label: 'Extraction', value: '10€' },
@@ -498,8 +498,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'pacotes-tratamento': {
-      tagline: 'Advanced technology for your body — cavitation, radiofrequency, lipolaser and more',
-      description: 'Our treatment packages combine the most advanced body aesthetic technologies: cavitation, radiofrequency, lipolaser, electrostimulation and pressotherapy. Each treatment is delivered by certified professionals, with prior assessment and a personalised protocol to maximise results.',
+      tagline: 'Advanced technology with prior assessment — for real results, not promises',
+      description: 'Our treatment packages combine the most advanced body aesthetic technologies: cavitation, radiofrequency, lipolaser, electrostimulation and pressotherapy. Each treatment is delivered by certified professionals, with prior assessment and a personalised protocol — because every body responds differently.',
       prices: [
         { label: 'Cav./Radiofreq./Lipolaser/Electrostim. (50min)', value: '50€' },
         { label: '10-session package', value: '450€' },
@@ -515,7 +515,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'depilacao-laser': {
-      tagline: 'Permanent hair removal with state-of-the-art technology — for women and men',
+      tagline: 'No more weekly shaving — definitive laser, for women and men',
       description: 'Laser hair removal is today the most effective and lasting solution for eliminating unwanted hair. At Rita Guerreiro we use cutting-edge equipment, with technology adapted to different skin tones and hair types. The process is progressive — at each session the hair becomes finer and sparser, until permanent elimination.',
       prices: [
         { label: 'Women — 1 area', value: '20€' },
@@ -535,8 +535,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'pilates-clinico': {
-      tagline: 'Mindful movement supervised by a physiotherapist — a strong, pain-free body',
-      description: 'Clinical Pilates differs from conventional Pilates in being supervised by a physiotherapist and adapted to specific clinical conditions — lower back pain, hernias, post-surgery, pregnancy, osteoporosis or any other limitation. At Rita Guerreiro, each programme is designed individually with progressive exercises.',
+      tagline: 'Pilates with physiotherapist supervision — exercise that is adapted, always safe',
+      description: 'Clinical Pilates differs from conventional Pilates in being supervised by a physiotherapist and adapted to specific clinical conditions — lower back pain, hernias, post-surgery, pregnancy, osteoporosis or any other limitation. Each programme is designed individually, with progressive exercises that evolve at your own pace.',
       prices: [
         { label: 'Monthly fee', value: '35€ / 60€' },
         { label: 'Annual insurance', value: '10€' },
@@ -554,8 +554,8 @@ const SERVICE_DETAIL_I18N = {
   },
   FR: {
     fisioterapia: {
-      tagline: 'Évaluation, traitement et récupération en cas de douleur ou de blessure — pour adultes',
-      description: "Notre physiothérapie est conçue personne par personne. Nous commençons par une évaluation soignée — nous écoutons votre histoire, comprenons l'origine de la douleur ou du dysfonctionnement et, à partir de là, nous construisons un plan réaliste pour votre récupération. Séances de 50 minutes combinant thérapie manuelle, exercice thérapeutique et, lorsque cela a du sens, l'intégration avec d'autres services du centre.",
+      tagline: 'Évaluation soignée, plan adapté à vous — pour bouger à nouveau en confiance',
+      description: "Notre physiothérapie commence toujours par prendre le temps de vous écouter : ce que vous ressentez, ce que vous avez déjà essayé, ce que vous voulez retrouver. À partir de là, nous construisons un plan réaliste, en séances de 50 minutes combinant thérapie manuelle, exercice thérapeutique et, lorsque cela a du sens, articulation avec d'autres services du centre. Pas de protocoles génériques — parce que chaque corps et chaque histoire sont différents.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
         { label: 'Pack 5 séances', value: '225€' },
@@ -571,8 +571,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-pediatrica': {
-      tagline: 'Physiothérapie adaptée aux différentes étapes du développement — pour bébés, enfants et adolescents',
-      description: "La Physiothérapie Pédiatrique est un domaine spécialisé qui travaille avec des bébés, enfants et adolescents à différentes étapes du développement. Nous évaluons et traitons les retards de développement moteur, les altérations posturales, les blessures musculo-squelettiques et les conditions neurologiques, dans un environnement sûr, adapté et ludique. Chaque séance est conçue pour le rythme, l'âge et les besoins spécifiques de l'enfant — avec une implication active de la famille lorsque cela a du sens.",
+      tagline: 'Physiothérapie adaptée à chaque étape de la croissance — avec soin, sécurité et du temps pour chaque enfant',
+      description: "La Physiothérapie Pédiatrique accompagne bébés, enfants et adolescents à différentes étapes du développement. Nous évaluons et traitons les retards de développement moteur, les altérations posturales, les blessures musculo-squelettiques et les conditions neurologiques — toujours dans un environnement sûr, adapté à l'âge de chaque enfant. Chaque séance est conçue pour le rythme de l'enfant, avec l'implication de la famille lorsque cela a du sens.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
         { label: 'Pack 5 séances', value: '225€' },
@@ -588,8 +588,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-atm': {
-      tagline: "Traitement spécialisé de l'articulation temporo-mandibulaire — douleur, blocage et inconfort de la mâchoire",
-      description: "La Physiothérapie ATM traite les dysfonctions de l'articulation temporo-mandibulaire — douleur, blocage, claquements ou grincements de la mâchoire — avec une approche manuelle spécialisée. Elle inclut une évaluation articulaire et musculaire, une thérapie manuelle intrabuccale et extrabuccale, et des exercices spécifiques pour restaurer la fonction et le confort de la mâchoire. Souvent associée aux céphalées, à la tension cervicale et au bruxisme — nous traitons le problème à sa racine.",
+      tagline: 'Quand la mâchoire fait mal, se bloque ou craque — nous traitons l’ATM à sa racine',
+      description: "La Physiothérapie ATM traite les dysfonctions de l'articulation temporo-mandibulaire — douleur, blocage, claquements ou grincements — avec une approche manuelle spécialisée. Elle inclut une évaluation articulaire et musculaire, une thérapie manuelle intrabuccale et extrabuccale, et des exercices spécifiques pour restaurer la fonction et le confort de la mâchoire. Comme l'ATM est souvent liée aux céphalées, à la tension cervicale et au bruxisme, nous traitons le problème à son origine — pas seulement le symptôme.",
       prices: [{ label: 'Physiothérapie ATM (50min)', value: '55€' }],
       sub: [
         { t: 'Douleur à la mâchoire', d: 'Soulagement de la douleur articulaire, musculaire ou à la mastication grâce à une thérapie manuelle spécialisée' },
@@ -601,8 +601,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     mesoterapia: {
-      tagline: 'Micro-injections de substances actives pour douleur, inflammation et traitements esthétiques localisés',
-      description: "La Mésothérapie consiste en l'application de micro-injections de substances actives directement dans les couches superficielles de la peau ou du tissu sous-cutané. Elle permet une action très localisée — atteignant la zone exacte de douleur, contracture ou préoccupation esthétique avec peu de diffusion systémique. Appliquée par un physiothérapeute avec formation spécifique, c'est une technique polyvalente tant en contexte clinique (douleur articulaire, contractures) qu'esthétique (cellulite, relâchement, rajeunissement).",
+      tagline: 'Action ciblée là où vous en avez le plus besoin — douleur, inflammation ou soin esthétique',
+      description: "La Mésothérapie consiste en l'application de micro-injections de substances actives directement dans les couches superficielles de la peau ou du tissu sous-cutané. Elle permet une action très localisée — atteignant la zone exacte de douleur, contracture ou préoccupation esthétique, avec peu de diffusion systémique. Appliquée par un physiothérapeute avec formation spécifique, c'est une technique polyvalente tant en contexte clinique (douleur articulaire, contractures) qu'esthétique (cellulite, relâchement, rajeunissement).",
       prices: [{ label: 'Séance (50min)', value: '50€' }],
       sub: [
         { t: 'Douleur et inflammation articulaire', d: "Application localisée d'anti-inflammatoires pour un soulagement rapide des genoux, épaules ou colonne" },
@@ -614,8 +614,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-vestibular': {
-      tagline: "Réadaptation pour vertiges, étourdissements et troubles de l'équilibre — retrouvez stabilité et confiance",
-      description: "La Physiothérapie Vestibulaire est un domaine spécialisé de la physiothérapie qui traite les vertiges, étourdissements et déséquilibres. Par une évaluation rigoureuse, des manœuvres de repositionnement (efficaces dans le VPPB) et des exercices spécifiques d'habituation et de stabilisation du regard, nous aidons le système vestibulaire à récupérer ou compenser. Les résultats sont souvent rapides — dans certains cas avec un soulagement significatif dès la première séance.",
+      tagline: 'Retrouver la stabilité — et faire à nouveau confiance à l’équilibre de votre corps',
+      description: "La Physiothérapie Vestibulaire est un domaine spécialisé de la physiothérapie qui traite les vertiges, étourdissements et déséquilibres. Par une évaluation rigoureuse, des manœuvres de repositionnement (efficaces dans le VPPB) et des exercices spécifiques d'habituation et de stabilisation du regard, nous aidons le système vestibulaire à récupérer ou compenser. Les résultats sont souvent rapides — dans de nombreux cas, avec un soulagement significatif dès la première séance.",
       prices: [{ label: 'Par séance (50min)', value: '45€' }],
       sub: [
         { t: 'Vertige positionnel (VPPB)', d: 'Manœuvres de repositionnement des otolithes — résolution fréquente en 1 à 3 séances' },
@@ -627,8 +627,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     acupuntura: {
-      tagline: 'Médecine traditionnelle chinoise — douleur, stress, anxiété, insomnie et bien-être général',
-      description: "L'Acupuncture est un des piliers de la Médecine Traditionnelle Chinoise avec une évidence croissante dans la gestion de la douleur, du stress, de l'anxiété et de l'insomnie. Par la stimulation précise de points spécifiques, elle régule le système nerveux, stimule la libération d'endorphines et favorise l'équilibre énergétique. À la Rita Guerreiro, chaque séance est précédée d'une évaluation de l'état de santé global pour une intervention véritablement personnalisée.",
+      tagline: 'Une médecine affinée au fil des siècles — et des preuves croissantes pour votre bien-être',
+      description: "L'Acupuncture est l'un des piliers de la Médecine Traditionnelle Chinoise, avec des preuves croissantes dans la gestion de la douleur, du stress, de l'anxiété et de l'insomnie. Par la stimulation précise de points spécifiques, elle régule le système nerveux, stimule la libération d'endorphines et favorise l'équilibre énergétique. À la clinique Rita Guerreiro, chaque séance est précédée d'une évaluation de l'état de santé global — pour une intervention véritablement personnalisée.",
       prices: [{ label: 'Par séance (50min)', value: '45€' }],
       sub: [
         { t: 'Douleur chronique', d: "Lombalgies, cervicalgies, céphalées et douleurs articulaires avec réponse prouvée à l'acupuncture" },
@@ -640,8 +640,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     nutricao: {
-      tagline: 'Une alimentation qui fonctionne pour votre vie — sans régimes restrictifs ni solutions toutes faites',
-      description: "La consultation de nutrition à la Rita Guerreiro commence par comprendre qui vous êtes : vos habitudes, votre rythme, ce qui fonctionne et ce qui ne fonctionne pas. À partir de là, nous créons un plan alimentaire personnalisé, réaliste et durable. Nous travaillons la perte de poids, la prise de masse musculaire, la santé digestive, la nutrition sportive et l'alimentation adaptée à des conditions cliniques spécifiques.",
+      tagline: 'Une alimentation réelle pour la vie réelle — sans régimes restrictifs ni solutions génériques',
+      description: "La consultation de nutrition commence par comprendre qui vous êtes : vos habitudes, votre rythme, ce qui fonctionne et ce qui ne fonctionne pas pour vous. À partir de là, nous créons un plan alimentaire personnalisé, réaliste et durable — pour la perte de poids, la prise de masse musculaire, la santé digestive, la nutrition sportive ou l'adaptation à des conditions cliniques spécifiques. Sans promesses toutes faites : juste une nutrition sérieuse, à votre mesure.",
       prices: [
         { label: "1ʳᵉ consultation (jusqu'à 50min)", value: '45€' },
         { label: 'Suivantes (30min)', value: '40€' },
@@ -656,8 +656,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'terapia-bowen': {
-      tagline: 'Une technique douce aux résultats surprenants — pour enfants et adultes',
-      description: 'La Thérapie Bowen est une approche holistique et non invasive qui agit sur le système neuromusculaire par des mouvements précis sur les muscles, tendons et fascias. Le toucher est doux — sans force ni manipulation — et les effets sont souvent profonds et durables. Indiquée à tous les âges, y compris les enfants à partir de 5 ans.',
+      tagline: 'Douce au toucher, efficace dans le résultat — pour tous les âges',
+      description: 'La Thérapie Bowen est une approche non invasive qui agit sur le système neuromusculaire par des mouvements précis sur les muscles, tendons et fascias. Le toucher est doux — sans force ni manipulation — et les effets sont souvent profonds et durables. Indiquée à tous les âges, y compris les enfants à partir de 5 ans.',
       prices: [
         { label: 'Enfants jusqu\'à 5 ans (60min)', value: '20€' },
         { label: 'Enfants 5-12 ans (60min)', value: '30€' },
@@ -673,8 +673,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     psicologia: {
-      tagline: 'Accompagnement psychologique spécialisé pour enfants, adolescents et adultes',
-      description: "La santé mentale est aussi importante que la santé physique — et mérite la même attention et les mêmes soins. À la Rita Guerreiro, la consultation de psychologie est un espace sûr, confidentiel et sans jugement, où vous pouvez explorer ce qui vous préoccupe avec le soutien d'un professionnel spécialisé. Nous travaillons avec des enfants, des adolescents et des adultes à différents moments de la vie.",
+      tagline: 'Un espace sûr pour parler de ce qui vous préoccupe — pour enfants, adolescents et adultes',
+      description: "La santé mentale est aussi importante que la santé physique — et mérite la même attention et les mêmes soins. La consultation de psychologie à la clinique Rita Guerreiro est un espace sûr, confidentiel et sans jugement, où vous pouvez explorer ce qui vous préoccupe avec le soutien d'un professionnel spécialisé. Nous accompagnons enfants, adolescents et adultes à différents moments de la vie.",
       prices: [{ label: 'Consultation (60min)', value: '45€' }],
       sub: [
         { t: 'Anxiété et stress', d: "Outils pratiques pour gérer l'inquiétude excessive, la tension et les symptômes physiques associés" },
@@ -686,8 +686,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-relaxamento': {
-      tagline: "Pour quand le corps demande à s'arrêter — et que l'esprit a besoin de respirer",
-      description: 'Le Massage Relaxant est un espace de pause totale. Dans un rythme doux et continu, nous travaillons tout le corps pour libérer les tensions accumulées, soulager la surcharge musculaire et induire un état de bien-être profond. Les effets vont bien au-delà de la sensation immédiate — un massage régulier réduit le cortisol, améliore le sommeil et a un impact positif sur le système immunitaire.',
+      tagline: 'Du temps pour faire une pause — avec technique et soin',
+      description: 'Le Massage Relaxant est un espace de pause réelle. Dans un rythme doux et continu, nous parcourons tout le corps pour libérer les tensions accumulées, soulager la surcharge musculaire et ramener le calme à l’esprit. Les effets durent au-delà de la séance : un massage régulier réduit le cortisol, améliore le sommeil et renforce le système immunitaire.',
       prices: [
         { label: '50 minutes', value: '40€' },
         { label: '80 minutes', value: '65€' },
@@ -702,7 +702,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-criancas': {
-      tagline: 'Massage doux et adapté aux plus petits — relaxation, sommeil et bien-être infantile',
+      tagline: 'Un toucher doux et sûr — pour le bien-être des plus jeunes',
       description: "Le massage pour enfants est une technique douce, sûre et adaptée aux besoins des plus jeunes. Il favorise la relaxation, améliore le sommeil, réduit l'anxiété et renforce le lien affectif. Réalisé par des professionnels avec une formation spécifique en massage pédiatrique, chaque séance est adaptée à l'âge et aux besoins de l'enfant.",
       prices: [{ label: 'Par séance (40min)', value: '30€' }],
       sub: [
@@ -715,8 +715,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-assinatura-rg': {
-      tagline: "L'expérience de massage par excellence de la clinique Rita Guerreiro — 80 minutes uniques",
-      description: "Le Massage Signature RG est l'expérience maximale que la clinique Rita Guerreiro a à offrir. Une séance de 80 minutes soigneusement conçue pour combiner les meilleures techniques de relaxation profonde, travail musculaire et bien-être global. Une expérience personnalisée, du début à la fin.",
+      tagline: 'Quatre-vingts minutes pensées dans le détail — l’expérience signature de la maison',
+      description: "Le Massage Signature RG est l'expérience la plus complète que la clinique Rita Guerreiro a à offrir. Une séance de 80 minutes, soigneusement conçue pour combiner relaxation profonde, travail musculaire spécifique et bien-être global. Chaque moment est personnalisé selon vous — du début à la fin.",
       prices: [{ label: 'Séance complète (80min)', value: '75€' }],
       sub: [
         { t: 'Relaxation totale', d: 'Combinaison de techniques douces pour induire un état de calme profond' },
@@ -728,8 +728,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-profunda': {
-      tagline: 'Deep tissue, sport massage et travail musculaire profond — une vraie récupération pour ceux qui exigent davantage de leur corps.',
-      description: "Le Massage Profond / Massage Sportif est une approche thérapeutique à haute intensité qui combine des techniques de deep tissue et de sport massage. Nous travaillons les couches musculaires les plus profondes pour libérer les contractures chroniques, dissoudre les nœuds musculaires et restaurer la mobilité. La dimension sportive est particulièrement adaptée aux athlètes — que ce soit en préparation pré-compétition pour activer et assouplir le muscle, ou en récupération post-entraînement pour accélérer la régénération et réduire l'inflammation. Efficace aussi bien pour les sportifs de haute performance que pour ceux souffrant de tensions musculaires profondes résistantes à d'autres approches.",
+      tagline: 'Travail musculaire profond — pour ceux qui exigent davantage de leur corps, à l’entraînement ou au quotidien',
+      description: "Le Massage Profond / Sportif est une approche thérapeutique à haute intensité qui combine des techniques de deep tissue et de sport massage. Nous travaillons les couches musculaires les plus profondes pour libérer les contractures chroniques, dissoudre les nœuds musculaires et restaurer la mobilité. La dimension sportive est particulièrement adaptée aux athlètes — que ce soit en préparation pré-compétition (pour activer et assouplir le muscle), ou en récupération post-entraînement (pour accélérer la régénération et réduire l'inflammation). Efficace aussi bien pour les sportifs de haute performance que pour ceux souffrant de tensions musculaires profondes résistantes à d'autres approches.",
       prices: [
         { label: '50 minutes', value: '45€' },
         { label: '80 minutes', value: '75€' },
@@ -744,8 +744,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-pre-pos-natal': {
-      tagline: 'Soin et confort pour les femmes enceintes et les jeunes mères — un moment rien que pour vous',
-      description: "Le Massage Pré/Post-Natal est spécialement adapté aux transformations du corps pendant la grossesse et après l'accouchement. Il soulage les douleurs lombaires, les gonflements et la tension musculaire accumulée pendant la gestation. En post-partum, il aide à la récupération physique et émotionnelle de la mère, dans une période de tant de changements et d'exigences.",
+      tagline: 'Accompagnement et confort pendant la grossesse et le post-partum — adapté à chaque phase',
+      description: "Le Massage Pré/Post-Natal est spécialement adapté aux transformations du corps pendant la grossesse et après l'accouchement. Il soulage les douleurs lombaires, les gonflements et la tension musculaire accumulée pendant la gestation, avec un positionnement sûr à toutes les étapes. En post-partum, il soutient la récupération physique de la mère, dans une période de tant de changements et d'exigences.",
       prices: [{ label: 'Par séance (50min)', value: '45€' }],
       sub: [
         { t: 'Douleur lombaire pendant la grossesse', d: 'Soulagement des douleurs lombaires et pelviennes typiques de la gestation, avec positionnement sûr' },
@@ -757,7 +757,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-sacro-craniana': {
-      tagline: 'Technique douce sur le système crânio-sacré — soulagement profond sans effort',
+      tagline: 'Un toucher presque imperceptible aux effets profonds sur le système nerveux',
       description: "Le Massage Crânio-sacré est une technique manuelle extrêmement douce qui travaille sur le système crânio-sacré — le lien entre le sacrum et le crâne en passant par la colonne vertébrale. Avec un toucher presque imperceptible, il libère les restrictions dans les membranes et le liquide céphalo-rachidien, favorisant l'équilibre du système nerveux central et le soulagement des tensions accumulées.",
       prices: [{ label: 'Par séance (50min)', value: '40€' }],
       sub: [
@@ -770,7 +770,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'drenagem-linfatica': {
-      tagline: 'Détoxifie, dégonfle et revitalise — avec la technique manuelle Méthode Vodder',
+      tagline: 'Réduit le gonflement, active la circulation, restaure la légèreté — avec la Méthode Vodder',
       description: "Le Drainage Lymphatique Manuel selon la Méthode Vodder est la technique de référence internationale pour stimuler le système lymphatique. Par des mouvements doux, rythmiques et précis sur la peau, il active la circulation lymphatique, réduit l'œdème et favorise l'élimination des toxines. Indiqué tant en contexte clinique que de bien-être.",
       prices: [
         { label: 'Manuel (50min)', value: '45€ / 50€' },
@@ -787,8 +787,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-terapeutica': {
-      tagline: 'Drainage post-opératoire et massage thérapeutique — récupération et soulagement de la douleur',
-      description: "Le Drainage Lymphatique Post-opératoire est essentiel à une récupération rapide et sans complications après une chirurgie — il réduit l'œdème, améliore les cicatrices et restaure la circulation. Le Massage Thérapeutique travaille les zones de tension chronique, les contractures et la douleur musculaire persistante, avec des techniques adaptées à la condition de chaque personne.",
+      tagline: 'Pour récupérer après une chirurgie — et pour libérer la tension qui ne s’en va pas',
+      description: "Le Drainage Lymphatique Post-opératoire est essentiel à une récupération rapide et sans complications après une chirurgie — il réduit l'œdème, améliore la qualité des cicatrices et restaure la circulation. Le Massage Thérapeutique travaille les zones de tension chronique, les contractures et la douleur musculaire persistante, avec des techniques adaptées à la condition de chaque personne.",
       prices: [
         { label: 'Thérapeutique 30-50min', value: '30€ – 45€' },
         { label: 'Drainage Post-Op 50min', value: '55€' },
@@ -804,8 +804,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     reflexologia: {
-      tagline: "Stimulation des points réflexes des pieds pour rééquilibrer les systèmes de l'organisme",
-      description: 'La Réflexologie est une thérapie naturelle qui travaille sur des points réflexes situés sur les pieds, les mains ou les oreilles, correspondant à différents organes et systèmes du corps. Par une pression précise et rythmique, elle stimule le rééquilibre organique, soulage les tensions et favorise le bien-être général. Une technique non invasive aux effets profonds.',
+      tagline: 'Tout le corps dans les pieds — une thérapie non invasive aux effets profonds',
+      description: 'La Réflexologie est une thérapie naturelle qui travaille sur des points réflexes situés sur les pieds, les mains ou les oreilles, correspondant à différents organes et systèmes du corps. Par une pression précise et rythmique, elle stimule le rééquilibre organique, soulage les tensions et favorise le bien-être général. Une technique non invasive et profondément relaxante.',
       prices: [{ label: 'Par séance (50min)', value: '45€' }],
       sub: [
         { t: 'Stress et anxiété', d: "Stimulation du système nerveux parasympathique pour réduire la tension et l'anxiété" },
@@ -817,8 +817,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     shiatsu: {
-      tagline: 'Technique japonaise de pression sur les méridiens énergétiques — équilibre et vitalité',
-      description: "Le Shiatsu est une thérapie japonaise qui applique une pression avec les pouces, les paumes et les coudes sur les méridiens énergétiques du corps. Basé sur les principes de la Médecine Traditionnelle Chinoise, il favorise le flux d'énergie vitale (Ki), soulage la tension et la douleur, et restaure l'équilibre physique et émotionnel. Réalisé sur vêtements confortables, sans huiles.",
+      tagline: 'Une pression précise sur les méridiens — pour retrouver équilibre et vitalité',
+      description: "Le Shiatsu est une thérapie japonaise qui applique une pression avec les pouces, les paumes et les coudes sur les méridiens énergétiques du corps. Basé sur les principes de la Médecine Traditionnelle Chinoise, il favorise le flux d'énergie vitale (Ki), soulage la tension et la douleur et restaure l'équilibre physique et émotionnel. Réalisé sur vêtements confortables, sans huiles.",
       prices: [{ label: 'Par séance (50min)', value: '45€' }],
       sub: [
         { t: 'Douleur musculaire et articulaire', d: 'Soulagement des douleurs et tensions musculaires par la pression sur les méridiens énergétiques' },
@@ -830,7 +830,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-indiana': {
-      tagline: 'Indian Head Massage — relaxation profonde de la tête, du cou et des épaules',
+      tagline: 'Indian Head Massage — détente profonde de la tête, du cou et des épaules, sans avoir à se déshabiller',
       description: "Le Massage Indien, ou Indian Head Massage, est une technique d'origine ayurvédique focalisée sur la tête, le cou, les épaules et le visage. Il travaille sur les chakras de la partie supérieure du corps pour libérer la tension accumulée, soulager les céphalées, améliorer la circulation du cuir chevelu et induire un état de relaxation profonde. Réalisé assis, sans nécessité de se déshabiller.",
       prices: [{ label: 'Par séance (40min)', value: '35€' }],
       sub: [
@@ -843,8 +843,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'head-spa': {
-      tagline: 'Traitement profond du cuir chevelu — nettoyage, nutrition et détente totale',
-      description: "Le Head Spa est un traitement de luxe pour le cuir chevelu qui combine nettoyage profond, nutrition intensive et massage relaxant. Il élimine l'excès de sébum et les impuretés, équilibre le pH du cuir chevelu, renforce les follicules capillaires et procure une sensation de fraîcheur et de légèreté incomparable. Le résultat visible sur le cheveu s'accompagne d'un état de relaxation profonde.",
+      tagline: 'Prendre soin du cuir chevelu, c’est prendre soin du cheveu — et se détendre comme rarement',
+      description: "Le Head Spa est un traitement complet pour le cuir chevelu qui combine nettoyage profond, nutrition intensive et massage relaxant. Il élimine l'excès de sébum et les impuretés, équilibre le pH du cuir chevelu, renforce les follicules capillaires et procure une sensation de fraîcheur et de légèreté incomparable. Le résultat visible sur le cheveu s'accompagne d'un état de relaxation profonde.",
       prices: [{ label: 'Séance complète (90min)', value: '75€' }],
       sub: [
         { t: 'Nettoyage en profondeur', d: "Élimination de l'excès de sébum, cellules mortes et impuretés du cuir chevelu" },
@@ -856,8 +856,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     facial: {
-      tagline: 'Nettoyage de peau, extraction et soin facial personnalisé pour une peau saine et éclatante',
-      description: 'Nos soins du visage sont réalisés par des professionnels spécialisés, avec des produits de haute qualité adaptés au type de peau de chaque client. Du simple nettoyage de peau au soin personnalisé le plus complet — chaque séance est pensée pour maximiser les résultats visibles et le bien-être de la peau.',
+      tagline: 'Soin professionnel pour chaque type de peau — pour des résultats visibles et durables',
+      description: 'Nos soins du visage sont réalisés par des professionnels spécialisés, avec des produits de haute qualité adaptés au type de peau de chaque personne. Du simple nettoyage de peau au soin personnalisé le plus complet — chaque séance est pensée pour maximiser les résultats visibles et le bien-être de votre peau.',
       prices: [
         { label: 'Nettoyage de peau', value: '50€' },
         { label: 'Extraction', value: '10€' },
@@ -873,8 +873,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'pacotes-tratamento': {
-      tagline: 'Technologie avancée pour votre corps — cavitation, radiofréquence, lipolaser et plus',
-      description: "Nos forfaits de traitement combinent les technologies les plus avancées d'esthétique corporelle : cavitation, radiofréquence, lipolaser, électrostimulation et pressothérapie. Chaque traitement est réalisé par des professionnels certifiés, avec une évaluation préalable et un protocole personnalisé pour maximiser les résultats.",
+      tagline: 'Technologie avancée avec évaluation préalable — pour de vrais résultats, pas des promesses',
+      description: "Nos forfaits de traitement combinent les technologies les plus avancées d'esthétique corporelle : cavitation, radiofréquence, lipolaser, électrostimulation et pressothérapie. Chaque traitement est réalisé par des professionnels certifiés, avec une évaluation préalable et un protocole personnalisé — parce que chaque corps réagit différemment.",
       prices: [
         { label: 'Cav./Radiofréq./Lipolaser/Électrostim. (50min)', value: '50€' },
         { label: 'Forfait 10 séances', value: '450€' },
@@ -890,8 +890,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'depilacao-laser': {
-      tagline: 'Épilation définitive avec une technologie de dernière génération — pour femme et homme',
-      description: "L'épilation au laser est aujourd'hui la solution la plus efficace et durable pour l'élimination du poil indésiré. À la Rita Guerreiro nous utilisons des équipements de dernière génération, avec une technologie qui s'adapte aux différents tons de peau et types de poil. Le processus est progressif — à chaque séance le poil devient plus fin et plus clairsemé, jusqu'à l'élimination permanente.",
+      tagline: 'Finie l’épilation hebdomadaire — laser définitif, pour femme et homme',
+      description: "L'épilation au laser est aujourd'hui la solution la plus efficace et durable pour l'élimination du poil indésiré. À la clinique Rita Guerreiro nous utilisons des équipements de dernière génération, avec une technologie qui s'adapte aux différents tons de peau et types de poil. Le processus est progressif — à chaque séance le poil devient plus fin et plus clairsemé, jusqu'à l'élimination permanente.",
       prices: [
         { label: 'Femme — 1 zone', value: '20€' },
         { label: 'Femme — Combi 3 zones', value: '50€' },
@@ -910,8 +910,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'pilates-clinico': {
-      tagline: 'Mouvement conscient supervisé par un physiothérapeute — un corps fort et sans douleur',
-      description: "Le Pilates Clinique se distingue du Pilates conventionnel par le fait d'être supervisé par un physiothérapeute et adapté à des conditions cliniques spécifiques — douleur lombaire, hernies, post-opératoire, grossesse, ostéoporose ou toute autre limitation. À la Rita Guerreiro, chaque programme est conçu individuellement avec des exercices progressifs.",
+      tagline: 'Pilates supervisé par un physiothérapeute — exercice adapté, toujours sûr',
+      description: "Le Pilates Clinique se distingue du Pilates conventionnel par le fait d'être supervisé par un physiothérapeute et adapté à des conditions cliniques spécifiques — douleur lombaire, hernies, post-opératoire, grossesse, ostéoporose ou toute autre limitation. Chaque programme est conçu individuellement, avec des exercices progressifs qui évoluent à votre rythme.",
       prices: [
         { label: 'Mensualité', value: '35€ / 60€' },
         { label: 'Assurance annuelle', value: '10€' },
@@ -929,8 +929,8 @@ const SERVICE_DETAIL_I18N = {
   },
   ES: {
     fisioterapia: {
-      tagline: 'Evaluación, tratamiento y recuperación del dolor o lesión — para adultos',
-      description: 'Nuestra fisioterapia se diseña persona a persona. Comenzamos con una evaluación cuidadosa — escuchamos tu historia, entendemos el origen del dolor o disfunción, y a partir de ahí construimos un plan realista para tu recuperación. Sesiones de 50 minutos combinando terapia manual, ejercicio terapéutico y, cuando es adecuado, la integración con otros servicios del centro.',
+      tagline: 'Evaluación cuidadosa, plan a tu medida — para volver a moverte con confianza',
+      description: 'Nuestra fisioterapia siempre comienza con tiempo para escucharte: lo que sientes, lo que ya has probado, lo que quieres volver a hacer. A partir de ahí construimos un plan realista, en sesiones de 50 minutos que combinan terapia manual, ejercicio terapéutico y, cuando tiene sentido, articulación con otros servicios del centro. Sin protocolos genéricos — porque cada cuerpo y cada historia son diferentes.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
         { label: 'Pack 5 sesiones', value: '225€' },
@@ -946,8 +946,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-pediatrica': {
-      tagline: 'Fisioterapia adaptada a las diferentes etapas del desarrollo — para bebés, niños y adolescentes',
-      description: 'La Fisioterapia Pediátrica es un área especializada que trabaja con bebés, niños y adolescentes en diferentes etapas del desarrollo. Evaluamos y tratamos retrasos en el desarrollo motor, alteraciones posturales, lesiones musculoesqueléticas y condiciones neurológicas, en un entorno seguro, adaptado y lúdico. Cada sesión está diseñada para el ritmo, edad y necesidades específicas del niño — con participación activa de la familia siempre que tenga sentido.',
+      tagline: 'Fisioterapia adaptada a cada etapa del crecimiento — con cuidado, seguridad y tiempo para cada niño',
+      description: 'La Fisioterapia Pediátrica acompaña a bebés, niños y adolescentes en diferentes etapas del desarrollo. Evaluamos y tratamos retrasos en el desarrollo motor, alteraciones posturales, lesiones musculoesqueléticas y condiciones neurológicas — siempre en un entorno seguro y adecuado a la edad de cada niño. Cada sesión se diseña para el ritmo del niño, con participación de la familia siempre que tenga sentido.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
         { label: 'Pack 5 sesiones', value: '225€' },
@@ -963,8 +963,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-atm': {
-      tagline: 'Tratamiento especializado de la articulación temporomandibular — dolor, bloqueo y molestias en la mandíbula',
-      description: 'La Fisioterapia de la ATM trata las disfunciones de la articulación temporomandibular — dolor, bloqueo, chasquidos o rechinar de la mandíbula — con un enfoque manual especializado. Incluye evaluación articular y muscular, terapia manual intraoral y extraoral, y ejercicios específicos para devolver función y confort a la mandíbula. A menudo se asocia con cefaleas, tensión cervical y bruxismo — abordamos el problema en su raíz.',
+      tagline: 'Cuando la mandíbula duele, se bloquea o hace chasquidos — tratamos la ATM en su raíz',
+      description: 'La Fisioterapia de la ATM trata las disfunciones de la articulación temporomandibular — dolor, bloqueo, chasquidos o rechinar — con un enfoque manual especializado. Incluye evaluación articular y muscular, terapia manual intraoral y extraoral, y ejercicios específicos para devolver función y confort a la mandíbula. Como la ATM se asocia a menudo con cefaleas, tensión cervical y bruxismo, abordamos el problema en su origen — no solo el síntoma.',
       prices: [{ label: 'Fisioterapia ATM (50min)', value: '55€' }],
       sub: [
         { t: 'Dolor en la mandíbula', d: 'Alivio del dolor articular, muscular o al masticar mediante terapia manual especializada' },
@@ -976,8 +976,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     mesoterapia: {
-      tagline: 'Microinyecciones de sustancias activas para dolor, inflamación y tratamientos estéticos localizados',
-      description: 'La Mesoterapia consiste en aplicar microinyecciones de sustancias activas directamente en las capas superficiales de la piel o tejido subcutáneo. Permite una acción altamente localizada — llega a la zona exacta del dolor, contractura o preocupación estética con poca difusión sistémica. Aplicada por fisioterapeuta con formación específica, es una técnica versátil tanto en contexto clínico (dolor articular, contracturas) como estético (celulitis, flacidez, rejuvenecimiento).',
+      tagline: 'Acción dirigida donde más la necesitas — para dolor, inflamación o cuidado estético',
+      description: 'La Mesoterapia consiste en aplicar microinyecciones de sustancias activas directamente en las capas superficiales de la piel o tejido subcutáneo. Permite una acción altamente localizada — llega a la zona exacta del dolor, contractura o preocupación estética, con poca difusión sistémica. Aplicada por fisioterapeuta con formación específica, es una técnica versátil tanto en contexto clínico (dolor articular, contracturas) como estético (celulitis, flacidez, rejuvenecimiento).',
       prices: [{ label: 'Sesión (50min)', value: '50€' }],
       sub: [
         { t: 'Dolor e inflamación articular', d: 'Aplicación localizada de antiinflamatorios para alivio rápido en rodillas, hombros o columna' },
@@ -989,8 +989,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-vestibular': {
-      tagline: 'Rehabilitación para mareos, vértigo y trastornos del equilibrio — recupera estabilidad y confianza',
-      description: 'La Fisioterapia Vestibular es un área especializada de la fisioterapia que trata los mareos, vértigo y desequilibrios. A través de una evaluación rigurosa, maniobras de reposicionamiento (eficaces en VPPB) y ejercicios específicos de habituación y estabilización de la mirada, ayudamos al sistema vestibular a recuperarse o compensar. Los resultados suelen ser rápidos — en algunos casos con alivio significativo desde la primera sesión.',
+      tagline: 'Recuperar la estabilidad — y volver a confiar en el equilibrio de tu cuerpo',
+      description: 'La Fisioterapia Vestibular es un área especializada de la fisioterapia que trata los mareos, vértigo y desequilibrios. A través de una evaluación rigurosa, maniobras de reposicionamiento (eficaces en VPPB) y ejercicios específicos de habituación y estabilización de la mirada, ayudamos al sistema vestibular a recuperarse o compensar. Los resultados suelen ser rápidos — en muchos casos, con alivio significativo desde la primera sesión.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
         { t: 'Vértigo posicional (VPPB)', d: 'Maniobras de reposicionamiento de otolitos — resolución frecuente en 1 a 3 sesiones' },
@@ -1002,8 +1002,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     acupuntura: {
-      tagline: 'Medicina Tradicional China — dolor, estrés, ansiedad, insomnio y bienestar general',
-      description: 'La Acupuntura es uno de los pilares de la Medicina Tradicional China con evidencia creciente en el manejo del dolor, estrés, ansiedad e insomnio. Mediante la estimulación precisa de puntos específicos, regula el sistema nervioso, estimula la liberación de endorfinas y promueve el equilibrio energético. En Rita Guerreiro, cada sesión está precedida por una evaluación global de salud para una intervención verdaderamente personalizada.',
+      tagline: 'Una medicina con siglos de práctica — y evidencia creciente para tu bienestar',
+      description: 'La Acupuntura es uno de los pilares de la Medicina Tradicional China, con evidencia creciente en el manejo del dolor, estrés, ansiedad e insomnio. Mediante la estimulación precisa de puntos específicos, regula el sistema nervioso, estimula la liberación de endorfinas y promueve el equilibrio energético. En la clínica Rita Guerreiro, cada sesión está precedida por una evaluación global de salud — para una intervención verdaderamente personalizada.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
         { t: 'Dolor crónico', d: 'Dolor lumbar, cervical, cefaleas y dolores articulares con respuesta probada a la acupuntura' },
@@ -1015,8 +1015,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     nutricao: {
-      tagline: 'Nutrición que funciona para tu vida — sin dietas restrictivas ni soluciones genéricas',
-      description: 'La consulta de nutrición en Rita Guerreiro comienza por entender quién eres: tus hábitos, tu ritmo, qué funciona y qué no. A partir de ahí creamos un plan alimentario personalizado, realista y sostenible. Trabajamos pérdida de peso, ganancia muscular, salud digestiva, nutrición deportiva y planes alimentarios adaptados a condiciones clínicas específicas.',
+      tagline: 'Alimentación real para la vida real — sin dietas restrictivas ni soluciones genéricas',
+      description: 'La consulta de nutrición comienza por entender quién eres: tus hábitos, tu ritmo, qué funciona y qué no funciona para ti. A partir de ahí creamos un plan alimentario personalizado, realista y sostenible — para pérdida de peso, ganancia muscular, salud digestiva, nutrición deportiva o adaptación a condiciones clínicas específicas. Sin promesas genéricas: solo nutrición seria, a tu medida.',
       prices: [
         { label: '1ª consulta (hasta 50min)', value: '45€' },
         { label: 'Siguientes (30min)', value: '40€' },
@@ -1031,8 +1031,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'terapia-bowen': {
-      tagline: 'Una técnica suave con resultados sorprendentes — para niños y adultos',
-      description: 'La Terapia Bowen es un enfoque holístico y no invasivo que actúa sobre el sistema neuromuscular mediante movimientos precisos en músculos, tendones y fascias. El toque es suave — sin fuerza ni manipulación — y los efectos son a menudo profundos y duraderos. Apta para todas las edades, incluyendo niños a partir de 5 años.',
+      tagline: 'Suave en el toque, eficaz en el resultado — para todas las edades',
+      description: 'La Terapia Bowen es un enfoque no invasivo que actúa sobre el sistema neuromuscular mediante movimientos precisos en músculos, tendones y fascias. El toque es suave — sin fuerza ni manipulación — y los efectos son a menudo profundos y duraderos. Apta para todas las edades, incluyendo niños a partir de 5 años.',
       prices: [
         { label: 'Niños hasta 5 años (60min)', value: '20€' },
         { label: 'Niños 5-12 (60min)', value: '30€' },
@@ -1048,8 +1048,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     psicologia: {
-      tagline: 'Apoyo psicológico especializado para niños, adolescentes y adultos',
-      description: 'La salud mental es tan importante como la salud física — y merece la misma atención y cuidado. En Rita Guerreiro, la consulta de psicología es un espacio seguro, confidencial y sin juicios donde puedes explorar lo que te preocupa con el apoyo de un profesional especializado. Trabajamos con niños, adolescentes y adultos en diferentes momentos de la vida.',
+      tagline: 'Un espacio seguro para hablar de lo que te preocupa — para niños, adolescentes y adultos',
+      description: 'La salud mental es tan importante como la salud física — y merece la misma atención y cuidado. La consulta de psicología en la clínica Rita Guerreiro es un espacio seguro, confidencial y sin juicios donde puedes explorar lo que te preocupa con el apoyo de un profesional especializado. Acompañamos a niños, adolescentes y adultos en diferentes momentos de la vida.',
       prices: [{ label: 'Consulta (60min)', value: '45€' }],
       sub: [
         { t: 'Ansiedad y estrés', d: 'Herramientas prácticas para gestionar la preocupación excesiva, la tensión y los síntomas físicos asociados' },
@@ -1061,8 +1061,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-relaxamento': {
-      tagline: 'Para cuando el cuerpo pide parar — y la mente necesita respirar',
-      description: 'El Masaje Relajante es un espacio de pausa total. Con un ritmo suave y continuo, trabajamos todo el cuerpo para liberar la tensión acumulada, aliviar la sobrecarga muscular e inducir un estado de bienestar profundo. Los efectos van mucho más allá de la sensación inmediata — el masaje regular reduce el cortisol, mejora el sueño y tiene un impacto positivo en el sistema inmunitario.',
+      tagline: 'Tiempo para parar — con técnica y cuidado',
+      description: 'El Masaje Relajante es un espacio de pausa real. Con un ritmo suave y continuo, recorremos todo el cuerpo para liberar la tensión acumulada, aliviar la sobrecarga muscular y devolver calma a la mente. Los efectos duran más allá de la sesión: el masaje regular reduce el cortisol, mejora el sueño y fortalece el sistema inmunitario.',
       prices: [
         { label: '50 minutos', value: '40€' },
         { label: '80 minutos', value: '65€' },
@@ -1077,7 +1077,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-criancas': {
-      tagline: 'Masaje suave adaptado a los más pequeños — relajación, sueño y bienestar infantil',
+      tagline: 'Un toque suave y seguro — para el bienestar de los más pequeños',
       description: 'El masaje para niños es una técnica suave, segura y adaptada a las necesidades de los más pequeños. Promueve la relajación, mejora el sueño, reduce la ansiedad y refuerza el vínculo emocional. Realizado por profesionales con formación específica en masaje pediátrico, cada sesión se adapta a la edad y necesidades del niño.',
       prices: [{ label: 'Por sesión (40min)', value: '30€' }],
       sub: [
@@ -1090,8 +1090,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-assinatura-rg': {
-      tagline: 'La experiencia de masaje insignia de la clínica Rita Guerreiro — 80 minutos únicos',
-      description: 'El Masaje Firma RG es la experiencia máxima que ofrece la clínica Rita Guerreiro. Una sesión de 80 minutos cuidadosamente diseñada para combinar las mejores técnicas de relajación profunda, trabajo muscular y bienestar global. Una experiencia personalizada de principio a fin.',
+      tagline: 'Ochenta minutos pensados al detalle — la experiencia insignia de la casa',
+      description: 'El Masaje Firma RG es la experiencia más completa que ofrece la clínica Rita Guerreiro. Una sesión de 80 minutos, cuidadosamente diseñada para combinar relajación profunda, trabajo muscular específico y bienestar global. Cada momento se personaliza contigo — de principio a fin.',
       prices: [{ label: 'Sesión completa (80min)', value: '75€' }],
       sub: [
         { t: 'Relajación total', d: 'Combinación de técnicas suaves para inducir un estado de calma profunda' },
@@ -1103,8 +1103,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-profunda': {
-      tagline: 'Deep tissue, sport massage y trabajo muscular profundo — recuperación real para quienes exigen más de su cuerpo.',
-      description: 'El Masaje Profundo / Masaje Deportivo es un enfoque terapéutico de alta intensidad que combina técnicas de deep tissue y sport massage. Trabajamos las capas musculares más profundas para liberar contracturas crónicas, disolver nudos musculares y restaurar la movilidad. La vertiente deportiva es especialmente indicada para atletas — ya sea en preparación precompetición para activar y soltar el músculo, o en recuperación post-entrenamiento para acelerar la regeneración y reducir la inflamación. Efectivo tanto para deportistas de alto rendimiento como para quienes sufren tensión muscular profunda resistente a otros enfoques.',
+      tagline: 'Trabajo muscular profundo — para quien exige más de su cuerpo, en el entrenamiento o el día a día',
+      description: 'El Masaje Profundo / Deportivo es un enfoque terapéutico de alta intensidad que combina técnicas de deep tissue y sport massage. Trabajamos las capas musculares más profundas para liberar contracturas crónicas, disolver nudos musculares y restaurar la movilidad. La vertiente deportiva es especialmente indicada para atletas — ya sea en preparación precompetición (para activar y soltar el músculo), o en recuperación post-entrenamiento (para acelerar la regeneración y reducir la inflamación). Efectivo tanto para deportistas de alto rendimiento como para quienes sufren tensión muscular profunda resistente a otros enfoques.',
       prices: [
         { label: '50 minutos', value: '45€' },
         { label: '80 minutos', value: '75€' },
@@ -1119,8 +1119,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-pre-pos-natal': {
-      tagline: 'Cuidado y confort para embarazadas y madres recientes — un momento solo para ti',
-      description: 'El Masaje Pre/Postnatal está específicamente adaptado a las transformaciones del cuerpo durante el embarazo y tras el parto. Alivia el dolor lumbar, la hinchazón y la tensión muscular acumulada durante el embarazo. En el posparto, ayuda en la recuperación física y emocional de la madre, en un momento de tantos cambios y exigencias.',
+      tagline: 'Acompañamiento y confort en el embarazo y el posparto — adaptado a cada fase',
+      description: 'El Masaje Pre/Postnatal está específicamente adaptado a las transformaciones del cuerpo durante el embarazo y tras el parto. Alivia el dolor lumbar, la hinchazón y la tensión muscular acumulada durante el embarazo, con posicionamiento seguro en todas las etapas. En el posparto, apoya la recuperación física de la madre, en un momento de tantos cambios y exigencias.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
         { t: 'Dolor lumbar en el embarazo', d: 'Alivio del dolor lumbar y pélvico típico del embarazo, con posicionamiento seguro' },
@@ -1132,7 +1132,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-sacro-craniana': {
-      tagline: 'Técnica suave sobre el sistema sacrocraneal — alivio profundo sin esfuerzo',
+      tagline: 'Un toque casi imperceptible con efectos profundos en el sistema nervioso',
       description: 'El Masaje Sacrocraneal es una técnica manual extremadamente suave que trabaja sobre el sistema sacrocraneal — el vínculo entre el sacro y el cráneo a través de la columna. Con un toque casi imperceptible, libera las restricciones en las membranas y el líquido cefalorraquídeo, promoviendo el equilibrio del sistema nervioso central y el alivio de la tensión acumulada.',
       prices: [{ label: 'Por sesión (50min)', value: '40€' }],
       sub: [
@@ -1145,7 +1145,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'drenagem-linfatica': {
-      tagline: 'Desintoxica, reduce la hinchazón y revitaliza — con la técnica manual Vodder',
+      tagline: 'Reduce hinchazón, activa la circulación, devuelve ligereza — con el Método Vodder',
       description: 'El Drenaje Linfático Manual según el Método Vodder es la técnica de referencia internacional para estimular el sistema linfático. Mediante movimientos suaves, rítmicos y precisos sobre la piel, activa la circulación linfática, reduce el edema y promueve la eliminación de toxinas. Indicado tanto en contextos clínicos como de bienestar.',
       prices: [
         { label: 'Manual (50min)', value: '45€ / 50€' },
@@ -1162,8 +1162,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-terapeutica': {
-      tagline: 'Drenaje postoperatorio y masaje terapéutico — recuperación y alivio del dolor',
-      description: 'El Drenaje Linfático Postoperatorio es esencial para una recuperación rápida y sin complicaciones tras una cirugía — reduce el edema, mejora las cicatrices y restablece la circulación. El Masaje Terapéutico trabaja zonas de tensión crónica, contracturas y dolor muscular persistente, con técnicas adaptadas a la condición de cada persona.',
+      tagline: 'Para recuperar tras la cirugía — y para liberar la tensión que no se va',
+      description: 'El Drenaje Linfático Postoperatorio es esencial para una recuperación rápida y sin complicaciones tras una cirugía — reduce el edema, mejora la calidad de las cicatrices y restablece la circulación. El Masaje Terapéutico trabaja zonas de tensión crónica, contracturas y dolor muscular persistente, con técnicas adaptadas a la condición de cada persona.',
       prices: [
         { label: 'Terapéutico 30-50min', value: '30€ – 45€' },
         { label: 'Drenaje Postop 50min', value: '55€' },
@@ -1179,8 +1179,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     reflexologia: {
-      tagline: 'Estimulación de puntos reflejos en los pies para reequilibrar los sistemas del organismo',
-      description: 'La Reflexología es una terapia natural que trabaja puntos reflejos situados en los pies, manos u orejas, correspondientes a los distintos órganos y sistemas del cuerpo. Mediante una presión precisa y rítmica, estimula el reequilibrio orgánico, alivia la tensión y promueve el bienestar general. Una técnica no invasiva con efectos profundos.',
+      tagline: 'Todo el cuerpo en los pies — una terapia no invasiva con efectos profundos',
+      description: 'La Reflexología es una terapia natural que trabaja puntos reflejos situados en los pies, manos u orejas, correspondientes a los distintos órganos y sistemas del cuerpo. Mediante una presión precisa y rítmica, estimula el reequilibrio orgánico, alivia la tensión y promueve el bienestar general. Una técnica no invasiva y profundamente relajante.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
         { t: 'Estrés y ansiedad', d: 'Estimulación del sistema nervioso parasimpático para reducir la tensión y la ansiedad' },
@@ -1192,8 +1192,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     shiatsu: {
-      tagline: 'Técnica japonesa de presión sobre los meridianos energéticos — equilibrio y vitalidad',
-      description: 'El Shiatsu es una terapia japonesa que aplica presión con los pulgares, palmas y codos sobre los meridianos energéticos del cuerpo. Basado en los principios de la Medicina Tradicional China, promueve el flujo de energía vital (Ki), alivia la tensión y el dolor, y restaura el equilibrio físico y emocional. Se realiza sobre ropa cómoda, sin aceites.',
+      tagline: 'Presión precisa sobre los meridianos — para devolver equilibrio y vitalidad',
+      description: 'El Shiatsu es una terapia japonesa que aplica presión con los pulgares, palmas y codos sobre los meridianos energéticos del cuerpo. Basado en los principios de la Medicina Tradicional China, promueve el flujo de energía vital (Ki), alivia la tensión y el dolor y restaura el equilibrio físico y emocional. Se realiza sobre ropa cómoda, sin aceites.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
         { t: 'Dolor muscular y articular', d: 'Alivio del dolor muscular y la tensión mediante presión sobre los meridianos energéticos' },
@@ -1205,7 +1205,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-indiana': {
-      tagline: 'Indian Head Massage — relajación profunda de cabeza, cuello y hombros',
+      tagline: 'Indian Head Massage — relajación profunda de cabeza, cuello y hombros, sin necesidad de desvestirse',
       description: 'El Masaje Indio, o Indian Head Massage, es una técnica de origen ayurvédico centrada en la cabeza, cuello, hombros y cara. Trabaja los chakras de la parte superior del cuerpo para liberar la tensión acumulada, aliviar dolores de cabeza, mejorar la circulación del cuero cabelludo e inducir un estado de relajación profunda. Se realiza sentado, sin necesidad de desvestirse.',
       prices: [{ label: 'Por sesión (40min)', value: '35€' }],
       sub: [
@@ -1218,8 +1218,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'head-spa': {
-      tagline: 'Tratamiento profundo del cuero cabelludo — limpieza, nutrición y relajación total',
-      description: 'El Head Spa es un tratamiento de lujo para el cuero cabelludo que combina limpieza profunda, nutrición intensiva y un masaje relajante. Elimina el exceso de sebo e impurezas, equilibra el pH del cuero cabelludo, fortalece los folículos capilares y aporta una sensación de frescura y ligereza inigualable. Los resultados visibles en el cabello se acompañan de un estado de relajación profunda.',
+      tagline: 'Cuidar el cuero cabelludo es cuidar el cabello — y relajarse como hace tiempo no te relajabas',
+      description: 'El Head Spa es un tratamiento completo para el cuero cabelludo que combina limpieza profunda, nutrición intensiva y un masaje relajante. Elimina el exceso de sebo e impurezas, equilibra el pH del cuero cabelludo, fortalece los folículos capilares y aporta una sensación de frescura y ligereza inigualable. Los resultados visibles en el cabello se acompañan de un estado de relajación profunda.',
       prices: [{ label: 'Sesión completa (90min)', value: '75€' }],
       sub: [
         { t: 'Limpieza profunda', d: 'Eliminación del exceso de sebo, células muertas e impurezas del cuero cabelludo' },
@@ -1231,8 +1231,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     facial: {
-      tagline: 'Limpieza de cutis, extracción y facial personalizado para una piel sana y radiante',
-      description: 'Nuestros tratamientos faciales son realizados por profesionales especializados, con productos de alta calidad adaptados al tipo de piel de cada cliente. Desde la limpieza más sencilla hasta el facial personalizado más completo — cada sesión está diseñada para maximizar los resultados visibles y el bienestar de la piel.',
+      tagline: 'Cuidado profesional para cada tipo de piel — para resultados visibles y duraderos',
+      description: 'Nuestros tratamientos faciales son realizados por profesionales especializados, con productos de alta calidad adaptados al tipo de piel de cada persona. Desde la limpieza más sencilla hasta el facial personalizado más completo — cada sesión está diseñada para maximizar los resultados visibles y el bienestar de tu piel.',
       prices: [
         { label: 'Limpieza de cutis', value: '50€' },
         { label: 'Extracción', value: '10€' },
@@ -1248,8 +1248,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'pacotes-tratamento': {
-      tagline: 'Tecnología avanzada para tu cuerpo — cavitación, radiofrecuencia, lipoláser y más',
-      description: 'Nuestros paquetes de tratamiento combinan las tecnologías más avanzadas de estética corporal: cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia. Cada tratamiento es realizado por profesionales certificados, con evaluación previa y un protocolo personalizado para maximizar resultados.',
+      tagline: 'Tecnología avanzada con evaluación previa — para resultados reales, no promesas',
+      description: 'Nuestros paquetes de tratamiento combinan las tecnologías más avanzadas de estética corporal: cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia. Cada tratamiento es realizado por profesionales certificados, con evaluación previa y un protocolo personalizado — porque cada cuerpo responde de forma diferente.',
       prices: [
         { label: 'Cav./Radiofrec./Lipoláser/Electroest. (50min)', value: '50€' },
         { label: 'Pack 10 sesiones', value: '450€' },
@@ -1265,8 +1265,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'depilacao-laser': {
-      tagline: 'Depilación permanente con tecnología de última generación — para mujer y hombre',
-      description: 'La depilación láser es hoy la solución más eficaz y duradera para eliminar el vello no deseado. En Rita Guerreiro utilizamos equipos de última generación, con tecnología adaptada a diferentes tonos de piel y tipos de vello. El proceso es progresivo — en cada sesión el vello se vuelve más fino y escaso, hasta su eliminación permanente.',
+      tagline: 'Adiós a la depilación semanal — láser definitivo, para mujer y hombre',
+      description: 'La depilación láser es hoy la solución más eficaz y duradera para eliminar el vello no deseado. En la clínica Rita Guerreiro utilizamos equipos de última generación, con tecnología adaptada a diferentes tonos de piel y tipos de vello. El proceso es progresivo — en cada sesión el vello se vuelve más fino y escaso, hasta su eliminación permanente.',
       prices: [
         { label: 'Mujer — 1 zona', value: '20€' },
         { label: 'Mujer — Combi 3 zonas', value: '50€' },
@@ -1285,8 +1285,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'pilates-clinico': {
-      tagline: 'Movimiento consciente supervisado por un fisioterapeuta — un cuerpo fuerte y sin dolor',
-      description: 'El Pilates Clínico se diferencia del Pilates convencional por estar supervisado por un fisioterapeuta y adaptado a condiciones clínicas específicas — dolor lumbar, hernias, posoperatorio, embarazo, osteoporosis o cualquier otra limitación. En Rita Guerreiro, cada programa se diseña individualmente con ejercicios progresivos.',
+      tagline: 'Pilates con supervisión de fisioterapeuta — ejercicio adaptado, siempre seguro',
+      description: 'El Pilates Clínico se diferencia del Pilates convencional por estar supervisado por un fisioterapeuta y adaptado a condiciones clínicas específicas — dolor lumbar, hernias, posoperatorio, embarazo, osteoporosis o cualquier otra limitación. Cada programa se diseña individualmente, con ejercicios progresivos que evolucionan a tu ritmo.',
       prices: [
         { label: 'Cuota mensual', value: '35€ / 60€' },
         { label: 'Seguro anual', value: '10€' },
