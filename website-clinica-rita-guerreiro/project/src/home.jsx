@@ -16,7 +16,7 @@ function Hero() {
           src="assets/foto-equipa-nova.png"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center right', display: 'block' }}
           loading="eager" decoding="async"
         />
       </div>
@@ -28,8 +28,8 @@ function Hero() {
       }} aria-hidden="true" />
 
       {/* Conteúdo principal */}
-      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px 24px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 580, position: 'relative', paddingLeft: 28 }}>
+      <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 auto', padding: '40px 48px 80px 0px', boxSizing: 'border-box' }}>
+        <div style={{ maxWidth: 520, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
