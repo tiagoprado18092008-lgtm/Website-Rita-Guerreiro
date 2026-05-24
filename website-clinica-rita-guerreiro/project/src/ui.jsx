@@ -440,9 +440,10 @@ function Nav({ current = 'home' }) {
                   background: lang === l.code ? 'rgba(42,90,87,0.1)' : 'white',
                   border: lang === l.code ? `1px solid rgba(42,90,87,0.3)` : '1px solid rgba(42,90,87,0.1)',
                   borderRadius: 8, padding: '6px 10px', cursor: 'pointer',
-                  fontSize: 20, lineHeight: 1,
+                  display: 'flex', alignItems: 'center', gap: 6,
                 }}>
-                  {l.flag}
+                  <img src={l.flagUrl} alt={l.code} style={{ width: 22, height: 15, objectFit: 'cover', borderRadius: 2, display: 'block' }} />
+                  <span style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, color: RG.ink, letterSpacing: '0.06em' }}>{l.code}</span>
                 </button>
               ))}
             </div>
