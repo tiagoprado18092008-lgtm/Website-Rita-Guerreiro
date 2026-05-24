@@ -1169,13 +1169,17 @@ function HeadSync() {
 
     let title, description;
 
-    if (pageKey.startsWith('serv_') && typeof window.getServiceDetail === 'function') {
+    if (pageKey.startsWith('serv_') && typeof window.getServices === 'function') {
       const slug = pageKey.slice('serv_'.length);
-      const detail = window.getServiceDetail(lang, slug);
-      if (detail) {
-        const suffix = { PT: 'Rita Guerreiro · Loulé', EN: 'Rita Guerreiro · Loulé', FR: 'Rita Guerreiro · Loulé', ES: 'Rita Guerreiro · Loulé' }[lang] || 'Rita Guerreiro · Loulé';
-        title = `${detail.name} — ${suffix}`;
-        description = detail.intro || t('meta.tagline');
+      const services = window.getServices(lang);
+      let item = null;
+      for (const catKey of Object.keys(services)) {
+        const found = services[catKey].items?.find(x => x.slug === slug);
+        if (found) { item = found; break; }
+      }
+      if (item) {
+        title = `${item.name} — Rita Guerreiro · Loulé`;
+        description = item.blurb || t('meta.tagline');
       }
     }
 
