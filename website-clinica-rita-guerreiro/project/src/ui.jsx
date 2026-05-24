@@ -145,7 +145,7 @@ function Nav({ current = 'home' }) {
     href: CATEGORY_HREF[catId] ?? null,
     items: servicesByLang[catId].items.map(it => ({
       label: it.name,
-      href: `/servico-${it.slug}`,
+      href: `/\${it.slug}`,
     })),
   }));
   const megaDescs = {};
@@ -382,7 +382,7 @@ function Nav({ current = 'home' }) {
       {mobile && (
         <div className="rg-mobile-overlay" style={{
           position: 'fixed', inset: 0, zIndex: 99,
-          background: '#f7f5f2',
+          background: '#ffffff',
           paddingTop: 90, overflow: 'auto',
           animation: 'rg-fade-in 250ms ease both',
         }}>
@@ -393,28 +393,28 @@ function Nav({ current = 'home' }) {
               { href: '/sobre', label: t('nav.sobre') },
               { href: '/contactos', label: t('nav.contactos') },
             ].map((item, i) => item === null ? (
-              <div key="servicos" style={{ borderTop: '1px solid rgba(42,90,87,0.12)', padding: '20px 0' }}>
+              <div key="servicos" style={{ borderTop: '1px solid rgba(20,20,18,0.08)', padding: '20px 0' }}>
                 <button onClick={() => setMobileServicos(!mobileServicos)} style={{
                   fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 30, fontWeight: 700,
-                  color: RG.tealDark, background: 'none', border: 'none', cursor: 'pointer',
+                  color: RG.ink, background: 'none', border: 'none', cursor: 'pointer',
                   display: 'flex', alignItems: 'center', gap: 12, padding: 0,
                 }}>
                   {t('nav.servicos')}
                   <svg width="14" height="14" viewBox="0 0 14 14" style={{ transform: mobileServicos ? 'rotate(90deg)' : 'none', transition: 'transform 220ms' }}>
-                    <path d="M4 3 L9 7 L4 11" stroke={RG.teal} strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4 3 L9 7 L4 11" stroke={RG.tealDeep} strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
                 {mobileServicos && (
                   <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {megaCols.map(col => (
-                      <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(42,90,87,0.12)', background: 'white' }}>
+                      <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(20,20,18,0.1)', background: 'white' }}>
                         {col.href
-                          ? <a href={col.href} style={{ display: 'block', padding: '14px 16px', textDecoration: 'none', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(42,90,87,0.08)' }}>{col.label}</a>
-                          : <div style={{ padding: '14px 16px', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(42,90,87,0.08)' }}>{col.label}</div>
+                          ? <a href={col.href} style={{ display: 'block', padding: '14px 16px', textDecoration: 'none', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(20,20,18,0.08)' }}>{col.label}</a>
+                          : <div style={{ padding: '14px 16px', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(20,20,18,0.08)' }}>{col.label}</div>
                         }
                         <div style={{ display: 'flex', flexDirection: 'column', padding: '6px 0' }}>
                           {col.items.map(it => (
-                            <a key={it.href} href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 400, color: RG.charcoal, textDecoration: 'none', padding: '10px 16px' }}>
+                            <a key={it.href} href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 400, color: RG.ink, textDecoration: 'none', padding: '10px 16px' }}>
                               {it.label}
                             </a>
                           ))}
@@ -425,13 +425,13 @@ function Nav({ current = 'home' }) {
                 )}
               </div>
             ) : (
-              <div key={item.href} style={{ borderTop: '1px solid rgba(42,90,87,0.12)', padding: '20px 0' }}>
-                <a href={item.href} style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 30, fontWeight: 700, color: RG.tealDark, textDecoration: 'none' }}>{item.label}</a>
+              <div key={item.href} style={{ borderTop: '1px solid rgba(20,20,18,0.08)', padding: '20px 0' }}>
+                <a href={item.href} style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 30, fontWeight: 700, color: RG.ink, textDecoration: 'none' }}>{item.label}</a>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid rgba(42,90,87,0.12)', paddingTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 500, color: RG.white, background: RG.teal, padding: '14px 28px', borderRadius: 999, textDecoration: 'none' }}>{t('agendar')}</a>
-              <a href="tel:+351961899364" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: RG.tealDark, background: 'white', border: `1px solid rgba(42,90,87,0.2)`, padding: '14px 28px', borderRadius: 999, textDecoration: 'none' }}>961 899 364</a>
+            <div style={{ borderTop: '1px solid rgba(20,20,18,0.08)', paddingTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 500, color: RG.white, background: RG.tealDeep, padding: '14px 28px', borderRadius: 999, textDecoration: 'none' }}>{t('agendar')}</a>
+              <a href="tel:+351961899364" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: RG.ink, background: 'white', border: `1px solid rgba(20,20,18,0.18)`, padding: '14px 28px', borderRadius: 999, textDecoration: 'none' }}>961 899 364</a>
             </div>
             {/* Language toggle mobile */}
             <div style={{ paddingTop: 24, paddingBottom: 40, display: 'flex', gap: 10 }}>
