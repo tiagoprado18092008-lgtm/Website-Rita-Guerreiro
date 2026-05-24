@@ -405,16 +405,16 @@ function Nav({ current = 'home' }) {
                   </svg>
                 </button>
                 {mobileServicos && (
-                  <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {megaCols.map(col => (
-                      <div key={col.id}>
+                      <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(42,90,87,0.12)', background: 'white' }}>
                         {col.href
-                          ? <a href={col.href} style={{ display: 'block', padding: '6px 0 10px', textDecoration: 'none', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep }}>{col.label}</a>
-                          : <div style={{ padding: '6px 0 10px', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep }}>{col.label}</div>
+                          ? <a href={col.href} style={{ display: 'block', padding: '14px 16px', textDecoration: 'none', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(42,90,87,0.08)' }}>{col.label}</a>
+                          : <div style={{ padding: '14px 16px', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(42,90,87,0.08)' }}>{col.label}</div>
                         }
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', padding: '6px 0' }}>
                           {col.items.map(it => (
-                            <a key={it.href} href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 400, color: RG.charcoal, textDecoration: 'none', padding: '8px 0' }}>
+                            <a key={it.href} href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 400, color: RG.charcoal, textDecoration: 'none', padding: '10px 16px' }}>
                               {it.label}
                             </a>
                           ))}
