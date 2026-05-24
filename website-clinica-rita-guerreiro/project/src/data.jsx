@@ -41,7 +41,7 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão te limitam o dia-a-dia, ajudamos-te a recuperar — com avaliação rigorosa e um plano feito a pensar em ti.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão te limitam o dia-a-dia, ajudamos-te a recuperar — com avaliação rigorosa e um plano feito a pensar em ti.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€ / 50€' },

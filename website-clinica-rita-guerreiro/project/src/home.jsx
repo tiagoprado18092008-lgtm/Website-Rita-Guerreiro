@@ -1,4 +1,4 @@
-// Home — premium redesign · editorial, asymmetric, content-rich
+﻿// Home — premium redesign · editorial, asymmetric, content-rich
 // Conteúdo marcado [REVER] foi escrito pelo agente para validação pelo cliente.
 
 // ────────────────────────────────────────────────────────────────────────────

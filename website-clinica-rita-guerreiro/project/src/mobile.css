@@ -99,8 +99,8 @@
   /* O JSX usa style inline; precisamos vencer com classes adicionadas */
   /* Será apanhado via .rg-mobile-overlay (a adicionar em ui.jsx) */
   .rg-mobile-overlay {
-    background: #0F2A2A !important;
-    color: #F6F1E9 !important;
+    background: #ffffff !important;
+    color: #141412 !important;
     padding-top: 72px !important;
     animation: rg-mobile-slide-in 360ms cubic-bezier(.2,.8,.2,1) both !important;
   }
@@ -114,15 +114,21 @@
     padding: 0 24px !important;
   }
 
-  /* Items do menu — borders cream translucent */
+  /* Items do menu — borders subtis escuros */
   .rg-mobile-overlay [style*="borderTop"] {
-    border-top: 1px solid rgba(246,241,233,0.15) !important;
+    border-top: 1px solid rgba(20,20,18,0.08) !important;
   }
 
-  /* Textos do menu em cream/branco */
+  /* Textos do menu em preto */
   .rg-mobile-overlay a,
   .rg-mobile-overlay button {
-    color: #F6F1E9 !important;
+    color: #141412 !important;
+  }
+
+  /* Headers das categorias (FISIOTERAPIA, CUIDADOS DE SAUDE, etc.) em teal */
+  .rg-mobile-overlay [style*="textTransform: uppercase"],
+  .rg-mobile-overlay [style*="text-transform: uppercase"] {
+    color: #4A8F8A !important;
   }
 
   /* Items principais maiores */
@@ -132,20 +138,20 @@
     line-height: 1.2 !important;
   }
 
-  /* Submenu de serviços: cards com fundo escurinho */
+  /* Submenu de servicos: caixas brancas com borda subtil */
   .rg-mobile-overlay [style*="borderRadius: 14px"] {
-    background: rgba(246,241,233,0.06) !important;
-    border-color: rgba(246,241,233,0.15) !important;
+    background: #ffffff !important;
+    border-color: rgba(20,20,18,0.1) !important;
   }
 
-  /* Cabeçalho da categoria dentro do mobile menu */
+  /* Cabecalho da categoria dentro do mobile menu — wash teal claro */
   .rg-mobile-overlay [style*="rgba(111,181,176,0.08)"] {
-    background: rgba(111,181,176,0.18) !important;
+    background: rgba(111,181,176,0.12) !important;
   }
 
-  /* Links de subserviços */
+  /* Links de subservicos */
   .rg-mobile-overlay [style*="rgba(111,181,176,0.1)"] {
-    background: rgba(111,181,176,0.15) !important;
+    background: transparent !important;
   }
 
   /* CTAs área inferior — largura cheia, empilhados */

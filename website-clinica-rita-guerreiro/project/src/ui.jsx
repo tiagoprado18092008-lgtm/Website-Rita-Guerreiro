@@ -133,11 +133,11 @@ function Nav({ current = 'home' }) {
   // Mantém URLs estáveis (independentes de idioma) e devolve labels traduzidos.
   const servicesByLang = getServices(lang);
   const CATEGORY_HREF = {
-    fisioterapia: '/fisioterapia',
-    saude: '/saude',
-    massagens: '/massagens',
-    holisticas: '/holisticas',
-    estetica: '/estetica',
+    fisioterapia: '/servico/fisioterapia',
+    saude: '/servico/saude',
+    massagens: '/servico/massagens',
+    holisticas: '/servico/holisticas',
+    estetica: '/servico/estetica',
   };
   const megaCols = Object.keys(servicesByLang).map(catId => ({
     id: catId,
