@@ -1158,6 +1158,46 @@ function useLang() {
   return { lang, t };
 }
 
+function HeadSync() {
+  const { lang, t } = useLang();
+  React.useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const pageMeta = document.querySelector('meta[name="rg-page"]');
+    if (!pageMeta) return;
+    const pageKey = pageMeta.getAttribute('content');
+    if (!pageKey) return;
+
+    let title, description;
+
+    if (pageKey.startsWith('serv_') && typeof window.getServiceDetail === 'function') {
+      const slug = pageKey.slice('serv_'.length);
+      const detail = window.getServiceDetail(lang, slug);
+      if (detail) {
+        const suffix = { PT: 'Rita Guerreiro · Loulé', EN: 'Rita Guerreiro · Loulé', FR: 'Rita Guerreiro · Loulé', ES: 'Rita Guerreiro · Loulé' }[lang] || 'Rita Guerreiro · Loulé';
+        title = `${detail.name} — ${suffix}`;
+        description = detail.intro || t('meta.tagline');
+      }
+    }
+
+    if (!title) {
+      const m = (window.TRANSLATIONS?.[lang]?.meta?.[pageKey]) || (window.TRANSLATIONS?.PT?.meta?.[pageKey]);
+      if (m) { title = m.title; description = m.description; }
+    }
+
+    const setMeta = (selector, value) => {
+      const el = document.querySelector(selector);
+      if (el && value) el.setAttribute('content', value);
+    };
+    if (title) document.title = title;
+    if (description) setMeta('meta[name="description"]', description);
+    if (title) setMeta('meta[property="og:title"]', title);
+    if (description) setMeta('meta[property="og:description"]', description);
+    const ogLocaleMap = { PT: 'pt_PT', EN: 'en_GB', FR: 'fr_FR', ES: 'es_ES' };
+    setMeta('meta[property="og:locale"]', ogLocaleMap[lang] || 'pt_PT');
+  }, [lang]);
+  return null;
+}
+
 function LangProvider({ children }) {
   const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('rg_lang')) || 'PT';
   const [lang, setLang] = React.useState(['PT','EN','FR','ES'].includes(saved) ? saved : 'PT');
@@ -1178,4 +1218,4 @@ function LangProvider({ children }) {
   return React.createElement(LangContext.Provider, { value: { lang, changeLang } }, children);
 }
 
-Object.assign(window, { TRANSLATIONS, LangContext, LangProvider, useLang });
+Object.assign(window, { TRANSLATIONS, LangContext, LangProvider, useLang, HeadSync });
