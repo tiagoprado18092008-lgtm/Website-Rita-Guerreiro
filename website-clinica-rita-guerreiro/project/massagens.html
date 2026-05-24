@@ -1,8 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-PT"><head>
 <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Massagens — Rita Guerreiro · Clínica em Loulé</title>
 <meta name="description" content="Massagens de relaxamento, desportiva, pré-natal, drenagem linfática e muito mais em Loulé." />
+<meta name="rg-page" content="cat_massagens" />
 <meta property="og:title" content="Massagens — Rita Guerreiro · Loulé" />
 <meta property="og:description" content="Massagens de relaxamento, desportiva, pré-natal, drenagem linfática e muito mais em Loulé." />
 <meta property="og:image" content="https://www.ritaguerreiro.pt/rita_guerreiro_logo.png" />
@@ -28,8 +29,8 @@
 <script type="text/babel" src="src/pages.jsx"></script>
 <script type="text/babel">
 const ready = () => {
-  if (window.Nav && window.CategoryPage && window.Footer && window.WAFab) {
-    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><CategoryPage categoryId="massagens" /></LangProvider>);
+  if (window.HeadSync && window.Nav && window.CategoryPage && window.Footer && window.WAFab) {
+    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><HeadSync /><CategoryPage categoryId="massagens" /></LangProvider>);
   } else setTimeout(ready, 40);
 };
 ready();

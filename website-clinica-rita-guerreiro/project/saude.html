@@ -1,8 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-PT"><head>
 <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cuidados de Saúde — Rita Guerreiro · Clínica em Loulé</title>
 <meta name="description" content="Nutrição, Psicologia, Terapia de Bowen e muito mais em Loulé. Cuidados de saúde integrados para o seu bem-estar." />
+<meta name="rg-page" content="cat_saude" />
 <meta property="og:title" content="Cuidados de Saúde — Rita Guerreiro · Loulé" />
 <meta property="og:description" content="Nutrição, Psicologia, Terapia de Bowen e muito mais em Loulé. Cuidados de saúde integrados para o seu bem-estar." />
 <meta property="og:image" content="https://www.ritaguerreiro.pt/rita_guerreiro_logo.png" />
@@ -28,8 +29,8 @@
 <script type="text/babel" src="src/pages.jsx"></script>
 <script type="text/babel">
 const ready = () => {
-  if (window.Nav && window.CategoryPage && window.Footer && window.WAFab) {
-    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><CategoryPage categoryId="saude" /></LangProvider>);
+  if (window.HeadSync && window.Nav && window.CategoryPage && window.Footer && window.WAFab) {
+    ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><HeadSync /><CategoryPage categoryId="saude" /></LangProvider>);
   } else setTimeout(ready, 40);
 };
 ready();
