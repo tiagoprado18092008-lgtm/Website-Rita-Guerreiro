@@ -312,7 +312,7 @@ function ServicePage({ slug }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
             {catItems.map((item, idx) => (
               <Reveal key={item.slug} delay={idx * 60}>
-                <a href={`/\${item.slug}`} className="rg-service-card" style={{
+                <a href={`/servico/${item.slug}`} className="rg-service-card" style={{
                   display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink,
                   borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}`,
                 }}>
@@ -372,7 +372,7 @@ function CategoryPage({ categoryId }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 24 }}>
           {cat.items.map((item, i) => (
             <Reveal key={item.slug} delay={i * 60}>
-              <a href={`/\${item.slug}`} className="rg-service-card" style={{ display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink, borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}` }}>
+              <a href={`/servico/${item.slug}`} className="rg-service-card" style={{ display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink, borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}` }}>
                 <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
                   <Photo label={item.name} tone="teal" aspect="16/9" src={item.img} />
                 </div>
