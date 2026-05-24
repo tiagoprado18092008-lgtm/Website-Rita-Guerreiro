@@ -177,7 +177,7 @@ function Nav({ current = 'home' }) {
 
           {/* ── Logo ── */}
           <a href="/" className="rg-logo-link rg-header-logo">
-            <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" decoding="async" style={{ height: 110, width: 'auto', display: 'block' }} />
+            <img src="/rita_guerreiro_logo.png" alt="Rita Guerreiro" decoding="async" style={{ height: 110, width: 'auto', display: 'block' }} />
           </a>
 
           {/* ── Desktop nav links ── */}
@@ -641,7 +641,7 @@ function Footer() {
       <div aria-hidden="true" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden',
       }}>
-        <img src="assets/footer-botanica.png" alt="" loading="lazy" style={{
+        <img src="/assets/footer-botanica.png" alt="" loading="lazy" style={{
           position: 'absolute', bottom: 0, left: '50%',
           transform: 'translateX(-50%)',
           width: '100%', minWidth: 1000,
@@ -770,7 +770,7 @@ function Footer() {
           paddingTop: 28, paddingBottom: 28,
           borderTop: `1px solid ${FD}`,
         }} className="rg-footer-legal">
-          <img src="assets/sem-multibanco.png" alt="Não aceitamos Multibanco" title="Não aceitamos Multibanco"
+          <img src="/assets/sem-multibanco.png" alt="Não aceitamos Multibanco" title="Não aceitamos Multibanco"
             style={{ display: 'block', height: 38, width: 'auto', opacity: 0.9 }}
             loading="lazy" />
           <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações" title="Livro de Reclamações"
@@ -784,7 +784,7 @@ function Footer() {
             onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
             onMouseLeave={e => { e.currentTarget.style.opacity = '0.85'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
-            <img src="assets/livro-reclamacoes.png" alt="Livro de Reclamações"
+            <img src="/assets/livro-reclamacoes.png" alt="Livro de Reclamações"
               style={{ display: 'block', height: 56, width: 'auto' }}
               loading="lazy" />
           </a>
@@ -822,7 +822,7 @@ function Footer() {
                 fontFamily: F_BODY, fontSize: 12, fontWeight: 600,
                 letterSpacing: '0.12em', textTransform: 'uppercase', color: FB,
               }}>{L_.desenvolvido}</span>
-              <img src="assets/logo-alphascale-footer.png" alt="AlphaScale AI"
+              <img src="/assets/logo-alphascale-footer.png" alt="AlphaScale AI"
                 className="rg-footer-devby-logo"
                 style={{ height: 130, width: 'auto', display: 'block' }} />
             </a>

@@ -10,7 +10,7 @@ function Wordmark({ inverted = false, stacked = false }) {
       textDecoration: 'none',
     }}>
       <img
-        src="rita_guerreiro_logo.png"
+        src="/rita_guerreiro_logo.png"
         alt="Rita Guerreiro"
         style={{
           height: 64,

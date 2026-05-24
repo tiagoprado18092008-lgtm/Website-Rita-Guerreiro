@@ -26,14 +26,14 @@ const IMG = {
   facial: null,
   'pacotes-tratamento': null,
   'depilacao-laser': null,
-  'pilates-clinico': 'assets/pilates.jpg',
+  'pilates-clinico': '/assets/pilates.jpg',
   // Genéricos — fotos reais da clínica
-  clinicInterior: 'assets/equipa-recepcao.png',
-  clinicDetail: 'assets/rita-retrato.png',
-  clinicRoom: 'assets/sala-tratamento.png',
-  teamWork: 'assets/equipa-4.png',
-  comunidade: 'assets/comunidade.png',
-  ritaRetrato: 'assets/rita-retrato.png',
+  clinicInterior: '/assets/equipa-recepcao.png',
+  clinicDetail: '/assets/rita-retrato.png',
+  clinicRoom: '/assets/sala-tratamento.png',
+  teamWork: '/assets/equipa-4.png',
+  comunidade: '/assets/comunidade.png',
+  ritaRetrato: '/assets/rita-retrato.png',
 };
 
 const SERVICES = {
@@ -116,7 +116,7 @@ const SERVICE_DETAIL = {
       eyebrow: 'Tecnologia',
       tagline: 'Tecarterapia de última geração para acelerar a recuperação.',
       description: 'Integramos nas sessões de fisioterapia a tecnologia Winback BACK3 — um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ativa o metabolismo dos tecidos em profundidade, reduz dor e inflamação, acelera a regeneração e devolve mobilidade em menos tempo. Particularmente eficaz em lesões músculo-esqueléticas agudas e crónicas, recuperação pós-lesão, pós-cirurgia e dor desportiva.',
-      img: 'assets/winback-back3.jpg',
+      img: '/assets/winback-back3.jpg',
       benefits: [
         'Alívio rápido da dor e da inflamação',
         'Aceleração da regeneração de tecidos',
