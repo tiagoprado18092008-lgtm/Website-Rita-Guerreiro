@@ -476,22 +476,58 @@ function ContactosPage() {
       <Container>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="rg-hero-grid">
 
-          {/* WhatsApp */}
+          {/* WhatsApp widget */}
           <Reveal>
-            <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: RG.tealDark, borderRadius: 16, padding: '40px 40px 36px', color: RG.white, position: 'relative', overflow: 'hidden', minHeight: 240 }}>
-              <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: 'rgba(255,255,255,0.04)' }} />
-              <div style={{ position: 'absolute', top: -20, right: 20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 20, flexShrink: 0 }}>
-                <path d="M17.47 14.38c-.26-.13-1.55-.77-1.79-.85-.24-.09-.41-.13-.59.13-.17.26-.68.85-.83 1.03-.15.17-.31.19-.57.06-.26-.13-1.09-.4-2.08-1.28-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.47.13-.16.17-.27.26-.44.09-.17.04-.33-.02-.46-.06-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.5-.01-.17 0-.46.06-.7.33-.24.26-.91.89-.91 2.17s.93 2.51 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.55-.63 1.76-1.24.22-.61.22-1.14.16-1.24-.07-.11-.24-.17-.5-.3zM12.03 2C6.52 2 2 6.52 2 12.03c0 1.86.5 3.6 1.37 5.1L2 22l5.01-1.31A9.97 9.97 0 0 0 12.03 22C17.54 22 22 17.48 22 11.97 22 6.52 17.54 2 12.03 2z" fill="white" fillOpacity="0.9"/>
-              </svg>
-              <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 12 }}>WhatsApp</div>
-              <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', flex: 1, marginBottom: 28 }}>
-                {t('contactos.canais.wa_body')}
-              </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.teal }}>
-                {t('contactos.canais.wa_cta')} <ArrowRight />
-              </div>
-            </a>
+            {(() => {
+              const WA_NUMBER = '351961899364';
+              const [msg, setMsg] = React.useState('');
+              const waLink = (base) => `${base}${WA_NUMBER}${msg.trim() ? '?text=' + encodeURIComponent(msg) : ''}`;
+              const waApp = waLink('https://wa.me/');
+              const waWeb = waLink('https://web.whatsapp.com/send?phone=');
+
+              return (
+                <div style={{ display: 'flex', flexDirection: 'column', background: RG.tealDark, borderRadius: 16, color: RG.white, position: 'relative', overflow: 'hidden', minHeight: 240 }}>
+                  <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: 'rgba(255,255,255,0.04)' }} />
+                  <div style={{ position: 'absolute', top: -20, right: 20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
+
+                  {/* Top info */}
+                  <div style={{ padding: '32px 32px 20px', position: 'relative' }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 16, flexShrink: 0 }}>
+                      <path d="M17.47 14.38c-.26-.13-1.55-.77-1.79-.85-.24-.09-.41-.13-.59.13-.17.26-.68.85-.83 1.03-.15.17-.31.19-.57.06-.26-.13-1.09-.4-2.08-1.28-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.47.13-.16.17-.27.26-.44.09-.17.04-.33-.02-.46-.06-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.5-.01-.17 0-.46.06-.7.33-.24.26-.91.89-.91 2.17s.93 2.51 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.55-.63 1.76-1.24.22-.61.22-1.14.16-1.24-.07-.11-.24-.17-.5-.3zM12.03 2C6.52 2 2 6.52 2 12.03c0 1.86.5 3.6 1.37 5.1L2 22l5.01-1.31A9.97 9.97 0 0 0 12.03 22C17.54 22 22 17.48 22 11.97 22 6.52 17.54 2 12.03 2z" fill="white" fillOpacity="0.9"/>
+                    </svg>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 8 }}>WhatsApp</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.6, color: 'rgba(255,255,255,0.72)' }}>{t('contactos.canais.wa_body')}</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.5)', marginTop: 8 }}>{t('contactos.canais.wa_conversar')}</div>
+                  </div>
+
+                  {/* Message input area */}
+                  <div style={{ background: '#ECE5DD', padding: '14px 16px 0' }}>
+                    <textarea
+                      value={msg}
+                      onChange={e => setMsg(e.target.value)}
+                      placeholder={t('contactos.canais.wa_placeholder')}
+                      rows={3}
+                      style={{
+                        width: '100%', boxSizing: 'border-box', resize: 'none',
+                        border: '1px solid #ccc', borderRadius: 8, padding: '10px 12px',
+                        fontFamily: F_BODY, fontSize: 13, color: '#111', lineHeight: 1.5,
+                        outline: 'none', background: '#fff',
+                      }}
+                    />
+                  </div>
+
+                  {/* Buttons */}
+                  <div style={{ background: '#f0f0f0', padding: '10px 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <a href={waApp} target="_blank" rel="noopener noreferrer" style={{ background: '#25D366', color: '#fff', borderRadius: 8, padding: '10px 0', textAlign: 'center', fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'block' }}>{t('contactos.canais.wa_abrir')}</a>
+                    <a href={waWeb} target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#111', borderRadius: 8, padding: '10px 0', textAlign: 'center', fontWeight: 600, fontSize: 13, textDecoration: 'none', display: 'block', border: '1px solid #ddd' }}>{t('contactos.canais.wa_web')}</a>
+                    <div style={{ textAlign: 'center', fontSize: 11, color: '#888', paddingBottom: 6 }}>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366" style={{ verticalAlign: 'middle', marginRight: 3 }}><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
+                      {t('contactos.canais.wa_sem_app')} <a href="https://www.whatsapp.com/download" target="_blank" rel="noopener noreferrer" style={{ color: '#075E54', textDecoration: 'underline' }}>{t('contactos.canais.wa_download')}</a>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
           </Reveal>
 
           {/* Telefone */}
