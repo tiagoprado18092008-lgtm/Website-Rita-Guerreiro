@@ -833,18 +833,64 @@ function Footer() {
   );
 }
 
-// Floating WhatsApp
+// Floating WhatsApp Chat Widget
 function WAFab() {
+  const [open, setOpen] = React.useState(false);
+  const WA_NUMBER = '351961899364';
+  const WA_TEXT = encodeURIComponent('Olá, gostava de agendar uma sessão.');
+  const waApp = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
+  const waWeb = `https://web.whatsapp.com/send?phone=${WA_NUMBER}&text=${WA_TEXT}`;
+
+  const WaIcon = () => (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" />
+    </svg>
+  );
+
   return (
-    <a href="https://wa.me/351961899364?text=Ol%C3%A1%2C%20gostava%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="rg-wafab" style={{
-      position: 'fixed', bottom: 22, right: 22, zIndex: 95,
-      width: 56, height: 56, borderRadius: 999, background: '#25D366', color: 'white',
-      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-      boxShadow: '0 12px 28px -6px rgba(37,211,102,0.5), 0 4px 10px rgba(0,0,0,0.1)',
-      textDecoration: 'none', transition: 'transform 220ms',
-    }}>
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
-    </a>
+    <div style={{ position: 'fixed', bottom: 22, right: 22, zIndex: 9999, fontFamily: 'inherit' }}>
+      {open && (
+        <div style={{
+          position: 'absolute', bottom: 70, right: 0,
+          width: 300, borderRadius: 16, overflow: 'hidden',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+          animation: 'waPopupIn 200ms ease',
+        }}>
+          <div style={{ background: '#075E54', padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 999, background: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <WaIcon />
+            </div>
+            <div>
+              <div style={{ color: '#fff', fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>Assistente Clínica Rita Guerreiro</div>
+              <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>Online</div>
+            </div>
+            <button onClick={() => setOpen(false)} style={{ marginLeft: 'auto', background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: 20, lineHeight: 1, padding: 0 }} aria-label="Fechar">×</button>
+          </div>
+          <div style={{ background: '#ECE5DD', padding: '16px 12px' }}>
+            <div style={{ background: '#fff', borderRadius: '0 8px 8px 8px', padding: '10px 14px', fontSize: 13, color: '#111', lineHeight: 1.5, maxWidth: '85%', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
+              Olá, como podemos ajudar? 👋
+            </div>
+          </div>
+          <div style={{ background: '#f0f0f0', padding: '10px 12px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <a href={waApp} target="_blank" rel="noopener noreferrer" style={{ background: '#25D366', color: '#fff', borderRadius: 8, padding: '10px 0', textAlign: 'center', fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'block' }}>Abrir app</a>
+            <a href={waWeb} target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#111', borderRadius: 8, padding: '10px 0', textAlign: 'center', fontWeight: 600, fontSize: 13, textDecoration: 'none', display: 'block', border: '1px solid #ddd' }}>Continuar para o WhatsApp Web</a>
+            <div style={{ textAlign: 'center', fontSize: 11, color: '#888', marginTop: 2 }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366" style={{ verticalAlign: 'middle', marginRight: 3 }}><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
+              Não tem a app? <a href="https://www.whatsapp.com/download" target="_blank" rel="noopener noreferrer" style={{ color: '#075E54', textDecoration: 'underline' }}>Descarregar agora</a>
+            </div>
+          </div>
+        </div>
+      )}
+      <button onClick={() => setOpen(o => !o)} aria-label="WhatsApp" className="rg-wafab" style={{
+        width: 56, height: 56, borderRadius: 999, background: '#25D366', color: 'white',
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+        boxShadow: '0 12px 28px -6px rgba(37,211,102,0.5), 0 4px 10px rgba(0,0,0,0.1)',
+        border: 'none', cursor: 'pointer', transition: 'transform 220ms',
+      }}>
+        <WaIcon />
+      </button>
+      <style>{`@keyframes waPopupIn{from{opacity:0;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}`}</style>
+    </div>
   );
 }
 
