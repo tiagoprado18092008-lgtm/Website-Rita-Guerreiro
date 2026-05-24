@@ -79,6 +79,7 @@ function Nav({ current = 'home' }) {
   const langs = [
     { code: 'PT', label: 'Portugal',  flagUrl: 'https://flagcdn.com/w40/pt.png' },
     { code: 'EN', label: 'English',   flagUrl: 'https://flagcdn.com/w40/gb.png' },
+    { code: 'FR', label: 'Français',  flagUrl: 'https://flagcdn.com/w40/fr.png' },
     { code: 'ES', label: 'Español',   flagUrl: 'https://flagcdn.com/w40/es.png' },
   ];
 
