@@ -816,15 +816,18 @@ function Footer() {
             <span style={{ width: 1, height: 14, background: FD }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}
             >
               <span style={{
-                fontFamily: F_BODY, fontSize: 14, fontWeight: 700,
-                letterSpacing: '0.14em', textTransform: 'uppercase', color: FB,
+                fontFamily: F_BODY, fontSize: 11, fontWeight: 600,
+                letterSpacing: '0.16em', textTransform: 'uppercase', color: FB,
               }}>{L_.desenvolvido}</span>
               <img src="/assets/logo-alphascale-footer.png" alt="AlphaScale AI"
                 className="rg-footer-devby-logo"
-                style={{ height: 130, width: 'auto', display: 'block' }} />
+                style={{
+                  height: 170, width: 'auto', display: 'block',
+                  filter: 'brightness(0) saturate(100%) invert(11%) sepia(20%) saturate(2200%) hue-rotate(140deg) brightness(95%) contrast(95%)',
+                }} />
             </a>
           </div>
         </div>
