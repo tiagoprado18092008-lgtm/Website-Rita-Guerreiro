@@ -145,7 +145,7 @@ function Nav({ current = 'home' }) {
     href: CATEGORY_HREF[catId] ?? null,
     items: servicesByLang[catId].items.map(it => ({
       label: it.name,
-      href: `/\${it.slug}`,
+      href: `/servico/\${it.slug}`,
     })),
   }));
   const megaDescs = {};
