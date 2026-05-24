@@ -405,35 +405,16 @@ function Nav({ current = 'home' }) {
                   </svg>
                 </button>
                 {mobileServicos && (
-                  <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 14 }}>
                     {megaCols.map(col => (
-                      <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(42,90,87,0.1)', background: 'white' }}>
+                      <div key={col.id}>
                         {col.href
-                          ? <a href={col.href} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(111,181,176,0.08)', textDecoration: 'none' }}>
-                              <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
-                                {megaIcons[col.id]}
-                              </span>
-                              <div>
-                                <div style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal }}>{col.label}</div>
-                                <div style={{ fontFamily: F_DISPLAY, fontSize: 10, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
-                              </div>
-                            </a>
-                          : <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'rgba(111,181,176,0.08)' }}>
-                              <span style={{ width: 30, height: 30, borderRadius: 8, flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(111,181,176,0.18)', color: RG.teal }}>
-                                {megaIcons[col.id]}
-                              </span>
-                              <div>
-                                <div style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal }}>{col.label}</div>
-                                <div style={{ fontFamily: F_DISPLAY, fontSize: 10, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
-                              </div>
-                            </div>
+                          ? <a href={col.href} style={{ display: 'block', padding: '6px 0 10px', textDecoration: 'none', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep }}>{col.label}</a>
+                          : <div style={{ padding: '6px 0 10px', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep }}>{col.label}</div>
                         }
-                        <div style={{ padding: '8px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
                           {col.items.map(it => (
-                            <a key={it.href} href={it.href} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: RG.tealDark, textDecoration: 'none', padding: '8px 10px', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
-                              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(111,181,176,0.1)'; e.currentTarget.style.color = RG.teal; }}
-                              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.tealDark; }}
-                            >
+                            <a key={it.href} href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 400, color: RG.charcoal, textDecoration: 'none', padding: '8px 0' }}>
                               {it.label}
                             </a>
                           ))}
