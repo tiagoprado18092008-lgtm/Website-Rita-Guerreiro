@@ -1,4 +1,4 @@
-// Shared primitives — centropro-inspired: sans bold, dense, clinical
+﻿// Shared primitives — centropro-inspired: sans bold, dense, clinical
 
 function Container({ children, style = {}, maxWidth = 1280 }) {
   return (
@@ -133,11 +133,11 @@ function Nav({ current = 'home' }) {
   // Mantém URLs estáveis (independentes de idioma) e devolve labels traduzidos.
   const servicesByLang = getServices(lang);
   const CATEGORY_HREF = {
-    fisioterapia: 'fisioterapia.html',
-    saude: 'saude.html',
-    massagens: 'massagens.html',
-    holisticas: 'holisticas.html',
-    estetica: 'estetica.html',
+    fisioterapia: 'fisioterapia',
+    saude: 'saude',
+    massagens: 'massagens',
+    holisticas: 'holisticas',
+    estetica: 'estetica',
   };
   const megaCols = Object.keys(servicesByLang).map(catId => ({
     id: catId,
@@ -145,7 +145,7 @@ function Nav({ current = 'home' }) {
     href: CATEGORY_HREF[catId] ?? null,
     items: servicesByLang[catId].items.map(it => ({
       label: it.name,
-      href: `servico-${it.slug}.html`,
+      href: `servico-${it.slug}`,
     })),
   }));
   const megaDescs = {};
@@ -154,10 +154,10 @@ function Nav({ current = 'home' }) {
   }
 
   const navLinks = [
-    { id: 'inicio', label: t('nav.inicio'), href: 'index.html' },
+    { id: 'inicio', label: t('nav.inicio'), href: '/' },
     { id: 'servicos', label: t('nav.servicos'), mega: true },
-    { id: 'sobre', label: t('nav.sobre'), href: 'sobre.html' },
-    { id: 'contactos', label: t('nav.contactos'), href: 'contactos.html' },
+    { id: 'sobre', label: t('nav.sobre'), href: 'sobre' },
+    { id: 'contactos', label: t('nav.contactos'), href: 'contactos' },
   ];
 
   const linkBase = {
@@ -176,7 +176,7 @@ function Nav({ current = 'home' }) {
         <div className="rg-nav-row">
 
           {/* ── Logo ── */}
-          <a href="index.html" className="rg-logo-link rg-header-logo">
+          <a href="/" className="rg-logo-link rg-header-logo">
             <img src="rita_guerreiro_logo.png" alt="Rita Guerreiro" decoding="async" style={{ height: 110, width: 'auto', display: 'block' }} />
           </a>
 
@@ -388,10 +388,10 @@ function Nav({ current = 'home' }) {
         }}>
           <Container style={{ display: 'flex', flexDirection: 'column' }}>
             {[
-              { href: 'index.html', label: t('nav.inicio') },
+              { href: '/', label: t('nav.inicio') },
               null,
-              { href: 'sobre.html', label: t('nav.sobre') },
-              { href: 'contactos.html', label: t('nav.contactos') },
+              { href: 'sobre', label: t('nav.sobre') },
+              { href: 'contactos', label: t('nav.contactos') },
             ].map((item, i) => item === null ? (
               <div key="servicos" style={{ borderTop: '1px solid rgba(42,90,87,0.12)', padding: '20px 0' }}>
                 <button onClick={() => setMobileServicos(!mobileServicos)} style={{
@@ -820,13 +820,13 @@ function Footer() {
           <span style={{ fontFamily: F_BODY, fontSize: 14, color: FG, fontWeight: 600 }}>{L_.copy}</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontFamily: F_BODY, fontSize: 14, fontWeight: 600 }}>
-              <a href="privacidade.html"
+              <a href="privacidade"
                 style={{ color: FG, textDecoration: 'none', transition: 'color 180ms' }}
                 onMouseEnter={e => e.currentTarget.style.color = FA}
                 onMouseLeave={e => e.currentTarget.style.color = FG}
               >{t('footer.privacidade')}</a>
               <span style={{ width: 1, height: 14, background: FD }} />
-              <a href="termos.html"
+              <a href="termos"
                 style={{ color: FG, textDecoration: 'none', transition: 'color 180ms' }}
                 onMouseEnter={e => e.currentTarget.style.color = FA}
                 onMouseLeave={e => e.currentTarget.style.color = FG}

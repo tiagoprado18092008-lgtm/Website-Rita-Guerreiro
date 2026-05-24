@@ -1,4 +1,4 @@
-// Service detail page + Contactos page
+﻿// Service detail page + Contactos page
 
 function findService(slug, services) {
   const SVC = services || SERVICES;
@@ -38,7 +38,7 @@ function ServicePage({ slug }) {
         {/* Breadcrumb */}
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: F_BODY, fontSize: 13, color: RG.muted, marginBottom: 32 }}>
-            <a href="index.html" style={{ color: RG.muted, textDecoration: 'none' }}>{t('service.inicio')}</a>
+            <a href="/" style={{ color: RG.muted, textDecoration: 'none' }}>{t('service.inicio')}</a>
             <span style={{ opacity: 0.4 }}>/</span>
             <span>{s.category}</span>
             <span style={{ opacity: 0.4 }}>/</span>
@@ -312,7 +312,7 @@ function ServicePage({ slug }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
             {catItems.map((item, idx) => (
               <Reveal key={item.slug} delay={idx * 60}>
-                <a href={`servico-${item.slug}.html`} className="rg-service-card" style={{
+                <a href={`servico-${item.slug}`} className="rg-service-card" style={{
                   display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink,
                   borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}`,
                 }}>
@@ -353,7 +353,7 @@ function CategoryPage({ categoryId }) {
       <Container>
         <Reveal>
           <div style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, marginBottom: 16 }}>
-            <a href="index.html" style={{ color: RG.muted, textDecoration: 'none' }}>{t('category.inicio')}</a>
+            <a href="/" style={{ color: RG.muted, textDecoration: 'none' }}>{t('category.inicio')}</a>
             <span style={{ margin: '0 8px' }}>/</span>
             <span style={{ color: RG.ink }}>{cat.label}</span>
           </div>
@@ -372,7 +372,7 @@ function CategoryPage({ categoryId }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 24 }}>
           {cat.items.map((item, i) => (
             <Reveal key={item.slug} delay={i * 60}>
-              <a href={`servico-${item.slug}.html`} className="rg-service-card" style={{ display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink, borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}` }}>
+              <a href={`servico-${item.slug}`} className="rg-service-card" style={{ display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink, borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}` }}>
                 <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
                   <Photo label={item.name} tone="teal" aspect="16/9" src={item.img} />
                 </div>
