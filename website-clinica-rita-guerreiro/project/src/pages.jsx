@@ -23,7 +23,7 @@ function ServicePage({ slug }) {
   const services = getServices(lang);
   const serviceDetail = getServiceDetail(lang);
   const s = findService(slug, services);
-  if (!s) return <div style={{ padding: 120 }}>Serviço não encontrado.</div>;
+  if (!s) return <div style={{ padding: 120 }}>{t('service.not_found')}</div>;
   const detail = serviceDetail[slug];
   const catItems = services[s.categoryId].items.filter(i => i.slug !== slug);
   const steps = t('service.steps');
@@ -208,7 +208,7 @@ function ServicePage({ slug }) {
             <Reveal delay={80}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <div style={{ width: 32, height: 2, background: accent.border }} />
-                <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent.dot }}>{detail.tech.eyebrow || 'Tecnologia'}</span>
+                <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent.dot }}>{detail.tech.eyebrow || t('service.tech_eyebrow_fallback')}</span>
               </div>
               <h2 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, letterSpacing: '-0.03em', margin: 0, color: RG.ink }}>
                 {detail.tech.name}
@@ -283,7 +283,7 @@ function ServicePage({ slug }) {
             <div>
               <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal, marginBottom: 12 }}>{t('service.marcacoes_label')}</div>
               <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.white, lineHeight: 1.2 }}>
-                Pronto para marcar a tua sessão?
+                {t('service.cta_heading_inline')}
               </div>
               <div style={{ fontFamily: F_BODY, fontSize: 14, color: 'rgba(255,255,255,0.65)', marginTop: 10 }}>{t('service.marcacoes_body')}</div>
             </div>
@@ -345,7 +345,7 @@ function CategoryPage({ categoryId }) {
   const { lang, t } = useLang();
   const services = getServices(lang);
   const cat = services[categoryId];
-  if (!cat) return <div style={{ padding: 120 }}>Categoria não encontrada.</div>;
+  if (!cat) return <div style={{ padding: 120 }}>{t('category.not_found')}</div>;
 
   return (<>
     <Nav current={categoryId} />
@@ -486,10 +486,10 @@ function ContactosPage() {
               </svg>
               <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 12 }}>WhatsApp</div>
               <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', flex: 1, marginBottom: 28 }}>
-                A forma mais rápida. A maioria das marcações resolve-se em menos de 5 minutos durante o horário da clínica.
+                {t('contactos.canais.wa_body')}
               </div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.teal }}>
-                Enviar mensagem <ArrowRight />
+                {t('contactos.canais.wa_cta')} <ArrowRight />
               </div>
             </a>
           </Reveal>
@@ -502,12 +502,12 @@ function ContactosPage() {
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill={RG.tealDark}/>
               </svg>
               <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: RG.ink, marginBottom: 6 }}>961 899 364</div>
-              <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginBottom: 12 }}>Chamada nacional</div>
+              <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginBottom: 12 }}>{t('contactos.canais.tel_label')}</div>
               <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: RG.charcoal, flex: 1, marginBottom: 28 }}>
-                Preferes falar? Liga durante o horário de funcionamento e tratamos tudo contigo.
+                {t('contactos.canais.tel_body')}
               </div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.tealDark }}>
-                Ligar agora <ArrowRight />
+                {t('contactos.canais.tel_cta')} <ArrowRight />
               </div>
             </a>
           </Reveal>
@@ -518,7 +518,7 @@ function ContactosPage() {
     {/* ── Mapa full-width ── */}
     <div style={{ position: 'relative', height: 500 }}>
       <iframe
-        title="Mapa"
+        title={t('contactos.canais.mapa_title')}
         src="https://maps.google.com/maps?q=Rua+Padre+Ant%C3%B3nio+Vieira+58%2C+8100-611+Loul%C3%A9&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
         style={{ width: '100%', height: '100%', border: 0, display: 'block', filter: 'grayscale(0.15) contrast(1.02)' }}
         loading="lazy"
@@ -533,9 +533,9 @@ function ContactosPage() {
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
             <div style={{ width: 32, height: 2, background: RG.teal }} />
-            <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>Como chegar</span>
+            <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{t('contactos.como_chegar.eyebrow')}</span>
           </div>
-          <h2 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 3.5vw, 44px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 48px', color: RG.ink }}>No coração de Loulé</h2>
+          <h2 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 3.5vw, 44px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 48px', color: RG.ink }}>{t('contactos.como_chegar.heading')}</h2>
         </Reveal>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
           {[
@@ -543,22 +543,22 @@ function ContactosPage() {
               icon: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none' },
                 React.createElement('path', { d: 'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z', fill: RG.tealDark })
               ),
-              title: 'De carro',
-              body: 'Estacionamento disponível nas ruas envolventes. Centro de Loulé a 2 minutos a pé.',
+              title: t('contactos.como_chegar.carro_t'),
+              body: t('contactos.como_chegar.carro_d'),
             },
             {
               icon: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none' },
                 React.createElement('path', { d: 'M17 8C8 10 5.9 16.17 3.82 21h2.79c.6-1.25 1.25-2.46 2.09-3.47C10.77 15.23 14.2 14 17 14v4l5-5-5-5v4z', fill: RG.tealDark })
               ),
-              title: 'De autocarro',
-              body: 'Terminal rodoviário de Loulé a 5 minutos. Várias carreiras do Algarve passam por Loulé.',
+              title: t('contactos.como_chegar.bus_t'),
+              body: t('contactos.como_chegar.bus_d'),
             },
             {
               icon: React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none' },
                 React.createElement('path', { d: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z', fill: RG.tealDark })
               ),
-              title: 'Referências próximas',
-              body: 'A 300m do Castelo de Loulé e do Mercado Municipal.',
+              title: t('contactos.como_chegar.refs_t'),
+              body: t('contactos.como_chegar.refs_d'),
             },
           ].map((item, i) => (
             <Reveal key={i} delay={i * 60}>
