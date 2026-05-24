@@ -836,13 +836,28 @@ function Footer() {
 // Floating WhatsApp Chat Widget
 function WAFab() {
   const [open, setOpen] = React.useState(false);
+  const [msg, setMsg] = React.useState('');
   const WA_NUMBER = '351961899364';
-  const WA_TEXT = encodeURIComponent('Olá, gostava de agendar uma sessão.');
-  const waApp = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
-  const waWeb = `https://web.whatsapp.com/send?phone=${WA_NUMBER}&text=${WA_TEXT}`;
+  const inputRef = React.useRef(null);
 
-  const WaIcon = () => (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+  const now = new Date();
+  const timestamp = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+
+  const sendMsg = () => {
+    const text = msg.trim() || 'Olá, gostava de agendar uma sessão.';
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
+  const handleKey = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+  };
+
+  React.useEffect(() => {
+    if (open && inputRef.current) inputRef.current.focus();
+  }, [open]);
+
+  const WaIcon = ({ size = 26 }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" />
     </svg>
   );
@@ -852,35 +867,61 @@ function WAFab() {
       {open && (
         <div style={{
           position: 'absolute', bottom: 70, right: 0,
-          width: 300, borderRadius: 16, overflow: 'hidden',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+          width: 320, borderRadius: 16, overflow: 'hidden',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.22)',
           animation: 'waPopupIn 200ms ease',
+          display: 'flex', flexDirection: 'column',
         }}>
-          <div style={{ background: '#075E54', padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 999, background: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <WaIcon />
+          {/* Header */}
+          <div style={{ background: '#075E54', padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 44, height: 44, borderRadius: 999, background: '#128C7E', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative' }}>
+              <WaIcon size={24} />
+              <div style={{ position: 'absolute', bottom: 2, right: 2, width: 10, height: 10, borderRadius: 999, background: '#25D366', border: '2px solid #075E54' }} />
             </div>
-            <div>
+            <div style={{ flex: 1 }}>
               <div style={{ color: '#fff', fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>Assistente Clínica Rita Guerreiro</div>
-              <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>Online</div>
+              <div style={{ color: 'rgba(255,255,255,0.72)', fontSize: 12, marginTop: 2 }}>Online</div>
             </div>
-            <button onClick={() => setOpen(false)} style={{ marginLeft: 'auto', background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontSize: 20, lineHeight: 1, padding: 0 }} aria-label="Fechar">×</button>
+            <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 22, lineHeight: 1, padding: 4 }} aria-label="Fechar">×</button>
           </div>
-          <div style={{ background: '#ECE5DD', padding: '16px 12px' }}>
-            <div style={{ background: '#fff', borderRadius: '0 8px 8px 8px', padding: '10px 14px', fontSize: 13, color: '#111', lineHeight: 1.5, maxWidth: '85%', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
-              Olá, como podemos ajudar? 👋
+
+          {/* Chat body */}
+          <div style={{ background: '#ECE5DD', padding: '16px 14px 10px', minHeight: 110, backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'400\' height=\'400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3C/svg%3E")' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 12 }}>
+              <span style={{ background: 'rgba(225,245,254,0.85)', borderRadius: 8, padding: '3px 10px', fontSize: 11, color: '#555' }}>{timestamp}</span>
+            </div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+              <div style={{ background: '#fff', borderRadius: '0 8px 8px 8px', padding: '8px 12px', fontSize: 13, color: '#111', lineHeight: 1.5, maxWidth: '85%', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
+                Olá, como podemos ajudar? 👋
+              </div>
             </div>
           </div>
-          <div style={{ background: '#f0f0f0', padding: '10px 12px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <a href={waApp} target="_blank" rel="noopener noreferrer" style={{ background: '#25D366', color: '#fff', borderRadius: 8, padding: '10px 0', textAlign: 'center', fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'block' }}>Abrir app</a>
-            <a href={waWeb} target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#111', borderRadius: 8, padding: '10px 0', textAlign: 'center', fontWeight: 600, fontSize: 13, textDecoration: 'none', display: 'block', border: '1px solid #ddd' }}>Continuar para o WhatsApp Web</a>
-            <div style={{ textAlign: 'center', fontSize: 11, color: '#888', marginTop: 2 }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366" style={{ verticalAlign: 'middle', marginRight: 3 }}><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
-              Não tem a app? <a href="https://www.whatsapp.com/download" target="_blank" rel="noopener noreferrer" style={{ color: '#075E54', textDecoration: 'underline' }}>Descarregar agora</a>
-            </div>
+
+          {/* Input */}
+          <div style={{ background: '#F0F0F0', padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <input
+              ref={inputRef}
+              value={msg}
+              onChange={e => setMsg(e.target.value)}
+              onKeyDown={handleKey}
+              placeholder="Enter Your Message..."
+              style={{
+                flex: 1, border: 'none', borderRadius: 20, padding: '9px 14px',
+                fontSize: 13, fontFamily: 'inherit', outline: 'none',
+                background: '#fff', color: '#111',
+              }}
+            />
+            <button onClick={sendMsg} style={{
+              width: 36, height: 36, borderRadius: 999, background: '#25D366', border: 'none',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0,
+            }} aria-label="Enviar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
           </div>
         </div>
       )}
+
+      {/* FAB */}
       <button onClick={() => setOpen(o => !o)} aria-label="WhatsApp" className="rg-wafab" style={{
         width: 56, height: 56, borderRadius: 999, background: '#25D366', color: 'white',
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
