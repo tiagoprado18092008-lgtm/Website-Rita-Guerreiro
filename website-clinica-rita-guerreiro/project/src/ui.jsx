@@ -816,15 +816,37 @@ function Footer() {
             <span style={{ width: 1, height: 14, background: FD }} />
             <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
               className="rg-footer-devby"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}
+              aria-label="Desenvolvido por AlphaScale AI"
+              style={{
+                textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 10,
+                position: 'relative', padding: '8px 14px 8px 12px',
+                borderRadius: 999,
+                background: 'linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(42,99,96,0.08) 100%)',
+                border: '1px solid rgba(212,175,55,0.35)',
+                boxShadow: '0 0 0 0 rgba(212,175,55,0.45), inset 0 1px 0 rgba(255,255,255,0.5)',
+                transition: 'transform 240ms cubic-bezier(.2,.7,.2,1), box-shadow 240ms ease, border-color 240ms ease',
+                overflow: 'hidden',
+              }}
             >
-              <span style={{
-                fontFamily: F_BODY, fontSize: 12, fontWeight: 600,
-                letterSpacing: '0.12em', textTransform: 'uppercase', color: FB,
+              <span className="rg-devby-text" style={{
+                fontFamily: F_BODY, fontSize: 12, fontWeight: 700,
+                letterSpacing: '0.14em', textTransform: 'uppercase',
+                backgroundImage: 'linear-gradient(90deg, #2A6360 0%, #C9A227 40%, #F5D77A 50%, #C9A227 60%, #2A6360 100%)',
+                backgroundSize: '200% 100%',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                animation: 'rgDevbyShimmer 3.6s linear infinite',
+                position: 'relative', zIndex: 1,
               }}>{L_.desenvolvido}</span>
               <img src="/assets/logo-alphascale-footer.png" alt="AlphaScale AI"
                 className="rg-footer-devby-logo"
-                style={{ height: 130, width: 'auto', display: 'block' }} />
+                style={{
+                  height: 130, width: 'auto', display: 'block',
+                  position: 'relative', zIndex: 1,
+                  filter: 'drop-shadow(0 0 10px rgba(212,175,55,0.35))',
+                  transition: 'filter 240ms ease, transform 240ms cubic-bezier(.2,.7,.2,1)',
+                }} />
             </a>
           </div>
         </div>
