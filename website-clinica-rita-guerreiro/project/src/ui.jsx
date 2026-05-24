@@ -874,8 +874,8 @@ function WAFab() {
         }}>
           {/* Header */}
           <div style={{ background: '#075E54', padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{ width: 44, height: 44, borderRadius: 999, background: '#128C7E', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative' }}>
-              <WaIcon size={24} />
+            <div style={{ width: 44, height: 44, borderRadius: 999, background: '#128C7E', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', overflow: 'hidden' }}>
+              <img src="/rita_guerreiro_logo.png" alt="Clínica Rita Guerreiro" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 999 }} />
               <div style={{ position: 'absolute', bottom: 2, right: 2, width: 10, height: 10, borderRadius: 999, background: '#25D366', border: '2px solid #075E54' }} />
             </div>
             <div style={{ flex: 1 }}>
