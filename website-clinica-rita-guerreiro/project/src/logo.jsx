@@ -4,7 +4,7 @@ function LogoTile({ size = 44, inverted = false }) {
 
 function Wordmark({ inverted = false, stacked = false }) {
   return (
-    <a href="index.html" style={{
+    <a href="/" style={{
       display: 'inline-flex',
       alignItems: 'center',
       textDecoration: 'none',

@@ -1,4 +1,4 @@
-// i18n overlay for SERVICES and SERVICE_DETAIL — EN/FR/ES translations.
+﻿// i18n overlay for SERVICES and SERVICE_DETAIL — EN/FR/ES translations.
 // PT comes from data.jsx; this file provides EN/FR/ES strings keyed by slug/category id.
 // getServices(lang) / getServiceDetail(lang) return localized clones of the catalog.
 
@@ -8,7 +8,7 @@ const SERVICES_I18N = {
       label: 'Physiotherapy',
       intro: 'Individual assessment and treatment of pain, injury and dysfunction — for children and adults',
       items: {
-        fisioterapia: { name: 'General Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
+        'fisioterapia-geral': { name: 'General Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
         'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted to each stage of growth — for babies, children and adolescents, in a safe, age-appropriate setting' },
         'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Pain, locking or clicking in your jaw? We treat the temporomandibular joint with specialised manual technique' },
         mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
@@ -65,7 +65,7 @@ const SERVICES_I18N = {
       label: 'Physiothérapie',
       intro: 'Évaluation et traitement individuel de la douleur, des blessures et des dysfonctionnements — pour enfants et adultes',
       items: {
-        fisioterapia: { name: 'Physiothérapie générale', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
+        'fisioterapia-geral': { name: 'Physiothérapie générale', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
         'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée à chaque étape de la croissance — pour bébés, enfants et adolescents, dans un environnement sûr et adapté à chaque âge' },
         'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: 'Douleur, blocage ou claquements de la mâchoire ? Nous traitons l’articulation temporo-mandibulaire avec une technique manuelle spécialisée' },
         mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
@@ -122,7 +122,7 @@ const SERVICES_I18N = {
       label: 'Fisioterapia',
       intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción — para niños y adultos',
       items: {
-        fisioterapia: { name: 'Fisioterapia General', blurb: 'Cuando el dolor o la lesión te limitan el día a día, te ayudamos a recuperarte — con evaluación rigurosa y un plan pensado para ti' },
+        'fisioterapia-geral': { name: 'Fisioterapia General', blurb: 'Cuando el dolor o la lesión te limitan el día a día, te ayudamos a recuperarte — con evaluación rigurosa y un plan pensado para ti' },
         'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a cada etapa del crecimiento — para bebés, niños y adolescentes, en un entorno seguro y adecuado a cada edad' },
         'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: '¿Dolor, bloqueo o chasquidos en la mandíbula? Tratamos la articulación temporomandibular con técnica manual especializada' },
         mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
@@ -178,7 +178,7 @@ const SERVICES_I18N = {
 
 const SERVICE_DETAIL_I18N = {
   EN: {
-    fisioterapia: {
+    'fisioterapia-geral': {
       tagline: 'Careful assessment, a plan tailored to you — to move with confidence again',
       description: 'Our physiotherapy always starts with time to listen: what you feel, what you have already tried, what you want to do again. From there we build a realistic plan, in 50-minute sessions combining manual therapy, therapeutic exercise and, when it makes sense, coordination with other services at the centre. No generic protocols — because every body and every story is different.',
       prices: [
@@ -553,7 +553,7 @@ const SERVICE_DETAIL_I18N = {
     },
   },
   FR: {
-    fisioterapia: {
+    'fisioterapia-geral': {
       tagline: 'Évaluation soignée, plan adapté à vous — pour bouger à nouveau en confiance',
       description: "Notre physiothérapie commence toujours par prendre le temps de vous écouter : ce que vous ressentez, ce que vous avez déjà essayé, ce que vous voulez retrouver. À partir de là, nous construisons un plan réaliste, en séances de 50 minutes combinant thérapie manuelle, exercice thérapeutique et, lorsque cela a du sens, articulation avec d'autres services du centre. Pas de protocoles génériques — parce que chaque corps et chaque histoire sont différents.",
       prices: [
@@ -928,7 +928,7 @@ const SERVICE_DETAIL_I18N = {
     },
   },
   ES: {
-    fisioterapia: {
+    'fisioterapia-geral': {
       tagline: 'Evaluación cuidadosa, plan a tu medida — para volver a moverte con confianza',
       description: 'Nuestra fisioterapia siempre comienza con tiempo para escucharte: lo que sientes, lo que ya has probado, lo que quieres volver a hacer. A partir de ahí construimos un plan realista, en sesiones de 50 minutos que combinan terapia manual, ejercicio terapéutico y, cuando tiene sentido, articulación con otros servicios del centro. Sin protocolos genéricos — porque cada cuerpo y cada historia son diferentes.',
       prices: [

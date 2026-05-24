@@ -95,7 +95,7 @@ const SERVICES = {
 };
 
 const SERVICE_DETAIL = {
-  fisioterapia: {
+  'fisioterapia-geral': {
     tagline: 'Avaliação cuidada, plano à tua medida — para voltares a mover-te com confiança.',
     description: 'A nossa fisioterapia começa sempre com tempo para te ouvir: o que sentes, o que já tentaste, o que queres voltar a fazer. A partir daí construímos um plano realista, em sessões de 50 minutos que combinam terapia manual, exercício terapêutico e, quando faz sentido, articulação com outros serviços do centro. Sem protocolos genéricos — porque cada corpo e cada história são diferentes.',
     prices: [

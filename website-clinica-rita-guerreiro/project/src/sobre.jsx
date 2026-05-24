@@ -42,7 +42,7 @@ function Mission() {
             </Reveal>
             <Reveal delay={140}>
               <div style={{ marginTop: 28 }}>
-                <Button href="index.html#servicos" variant="primary" size="md">{t('sobre.mission_cta')}</Button>
+                <Button href="/#servicos" variant="primary" size="md">{t('sobre.mission_cta')}</Button>
               </div>
             </Reveal>
           </div>

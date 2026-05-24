@@ -198,10 +198,10 @@ function StatsStrip() {
 function ServicesCard() {
   const { t } = useLang();
   const items = [
-    { num: '01', name: t('services_menu.01_name'), href: 'fisioterapia.html', img: IMG.fisioterapia, blurb: t('services_menu.01_blurb') },
-    { num: '02', name: t('services_menu.02_name'), href: 'servico-pilates-clinico.html', img: IMG['pilates-clinico'], blurb: t('services_menu.02_blurb') },
-    { num: '03', name: t('services_menu.03_name'), href: 'massagens.html', img: IMG['massagem-relaxamento'], blurb: t('services_menu.03_blurb') },
-    { num: '04', name: t('services_menu.04_name'), href: 'servico-psicologia.html', img: IMG.psicologia, blurb: t('services_menu.04_blurb') },
+    { num: '01', name: t('services_menu.01_name'), href: '/servico/fisioterapia', img: IMG.fisioterapia, blurb: t('services_menu.01_blurb') },
+    { num: '02', name: t('services_menu.02_name'), href: '/servico/pilates-clinico', img: IMG['pilates-clinico'], blurb: t('services_menu.02_blurb') },
+    { num: '03', name: t('services_menu.03_name'), href: '/servico/massagens', img: IMG['massagem-relaxamento'], blurb: t('services_menu.03_blurb') },
+    { num: '04', name: t('services_menu.04_name'), href: '/servico/psicologia', img: IMG.psicologia, blurb: t('services_menu.04_blurb') },
   ];
   const [active, setActive] = React.useState(0);
 
@@ -438,11 +438,11 @@ function ServicesOverview() {
   const { lang, t } = useLang();
   const SVC = getServices(lang);
   const cats = [
-    { id: 'fisioterapia', num: '01', href: 'fisioterapia.html', img: IMG.fisioterapia, ...SVC.fisioterapia },
-    { id: 'saude', num: '02', href: 'servico-nutricao.html', img: IMG.psicologia, ...SVC.saude },
-    { id: 'massagens', num: '03', href: 'massagens.html', img: IMG['massagem-relaxamento'], ...SVC.massagens },
-    { id: 'holisticas', num: '04', href: 'holisticas.html', img: IMG.reflexologia, ...SVC.holisticas },
-    { id: 'estetica', num: '05', href: 'servico-facial.html', img: IMG['pilates-clinico'], ...SVC.estetica },
+    { id: 'fisioterapia', num: '01', href: '/servico/fisioterapia', img: IMG.fisioterapia, ...SVC.fisioterapia },
+    { id: 'saude', num: '02', href: '/servico/saude', img: IMG.psicologia, ...SVC.saude },
+    { id: 'massagens', num: '03', href: '/servico/massagens', img: IMG['massagem-relaxamento'], ...SVC.massagens },
+    { id: 'holisticas', num: '04', href: '/servico/holisticas', img: IMG.reflexologia, ...SVC.holisticas },
+    { id: 'estetica', num: '05', href: '/servico/estetica', img: IMG['pilates-clinico'], ...SVC.estetica },
   ];
   return (
     <Section id="todos-servicos" bg={RG.creamSoft} pad="md">
@@ -534,7 +534,7 @@ function MeetRita() {
                 ))}
               </div>
               <div style={{ marginTop: 28 }}>
-                <a href="sobre.html" style={{
+                <a href="/sobre" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                   fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.ink,
                   textDecoration: 'none', padding: '12px 22px', borderRadius: 999,
