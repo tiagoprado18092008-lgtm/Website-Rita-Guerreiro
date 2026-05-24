@@ -822,12 +822,14 @@ function Footer() {
                 fontFamily: F_BODY, fontSize: 11, fontWeight: 600,
                 letterSpacing: '0.16em', textTransform: 'uppercase', color: FB,
               }}>{L_.desenvolvido}</span>
-              <img src="/assets/logo-alphascale-footer.png" alt="AlphaScale AI"
-                className="rg-footer-devby-logo"
-                style={{
-                  height: 170, width: 'auto', display: 'block',
-                  filter: 'brightness(0) saturate(100%) invert(11%) sepia(20%) saturate(2200%) hue-rotate(140deg) brightness(95%) contrast(95%)',
-                }} />
+              <span className="rg-devby-shine" style={{ position: 'relative', display: 'inline-block', overflow: 'hidden', borderRadius: 4 }}>
+                <img src="/assets/logo-alphascale-footer.png" alt="AlphaScale AI"
+                  className="rg-footer-devby-logo"
+                  style={{
+                    height: 170, width: 'auto', display: 'block',
+                    filter: 'brightness(0) saturate(100%) invert(11%) sepia(20%) saturate(2200%) hue-rotate(140deg) brightness(95%) contrast(95%)',
+                  }} />
+              </span>
             </a>
           </div>
         </div>
