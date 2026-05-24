@@ -444,52 +444,14 @@ h3 { font-size: clamp(22px, 2.5vw, 28px); }
 
 /* ── Desenvolvido por — link AlphaScale ────────────────────── */
 .rg-footer-devby {
-  opacity: 0.85;
-  transition: opacity 250ms ease;
-}
-.rg-footer-devby:hover {
-  opacity: 1;
+  transition: opacity 350ms ease;
 }
 .rg-footer-devby-logo {
-  transition: transform 250ms ease;
+  filter: brightness(0) saturate(100%) invert(11%) sepia(20%) saturate(2200%) hue-rotate(140deg) brightness(95%) contrast(95%);
+  transition: filter 350ms ease;
 }
 .rg-footer-devby:hover .rg-footer-devby-logo {
-  transform: translateY(-1px);
-}
-
-/* sweep diagonal de luz no logo, ao passar o rato */
-.rg-devby-shine::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.0) 30%,
-    rgba(255, 255, 255, 0.85) 50%,
-    rgba(255, 255, 255, 0.0) 70%,
-    transparent 100%
-  );
-  transform: skewX(-22deg);
-  pointer-events: none;
-  opacity: 0;
-}
-.rg-footer-devby:hover .rg-devby-shine::after {
-  animation: rgDevbyShineSweep 900ms ease-out;
-}
-@keyframes rgDevbyShineSweep {
-  0%   { left: -75%;  opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { left: 125%;  opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .rg-footer-devby:hover .rg-devby-shine::after {
-    animation: none;
-  }
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255,255,255,0.6));
 }
 
 /* ── WhatsApp FAB ───────────────────────────────────────── */
