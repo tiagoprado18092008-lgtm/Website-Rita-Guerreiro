@@ -161,8 +161,8 @@ function Nav({ current = 'home' }) {
   ];
 
   const linkBase = {
-    fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 400,
-    color: 'rgba(255,255,255,0.82)', textDecoration: 'none',
+    fontFamily: F_BODY, fontSize: 15, fontWeight: 500,
+    color: 'rgba(255,255,255,0.9)', textDecoration: 'none',
     padding: '10px 15px', display: 'inline-flex', alignItems: 'center', gap: 6,
     letterSpacing: '0.01em', background: 'none', border: 'none', cursor: 'pointer',
   };
@@ -220,8 +220,8 @@ function Nav({ current = 'home' }) {
                               }}
                             >
                               <div style={{ flex: 1 }}>
-                                <div style={{ fontFamily: F_DISPLAY, fontSize: 13, fontWeight: activeCol === ci ? 600 : 400, color: activeCol === ci ? RG.tealDark : RG.charcoal, lineHeight: 1.2 }}>{col.label}</div>
-                                <div style={{ fontFamily: F_DISPLAY, fontSize: 11, color: RG.muted, marginTop: 1 }}>{megaDescs[col.id]}</div>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: activeCol === ci ? 600 : 500, color: activeCol === ci ? RG.tealDark : RG.ink, lineHeight: 1.2 }}>{col.label}</div>
+                                <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 3 }}>{megaDescs[col.id]}</div>
                               </div>
                               <svg width="8" height="8" viewBox="0 0 10 10" style={{ marginLeft: 'auto', opacity: activeCol === ci ? 0.7 : 0.3 }}>
                                 <path d="M3 2 L7 5 L3 8" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
@@ -236,12 +236,12 @@ function Nav({ current = 'home' }) {
                       <div style={{ width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
                         {activeCol !== null && <>
                           <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF' }}>
-                            <div style={{ fontFamily: F_DISPLAY, fontSize: 10, fontWeight: 400, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
+                            <div style={{ fontFamily: F_BODY, fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
                           </div>
                           <div style={{ padding: '8px' }}>
                             {megaCols[activeCol].items.map((item) => (
                               <a key={item.href} href={item.href}
-                                style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', fontFamily: F_DISPLAY, fontSize: 13, color: RG.charcoal, textDecoration: 'none', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
+                                style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 10px', fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, textDecoration: 'none', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
                                 onMouseEnter={e => { e.currentTarget.style.background = '#F1F7F6'; e.currentTarget.style.color = RG.tealDark; }}
                                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.charcoal; }}
                               >
