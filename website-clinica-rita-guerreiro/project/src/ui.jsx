@@ -393,7 +393,7 @@ function Nav({ current = 'home' }) {
               { href: '/sobre', label: t('nav.sobre') },
               { href: '/contactos', label: t('nav.contactos') },
             ].map((item, i) => item === null ? (
-              <div key="servicos" style={{ borderTop: '1px solid rgba(20,20,18,0.08)', padding: '20px 0' }}>
+              <div key="servicos" style={{ padding: '20px 0' }}>
                 <button onClick={() => setMobileServicos(!mobileServicos)} style={{
                   fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 30, fontWeight: 700,
                   color: RG.ink, background: 'none', border: 'none', cursor: 'pointer',
