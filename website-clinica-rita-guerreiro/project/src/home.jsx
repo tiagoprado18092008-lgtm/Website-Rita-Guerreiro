@@ -120,24 +120,48 @@ function StatsStrip() {
   const { t } = useLang();
 
   const items = [
-    { value: '20', suffix: '+', label: t('trust.anos') },
-    { value: '5',  suffix: '',  label: t('trust.especialistas') },
-    { value: '6',  suffix: '',  label: t('trust.especialidades') },
-    { value: '5',  suffix: '★', label: t('trust.google_reviews'), star: true },
+    {
+      value: '10',
+      suffix: '+',
+      label: t('trust.anos'),
+      desc: t('trust.anos_desc'),
+    },
+    {
+      value: '500',
+      suffix: '+',
+      label: t('trust.pacientes'),
+      desc: null,
+    },
+    {
+      value: '25',
+      suffix: '',
+      label: t('trust.terapias'),
+      desc: null,
+    },
   ];
 
   return (
-    <section className="rg-stats-strip" style={{ background: RG.white, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}` }}>
+    <section style={{ background: RG.white, borderTop: `1px solid ${RG.line}`, borderBottom: `1px solid ${RG.line}`, padding: '28px 0' }}>
       <Container>
-        <div className="rg-stats-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'center' }}>
           {items.map((it, i) => (
-            <div key={i} className="rg-stats-item" style={{ borderLeft: i === 0 ? 'none' : `1px solid ${RG.line}` }}>
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 16,
+                padding: '0 32px',
+                borderLeft: i === 0 ? 'none' : `1px solid ${RG.line}`,
+              }}
+            >
               <div style={{
                 fontFamily: F_DISPLAY,
-                fontSize: 'clamp(28px, 3vw, 40px)',
-                fontWeight: 700,
+                fontSize: 'clamp(32px, 3.5vw, 44px)',
+                fontWeight: 200,
                 letterSpacing: '-0.03em',
-                color: it.star ? '#F5A623' : RG.ink,
+                color: RG.tealDark,
                 lineHeight: 1,
                 display: 'flex',
                 alignItems: 'flex-start',
@@ -145,21 +169,15 @@ function StatsStrip() {
               }}>
                 {it.value}
                 {it.suffix && (
-                  <span style={{
-                    fontSize: it.star ? '0.75em' : '0.55em',
-                    fontWeight: it.star ? 700 : 400,
-                    marginTop: it.star ? '0.05em' : '0.12em',
-                    marginLeft: 2,
-                    color: it.star ? '#F5A623' : RG.teal,
-                  }}>{it.suffix}</span>
+                  <span style={{ fontSize: '0.5em', fontWeight: 300, marginTop: '0.1em', marginLeft: 1, color: RG.teal }}>{it.suffix}</span>
                 )}
               </div>
               <p style={{
                 fontFamily: F_BODY,
                 fontSize: 10,
                 fontWeight: 700,
-                color: RG.muted,
-                letterSpacing: '0.12em',
+                color: RG.ink,
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
                 margin: 0,
                 lineHeight: 1.4,
