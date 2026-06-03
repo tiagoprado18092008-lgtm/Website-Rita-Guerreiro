@@ -533,16 +533,16 @@ function ContactosPage() {
           {/* Telefone */}
           <Reveal delay={80}>
             <a href="tel:+351961899364" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: RG.white, borderRadius: 16, padding: '40px 40px 36px', border: `1px solid ${RG.line}`, minHeight: 240, position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: RG.tealWash }} />
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 20, flexShrink: 0 }}>
+              <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: RG.tealWash, zIndex: 0 }} />
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 20, flexShrink: 0, position: 'relative', zIndex: 1 }}>
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill={RG.tealDark}/>
               </svg>
-              <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: RG.ink, marginBottom: 6 }}>961 899 364</div>
-              <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginBottom: 12 }}>{t('contactos.canais.tel_label')}</div>
-              <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: RG.charcoal, flex: 1, marginBottom: 28 }}>
+              <div style={{ fontFamily: F_DISPLAY, fontSize: 28, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: RG.ink, marginBottom: 6, position: 'relative', zIndex: 1 }}>961 899 364</div>
+              <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginBottom: 12, position: 'relative', zIndex: 1 }}>{t('contactos.canais.tel_label')}</div>
+              <div style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: RG.charcoal, flex: 1, marginBottom: 28, position: 'relative', zIndex: 1 }}>
                 {t('contactos.canais.tel_body')}
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.tealDark }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, fontWeight: 700, color: RG.tealDark, position: 'relative', zIndex: 1 }}>
                 {t('contactos.canais.tel_cta')} <ArrowRight />
               </div>
             </a>
