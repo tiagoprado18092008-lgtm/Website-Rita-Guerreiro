@@ -429,8 +429,8 @@ function Nav({ current = 'home' }) {
           <Container style={{ display: 'flex', flexDirection: 'column' }}>
             {[
               { href: '/', label: t('nav.inicio') },
-              null,
               { href: '/sobre', label: t('nav.sobre') },
+              null,
               { href: '/contactos', label: t('nav.contactos') },
             ].map((item, i) => item === null ? (
               <div key="servicos" style={{ padding: '20px 0' }}>
