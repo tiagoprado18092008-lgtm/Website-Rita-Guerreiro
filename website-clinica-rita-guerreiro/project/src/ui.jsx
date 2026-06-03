@@ -366,6 +366,46 @@ function Nav({ current = 'home' }) {
               {t('agendar')}
             </a>
 
+            {/* Language switcher — mobile header (visível só em mobile via CSS) */}
+            <div className="rg-mobile-lang" style={{ display: 'none', position: 'relative' }}>
+              <button onClick={() => setLangOpen(!langOpen)} style={{
+                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)',
+                borderRadius: 8, padding: '5px 8px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: 5,
+              }}>
+                {(() => { const cur = langs.find(l => l.code === lang) || langs[0]; return (
+                  <>
+                    <img src={cur.flagUrl} alt={cur.code} style={{ width: 20, height: 14, objectFit: 'cover', borderRadius: 2, display: 'block' }} />
+                    <span style={{ fontFamily: F_DISPLAY, fontSize: 10, fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.06em' }}>{cur.code}</span>
+                    <svg width="7" height="7" viewBox="0 0 10 10" style={{ transform: langOpen ? 'rotate(180deg)' : 'none', transition: 'transform 180ms', opacity: 0.6 }}>
+                      <path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </>
+                ); })()}
+              </button>
+              {langOpen && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 6px)', right: 0, zIndex: 200,
+                  background: 'white', borderRadius: 10, padding: '6px',
+                  boxShadow: '0 16px 40px -8px rgba(14,14,12,0.2), 0 0 0 1px rgba(14,14,12,0.06)',
+                  minWidth: 130,
+                }}>
+                  {langs.filter(l => l.code !== lang).map(l => (
+                    <button key={l.code} onClick={() => { changeLang(l.code); setLangOpen(false); }} style={{
+                      display: 'flex', alignItems: 'center', gap: 8, width: '100%',
+                      padding: '8px 10px', borderRadius: 7, border: 'none', background: 'none', cursor: 'pointer',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = 'rgba(111,181,176,0.12)'}
+                    onMouseLeave={e => e.currentTarget.style.background = 'none'}
+                    >
+                      <img src={l.flagUrl} alt={l.code} style={{ width: 22, height: 15, objectFit: 'cover', borderRadius: 2, display: 'block', flexShrink: 0 }} />
+                      <span style={{ fontSize: 13, fontWeight: 400, color: '#1a1a18', fontFamily: F_DISPLAY }}>{l.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* Burger */}
             <button className="rg-burger" onClick={() => setMobile(!mobile)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 6 }} aria-label="Menu">
               <svg width="22" height="22" viewBox="0 0 22 22">
