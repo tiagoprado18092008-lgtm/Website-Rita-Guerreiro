@@ -122,25 +122,25 @@ const SERVICES_I18N = {
       label: 'Fisioterapia',
       intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción — para niños y adultos',
       items: {
-        'fisioterapia-geral': { name: 'Fisioterapia General', blurb: 'Cuando el dolor o la lesión te limitan el día a día, te ayudamos a recuperarte — con evaluación rigurosa y un plan pensado para ti' },
+        'fisioterapia-geral': { name: 'Fisioterapia General', blurb: 'Cuando el dolor o la lesión le limitan el día a día, le ayudamos a recuperarse — con evaluación rigurosa y un plan pensado para usted' },
         'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a cada etapa del crecimiento — para bebés, niños y adolescentes, en un entorno seguro y adecuado a cada edad' },
         'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: '¿Dolor, bloqueo o chasquidos en la mandíbula? Tratamos la articulación temporomandibular con técnica manual especializada' },
         mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
-        'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Mareos, vértigos y desequilibrios tienen tratamiento — con maniobras específicas y ejercicios que recuperan tu estabilidad' },
+        'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Mareos, vértigos y desequilibrios tienen tratamiento — con maniobras específicas y ejercicios que recuperan su estabilidad' },
       },
     },
     saude: {
       label: 'Salud y Bienestar',
-      intro: 'Cuidados clínicos especializados para tu salud y bienestar — siempre con tiempo y atención a cada persona',
+      intro: 'Cuidados clínicos especializados para su salud y bienestar — siempre con tiempo y atención a cada persona',
       items: {
-        nutricao: { name: 'Nutrición', blurb: 'Un plan alimentario pensado para tu vida real — sin dietas restrictivas, con objetivos claros y seguimiento cercano' },
+        nutricao: { name: 'Nutrición', blurb: 'Un plan alimentario pensado para su vida real — sin dietas restrictivas, con objetivos claros y seguimiento cercano' },
         'terapia-bowen': { name: 'Terapia Bowen', blurb: 'Técnica neuromuscular suave con resultados a menudo profundos — segura para niños y adultos' },
-        psicologia: { name: 'Psicología', blurb: 'Un espacio seguro y confidencial para hablar de lo que te preocupa — para niños, adolescentes y adultos' },
+        psicologia: { name: 'Psicología', blurb: 'Un espacio seguro y confidencial para hablar de lo que le preocupa — para niños, adolescentes y adultos' },
       },
     },
     massagens: {
       label: 'Masajes',
-      intro: 'Terapias manuales para liberar tensiones, recuperarte y restaurar el equilibrio — con la técnica adecuada para cada momento',
+      intro: 'Terapias manuales para liberar tensiones, recuperarse y restaurar el equilibrio — con la técnica adecuada para cada momento',
       items: {
         'massagem-relaxamento': { name: 'Masaje Relajante', blurb: 'Un espacio para parar — masaje de cuerpo entero que libera la tensión acumulada y devuelve el equilibrio' },
         'massagem-criancas': { name: 'Masaje Infantil', blurb: 'Masaje suave adaptado a los más pequeños — para promover sueño, calma y bienestar' },
@@ -149,7 +149,7 @@ const SERVICES_I18N = {
         'massagem-pre-pos-natal': { name: 'Masaje Pre/Postnatal', blurb: 'Adaptado a los cambios del cuerpo durante el embarazo y a la recuperación posparto — con confort y posicionamiento seguro' },
         'massagem-sacro-craniana': { name: 'Masaje Sacrocraneal', blurb: 'Técnica de toque suave sobre el sistema sacrocraneal — alivia tensiones, cefaleas y estrés sin esfuerzo' },
         'drenagem-linfatica': { name: 'Drenaje Linfático Manual', blurb: 'Método Vodder — la técnica de referencia para reducir la hinchazón, activar la circulación y devolver ligereza' },
-        'massagem-terapeutica': { name: 'Drenaje Postoperatorio / Terapéutico', blurb: 'Recuperación postquirúrgica y alivio de tensión muscular crónica — con técnica adaptada a tu condición' },
+        'massagem-terapeutica': { name: 'Drenaje Postoperatorio / Terapéutico', blurb: 'Recuperación postquirúrgica y alivio de tensión muscular crónica — con técnica adaptada a su condición' },
       },
     },
     holisticas: {
@@ -168,7 +168,7 @@ const SERVICES_I18N = {
       intro: 'Cuidado estético y tratamientos corporales con tecnología avanzada — siempre con evaluación previa y protocolo personalizado',
       items: {
         facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado — para una piel sana y equilibrada' },
-        'pacotes-tratamento': { name: 'Paquetes de Tratamiento', blurb: 'Cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia — tecnología al servicio de tu cuerpo' },
+        'pacotes-tratamento': { name: 'Paquetes de Tratamiento', blurb: 'Cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia — tecnología al servicio de su cuerpo' },
         'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación definitiva con tecnología de última generación — para mujer y hombre, todas las zonas' },
         'pilates-clinico': { name: 'Pilates Clínico', blurb: 'Pilates supervisado por un fisioterapeuta — ejercicio adaptado a lesiones, dolor crónico o rehabilitación' },
       },
@@ -929,8 +929,8 @@ const SERVICE_DETAIL_I18N = {
   },
   ES: {
     'fisioterapia-geral': {
-      tagline: 'Evaluación cuidadosa, plan a tu medida — para volver a moverte con confianza',
-      description: 'Nuestra fisioterapia siempre comienza con tiempo para escucharte: lo que sientes, lo que ya has probado, lo que quieres volver a hacer. A partir de ahí construimos un plan realista, en sesiones de 50 minutos que combinan terapia manual, ejercicio terapéutico y, cuando tiene sentido, articulación con otros servicios del centro. Sin protocolos genéricos — porque cada cuerpo y cada historia son diferentes.',
+      tagline: 'Evaluación cuidadosa, plan a su medida — para volver a moverse con confianza',
+      description: 'Nuestra fisioterapia siempre comienza con tiempo para escucharle: lo que siente, lo que ya ha probado, lo que quiere volver a hacer. A partir de ahí construimos un plan realista, en sesiones de 50 minutos que combinan terapia manual, ejercicio terapéutico y, cuando tiene sentido, articulación con otros servicios del centro. Sin protocolos genéricos — porque cada cuerpo y cada historia son diferentes.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
         { label: 'Pack 5 sesiones', value: '225€' },
@@ -976,7 +976,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     mesoterapia: {
-      tagline: 'Acción dirigida donde más la necesitas — para dolor, inflamación o cuidado estético',
+      tagline: 'Acción dirigida donde más la necesita — para dolor, inflamación o cuidado estético',
       description: 'La Mesoterapia consiste en aplicar microinyecciones de sustancias activas directamente en las capas superficiales de la piel o tejido subcutáneo. Permite una acción altamente localizada — llega a la zona exacta del dolor, contractura o preocupación estética, con poca difusión sistémica. Aplicada por fisioterapeuta con formación específica, es una técnica versátil tanto en contexto clínico (dolor articular, contracturas) como estético (celulitis, flacidez, rejuvenecimiento).',
       prices: [{ label: 'Sesión (50min)', value: '50€' }],
       sub: [
@@ -989,7 +989,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'fisioterapia-vestibular': {
-      tagline: 'Recuperar la estabilidad — y volver a confiar en el equilibrio de tu cuerpo',
+      tagline: 'Recuperar la estabilidad — y volver a confiar en el equilibrio de su cuerpo',
       description: 'La Fisioterapia Vestibular es un área especializada de la fisioterapia que trata los mareos, vértigo y desequilibrios. A través de una evaluación rigurosa, maniobras de reposicionamiento (eficaces en VPPB) y ejercicios específicos de habituación y estabilización de la mirada, ayudamos al sistema vestibular a recuperarse o compensar. Los resultados suelen ser rápidos — en muchos casos, con alivio significativo desde la primera sesión.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
@@ -1002,7 +1002,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     acupuntura: {
-      tagline: 'Una medicina con siglos de práctica — y evidencia creciente para tu bienestar',
+      tagline: 'Una medicina con siglos de práctica — y evidencia creciente para su bienestar',
       description: 'La Acupuntura es uno de los pilares de la Medicina Tradicional China, con evidencia creciente en el manejo del dolor, estrés, ansiedad e insomnio. Mediante la estimulación precisa de puntos específicos, regula el sistema nervioso, estimula la liberación de endorfinas y promueve el equilibrio energético. En la clínica Rita Guerreiro, cada sesión está precedida por una evaluación global de salud — para una intervención verdaderamente personalizada.',
       prices: [{ label: 'Por sesión (50min)', value: '45€' }],
       sub: [
@@ -1016,13 +1016,13 @@ const SERVICE_DETAIL_I18N = {
     },
     nutricao: {
       tagline: 'Alimentación real para la vida real — sin dietas restrictivas ni soluciones genéricas',
-      description: 'La consulta de nutrición comienza por entender quién eres: tus hábitos, tu ritmo, qué funciona y qué no funciona para ti. A partir de ahí creamos un plan alimentario personalizado, realista y sostenible — para pérdida de peso, ganancia muscular, salud digestiva, nutrición deportiva o adaptación a condiciones clínicas específicas. Sin promesas genéricas: solo nutrición seria, a tu medida.',
+      description: 'La consulta de nutrición comienza por entender quién es: sus hábitos, su ritmo, qué funciona y qué no funciona para usted. A partir de ahí creamos un plan alimentario personalizado, realista y sostenible — para pérdida de peso, ganancia muscular, salud digestiva, nutrición deportiva o adaptación a condiciones clínicas específicas. Sin promesas genéricas: solo nutrición seria, a su medida.',
       prices: [
         { label: '1ª consulta (hasta 50min)', value: '45€' },
         { label: 'Siguientes (30min)', value: '40€' },
       ],
       sub: [
-        { t: 'Pérdida de peso sostenible', d: 'Un plan alimentario real adaptado a tu estilo de vida — para perder peso y mantenerlo' },
+        { t: 'Pérdida de peso sostenible', d: 'Un plan alimentario real adaptado a su estilo de vida — para perder peso y mantenerlo' },
         { t: 'Nutrición deportiva', d: 'Optimización de la nutrición para el rendimiento, recuperación y composición corporal' },
         { t: 'Salud digestiva', d: 'Apoyo nutricional para intestino irritable, intolerancias, reflujo y otros desequilibrios' },
         { t: 'Diabetes y colesterol', d: 'Gestión nutricional de condiciones metabólicas con seguimiento regular' },
@@ -1048,8 +1048,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     psicologia: {
-      tagline: 'Un espacio seguro para hablar de lo que te preocupa — para niños, adolescentes y adultos',
-      description: 'La salud mental es tan importante como la salud física — y merece la misma atención y cuidado. La consulta de psicología en la clínica Rita Guerreiro es un espacio seguro, confidencial y sin juicios donde puedes explorar lo que te preocupa con el apoyo de un profesional especializado. Acompañamos a niños, adolescentes y adultos en diferentes momentos de la vida.',
+      tagline: 'Un espacio seguro para hablar de lo que le preocupa — para niños, adolescentes y adultos',
+      description: 'La salud mental es tan importante como la salud física — y merece la misma atención y cuidado. La consulta de psicología en la clínica Rita Guerreiro es un espacio seguro, confidencial y sin juicios donde puede explorar lo que le preocupa con el apoyo de un profesional especializado. Acompañamos a niños, adolescentes y adultos en diferentes momentos de la vida.',
       prices: [{ label: 'Consulta (60min)', value: '45€' }],
       sub: [
         { t: 'Ansiedad y estrés', d: 'Herramientas prácticas para gestionar la preocupación excesiva, la tensión y los síntomas físicos asociados' },
@@ -1091,14 +1091,14 @@ const SERVICE_DETAIL_I18N = {
     },
     'massagem-assinatura-rg': {
       tagline: 'Ochenta minutos pensados al detalle — la experiencia insignia de la casa',
-      description: 'El Masaje Firma RG es la experiencia más completa que ofrece la clínica Rita Guerreiro. Una sesión de 80 minutos, cuidadosamente diseñada para combinar relajación profunda, trabajo muscular específico y bienestar global. Cada momento se personaliza contigo — de principio a fin.',
+      description: 'El Masaje Firma RG es la experiencia más completa que ofrece la clínica Rita Guerreiro. Una sesión de 80 minutos, cuidadosamente diseñada para combinar relajación profunda, trabajo muscular específico y bienestar global. Cada momento se personaliza de acuerdo con usted — de principio a fin.',
       prices: [{ label: 'Sesión completa (80min)', value: '75€' }],
       sub: [
         { t: 'Relajación total', d: 'Combinación de técnicas suaves para inducir un estado de calma profunda' },
         { t: 'Trabajo muscular', d: 'Liberación de la tensión acumulada con técnicas adaptadas a cada zona del cuerpo' },
         { t: 'Bienestar global', d: 'Un enfoque holístico que cuida del cuerpo y la mente conjuntamente' },
         { t: 'Experiencia personalizada', d: 'Cada sesión se adapta a las preferencias y necesidades del cliente' },
-        { t: 'Un momento único', d: '80 minutos de dedicación exclusiva a tu bienestar' },
+        { t: 'Un momento único', d: '80 minutos de dedicación exclusiva a su bienestar' },
         { t: 'Ideal para regalar', d: 'La elección perfecta para un regalo especial o un momento de autocuidado' },
       ],
     },
@@ -1218,7 +1218,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'head-spa': {
-      tagline: 'Cuidar el cuero cabelludo es cuidar el cabello — y relajarse como hace tiempo no te relajabas',
+      tagline: 'Cuidar el cuero cabelludo es cuidar el cabello — y relajarse como hace tiempo no se relajaba',
       description: 'El Head Spa es un tratamiento completo para el cuero cabelludo que combina limpieza profunda, nutrición intensiva y un masaje relajante. Elimina el exceso de sebo e impurezas, equilibra el pH del cuero cabelludo, fortalece los folículos capilares y aporta una sensación de frescura y ligereza inigualable. Los resultados visibles en el cabello se acompañan de un estado de relajación profunda.',
       prices: [{ label: 'Sesión completa (90min)', value: '75€' }],
       sub: [
@@ -1232,7 +1232,7 @@ const SERVICE_DETAIL_I18N = {
     },
     facial: {
       tagline: 'Cuidado profesional para cada tipo de piel — para resultados visibles y duraderos',
-      description: 'Nuestros tratamientos faciales son realizados por profesionales especializados, con productos de alta calidad adaptados al tipo de piel de cada persona. Desde la limpieza más sencilla hasta el facial personalizado más completo — cada sesión está diseñada para maximizar los resultados visibles y el bienestar de tu piel.',
+      description: 'Nuestros tratamientos faciales son realizados por profesionales especializados, con productos de alta calidad adaptados al tipo de piel de cada persona. Desde la limpieza más sencilla hasta el facial personalizado más completo — cada sesión está diseñada para maximizar los resultados visibles y el bienestar de su piel.',
       prices: [
         { label: 'Limpieza de cutis', value: '50€' },
         { label: 'Extracción', value: '10€' },
@@ -1276,7 +1276,7 @@ const SERVICE_DETAIL_I18N = {
         { label: 'Hombre — Zona extra', value: '10€' },
       ],
       sub: [
-        { t: 'Ingle y línea del bikini', d: 'Tratamiento total o parcial, con opciones adaptadas a tus preferencias' },
+        { t: 'Ingle y línea del bikini', d: 'Tratamiento total o parcial, con opciones adaptadas a sus preferencias' },
         { t: 'Piernas y muslos', d: 'Depilación de zonas extensas con eficacia y comodidad máximas' },
         { t: 'Axilas', d: 'Una de las zonas con resultado más rápido — a menudo eficaz en pocas sesiones' },
         { t: 'Cara y cuello', d: 'Labio superior, mentón, mejillas y zona del cuello, con precisión extrema' },
@@ -1286,7 +1286,7 @@ const SERVICE_DETAIL_I18N = {
     },
     'pilates-clinico': {
       tagline: 'Pilates con supervisión de fisioterapeuta — ejercicio adaptado, siempre seguro',
-      description: 'El Pilates Clínico se diferencia del Pilates convencional por estar supervisado por un fisioterapeuta y adaptado a condiciones clínicas específicas — dolor lumbar, hernias, posoperatorio, embarazo, osteoporosis o cualquier otra limitación. Cada programa se diseña individualmente, con ejercicios progresivos que evolucionan a tu ritmo.',
+      description: 'El Pilates Clínico se diferencia del Pilates convencional por estar supervisado por un fisioterapeuta y adaptado a condiciones clínicas específicas — dolor lumbar, hernias, posoperatorio, embarazo, osteoporosis o cualquier otra limitación. Cada programa se diseña individualmente, con ejercicios progresivos que evolucionan a su ritmo.',
       prices: [
         { label: 'Cuota mensual', value: '35€ / 60€' },
         { label: 'Seguro anual', value: '10€' },

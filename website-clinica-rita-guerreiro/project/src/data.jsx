@@ -41,20 +41,20 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia-geral', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão te limitam o dia-a-dia, ajudamos-te a recuperar — com avaliação rigorosa e um plano feito a pensar em ti.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€ / 50€' },
-      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a tua estabilidade.', price: '45€' },
+      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '45€' },
     ],
   },
   saude: {
     label: 'Cuidados de Saúde',
-    intro: 'Cuidados clínicos especializados para a tua saúde e bem-estar — sempre com tempo e atenção a cada pessoa.',
+    intro: 'Cuidados clínicos especializados para a sua saúde e bem-estar — sempre com tempo e atenção a cada pessoa.',
     items: [
-      { slug: 'nutricao', name: 'Nutrição', img: IMG.nutricao, blurb: 'Um plano alimentar pensado para a tua vida real — sem dietas restritivas, com objetivos claros e acompanhamento próximo.', price: '45€ / 40€' },
+      { slug: 'nutricao', name: 'Nutrição', img: IMG.nutricao, blurb: 'Um plano alimentar pensado para a sua vida real — sem dietas restritivas, com objetivos claros e acompanhamento próximo.', price: '45€ / 40€' },
       { slug: 'terapia-bowen', name: 'Terapia de Bowen', img: IMG['terapia-bowen'], blurb: 'Técnica neuromuscular suave com resultados frequentemente profundos — segura para crianças e adultos.', price: '20€ / 30€ / 60€' },
-      { slug: 'psicologia', name: 'Psicologia', img: IMG.psicologia, blurb: 'Um espaço seguro e confidencial para falar do que te preocupa — para crianças, adolescentes e adultos.', price: '45€' },
+      { slug: 'psicologia', name: 'Psicologia', img: IMG.psicologia, blurb: 'Um espaço seguro e confidencial para falar do que mais preocupa — para crianças, adolescentes e adultos.', price: '45€' },
     ],
   },
   massagens: {
@@ -68,7 +68,7 @@ const SERVICES = {
       { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
       { slug: 'massagem-sacro-craniana', name: 'Massagem Sacro-Craniana', img: IMG['massagem-sacro-craniana'], blurb: 'Técnica de toque suave sobre o sistema sacro-craniano — alivia tensão, cefaleias e stress sem esforço.', price: '40€' },
       { slug: 'drenagem-linfatica', name: 'Drenagem Linfática Manual', img: IMG['drenagem-linfatica'], blurb: 'Método Vodder — a técnica de referência para reduzir inchaço, ativar a circulação e devolver leveza.', price: '45€ / 50€' },
-      { slug: 'massagem-terapeutica', name: 'Drenagem Pós-Operatório / Terapêutica', img: IMG['massagem-terapeutica'], blurb: 'Recuperação pós-cirurgia e alívio de tensão muscular crónica — com técnica adaptada à tua condição.', price: '60€ / 80€' },
+      { slug: 'massagem-terapeutica', name: 'Drenagem Pós-Operatório / Terapêutica', img: IMG['massagem-terapeutica'], blurb: 'Recuperação pós-cirurgia e alívio de tensão muscular crónica — com técnica adaptada à sua condição.', price: '60€ / 80€' },
     ],
   },
   holisticas: {
@@ -87,7 +87,7 @@ const SERVICES = {
     intro: 'Cuidados estéticos e tratamentos corporais com tecnologia avançada — sempre com avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
-      { slug: 'pacotes-tratamento', name: 'Pacotes de Tratamento', img: IMG['pacotes-tratamento'], blurb: 'Cavitação, radiofrequência, lipolaser, eletroestimulação e pressoterapia — tecnologia ao serviço do teu corpo.', price: '25€ – 450€' },
+      { slug: 'pacotes-tratamento', name: 'Pacotes de Tratamento', img: IMG['pacotes-tratamento'], blurb: 'Cavitação, radiofrequência, lipolaser, eletroestimulação e pressoterapia — tecnologia ao serviço do seu corpo.', price: '25€ – 450€' },
       { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
     ],
@@ -96,8 +96,8 @@ const SERVICES = {
 
 const SERVICE_DETAIL = {
   'fisioterapia-geral': {
-    tagline: 'Avaliação cuidada, plano à tua medida — para voltares a mover-te com confiança.',
-    description: 'A nossa fisioterapia começa sempre com tempo para te ouvir: o que sentes, o que já tentaste, o que queres voltar a fazer. A partir daí construímos um plano realista, em sessões de 50 minutos que combinam terapia manual, exercício terapêutico e, quando faz sentido, articulação com outros serviços do centro. Sem protocolos genéricos — porque cada corpo e cada história são diferentes.',
+    tagline: 'Avaliação cuidada, plano à sua medida — para voltar a mover-se com confiança.',
+    description: 'A nossa fisioterapia começa sempre com tempo para ouvir: o que sente, o que já tentou, o que quer voltar a fazer. A partir daí construímos um plano realista, em sessões de 50 minutos que combinam terapia manual, exercício terapêutico e, quando faz sentido, articulação com outros serviços do centro. Sem protocolos genéricos — porque cada corpo e cada história são diferentes.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
       { label: 'Pack 5 sessões', value: '225€' },
@@ -105,7 +105,7 @@ const SERVICE_DETAIL = {
     ],
     sub: [
       { t: 'Dor lombar e cervical', d: 'Avaliação postural, terapia manual e exercício progressivo para dor da coluna — aguda ou crónica.' },
-      { t: 'Recuperação pós-lesão', d: 'Acompanhamos-te desde a fase aguda até voltares à atividade — desporto, trabalho ou rotina diária.' },
+      { t: 'Recuperação pós-lesão', d: 'Acompanhamos cada pessoa desde a fase aguda até ao regresso à atividade — desporto, trabalho ou rotina diária.' },
       { t: 'Fisioterapia desportiva', d: 'Tratamento da lesão e preparação do regresso seguro à prática desportiva.' },
       { t: 'Pós-operatório', d: 'Redução de edema, ganho de mobilidade e recuperação de força após cirurgia ortopédica.' },
       { t: 'Gravidez e pós-parto', d: 'Acompanhamento das mudanças do corpo durante a gravidez e recuperação do pavimento pélvico após o parto.' },
@@ -158,7 +158,7 @@ const SERVICE_DETAIL = {
     ],
   },
   mesoterapia: {
-    tagline: 'Ação localizada onde mais precisas — para dor, inflamação ou cuidado estético.',
+    tagline: 'Ação localizada onde mais precisa — para dor, inflamação ou cuidado estético.',
     description: 'A Mesoterapia consiste na aplicação de microinjeções de substâncias ativas diretamente nas camadas superficiais da pele ou tecido subcutâneo. Permite uma ação altamente localizada — chega à zona exata da dor, contratura ou da preocupação estética, com pouca difusão sistémica. Aplicada por fisioterapeuta com formação específica, é uma técnica versátil tanto em contexto clínico (dor articular, contraturas) como estético (celulite, flacidez, rejuvenescimento).',
     prices: [
       { label: 'Sessão (50min)', value: '55€ / 50€' },
@@ -173,7 +173,7 @@ const SERVICE_DETAIL = {
     ],
   },
   'fisioterapia-vestibular': {
-    tagline: 'Recuperar a estabilidade — e voltar a confiar no equilíbrio do teu corpo.',
+    tagline: 'Recuperar a estabilidade — e voltar a confiar no equilíbrio do seu corpo.',
     description: 'A Fisioterapia Vestibular é uma área especializada da fisioterapia que trata tonturas, vertigens e desequilíbrios. Através de avaliação rigorosa, manobras de reposicionamento (eficazes em VPPB) e exercícios específicos de habituação e estabilização do olhar, ajudamos o sistema vestibular a recuperar ou compensar. Os resultados são frequentemente rápidos — em muitos casos, com alívio significativo logo na primeira sessão.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
@@ -188,7 +188,7 @@ const SERVICE_DETAIL = {
     ],
   },
   acupuntura: {
-    tagline: 'Uma medicina com séculos de prática — e evidência crescente para o teu bem-estar.',
+    tagline: 'Uma medicina com séculos de prática — e evidência crescente para o seu bem-estar.',
     description: 'A Acupuntura é um dos pilares da Medicina Tradicional Chinesa, com evidência crescente na gestão da dor, stress, ansiedade e insónia. Através da estimulação precisa de pontos específicos, regula o sistema nervoso, estimula a libertação de endorfinas e promove o equilíbrio energético. Na clínica Rita Guerreiro, cada sessão é precedida de avaliação do estado de saúde global — para uma intervenção verdadeiramente personalizada.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
@@ -204,13 +204,13 @@ const SERVICE_DETAIL = {
   },
   nutricao: {
     tagline: 'Alimentação real para a vida real — sem dietas restritivas nem soluções genéricas.',
-    description: 'A consulta de nutrição começa por perceber quem és: os teus hábitos, o teu ritmo, o que funciona e o que não funciona para ti. A partir daí, criamos um plano alimentar personalizado, realista e sustentável — para perda de peso, ganho de massa muscular, saúde digestiva, nutrição desportiva ou adaptação a condições clínicas específicas. Sem promessas de prateleira: só nutrição séria, à tua medida.',
+    description: 'A consulta de nutrição começa por perceber quem é: os seus hábitos, o seu ritmo, o que funciona e o que não funciona para si. A partir daí, criamos um plano alimentar personalizado, realista e sustentável — para perda de peso, ganho de massa muscular, saúde digestiva, nutrição desportiva ou adaptação a condições clínicas específicas. Sem promessas de prateleira: só nutrição séria, à sua medida.',
     prices: [
       { label: '1ª consulta (até 50min)', value: '45€' },
       { label: 'Seguintes (30min)', value: '40€' },
     ],
     sub: [
-      { t: 'Perda de peso sustentável', d: 'Plano alimentar real e adaptado ao teu estilo de vida — para perder e manter.' },
+      { t: 'Perda de peso sustentável', d: 'Plano alimentar real e adaptado ao seu estilo de vida — para perder e manter.' },
       { t: 'Nutrição desportiva', d: 'Otimização da alimentação para performance, recuperação e composição corporal.' },
       { t: 'Saúde digestiva', d: 'Apoio nutricional em colon irritável, intolerâncias, refluxo e outros desequilíbrios.' },
       { t: 'Diabetes e colesterol', d: 'Gestão nutricional de patologias metabólicas com acompanhamento regular.' },
@@ -236,8 +236,8 @@ const SERVICE_DETAIL = {
     ],
   },
   psicologia: {
-    tagline: 'Um espaço seguro para falar do que te preocupa — para criança, adolescente e adulto.',
-    description: 'A saúde mental é tão importante quanto a saúde física — e merece a mesma atenção e cuidado. A consulta de psicologia na clínica Rita Guerreiro é um espaço seguro, confidencial e sem julgamentos, onde podes explorar o que te preocupa com o apoio de um profissional especializado. Acompanhamos crianças, adolescentes e adultos em diferentes momentos da vida.',
+    tagline: 'Um espaço seguro para falar do que o(a) preocupa — para criança, adolescente e adulto.',
+    description: 'A saúde mental é tão importante quanto a saúde física — e merece a mesma atenção e cuidado. A consulta de psicologia na clínica Rita Guerreiro é um espaço seguro, confidencial e sem julgamentos, onde pode explorar o que o(a) preocupa com o apoio de um profissional especializado. Acompanhamos crianças, adolescentes e adultos em diferentes momentos da vida.',
     prices: [
       { label: 'Consulta (60min)', value: '45€' },
     ],
@@ -283,7 +283,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-assinatura-rg': {
     tagline: 'Oitenta minutos pensados ao detalhe — a experiência de assinatura da casa.',
-    description: 'A Massagem Assinatura RG é a experiência mais completa que a clínica Rita Guerreiro oferece. Uma sessão de 80 minutos, cuidadosamente desenhada para combinar relaxamento profundo, trabalho muscular específico e bem-estar global. Cada momento é personalizado de acordo contigo — do início ao fim.',
+    description: 'A Massagem Assinatura RG é a experiência mais completa que a clínica Rita Guerreiro oferece. Uma sessão de 80 minutos, cuidadosamente desenhada para combinar relaxamento profundo, trabalho muscular específico e bem-estar global. Cada momento é personalizado de acordo consigo — do início ao fim.',
     prices: [
       { label: 'Sessão completa (80min)', value: '75€' },
     ],
@@ -292,7 +292,7 @@ const SERVICE_DETAIL = {
       { t: 'Trabalho muscular', d: 'Libertação de tensões acumuladas com técnicas adaptadas a cada zona do corpo.' },
       { t: 'Bem-estar global', d: 'Abordagem holística que cuida do corpo e da mente em simultâneo.' },
       { t: 'Experiência personalizada', d: 'Cada sessão é adaptada às preferências e necessidades do cliente.' },
-      { t: 'Momento único', d: '80 minutos de dedicação exclusiva ao teu bem-estar.' },
+      { t: 'Momento único', d: '80 minutos de dedicação exclusiva ao seu bem-estar.' },
       { t: 'Ideal para oferta', d: 'A escolha perfeita para uma prenda especial ou um momento de autocuidado.' },
     ],
   },
@@ -343,7 +343,7 @@ const SERVICE_DETAIL = {
     ],
   },
   'drenagem-linfatica': {
-    tagline: 'Reduz inchaço, ativa a circulação, devolve leveza — com o Método Vodder.',
+    tagline: 'Reduz o inchaço, ativa a circulação, devolve leveza — com o Método Vodder.',
     description: 'A Drenagem Linfática Manual segundo o Método Vodder é a técnica de referência internacional para estimular o sistema linfático. Através de movimentos suaves, rítmicos e precisos sobre a pele, ativa a circulação linfática, reduz o edema e favorece a eliminação de toxinas. Indicada tanto em contexto clínico como de bem-estar.',
     prices: [
       { label: 'Manual (50min)', value: '50€ / 45€ (Pack 10)' },
@@ -407,7 +407,7 @@ const SERVICE_DETAIL = {
     ],
   },
   'massagem-indiana': {
-    tagline: 'Indian Head Massage — relaxamento profundo da cabeça, pescoço e ombros, sem ter de te despir.',
+    tagline: 'Indian Head Massage — relaxamento profundo da cabeça, pescoço e ombros, sem ter de se despir.',
     description: 'A Massagem Indiana, ou Indian Head Massage, é uma técnica de origem ayurvédica focada na cabeça, pescoço, ombros e face. Trabalha sobre os chakras da parte superior do corpo para libertar tensão acumulada, aliviar cefaleias, melhorar a circulação no couro cabeludo e induzir um estado de relaxamento profundo. Realizada sentado, sem necessidade de se despir.',
     prices: [
       { label: 'Por sessão (40min)', value: '35€' },
@@ -422,7 +422,7 @@ const SERVICE_DETAIL = {
     ],
   },
   'head-spa': {
-    tagline: 'Cuidar do couro cabeludo é cuidar do cabelo — e relaxar como há muito não relaxavas.',
+    tagline: 'Cuidar do couro cabeludo é cuidar do cabelo — e relaxar como há muito não relaxava.',
     description: 'O Head Spa é um tratamento completo para o couro cabeludo que combina limpeza profunda, nutrição intensiva e massagem relaxante. Remove o excesso de sebo e impurezas, equilibra o pH do couro cabeludo, fortalece os folículos capilares e devolve uma sensação de frescura e leveza incomparável. O resultado visível no cabelo vem acompanhado de um estado de relaxamento profundo.',
     prices: [
       { label: 'Sessão completa (90min)', value: '80€' },
@@ -438,7 +438,7 @@ const SERVICE_DETAIL = {
   },
   facial: {
     tagline: 'Cuidado profissional para cada tipo de pele — para resultados visíveis e duradouros.',
-    description: 'Os nossos tratamentos faciais são realizados por profissionais especializados, com produtos de alta qualidade adaptados ao tipo de pele de cada pessoa. Desde a limpeza de pele mais simples ao facial personalizado mais completo — cada sessão é pensada para maximizar os resultados visíveis e o bem-estar da tua pele.',
+    description: 'Os nossos tratamentos faciais são realizados por profissionais especializados, com produtos de alta qualidade adaptados ao tipo de pele de cada pessoa. Desde a limpeza de pele mais simples ao facial personalizado mais completo — cada sessão é pensada para maximizar os resultados visíveis e o bem-estar da sua pele.',
     prices: [
       { label: 'Limpeza de Pele', value: '50€' },
       { label: 'Extração', value: '10€' },
@@ -467,7 +467,7 @@ const SERVICE_DETAIL = {
       { t: 'Lipolaser', d: 'Laser de baixa intensidade para mobilização de gordura localizada e modelação corporal.' },
       { t: 'Electroestimulação', d: 'Contração muscular passiva para tonificação e recuperação de zonas específicas.' },
       { t: 'Pressoterapia', d: 'Drenagem linfática mecânica por pressão sequencial — inchaço, circulação e recuperação.' },
-      { t: 'Pacote 10 sessões', d: 'Poupa com o pacote de 10 sessões — ideal para resultados progressivos e duradouros.' },
+      { t: 'Pacote 10 sessões', d: 'Aproveite o pacote de 10 sessões — ideal para resultados progressivos e duradouros.' },
     ],
   },
   'depilacao-laser': {
@@ -482,7 +482,7 @@ const SERVICE_DETAIL = {
       { label: 'Homem — Zona extra', value: '10€' },
     ],
     sub: [
-      { t: 'Virilha e linha do biquíni', d: 'Tratamento completo ou parcial, com opções adaptadas às tuas preferências.' },
+      { t: 'Virilha e linha do biquíni', d: 'Tratamento completo ou parcial, com opções adaptadas às suas preferências.' },
       { t: 'Pernas e coxas', d: 'Depilação de zonas extensas com eficácia e conforto máximos.' },
       { t: 'Axilas', d: 'Uma das zonas com resultado mais rápido — frequentemente eficaz em poucas sessões.' },
       { t: 'Rosto e pescoço', d: 'Lábio superior, queixo, bochechas e zona do pescoço, com extrema precisão.' },
@@ -492,7 +492,7 @@ const SERVICE_DETAIL = {
   },
   'pilates-clinico': {
     tagline: 'Pilates com supervisão de fisioterapeuta — exercício adaptado, sempre seguro.',
-    description: 'O Pilates Clínico distingue-se do Pilates convencional por ser supervisionado por um fisioterapeuta e adaptado a condições clínicas específicas — dor lombar, hérnias, pós-operatório, gravidez, osteoporose ou qualquer outra limitação. Cada programa é desenhado individualmente, com exercícios progressivos que evoluem ao teu ritmo.',
+    description: 'O Pilates Clínico distingue-se do Pilates convencional por ser supervisionado por um fisioterapeuta e adaptado a condições clínicas específicas — dor lombar, hérnias, pós-operatório, gravidez, osteoporose ou qualquer outra limitação. Cada programa é desenhado individualmente, com exercícios progressivos que evoluem ao seu ritmo.',
     prices: [
       { label: 'Mensalidade', value: '35€ / 60€' },
       { label: 'Seguro Anual', value: '10€' },
