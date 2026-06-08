@@ -100,7 +100,7 @@ const TRANSLATIONS = {
     },
     homecta_v2: {
       opt1_title: 'WhatsApp agora',
-      opt1_desc: 'A forma mais rápida de marcar. A maioria das mensagens é respondida em menos de 5 minutos no horário da clínica.',
+      opt1_desc: 'A forma mais rápida de marcar. A maioria das mensagens é respondida no próprio dia, durante o horário da clínica.',
       opt1_cta: 'Enviar mensagem',
       opt2_title: 'Falar ao telefone',
       opt2_desc: 'Prefere a voz humana? Estamos disponíveis durante o horário da clínica para tirar dúvidas e marcar consigo.',
@@ -143,7 +143,7 @@ const TRANSLATIONS = {
     homecta: {
       eyebrow: 'Dê o primeiro passo hoje',
       heading: 'A sua recuperação começa com uma mensagem',
-      body: 'Fala connosco agora — a maioria das marcações fica resolvida em menos de 5 minutos.',
+      body: 'Fala connosco agora — a maioria das marcações fica resolvida no próprio dia.',
       addr: 'Rua Padre António Vieira 58, Loulé · Seg–Sex 9h–19h · Sáb sob marcação',
       wa: 'WhatsApp agora',
       como_chegar: 'Como chegar',
@@ -199,7 +199,7 @@ const TRANSLATIONS = {
       horario_val: 'Seg–Sex 9h–19h\nSábados sob marcação',
       maps_link: 'Abrir no Google Maps',
       canais: {
-        wa_body: 'A forma mais rápida. A maioria das marcações resolve-se em menos de 5 minutos durante o horário da clínica.',
+        wa_body: 'A forma mais rápida. A maioria das marcações resolve-se no próprio dia, durante o horário da clínica.',
         wa_cta: 'Enviar mensagem',
         wa_placeholder: 'Escreva a sua mensagem…',
         wa_abrir: 'Abrir app',
@@ -389,7 +389,7 @@ const TRANSLATIONS = {
     },
     homecta_v2: {
       opt1_title: 'WhatsApp now',
-      opt1_desc: 'The fastest way to book. Most messages are answered in under 5 minutes during clinic hours.',
+      opt1_desc: 'The fastest way to book. Most messages are answered the same day, during clinic hours.',
       opt1_cta: 'Send message',
       opt2_title: 'Call us',
       opt2_desc: 'Prefer a human voice? Available during clinic hours to answer questions and book with you.',
@@ -432,7 +432,7 @@ const TRANSLATIONS = {
     homecta: {
       eyebrow: 'Take the first step today',
       heading: 'Your recovery starts with a message',
-      body: 'Talk to us now — most bookings are sorted in under 5 minutes.',
+      body: 'Talk to us now — most bookings are sorted the same day.',
       addr: 'Rua Padre António Vieira 58, Loulé · Mon–Fri 9am–7pm · Sat by appointment',
       wa: 'WhatsApp now',
       como_chegar: 'Get directions',
@@ -471,7 +471,7 @@ const TRANSLATIONS = {
       horario_val: 'Mon–Fri 9am–7pm\nSaturdays by appointment',
       maps_link: 'Open in Google Maps',
       canais: {
-        wa_body: 'The fastest way. Most bookings are sorted in under 5 minutes during clinic hours.',
+        wa_body: 'The fastest way. Most bookings are sorted the same day, during clinic hours.',
         wa_cta: 'Send message',
         wa_placeholder: 'Write your message…',
         wa_abrir: 'Open app',
@@ -661,7 +661,7 @@ const TRANSLATIONS = {
     },
     homecta_v2: {
       opt1_title: 'WhatsApp maintenant',
-      opt1_desc: 'La façon la plus rapide de réserver. La plupart des messages reçoivent une réponse en moins de 5 minutes pendant les heures d’ouverture.',
+      opt1_desc: 'La façon la plus rapide de réserver. La plupart des messages reçoivent une réponse le jour même, pendant les heures d’ouverture.',
       opt1_cta: 'Envoyer un message',
       opt2_title: 'Appeler par téléphone',
       opt2_desc: 'Vous préférez la voix humaine ? Disponibles pendant les heures d’ouverture pour répondre à vos questions et réserver avec vous.',
@@ -704,7 +704,7 @@ const TRANSLATIONS = {
     homecta: {
       eyebrow: 'Faites le premier pas aujourd’hui',
       heading: 'Votre récupération commence par un message',
-      body: 'Parlez-nous maintenant — la plupart des réservations se règlent en moins de 5 minutes.',
+      body: 'Parlez-nous maintenant — la plupart des réservations se règlent le jour même.',
       addr: 'Rua Padre António Vieira 58, Loulé · Lun–Ven 9h–19h · Sam sur rendez-vous',
       wa: 'WhatsApp maintenant',
       como_chegar: 'Itinéraire',
@@ -760,7 +760,7 @@ const TRANSLATIONS = {
       horario_val: 'Lun–Ven 9h–19h\nSamedis sur rendez-vous',
       maps_link: 'Ouvrir dans Google Maps',
       canais: {
-        wa_body: "Le moyen le plus rapide. La plupart des rendez-vous sont confirmés en moins de 5 minutes pendant les heures d'ouverture.",
+        wa_body: "Le moyen le plus rapide. La plupart des rendez-vous sont confirmés le jour même, pendant les heures d'ouverture.",
         wa_cta: "Envoyer un message",
         wa_placeholder: "Écrivez votre message…",
         wa_abrir: "Ouvrir l'app",
@@ -950,7 +950,7 @@ const TRANSLATIONS = {
     },
     homecta_v2: {
       opt1_title: 'WhatsApp ahora',
-      opt1_desc: 'La forma más rápida de reservar. La mayoría de los mensajes se responden en menos de 5 minutos en horario de clínica.',
+      opt1_desc: 'La forma más rápida de reservar. La mayoría de los mensajes se responden el mismo día, en horario de clínica.',
       opt1_cta: 'Enviar mensaje',
       opt2_title: 'Llamar por teléfono',
       opt2_desc: '¿Prefiere la voz humana? Estamos disponibles durante el horario de clínica para resolver dudas y reservar con usted.',
@@ -993,7 +993,7 @@ const TRANSLATIONS = {
     homecta: {
       eyebrow: 'Dé el primer paso hoy',
       heading: 'Su recuperación empieza con un mensaje',
-      body: 'Hable con nosotros ahora — la mayoría de las reservas se resuelven en menos de 5 minutos.',
+      body: 'Hable con nosotros ahora — la mayoría de las reservas se resuelven el mismo día.',
       addr: 'Rua Padre António Vieira 58, Loulé · Lun–Vie 9h–19h · Sáb con cita previa',
       wa: 'WhatsApp ahora',
       como_chegar: 'Cómo llegar',
@@ -1049,7 +1049,7 @@ const TRANSLATIONS = {
       horario_val: 'Lun–Vie 9h–19h\nSábados con cita previa',
       maps_link: 'Abrir en Google Maps',
       canais: {
-        wa_body: 'La forma más rápida. La mayoría de las reservas se resuelven en menos de 5 minutos durante el horario de la clínica.',
+        wa_body: 'La forma más rápida. La mayoría de las reservas se resuelven el mismo día, durante el horario de la clínica.',
         wa_cta: 'Enviar mensaje',
         wa_placeholder: 'Escriba su mensaje…',
         wa_abrir: 'Abrir app',
