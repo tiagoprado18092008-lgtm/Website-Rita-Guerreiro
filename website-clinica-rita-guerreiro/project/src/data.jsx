@@ -97,7 +97,7 @@ const SERVICES = {
 const SERVICE_DETAIL = {
   'fisioterapia-geral': {
     tagline: 'Avaliação cuidada, plano à sua medida — para voltar a mover-se com confiança.',
-    description: 'A nossa fisioterapia começa sempre com tempo para ouvir: o que sente, o que já tentou, o que quer voltar a fazer. A partir daí construímos um plano realista, em sessões de 50 minutos que combinam terapia manual, exercício terapêutico e, quando faz sentido, articulação com outros serviços do centro. Sem protocolos genéricos — porque cada corpo e cada história são diferentes.',
+    description: 'A fisioterapia é uma ciência da saúde focada no estudo, prevenção, diagnóstico e tratamento de distúrbios relacionados com o movimento, a biomecânica e a capacidade funcional humana. O objetivo é restaurar, desenvolver e manter a máxima autonomia, mobilidade e qualidade de vida dos pacientes.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
       { label: 'Pack 5 sessões', value: '225€' },
@@ -144,7 +144,7 @@ const SERVICE_DETAIL = {
   },
   'fisioterapia-atm': {
     tagline: 'Para quando a mandíbula dói, bloqueia ou faz cliques — tratamos a ATM na sua raiz.',
-    description: 'A Fisioterapia ATM trata as disfunções da articulação temporomandibular — dor, bloqueio, cliques ou rangido — com abordagem manual especializada. Inclui avaliação articular e muscular, terapia manual intraoral e extraoral, e exercícios específicos para devolver função e conforto à mandíbula. Como a ATM está muitas vezes ligada a cefaleias, tensão cervical e bruxismo, abordamos o problema na sua origem — não apenas o sintoma.',
+    description: 'A fisioterapia para a articulação temporomandibular (ATM) trata a disfunção (DTM) através de terapias manuais e exercícios. O objetivo é aliviar dores de cabeça ou na face, eliminar estalidos, reduzir a tensão e restaurar a mobilidade, sendo muitas vezes integrada num acompanhamento médico multidisciplinar.',
     prices: [
       { label: 'Fisioterapia ATM (50min)', value: '60€' },
     ],
@@ -189,7 +189,7 @@ const SERVICE_DETAIL = {
   },
   acupuntura: {
     tagline: 'Uma medicina com séculos de prática — e evidência crescente para o seu bem-estar.',
-    description: 'A Acupuntura é um dos pilares da Medicina Tradicional Chinesa, com evidência crescente na gestão da dor, stress, ansiedade e insónia. Através da estimulação precisa de pontos específicos, regula o sistema nervoso, estimula a libertação de endorfinas e promove o equilíbrio energético. Na clínica Rita Guerreiro, cada sessão é precedida de avaliação do estado de saúde global — para uma intervenção verdadeiramente personalizada.',
+    description: 'A acupuntura é uma técnica terapêutica milenar, originária da Medicina Tradicional Chinesa, que consiste na inserção de agulhas finas em pontos específicos do corpo. O seu objetivo é estimular respostas naturais do organismo, promovendo o equilíbrio físico e emocional e o alívio de sintomas.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
     ],
@@ -204,7 +204,7 @@ const SERVICE_DETAIL = {
   },
   nutricao: {
     tagline: 'Alimentação real para a vida real — sem dietas restritivas nem soluções genéricas.',
-    description: 'A consulta de nutrição começa por perceber quem é: os seus hábitos, o seu ritmo, o que funciona e o que não funciona para si. A partir daí, criamos um plano alimentar personalizado, realista e sustentável — para perda de peso, ganho de massa muscular, saúde digestiva, nutrição desportiva ou adaptação a condições clínicas específicas. Sem promessas de prateleira: só nutrição séria, à sua medida.',
+    description: 'A nutrição é a ciência que estuda a relação entre os alimentos ingeridos, a sua composição e o impacto direto no funcionamento do corpo, na saúde e na prevenção de doenças. O processo biológico envolve a ingestão, absorção e utilização de nutrientes para o crescimento, energia e manutenção da vida.',
     prices: [
       { label: '1ª consulta (até 50min)', value: '45€' },
       { label: 'Seguintes (30min)', value: '40€' },
@@ -220,7 +220,7 @@ const SERVICE_DETAIL = {
   },
   'terapia-bowen': {
     tagline: 'Suave no toque, eficaz no resultado — para todas as idades.',
-    description: 'A Terapia de Bowen é uma abordagem não invasiva que atua sobre o sistema neuromuscular através de movimentos precisos sobre músculos, tendões e fáscia. O toque é suave — sem força nem manipulação — e os efeitos são frequentemente profundos e duradouros. Adequada a todas as idades, incluindo crianças a partir dos 5 anos.',
+    description: 'A terapia de Bowen é uma técnica manual holística e não invasiva que utiliza toques suaves e precisos sobre músculos, tendões e ligamentos. O seu principal objetivo é estimular os mecanismos naturais de autocura do corpo e restaurar o equilíbrio do sistema nervoso, promovendo o alívio da dor e o relaxamento.',
     prices: [
       { label: 'Crianças até 5 anos (60min)', value: '20€' },
       { label: 'Crianças 5-12 anos (60min)', value: '30€' },
@@ -237,7 +237,7 @@ const SERVICE_DETAIL = {
   },
   psicologia: {
     tagline: 'Um espaço seguro para falar do que o(a) preocupa — para criança, adolescente e adulto.',
-    description: 'A saúde mental é tão importante quanto a saúde física — e merece a mesma atenção e cuidado. A consulta de psicologia na clínica Rita Guerreiro é um espaço seguro, confidencial e sem julgamentos, onde pode explorar o que o(a) preocupa com o apoio de um profissional especializado. Acompanhamos crianças, adolescentes e adultos em diferentes momentos da vida.',
+    description: 'A psicologia é a ciência que estuda o comportamento humano, os processos mentais e a forma como as emoções, os pensamentos e o ambiente interagem. O seu principal objetivo é compreender, explicar e promover a saúde mental e o bem-estar, ajudando as pessoas a lidar com desafios e a melhorar a sua qualidade de vida.',
     prices: [
       { label: 'Consulta (60min)', value: '45€' },
     ],
@@ -252,7 +252,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-relaxamento': {
     tagline: 'Tempo para parar — com técnica e cuidado.',
-    description: 'A Massagem de Relaxamento é um espaço de paragem real. Num ritmo suave e contínuo, percorremos todo o corpo para libertar a tensão acumulada, aliviar a sobrecarga muscular e devolver calma à mente. Os efeitos vão para lá da sessão: a massagem regular reduz o cortisol, melhora o sono e fortalece o sistema imunitário.',
+    description: 'A massagem de relaxamento é uma terapia manual que utiliza movimentos suaves, rítmicos e contínuos em todo o corpo, com o auxílio de óleos ou cremes. O seu objetivo principal é aliviar tensões musculares, reduzir o stress e promover um estado de bem-estar físico e mental profundo.',
     prices: [
       { label: '50 minutos', value: '40€' },
       { label: '80 minutos', value: '65€' },
@@ -268,7 +268,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-criancas': {
     tagline: 'Toque suave e seguro — para o bem-estar dos mais novos.',
-    description: 'A massagem para crianças é uma técnica suave, segura e adaptada às necessidades dos mais novos. Promove relaxamento, melhora o sono, reduz a ansiedade e fortalece o vínculo afetivo. Realizada por profissionais com formação específica em massagem pediátrica, cada sessão é adaptada à idade e necessidades da criança.',
+    description: 'A massagem de relaxamento para crianças é uma prática suave que alia técnicas terapêuticas adaptadas à idade infantil. Ajuda a reduzir o stress e a ansiedade, melhora a qualidade do sono, diminui dores de crescimento e promove um forte desenvolvimento emocional e segurança.',
     prices: [
       { label: 'Por sessão (40min)', value: '30€' },
     ],
@@ -298,7 +298,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-profunda': {
     tagline: 'Trabalho muscular profundo — para quem exige mais do corpo, no treino ou no dia-a-dia.',
-    description: 'A Massagem Profunda / Desportiva é uma abordagem terapêutica de alta intensidade que combina técnicas de deep tissue e sport massage. Trabalhamos as camadas musculares mais profundas para libertar contraturas crónicas, dissolver nós musculares e restaurar a mobilidade. A vertente desportiva é especialmente indicada para atletas — seja em preparação pré-competição (para ativar e soltar o músculo), seja em recuperação pós-treino (para acelerar a regeneração e reduzir a inflamação). Eficaz tanto para desportistas de alta performance como para quem sofre de tensão muscular profunda resistente a outras abordagens.',
+    description: 'A massagem deep tissue (ou massagem de tecido profundo) é uma técnica terapêutica focada nas camadas mais profundas dos músculos e do tecido conjuntivo. Utiliza movimentos lentos e pressão firme para aliviar dores crónicas, nós musculares (aderências) e recuperar a mobilidade.',
     prices: [
       { label: '50 minutos', value: '45€' },
       { label: '80 minutos', value: '75€' },
@@ -314,7 +314,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-pre-pos-natal': {
     tagline: 'Acompanhamento e conforto na gravidez e no pós-parto — adaptado a cada fase.',
-    description: 'A Massagem Pré/Pós Natal é especialmente adaptada às transformações do corpo durante a gravidez e após o parto. Alivia dores lombares, inchaços e tensão muscular acumulada durante a gestação, com posicionamento seguro em todas as fases. No pós-parto, apoia a recuperação física da mãe, num momento de tantas mudanças e exigências.',
+    description: 'A massagem pré e pós-natal é um tratamento terapêutico focado no alívio de dores musculares, inchaço e stress, adaptado às transformações do corpo da mulher. Na pré-natal (gravidez), melhora a circulação e reduz o desconforto; na pós-natal, ajuda a recuperar o tónus muscular e o equilíbrio emocional.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
     ],
@@ -329,7 +329,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-sacro-craniana': {
     tagline: 'Um toque quase imperceptível com efeitos profundos no sistema nervoso.',
-    description: 'A Massagem Sacro-Craniana é uma técnica manual extremamente suave que trabalha sobre o sistema sacro-craniano — a ligação entre o sacro e o crânio, passando pela coluna. Com um toque quase imperceptível, liberta restrições nas membranas e fluido cerebrospinal, promovendo o equilíbrio do sistema nervoso central e o alívio de tensão acumulada.',
+    description: 'A terapia craniana (ou terapia craniossacral/sacro-craniana) é uma técnica manual suave e não invasiva que atua no sistema craniossacral, o qual inclui os ossos do crânio, a coluna, o sacro e o líquido cefalorraquidiano. Através de toques muito leves (cerca de 5 gramas), o terapeuta liberta bloqueios e tensões, promovendo o auto-equilíbrio do corpo e o relaxamento profundo do sistema nervoso central.',
     prices: [
       { label: 'Por sessão (50min)', value: '40€' },
     ],
@@ -344,7 +344,7 @@ const SERVICE_DETAIL = {
   },
   'drenagem-linfatica': {
     tagline: 'Reduz o inchaço, ativa a circulação, devolve leveza — com o Método Vodder.',
-    description: 'A Drenagem Linfática Manual segundo o Método Vodder é a técnica de referência internacional para estimular o sistema linfático. Através de movimentos suaves, rítmicos e precisos sobre a pele, ativa a circulação linfática, reduz o edema e favorece a eliminação de toxinas. Indicada tanto em contexto clínico como de bem-estar.',
+    description: 'A drenagem linfática manual (DLM) é uma técnica de massagem terapêutica especializada que utiliza movimentos rítmicos, suaves e lentos. O seu principal objetivo é estimular o sistema linfático, acelerando a eliminação de líquidos, toxinas e resíduos metabólicos através da urina.',
     prices: [
       { label: 'Manual (50min)', value: '50€ / 45€ (Pack 10)' },
       { label: 'Pós-Operatório 50min', value: '60€' },
@@ -361,7 +361,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-terapeutica': {
     tagline: 'Para recuperar depois da cirurgia — e para libertar a tensão que não passa.',
-    description: 'A Drenagem Linfática Pós-Operatória é essencial para uma recuperação rápida e sem complicações após cirurgia — reduz edema, melhora a qualidade das cicatrizes e restaura a circulação. A Massagem Terapêutica trabalha zonas de tensão crónica, contraturas e dor muscular persistente, com técnicas adaptadas à condição de cada pessoa.',
+    description: 'A drenagem linfática pós-operatória é uma massagem suave e terapêutica essencial para a recuperação de cirurgias plásticas ou clínicas. Ela reduz o inchaço (edema), diminui hematomas, alivia dores e previne complicações como fibroses e seromas, acelerando a cicatrização. A massagem terapêutica é uma técnica manual focada no tratamento de disfunções musculares, articulares e dores localizadas. Utiliza movimentos específicos e com mais pressão para aliviar tensões, melhorar a mobilidade e promover a recuperação física. Diferencia-se da massagem de relaxamento por ter um objetivo clínico e curativo, e não apenas de bem-estar geral.',
     prices: [
       { label: 'Terapêutica 30-50min', value: '30€ – 45€ / 40€' },
       { label: 'Drenagem Pós-Op 50min', value: '60€' },
@@ -378,7 +378,7 @@ const SERVICE_DETAIL = {
   },
   reflexologia: {
     tagline: 'O corpo todo nos pés — uma terapia não invasiva com efeitos profundos.',
-    description: 'A Reflexologia é uma terapia natural que trabalha sobre pontos reflexos localizados nos pés, mãos ou orelhas, correspondentes a diferentes órgãos e sistemas do corpo. Através de pressão precisa e rítmica, estimula o reequilíbrio orgânico, alivia tensão e promove bem-estar geral. Uma técnica não invasiva e profundamente relaxante.',
+    description: 'A reflexologia é uma técnica terapêutica não invasiva que consiste na aplicação de pressão em áreas específicas dos pés, mãos ou orelhas. Baseia-se no princípio de que estas zonas correspondem a reflexos diretos de diferentes órgãos, glândulas e partes do corpo.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
     ],
@@ -393,7 +393,7 @@ const SERVICE_DETAIL = {
   },
   shiatsu: {
     tagline: 'Pressão precisa sobre os meridianos — para devolver equilíbrio e vitalidade.',
-    description: 'O Shiatsu é uma terapia japonesa que aplica pressão com os polegares, palmas e cotovelos sobre os meridianos energéticos do corpo. Baseada nos princípios da Medicina Tradicional Chinesa, promove o fluxo de energia vital (Ki), alivia tensão e dor e restaura o equilíbrio físico e emocional. Realizado sobre roupa confortável, sem óleos.',
+    description: 'O shiatsu é uma terapia corporal e massagem terapêutica de origem japonesa cujo nome significa literalmente "pressão com os dedos" (shi = dedos + atsu = pressão). A técnica foca no reequilíbrio físico e energético.',
     prices: [
       { label: 'Por sessão (50min)', value: '45€' },
     ],
@@ -408,7 +408,7 @@ const SERVICE_DETAIL = {
   },
   'massagem-indiana': {
     tagline: 'Indian Head Massage — relaxamento profundo da cabeça, pescoço e ombros, sem ter de se despir.',
-    description: 'A Massagem Indiana, ou Indian Head Massage, é uma técnica de origem ayurvédica focada na cabeça, pescoço, ombros e face. Trabalha sobre os chakras da parte superior do corpo para libertar tensão acumulada, aliviar cefaleias, melhorar a circulação no couro cabeludo e induzir um estado de relaxamento profundo. Realizada sentado, sem necessidade de se despir.',
+    description: 'A massagem indiana envolve movimentos ritmados, lentos e profundos, aplicados em pontos específicos do corpo para liberar tensões, melhorar a circulação sanguínea e eliminar toxinas.',
     prices: [
       { label: 'Por sessão (40min)', value: '35€' },
     ],
@@ -423,7 +423,7 @@ const SERVICE_DETAIL = {
   },
   'head-spa': {
     tagline: 'Cuidar do couro cabeludo é cuidar do cabelo — e relaxar como há muito não relaxava.',
-    description: 'O Head Spa é um tratamento completo para o couro cabeludo que combina limpeza profunda, nutrição intensiva e massagem relaxante. Remove o excesso de sebo e impurezas, equilibra o pH do couro cabeludo, fortalece os folículos capilares e devolve uma sensação de frescura e leveza incomparável. O resultado visível no cabelo vem acompanhado de um estado de relaxamento profundo.',
+    description: 'O head spa japonês é uma terapia capilar e holística de relaxamento profundo. Originária do Japão, foca na saúde do couro cabeludo através de limpeza, esfoliação e massagens estimulantes na cabeça, pescoço e ombros. O tratamento alivia o stresse, melhora a circulação sanguínea e promove o bem-estar geral.',
     prices: [
       { label: 'Sessão completa (90min)', value: '80€' },
     ],
@@ -438,7 +438,7 @@ const SERVICE_DETAIL = {
   },
   facial: {
     tagline: 'Cuidado profissional para cada tipo de pele — para resultados visíveis e duradouros.',
-    description: 'Os nossos tratamentos faciais são realizados por profissionais especializados, com produtos de alta qualidade adaptados ao tipo de pele de cada pessoa. Desde a limpeza de pele mais simples ao facial personalizado mais completo — cada sessão é pensada para maximizar os resultados visíveis e o bem-estar da sua pele.',
+    description: 'A limpeza de pele é um procedimento estético fundamental para remover impurezas, células mortas, excesso de oleosidade. O processo desobstrui os poros, melhora a oxigenação e potencializa a absorção de produtos de cuidado diário. A limpeza de pele com extração é um procedimento estético profissional essencial para desobstruir os poros, eliminar pontos negros (comedões), brancos (miliuns) e células mortas. O processo devolve o viço e a saúde à pele, sendo realizado através de etapas rigorosas de higiene, emoliência e hidratação.',
     prices: [
       { label: 'Limpeza de Pele', value: '50€' },
       { label: 'Extração', value: '10€' },
@@ -455,7 +455,7 @@ const SERVICE_DETAIL = {
   },
   'pacotes-tratamento': {
     tagline: 'Tecnologia avançada com avaliação prévia — para resultados reais, não promessas.',
-    description: 'Os nossos pacotes de tratamento combinam as tecnologias mais avançadas de estética corporal: cavitação, radiofrequência, lipolaser, eletroestimulação e pressoterapia. Cada tratamento é realizado por profissionais certificados, com avaliação prévia e protocolo personalizado — porque cada corpo responde de forma diferente.',
+    description: 'A cavitação e a radiofrequência são tratamentos estéticos não invasivos complementares. A cavitação usa ultrassons para eliminar a gordura localizada destruindo as células adiposas. A radiofrequência usa ondas eletromagnéticas para aquecer a pele, estimulando o colágeno, reduzindo a flacidez e melhorando o aspeto da celulite. A pressoterapia é um tratamento de drenagem linfática mecânica que utiliza pressão de ar controlada para estimular a circulação sanguínea e o sistema linfático. É realizada através de acessórios com câmaras de ar (como botas ou mangas) que insuflam e desinsuflam sequencialmente, ajudando a eliminar líquidos e toxinas.',
     prices: [
       { label: 'Cav./Radiofrequência/Lipolaser/Eletroestim. (50min)', value: '50€' },
       { label: 'Pacote 10 sessões', value: '450€' },
@@ -472,7 +472,7 @@ const SERVICE_DETAIL = {
   },
   'depilacao-laser': {
     tagline: 'Acaba com a depilação semanal — laser definitivo, para mulher e homem.',
-    description: 'A depilação a laser é hoje a solução mais eficaz e duradoura para a eliminação do pelo indesejado. Na clínica Rita Guerreiro utilizamos equipamento de última geração, com tecnologia que se adapta a diferentes tons de pele e tipos de pelo. O processo é progressivo — em cada sessão o pelo fica mais fino e esparso, até à eliminação permanente.',
+    description: 'A depilação a laser é um procedimento estético que utiliza feixes de luz concentrada para destruir a raiz do pelo (folículo piloso), retardando e reduzindo o seu crescimento de forma prolongada.',
     prices: [
       { label: 'Mulher — 1 zona', value: '20€' },
       { label: 'Mulher — Combi 3 zonas', value: '50€' },
@@ -492,7 +492,7 @@ const SERVICE_DETAIL = {
   },
   'pilates-clinico': {
     tagline: 'Pilates com supervisão de fisioterapeuta — exercício adaptado, sempre seguro.',
-    description: 'O Pilates Clínico distingue-se do Pilates convencional por ser supervisionado por um fisioterapeuta e adaptado a condições clínicas específicas — dor lombar, hérnias, pós-operatório, gravidez, osteoporose ou qualquer outra limitação. Cada programa é desenhado individualmente, com exercícios progressivos que evoluem ao seu ritmo.',
+    description: 'O pilates clínico é uma modalidade de exercício terapêutico, focado na prevenção e reabilitação de lesões músculo-esqueléticas. Distingue-se do pilates tradicional por ser ministrado exclusivamente por fisioterapeutas, que adaptam os exercícios à condição clínica e às necessidades específicas de cada pessoa.',
     prices: [
       { label: 'Mensalidade', value: '35€ / 60€' },
       { label: 'Seguro Anual', value: '10€' },
