@@ -282,8 +282,8 @@ const SERVICE_DETAIL = {
     ],
   },
   'massagem-assinatura-rg': {
-    tagline: 'Oitenta minutos pensados ao detalhe — a experiência de assinatura da casa.',
-    description: 'A Massagem Assinatura RG é a experiência mais completa que a clínica Rita Guerreiro oferece. Uma sessão de 80 minutos, cuidadosamente desenhada para combinar relaxamento profundo, trabalho muscular específico e bem-estar global. Cada momento é personalizado de acordo consigo — do início ao fim.',
+    tagline: 'Relaxamento profundo da cabeça aos pés. A nossa massagem exclusiva.',
+    description: 'A Massagem de assinatura RG representa uma jornada exclusiva de bem-estar criada por nós. Combina técnicas personalizadas com o conforto do ritual de toalhas quentes e os benefícios terapêuticos da aromaterapia para um relaxamento profundo e multissensorial.',
     prices: [
       { label: 'Sessão completa (80min)', value: '75€' },
     ],

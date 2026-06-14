@@ -340,8 +340,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-assinatura-rg': {
-      tagline: 'Eighty minutes designed in detail — the signature experience of the house',
-      description: 'The RG Signature Massage is the most complete experience the Rita Guerreiro clinic offers. An 80-minute session, carefully designed to combine deep relaxation, specific muscle work and overall wellbeing. Every moment is personalised to you — from start to finish.',
+      tagline: 'Deep relaxation from head to toe. Our exclusive massage.',
+      description: 'The RG Signature Massage is an exclusive wellbeing journey created by us. It combines personalised techniques with the comfort of the hot towel ritual and the therapeutic benefits of aromatherapy for a deep, multisensory relaxation.',
       prices: [{ label: 'Full session (80min)', value: '75€' }],
       sub: [
         { t: 'Total relaxation', d: 'A combination of gentle techniques to induce a state of deep calm' },
@@ -715,8 +715,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-assinatura-rg': {
-      tagline: 'Quatre-vingts minutes pensées dans le détail — l’expérience signature de la maison',
-      description: "Le Massage Signature RG est l'expérience la plus complète que la clinique Rita Guerreiro a à offrir. Une séance de 80 minutes, soigneusement conçue pour combiner relaxation profonde, travail musculaire spécifique et bien-être global. Chaque moment est personnalisé selon vous — du début à la fin.",
+      tagline: 'Relaxation profonde de la tête aux pieds. Notre massage exclusif.',
+      description: "Le Massage Signature RG représente un voyage de bien-être exclusif que nous avons créé. Il associe des techniques personnalisées au confort du rituel des serviettes chaudes et aux bienfaits thérapeutiques de l'aromathérapie, pour une relaxation profonde et multisensorielle.",
       prices: [{ label: 'Séance complète (80min)', value: '75€' }],
       sub: [
         { t: 'Relaxation totale', d: 'Combinaison de techniques douces pour induire un état de calme profond' },
@@ -1090,8 +1090,8 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-assinatura-rg': {
-      tagline: 'Ochenta minutos pensados al detalle — la experiencia insignia de la casa',
-      description: 'El Masaje Firma RG es la experiencia más completa que ofrece la clínica Rita Guerreiro. Una sesión de 80 minutos, cuidadosamente diseñada para combinar relajación profunda, trabajo muscular específico y bienestar global. Cada momento se personaliza de acuerdo con usted — de principio a fin.',
+      tagline: 'Relajación profunda de la cabeza a los pies. Nuestro masaje exclusivo.',
+      description: 'El Masaje Firma RG representa un viaje de bienestar exclusivo creado por nosotros. Combina técnicas personalizadas con el confort del ritual de toallas calientes y los beneficios terapéuticos de la aromaterapia para una relajación profunda y multisensorial.',
       prices: [{ label: 'Sesión completa (80min)', value: '75€' }],
       sub: [
         { t: 'Relajación total', d: 'Combinación de técnicas suaves para inducir un estado de calma profunda' },
