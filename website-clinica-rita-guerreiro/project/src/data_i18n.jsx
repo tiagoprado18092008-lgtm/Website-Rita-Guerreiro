@@ -420,9 +420,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'To recover after surgery — and to release the tension that won’t go away',
       description: 'Post-operative lymphatic drainage is a gentle, therapeutic massage essential for recovery from plastic or clinical surgery. It reduces swelling (oedema), lessens bruising, relieves pain and prevents complications such as fibrosis and seromas, speeding up healing. Therapeutic massage is a manual technique focused on treating muscular and joint dysfunction and localised pain. It uses specific movements with greater pressure to relieve tension, improve mobility and promote physical recovery. It differs from relaxation massage in having a clinical, curative goal rather than just general wellbeing.',
       prices: [
-        { label: 'Therapeutic 30-50min', value: '30€ – 45€' },
-        { label: 'Post-Op Drainage 50min', value: '55€' },
-        { label: 'Post-Op Drainage 80min', value: '70€' },
+        { label: '50min', value: '60€' },
+        { label: '90min', value: '80€' },
       ],
       sub: [
         { t: 'Post-surgery recovery', d: 'Reduction of oedema and improvement of scar quality after surgical intervention' },
@@ -800,9 +799,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pour récupérer après une chirurgie — et pour libérer la tension qui ne s’en va pas',
       description: "Le drainage lymphatique post-opératoire est un massage doux et thérapeutique essentiel à la récupération après une chirurgie plastique ou clinique. Il réduit le gonflement (œdème), atténue les hématomes, soulage les douleurs et prévient des complications telles que les fibroses et les séromes, accélérant la cicatrisation. Le massage thérapeutique est une technique manuelle axée sur le traitement des dysfonctions musculaires et articulaires et des douleurs localisées. Il utilise des mouvements spécifiques et plus de pression pour soulager les tensions, améliorer la mobilité et favoriser la récupération physique. Il se distingue du massage relaxant par son objectif clinique et curatif, et non seulement de bien-être général.",
       prices: [
-        { label: 'Thérapeutique 30-50min', value: '30€ – 45€' },
-        { label: 'Drainage Post-Op 50min', value: '55€' },
-        { label: 'Drainage Post-Op 80min', value: '70€' },
+        { label: '50min', value: '60€' },
+        { label: '90min', value: '80€' },
       ],
       sub: [
         { t: 'Récupération post-chirurgie', d: "Réduction de l'œdème et amélioration de la qualité des cicatrices après intervention chirurgicale" },
@@ -1180,9 +1178,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Para recuperar tras la cirugía — y para liberar la tensión que no se va',
       description: 'El drenaje linfático postoperatorio es un masaje suave y terapéutico esencial para la recuperación de cirugías plásticas o clínicas. Reduce la hinchazón (edema), disminuye los hematomas, alivia dolores y previene complicaciones como fibrosis y seromas, acelerando la cicatrización. El masaje terapéutico es una técnica manual centrada en el tratamiento de disfunciones musculares y articulares y dolores localizados. Utiliza movimientos específicos y con más presión para aliviar tensiones, mejorar la movilidad y promover la recuperación física. Se diferencia del masaje de relajación por tener un objetivo clínico y curativo, y no solo de bienestar general.',
       prices: [
-        { label: 'Terapéutico 30-50min', value: '30€ – 45€' },
-        { label: 'Drenaje Postop 50min', value: '55€' },
-        { label: 'Drenaje Postop 80min', value: '70€' },
+        { label: '50min', value: '60€' },
+        { label: '90min', value: '80€' },
       ],
       sub: [
         { t: 'Recuperación postcirugía', d: 'Reducción del edema y mejora de la calidad de las cicatrices tras intervención quirúrgica' },

@@ -366,9 +366,8 @@ const SERVICE_DETAIL = {
     tagline: 'Para recuperar depois da cirurgia — e para libertar a tensão que não passa.',
     description: 'A drenagem linfática pós-operatória é uma massagem suave e terapêutica essencial para a recuperação de cirurgias plásticas ou clínicas. Ela reduz o inchaço (edema), diminui hematomas, alivia dores e previne complicações como fibroses e seromas, acelerando a cicatrização. A massagem terapêutica é uma técnica manual focada no tratamento de disfunções musculares, articulares e dores localizadas. Utiliza movimentos específicos e com mais pressão para aliviar tensões, melhorar a mobilidade e promover a recuperação física. Diferencia-se da massagem de relaxamento por ter um objetivo clínico e curativo, e não apenas de bem-estar geral.',
     prices: [
-      { label: 'Terapêutica 30-50min', value: '30€ – 45€ / 40€' },
-      { label: 'Drenagem Pós-Op 50min', value: '60€' },
-      { label: 'Drenagem Pós-Op 80min', value: '80€' },
+      { label: '50min', value: '60€' },
+      { label: '90min', value: '80€' },
     ],
     sub: [
       { t: 'Recuperação pós-cirurgia', d: 'Redução de edema e melhoria da qualidade das cicatrizes após intervenção cirúrgica.' },
