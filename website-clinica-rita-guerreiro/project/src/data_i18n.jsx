@@ -316,7 +316,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-relaxamento': {
-      tagline: 'Time to pause — with technique and care',
+      tagline: 'Time to slow down. Your moment of absolute wellbeing;',
       description: 'Relaxation massage is a manual therapy that uses gentle, rhythmic and continuous movements over the whole body, with the help of oils or creams. Its main goal is to relieve muscle tension, reduce stress and promote a state of deep physical and mental wellbeing.',
       prices: [
         { label: '50 minutes', value: '40€' },
@@ -695,7 +695,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-relaxamento': {
-      tagline: 'Du temps pour faire une pause — avec technique et soin',
+      tagline: 'Le temps de ralentir. Votre moment de bien-être absolu;',
       description: "Le massage relaxant est une thérapie manuelle qui utilise des mouvements doux, rythmiques et continus sur tout le corps, à l'aide d'huiles ou de crèmes. Son objectif principal est de soulager les tensions musculaires, de réduire le stress et de favoriser un état de bien-être physique et mental profond.",
       prices: [
         { label: '50 minutes', value: '40€' },
@@ -1074,7 +1074,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-relaxamento': {
-      tagline: 'Tiempo para parar — con técnica y cuidado',
+      tagline: 'Tiempo de desacelerar. Tu momento de bienestar absoluto;',
       description: 'El masaje de relajación es una terapia manual que utiliza movimientos suaves, rítmicos y continuos por todo el cuerpo, con la ayuda de aceites o cremas. Su objetivo principal es aliviar las tensiones musculares, reducir el estrés y promover un estado de bienestar físico y mental profundo.',
       prices: [
         { label: '50 minutos', value: '40€' },

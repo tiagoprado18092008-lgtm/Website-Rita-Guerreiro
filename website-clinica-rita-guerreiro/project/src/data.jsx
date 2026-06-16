@@ -254,7 +254,7 @@ const SERVICE_DETAIL = {
     ],
   },
   'massagem-relaxamento': {
-    tagline: 'Tempo para parar — com técnica e cuidado.',
+    tagline: 'Tempo de desacelerar. O seu momento de bem-estar absoluto;',
     description: 'A massagem de relaxamento é uma terapia manual que utiliza movimentos suaves, rítmicos e contínuos em todo o corpo, com o auxílio de óleos ou cremes. O seu objetivo principal é aliviar tensões musculares, reduzir o stress e promover um estado de bem-estar físico e mental profundo.',
     prices: [
       { label: '50 minutos', value: '40€' },
