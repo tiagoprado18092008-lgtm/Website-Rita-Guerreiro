@@ -8,7 +8,7 @@ const SERVICES_I18N = {
       label: 'Physiotherapy',
       intro: 'Individual assessment and treatment of pain, injury and dysfunction — for children and adults',
       items: {
-        'fisioterapia-geral': { name: 'General Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
+        'fisioterapia-geral': { name: 'Clinical Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
         'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted to each stage of growth — for babies, children and adolescents, in a safe, age-appropriate setting' },
         'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Pain, locking or clicking in your jaw? We treat the temporomandibular joint with specialised manual technique' },
         mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
@@ -65,7 +65,7 @@ const SERVICES_I18N = {
       label: 'Physiothérapie',
       intro: 'Évaluation et traitement individuel de la douleur, des blessures et des dysfonctionnements — pour enfants et adultes',
       items: {
-        'fisioterapia-geral': { name: 'Physiothérapie générale', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
+        'fisioterapia-geral': { name: 'Physiothérapie clinique', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
         'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée à chaque étape de la croissance — pour bébés, enfants et adolescents, dans un environnement sûr et adapté à chaque âge' },
         'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: 'Douleur, blocage ou claquements de la mâchoire ? Nous traitons l’articulation temporo-mandibulaire avec une technique manuelle spécialisée' },
         mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
@@ -122,7 +122,7 @@ const SERVICES_I18N = {
       label: 'Fisioterapia',
       intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción — para niños y adultos',
       items: {
-        'fisioterapia-geral': { name: 'Fisioterapia General', blurb: 'Cuando el dolor o la lesión le limitan el día a día, le ayudamos a recuperarse — con evaluación rigurosa y un plan pensado para usted' },
+        'fisioterapia-geral': { name: 'Fisioterapia Clínica', blurb: 'Cuando el dolor o la lesión le limitan el día a día, le ayudamos a recuperarse — con evaluación rigurosa y un plan pensado para usted' },
         'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a cada etapa del crecimiento — para bebés, niños y adolescentes, en un entorno seguro y adecuado a cada edad' },
         'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: '¿Dolor, bloqueo o chasquidos en la mandíbula? Tratamos la articulación temporomandibular con técnica manual especializada' },
         mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
@@ -193,6 +193,7 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Post-operative', d: 'Reduction of swelling, mobility gains and strength recovery after orthopaedic or other surgery' },
         { t: 'Pregnancy and postpartum', d: 'Prevention and relief of discomfort during pregnancy and pelvic floor recovery after birth' },
         { t: 'Chronic pain', d: 'Integrated approach to persistent pain with manual therapy, exercise and pain education' },
+        { t: 'Oncology physiotherapy', d: 'Preventing, minimising and treating the physical effects of cancer and its treatments — surgery, chemotherapy and radiotherapy — preserving function, autonomy and quality of life at every stage' },
       ],
     },
     'fisioterapia-pediatrica': {
@@ -241,7 +242,11 @@ const SERVICE_DETAIL_I18N = {
     'fisioterapia-vestibular': {
       tagline: 'Regain stability — and trust your body’s balance again',
       description: 'Vestibular Physiotherapy is a specialised area of physiotherapy that treats dizziness, vertigo and imbalance. Through rigorous assessment, repositioning manoeuvres (effective in BPPV) and specific habituation and gaze stabilisation exercises, we help the vestibular system recover or compensate. Results are often quick — in many cases, with significant relief from the very first session.',
-      prices: [{ label: 'Per session (50min)', value: '45€' }],
+      prices: [
+        { label: 'Session (50min)', value: '50€' },
+        { label: '5-session pack', value: '225€' },
+        { label: '10-session pack', value: '450€' },
+      ],
       sub: [
         { t: 'Positional vertigo (BPPV)', d: 'Otolith repositioning manoeuvres — frequent resolution in 1 to 3 sessions' },
         { t: 'Chronic dizziness', d: 'Habituation and gaze stabilisation exercises to reduce persistent dizziness' },
@@ -455,7 +460,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-indiana': {
-      tagline: 'Indian Head Massage — deep relaxation of head, neck and shoulders, without having to undress',
+      tagline: '"A journey into deep relaxation." Relieve the burden on your shoulders, head and neck, and feel the lightness of a perfectly calm and revitalized mind.',
       description: 'Indian massage involves rhythmic, slow and deep movements applied to specific points of the body to release tension, improve blood circulation and eliminate toxins.',
       prices: [{ label: 'Per session (40min)', value: '35€' }],
       sub: [
@@ -568,6 +573,7 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Post-opératoire', d: "Réduction de l'œdème, gain de mobilité et récupération de la force après chirurgie orthopédique ou autre" },
         { t: 'Grossesse et post-partum', d: "Prévention et soulagement des inconforts pendant la grossesse et récupération du plancher pelvien après l'accouchement" },
         { t: 'Douleur chronique', d: 'Approche intégrée de la douleur persistante avec thérapie manuelle, exercice et éducation à la douleur' },
+        { t: 'Physiothérapie oncologique', d: "Prévenir, minimiser et traiter les séquelles physiques du cancer et de ses traitements — chirurgie, chimiothérapie et radiothérapie — en préservant la fonctionnalité, l'autonomie et la qualité de vie à toutes les étapes" },
       ],
     },
     'fisioterapia-pediatrica': {
@@ -616,7 +622,11 @@ const SERVICE_DETAIL_I18N = {
     'fisioterapia-vestibular': {
       tagline: 'Retrouver la stabilité — et faire à nouveau confiance à l’équilibre de votre corps',
       description: "La Physiothérapie Vestibulaire est un domaine spécialisé de la physiothérapie qui traite les vertiges, étourdissements et déséquilibres. Par une évaluation rigoureuse, des manœuvres de repositionnement (efficaces dans le VPPB) et des exercices spécifiques d'habituation et de stabilisation du regard, nous aidons le système vestibulaire à récupérer ou compenser. Les résultats sont souvent rapides — dans de nombreux cas, avec un soulagement significatif dès la première séance.",
-      prices: [{ label: 'Par séance (50min)', value: '45€' }],
+      prices: [
+        { label: 'Séance (50min)', value: '50€' },
+        { label: 'Pack 5 séances', value: '225€' },
+        { label: 'Pack 10 séances', value: '450€' },
+      ],
       sub: [
         { t: 'Vertige positionnel (VPPB)', d: 'Manœuvres de repositionnement des otolithes — résolution fréquente en 1 à 3 séances' },
         { t: 'Étourdissements chroniques', d: "Exercices d'habituation et de stabilisation du regard pour réduire les étourdissements persistants" },
@@ -830,7 +840,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-indiana': {
-      tagline: 'Indian Head Massage — détente profonde de la tête, du cou et des épaules, sans avoir à se déshabiller',
+      tagline: '« Un voyage vers la détente profonde. » Soulagez la charge des épaules, de la tête et du cou, et ressentez la légèreté d\'un esprit parfaitement calme et revigoré.',
       description: "Le massage indien comprend des mouvements rythmés, lents et profonds, appliqués sur des points spécifiques du corps pour libérer les tensions, améliorer la circulation sanguine et éliminer les toxines.",
       prices: [{ label: 'Par séance (40min)', value: '35€' }],
       sub: [
@@ -943,6 +953,7 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Posoperatorio', d: 'Reducción de la hinchazón, ganancia de movilidad y recuperación de la fuerza tras cirugía ortopédica u otra' },
         { t: 'Embarazo y posparto', d: 'Prevención y alivio de molestias durante el embarazo y recuperación del suelo pélvico tras el parto' },
         { t: 'Dolor crónico', d: 'Enfoque integrado del dolor persistente con terapia manual, ejercicio y educación en dolor' },
+        { t: 'Fisioterapia oncológica', d: 'Prevenir, minimizar y tratar las secuelas físicas del cáncer y de sus tratamientos — cirugía, quimioterapia y radioterapia — preservando la funcionalidad, la autonomía y la calidad de vida en todas las fases' },
       ],
     },
     'fisioterapia-pediatrica': {
@@ -991,7 +1002,11 @@ const SERVICE_DETAIL_I18N = {
     'fisioterapia-vestibular': {
       tagline: 'Recuperar la estabilidad — y volver a confiar en el equilibrio de su cuerpo',
       description: 'La Fisioterapia Vestibular es un área especializada de la fisioterapia que trata los mareos, vértigo y desequilibrios. A través de una evaluación rigurosa, maniobras de reposicionamiento (eficaces en VPPB) y ejercicios específicos de habituación y estabilización de la mirada, ayudamos al sistema vestibular a recuperarse o compensar. Los resultados suelen ser rápidos — en muchos casos, con alivio significativo desde la primera sesión.',
-      prices: [{ label: 'Por sesión (50min)', value: '45€' }],
+      prices: [
+        { label: 'Sesión (50min)', value: '50€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
+        { label: 'Pack 10 sesiones', value: '450€' },
+      ],
       sub: [
         { t: 'Vértigo posicional (VPPB)', d: 'Maniobras de reposicionamiento de otolitos — resolución frecuente en 1 a 3 sesiones' },
         { t: 'Mareos crónicos', d: 'Ejercicios de habituación y estabilización de la mirada para reducir mareos persistentes' },
@@ -1205,7 +1220,7 @@ const SERVICE_DETAIL_I18N = {
       ],
     },
     'massagem-indiana': {
-      tagline: 'Indian Head Massage — relajación profunda de cabeza, cuello y hombros, sin necesidad de desvestirse',
+      tagline: '«Un viaje hacia la relajación profunda.» Alivie la carga de los hombros, la cabeza y el cuello, y sienta la ligereza de una mente perfectamente tranquila y revitalizada.',
       description: 'El masaje indio consiste en movimientos rítmicos, lentos y profundos, aplicados en puntos específicos del cuerpo para liberar tensiones, mejorar la circulación sanguínea y eliminar toxinas.',
       prices: [{ label: 'Por sesión (40min)', value: '35€' }],
       sub: [

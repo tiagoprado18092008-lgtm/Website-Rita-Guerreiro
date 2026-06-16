@@ -41,11 +41,11 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia-geral', name: 'Fisioterapia Geral', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€ / 50€' },
-      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '45€' },
+      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
     ],
   },
   saude: {
@@ -110,6 +110,7 @@ const SERVICE_DETAIL = {
       { t: 'Pós-operatório', d: 'Redução de edema, ganho de mobilidade e recuperação de força após cirurgia ortopédica.' },
       { t: 'Gravidez e pós-parto', d: 'Acompanhamento das mudanças do corpo durante a gravidez e recuperação do pavimento pélvico após o parto.' },
       { t: 'Dor crónica', d: 'Abordagem integrada com terapia manual, exercício e educação em dor — para uma vida com mais autonomia.' },
+      { t: 'Fisioterapia oncológica', d: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — cirurgia, quimioterapia e radioterapia — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.' },
     ],
     tech: {
       name: 'Winback BACK3',
@@ -176,7 +177,9 @@ const SERVICE_DETAIL = {
     tagline: 'Recuperar a estabilidade — e voltar a confiar no equilíbrio do seu corpo.',
     description: 'A Fisioterapia Vestibular é uma área especializada da fisioterapia que trata tonturas, vertigens e desequilíbrios. Através de avaliação rigorosa, manobras de reposicionamento (eficazes em VPPB) e exercícios específicos de habituação e estabilização do olhar, ajudamos o sistema vestibular a recuperar ou compensar. Os resultados são frequentemente rápidos — em muitos casos, com alívio significativo logo na primeira sessão.',
     prices: [
-      { label: 'Por sessão (50min)', value: '45€' },
+      { label: 'Sessão (50min)', value: '50€' },
+      { label: 'Pack 5 sessões', value: '225€' },
+      { label: 'Pack 10 sessões', value: '450€' },
     ],
     sub: [
       { t: 'Vertigem Posicional (VPPB)', d: 'Manobras de reposicionamento de otólitos — resolução frequente em 1 a 3 sessões.' },
@@ -407,7 +410,7 @@ const SERVICE_DETAIL = {
     ],
   },
   'massagem-indiana': {
-    tagline: 'Indian Head Massage — relaxamento profundo da cabeça, pescoço e ombros, sem ter de se despir.',
+    tagline: '"Viagem ao relaxamento profundo." Alivie a carga dos ombros, cabeça e pescoço, e sinta a leveza de uma mente perfeitamente tranquila e revigorada.',
     description: 'A massagem indiana envolve movimentos ritmados, lentos e profundos, aplicados em pontos específicos do corpo para liberar tensões, melhorar a circulação sanguínea e eliminar toxinas.',
     prices: [
       { label: 'Por sessão (40min)', value: '35€' },
