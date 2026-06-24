@@ -384,8 +384,8 @@ const SERVICE_DETAIL = {
     description: 'A drenagem linfática manual (DLM) é uma técnica de massagem terapêutica especializada que utiliza movimentos rítmicos, suaves e lentos. O seu principal objetivo é estimular o sistema linfático, acelerando a eliminação de líquidos, toxinas e resíduos metabólicos através da urina. A massagem terapêutica é uma técnica manual focada no tratamento de disfunções musculares, articulares e dores localizadas. Utiliza movimentos específicos e com mais pressão para aliviar tensões, melhorar a mobilidade e promover a recuperação física. Diferencia-se da massagem de relaxamento por ter um objetivo clínico e curativo, e não apenas de bem-estar geral.',
     prices: [
       { label: 'Drenagem Manual (50min)', value: '50€ / 45€ (Pack 10)' },
-      { label: 'Terapêutica 50min', value: '60€' },
-      { label: 'Terapêutica 90min', value: '80€' },
+      { label: 'Massagem Terapêutica 50min', value: '60€' },
+      { label: 'Massagem Terapêutica 90min', value: '80€' },
     ],
     sub: [
       { t: 'Retenção de líquidos', d: 'Redução do inchaço nas pernas, tornozelos e barriga causado por retenção hídrica.' },

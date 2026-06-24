@@ -440,8 +440,8 @@ const SERVICE_DETAIL_I18N = {
       description: 'Manual lymphatic drainage (MLD) is a specialised therapeutic massage technique that uses rhythmic, gentle and slow movements. Its main goal is to stimulate the lymphatic system, speeding up the elimination of fluids, toxins and metabolic waste through urine. Therapeutic massage is a manual technique focused on treating muscular and joint dysfunction and localised pain. It uses specific movements with greater pressure to relieve tension, improve mobility and promote physical recovery. It differs from relaxation massage in having a clinical, curative goal rather than just general wellbeing.',
       prices: [
         { label: 'Manual Drainage (50min)', value: '50€ / 45€ (Pack 10)' },
-        { label: 'Therapeutic 50min', value: '60€' },
-        { label: 'Therapeutic 90min', value: '80€' },
+        { label: 'Therapeutic Massage 50min', value: '60€' },
+        { label: 'Therapeutic Massage 90min', value: '80€' },
       ],
       sub: [
         { t: 'Fluid retention', d: 'Reduction of swelling in legs, ankles and belly caused by water retention' },
@@ -836,8 +836,8 @@ const SERVICE_DETAIL_I18N = {
       description: "Le drainage lymphatique manuel (DLM) est une technique de massage thérapeutique spécialisée qui utilise des mouvements rythmiques, doux et lents. Son principal objectif est de stimuler le système lymphatique, en accélérant l'élimination des liquides, des toxines et des déchets métaboliques par l'urine. Le massage thérapeutique est une technique manuelle axée sur le traitement des dysfonctions musculaires et articulaires et des douleurs localisées. Il utilise des mouvements spécifiques et plus de pression pour soulager les tensions, améliorer la mobilité et favoriser la récupération physique. Il se distingue du massage relaxant par son objectif clinique et curatif, et non seulement de bien-être général.",
       prices: [
         { label: 'Drainage Manuel (50min)', value: '50€ / 45€ (Pack 10)' },
-        { label: 'Thérapeutique 50min', value: '60€' },
-        { label: 'Thérapeutique 90min', value: '80€' },
+        { label: 'Massage Thérapeutique 50min', value: '60€' },
+        { label: 'Massage Thérapeutique 90min', value: '80€' },
       ],
       sub: [
         { t: 'Rétention de liquides', d: "Réduction du gonflement des jambes, chevilles et ventre causé par la rétention d'eau" },
@@ -1232,8 +1232,8 @@ const SERVICE_DETAIL_I18N = {
       description: 'El drenaje linfático manual (DLM) es una técnica de masaje terapéutico especializada que utiliza movimientos rítmicos, suaves y lentos. Su principal objetivo es estimular el sistema linfático, acelerando la eliminación de líquidos, toxinas y residuos metabólicos a través de la orina. El masaje terapéutico es una técnica manual centrada en el tratamiento de disfunciones musculares y articulares y dolores localizados. Utiliza movimientos específicos y con más presión para aliviar tensiones, mejorar la movilidad y promover la recuperación física. Se diferencia del masaje de relajación por tener un objetivo clínico y curativo, y no solo de bienestar general.',
       prices: [
         { label: 'Drenaje Manual (50min)', value: '50€ / 45€ (Pack 10)' },
-        { label: 'Terapéutico 50min', value: '60€' },
-        { label: 'Terapéutico 90min', value: '80€' },
+        { label: 'Masaje Terapéutico 50min', value: '60€' },
+        { label: 'Masaje Terapéutico 90min', value: '80€' },
       ],
       sub: [
         { t: 'Retención de líquidos', d: 'Reducción de la hinchazón en piernas, tobillos y vientre causada por la retención de agua' },
