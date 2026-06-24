@@ -186,7 +186,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'Physiotherapy is a health science focused on the study, prevention, diagnosis and treatment of disorders related to movement, biomechanics and human functional capacity. The goal is to restore, develop and maintain patients’ maximum autonomy, mobility and quality of life.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '5-session pack', value: '225€' },
         { label: '10-session pack', value: '450€' },
       ],
       sub: [
@@ -204,7 +203,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'Paediatric Physiotherapy supports babies, children and adolescents at different stages of development. We assess and treat delays in motor development, postural changes, musculoskeletal injuries and neurological conditions — always in a safe environment, adapted to the age of each child. Every session is designed around the pace of the child, with family involvement whenever it makes sense.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '5-session pack', value: '225€' },
         { label: '10-session pack', value: '450€' },
       ],
       sub: [
@@ -232,7 +230,9 @@ const SERVICE_DETAIL_I18N = {
     mesoterapia: {
       tagline: 'Targeted action where you need it most — for pain, inflammation or aesthetic care',
       description: 'Mesotherapy consists of applying micro-injections of active substances directly into the superficial layers of the skin or subcutaneous tissue. It allows highly localised action — reaching the exact area of pain, contracture or aesthetic concern, with little systemic diffusion. Administered by a physiotherapist with specific training, it is a versatile technique both in clinical contexts (joint pain, contractures) and aesthetic ones (cellulite, laxity, rejuvenation).',
-      prices: [{ label: 'Session (50min)', value: '50€' }],
+      prices: [
+        { label: 'Session (50min)', value: '55€' },
+      ],
       sub: [
         { t: 'Joint pain and inflammation', d: 'Localised application of anti-inflammatories for quick relief in knees, shoulders or spine' },
         { t: 'Muscle contractures', d: 'Release of persistent tension points resistant to other techniques' },
@@ -247,7 +247,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'Vestibular Physiotherapy is a specialised area of physiotherapy that treats dizziness, vertigo and imbalance. Through rigorous assessment, repositioning manoeuvres (effective in BPPV) and specific habituation and gaze stabilisation exercises, we help the vestibular system recover or compensate. Results are often quick — in many cases, with significant relief from the very first session.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '5-session pack', value: '225€' },
         { label: '10-session pack', value: '450€' },
       ],
       sub: [
@@ -264,7 +263,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'Oncology physiotherapy is the speciality focused on preventing, minimising and treating the physical after-effects caused by cancer and its aggressive treatments, such as surgery, chemotherapy and radiotherapy. Its main goal is to preserve function, restore autonomy and ensure quality of life for the patient at every stage of the disease.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '5-session pack', value: '225€' },
         { label: '10-session pack', value: '450€' },
       ],
       sub: [
@@ -582,7 +580,6 @@ const SERVICE_DETAIL_I18N = {
       description: "La physiothérapie est une science de la santé centrée sur l'étude, la prévention, le diagnostic et le traitement des troubles liés au mouvement, à la biomécanique et à la capacité fonctionnelle humaine. L'objectif est de restaurer, développer et maintenir le maximum d'autonomie, de mobilité et de qualité de vie des patients.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 5 séances', value: '225€' },
         { label: 'Pack 10 séances', value: '450€' },
       ],
       sub: [
@@ -600,7 +597,6 @@ const SERVICE_DETAIL_I18N = {
       description: "La Physiothérapie Pédiatrique accompagne bébés, enfants et adolescents à différentes étapes du développement. Nous évaluons et traitons les retards de développement moteur, les altérations posturales, les blessures musculo-squelettiques et les conditions neurologiques — toujours dans un environnement sûr, adapté à l'âge de chaque enfant. Chaque séance est conçue pour le rythme de l'enfant, avec l'implication de la famille lorsque cela a du sens.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 5 séances', value: '225€' },
         { label: 'Pack 10 séances', value: '450€' },
       ],
       sub: [
@@ -628,7 +624,9 @@ const SERVICE_DETAIL_I18N = {
     mesoterapia: {
       tagline: 'Action ciblée là où vous en avez le plus besoin — douleur, inflammation ou soin esthétique',
       description: "La Mésothérapie consiste en l'application de micro-injections de substances actives directement dans les couches superficielles de la peau ou du tissu sous-cutané. Elle permet une action très localisée — atteignant la zone exacte de douleur, contracture ou préoccupation esthétique, avec peu de diffusion systémique. Appliquée par un physiothérapeute avec formation spécifique, c'est une technique polyvalente tant en contexte clinique (douleur articulaire, contractures) qu'esthétique (cellulite, relâchement, rajeunissement).",
-      prices: [{ label: 'Séance (50min)', value: '50€' }],
+      prices: [
+        { label: 'Séance (50min)', value: '55€' },
+      ],
       sub: [
         { t: 'Douleur et inflammation articulaire', d: "Application localisée d'anti-inflammatoires pour un soulagement rapide des genoux, épaules ou colonne" },
         { t: 'Contractures musculaires', d: 'Libération de points de tension persistants résistants aux autres techniques' },
@@ -643,7 +641,6 @@ const SERVICE_DETAIL_I18N = {
       description: "La Physiothérapie Vestibulaire est un domaine spécialisé de la physiothérapie qui traite les vertiges, étourdissements et déséquilibres. Par une évaluation rigoureuse, des manœuvres de repositionnement (efficaces dans le VPPB) et des exercices spécifiques d'habituation et de stabilisation du regard, nous aidons le système vestibulaire à récupérer ou compenser. Les résultats sont souvent rapides — dans de nombreux cas, avec un soulagement significatif dès la première séance.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 5 séances', value: '225€' },
         { label: 'Pack 10 séances', value: '450€' },
       ],
       sub: [
@@ -660,7 +657,6 @@ const SERVICE_DETAIL_I18N = {
       description: "La physiothérapie oncologique est la spécialité axée sur la prévention, la réduction et le traitement des séquelles physiques causées par le cancer et ses traitements agressifs, tels que la chirurgie, la chimiothérapie et la radiothérapie. Son objectif principal est de préserver la fonction, de redonner l'autonomie et de garantir la qualité de vie du patient à chaque étape de la maladie.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 5 séances', value: '225€' },
         { label: 'Pack 10 séances', value: '450€' },
       ],
       sub: [
@@ -978,7 +974,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'La fisioterapia es una ciencia de la salud centrada en el estudio, la prevención, el diagnóstico y el tratamiento de los trastornos relacionados con el movimiento, la biomecánica y la capacidad funcional humana. El objetivo es restaurar, desarrollar y mantener la máxima autonomía, movilidad y calidad de vida de los pacientes.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
         { label: 'Pack 10 sesiones', value: '450€' },
       ],
       sub: [
@@ -996,7 +991,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'La Fisioterapia Pediátrica acompaña a bebés, niños y adolescentes en diferentes etapas del desarrollo. Evaluamos y tratamos retrasos en el desarrollo motor, alteraciones posturales, lesiones musculoesqueléticas y condiciones neurológicas — siempre en un entorno seguro y adecuado a la edad de cada niño. Cada sesión se diseña para el ritmo del niño, con participación de la familia siempre que tenga sentido.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
         { label: 'Pack 10 sesiones', value: '450€' },
       ],
       sub: [
@@ -1024,7 +1018,9 @@ const SERVICE_DETAIL_I18N = {
     mesoterapia: {
       tagline: 'Acción dirigida donde más la necesita — para dolor, inflamación o cuidado estético',
       description: 'La Mesoterapia consiste en aplicar microinyecciones de sustancias activas directamente en las capas superficiales de la piel o tejido subcutáneo. Permite una acción altamente localizada — llega a la zona exacta del dolor, contractura o preocupación estética, con poca difusión sistémica. Aplicada por fisioterapeuta con formación específica, es una técnica versátil tanto en contexto clínico (dolor articular, contracturas) como estético (celulitis, flacidez, rejuvenecimiento).',
-      prices: [{ label: 'Sesión (50min)', value: '50€' }],
+      prices: [
+        { label: 'Sesión (50min)', value: '55€' },
+      ],
       sub: [
         { t: 'Dolor e inflamación articular', d: 'Aplicación localizada de antiinflamatorios para alivio rápido en rodillas, hombros o columna' },
         { t: 'Contracturas musculares', d: 'Liberación de puntos de tensión persistentes resistentes a otras técnicas' },
@@ -1039,7 +1035,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'La Fisioterapia Vestibular es un área especializada de la fisioterapia que trata los mareos, vértigo y desequilibrios. A través de una evaluación rigurosa, maniobras de reposicionamiento (eficaces en VPPB) y ejercicios específicos de habituación y estabilización de la mirada, ayudamos al sistema vestibular a recuperarse o compensar. Los resultados suelen ser rápidos — en muchos casos, con alivio significativo desde la primera sesión.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
         { label: 'Pack 10 sesiones', value: '450€' },
       ],
       sub: [
@@ -1056,7 +1051,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'La fisioterapia oncológica es la especialidad centrada en prevenir, minimizar y tratar las secuelas físicas causadas por el cáncer y sus tratamientos agresivos, como cirugías, quimioterapia y radioterapia. El objetivo principal es preservar la función, devolver la autonomía y garantizar la calidad de vida del paciente en todas las fases de la patología.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
         { label: 'Pack 10 sesiones', value: '450€' },
       ],
       sub: [

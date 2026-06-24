@@ -42,12 +42,12 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
-      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 10: 450€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
-      { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€ / 50€' },
-      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
-      { slug: 'fisioterapia-oncologica', name: 'Fisioterapia Oncológica', img: IMG['fisioterapia-oncologica'], blurb: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
+      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-oncologica', name: 'Fisioterapia Oncológica', img: IMG['fisioterapia-oncologica'], blurb: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.', price: '50€ / Pack 10: 450€' },
     ],
   },
   saude: {
@@ -102,7 +102,6 @@ const SERVICE_DETAIL = {
     description: 'A fisioterapia é uma ciência da saúde focada no estudo, prevenção, diagnóstico e tratamento de distúrbios relacionados com o movimento, a biomecânica e a capacidade funcional humana. O objetivo é restaurar, desenvolver e manter a máxima autonomia, mobilidade e qualidade de vida dos pacientes.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 5 sessões', value: '225€' },
       { label: 'Pack 10 sessões', value: '450€' },
     ],
     sub: [
@@ -132,7 +131,6 @@ const SERVICE_DETAIL = {
     description: 'A Fisioterapia Pediátrica acompanha bebés, crianças e adolescentes em diferentes fases do desenvolvimento. Avaliamos e tratamos atrasos no desenvolvimento motor, alterações posturais, lesões músculo-esqueléticas e condições neurológicas — sempre num ambiente seguro, adaptado e adequado à idade. Cada sessão é desenhada para o ritmo da criança, com envolvimento da família sempre que faz sentido.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 5 sessões', value: '225€' },
       { label: 'Pack 10 sessões', value: '450€' },
     ],
     sub: [
@@ -163,7 +161,7 @@ const SERVICE_DETAIL = {
     tagline: 'Ação localizada onde mais precisa — para dor, inflamação ou cuidado estético.',
     description: 'A Mesoterapia consiste na aplicação de microinjeções de substâncias ativas diretamente nas camadas superficiais da pele ou tecido subcutâneo. Permite uma ação altamente localizada — chega à zona exata da dor, contratura ou da preocupação estética, com pouca difusão sistémica. Aplicada por fisioterapeuta com formação específica, é uma técnica versátil tanto em contexto clínico (dor articular, contraturas) como estético (celulite, flacidez, rejuvenescimento).',
     prices: [
-      { label: 'Sessão (50min)', value: '55€ / 50€' },
+      { label: 'Sessão (50min)', value: '55€' },
     ],
     sub: [
       { t: 'Dor e inflamação articular', d: 'Aplicação localizada de anti-inflamatórios para alívio rápido em joelhos, ombros ou coluna.' },
@@ -179,7 +177,6 @@ const SERVICE_DETAIL = {
     description: 'A Fisioterapia Vestibular é uma área especializada da fisioterapia que trata tonturas, vertigens e desequilíbrios. Através de avaliação rigorosa, manobras de reposicionamento (eficazes em VPPB) e exercícios específicos de habituação e estabilização do olhar, ajudamos o sistema vestibular a recuperar ou compensar. Os resultados são frequentemente rápidos — em muitos casos, com alívio significativo logo na primeira sessão.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 5 sessões', value: '225€' },
       { label: 'Pack 10 sessões', value: '450€' },
     ],
     sub: [
@@ -196,7 +193,6 @@ const SERVICE_DETAIL = {
     description: 'A fisioterapia oncológica é a especialidade focada em prevenir, minimizar e tratar as sequelas físicas causadas pelo cancro e pelos seus tratamentos agressivos, como cirurgias, quimioterapia e radioterapia. O objetivo principal é preservar a funcionalidade, devolver a autonomia e garantir qualidade de vida ao doente em todas as fases da patologia.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 5 sessões', value: '225€' },
       { label: 'Pack 10 sessões', value: '450€' },
     ],
     sub: [

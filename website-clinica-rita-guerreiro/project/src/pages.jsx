@@ -9,6 +9,22 @@ function findService(slug, services) {
   return null;
 }
 
+// Para linhas de "pack" (ex: { label: 'Pack 10 sessões', value: '450€' }),
+// devolve o preço por sessão (ex: '45€'). Devolve null se não for um pack
+// ou se o valor não dividir de forma limpa pelo número de sessões.
+function perSessionPrice(label, value) {
+  // Só linhas de pacote contam: label tem "pack" + nº de sessões
+  // (PT/FR/ES "Pack 10 ...", EN "10-session pack"). Ignora durações tipo "50min".
+  const l = String(label);
+  if (!/pack|pacote/i.test(l)) return null;
+  const count = parseInt(l.match(/\d+/)?.[0], 10);
+  const total = parseFloat(String(value).replace(/[^\d.,]/g, '').replace(',', '.'));
+  if (!count || count < 2 || !total) return null;
+  const per = total / count;
+  if (!Number.isInteger(per)) return null;
+  return `${per}€`;
+}
+
 // Category accent colors for visual differentiation
 const CAT_ACCENT = {
   fisioterapia: { bg: '#EBF4F3', border: '#6FB5B0', dot: '#2F6B68' },
@@ -81,7 +97,7 @@ function ServicePage({ slug }) {
             <Reveal delay={180}>
               <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
                 {detail?.prices ? (
-                  detail.prices.slice(0, 2).map((p, i) => (
+                  detail.prices.slice(0, slug === 'terapia-bowen' ? 3 : 2).map((p, i) => (
                     <div key={i} style={{
                       background: i === 0 ? RG.tealDark : RG.white,
                       color: i === 0 ? RG.white : RG.ink,
@@ -90,6 +106,9 @@ function ServicePage({ slug }) {
                     }}>
                       <div style={{ fontFamily: F_BODY, fontSize: 11, opacity: 0.7, marginBottom: 2 }}>{p.label}</div>
                       <div style={{ fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>{p.value}</div>
+                      {perSessionPrice(p.label, p.value) && (
+                        <div style={{ fontFamily: F_BODY, fontSize: 11, opacity: 0.7, marginTop: 2 }}>{perSessionPrice(p.label, p.value)} {t('service.por_sessao')}</div>
+                      )}
                     </div>
                   ))
                 ) : (
@@ -147,9 +166,14 @@ function ServicePage({ slug }) {
                 <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.muted, marginBottom: 16 }}>{t('service.preco_label')}</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {detail.prices.map((p, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, paddingBottom: i < detail.prices.length - 1 ? 10 : 0, borderBottom: i < detail.prices.length - 1 ? `1px solid ${RG.line}` : 'none' }}>
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, paddingBottom: i < detail.prices.length - 1 ? 10 : 0, borderBottom: i < detail.prices.length - 1 ? `1px solid ${RG.line}` : 'none' }}>
                       <span style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal }}>{p.label}</span>
-                      <span style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{p.value}</span>
+                      <span style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
+                        <span style={{ display: 'block', fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.02em' }}>{p.value}</span>
+                        {perSessionPrice(p.label, p.value) && (
+                          <span style={{ display: 'block', fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 2 }}>{perSessionPrice(p.label, p.value)} {t('service.por_sessao')}</span>
+                        )}
+                      </span>
                     </div>
                   ))}
                 </div>
