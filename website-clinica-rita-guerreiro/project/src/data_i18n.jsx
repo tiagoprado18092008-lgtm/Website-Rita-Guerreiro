@@ -13,6 +13,7 @@ const SERVICES_I18N = {
         'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Pain, locking or clicking in your jaw? We treat the temporomandibular joint with specialised manual technique' },
         mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
         'fisioterapia-vestibular': { name: 'Vestibular Physiotherapy', blurb: 'Dizziness, vertigo and imbalance can be treated — with specific manoeuvres and exercises that restore your stability' },
+        'fisioterapia-oncologica': { name: 'Oncology Physiotherapy', blurb: 'Preventing, minimising and treating the physical after-effects of cancer and its treatments — preserving function, autonomy and quality of life at every stage' },
       },
     },
     saude: {
@@ -70,6 +71,7 @@ const SERVICES_I18N = {
         'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: 'Douleur, blocage ou claquements de la mâchoire ? Nous traitons l’articulation temporo-mandibulaire avec une technique manuelle spécialisée' },
         mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
         'fisioterapia-vestibular': { name: 'Physiothérapie vestibulaire', blurb: 'Vertiges, étourdissements et troubles de l’équilibre peuvent être traités — avec des manœuvres spécifiques et des exercices qui rétablissent votre stabilité' },
+        'fisioterapia-oncologica': { name: 'Physiothérapie oncologique', blurb: 'Prévenir, réduire et traiter les séquelles physiques du cancer et de ses traitements — en préservant la fonction, l’autonomie et la qualité de vie à chaque étape' },
       },
     },
     saude: {
@@ -127,6 +129,7 @@ const SERVICES_I18N = {
         'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: '¿Dolor, bloqueo o chasquidos en la mandíbula? Tratamos la articulación temporomandibular con técnica manual especializada' },
         mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
         'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Mareos, vértigos y desequilibrios tienen tratamiento — con maniobras específicas y ejercicios que recuperan su estabilidad' },
+        'fisioterapia-oncologica': { name: 'Fisioterapia Oncológica', blurb: 'Prevenir, minimizar y tratar las secuelas físicas del cáncer y de sus tratamientos — preservando la función, la autonomía y la calidad de vida en todas las fases' },
       },
     },
     saude: {
@@ -254,6 +257,23 @@ const SERVICE_DETAIL_I18N = {
         { t: "Ménière's disease", d: 'Support in managing vertigo crises and improving balance between episodes' },
         { t: 'Imbalance in the elderly', d: 'Balance training and fall prevention in populations at increased risk' },
         { t: 'Post-traumatic dizziness', d: 'Recovery after head or neck trauma with vestibular symptoms' },
+      ],
+    },
+    'fisioterapia-oncologica': {
+      tagline: 'Restoring function, autonomy and quality of life — at every stage',
+      description: 'Oncology physiotherapy is the speciality focused on preventing, minimising and treating the physical after-effects caused by cancer and its aggressive treatments, such as surgery, chemotherapy and radiotherapy. Its main goal is to preserve function, restore autonomy and ensure quality of life for the patient at every stage of the disease.',
+      prices: [
+        { label: 'Session (50min)', value: '50€' },
+        { label: '5-session pack', value: '225€' },
+        { label: '10-session pack', value: '450€' },
+      ],
+      sub: [
+        { t: 'Post-oncology lymphoedema', d: 'Manual lymphatic drainage and bandaging to control oedema after lymph node clearance or radiotherapy' },
+        { t: 'Post-mastectomy recovery', d: 'Restoring shoulder and arm mobility and scar treatment after breast surgery' },
+        { t: 'Radiotherapy after-effects', d: 'Treatment of fibrosis, adhesions and loss of mobility caused by radiotherapy' },
+        { t: 'Fatigue and deconditioning', d: 'Adapted, progressive exercise to combat cancer-related fatigue and rebuild physical condition' },
+        { t: 'Mobility and scars', d: 'Tissue mobilisation, relief of adhesions and recovery of range of motion' },
+        { t: 'Rehabilitation during treatment', d: 'Active support throughout chemotherapy and radiotherapy to preserve function' },
       ],
     },
     acupuntura: {
@@ -635,6 +655,23 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Étourdissements post-traumatiques', d: 'Récupération après traumatisme crânien ou cervical avec symptômes vestibulaires' },
       ],
     },
+    'fisioterapia-oncologica': {
+      tagline: 'Retrouver fonction, autonomie et qualité de vie — à chaque étape',
+      description: "La physiothérapie oncologique est la spécialité axée sur la prévention, la réduction et le traitement des séquelles physiques causées par le cancer et ses traitements agressifs, tels que la chirurgie, la chimiothérapie et la radiothérapie. Son objectif principal est de préserver la fonction, de redonner l'autonomie et de garantir la qualité de vie du patient à chaque étape de la maladie.",
+      prices: [
+        { label: 'Séance (50min)', value: '50€' },
+        { label: 'Pack 5 séances', value: '225€' },
+        { label: 'Pack 10 séances', value: '450€' },
+      ],
+      sub: [
+        { t: 'Lymphœdème post-oncologique', d: 'Drainage lymphatique manuel et bandages pour contrôler l’œdème après curage ganglionnaire ou radiothérapie' },
+        { t: 'Récupération post-mastectomie', d: 'Récupération de la mobilité de l’épaule et du bras et traitement de la cicatrice après chirurgie du sein' },
+        { t: 'Séquelles de radiothérapie', d: 'Traitement des fibroses, adhérences et pertes de mobilité provoquées par la radiothérapie' },
+        { t: 'Fatigue et déconditionnement', d: 'Exercice adapté et progressif pour lutter contre la fatigue liée au cancer et retrouver la condition physique' },
+        { t: 'Mobilité et cicatrices', d: 'Mobilisation des tissus, soulagement des adhérences et récupération de l’amplitude de mouvement' },
+        { t: 'Réadaptation pendant le traitement', d: 'Accompagnement actif tout au long de la chimiothérapie et de la radiothérapie pour préserver la fonction' },
+      ],
+    },
     acupuntura: {
       tagline: 'Une médecine affinée au fil des siècles — et des preuves croissantes pour votre bien-être',
       description: "L'acupuncture est une technique thérapeutique millénaire, originaire de la Médecine Traditionnelle Chinoise, qui consiste à insérer de fines aiguilles en des points spécifiques du corps. Son but est de stimuler les réponses naturelles de l'organisme, favorisant l'équilibre physique et émotionnel et le soulagement des symptômes.",
@@ -1012,6 +1049,23 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Enfermedad de Ménière', d: 'Apoyo en la gestión de crisis vertiginosas y mejora del equilibrio entre episodios' },
         { t: 'Desequilibrio en el mayor', d: 'Entrenamiento del equilibrio y prevención de caídas en poblaciones con mayor riesgo' },
         { t: 'Mareos postraumáticos', d: 'Recuperación tras traumatismo craneal o cervical con síntomas vestibulares' },
+      ],
+    },
+    'fisioterapia-oncologica': {
+      tagline: 'Recuperar función, autonomía y calidad de vida — en todas las fases',
+      description: 'La fisioterapia oncológica es la especialidad centrada en prevenir, minimizar y tratar las secuelas físicas causadas por el cáncer y sus tratamientos agresivos, como cirugías, quimioterapia y radioterapia. El objetivo principal es preservar la función, devolver la autonomía y garantizar la calidad de vida del paciente en todas las fases de la patología.',
+      prices: [
+        { label: 'Sesión (50min)', value: '50€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
+        { label: 'Pack 10 sesiones', value: '450€' },
+      ],
+      sub: [
+        { t: 'Linfedema posoncológico', d: 'Drenaje linfático manual y vendajes para controlar el edema tras vaciamiento ganglionar o radioterapia' },
+        { t: 'Recuperación tras mastectomía', d: 'Recuperación de la movilidad del hombro y el brazo y tratamiento de la cicatriz tras cirugía de mama' },
+        { t: 'Secuelas de radioterapia', d: 'Tratamiento de fibrosis, adherencias y pérdida de movilidad provocadas por la radioterapia' },
+        { t: 'Fatiga y desacondicionamiento', d: 'Ejercicio adaptado y progresivo para combatir la fatiga oncológica y recuperar la condición física' },
+        { t: 'Movilidad y cicatrices', d: 'Movilización de tejidos, alivio de adherencias y recuperación de la amplitud de movimiento' },
+        { t: 'Rehabilitación durante el tratamiento', d: 'Acompañamiento activo a lo largo de la quimioterapia y la radioterapia para preservar la función' },
       ],
     },
     acupuntura: {

@@ -12,6 +12,7 @@
     { "source": "/servico/fisioterapia", "destination": "/servico-fisioterapia" },
     { "source": "/servico/fisioterapia-atm", "destination": "/servico-fisioterapia-atm" },
     { "source": "/servico/fisioterapia-geral", "destination": "/servico-fisioterapia-geral" },
+    { "source": "/servico/fisioterapia-oncologica", "destination": "/servico-fisioterapia-oncologica" },
     { "source": "/servico/fisioterapia-pediatrica", "destination": "/servico-fisioterapia-pediatrica" },
     { "source": "/servico/fisioterapia-vestibular", "destination": "/servico-fisioterapia-vestibular" },
     { "source": "/servico/head-spa", "destination": "/servico-head-spa" },

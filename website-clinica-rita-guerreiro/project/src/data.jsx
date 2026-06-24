@@ -8,6 +8,7 @@ const IMG = {
   'fisioterapia-atm': null,
   'fisioterapia-pediatrica': null,
   'fisioterapia-vestibular': null,
+  'fisioterapia-oncologica': null,
   psicologia: null,
   nutricao: null,
   'terapia-bowen': null,
@@ -46,6 +47,7 @@ const SERVICES = {
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€ / 50€' },
       { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-oncologica', name: 'Fisioterapia Oncológica', img: IMG['fisioterapia-oncologica'], blurb: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.', price: '50€ / Pack 5: 225€ / Pack 10: 450€' },
     ],
   },
   saude: {
@@ -110,7 +112,6 @@ const SERVICE_DETAIL = {
       { t: 'Pós-operatório', d: 'Redução de edema, ganho de mobilidade e recuperação de força após cirurgia ortopédica.' },
       { t: 'Gravidez e pós-parto', d: 'Acompanhamento das mudanças do corpo durante a gravidez e recuperação do pavimento pélvico após o parto.' },
       { t: 'Dor crónica', d: 'Abordagem integrada com terapia manual, exercício e educação em dor — para uma vida com mais autonomia.' },
-      { t: 'Fisioterapia oncológica', d: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — cirurgia, quimioterapia e radioterapia — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.' },
     ],
     tech: {
       name: 'Winback BACK3',
@@ -188,6 +189,23 @@ const SERVICE_DETAIL = {
       { t: 'Doença de Ménière', d: 'Apoio na gestão de crises vertiginosas e melhoria do equilíbrio entre episódios.' },
       { t: 'Desequilíbrio no idoso', d: 'Treino de equilíbrio e prevenção de quedas em populações com risco aumentado.' },
       { t: 'Tonturas pós-traumáticas', d: 'Recuperação após traumatismo craniano ou cervical com sintomas vestibulares.' },
+    ],
+  },
+  'fisioterapia-oncologica': {
+    tagline: 'Recuperar funcionalidade, autonomia e qualidade de vida — em todas as fases.',
+    description: 'A fisioterapia oncológica é a especialidade focada em prevenir, minimizar e tratar as sequelas físicas causadas pelo cancro e pelos seus tratamentos agressivos, como cirurgias, quimioterapia e radioterapia. O objetivo principal é preservar a funcionalidade, devolver a autonomia e garantir qualidade de vida ao doente em todas as fases da patologia.',
+    prices: [
+      { label: 'Sessão (50min)', value: '50€' },
+      { label: 'Pack 5 sessões', value: '225€' },
+      { label: 'Pack 10 sessões', value: '450€' },
+    ],
+    sub: [
+      { t: 'Linfedema pós-oncológico', d: 'Drenagem linfática manual e ligaduras para controlo do edema após esvaziamento ganglionar ou radioterapia.' },
+      { t: 'Recuperação pós-mastectomia', d: 'Ganho de mobilidade do ombro e do braço e tratamento da cicatriz após cirurgia da mama.' },
+      { t: 'Sequelas de radioterapia', d: 'Tratamento de fibroses, aderências e perda de mobilidade provocadas pela radioterapia.' },
+      { t: 'Fadiga e descondicionamento', d: 'Exercício adaptado e progressivo para combater a fadiga oncológica e recuperar a condição física.' },
+      { t: 'Mobilidade e cicatrizes', d: 'Mobilização de tecidos, alívio de aderências e recuperação da amplitude de movimento.' },
+      { t: 'Reabilitação durante o tratamento', d: 'Acompanhamento ativo ao longo da quimioterapia e radioterapia para preservar a funcionalidade.' },
     ],
   },
   acupuntura: {
