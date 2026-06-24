@@ -504,29 +504,32 @@ function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {} 
     );
   }
   const colors = {
-    teal: { bg1: RG.teal, bg2: RG.tealDark, fg: 'rgba(255,255,255,0.7)' },
-    sand: { bg1: RG.cream, bg2: RG.line, fg: RG.muted },
-    ink: { bg1: RG.graphite, bg2: RG.ink, fg: 'rgba(255,255,255,0.5)' },
-  }[tone];
+    teal: { bg1: RG.teal, bg2: RG.tealDark, glow: 'rgba(255,255,255,0.22)', fg: 'rgba(255,255,255,0.78)', mark: 'rgba(255,255,255,0.16)' },
+    sand: { bg1: RG.creamSoft, bg2: RG.line, glow: 'rgba(255,255,255,0.6)', fg: RG.muted, mark: 'rgba(31,72,70,0.10)' },
+    ink: { bg1: RG.tealInk, bg2: RG.ink, glow: 'rgba(111,181,176,0.18)', fg: 'rgba(255,255,255,0.6)', mark: 'rgba(255,255,255,0.08)' },
+  }[tone] || { bg1: RG.teal, bg2: RG.tealDark, glow: 'rgba(255,255,255,0.22)', fg: 'rgba(255,255,255,0.78)', mark: 'rgba(255,255,255,0.16)' };
+  // Placeholder elegante até à sessão fotográfica.
+  // Brilho e textura feitos 100% via CSS — sem <rect fill="url(#id)"> (IDs com espaços/acentos
+  // não resolvem em alguns motores e o rect cai para preto, tapando o gradiente).
   return (
     <div style={{
       position: 'relative', width: '100%', aspectRatio: aspect,
-      background: `linear-gradient(135deg, ${colors.bg1} 0%, ${colors.bg2} 100%)`,
+      background: `
+        radial-gradient(120% 90% at 28% 18%, ${colors.glow} 0%, rgba(255,255,255,0) 55%),
+        linear-gradient(150deg, ${colors.bg1} 0%, ${colors.bg2} 100%)`,
       borderRadius: 6, overflow: 'hidden', ...style,
     }}>
-      {/* layered organic shapes */}
-      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
-        <defs>
-          <radialGradient id={`g-${label}`} cx="30%" cy="25%"><stop offset="0%" stopColor="rgba(255,255,255,0.3)" /><stop offset="100%" stopColor="rgba(255,255,255,0)" /></radialGradient>
-        </defs>
-        <rect width="400" height="300" fill={`url(#g-${label})`} />
-        <circle cx="340" cy="240" r="80" fill="rgba(0,0,0,0.08)" />
-        <circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.05)" />
-      </svg>
+      {/* Marca d'água do monograma — discreta, dá identidade ao placeholder */}
+      <div style={{
+        position: 'absolute', right: '-6%', bottom: '-22%',
+        fontFamily: F_DISPLAY, fontWeight: 700, fontSize: '9rem', lineHeight: 1,
+        letterSpacing: '-0.04em', color: colors.mark, userSelect: 'none', pointerEvents: 'none',
+      }}>RG</div>
       <div style={{
         position: 'absolute', top: 12, left: 12, padding: '4px 9px',
         fontFamily: F_MONO, fontSize: 9, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase',
         color: colors.fg, border: `1px solid ${colors.fg}`, borderRadius: 3,
+        backdropFilter: 'blur(2px)',
       }}>{label}</div>
     </div>
   );

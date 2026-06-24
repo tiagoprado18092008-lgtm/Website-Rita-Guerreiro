@@ -558,11 +558,17 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ── Responsive nav ─────────────────────────────────────── */
+/* Ponto único de troca desktop→mobile: tudo o que é "mobile" no header
+   aparece/desaparece à mesma largura para evitar estados híbridos
+   (burger + Agendar + lang em simultâneo) entre 769px e 1180px. */
 @media (max-width: 1180px) {
   .rg-nav { display: none !important; }
   .rg-burger { display: inline-flex !important; }
   .rg-nav-tel { display: none !important; }
   .rg-mobile-lang { display: block !important; }
+  /* Agendar e lang switcher desktop passam para dentro do menu mobile */
+  .rg-agendar-btn { display: none !important; }
+  .rg-header-cta > div:first-child { display: none !important; }
 }
 @media (max-width: 900px) {
   .rg-nav-row { padding: 0 20px !important; }
