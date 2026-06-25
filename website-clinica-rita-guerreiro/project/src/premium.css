@@ -11,29 +11,63 @@
   --rg-surface-1: #FFFFFF;
   --rg-surface-2: #FAFAF8;
   --rg-surface-3: #F1F7F6;
-  --rg-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --rg-shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
-  --rg-shadow-lg: 0 20px 48px rgba(0,0,0,0.10), 0 8px 16px rgba(0,0,0,0.06);
+
+  /* Sombras — escala única em camadas, tonalizada a teal-escuro em vez de
+     preto puro (sombra fria pura "barata"; a quente assenta na paleta). */
+  --rg-shadow-xs: 0 1px 2px rgba(31,72,70,0.05);
+  --rg-shadow-sm: 0 2px 6px rgba(31,72,70,0.06), 0 1px 2px rgba(31,72,70,0.04);
+  --rg-shadow-md: 0 8px 24px rgba(31,72,70,0.08), 0 2px 8px rgba(31,72,70,0.05);
+  --rg-shadow-lg: 0 24px 56px rgba(31,72,70,0.11), 0 8px 20px rgba(31,72,70,0.06);
+
+  /* Raios — uma escala só. Cantos generosos = registo calmo, de spa. */
+  --rg-r-xs: 6px;    /* chips, badges, labels */
+  --rg-r-sm: 10px;   /* inputs, elementos pequenos */
+  --rg-r-md: 16px;   /* cards de conteúdo, imagens */
+  --rg-r-lg: 24px;   /* cards grandes, painéis */
+  --rg-r-pill: 999px;/* botões, tags */
+
+  /* Espaço — base-4, para padding/gaps coerentes entre secções. */
+  --rg-space-2: 8px;
+  --rg-space-3: 12px;
+  --rg-space-4: 16px;
+  --rg-space-6: 24px;
+  --rg-space-8: 32px;
+  --rg-space-12: 48px;
+  --rg-space-16: 64px;
+  --rg-space-24: 96px;
+
   --rg-gradient-teal: linear-gradient(135deg, #6FB5B0 0%, #2F6B68 100%);
   --rg-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --rg-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* ==========================================================================
-   2. Tipografia global
+   2. Tipografia global — ritmo e hierarquia
+
+   Pesos com intenção (não 7 pesos soltos):
+     300 → display (h1/h2)   400 → corpo
+     600 → ênfases/eyebrows  700 → números e dados
+   Títulos grandes levam mais tracking negativo que os pequenos: o olho
+   percebe folga a mais em corpos grandes, a menos em corpos pequenos.
    ========================================================================== */
 h1 {
   font-size: clamp(64px, 7vw, 96px);
-  letter-spacing: -0.03em;
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
 }
 
 h2 {
   font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 300;
   letter-spacing: -0.03em;
+  line-height: 1.07;
 }
 
 h3 {
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
 body {
@@ -42,7 +76,22 @@ body {
 }
 
 section p {
-  max-width: 52ch;
+  max-width: 60ch; /* medida de leitura confortável (era 52ch, apertado p/ corpo de 17px) */
+}
+
+/* Eyebrow — sinal de marca consistente: teal, espaçada, discreta.
+   Unifica os vários eyebrows inline que variavam de cor. */
+.rg-eyebrow, [class*="eyebrow"] {
+  color: #2F6B68;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+
+/* Algarismos tabulares nos blocos de números (stats/factos): colunas
+   alinhadas verticalmente, detalhe de tipografia editorial. Seletor por
+   classe existente — inofensivo onde não casar. */
+.rg-stat, [class*="stat"] {
+  font-feature-settings: "tnum" 1;
 }
 
 /* ==========================================================================
@@ -116,10 +165,11 @@ section {
    6. Cards de serviços (.rg-service-card)
    ========================================================================== */
 .rg-service-card {
-  border-radius: 20px !important;
+  border-radius: var(--rg-r-lg) !important;
   border: 1px solid #E8E6DF !important;
   background: #FFFFFF !important;
-  padding: 16px !important;
+  padding: var(--rg-space-4) !important;
+  box-shadow: var(--rg-shadow-xs) !important;
   transition: transform 400ms var(--rg-ease-out),
               box-shadow 400ms var(--rg-ease-out),
               border-color 400ms var(--rg-ease-out) !important;
@@ -145,7 +195,7 @@ section {
    7. Icon cards (.rg-icon-card)
    ========================================================================== */
 .rg-icon-card {
-  border-radius: 16px !important;
+  border-radius: var(--rg-r-md) !important;
   transition: transform 300ms var(--rg-ease-out),
               box-shadow 300ms var(--rg-ease-out) !important;
   will-change: transform;
@@ -160,9 +210,9 @@ section {
    8. Testimonial cards (.rg-testimonial-card)
    ========================================================================== */
 .rg-testimonial-card {
-  border-radius: 20px !important;
+  border-radius: var(--rg-r-lg) !important;
   box-shadow: var(--rg-shadow-md) !important;
-  padding: 40px !important;
+  padding: var(--rg-space-8) !important;
   position: relative;
   transition: transform 300ms var(--rg-ease-out),
               box-shadow 300ms var(--rg-ease-out);

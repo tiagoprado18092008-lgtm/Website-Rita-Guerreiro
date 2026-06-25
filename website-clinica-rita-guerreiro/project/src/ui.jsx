@@ -498,7 +498,7 @@ function Nav({ current = 'home' }) {
 function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {} }) {
   if (src) {
     return (
-      <div style={{ position: 'relative', width: '100%', aspectRatio: aspect, background: RG.cream, borderRadius: 6, overflow: 'hidden', ...style }}>
+      <div style={{ position: 'relative', width: '100%', aspectRatio: aspect, background: RG.cream, borderRadius: 8, overflow: 'hidden', ...style }}>
         <img src={src} alt={label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
     );
@@ -517,7 +517,7 @@ function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {} 
       background: `
         radial-gradient(120% 90% at 28% 18%, ${colors.glow} 0%, rgba(255,255,255,0) 55%),
         linear-gradient(150deg, ${colors.bg1} 0%, ${colors.bg2} 100%)`,
-      borderRadius: 6, overflow: 'hidden', ...style,
+      borderRadius: 8, overflow: 'hidden', ...style,
     }}>
       {/* Marca d'água do monograma — discreta, dá identidade ao placeholder */}
       <div style={{
