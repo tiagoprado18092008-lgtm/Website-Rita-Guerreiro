@@ -223,8 +223,10 @@ function ServicePage({ slug }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
             {/* Imagem */}
             <Reveal>
-              <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/5', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-                <img src={detail.tech.img} alt={detail.tech.name} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+              <div style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
+                {/* height auto: a foto define o seu próprio rácio e preenche o card
+                    de lado a lado — sem faixas brancas (letterbox) nem corte. */}
+                <img src={detail.tech.img} alt={detail.tech.name} style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </Reveal>
 
