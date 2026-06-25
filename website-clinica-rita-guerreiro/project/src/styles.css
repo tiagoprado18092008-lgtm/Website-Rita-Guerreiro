@@ -380,6 +380,30 @@ h3 { font-size: clamp(22px, 2.5vw, 28px); }
   margin-bottom: 20px;
 }
 
+/* ── Contactos: WhatsApp quick-reply chips ──────────────── */
+.rg-wa-chip {
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+.rg-wa-chip:hover {
+  background: rgba(255,255,255,0.16) !important;
+  border-color: rgba(255,255,255,0.6) !important;
+}
+.rg-wa-chip:active { transform: scale(0.97); }
+.rg-wa-chip:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.85);
+  outline-offset: 2px;
+}
+.rg-wa-textarea::placeholder { color: rgba(255,255,255,0.45); }
+.rg-wa-textarea:focus {
+  border-color: rgba(255,255,255,0.45) !important;
+  background: rgba(255,255,255,0.12) !important;
+}
+
+/* ── Contactos: "open in maps" link ─────────────────────── */
+.rg-maps-link .rg-service-arrow,
+.rg-maps-link svg { transition: transform 260ms cubic-bezier(.2,.8,.2,1); }
+.rg-maps-link:hover svg { transform: translateX(4px); }
+
 /* ── Hero quick-service cards ───────────────────────────── */
 .rg-hero-scard {
   transition: transform 340ms cubic-bezier(.2,.8,.2,1),
