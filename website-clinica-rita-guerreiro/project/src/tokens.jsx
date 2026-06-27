@@ -198,8 +198,8 @@ const TRANSLATIONS = {
       morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
       horario_val: 'Seg–Sex 9h–19h\nSábados sob marcação',
       maps_link: 'Abrir no Google Maps',
-      foto_eyebrow: 'O espaço',
-      foto_titulo: 'A nossa receção',
+      foto_eyebrow: 'Venha conhecer-nos',
+      foto_titulo: 'A nossa porta está aberta',
       foto_sub: 'É aqui que o esperamos — Rua Padre António Vieira 58, Loulé.',
       canais: {
         wa_body: 'A forma mais rápida. A maioria das marcações resolve-se no próprio dia, durante o horário da clínica.',
@@ -476,8 +476,8 @@ const TRANSLATIONS = {
       morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
       horario_val: 'Mon–Fri 9am–7pm\nSaturdays by appointment',
       maps_link: 'Open in Google Maps',
-      foto_eyebrow: 'The space',
-      foto_titulo: 'Our reception',
+      foto_eyebrow: 'Come and see us',
+      foto_titulo: 'Our door is open',
       foto_sub: 'This is where we welcome you — Rua Padre António Vieira 58, Loulé.',
       canais: {
         wa_body: 'The fastest way. Most bookings are sorted the same day, during clinic hours.',
@@ -771,8 +771,8 @@ const TRANSLATIONS = {
       morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
       horario_val: 'Lun–Ven 9h–19h\nSamedis sur rendez-vous',
       maps_link: 'Ouvrir dans Google Maps',
-      foto_eyebrow: 'L’espace',
-      foto_titulo: 'Notre réception',
+      foto_eyebrow: 'Venez nous voir',
+      foto_titulo: 'Notre porte est ouverte',
       foto_sub: 'C’est ici que nous vous accueillons — Rua Padre António Vieira 58, Loulé.',
       canais: {
         wa_body: "Le moyen le plus rapide. La plupart des rendez-vous sont confirmés le jour même, pendant les heures d'ouverture.",
@@ -1066,8 +1066,8 @@ const TRANSLATIONS = {
       morada_val: 'Rua Padre António Vieira 58\n8100-611 Loulé',
       horario_val: 'Lun–Vie 9h–19h\nSábados con cita previa',
       maps_link: 'Abrir en Google Maps',
-      foto_eyebrow: 'El espacio',
-      foto_titulo: 'Nuestra recepción',
+      foto_eyebrow: 'Venga a conocernos',
+      foto_titulo: 'Nuestra puerta está abierta',
       foto_sub: 'Aquí es donde le esperamos — Rua Padre António Vieira 58, Loulé.',
       canais: {
         wa_body: 'La forma más rápida. La mayoría de las reservas se resuelven el mismo día, durante el horario de la clínica.',

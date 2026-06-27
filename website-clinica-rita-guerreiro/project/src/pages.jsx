@@ -509,11 +509,11 @@ function ContactosPage() {
         <Reveal>
           <figure style={{ margin: 0, position: 'relative', borderRadius: 22, overflow: 'hidden', aspectRatio: '16 / 9', boxShadow: '0 30px 60px -32px rgba(16,52,50,0.45)' }}>
             <img
-              src="assets/clinica/recepcao.jpg"
+              src="assets/clinica/fachada.png"
               alt={t('contactos.foto_titulo')}
               loading="lazy"
               decoding="async"
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 45%' }}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 32%' }}
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(11,43,41,0.80) 0%, rgba(11,43,41,0.20) 40%, rgba(11,43,41,0) 64%)' }} />
             <figcaption style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 'clamp(24px, 4vw, 46px)' }}>
