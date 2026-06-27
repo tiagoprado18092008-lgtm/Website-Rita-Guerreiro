@@ -503,6 +503,32 @@ function ContactosPage() {
       </Container>
     </section>
 
+    {/* ── Foto da receção da clínica ── */}
+    <Section bg={RG.white} pad="sm">
+      <Container>
+        <Reveal>
+          <figure style={{ margin: 0, position: 'relative', borderRadius: 22, overflow: 'hidden', aspectRatio: '16 / 9', boxShadow: '0 30px 60px -32px rgba(16,52,50,0.45)' }}>
+            <img
+              src="assets/clinica/recepcao.jpg"
+              alt={t('contactos.foto_titulo')}
+              loading="lazy"
+              decoding="async"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 45%' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(11,43,41,0.80) 0%, rgba(11,43,41,0.20) 40%, rgba(11,43,41,0) 64%)' }} />
+            <figcaption style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 'clamp(24px, 4vw, 46px)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                <div style={{ width: 28, height: 2, background: 'rgba(255,255,255,0.72)' }} />
+                <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.82)' }}>{t('contactos.foto_eyebrow')}</span>
+              </div>
+              <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 4vw, 44px)', fontWeight: 700, letterSpacing: '-0.03em', color: RG.white, lineHeight: 1 }}>{t('contactos.foto_titulo')}</div>
+              <p style={{ fontFamily: F_BODY, fontSize: 'clamp(14px, 1.4vw, 16px)', color: 'rgba(255,255,255,0.86)', marginTop: 10, maxWidth: '42ch', lineHeight: 1.55 }}>{t('contactos.foto_sub')}</p>
+            </figcaption>
+          </figure>
+        </Reveal>
+      </Container>
+    </Section>
+
     {/* ── Canais de contacto ── */}
     <Section bg={RG.tealWash} pad="lg">
       <Container>
