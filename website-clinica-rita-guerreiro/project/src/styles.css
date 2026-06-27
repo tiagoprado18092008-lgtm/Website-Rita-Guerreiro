@@ -385,18 +385,18 @@ h3 { font-size: clamp(22px, 2.5vw, 28px); }
   transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
 }
 .rg-wa-chip:hover {
-  background: rgba(255,255,255,0.16) !important;
-  border-color: rgba(255,255,255,0.6) !important;
+  background: #F1F7F6 !important;
+  border-color: #2F6B68 !important;
 }
 .rg-wa-chip:active { transform: scale(0.97); }
 .rg-wa-chip:focus-visible {
-  outline: 2px solid rgba(255,255,255,0.85);
+  outline: 2px solid #2F6B68;
   outline-offset: 2px;
 }
-.rg-wa-textarea::placeholder { color: rgba(255,255,255,0.45); }
+.rg-wa-textarea::placeholder { color: #8A8A82; }
 .rg-wa-textarea:focus {
-  border-color: rgba(255,255,255,0.45) !important;
-  background: rgba(255,255,255,0.12) !important;
+  border-color: #2F6B68 !important;
+  background: #FFFFFF !important;
 }
 
 /* ── Contactos: "open in maps" link ─────────────────────── */

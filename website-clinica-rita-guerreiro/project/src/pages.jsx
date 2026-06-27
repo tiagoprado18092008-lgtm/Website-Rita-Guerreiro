@@ -546,23 +546,25 @@ function ContactosPage() {
               const quick = t('contactos.canais.wa_quick') || [];
 
               return (
-                <div style={{ display: 'flex', flexDirection: 'column', background: RG.tealDark, borderRadius: 16, color: RG.white, position: 'relative', overflow: 'hidden', minHeight: 240, padding: '32px 32px 28px' }}>
-                  <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: 'rgba(255,255,255,0.04)' }} />
-                  <div style={{ position: 'absolute', top: -20, right: 20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
+                <div style={{ display: 'flex', flexDirection: 'column', background: RG.white, borderRadius: 16, color: RG.ink, border: `1px solid ${RG.line}`, boxShadow: '0 20px 44px -26px rgba(16,52,50,0.28)', position: 'relative', overflow: 'hidden', minHeight: 240, padding: '32px 32px 28px' }}>
+                  <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: RG.tealWash }} />
+                  <div style={{ position: 'absolute', top: -20, right: 20, width: 100, height: 100, borderRadius: '50%', background: RG.tealWash }} />
 
                   {/* Top info */}
                   <div style={{ position: 'relative' }}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 16, flexShrink: 0 }}>
-                      <path d="M17.47 14.38c-.26-.13-1.55-.77-1.79-.85-.24-.09-.41-.13-.59.13-.17.26-.68.85-.83 1.03-.15.17-.31.19-.57.06-.26-.13-1.09-.4-2.08-1.28-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.47.13-.16.17-.27.26-.44.09-.17.04-.33-.02-.46-.06-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.5-.01-.17 0-.46.06-.7.33-.24.26-.91.89-.91 2.17s.93 2.51 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.55-.63 1.76-1.24.22-.61.22-1.14.16-1.24-.07-.11-.24-.17-.5-.3zM12.03 2C6.52 2 2 6.52 2 12.03c0 1.86.5 3.6 1.37 5.1L2 22l5.01-1.31A9.97 9.97 0 0 0 12.03 22C17.54 22 22 17.48 22 11.97 22 6.52 17.54 2 12.03 2z" fill="white" fillOpacity="0.9"/>
-                    </svg>
-                    <div style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 8 }}>WhatsApp</div>
-                    <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.6, color: 'rgba(255,255,255,0.72)' }}>{t('contactos.canais.wa_body')}</div>
+                    <div style={{ width: 48, height: 48, borderRadius: 12, background: '#E8F5F4', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                        <path d="M17.47 14.38c-.26-.13-1.55-.77-1.79-.85-.24-.09-.41-.13-.59.13-.17.26-.68.85-.83 1.03-.15.17-.31.19-.57.06-.26-.13-1.09-.4-2.08-1.28-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.47.13-.16.17-.27.26-.44.09-.17.04-.33-.02-.46-.06-.13-.59-1.42-.81-1.95-.21-.51-.43-.44-.59-.45-.15-.01-.33-.01-.5-.01-.17 0-.46.06-.7.33-.24.26-.91.89-.91 2.17s.93 2.51 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.55-.63 1.76-1.24.22-.61.22-1.14.16-1.24-.07-.11-.24-.17-.5-.3zM12.03 2C6.52 2 2 6.52 2 12.03c0 1.86.5 3.6 1.37 5.1L2 22l5.01-1.31A9.97 9.97 0 0 0 12.03 22C17.54 22 22 17.48 22 11.97 22 6.52 17.54 2 12.03 2z" fill={RG.tealDark}/>
+                      </svg>
+                    </div>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 8, color: RG.ink }}>WhatsApp</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.6, color: RG.charcoal }}>{t('contactos.canais.wa_body')}</div>
                   </div>
 
                   {/* Quick-reply chips */}
                   {quick.length > 0 && (
                     <div style={{ position: 'relative', marginTop: 22 }}>
-                      <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 10 }}>{t('contactos.canais.wa_quick_label')}</div>
+                      <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.muted, marginBottom: 10 }}>{t('contactos.canais.wa_quick_label')}</div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                         {quick.map((q, i) => (
                           <button
@@ -574,9 +576,10 @@ function ContactosPage() {
                             style={{
                               fontFamily: F_BODY, fontSize: 13, cursor: 'pointer',
                               borderRadius: 100, padding: '7px 14px',
-                              border: `1px solid ${msg === q ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.28)'}`,
-                              background: msg === q ? 'rgba(255,255,255,0.16)' : 'transparent',
-                              color: RG.white,
+                              border: `1px solid ${msg === q ? RG.tealDark : RG.line}`,
+                              background: msg === q ? RG.tealWash : RG.white,
+                              color: msg === q ? RG.tealDark : RG.charcoal,
+                              fontWeight: msg === q ? 600 : 400,
                             }}
                           >{q}</button>
                         ))}
@@ -594,16 +597,16 @@ function ContactosPage() {
                       className="rg-wa-textarea"
                       style={{
                         width: '100%', boxSizing: 'border-box', resize: 'none',
-                        border: '1px solid rgba(255,255,255,0.18)', borderRadius: 10, padding: '12px 14px',
-                        fontFamily: F_BODY, fontSize: 14, color: RG.white, lineHeight: 1.55,
-                        outline: 'none', background: 'rgba(255,255,255,0.08)',
+                        border: `1px solid ${RG.line}`, borderRadius: 10, padding: '12px 14px',
+                        fontFamily: F_BODY, fontSize: 14, color: RG.ink, lineHeight: 1.55,
+                        outline: 'none', background: RG.creamSoft,
                       }}
                     />
                     <a href={waApp} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 12, background: '#25D366', color: '#0A3D33', borderRadius: 10, padding: '13px 0', textAlign: 'center', fontFamily: F_BODY, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A3D33" style={{ flexShrink: 0 }}><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" /></svg>
                       {t('contactos.canais.wa_abrir')}
                     </a>
-                    <a href={waWeb} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 12, fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.62)', textDecoration: 'underline', textUnderlineOffset: 3 }}>{t('contactos.canais.wa_web')}</a>
+                    <a href={waWeb} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 12, fontFamily: F_BODY, fontSize: 13, color: RG.muted, textDecoration: 'underline', textUnderlineOffset: 3 }}>{t('contactos.canais.wa_web')}</a>
                   </div>
                 </div>
               );
