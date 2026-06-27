@@ -95,16 +95,9 @@ function Story() {
   );
 }
 
-const TEAM_ICONS = [
-  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="10" r="4" stroke="#2F6B68" strokeWidth="2"/><path d="M14 18 Q14 30 20 32 Q26 30 26 18" stroke="#2F6B68" strokeWidth="2" strokeLinecap="round"/><path d="M12 22 L8 28 M28 22 L32 28" stroke="#2F6B68" strokeWidth="2" strokeLinecap="round"/></svg>,
-  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M20 6 C12 6 8 12 8 18 C8 26 14 34 20 34 C26 34 32 26 32 18 C32 12 28 6 20 6Z" stroke="#2F6B68" strokeWidth="2"/><path d="M14 20 L26 20 M20 14 L20 26" stroke="#2F6B68" strokeWidth="2" strokeLinecap="round"/></svg>,
-  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M20 8 C14 8 10 12 10 18 C10 24 14 30 20 32 C26 30 30 24 30 18 C30 12 26 8 20 8Z" stroke="#2F6B68" strokeWidth="2"/><path d="M20 14 L20 26 M15 20 L25 20" stroke="#2F6B68" strokeWidth="1.5" strokeLinecap="round"/></svg>,
-  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><path d="M20 10 C13 10 8 14 8 20 C8 26 13 30 20 30 C22 30 24 29.5 26 28 L32 31 L30 25 C31.2 23.5 32 21.8 32 20 C32 14 27 10 20 10Z" stroke="#2F6B68" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 20 L18 20 M22 20 L26 20" stroke="#2F6B68" strokeWidth="1.8" strokeLinecap="round"/></svg>,
-];
-
 function Team() {
   const { t } = useLang();
-  const specialties = t('sobre.team_specialties');
+  const members = t('sobre.team_members');
   return (
     <Section bg={RG.white} pad="lg">
       <Container>
@@ -115,13 +108,16 @@ function Team() {
             {t('sobre.team_body')}
           </p>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginTop: 48 }} className="rg-values-grid">
-          {specialties.map((m, i) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 48 }} className="rg-team-grid">
+          {members.map((m, i) => (
             <Reveal key={i} delay={i * 60}>
-              <div style={{ background: RG.creamSoft, borderRadius: 16, padding: '32px 28px', border: `1px solid ${RG.line}` }}>
-                <div style={{ width: 48, height: 48, borderRadius: 12, background: '#E8F5F4', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>{TEAM_ICONS[i]}</div>
-                <div style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 10 }}>{m.role}</div>
-                <div style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, lineHeight: 1.65 }}>{m.bio}</div>
+              <div style={{ background: RG.white, borderRadius: 16, padding: 16, border: `1px solid ${RG.line}`, height: '100%' }}>
+                <Photo aspect="4/5" tone="sand" label={m.name} src={m.src} style={{ borderRadius: 12, marginBottom: 18 }} />
+                <div style={{ padding: '0 6px 8px' }}>
+                  <div style={{ fontFamily: F_DISPLAY, fontSize: 19, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>
+                  <div style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 12 }}>{m.role}</div>
+                  <div style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, lineHeight: 1.6 }}>{m.bio}</div>
+                </div>
               </div>
             </Reveal>
           ))}

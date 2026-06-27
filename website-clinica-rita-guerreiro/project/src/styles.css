@@ -782,9 +782,11 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
 @media (max-width: 880px) {
   .rg-hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
   .rg-values-grid { grid-template-columns: 1fr !important; }
+  .rg-team-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .rg-espaco-grid { column-count: 2 !important; }
 }
 @media (max-width: 560px) {
+  .rg-team-grid { grid-template-columns: 1fr !important; }
   .rg-espaco-grid { column-count: 1 !important; }
 }
 
