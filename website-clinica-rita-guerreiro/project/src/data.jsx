@@ -42,12 +42,12 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 10: 450€' },
-      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€' },
+      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
-      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 10: 450€' },
-      { slug: 'fisioterapia-oncologica', name: 'Fisioterapia Oncológica', img: IMG['fisioterapia-oncologica'], blurb: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.', price: '50€ / Pack 10: 450€' },
+      { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 5: 225€' },
+      { slug: 'fisioterapia-oncologica', name: 'Fisioterapia Oncológica', img: IMG['fisioterapia-oncologica'], blurb: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.', price: '50€ / Pack 5: 225€' },
     ],
   },
   saude: {
@@ -89,7 +89,7 @@ const SERVICES = {
     intro: 'Cuidados estéticos e tratamentos corporais com tecnologia avançada — sempre com avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
-      { slug: 'pacotes-tratamento', name: 'Pacotes de Tratamento', img: IMG['pacotes-tratamento'], blurb: 'Cavitação, radiofrequência, lipolaser, eletroestimulação e pressoterapia — tecnologia ao serviço do seu corpo.', price: '25€ – 450€' },
+      { slug: 'pacotes-tratamento', name: 'Pacotes de Tratamento', img: IMG['pacotes-tratamento'], blurb: 'Cavitação, radiofrequência, lipolaser, eletroestimulação e pressoterapia — tecnologia ao serviço do seu corpo.', price: '25€ – 225€' },
       { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
     ],
@@ -102,7 +102,7 @@ const SERVICE_DETAIL = {
     description: 'A fisioterapia é uma ciência da saúde focada no estudo, prevenção, diagnóstico e tratamento de distúrbios relacionados com o movimento, a biomecânica e a capacidade funcional humana. O objetivo é restaurar, desenvolver e manter a máxima autonomia, mobilidade e qualidade de vida dos pacientes.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 10 sessões', value: '450€' },
+      { label: 'Pack 5 sessões', value: '225€' },
     ],
     sub: [
       { t: 'Dor lombar e cervical', d: 'Avaliação postural, terapia manual e exercício progressivo para dor da coluna — aguda ou crónica.' },
@@ -131,7 +131,7 @@ const SERVICE_DETAIL = {
     description: 'A Fisioterapia Pediátrica acompanha bebés, crianças e adolescentes em diferentes fases do desenvolvimento. Avaliamos e tratamos atrasos no desenvolvimento motor, alterações posturais, lesões músculo-esqueléticas e condições neurológicas — sempre num ambiente seguro, adaptado e adequado à idade. Cada sessão é desenhada para o ritmo da criança, com envolvimento da família sempre que faz sentido.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 10 sessões', value: '450€' },
+      { label: 'Pack 5 sessões', value: '225€' },
     ],
     sub: [
       { t: 'Desenvolvimento motor', d: 'Avaliação e estimulação do desenvolvimento motor em bebés e crianças com atraso ou alterações.' },
@@ -177,7 +177,7 @@ const SERVICE_DETAIL = {
     description: 'A Fisioterapia Vestibular é uma área especializada da fisioterapia que trata tonturas, vertigens e desequilíbrios. Através de avaliação rigorosa, manobras de reposicionamento (eficazes em VPPB) e exercícios específicos de habituação e estabilização do olhar, ajudamos o sistema vestibular a recuperar ou compensar. Os resultados são frequentemente rápidos — em muitos casos, com alívio significativo logo na primeira sessão.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 10 sessões', value: '450€' },
+      { label: 'Pack 5 sessões', value: '225€' },
     ],
     sub: [
       { t: 'Vertigem Posicional (VPPB)', d: 'Manobras de reposicionamento de otólitos — resolução frequente em 1 a 3 sessões.' },
@@ -193,7 +193,7 @@ const SERVICE_DETAIL = {
     description: 'A fisioterapia oncológica é a especialidade focada em prevenir, minimizar e tratar as sequelas físicas causadas pelo cancro e pelos seus tratamentos agressivos, como cirurgias, quimioterapia e radioterapia. O objetivo principal é preservar a funcionalidade, devolver a autonomia e garantir qualidade de vida ao doente em todas as fases da patologia.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 10 sessões', value: '450€' },
+      { label: 'Pack 5 sessões', value: '225€' },
     ],
     sub: [
       { t: 'Linfedema pós-oncológico', d: 'Drenagem linfática manual e ligaduras para controlo do edema após esvaziamento ganglionar ou radioterapia.' },
@@ -379,7 +379,7 @@ const SERVICE_DETAIL = {
     tagline: 'Drenagem linfática e massagem terapêutica — leveza, circulação e alívio da tensão que não passa.',
     description: 'A drenagem linfática manual (DLM) é uma técnica de massagem terapêutica especializada que utiliza movimentos rítmicos, suaves e lentos. O seu principal objetivo é estimular o sistema linfático, acelerando a eliminação de líquidos, toxinas e resíduos metabólicos através da urina. A massagem terapêutica é uma técnica manual focada no tratamento de disfunções musculares, articulares e dores localizadas. Utiliza movimentos específicos e com mais pressão para aliviar tensões, melhorar a mobilidade e promover a recuperação física. Diferencia-se da massagem de relaxamento por ter um objetivo clínico e curativo, e não apenas de bem-estar geral.',
     prices: [
-      { label: 'Drenagem Manual (50min)', value: '50€ / 45€ (Pack 10)' },
+      { label: 'Drenagem Manual (50min)', value: '50€ / 45€ (Pack 5)' },
       { label: 'Massagem Terapêutica 50min', value: '60€' },
       { label: 'Massagem Terapêutica 90min', value: '80€' },
     ],
@@ -474,7 +474,7 @@ const SERVICE_DETAIL = {
     description: 'A cavitação e a radiofrequência são tratamentos estéticos não invasivos complementares. A cavitação usa ultrassons para eliminar a gordura localizada destruindo as células adiposas. A radiofrequência usa ondas eletromagnéticas para aquecer a pele, estimulando o colágeno, reduzindo a flacidez e melhorando o aspeto da celulite. A pressoterapia é um tratamento de drenagem linfática mecânica que utiliza pressão de ar controlada para estimular a circulação sanguínea e o sistema linfático. É realizada através de acessórios com câmaras de ar (como botas ou mangas) que insuflam e desinsuflam sequencialmente, ajudando a eliminar líquidos e toxinas.',
     prices: [
       { label: 'Cav./Radiofrequência/Lipolaser/Eletroestim. (50min)', value: '50€' },
-      { label: 'Pacote 10 sessões', value: '450€' },
+      { label: 'Pacote 5 sessões', value: '225€' },
       { label: 'Pressoterapia 30-50min', value: '25€ / 35€' },
     ],
     sub: [
@@ -483,7 +483,7 @@ const SERVICE_DETAIL = {
       { t: 'Lipolaser', d: 'Laser de baixa intensidade para mobilização de gordura localizada e modelação corporal.' },
       { t: 'Electroestimulação', d: 'Contração muscular passiva para tonificação e recuperação de zonas específicas.' },
       { t: 'Pressoterapia', d: 'Drenagem linfática mecânica por pressão sequencial — inchaço, circulação e recuperação.' },
-      { t: 'Pacote 10 sessões', d: 'Aproveite o pacote de 10 sessões — ideal para resultados progressivos e duradouros.' },
+      { t: 'Pacote 5 sessões', d: 'Aproveite o pacote de 5 sessões — ideal para resultados progressivos e duradouros.' },
     ],
   },
   'depilacao-laser': {

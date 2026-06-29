@@ -186,7 +186,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'Physiotherapy is a health science focused on the study, prevention, diagnosis and treatment of disorders related to movement, biomechanics and human functional capacity. The goal is to restore, develop and maintain patients’ maximum autonomy, mobility and quality of life.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '10-session pack', value: '450€' },
+        { label: '5-session pack', value: '225€' },
       ],
       sub: [
         { t: 'Lower back and neck pain', d: 'Postural assessment, manual therapy and progressive exercise for chronic or acute spinal pain' },
@@ -203,7 +203,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'Paediatric Physiotherapy supports babies, children and adolescents at different stages of development. We assess and treat delays in motor development, postural changes, musculoskeletal injuries and neurological conditions — always in a safe environment, adapted to the age of each child. Every session is designed around the pace of the child, with family involvement whenever it makes sense.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '10-session pack', value: '450€' },
+        { label: '5-session pack', value: '225€' },
       ],
       sub: [
         { t: 'Motor development', d: 'Assessment and stimulation of motor development in babies and children with delay or alterations' },
@@ -247,7 +247,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'Vestibular Physiotherapy is a specialised area of physiotherapy that treats dizziness, vertigo and imbalance. Through rigorous assessment, repositioning manoeuvres (effective in BPPV) and specific habituation and gaze stabilisation exercises, we help the vestibular system recover or compensate. Results are often quick — in many cases, with significant relief from the very first session.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '10-session pack', value: '450€' },
+        { label: '5-session pack', value: '225€' },
       ],
       sub: [
         { t: 'Positional vertigo (BPPV)', d: 'Otolith repositioning manoeuvres — frequent resolution in 1 to 3 sessions' },
@@ -263,7 +263,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'Oncology physiotherapy is the speciality focused on preventing, minimising and treating the physical after-effects caused by cancer and its aggressive treatments, such as surgery, chemotherapy and radiotherapy. Its main goal is to preserve function, restore autonomy and ensure quality of life for the patient at every stage of the disease.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '10-session pack', value: '450€' },
+        { label: '5-session pack', value: '225€' },
       ],
       sub: [
         { t: 'Post-oncology lymphoedema', d: 'Manual lymphatic drainage and bandaging to control oedema after lymph node clearance or radiotherapy' },
@@ -437,7 +437,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Lymphatic drainage and therapeutic massage — lightness, circulation and relief from tension that won’t go away',
       description: 'Manual lymphatic drainage (MLD) is a specialised therapeutic massage technique that uses rhythmic, gentle and slow movements. Its main goal is to stimulate the lymphatic system, speeding up the elimination of fluids, toxins and metabolic waste through urine. Therapeutic massage is a manual technique focused on treating muscular and joint dysfunction and localised pain. It uses specific movements with greater pressure to relieve tension, improve mobility and promote physical recovery. It differs from relaxation massage in having a clinical, curative goal rather than just general wellbeing.',
       prices: [
-        { label: 'Manual Drainage (50min)', value: '50€ / 45€ (Pack 10)' },
+        { label: 'Manual Drainage (50min)', value: '50€ / 45€ (Pack 5)' },
         { label: 'Therapeutic Massage 50min', value: '60€' },
         { label: 'Therapeutic Massage 90min', value: '80€' },
       ],
@@ -524,7 +524,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'Cavitation and radiofrequency are complementary non-invasive aesthetic treatments. Cavitation uses ultrasound to eliminate localised fat by destroying the fat cells. Radiofrequency uses electromagnetic waves to heat the skin, stimulating collagen, reducing sagging and improving the appearance of cellulite. Pressotherapy is a mechanical lymphatic drainage treatment that uses controlled air pressure to stimulate blood circulation and the lymphatic system. It is performed with accessories containing air chambers (such as boots or sleeves) that inflate and deflate sequentially, helping to eliminate fluids and toxins.',
       prices: [
         { label: 'Cav./Radiofreq./Lipolaser/Electrostim. (50min)', value: '50€' },
-        { label: '10-session package', value: '450€' },
+        { label: '5-session package', value: '225€' },
         { label: 'Pressotherapy 30-50min', value: '25€ / 35€' },
       ],
       sub: [
@@ -533,7 +533,7 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Lipolaser', d: 'Low-level laser for mobilisation of localised fat and body shaping' },
         { t: 'Electrostimulation', d: 'Passive muscle contraction for toning and recovery of specific areas' },
         { t: 'Pressotherapy', d: 'Mechanical lymphatic drainage via sequential pressure — swelling, circulation and recovery' },
-        { t: '10-session package', d: 'Save with the 10-session package — ideal for progressive and lasting results' },
+        { t: '5-session package', d: 'Save with the 5-session package — ideal for progressive and lasting results' },
       ],
     },
     'depilacao-laser': {
@@ -580,7 +580,7 @@ const SERVICE_DETAIL_I18N = {
       description: "La physiothérapie est une science de la santé centrée sur l'étude, la prévention, le diagnostic et le traitement des troubles liés au mouvement, à la biomécanique et à la capacité fonctionnelle humaine. L'objectif est de restaurer, développer et maintenir le maximum d'autonomie, de mobilité et de qualité de vie des patients.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 10 séances', value: '450€' },
+        { label: 'Pack 5 séances', value: '225€' },
       ],
       sub: [
         { t: 'Douleur lombaire et cervicale', d: 'Évaluation posturale, thérapie manuelle et exercice progressif pour la douleur chronique ou aiguë du dos' },
@@ -597,7 +597,7 @@ const SERVICE_DETAIL_I18N = {
       description: "La Physiothérapie Pédiatrique accompagne bébés, enfants et adolescents à différentes étapes du développement. Nous évaluons et traitons les retards de développement moteur, les altérations posturales, les blessures musculo-squelettiques et les conditions neurologiques — toujours dans un environnement sûr, adapté à l'âge de chaque enfant. Chaque séance est conçue pour le rythme de l'enfant, avec l'implication de la famille lorsque cela a du sens.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 10 séances', value: '450€' },
+        { label: 'Pack 5 séances', value: '225€' },
       ],
       sub: [
         { t: 'Développement moteur', d: 'Évaluation et stimulation du développement moteur chez les bébés et enfants avec retard ou altérations' },
@@ -641,7 +641,7 @@ const SERVICE_DETAIL_I18N = {
       description: "La Physiothérapie Vestibulaire est un domaine spécialisé de la physiothérapie qui traite les vertiges, étourdissements et déséquilibres. Par une évaluation rigoureuse, des manœuvres de repositionnement (efficaces dans le VPPB) et des exercices spécifiques d'habituation et de stabilisation du regard, nous aidons le système vestibulaire à récupérer ou compenser. Les résultats sont souvent rapides — dans de nombreux cas, avec un soulagement significatif dès la première séance.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 10 séances', value: '450€' },
+        { label: 'Pack 5 séances', value: '225€' },
       ],
       sub: [
         { t: 'Vertige positionnel (VPPB)', d: 'Manœuvres de repositionnement des otolithes — résolution fréquente en 1 à 3 séances' },
@@ -657,7 +657,7 @@ const SERVICE_DETAIL_I18N = {
       description: "La physiothérapie oncologique est la spécialité axée sur la prévention, la réduction et le traitement des séquelles physiques causées par le cancer et ses traitements agressifs, tels que la chirurgie, la chimiothérapie et la radiothérapie. Son objectif principal est de préserver la fonction, de redonner l'autonomie et de garantir la qualité de vie du patient à chaque étape de la maladie.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 10 séances', value: '450€' },
+        { label: 'Pack 5 séances', value: '225€' },
       ],
       sub: [
         { t: 'Lymphœdème post-oncologique', d: 'Drainage lymphatique manuel et bandages pour contrôler l’œdème après curage ganglionnaire ou radiothérapie' },
@@ -831,7 +831,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Drainage lymphatique et massage thérapeutique — légèreté, circulation et soulagement de la tension qui ne s’en va pas',
       description: "Le drainage lymphatique manuel (DLM) est une technique de massage thérapeutique spécialisée qui utilise des mouvements rythmiques, doux et lents. Son principal objectif est de stimuler le système lymphatique, en accélérant l'élimination des liquides, des toxines et des déchets métaboliques par l'urine. Le massage thérapeutique est une technique manuelle axée sur le traitement des dysfonctions musculaires et articulaires et des douleurs localisées. Il utilise des mouvements spécifiques et plus de pression pour soulager les tensions, améliorer la mobilité et favoriser la récupération physique. Il se distingue du massage relaxant par son objectif clinique et curatif, et non seulement de bien-être général.",
       prices: [
-        { label: 'Drainage Manuel (50min)', value: '50€ / 45€ (Pack 10)' },
+        { label: 'Drainage Manuel (50min)', value: '50€ / 45€ (Pack 5)' },
         { label: 'Massage Thérapeutique 50min', value: '60€' },
         { label: 'Massage Thérapeutique 90min', value: '80€' },
       ],
@@ -918,7 +918,7 @@ const SERVICE_DETAIL_I18N = {
       description: "La cavitation et la radiofréquence sont des traitements esthétiques non invasifs complémentaires. La cavitation utilise des ultrasons pour éliminer la graisse localisée en détruisant les cellules adipeuses. La radiofréquence utilise des ondes électromagnétiques pour chauffer la peau, en stimulant le collagène, en réduisant le relâchement et en améliorant l'aspect de la cellulite. La pressothérapie est un traitement de drainage lymphatique mécanique qui utilise une pression d'air contrôlée pour stimuler la circulation sanguine et le système lymphatique. Elle est réalisée à l'aide d'accessoires à chambres d'air (comme des bottes ou des manches) qui se gonflent et se dégonflent séquentiellement, aidant à éliminer les liquides et les toxines.",
       prices: [
         { label: 'Cav./Radiofréq./Lipolaser/Électrostim. (50min)', value: '50€' },
-        { label: 'Forfait 10 séances', value: '450€' },
+        { label: 'Forfait 5 séances', value: '225€' },
         { label: 'Pressothérapie 30-50min', value: '25€ / 35€' },
       ],
       sub: [
@@ -927,7 +927,7 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Lipolaser', d: 'Laser de faible intensité pour la mobilisation de la graisse localisée et le modélage du corps' },
         { t: 'Électrostimulation', d: 'Contraction musculaire passive pour la tonification et la récupération de zones spécifiques' },
         { t: 'Pressothérapie', d: 'Drainage lymphatique mécanique par pression séquentielle — gonflement, circulation et récupération' },
-        { t: 'Forfait 10 séances', d: 'Économisez avec le forfait de 10 séances — idéal pour des résultats progressifs et durables' },
+        { t: 'Forfait 5 séances', d: 'Économisez avec le forfait de 5 séances — idéal pour des résultats progressifs et durables' },
       ],
     },
     'depilacao-laser': {
@@ -974,7 +974,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'La fisioterapia es una ciencia de la salud centrada en el estudio, la prevención, el diagnóstico y el tratamiento de los trastornos relacionados con el movimiento, la biomecánica y la capacidad funcional humana. El objetivo es restaurar, desarrollar y mantener la máxima autonomía, movilidad y calidad de vida de los pacientes.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 10 sesiones', value: '450€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
       ],
       sub: [
         { t: 'Dolor lumbar y cervical', d: 'Evaluación postural, terapia manual y ejercicio progresivo para el dolor crónico o agudo de columna' },
@@ -991,7 +991,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'La Fisioterapia Pediátrica acompaña a bebés, niños y adolescentes en diferentes etapas del desarrollo. Evaluamos y tratamos retrasos en el desarrollo motor, alteraciones posturales, lesiones musculoesqueléticas y condiciones neurológicas — siempre en un entorno seguro y adecuado a la edad de cada niño. Cada sesión se diseña para el ritmo del niño, con participación de la familia siempre que tenga sentido.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 10 sesiones', value: '450€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
       ],
       sub: [
         { t: 'Desarrollo motor', d: 'Evaluación y estimulación del desarrollo motor en bebés y niños con retraso o alteraciones' },
@@ -1035,7 +1035,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'La Fisioterapia Vestibular es un área especializada de la fisioterapia que trata los mareos, vértigo y desequilibrios. A través de una evaluación rigurosa, maniobras de reposicionamiento (eficaces en VPPB) y ejercicios específicos de habituación y estabilización de la mirada, ayudamos al sistema vestibular a recuperarse o compensar. Los resultados suelen ser rápidos — en muchos casos, con alivio significativo desde la primera sesión.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 10 sesiones', value: '450€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
       ],
       sub: [
         { t: 'Vértigo posicional (VPPB)', d: 'Maniobras de reposicionamiento de otolitos — resolución frecuente en 1 a 3 sesiones' },
@@ -1051,7 +1051,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'La fisioterapia oncológica es la especialidad centrada en prevenir, minimizar y tratar las secuelas físicas causadas por el cáncer y sus tratamientos agresivos, como cirugías, quimioterapia y radioterapia. El objetivo principal es preservar la función, devolver la autonomía y garantizar la calidad de vida del paciente en todas las fases de la patología.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 10 sesiones', value: '450€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
       ],
       sub: [
         { t: 'Linfedema posoncológico', d: 'Drenaje linfático manual y vendajes para controlar el edema tras vaciamiento ganglionar o radioterapia' },
@@ -1225,7 +1225,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Drenaje linfático y masaje terapéutico — ligereza, circulación y alivio de la tensión que no se va',
       description: 'El drenaje linfático manual (DLM) es una técnica de masaje terapéutico especializada que utiliza movimientos rítmicos, suaves y lentos. Su principal objetivo es estimular el sistema linfático, acelerando la eliminación de líquidos, toxinas y residuos metabólicos a través de la orina. El masaje terapéutico es una técnica manual centrada en el tratamiento de disfunciones musculares y articulares y dolores localizados. Utiliza movimientos específicos y con más presión para aliviar tensiones, mejorar la movilidad y promover la recuperación física. Se diferencia del masaje de relajación por tener un objetivo clínico y curativo, y no solo de bienestar general.',
       prices: [
-        { label: 'Drenaje Manual (50min)', value: '50€ / 45€ (Pack 10)' },
+        { label: 'Drenaje Manual (50min)', value: '50€ / 45€ (Pack 5)' },
         { label: 'Masaje Terapéutico 50min', value: '60€' },
         { label: 'Masaje Terapéutico 90min', value: '80€' },
       ],
@@ -1312,7 +1312,7 @@ const SERVICE_DETAIL_I18N = {
       description: 'La cavitación y la radiofrecuencia son tratamientos estéticos no invasivos complementarios. La cavitación usa ultrasonidos para eliminar la grasa localizada destruyendo las células adiposas. La radiofrecuencia usa ondas electromagnéticas para calentar la piel, estimulando el colágeno, reduciendo la flacidez y mejorando el aspecto de la celulitis. La presoterapia es un tratamiento de drenaje linfático mecánico que utiliza presión de aire controlada para estimular la circulación sanguínea y el sistema linfático. Se realiza mediante accesorios con cámaras de aire (como botas o mangas) que se inflan y desinflan secuencialmente, ayudando a eliminar líquidos y toxinas.',
       prices: [
         { label: 'Cav./Radiofrec./Lipoláser/Electroest. (50min)', value: '50€' },
-        { label: 'Pack 10 sesiones', value: '450€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
         { label: 'Presoterapia 30-50min', value: '25€ / 35€' },
       ],
       sub: [
@@ -1321,7 +1321,7 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Lipoláser', d: 'Láser de baja intensidad para movilizar la grasa localizada y remodelar el cuerpo' },
         { t: 'Electroestimulación', d: 'Contracción muscular pasiva para tonificación y recuperación de zonas específicas' },
         { t: 'Presoterapia', d: 'Drenaje linfático mecánico mediante presión secuencial — hinchazón, circulación y recuperación' },
-        { t: 'Pack de 10 sesiones', d: 'Ahorra con el pack de 10 sesiones — ideal para resultados progresivos y duraderos' },
+        { t: 'Pack de 5 sesiones', d: 'Ahorra con el pack de 5 sesiones — ideal para resultados progresivos y duraderos' },
       ],
     },
     'depilacao-laser': {
