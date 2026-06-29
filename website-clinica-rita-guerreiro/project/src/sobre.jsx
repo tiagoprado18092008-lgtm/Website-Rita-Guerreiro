@@ -111,7 +111,7 @@ function Team() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 48 }} className="rg-team-grid">
           {members.map((m, i) => (
             <Reveal key={i} delay={i * 60}>
-              <div style={{ background: RG.white, borderRadius: 16, padding: 16, border: `1px solid ${RG.line}`, height: '100%' }}>
+              <div style={{ background: RG.white, borderRadius: 16, padding: 16, border: `1px solid ${RG.lineSoft}`, boxShadow: '0 20px 50px -15px rgba(20,20,18,0.22), 0 4px 12px rgba(20,20,18,0.06)', height: '100%' }}>
                 <Photo aspect="4/5" tone="sand" label={m.name} src={m.src} style={{ borderRadius: 12, marginBottom: 18 }} />
                 <div style={{ padding: '0 6px 8px' }}>
                   <div style={{ fontFamily: F_DISPLAY, fontSize: 19, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>
