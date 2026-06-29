@@ -595,7 +595,7 @@ function Testimonials() {
         <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 24 }} className="rg-testimonials-grid">
           {/* Destaque grande */}
           <Reveal delay={80}>
-            <div style={{ background: RG.white, borderRadius: 20, padding: 'clamp(32px, 4vw, 48px)', border: `1px solid ${RG.line}`, position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <div className="rg-hover-lift" style={{ background: RG.white, borderRadius: 20, padding: 'clamp(32px, 4vw, 48px)', border: `1px solid ${RG.line}`, position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
               <div aria-hidden="true" style={{
                 position: 'absolute', top: 24, right: 36,
                 fontFamily: F_DISPLAY, fontSize: 140, lineHeight: 1,
@@ -621,7 +621,7 @@ function Testimonials() {
           <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: 24 }}>
             {others.map((tt, i) => (
               <Reveal key={i} delay={140 + i * 80}>
-                <div style={{ background: RG.white, borderRadius: 16, padding: '24px 22px', border: `1px solid ${RG.line}`, height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div className="rg-hover-lift" style={{ background: RG.white, borderRadius: 16, padding: '24px 22px', border: `1px solid ${RG.line}`, height: '100%', display: 'flex', flexDirection: 'column' }}>
                   <Stars />
                   <p style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 300, lineHeight: 1.5, color: RG.ink, letterSpacing: '-0.005em', fontStyle: 'italic', margin: 0, flex: 1 }}>&ldquo;{tt.q}&rdquo;</p>
                   <div style={{ marginTop: 18, paddingTop: 14, borderTop: `1px solid ${RG.line}`, display: 'flex', alignItems: 'center', gap: 12 }}>

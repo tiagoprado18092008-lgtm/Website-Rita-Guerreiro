@@ -546,7 +546,7 @@ function ContactosPage() {
               const quick = t('contactos.canais.wa_quick') || [];
 
               return (
-                <div style={{ display: 'flex', flexDirection: 'column', background: RG.white, borderRadius: 16, color: RG.ink, border: `1px solid ${RG.line}`, boxShadow: '0 20px 44px -26px rgba(16,52,50,0.28)', position: 'relative', overflow: 'hidden', minHeight: 240, padding: '32px 32px 28px' }}>
+                <div className="rg-hover-lift" style={{ display: 'flex', flexDirection: 'column', background: RG.white, borderRadius: 16, color: RG.ink, border: `1px solid ${RG.line}`, boxShadow: '0 20px 44px -26px rgba(16,52,50,0.28)', position: 'relative', overflow: 'hidden', minHeight: 240, padding: '32px 32px 28px' }}>
                   <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: RG.tealWash }} />
                   <div style={{ position: 'absolute', top: -20, right: 20, width: 100, height: 100, borderRadius: '50%', background: RG.tealWash }} />
 
@@ -615,7 +615,7 @@ function ContactosPage() {
 
           {/* Telefone */}
           <Reveal delay={80}>
-            <a href="tel:+351961899364" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: RG.white, borderRadius: 16, padding: '40px 40px 36px', border: `1px solid ${RG.line}`, minHeight: 240, position: 'relative', overflow: 'hidden' }}>
+            <a href="tel:+351961899364" className="rg-hover-lift" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: RG.white, borderRadius: 16, padding: '40px 40px 36px', border: `1px solid ${RG.line}`, minHeight: 240, position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', bottom: -48, right: -48, width: 180, height: 180, borderRadius: '50%', background: RG.tealWash, zIndex: 0 }} />
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ marginBottom: 20, flexShrink: 0, position: 'relative', zIndex: 1 }}>
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill={RG.tealDark}/>
@@ -681,7 +681,7 @@ function ContactosPage() {
             },
           ].map((item, i) => (
             <Reveal key={i} delay={i * 60}>
-              <div style={{ background: RG.white, borderRadius: 12, padding: '28px 24px', border: `1px solid ${RG.line}` }}>
+              <div className="rg-hover-lift" style={{ background: RG.white, borderRadius: 12, padding: '28px 24px', border: `1px solid ${RG.line}` }}>
                 <div style={{ width: 44, height: 44, borderRadius: 10, background: RG.tealWash, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
                   {item.icon}
                 </div>
