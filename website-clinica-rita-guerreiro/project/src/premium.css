@@ -320,7 +320,14 @@ section {
 @media (max-width: 768px) {
   .rg-hero-grid > div:last-child {
     border-radius: 0 !important;
-    min-height: 55svh;
+  }
+
+  /* Foto da hero do serviço: height explícito no container real (não no Reveal wrapper)
+     para que height:100% dos filhos resolva correctamente */
+  .rg-service-hero-img-wrap {
+    height: 55svh !important;
+    aspect-ratio: unset !important;
+    border-radius: 0 !important;
   }
 
   .rg-hero-grid > div:first-child {

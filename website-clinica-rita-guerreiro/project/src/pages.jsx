@@ -133,7 +133,7 @@ function ServicePage({ slug }) {
 
           {/* Image */}
           <Reveal delay={100}>
-            <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/3', position: 'relative' }}>
+            <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/3', position: 'relative' }}>
               <Photo aspect="4/3" label={`Foto — ${s.name}`} tone="teal" src={s.img} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </Reveal>
@@ -147,7 +147,7 @@ function ServicePage({ slug }) {
     {/* ── Descrição + Áreas de Atuação ── */}
     <Section bg={RG.white} pad="lg">
       <Container>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-start' }} className="rg-hero-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-start' }} className="rg-hero-grid rg-sobre-areas-grid">
           {/* Texto descritivo */}
           <Reveal>
             <div style={{
@@ -220,7 +220,7 @@ function ServicePage({ slug }) {
     {detail?.tech && (
       <Section bg={RG.creamSoft} pad="lg">
         <Container>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid rg-tech-grid">
             {/* Imagem */}
             <Reveal>
               <div style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>

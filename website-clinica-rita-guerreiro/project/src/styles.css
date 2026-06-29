@@ -900,7 +900,18 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
   .rg-steps-grid { grid-template-columns: 1fr !important; gap: 2px !important; }
 }
 
-/* Service page hero: image order swapped on mobile — text first */
+/* Service page hero: foto aparece primeiro (last-child = imagem, order:-1 sobe-a) */
 @media (max-width: 880px) {
   .rg-hero-grid > div:last-child { order: -1; }
+
+  /* Sobre+Áreas e Tecnologia: manter ordem natural DOM (sem inversão) */
+  .rg-sobre-areas-grid > div:last-child,
+  .rg-tech-grid > div:last-child { order: 0 !important; }
+
+  /* Imagem portrait da secção Tecnologia: limitar altura em mobile */
+  .rg-tech-grid > div:first-child img {
+    max-height: 55svh;
+    object-fit: cover;
+    object-position: center top;
+  }
 }
