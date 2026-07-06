@@ -34,6 +34,7 @@
     { "source": "/servico/reflexologia", "destination": "/servico-reflexologia" },
     { "source": "/servico/saude", "destination": "/servico-saude" },
     { "source": "/servico/shiatsu", "destination": "/servico-shiatsu" },
+    { "source": "/servico/tecarterapia-winback", "destination": "/servico-tecarterapia-winback" },
     { "source": "/servico/terapia-bowen", "destination": "/servico-terapia-bowen" }
   ]
 }

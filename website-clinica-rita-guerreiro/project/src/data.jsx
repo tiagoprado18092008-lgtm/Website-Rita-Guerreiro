@@ -28,6 +28,7 @@ const IMG = {
   'pacotes-tratamento': null,
   'depilacao-laser': null,
   'pilates-clinico': '/assets/pilates.jpg',
+  'tecarterapia-winback': '/assets/winback-back3.jpg',
   // Genéricos — fotos reais da clínica
   clinicInterior: '/assets/equipa-recepcao.png',
   clinicDetail: '/assets/rita-retrato.png',
@@ -118,6 +119,7 @@ const SERVICE_DETAIL = {
       tagline: 'Tecarterapia de última geração para acelerar a recuperação.',
       description: 'Integramos nas sessões de fisioterapia a tecnologia Winback BACK3 — um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ativa o metabolismo dos tecidos em profundidade, reduz dor e inflamação, acelera a regeneração e devolve mobilidade em menos tempo. Particularmente eficaz em lesões músculo-esqueléticas agudas e crónicas, recuperação pós-lesão, pós-cirurgia e dor desportiva.',
       img: '/assets/winback-back3.jpg',
+      link: '/servico/tecarterapia-winback',
       benefits: [
         'Alívio rápido da dor e da inflamação',
         'Aceleração da regeneração de tecidos',
@@ -125,6 +127,22 @@ const SERVICE_DETAIL = {
         'Tratamento de tendinopatias e contraturas',
       ],
     },
+  },
+  'tecarterapia-winback': {
+    tagline: 'Tecarterapia de última geração — a tecnologia que acelera cada sessão de fisioterapia.',
+    description: 'A Winback BACK3 é um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ao aquecer os tecidos em profundidade, ativa a circulação sanguínea e o metabolismo celular na zona tratada, acelerando os processos naturais de recuperação do organismo. É integrada pela fisioterapeuta nas sessões de tratamento, adaptada a cada caso — sem agulhas, sem dor, sem tempo de paragem.',
+    prices: [
+      { label: 'Sessão de fisioterapia com Winback (50min)', value: '50€' },
+      { label: 'Pack 5 sessões', value: '225€' },
+    ],
+    sub: [
+      { t: 'Alívio rápido da dor', d: 'Ação analgésica imediata através da neuromodulação Hi-TENS, sentida já durante a sessão.' },
+      { t: 'Redução da inflamação', d: 'O calor profundo (diatermia) estimula a microcirculação local e ajuda a drenar o edema.' },
+      { t: 'Recuperação muscular pós-esforço', d: 'Acelera a eliminação de ácido láctico e a regeneração de tecido muscular após esforço intenso.' },
+      { t: 'Tendinopatias e contraturas', d: 'Trabalho em profundidade sobre tendões e músculos contraturados, difícil de alcançar só com terapia manual.' },
+      { t: 'Recuperação pós-cirúrgica', d: 'Acelera a cicatrização de tecidos e recupera mobilidade após cirurgia ortopédica.' },
+      { t: 'Lesões desportivas agudas e crónicas', d: 'Reduz o tempo de recuperação em entorses, roturas musculares e sobrecargas de treino.' },
+    ],
   },
   'fisioterapia-pediatrica': {
     tagline: 'Fisioterapia adaptada a cada fase do crescimento — com cuidado, segurança e tempo para cada criança.',

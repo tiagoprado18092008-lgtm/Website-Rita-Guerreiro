@@ -274,6 +274,22 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Rehabilitation during treatment', d: 'Active support throughout chemotherapy and radiotherapy to preserve function' },
       ],
     },
+    'tecarterapia-winback': {
+      tagline: 'State-of-the-art tecar therapy — the technology that speeds up every physiotherapy session',
+      description: 'The Winback BACK3 is a tecar therapy device (capacitive and resistive diathermy) combining high frequency (300 kHz to 1 MHz) with Hi-TENS and Hi-EMS neuromodulation. By heating tissue in depth, it boosts blood flow and cellular metabolism in the treated area, accelerating the body’s natural recovery processes. It is integrated by the physiotherapist into treatment sessions, adapted to each case — no needles, no pain, no downtime.',
+      prices: [
+        { label: 'Physiotherapy session with Winback (50min)', value: '50€' },
+        { label: '5-session pack', value: '225€' },
+      ],
+      sub: [
+        { t: 'Fast pain relief', d: 'Immediate analgesic effect through Hi-TENS neuromodulation, felt during the session itself' },
+        { t: 'Reduced inflammation', d: 'Deep heat (diathermy) stimulates local microcirculation and helps drain oedema' },
+        { t: 'Post-exercise muscle recovery', d: 'Speeds up lactic acid clearance and muscle tissue regeneration after intense effort' },
+        { t: 'Tendinopathies and contractures', d: 'Deep work on tendons and contracted muscles, hard to reach with manual therapy alone' },
+        { t: 'Post-surgical recovery', d: 'Speeds up tissue healing and restores mobility after orthopaedic surgery' },
+        { t: 'Acute and chronic sports injuries', d: 'Reduces recovery time in sprains, muscle tears and training overload' },
+      ],
+    },
     acupuntura: {
       tagline: 'A medicine refined over centuries — and growing evidence for your wellbeing',
       description: 'Acupuncture is an age-old therapeutic technique, originating in Traditional Chinese Medicine, that consists of inserting fine needles at specific points of the body. Its aim is to stimulate the body’s natural responses, promoting physical and emotional balance and the relief of symptoms.',
@@ -668,6 +684,22 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Réadaptation pendant le traitement', d: 'Accompagnement actif tout au long de la chimiothérapie et de la radiothérapie pour préserver la fonction' },
       ],
     },
+    'tecarterapia-winback': {
+      tagline: 'Tecarthérapie de dernière génération — la technologie qui accélère chaque séance de physiothérapie',
+      description: 'La Winback BACK3 est un équipement de tecarthérapie (diathermie capacitive et résistive) qui combine haute fréquence (300 kHz à 1 MHz) et neuromodulation Hi-TENS et Hi-EMS. En chauffant les tissus en profondeur, elle active la circulation sanguine et le métabolisme cellulaire dans la zone traitée, accélérant les processus naturels de récupération de l’organisme. Elle est intégrée par le physiothérapeute dans les séances de traitement, adaptée à chaque cas — sans aiguilles, sans douleur, sans temps d’arrêt.',
+      prices: [
+        { label: 'Séance de physiothérapie avec Winback (50min)', value: '50€' },
+        { label: 'Pack 5 séances', value: '225€' },
+      ],
+      sub: [
+        { t: 'Soulagement rapide de la douleur', d: 'Effet analgésique immédiat grâce à la neuromodulation Hi-TENS, ressenti dès la séance' },
+        { t: 'Réduction de l’inflammation', d: 'La chaleur profonde (diathermie) stimule la microcirculation locale et aide à drainer l’œdème' },
+        { t: 'Récupération musculaire post-effort', d: 'Accélère l’élimination de l’acide lactique et la régénération du tissu musculaire après un effort intense' },
+        { t: 'Tendinopathies et contractures', d: 'Travail en profondeur sur les tendons et muscles contracturés, difficile à atteindre avec la seule thérapie manuelle' },
+        { t: 'Récupération post-chirurgicale', d: 'Accélère la cicatrisation des tissus et la récupération de la mobilité après une chirurgie orthopédique' },
+        { t: 'Blessures sportives aiguës et chroniques', d: 'Réduit le temps de récupération des entorses, déchirures musculaires et surcharges d’entraînement' },
+      ],
+    },
     acupuntura: {
       tagline: 'Une médecine affinée au fil des siècles — et des preuves croissantes pour votre bien-être',
       description: "L'acupuncture est une technique thérapeutique millénaire, originaire de la Médecine Traditionnelle Chinoise, qui consiste à insérer de fines aiguilles en des points spécifiques du corps. Son but est de stimuler les réponses naturelles de l'organisme, favorisant l'équilibre physique et émotionnel et le soulagement des symptômes.",
@@ -1060,6 +1092,22 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Fatiga y desacondicionamiento', d: 'Ejercicio adaptado y progresivo para combatir la fatiga oncológica y recuperar la condición física' },
         { t: 'Movilidad y cicatrices', d: 'Movilización de tejidos, alivio de adherencias y recuperación de la amplitud de movimiento' },
         { t: 'Rehabilitación durante el tratamiento', d: 'Acompañamiento activo a lo largo de la quimioterapia y la radioterapia para preservar la función' },
+      ],
+    },
+    'tecarterapia-winback': {
+      tagline: 'Tecarterapia de última generación — la tecnología que acelera cada sesión de fisioterapia',
+      description: 'La Winback BACK3 es un equipo de tecarterapia (diatermia capacitiva y resistiva) que combina alta frecuencia (300 kHz a 1 MHz) con neuromodulación Hi-TENS e Hi-EMS. Al calentar los tejidos en profundidad, activa la circulación sanguínea y el metabolismo celular en la zona tratada, acelerando los procesos naturales de recuperación del organismo. La fisioterapeuta la integra en las sesiones de tratamiento, adaptada a cada caso — sin agujas, sin dolor, sin tiempo de parada.',
+      prices: [
+        { label: 'Sesión de fisioterapia con Winback (50min)', value: '50€' },
+        { label: 'Pack 5 sesiones', value: '225€' },
+      ],
+      sub: [
+        { t: 'Alivio rápido del dolor', d: 'Acción analgésica inmediata mediante la neuromodulación Hi-TENS, sentida ya durante la sesión' },
+        { t: 'Reducción de la inflamación', d: 'El calor profundo (diatermia) estimula la microcirculación local y ayuda a drenar el edema' },
+        { t: 'Recuperación muscular post-esfuerzo', d: 'Acelera la eliminación del ácido láctico y la regeneración del tejido muscular tras un esfuerzo intenso' },
+        { t: 'Tendinopatías y contracturas', d: 'Trabajo en profundidad sobre tendones y músculos contracturados, difícil de alcanzar solo con terapia manual' },
+        { t: 'Recuperación posquirúrgica', d: 'Acelera la cicatrización de los tejidos y recupera la movilidad tras una cirugía ortopédica' },
+        { t: 'Lesiones deportivas agudas y crónicas', d: 'Reduce el tiempo de recuperación en esguinces, roturas musculares y sobrecargas de entrenamiento' },
       ],
     },
     acupuntura: {

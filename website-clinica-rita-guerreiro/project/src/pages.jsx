@@ -260,6 +260,12 @@ function ServicePage({ slug }) {
                   ))}
                 </ul>
               )}
+
+              {detail.tech.link && (
+                <div style={{ marginTop: 28 }}>
+                  <Button href={detail.tech.link} variant="outline" size="sm">{t('service.tech_saber_mais')}</Button>
+                </div>
+              )}
             </Reveal>
           </div>
         </Container>
@@ -337,6 +343,226 @@ function ServicePage({ slug }) {
           </Reveal>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
             {catItems.map((item, idx) => (
+              <Reveal key={item.slug} delay={idx * 60}>
+                <a href={`/servico/${item.slug}`} className="rg-service-card" style={{
+                  display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink,
+                  borderRadius: 12, overflow: 'hidden', border: `1px solid ${RG.line}`,
+                }}>
+                  <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
+                    <Photo label={item.name} tone="teal" aspect="16/9" src={item.img} />
+                  </div>
+                  <div style={{ padding: '20px 20px 24px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, marginBottom: 8 }}>
+                      <h4 style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.02em', margin: 0, lineHeight: 1.2 }}>{item.name}</h4>
+                      <svg className="rg-service-arrow" width="16" height="16" viewBox="0 0 16 16" style={{ flexShrink: 0, marginTop: 2, color: RG.tealDark }}><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </div>
+                    <p style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.5, margin: '0 0 12px' }}>{item.blurb}</p>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.01em' }}>{item.price}</div>
+                  </div>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </Section>
+    )}
+
+    <Footer />
+    <WAFab />
+  </>);
+}
+
+// Tecnologia — página dedicada à máquina Winback BACK3 (tecarterapia).
+// Não é um serviço do catálogo: é aberta a partir da secção "Tecnologia"
+// das páginas de serviço onde a máquina é utilizada.
+function TecarPage() {
+  const { lang, t } = useLang();
+  const services = getServices(lang);
+  const serviceDetail = getServiceDetail(lang);
+  const detail = serviceDetail['tecarterapia-winback'];
+  const accent = CAT_ACCENT.fisioterapia;
+  const catLabel = services.fisioterapia.label;
+
+  // Serviços cuja secção de tecnologia aponta para esta página
+  const usedIn = [];
+  for (const cat of Object.keys(services)) {
+    for (const item of services[cat].items) {
+      const d = serviceDetail[item.slug];
+      if (d?.tech?.link === '/servico/tecarterapia-winback') usedIn.push(item);
+    }
+  }
+
+  if (!detail) return <div style={{ padding: 120 }}>{t('service.not_found')}</div>;
+
+  return (<>
+    <Nav current="fisioterapia" />
+
+    {/* ── Hero ── */}
+    <section style={{ paddingTop: 130, paddingBottom: 0, background: RG.white }}>
+      <Container>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: F_BODY, fontSize: 13, color: RG.muted, marginBottom: 32 }}>
+            <a href="/" style={{ color: RG.muted, textDecoration: 'none' }}>{t('service.inicio')}</a>
+            <span style={{ opacity: 0.4 }}>/</span>
+            <span>{catLabel}</span>
+            <span style={{ opacity: 0.4 }}>/</span>
+            <span style={{ color: RG.ink, fontWeight: 500 }}>Winback BACK3</span>
+          </div>
+        </Reveal>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', paddingBottom: 72 }} className="rg-hero-grid">
+          <div>
+            <Reveal>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: accent.bg, border: `1px solid ${accent.border}`,
+                borderRadius: 100, padding: '6px 14px', marginBottom: 28,
+              }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: accent.dot, flexShrink: 0 }} />
+                <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: accent.dot, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{t('service.tech_eyebrow_fallback')}</span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={60}>
+              <h1 style={{
+                fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 5vw, 72px)',
+                fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.035em',
+                margin: 0, color: RG.ink,
+              }}>Winback BACK3</h1>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <p style={{
+                fontFamily: F_BODY, fontSize: 18, lineHeight: 1.65,
+                color: RG.charcoal, marginTop: 20, marginBottom: 0,
+                maxWidth: '42ch',
+              }}>{detail.tagline}</p>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('service.agendar_btn')}</Button>
+                <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>{t('service.ligar_btn')}</Button>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={100}>
+            <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
+              <img src="/assets/winback-back3.jpg" alt="Winback BACK3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
+          </Reveal>
+        </div>
+      </Container>
+
+      <div style={{ height: 4, background: `linear-gradient(90deg, ${accent.border}, ${RG.teal}, transparent)` }} />
+    </section>
+
+    {/* ── Descrição + O que trata ── */}
+    <Section bg={RG.white} pad="lg">
+      <Container>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-start' }} className="rg-hero-grid rg-sobre-areas-grid">
+          <Reveal>
+            <div style={{
+              display: 'inline-block', fontFamily: F_BODY, fontSize: 11,
+              fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
+              color: accent.dot, marginBottom: 20,
+            }}>{t('service.tec_sobre')}</div>
+            <p style={{
+              fontFamily: F_BODY, fontSize: 17, lineHeight: 1.75,
+              color: RG.charcoal, margin: 0,
+            }}>{detail.description}</p>
+
+            {detail.prices && detail.prices.length > 0 && (
+              <div style={{ marginTop: 40, padding: 24, background: RG.creamSoft, borderRadius: 12, border: `1px solid ${RG.line}` }}>
+                <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.muted, marginBottom: 16 }}>{t('service.preco_label')}</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {detail.prices.map((p, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8, paddingBottom: i < detail.prices.length - 1 ? 10 : 0, borderBottom: i < detail.prices.length - 1 ? `1px solid ${RG.line}` : 'none' }}>
+                      <span style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal }}>{p.label}</span>
+                      <span style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
+                        <span style={{ display: 'block', fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.02em' }}>{p.value}</span>
+                        {perSessionPrice(p.label, p.value) && (
+                          <span style={{ display: 'block', fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 2 }}>{perSessionPrice(p.label, p.value)} {t('service.por_sessao')}</span>
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </Reveal>
+
+          {detail.sub && (
+            <Reveal delay={80}>
+              <div style={{
+                display: 'inline-block', fontFamily: F_BODY, fontSize: 11,
+                fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: accent.dot, marginBottom: 20,
+              }}>{t('service.tec_beneficios')}</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {detail.sub.map((x, i) => (
+                  <div key={i} style={{
+                    display: 'flex', gap: 16, alignItems: 'flex-start',
+                    padding: '18px 0',
+                    borderBottom: i < detail.sub.length - 1 ? `1px solid ${RG.line}` : 'none',
+                  }}>
+                    <div style={{
+                      width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
+                      background: accent.bg, border: `1px solid ${accent.border}`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: F_BODY, fontSize: 11, fontWeight: 700, color: accent.dot,
+                      marginTop: 2,
+                    }}>{i + 1}</div>
+                    <div>
+                      <div style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: RG.ink, marginBottom: 4 }}>{x.t}</div>
+                      <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.6, color: RG.charcoal }}>{x.d}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
+        </div>
+      </Container>
+    </Section>
+
+    {/* ── CTA Marcação ── */}
+    <section style={{ background: RG.tealDark, padding: '60px 0' }}>
+      <Container>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap' }}>
+            <div>
+              <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.teal, marginBottom: 12 }}>{t('service.marcacoes_label')}</div>
+              <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.white, lineHeight: 1.2 }}>
+                {t('service.cta_heading_inline')}
+              </div>
+              <div style={{ fontFamily: F_BODY, fontSize: 14, color: 'rgba(255,255,255,0.65)', marginTop: 10 }}>{t('service.marcacoes_body')}</div>
+            </div>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <Button href="https://wa.me/351961899364" target="_blank" variant="teal" size="md">{t('service.agendar_btn')}</Button>
+              <Button href="tel:+351961899364" variant="outline" size="sm" icon={false}>{t('service.ligar_btn')}</Button>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </section>
+
+    {/* ── Serviços que utilizam esta tecnologia ── */}
+    {usedIn.length > 0 && (
+      <Section bg={RG.creamSoft} pad="lg">
+        <Container>
+          <Reveal>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+              <div style={{ width: 32, height: 2, background: RG.teal }} />
+              <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark }}>{t('service.tech_eyebrow_fallback')}</span>
+            </div>
+          </Reveal>
+          <Reveal delay={60}>
+            <h3 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 36px', color: RG.ink }}>{t('service.tec_usado_em')}</h3>
+          </Reveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
+            {usedIn.map((item, idx) => (
               <Reveal key={item.slug} delay={idx * 60}>
                 <a href={`/servico/${item.slug}`} className="rg-service-card" style={{
                   display: 'block', background: RG.white, textDecoration: 'none', color: RG.ink,
@@ -699,4 +925,4 @@ function ContactosPage() {
   </>);
 }
 
-Object.assign(window, { ServicePage, CategoryPage, ContactosPage, findService });
+Object.assign(window, { ServicePage, CategoryPage, ContactosPage, TecarPage, findService });
