@@ -434,8 +434,8 @@ function Nav({ current = 'home' }) {
               { href: '/contactos', label: t('nav.contactos') },
             ].map((item, i) => item === null ? (
               <div key="servicos" style={{ padding: '20px 0' }}>
-                <button onClick={() => setMobileServicos(!mobileServicos)} style={{
-                  fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 30, fontWeight: 700,
+                <button className="rg-mobile-menu-link" onClick={() => setMobileServicos(!mobileServicos)} style={{
+                  fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em',
                   color: RG.ink, background: 'none', border: 'none', cursor: 'pointer',
                   display: 'flex', alignItems: 'center', gap: 12, padding: 0,
                 }}>
@@ -466,7 +466,7 @@ function Nav({ current = 'home' }) {
               </div>
             ) : (
               <div key={item.href} style={{ borderTop: '1px solid rgba(20,20,18,0.08)', padding: '20px 0' }}>
-                <a href={item.href} style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: 30, fontWeight: 700, color: RG.ink, textDecoration: 'none' }}>{item.label}</a>
+                <a className="rg-mobile-menu-link" href={item.href} style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', color: RG.ink, textDecoration: 'none' }}>{item.label}</a>
               </div>
             ))}
             <div style={{ borderTop: '1px solid rgba(20,20,18,0.08)', paddingTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>

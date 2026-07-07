@@ -680,7 +680,7 @@ function ContactosPage() {
     <section style={{ paddingTop: 130, paddingBottom: 80, background: RG.white, position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${RG.tealDark}, ${RG.teal} 40%, transparent)` }} />
       <Container>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-end' }} className="rg-hero-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'flex-end' }} className="rg-hero-grid rg-contact-hero-grid">
           <div>
             <Reveal><Eyebrow>{t('contactos.eyebrow')}</Eyebrow></Reveal>
             <Reveal delay={80}>
@@ -758,7 +758,7 @@ function ContactosPage() {
     {/* ── Canais de contacto ── */}
     <Section bg={RG.tealWash} pad="lg">
       <Container>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="rg-hero-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="rg-hero-grid rg-contact-channels-grid">
 
           {/* WhatsApp widget */}
           <Reveal>

@@ -115,7 +115,7 @@
   }
 
   /* Items do menu — borders subtis escuros */
-  .rg-mobile-overlay [style*="borderTop"] {
+  .rg-mobile-overlay [style*="border-top"] {
     border-top: 1px solid rgba(20,20,18,0.08) !important;
   }
 
@@ -126,40 +126,39 @@
   }
 
   /* Headers das categorias (FISIOTERAPIA, CUIDADOS DE SAUDE, etc.) em teal */
-  .rg-mobile-overlay [style*="textTransform: uppercase"],
   .rg-mobile-overlay [style*="text-transform: uppercase"] {
     color: #4A8F8A !important;
   }
 
   /* Items principais maiores */
-  .rg-mobile-overlay a[style*="Cormorant"],
-  .rg-mobile-overlay button[style*="Cormorant"] {
+  .rg-mobile-overlay a.rg-mobile-menu-link,
+  .rg-mobile-overlay button.rg-mobile-menu-link {
     font-size: 24px !important;
     line-height: 1.2 !important;
   }
 
   /* Submenu de servicos: caixas brancas com borda subtil */
-  .rg-mobile-overlay [style*="borderRadius: 14px"] {
+  .rg-mobile-overlay [style*="border-radius: 14px"] {
     background: #ffffff !important;
     border-color: rgba(20,20,18,0.1) !important;
   }
 
   /* Cabecalho da categoria dentro do mobile menu — wash teal claro */
-  .rg-mobile-overlay [style*="rgba(111,181,176,0.08)"] {
+  .rg-mobile-overlay [style*="rgba(111, 181, 176, 0.08)"] {
     background: rgba(111,181,176,0.12) !important;
   }
 
   /* Links de subservicos */
-  .rg-mobile-overlay [style*="rgba(111,181,176,0.1)"] {
+  .rg-mobile-overlay [style*="rgba(111, 181, 176, 0.1)"] {
     background: transparent !important;
   }
 
   /* CTAs área inferior — largura cheia, empilhados */
-  .rg-mobile-overlay [style*="paddingTop: 28px"] {
+  .rg-mobile-overlay [style*="padding-top: 28px"] {
     flex-direction: column !important;
     gap: 10px !important;
   }
-  .rg-mobile-overlay [style*="paddingTop: 28px"] > a {
+  .rg-mobile-overlay [style*="padding-top: 28px"] > a {
     width: 100% !important;
     text-align: center !important;
     justify-content: center !important;
@@ -169,7 +168,7 @@
   }
 
   /* Language toggle no fundo, centrado */
-  .rg-mobile-overlay [style*="paddingTop: 24px"] {
+  .rg-mobile-overlay [style*="padding-top: 24px"] {
     justify-content: center !important;
     padding-bottom: 56px !important;
   }
@@ -380,11 +379,11 @@
     font-size: 22px !important;
     font-weight: 500 !important;
   }
-  .rg-services-menu ul li [style*="ghost"], .rg-services-menu ul li [aria-hidden="true"][style*="fontSize: 96"] {
+  .rg-services-menu ul li [style*="ghost"], .rg-services-menu ul li [aria-hidden="true"][style*="font-size: 96px"] {
     display: none !important;
   }
   /* Sempre mostrar a descrição em mobile (não depender de hover) */
-  .rg-services-menu ul li [style*="maxHeight"] {
+  .rg-services-menu ul li [style*="max-height"] {
     max-height: 200px !important;
     opacity: 1 !important;
     margin-top: 8px !important;
@@ -397,7 +396,7 @@
 @media (max-width: 768px) {
   /* já existe .rg-hero-grid → 1col; foto desce. Garantir aspect */
   /* Botões do accordion: padding maior */
-  section [style*="padding: 20px 0"][style*="borderBottom: 1px solid"]:has(> div) {
+  section [style*="padding: 20px 0"][style*="border-bottom: 1px solid"]:has(> div) {
     padding: 18px 0 !important;
   }
 }
@@ -416,21 +415,21 @@
   }
 
   /* Grid de facts 3col → 1col em mobile */
-  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] {
+  section [style*="repeat(3, 1fr)"][style*="padding-top: 24px"] {
     grid-template-columns: 1fr 1fr 1fr !important;
     gap: 12px !important;
   }
-  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] > div {
+  section [style*="repeat(3, 1fr)"][style*="padding-top: 24px"] > div {
     text-align: center;
   }
-  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] > div > div:first-child {
+  section [style*="repeat(3, 1fr)"][style*="padding-top: 24px"] > div > div:first-child {
     font-size: 20px !important;
   }
 }
 
 @media (max-width: 360px) {
   /* Em phones muito pequenos, 3 facts inline ficam apertados — passa a 1col */
-  section [style*="repeat(3, 1fr)"][style*="paddingTop: 24px"] {
+  section [style*="repeat(3, 1fr)"][style*="padding-top: 24px"] {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
@@ -464,11 +463,11 @@
     padding: 24px 22px !important;
   }
   /* Info line bottom: stack vertical */
-  section[style*="linear-gradient(135deg, #2F6B68"] [style*="flexWrap: wrap"][style*="justifyContent: center"] {
+  section[style*="linear-gradient(135deg, rgb(47, 107, 104)"] [style*="flex-wrap: wrap"][style*="justify-content: center"] {
     flex-direction: column !important;
     gap: 12px !important;
   }
-  section[style*="linear-gradient(135deg, #2F6B68"] [style*="flexWrap: wrap"][style*="justifyContent: center"] > span {
+  section[style*="linear-gradient(135deg, rgb(47, 107, 104)"] [style*="flex-wrap: wrap"][style*="justify-content: center"] > span {
     display: none !important;
   }
 }
@@ -495,15 +494,15 @@
 @media (max-width: 768px) {
 
   /* SobreHero */
-  section[style*="paddingTop: 140px"][style*="paddingBottom: 60"] {
+  section[style*="padding-top: 140px"][style*="padding-bottom: 60px"] {
     padding-top: 100px !important;
     padding-bottom: 32px !important;
   }
-  section[style*="paddingTop: 140px"][style*="paddingBottom: 60"] h1 {
+  section[style*="padding-top: 140px"][style*="padding-bottom: 60px"] h1 {
     font-size: clamp(36px, 10vw, 56px) !important;
     line-height: 0.98 !important;
   }
-  section[style*="paddingTop: 140px"][style*="paddingBottom: 60"] p {
+  section[style*="padding-top: 140px"][style*="padding-bottom: 60px"] p {
     font-size: 16px !important;
     margin-top: 18px !important;
   }
@@ -544,20 +543,20 @@
 @media (max-width: 768px) {
 
   /* Hero (paddingTop 130) */
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 80px"] {
     padding-top: 96px !important;
     padding-bottom: 40px !important;
   }
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] h1 {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 80px"] h1 {
     font-size: clamp(38px, 10vw, 64px) !important;
     line-height: 0.96 !important;
   }
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] p {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 80px"] p {
     font-size: 16px !important;
     margin-top: 18px !important;
   }
   /* Info column border-left → border-top em mobile */
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 80"] [style*="borderLeft: 3px solid"] {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 80px"] [style*="border-left: 3px solid"] {
     border-left: 0 !important;
     border-top: 2px solid #6FB5B0 !important;
     padding-left: 0 !important;
@@ -571,8 +570,8 @@
   section .rg-hero-grid > a[style*="tel:"] {
     /* via rg-hero-grid já é 1col */
   }
-  section a[href*="wa.me"][style*="minHeight: 240"],
-  section a[href*="tel:"][style*="minHeight: 240"] {
+  section a[href*="wa.me"][style*="min-height: 240px"],
+  section a[href*="tel:"][style*="min-height: 240px"] {
     min-height: auto !important;
     padding: 32px 28px !important;
   }
@@ -597,15 +596,15 @@
 
 @media (max-width: 768px) {
   /* Hero da categoria */
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 60"] {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 60px"] {
     padding-top: 100px !important;
     padding-bottom: 32px !important;
   }
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 60"] h1 {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 60px"] h1 {
     font-size: clamp(40px, 11vw, 72px) !important;
     line-height: 0.95 !important;
   }
-  section[style*="paddingTop: 130px"][style*="paddingBottom: 60"] p {
+  section[style*="padding-top: 130px"][style*="padding-bottom: 60px"] p {
     font-size: 16px !important;
     margin-top: 16px !important;
   }
@@ -622,20 +621,20 @@
 
 @media (max-width: 768px) {
   /* CTA banner final stack vertical */
-  section[style*="tealDark"] [style*="flexWrap: wrap"][style*="justifyContent: space-between"] {
+  section[style*="rgb(47, 107, 104)"] [style*="flex-wrap: wrap"][style*="justify-content: space-between"] {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 20px !important;
   }
-  section[style*="tealDark"] h3 {
+  section[style*="rgb(47, 107, 104)"] h3 {
     font-size: 26px !important;
   }
   /* Botões da CTA full-width */
-  section[style*="tealDark"] [style*="display: flex"][style*="gap: 12px"][style*="flexWrap: wrap"] {
+  section[style*="rgb(47, 107, 104)"] [style*="display: flex"][style*="gap: 12px"][style*="flex-wrap: wrap"] {
     width: 100% !important;
     flex-direction: column !important;
   }
-  section[style*="tealDark"] [style*="display: flex"][style*="gap: 12px"][style*="flexWrap: wrap"] > a {
+  section[style*="rgb(47, 107, 104)"] [style*="display: flex"][style*="gap: 12px"][style*="flex-wrap: wrap"] > a {
     width: 100% !important;
     justify-content: center !important;
   }
@@ -647,19 +646,19 @@
 @media (max-width: 768px) {
 
   /* Hero do serviço (paddingTop 130) */
-  section[style*="paddingTop: 130px"][style*="background"] {
+  section[style*="padding-top: 130px"][style*="background"] {
     padding-top: 92px !important;
   }
-  section[style*="paddingTop: 130px"] .rg-hero-grid {
+  section[style*="padding-top: 130px"] .rg-hero-grid {
     gap: 28px !important;
     padding-bottom: 32px !important;
   }
-  section[style*="paddingTop: 130px"] h1 {
+  section[style*="padding-top: 130px"] h1 {
     font-size: clamp(32px, 9vw, 52px) !important;
     line-height: 1 !important;
     letter-spacing: -0.025em !important;
   }
-  section[style*="paddingTop: 130px"] p[style*="fontSize: 18"] {
+  section[style*="padding-top: 130px"] p[style*="font-size: 18px"] {
     font-size: 15.5px !important;
     margin-top: 14px !important;
   }
@@ -671,22 +670,22 @@
 
 @media (max-width: 480px) {
   /* Price pills */
-  section[style*="paddingTop: 130px"] [style*="flexWrap: wrap"][style*="marginTop: 32px"] {
+  section[style*="padding-top: 130px"] [style*="flex-wrap: wrap"][style*="margin-top: 32px"] {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     gap: 10px !important;
   }
-  section[style*="paddingTop: 130px"] [style*="flexWrap: wrap"][style*="marginTop: 32px"] > div {
+  section[style*="padding-top: 130px"] [style*="flex-wrap: wrap"][style*="margin-top: 32px"] > div {
     flex: 1 1 calc(50% - 6px);
     min-width: 120px;
   }
 
   /* CTAs do hero — full width */
-  section[style*="paddingTop: 130px"] [style*="display: flex"][style*="marginTop: 32px"][style*="flexWrap: wrap"]:not([style*="alignItems"]) {
+  section[style*="padding-top: 130px"] [style*="display: flex"][style*="margin-top: 32px"][style*="flex-wrap: wrap"]:not([style*="align-items"]) {
     flex-direction: column !important;
     gap: 10px !important;
   }
-  section[style*="paddingTop: 130px"] [style*="display: flex"][style*="marginTop: 32px"][style*="flexWrap: wrap"]:not([style*="alignItems"]) > a {
+  section[style*="padding-top: 130px"] [style*="display: flex"][style*="margin-top: 32px"][style*="flex-wrap: wrap"]:not([style*="align-items"]) > a {
     width: 100% !important;
     justify-content: center !important;
   }
@@ -742,7 +741,7 @@
   }
 
   /* Col titles centrados */
-  .rg-footer-grid [style*="fontSize: 13px"][style*="textTransform: uppercase"] {
+  .rg-footer-grid [style*="font-size: 13px"][style*="text-transform: uppercase"] {
     border-bottom-width: 0 !important;
     padding-bottom: 0 !important;
     margin-bottom: 14px !important;
@@ -771,7 +770,7 @@
   .rg-footer-bottom span {
     font-size: 12.5px !important;
   }
-  .rg-footer-bottom [style*="display: flex"][style*="alignItems: center"] {
+  .rg-footer-bottom [style*="display: flex"][style*="align-items: center"] {
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 14px !important;
