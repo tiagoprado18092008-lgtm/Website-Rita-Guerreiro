@@ -449,7 +449,7 @@ function TecarPage() {
 
           <Reveal delay={100}>
             <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-              <img src="/assets/winback-back3.jpg" alt="Winback BACK3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src="/assets/fotos/servico-tecarterapia.jpg" alt="Tecarterapia Winback na Clínica Rita Guerreiro" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>

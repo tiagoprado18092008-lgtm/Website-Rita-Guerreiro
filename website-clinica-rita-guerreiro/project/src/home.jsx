@@ -13,7 +13,7 @@ function Hero() {
       {/* Foto de fundo — cobre toda a secção, gradiente faz a transição */}
       <div className="rg-hero-home-photo" style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
         <img
-          src="assets/foto-equipa-nova.png"
+          src="assets/fotos/equipa-home.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
           style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
@@ -422,7 +422,7 @@ function WhyUs() {
               ))}
             </div>
             <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/5' }}>
-              <img src="assets/equipa-recepcao.png" alt="Equipa da Clínica Rita Guerreiro na receção" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+              <img src="assets/fotos/rita-rececao.jpg" alt="Equipa da Clínica Rita Guerreiro na receção" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
             </div>
           </div>
         </Reveal>
@@ -493,7 +493,7 @@ function MeetRita() {
             {/* Foto + card de credenciais */}
             <div style={{ position: 'relative' }}>
               <div style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
-                <img src="assets/rita-retrato.png" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="assets/fotos/rita-retrato.jpg" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               {/* Card de credenciais sobreposto */}
               <div className="rg-meet-card" style={{
