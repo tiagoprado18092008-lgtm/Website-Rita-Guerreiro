@@ -423,7 +423,7 @@ function WhyUs() {
               ))}
             </div>
             <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/5' }}>
-              <img src="assets/fotos/rita-rececao.jpg" alt="Equipa da Clínica Rita Guerreiro na receção" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+              <img src="assets/fotos/rita-rececao-2.jpg" alt="Rita Guerreiro na receção da clínica" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '35% top', display: 'block' }} />
             </div>
           </div>
         </Reveal>
