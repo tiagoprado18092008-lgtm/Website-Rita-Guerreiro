@@ -4,7 +4,7 @@
 const IMG = {
   fisioterapia: '/assets/fotos/servico-fisioterapia.jpg',
   acupuntura: '/assets/fotos/servico-acupuntura.jpg',
-  mesoterapia: null,
+  mesoterapia: '/assets/fotos/servico-mesoterapia.jpg',
   'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg',
   'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.jpg',
   'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg',
