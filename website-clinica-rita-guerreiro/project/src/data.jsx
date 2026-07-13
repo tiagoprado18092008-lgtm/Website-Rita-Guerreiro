@@ -2,7 +2,7 @@
 
 // Fotos reais da clínica — substituir null pela path quando a cliente enviar
 const IMG = {
-  fisioterapia: '/assets/fotos/servico-fisioterapia.jpg',
+  fisioterapia: '/assets/fotos/servico-fisioterapia-rita.jpg',
   'fisioterapia-tecar-dupla': '/assets/fotos/servico-fisioterapia-tecar-dupla.jpg',
   'fisioterapia-manual': '/assets/fotos/servico-fisioterapia-manual.jpg',
   acupuntura: '/assets/fotos/servico-acupuntura.jpg',
