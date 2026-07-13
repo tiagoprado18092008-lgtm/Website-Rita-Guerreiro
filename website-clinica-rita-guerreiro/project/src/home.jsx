@@ -202,7 +202,7 @@ function ServicesCard() {
     { num: '01', name: t('services_menu.01_name'), href: '/servico/fisioterapia', img: IMG.fisioterapia, blurb: t('services_menu.01_blurb') },
     { num: '02', name: t('services_menu.02_name'), href: '/servico/pilates-clinico', img: IMG['pilates-clinico'], blurb: t('services_menu.02_blurb') },
     { num: '03', name: t('services_menu.03_name'), href: '/servico/massagens', img: IMG['massagem-assinatura-rg'], blurb: t('services_menu.03_blurb') },
-    { num: '04', name: t('services_menu.04_name'), href: '/servico/psicologia', img: IMG.psicologia, blurb: t('services_menu.04_blurb') },
+    { num: '04', name: t('services_menu.04_name'), href: '/servico/psicologia', img: IMG.nutricao, blurb: t('services_menu.04_blurb') },
   ];
   const [active, setActive] = React.useState(0);
 
