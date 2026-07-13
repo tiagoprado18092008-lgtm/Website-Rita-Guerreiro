@@ -10,7 +10,7 @@ const IMG = {
   'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg',
   'fisioterapia-oncologica': null,
   psicologia: null,
-  nutricao: null,
+  nutricao: '/assets/fotos/servico-nutricao.jpg',
   'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg',
   'drenagem-linfatica': '/assets/fotos/equipa-home.jpg',
   'massagem-relaxamento': '/assets/fotos/servico-massagem-assinatura-rg.jpg',
