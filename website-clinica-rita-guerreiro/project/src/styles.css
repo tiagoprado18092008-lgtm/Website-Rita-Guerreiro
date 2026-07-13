@@ -787,6 +787,11 @@ input:focus, textarea:focus, select:focus {
 /* Stop horizontal scroll globally */
 html, body { overflow-x: clip !important; max-width: 100% !important; }
 
+/* Equipa: 5 cards ficam apertados entre 880px e 1200px — passa a 3 colunas */
+@media (max-width: 1200px) {
+  .rg-team-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
 /* Two-column hero/grids collapse to single column on small screens */
 @media (max-width: 880px) {
   /* minmax(0,1fr): sem isto o mínimo "auto" da track herda o max-content

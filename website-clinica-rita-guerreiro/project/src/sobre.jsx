@@ -30,7 +30,14 @@ function Mission() {
     <Section bg={RG.white} pad="lg">
       <Container>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 60, alignItems: 'start', borderTop: `1px solid ${RG.line}`, paddingTop: 64 }} className="rg-hero-grid">
-          <Reveal><Eyebrow>{t('sobre.mission_eyebrow')}</Eyebrow></Reveal>
+          <div>
+            <Reveal><Eyebrow>{t('sobre.mission_eyebrow')}</Eyebrow></Reveal>
+            <Reveal delay={100}>
+              <div style={{ marginTop: 32 }}>
+                <Photo aspect="4/5" label="Sala de tratamento" src="assets/fotos/sala-tratamento.jpg" style={{ borderRadius: 12 }} />
+              </div>
+            </Reveal>
+          </div>
           <div>
             <Reveal>
               <Heading level="h2" style={{ maxWidth: '20ch' }}>{t('sobre.mission_heading')}</Heading>
@@ -108,7 +115,7 @@ function Team() {
             {t('sobre.team_body')}
           </p>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 48 }} className="rg-team-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 20, marginTop: 48 }} className="rg-team-grid">
           {members.map((m, i) => (
             <Reveal key={i} delay={i * 60}>
               <div style={{ background: RG.white, borderRadius: 16, padding: 16, border: `1px solid ${RG.lineSoft}`, boxShadow: '0 20px 50px -15px rgba(20,20,18,0.22), 0 4px 12px rgba(20,20,18,0.06)', height: '100%' }}>
