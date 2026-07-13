@@ -482,9 +482,9 @@ function ServicesOverview() {
   const { lang, t } = useLang();
   const SVC = getServices(lang);
   const cats = [
-    { id: 'fisioterapia', num: '01', href: '/servico/fisioterapia', img: IMG.fisioterapia, ...SVC.fisioterapia },
-    { id: 'saude', num: '02', href: '/servico/saude', img: IMG.psicologia, ...SVC.saude },
-    { id: 'massagens', num: '03', href: '/servico/massagens', img: IMG['massagem-relaxamento'], ...SVC.massagens },
+    { id: 'fisioterapia', num: '01', href: '/servico/fisioterapia', img: IMG['fisioterapia-tecar-dupla'], ...SVC.fisioterapia },
+    { id: 'saude', num: '02', href: '/servico/saude', img: IMG['terapia-bowen'], ...SVC.saude },
+    { id: 'massagens', num: '03', href: '/servico/massagens', img: IMG['massagem-profunda'], ...SVC.massagens },
     { id: 'holisticas', num: '04', href: '/servico/holisticas', img: IMG.reflexologia, ...SVC.holisticas },
     { id: 'estetica', num: '05', href: '/servico/estetica', img: IMG['pilates-clinico'], ...SVC.estetica },
   ];

@@ -3,6 +3,8 @@
 // Fotos reais da clínica — substituir null pela path quando a cliente enviar
 const IMG = {
   fisioterapia: '/assets/fotos/servico-fisioterapia.jpg',
+  'fisioterapia-tecar-dupla': '/assets/fotos/servico-fisioterapia-tecar-dupla.jpg',
+  'fisioterapia-manual': '/assets/fotos/servico-fisioterapia-manual.jpg',
   acupuntura: '/assets/fotos/servico-acupuntura.jpg',
   mesoterapia: '/assets/fotos/servico-mesoterapia.jpg',
   'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg',
@@ -43,7 +45,7 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
     items: [
-      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG.fisioterapia, blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG['fisioterapia-manual'], blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€' },
       { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
