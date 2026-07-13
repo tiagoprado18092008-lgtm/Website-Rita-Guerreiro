@@ -605,7 +605,7 @@ function TecarPage() {
             </Reveal>
             <Reveal delay={80}>
               <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-                <img src="/assets/fotos/servico-tecarterapia-aplicacao.jpg" alt="Aplicação da sonda Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/assets/fotos/servico-tecarterapia-sessao.jpg" alt="Aplicação da sonda Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </Reveal>
           </div>
