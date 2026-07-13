@@ -837,27 +837,6 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
   .rg-espaco-grid { column-count: 1 !important; }
 }
 
-/* Homepage Hero (split with absolute right image panel) — collapse on mobile.
-   React serializa o style inline assim: `min-height: calc(0px + 100vh)` e
-   `inset: 0px 0px 0px 46%`. Os selectores têm de bater nesses valores serializados. */
-@media (max-width: 880px) {
-  section[style*="min-height: calc(0px + 100vh)"] > div[style*="inset: 0px 0px 0px 46%"] {
-    /* Em mobile, painel da foto colapsa para fundo e fica transparente */
-    inset: auto 0 0 0 !important;
-    height: 40% !important;
-    opacity: 0.22 !important;
-  }
-  /* Hero content padding tighter */
-  section[style*="min-height: calc(0px + 100vh)"] > div:last-child {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  /* Em mobile, o gradient esbranquiçado tem de cobrir toda a largura */
-  section[style*="min-height: calc(0px + 100vh)"] > div[style*="linear-gradient(to right"] {
-    background: linear-gradient(to bottom, #ffffff 60%, rgba(255,255,255,0.85) 75%, rgba(255,255,255,0.3) 100%) !important;
-  }
-}
-
 /* Service detail two-column (sticky info + content) → single col */
 @media (max-width: 880px) {
   section[style*="padding-top: 130px"] + section .rg-hero-grid > div:first-child > div {
