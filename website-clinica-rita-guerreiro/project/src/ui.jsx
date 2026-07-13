@@ -407,10 +407,11 @@ function Nav({ current = 'home' }) {
             </div>
 
             {/* Burger */}
-            <button className="rg-burger" onClick={() => setMobile(!mobile)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 6 }} aria-label="Menu">
-              <svg width="22" height="22" viewBox="0 0 22 22">
-                <path d={mobile ? 'M4 4 L18 18 M18 4 L4 18' : 'M3 7 L19 7 M3 15 L19 15'} stroke="white" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
+            <button className={'rg-burger' + (mobile ? ' rg-burger-open' : '')} onClick={() => setMobile(!mobile)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 6 }} aria-label={mobile ? 'Fechar menu' : 'Menu'} aria-expanded={mobile}>
+              <span className="rg-burger-box" aria-hidden="true">
+                <span className="rg-burger-bar" />
+                <span className="rg-burger-bar" />
+              </span>
             </button>
           </div>
         </div>
