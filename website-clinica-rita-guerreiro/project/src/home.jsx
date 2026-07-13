@@ -101,7 +101,7 @@ function Hero() {
       {/* Foto — coluna própria à direita, nunca por baixo do texto/CTAs */}
       <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 auto', minWidth: 0, overflow: 'hidden' }}>
         <img
-          src="assets/fotos/equipa-home.jpg"
+          src="assets/fotos/equipa-capa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
