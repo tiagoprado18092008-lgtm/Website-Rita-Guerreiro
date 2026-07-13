@@ -55,7 +55,6 @@ const SERVICES_I18N = {
       intro: 'Aesthetic care and body treatments with advanced technology — always with prior assessment and a personalised protocol',
       items: {
         facial: { name: 'Facials', blurb: 'Skin cleansing, extraction and personalised facials — for healthy, balanced skin' },
-        'pacotes-tratamento': { name: 'Treatment Packages', blurb: 'Cavitation, radiofrequency, lipolaser, electrostimulation and pressotherapy — technology at the service of your body' },
         'depilacao-laser': { name: 'Laser Hair Removal', blurb: 'Permanent hair removal with state-of-the-art technology — for women and men, all body areas' },
         'pilates-clinico': { name: 'Clinical Pilates', blurb: 'Pilates supervised by a physiotherapist — exercise adapted to injuries, chronic pain or rehabilitation' },
       },
@@ -113,7 +112,6 @@ const SERVICES_I18N = {
       intro: 'Soins esthétiques et traitements corporels avec technologie avancée — toujours avec évaluation préalable et protocole personnalisé',
       items: {
         facial: { name: 'Soins du visage', blurb: 'Nettoyage de peau, extraction et soin facial personnalisé — pour une peau saine et équilibrée' },
-        'pacotes-tratamento': { name: 'Forfaits de traitement', blurb: 'Cavitation, radiofréquence, lipolaser, électrostimulation et pressothérapie — la technologie au service de votre corps' },
         'depilacao-laser': { name: 'Épilation au laser', blurb: 'Épilation définitive avec une technologie de dernière génération — pour femme et homme, toutes les zones du corps' },
         'pilates-clinico': { name: 'Pilates clinique', blurb: 'Pilates supervisé par un physiothérapeute — exercice adapté aux blessures, douleur chronique ou réadaptation' },
       },
@@ -171,7 +169,6 @@ const SERVICES_I18N = {
       intro: 'Cuidado estético y tratamientos corporales con tecnología avanzada — siempre con evaluación previa y protocolo personalizado',
       items: {
         facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado — para una piel sana y equilibrada' },
-        'pacotes-tratamento': { name: 'Paquetes de Tratamiento', blurb: 'Cavitación, radiofrecuencia, lipoláser, electroestimulación y presoterapia — tecnología al servicio de su cuerpo' },
         'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación definitiva con tecnología de última generación — para mujer y hombre, todas las zonas' },
         'pilates-clinico': { name: 'Pilates Clínico', blurb: 'Pilates supervisado por un fisioterapeuta — ejercicio adaptado a lesiones, dolor crónico o rehabilitación' },
       },
@@ -555,23 +552,6 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Acne-prone skin', d: 'Specific protocol for skin with a tendency to acne and excess oil' },
         { t: 'Anti-ageing', d: 'Treatments with actives that stimulate collagen and reduce signs of ageing' },
         { t: 'Deep hydration', d: 'Intensive moisture replenishment for dry, dehydrated or sensitive skin' },
-      ],
-    },
-    'pacotes-tratamento': {
-      tagline: 'Advanced technology with prior assessment — for real results, not promises',
-      description: 'Cavitation and radiofrequency are complementary non-invasive aesthetic treatments. Cavitation uses ultrasound to eliminate localised fat by destroying the fat cells. Radiofrequency uses electromagnetic waves to heat the skin, stimulating collagen, reducing sagging and improving the appearance of cellulite. Pressotherapy is a mechanical lymphatic drainage treatment that uses controlled air pressure to stimulate blood circulation and the lymphatic system. It is performed with accessories containing air chambers (such as boots or sleeves) that inflate and deflate sequentially, helping to eliminate fluids and toxins.',
-      prices: [
-        { label: 'Cav./Radiofreq./Lipolaser/Electrostim. (50min)', value: '50€' },
-        { label: '5-session package', value: '225€' },
-        { label: 'Pressotherapy 30-50min', value: '25€ / 35€' },
-      ],
-      sub: [
-        { t: 'Cavitation', d: 'Focused ultrasound for destruction of fat cells in localised areas' },
-        { t: 'Radiofrequency', d: 'Stimulation of collagen and elastin for firmer skin and reduced laxity' },
-        { t: 'Lipolaser', d: 'Low-level laser for mobilisation of localised fat and body shaping' },
-        { t: 'Electrostimulation', d: 'Passive muscle contraction for toning and recovery of specific areas' },
-        { t: 'Pressotherapy', d: 'Mechanical lymphatic drainage via sequential pressure — swelling, circulation and recovery' },
-        { t: '5-session package', d: 'Save with the 5-session package — ideal for progressive and lasting results' },
       ],
     },
     'depilacao-laser': {
@@ -989,23 +969,6 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Hydratation profonde', d: "Reposition intensive d'hydratation pour peaux sèches, déshydratées ou sensibles" },
       ],
     },
-    'pacotes-tratamento': {
-      tagline: 'Technologie avancée avec évaluation préalable — pour de vrais résultats, pas des promesses',
-      description: "La cavitation et la radiofréquence sont des traitements esthétiques non invasifs complémentaires. La cavitation utilise des ultrasons pour éliminer la graisse localisée en détruisant les cellules adipeuses. La radiofréquence utilise des ondes électromagnétiques pour chauffer la peau, en stimulant le collagène, en réduisant le relâchement et en améliorant l'aspect de la cellulite. La pressothérapie est un traitement de drainage lymphatique mécanique qui utilise une pression d'air contrôlée pour stimuler la circulation sanguine et le système lymphatique. Elle est réalisée à l'aide d'accessoires à chambres d'air (comme des bottes ou des manches) qui se gonflent et se dégonflent séquentiellement, aidant à éliminer les liquides et les toxines.",
-      prices: [
-        { label: 'Cav./Radiofréq./Lipolaser/Électrostim. (50min)', value: '50€' },
-        { label: 'Forfait 5 séances', value: '225€' },
-        { label: 'Pressothérapie 30-50min', value: '25€ / 35€' },
-      ],
-      sub: [
-        { t: 'Cavitation', d: 'Ultrasons focalisés pour la destruction des cellules adipeuses dans des zones localisées' },
-        { t: 'Radiofréquence', d: "Stimulation du collagène et de l'élastine pour la fermeté de la peau et la réduction du relâchement" },
-        { t: 'Lipolaser', d: 'Laser de faible intensité pour la mobilisation de la graisse localisée et le modélage du corps' },
-        { t: 'Électrostimulation', d: 'Contraction musculaire passive pour la tonification et la récupération de zones spécifiques' },
-        { t: 'Pressothérapie', d: 'Drainage lymphatique mécanique par pression séquentielle — gonflement, circulation et récupération' },
-        { t: 'Forfait 5 séances', d: 'Économisez avec le forfait de 5 séances — idéal pour des résultats progressifs et durables' },
-      ],
-    },
     'depilacao-laser': {
       tagline: 'Finie l’épilation hebdomadaire — laser définitif, pour femme et homme',
       description: "L'épilation au laser est un soin esthétique qui utilise des faisceaux de lumière concentrée pour détruire la racine du poil (le follicule pileux), ralentissant et réduisant sa croissance de façon prolongée.",
@@ -1419,23 +1382,6 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Piel acneica', d: 'Protocolo específico para piel con tendencia al acné y al exceso de grasa' },
         { t: 'Antiedad', d: 'Tratamientos con activos que estimulan el colágeno y reducen los signos de la edad' },
         { t: 'Hidratación profunda', d: 'Reposición intensiva de hidratación para pieles secas, deshidratadas o sensibles' },
-      ],
-    },
-    'pacotes-tratamento': {
-      tagline: 'Tecnología avanzada con evaluación previa — para resultados reales, no promesas',
-      description: 'La cavitación y la radiofrecuencia son tratamientos estéticos no invasivos complementarios. La cavitación usa ultrasonidos para eliminar la grasa localizada destruyendo las células adiposas. La radiofrecuencia usa ondas electromagnéticas para calentar la piel, estimulando el colágeno, reduciendo la flacidez y mejorando el aspecto de la celulitis. La presoterapia es un tratamiento de drenaje linfático mecánico que utiliza presión de aire controlada para estimular la circulación sanguínea y el sistema linfático. Se realiza mediante accesorios con cámaras de aire (como botas o mangas) que se inflan y desinflan secuencialmente, ayudando a eliminar líquidos y toxinas.',
-      prices: [
-        { label: 'Cav./Radiofrec./Lipoláser/Electroest. (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
-        { label: 'Presoterapia 30-50min', value: '25€ / 35€' },
-      ],
-      sub: [
-        { t: 'Cavitación', d: 'Ultrasonidos focalizados para la destrucción de células de grasa en zonas localizadas' },
-        { t: 'Radiofrecuencia', d: 'Estimulación del colágeno y la elastina para firmeza de la piel y reducción de la flacidez' },
-        { t: 'Lipoláser', d: 'Láser de baja intensidad para movilizar la grasa localizada y remodelar el cuerpo' },
-        { t: 'Electroestimulación', d: 'Contracción muscular pasiva para tonificación y recuperación de zonas específicas' },
-        { t: 'Presoterapia', d: 'Drenaje linfático mecánico mediante presión secuencial — hinchazón, circulación y recuperación' },
-        { t: 'Pack de 5 sesiones', d: 'Ahorra con el pack de 5 sesiones — ideal para resultados progresivos y duraderos' },
       ],
     },
     'depilacao-laser': {

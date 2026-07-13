@@ -28,7 +28,6 @@
     { "source": "/servico/massagens", "destination": "/servico-massagens" },
     { "source": "/servico/mesoterapia", "destination": "/servico-mesoterapia" },
     { "source": "/servico/nutricao", "destination": "/servico-nutricao" },
-    { "source": "/servico/pacotes-tratamento", "destination": "/servico-pacotes-tratamento" },
     { "source": "/servico/pilates-clinico", "destination": "/servico-pilates-clinico" },
     { "source": "/servico/psicologia", "destination": "/servico-psicologia" },
     { "source": "/servico/reflexologia", "destination": "/servico-reflexologia" },

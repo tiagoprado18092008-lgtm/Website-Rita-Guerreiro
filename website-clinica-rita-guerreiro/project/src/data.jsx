@@ -27,7 +27,6 @@ const IMG = {
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',
   'head-spa': '/assets/fotos/servico-head-spa.jpg',
   facial: '/assets/fotos/servico-facial.jpg',
-  'pacotes-tratamento': '/assets/fotos/servico-pacotes-tratamento.jpg',
   'depilacao-laser': null,
   'pilates-clinico': '/assets/pilates.jpg',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg',
@@ -92,7 +91,6 @@ const SERVICES = {
     intro: 'Cuidados estéticos e tratamentos corporais com tecnologia avançada — sempre com avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
-      { slug: 'pacotes-tratamento', name: 'Pacotes de Tratamento', img: IMG['pacotes-tratamento'], blurb: 'Cavitação, radiofrequência, lipolaser, eletroestimulação e pressoterapia — tecnologia ao serviço do seu corpo.', price: '25€ – 225€' },
       { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
     ],
@@ -509,23 +507,6 @@ const SERVICE_DETAIL = {
       { t: 'Pele acneica', d: 'Protocolo específico para peles com tendência acneica e excesso de oleosidade.' },
       { t: 'Anti-age', d: 'Tratamentos com ativos que estimulam o colagénio e reduzem os sinais do envelhecimento.' },
       { t: 'Hidratação profunda', d: 'Reposição intensiva de hidratação para peles secas, desidratadas ou sensíveis.' },
-    ],
-  },
-  'pacotes-tratamento': {
-    tagline: 'Tecnologia avançada com avaliação prévia — para resultados reais, não promessas.',
-    description: 'A cavitação e a radiofrequência são tratamentos estéticos não invasivos complementares. A cavitação usa ultrassons para eliminar a gordura localizada destruindo as células adiposas. A radiofrequência usa ondas eletromagnéticas para aquecer a pele, estimulando o colágeno, reduzindo a flacidez e melhorando o aspeto da celulite. A pressoterapia é um tratamento de drenagem linfática mecânica que utiliza pressão de ar controlada para estimular a circulação sanguínea e o sistema linfático. É realizada através de acessórios com câmaras de ar (como botas ou mangas) que insuflam e desinsuflam sequencialmente, ajudando a eliminar líquidos e toxinas.',
-    prices: [
-      { label: 'Cav./Radiofrequência/Lipolaser/Eletroestim. (50min)', value: '50€' },
-      { label: 'Pacote 5 sessões', value: '225€' },
-      { label: 'Pressoterapia 30-50min', value: '25€ / 35€' },
-    ],
-    sub: [
-      { t: 'Cavitação', d: 'Ultrassons focados para destruição de células adiposas em zonas localizadas.' },
-      { t: 'Radiofrequência', d: 'Estimulação do colagénio e elastina para firmeza da pele e redução da flacidez.' },
-      { t: 'Lipolaser', d: 'Laser de baixa intensidade para mobilização de gordura localizada e modelação corporal.' },
-      { t: 'Electroestimulação', d: 'Contração muscular passiva para tonificação e recuperação de zonas específicas.' },
-      { t: 'Pressoterapia', d: 'Drenagem linfática mecânica por pressão sequencial — inchaço, circulação e recuperação.' },
-      { t: 'Pacote 5 sessões', d: 'Aproveite o pacote de 5 sessões — ideal para resultados progressivos e duradouros.' },
     ],
   },
   'depilacao-laser': {
