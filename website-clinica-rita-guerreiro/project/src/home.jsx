@@ -67,15 +67,16 @@ function Hero() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
                 {t('hero.cta')}
               </a>
-              <a href="#todos-servicos" style={{
+              <a href="#todos-servicos" className="rg-cta-secondary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 600,
-                color: RG.ink, background: 'rgba(255,255,255,0.92)',
-                border: `1.5px solid rgba(20,20,18,0.16)`, padding: '13px 22px', borderRadius: 999, textDecoration: 'none',
-                transition: 'border-color 200ms, background 200ms',
+                color: RG.ink, background: RG.white,
+                border: `1.5px solid rgba(20,20,18,0.3)`, padding: '14px 26px', borderRadius: 999, textDecoration: 'none',
+                boxShadow: '0 2px 10px -4px rgba(20,20,18,0.1)',
+                transition: 'border-color 200ms, background 200ms, transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms',
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.4)'; e.currentTarget.style.background = 'rgba(255,255,255,1)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.16)'; e.currentTarget.style.background = 'rgba(255,255,255,0.92)'; }}>
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.55)'; e.currentTarget.style.background = RG.creamSoft; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,20,18,0.3)'; e.currentTarget.style.background = RG.white; }}>
                 {t('hero.cta_secondary')}
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>

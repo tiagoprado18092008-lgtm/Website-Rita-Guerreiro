@@ -729,6 +729,12 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 14px 36px -8px rgba(111,181,176,0.75);
 }
 
+/* Secondary CTA hover (Hero) */
+.rg-cta-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(20,20,18,0.18);
+}
+
 /* Services menu — list interactive */
 .rg-services-menu ul li:hover h3 { transform: translateX(4px); }
 

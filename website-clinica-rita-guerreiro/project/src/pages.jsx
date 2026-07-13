@@ -527,6 +527,92 @@ function TecarPage() {
       </Container>
     </Section>
 
+    {/* ── O equipamento ── */}
+    {detail.equipment && (
+      <Section bg={RG.creamSoft} pad="lg">
+        <Container>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid rg-sobre-areas-grid">
+            <Reveal>
+              <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
+                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg" alt="Consola do equipamento Winback BACK3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div style={{
+                display: 'inline-block', fontFamily: F_BODY, fontSize: 11,
+                fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: accent.dot, marginBottom: 20,
+              }}>{detail.equipment.eyebrow}</div>
+              <h3 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px', color: RG.ink }}>{detail.equipment.heading}</h3>
+              <p style={{ fontFamily: F_BODY, fontSize: 16, lineHeight: 1.7, color: RG.charcoal, margin: 0 }}>{detail.equipment.text}</p>
+
+              {detail.equipment.badge && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 24 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 10, overflow: 'hidden', flexShrink: 0, border: `1px solid ${RG.line}` }}>
+                    <img src="/assets/fotos/servico-tecarterapia-winback-selo.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
+                  <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.tealDark }}>{detail.equipment.badge}</span>
+                </div>
+              )}
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 28 }}>
+                {detail.equipment.bullets.map((b, i) => (
+                  <div key={i} style={{ padding: '14px 16px', background: RG.white, borderRadius: 10, border: `1px solid ${RG.line}` }}>
+                    <div style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 700, color: RG.tealDark, letterSpacing: '-0.01em', marginBottom: 4 }}>{b.t}</div>
+                    <div style={{ fontFamily: F_BODY, fontSize: 12.5, lineHeight: 1.5, color: RG.muted }}>{b.d}</div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+    )}
+
+    {/* ── Durante a sessão ── */}
+    {detail.process && (
+      <Section bg={RG.white} pad="lg">
+        <Container>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid rg-sobre-areas-grid">
+            <Reveal>
+              <div style={{
+                display: 'inline-block', fontFamily: F_BODY, fontSize: 11,
+                fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: accent.dot, marginBottom: 20,
+              }}>{detail.process.eyebrow}</div>
+              <h3 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 28px', color: RG.ink }}>{detail.process.heading}</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {detail.process.steps.map((s, i) => (
+                  <div key={i} style={{
+                    display: 'flex', gap: 16, alignItems: 'flex-start',
+                    padding: '16px 0',
+                    borderBottom: i < detail.process.steps.length - 1 ? `1px solid ${RG.line}` : 'none',
+                  }}>
+                    <div style={{
+                      width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
+                      background: accent.bg, border: `1px solid ${accent.border}`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: F_BODY, fontSize: 11, fontWeight: 700, color: accent.dot,
+                      marginTop: 2,
+                    }}>{i + 1}</div>
+                    <div>
+                      <div style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: RG.ink, marginBottom: 4 }}>{s.t}</div>
+                      <div style={{ fontFamily: F_BODY, fontSize: 14, lineHeight: 1.6, color: RG.charcoal }}>{s.d}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
+                <img src="/assets/fotos/servico-tecarterapia-aplicacao.jpg" alt="Aplicação da sonda Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+    )}
+
     {/* ── CTA Marcação ── */}
     <section style={{ background: RG.tealDark, padding: '60px 0' }}>
       <Container>

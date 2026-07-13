@@ -12,7 +12,7 @@ const IMG = {
   psicologia: null,
   nutricao: null,
   'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg',
-  'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
+  'drenagem-linfatica': '/assets/fotos/equipa-home.jpg',
   'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg',
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg',
@@ -143,6 +143,28 @@ const SERVICE_DETAIL = {
       { t: 'Recuperação pós-cirúrgica', d: 'Acelera a cicatrização de tecidos e recupera mobilidade após cirurgia ortopédica.' },
       { t: 'Lesões desportivas agudas e crónicas', d: 'Reduz o tempo de recuperação em entorses, roturas musculares e sobrecargas de treino.' },
     ],
+    equipment: {
+      eyebrow: 'O EQUIPAMENTO',
+      heading: 'Tecnologia Winback, oficial e certificada',
+      text: 'O Winback BACK3 é operado diretamente pela fisioterapeuta através de um ecrã tátil, que permite ajustar em tempo real o modo, a intensidade e a combinação de correntes ao caso de cada pessoa. A sonda desliza sobre a pele com creme condutor específico — sem agulhas, sem preparação especial e sem tempo de paragem entre a sessão e o dia a dia.',
+      badge: 'Certificado Winback Expert Center',
+      bullets: [
+        { t: '300 kHz – 1 MHz', d: 'Alta frequência regulável consoante a profundidade do tecido a tratar.' },
+        { t: 'Capacitivo e resistivo', d: 'Dois modos de diatermia, para tecido superficial ou mais profundo.' },
+        { t: 'Hi-TENS + Hi-EMS', d: 'Neuromodulação combinada com o calor, para alívio da dor e ativação muscular.' },
+        { t: 'Sonda monopolar', d: 'Aplicada diretamente pela fisioterapeuta, com controlo total sobre a zona tratada.' },
+      ],
+    },
+    process: {
+      eyebrow: 'DURANTE A SESSÃO',
+      heading: 'Como é feita a aplicação',
+      steps: [
+        { t: 'Avaliação e ajuste', d: 'A fisioterapeuta escolhe o modo, a intensidade e a sonda de acordo com a zona e o objetivo do tratamento.' },
+        { t: 'Aplicação direta', d: 'A sonda desliza sobre a pele com creme condutor, sem agulhas nem desconforto.' },
+        { t: 'Calor e neuromodulação', d: 'Sente-se calor profundo e uma estimulação elétrica suave já nos primeiros minutos.' },
+        { t: 'Integração na sessão', d: 'O Winback é combinado com terapia manual, potenciando o resultado de cada sessão de fisioterapia.' },
+      ],
+    },
   },
   'fisioterapia-pediatrica': {
     tagline: 'Fisioterapia adaptada a cada fase do crescimento — com cuidado, segurança e tempo para cada criança.',
