@@ -102,6 +102,13 @@ section {
   padding-bottom: clamp(80px, 10vw, 140px);
 }
 
+/* Exceção: hero da homepage é full-bleed — a foto vai até às bordas;
+   a coluna de texto tem o seu próprio padding inline */
+section.rg-hero-home {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /* Exceção: Stats strip — padding menor */
 .rg-stats-grid {
   gap: 0 !important;
