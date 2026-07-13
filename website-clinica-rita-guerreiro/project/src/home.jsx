@@ -8,23 +8,10 @@ function Hero() {
   const { t } = useLang();
   const h1Lines = t('hero.h1');
   return (
-    <section className="rg-hero-home" style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'center', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
+    <section className="rg-hero-home" style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'stretch', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
 
-      {/* Foto de fundo — cobre toda a secção, gradiente faz a transição */}
-      <div className="rg-hero-home-photo" style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
-        <img
-          src="assets/fotos/equipa-home.jpg"
-          alt="Equipa da Clínica Rita Guerreiro em Loulé"
-          className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right center', background: '#f5f0eb', display: 'block' }}
-          loading="eager" decoding="async"
-        />
-        {/* Eyebrow pill — visível só em mobile via CSS */}
-        <span className="rg-hero-home-eyebrow" aria-hidden="true">Centro de Terapias & Bem-Estar</span>
-      </div>
-
-{/* Conteúdo principal */}
-      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1200, margin: '0 0 0 0', padding: '40px 48px 80px 64px', boxSizing: 'border-box' }}>
+      {/* Conteúdo principal — coluna própria, nunca sobreposta à foto */}
+      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, flex: '0 1 640px', minWidth: 0, display: 'flex', alignItems: 'center', background: RG.cream, padding: '40px 48px 80px 64px', boxSizing: 'border-box' }}>
         <div style={{ maxWidth: 520, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
@@ -109,6 +96,19 @@ function Hero() {
           </Reveal>
 
         </div>
+      </div>
+
+      {/* Foto — coluna própria à direita, nunca por baixo do texto/CTAs */}
+      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 auto', minWidth: 0, overflow: 'hidden' }}>
+        <img
+          src="assets/fotos/equipa-home.jpg"
+          alt="Equipa da Clínica Rita Guerreiro em Loulé"
+          className="rg-ken-burns"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
+          loading="eager" decoding="async"
+        />
+        {/* Eyebrow pill — visível só em mobile via CSS */}
+        <span className="rg-hero-home-eyebrow" aria-hidden="true">Centro de Terapias & Bem-Estar</span>
       </div>
     </section>
   );
@@ -427,6 +427,49 @@ function WhyUs() {
             </div>
           </div>
         </Reveal>
+      </Container>
+    </Section>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// TECH TEASER — destaque da tecarterapia Winback, com link para a página dedicada
+// ────────────────────────────────────────────────────────────────────────────
+function TechTeaser() {
+  const { t } = useLang();
+  return (
+    <Section bg={RG.tealDark} pad="md">
+      <Container>
+        <a href="/servico/tecarterapia-winback" className="rg-tec-teaser-link" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+          <Reveal>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="rg-hero-grid">
+              <div>
+                <div style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.22)',
+                  borderRadius: 100, padding: '6px 14px', marginBottom: 20,
+                }}>
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: RG.teal, flexShrink: 0 }} />
+                  <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.teal, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{t('tec_teaser.eyebrow')}</span>
+                </div>
+                <h3 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 14px', color: RG.white, lineHeight: 1.15 }}>{t('tec_teaser.heading')}</h3>
+                <p style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', margin: '0 0 28px', maxWidth: '46ch' }}>{t('tec_teaser.body')}</p>
+                <span className="rg-tec-teaser-cta" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 8,
+                  fontFamily: F_BODY, fontSize: 14, fontWeight: 700, color: RG.white,
+                  padding: '13px 24px', borderRadius: 999, background: RG.teal,
+                  transition: 'filter 200ms',
+                }}>
+                  {t('tec_teaser.cta')}
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+              </div>
+              <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '16/10' }}>
+                <img src="/assets/fotos/servico-tecarterapia-aplicacao.jpg" alt="Tecarterapia Winback BACK3 aplicada numa sessão de fisioterapia" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              </div>
+            </div>
+          </Reveal>
+        </a>
       </Container>
     </Section>
   );
@@ -763,4 +806,4 @@ function HomeCTA() {
 
 function Values() { return null; }
 
-Object.assign(window, { Hero, StatsStrip, ServicesOverview, Values, ServicesCard, WhyUs, MeetRita, Testimonials, HomeCTA });
+Object.assign(window, { Hero, StatsStrip, ServicesOverview, Values, ServicesCard, WhyUs, TechTeaser, MeetRita, Testimonials, HomeCTA });

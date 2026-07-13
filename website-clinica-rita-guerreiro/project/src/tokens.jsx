@@ -132,6 +132,12 @@ const TRANSLATIONS = {
         { t: 'Sem listas de espera intermináveis', d: 'Marcação rápida por WhatsApp ou telefone. A maioria dos utentes consegue consulta na mesma semana.' },
       ],
     },
+    tec_teaser: {
+      eyebrow: 'Tecnologia',
+      heading: 'Winback BACK3 — tecarterapia que acelera cada sessão',
+      body: 'Integramos tecarterapia de última geração nas sessões de fisioterapia — calor profundo e neuromodulação que aliviam a dor e aceleram a recuperação, sem agulhas nem tempo de paragem.',
+      cta: 'Conhecer a tecnologia',
+    },
     services_overview: {
       eyebrow: 'Serviços',
       heading: 'Seja qual for o motivo que o traz, temos alguém para si',
@@ -433,6 +439,12 @@ const TRANSLATIONS = {
         { t: 'No endless waiting lists', d: 'Quick booking via WhatsApp or phone. Most patients get an appointment within the same week.' },
       ],
     },
+    tec_teaser: {
+      eyebrow: 'Technology',
+      heading: 'Winback BACK3 — tecar therapy that speeds up every session',
+      body: 'We integrate state-of-the-art tecar therapy into physiotherapy sessions — deep heat and neuromodulation that relieve pain and speed up recovery, with no needles and no downtime.',
+      cta: 'Discover the technology',
+    },
     services_overview: {
       eyebrow: 'Services',
       heading: 'Whatever brings you here, we have someone for you',
@@ -716,6 +728,12 @@ const TRANSLATIONS = {
         { t: 'Des professionnels qui vous accompagnent vraiment', d: 'Vous ne changez pas de thérapeute à chaque consultation. Votre équipe vous connaît, suit votre progression et se soucie de vos résultats.' },
         { t: 'Pas de listes d’attente interminables', d: 'Réservation rapide par WhatsApp ou téléphone. La plupart des patients obtiennent un rendez-vous dans la semaine.' },
       ],
+    },
+    tec_teaser: {
+      eyebrow: 'Technologie',
+      heading: 'Winback BACK3 — la tecarthérapie qui accélère chaque séance',
+      body: 'Nous intégrons la tecarthérapie de dernière génération à vos séances de physiothérapie — une chaleur profonde et une neuromodulation qui soulagent la douleur et accélèrent votre récupération, sans aiguilles ni temps d’arrêt.',
+      cta: 'Découvrir la technologie',
     },
     services_overview: {
       eyebrow: 'Services',
@@ -1017,6 +1035,12 @@ const TRANSLATIONS = {
         { t: 'Profesionales que le acompañan de verdad', d: 'No cambia de terapeuta en cada consulta. Su equipo le conoce, le acompaña y se preocupa por sus resultados.' },
         { t: 'Sin listas de espera interminables', d: 'Reserva rápida por WhatsApp o teléfono. La mayoría de los pacientes consigue cita en la misma semana.' },
       ],
+    },
+    tec_teaser: {
+      eyebrow: 'Tecnología',
+      heading: 'Winback BACK3 — tecarterapia que acelera cada sesión',
+      body: 'Integramos tecarterapia de última generación en las sesiones de fisioterapia — calor profundo y neuromodulación que alivian el dolor y aceleran la recuperación, sin agujas ni tiempo de parada.',
+      cta: 'Conocer la tecnología',
     },
     services_overview: {
       eyebrow: 'Servicios',

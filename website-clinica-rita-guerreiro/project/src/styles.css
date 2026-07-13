@@ -372,6 +372,10 @@ h3 { font-size: clamp(22px, 2.5vw, 28px); }
 }
 .rg-service-card:hover .rg-service-arrow { transform: translateX(4px); }
 .rg-service-arrow { transition: transform 260ms cubic-bezier(.2,.8,.2,1); }
+
+.rg-tec-teaser-link img { transition: transform 600ms cubic-bezier(.2,.8,.2,1); }
+.rg-tec-teaser-link:hover img { transform: scale(1.05); }
+.rg-tec-teaser-link:hover .rg-tec-teaser-cta { filter: brightness(1.1); }
 .rg-service-card:hover .rg-card-line { background: #6FB5B0; }
 .rg-card-line {
   height: 1px;

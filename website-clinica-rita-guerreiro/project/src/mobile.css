@@ -192,14 +192,17 @@
     min-height: auto !important;
     padding-top: 0 !important;
     background: #ffffff !important;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
     overflow: visible !important;
   }
 
-  /* Foto bloco — 45vh */
+  /* Foto bloco — 45vh — vem primeiro visualmente, independente da ordem no DOM */
   .rg-hero-home-photo {
+    order: -1 !important;
     position: relative !important;
     inset: auto !important;
+    flex: none !important;
     width: 100% !important;
     height: 48vh !important;
     min-height: 320px !important;
@@ -257,6 +260,7 @@
   .rg-hero-home-content {
     position: relative !important;
     inset: auto !important;
+    flex: none !important;
     width: 100% !important;
     max-width: none !important;
     padding: 28px 20px 40px !important;
