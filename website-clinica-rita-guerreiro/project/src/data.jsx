@@ -27,7 +27,7 @@ const IMG = {
   facial: '/assets/fotos/servico-facial.jpg',
   'pacotes-tratamento': '/assets/fotos/servico-pacotes-tratamento.jpg',
   'depilacao-laser': null,
-  'pilates-clinico': '/assets/fotos/servico-pilates-clinico.jpg',
+  'pilates-clinico': '/assets/pilates.jpg',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg',
   // Genéricos — fotos reais da clínica
   clinicInterior: '/assets/fotos/rita-rececao.jpg',
