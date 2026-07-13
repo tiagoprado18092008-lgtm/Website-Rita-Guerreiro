@@ -8,10 +8,10 @@ function Hero() {
   const { t } = useLang();
   const h1Lines = t('hero.h1');
   return (
-    <section className="rg-hero-home" style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'stretch', background: RG.cream, overflow: 'hidden', paddingTop: 120 }}>
+    <section className="rg-hero-home" style={{ position: 'relative', minHeight: 'calc(100vh - 0px)', display: 'flex', alignItems: 'stretch', background: RG.cream, overflow: 'hidden' }}>
 
       {/* Conteúdo principal — coluna própria, nunca sobreposta à foto */}
-      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, flex: '0 1 640px', minWidth: 0, display: 'flex', alignItems: 'center', background: RG.cream, padding: '40px 48px 80px 64px', boxSizing: 'border-box' }}>
+      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, flex: '0 1 640px', minWidth: 0, display: 'flex', alignItems: 'center', background: RG.cream, padding: '160px 48px 80px 64px', boxSizing: 'border-box' }}>
         <div style={{ maxWidth: 520, position: 'relative', paddingLeft: 28 }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
