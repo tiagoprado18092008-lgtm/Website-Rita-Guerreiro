@@ -19,7 +19,7 @@ const IMG = {
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg',
   'massagem-pre-pos-natal': null,
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
-  'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg',
+  'massagem-terapeutica': '/assets/fotos/servico-drenagem-linfatica.jpg',
   reflexologia: '/assets/fotos/servico-reflexologia.jpg',
   shiatsu: '/assets/fotos/servico-shiatsu.jpg',
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',

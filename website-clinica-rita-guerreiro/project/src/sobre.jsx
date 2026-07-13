@@ -47,7 +47,10 @@ function Mission() {
             <Reveal><Eyebrow>{t('sobre.mission_eyebrow')}</Eyebrow></Reveal>
             <Reveal delay={100}>
               <div style={{ marginTop: 32 }}>
-                <Photo aspect="4/5" label="Sala de tratamento" src="assets/fotos/sala-tratamento.jpg" style={{ borderRadius: 12 }} />
+                <Photo aspect="4/5" label="Rita Guerreiro com um cliente na receção da clínica" src="assets/fotos/rececao-cliente.jpg" style={{ borderRadius: 12 }} />
+                <Body size={14} style={{ marginTop: 14, color: RG.muted, fontStyle: 'italic' }}>
+                  {t('sobre.mission_photo_caption')}
+                </Body>
               </div>
             </Reveal>
           </div>
