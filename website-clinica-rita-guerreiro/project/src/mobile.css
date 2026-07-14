@@ -227,10 +227,10 @@
     pointer-events: none;
     z-index: 2;
   }
-  /* Eyebrow pill sobreposta ao topo da foto */
+  /* Eyebrow pill sobreposta ao fundo da foto (não tapa as caras da equipa) */
   .rg-hero-home-eyebrow {
     position: absolute !important;
-    top: 16px !important;
+    bottom: 14px !important;
     left: 16px !important;
     z-index: 3;
     display: inline-flex;

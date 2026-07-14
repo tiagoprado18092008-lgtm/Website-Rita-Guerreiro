@@ -12,7 +12,7 @@ function Hero() {
 
       {/* Conteúdo principal — coluna própria, nunca sobreposta à foto */}
       <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, flex: '0 1 640px', minWidth: 0, display: 'flex', alignItems: 'center', background: RG.cream, padding: '160px 48px 80px 64px', boxSizing: 'border-box' }}>
-        <div style={{ maxWidth: 520, position: 'relative', paddingLeft: 28 }}>
+        <div style={{ width: '100%', maxWidth: 520, position: 'relative', paddingLeft: 28, boxSizing: 'border-box' }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
@@ -99,7 +99,7 @@ function Hero() {
       </div>
 
       {/* Foto — coluna própria à direita, nunca por baixo do texto/CTAs */}
-      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 auto', minWidth: 0, overflow: 'hidden' }}>
+      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 0%', minWidth: 0, overflow: 'hidden' }}>
         <img
           src="assets/fotos/equipa-capa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
@@ -400,7 +400,7 @@ function WhyUs() {
           </div>
         </Reveal>
         <Reveal delay={60}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="rg-hero-grid">
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               {points.map((p, i) => (
                 <button key={i} onClick={() => setActive(i)} aria-expanded={active === i} style={{
@@ -422,7 +422,7 @@ function WhyUs() {
                 </button>
               ))}
             </div>
-            <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/5' }}>
+            <div className="rg-img-reveal" style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '1/1' }}>
               <img src="assets/fotos/rita-rececao-2.jpg" alt="Rita Guerreiro na receção da clínica" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '35% top', display: 'block' }} />
             </div>
           </div>
@@ -450,7 +450,7 @@ function TechTeaser() {
                   borderRadius: 100, padding: '6px 14px', marginBottom: 20,
                 }}>
                   <div style={{ width: 6, height: 6, borderRadius: '50%', background: RG.teal, flexShrink: 0 }} />
-                  <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: RG.teal, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{t('tec_teaser.eyebrow')}</span>
+                  <span style={{ fontFamily: F_BODY, fontSize: 12, fontWeight: 600, color: '#CFE8E6', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{t('tec_teaser.eyebrow')}</span>
                 </div>
                 <h3 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 14px', color: RG.white, lineHeight: 1.15 }}>{t('tec_teaser.heading')}</h3>
                 <p style={{ fontFamily: F_BODY, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', margin: '0 0 28px', maxWidth: '46ch' }}>{t('tec_teaser.body')}</p>
@@ -464,7 +464,7 @@ function TechTeaser() {
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </span>
               </div>
-              <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '16/10' }}>
+              <div className="rg-tec-img rg-img-reveal" style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '16/10' }}>
                 <img src="/assets/fotos/servico-tecarterapia-aplicacao.jpg" alt="Tecarterapia Winback BACK3 aplicada numa sessão de fisioterapia" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
@@ -496,28 +496,31 @@ function ServicesOverview() {
           <Heading level="h2" style={{ marginTop: 12, maxWidth: '18ch' }}>{t('services_overview.heading')}</Heading>
         </Reveal>
         <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
-          {cats.map((cat, ci) => (
-            <Reveal key={cat.id} delay={ci * 60}>
-              <a href={cat.href} className="rg-service-card" style={{
+          {cats.map((cat, ci) => {
+            const isWide = ci === cats.length - 1;
+            return (
+            <Reveal key={cat.id} delay={ci * 60} style={isWide ? { gridColumn: '1 / -1' } : undefined}>
+              <a href={cat.href} className={isWide ? 'rg-service-card rg-service-card-wide' : 'rg-service-card'} style={{
                 display: 'block', textDecoration: 'none', color: RG.ink,
                 background: RG.white,
                 padding: 0, overflow: 'hidden',
               }}>
                 {/* Área de imagem com placeholder gradient */}
-                <div style={{ position: 'relative', aspectRatio: '4/3', background: 'linear-gradient(135deg, #e8f2f1 0%, #d0e8e6 50%, #b8dbd8 100%)', overflow: 'hidden' }}>
+                <div className="rg-service-card-img" style={{ position: 'relative', aspectRatio: '4/3', background: 'linear-gradient(135deg, #e8f2f1 0%, #d0e8e6 50%, #b8dbd8 100%)', overflow: 'hidden' }}>
                   <img src={cat.img} alt={cat.label} loading="lazy" decoding="async"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     onError={e => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
                 {/* Conteúdo */}
-                <div style={{ padding: '18px 22px 22px' }}>
+                <div className="rg-service-card-body" style={{ padding: '18px 22px 22px' }}>
                   <h3 style={{ fontFamily: F_DISPLAY, fontSize: 20, fontWeight: 600, letterSpacing: '-0.01em', margin: '0 0 10px 0', color: RG.tealDark, lineHeight: 1.2 }}>{cat.label}</h3>
                   <p style={{ fontFamily: F_BODY, fontSize: 13, color: RG.muted, lineHeight: 1.55, margin: 0 }}>{cat.intro}</p>
                 </div>
               </a>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </Section>
@@ -536,7 +539,7 @@ function MeetRita() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
             {/* Foto + card de credenciais */}
             <div style={{ position: 'relative' }}>
-              <div style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
+              <div className="rg-img-reveal" style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
                 <img src="assets/fotos/rita-retrato.jpg" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               {/* Card de credenciais sobreposto */}

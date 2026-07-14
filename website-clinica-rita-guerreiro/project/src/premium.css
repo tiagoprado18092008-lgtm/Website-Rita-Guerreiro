@@ -180,7 +180,6 @@ section.rg-hero-home {
   transition: transform 400ms var(--rg-ease-out),
               box-shadow 400ms var(--rg-ease-out),
               border-color 400ms var(--rg-ease-out) !important;
-  will-change: transform;
 }
 
 .rg-service-card:hover {
@@ -205,7 +204,6 @@ section.rg-hero-home {
   border-radius: var(--rg-r-md) !important;
   transition: transform 300ms var(--rg-ease-out),
               box-shadow 300ms var(--rg-ease-out) !important;
-  will-change: transform;
 }
 
 .rg-icon-card:hover {
@@ -499,10 +497,53 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Smooth scroll
+   Smooth scroll — só quando o utilizador não pediu menos movimento
    ========================================================================== */
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ==========================================================================
+   Card de serviços "wide" — destaque horizontal (última categoria)
+   Em mobile mantém o layout empilhado normal.
+   ========================================================================== */
+@media (min-width: 769px) {
+  .rg-service-card-wide {
+    display: grid !important;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: stretch;
+  }
+
+  .rg-service-card-wide .rg-service-card-img {
+    aspect-ratio: auto !important;
+    height: 100%;
+    min-height: 240px;
+  }
+
+  .rg-service-card-wide .rg-service-card-body {
+    align-self: center;
+    padding: 32px 40px !important;
+  }
+
+  .rg-service-card-wide .rg-service-card-body h3 {
+    font-size: 24px !important;
+  }
+
+  .rg-service-card-wide .rg-service-card-body p {
+    font-size: 14.5px !important;
+    max-width: 60ch;
+  }
+}
+
+/* ==========================================================================
+   Winback teaser — em mobile a imagem entra antes do texto
+   ========================================================================== */
+@media (max-width: 768px) {
+  .rg-tec-teaser-link .rg-tec-img {
+    order: -1;
+  }
 }
 
 /* ==========================================================================

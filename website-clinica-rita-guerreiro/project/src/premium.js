@@ -10,6 +10,9 @@
     // Verificar se GSAP está disponível
     if (typeof gsap === 'undefined') return;
 
+    // Respeitar prefers-reduced-motion: sem parallax, reveals nem contadores
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // Registar ScrollTrigger
     if (typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
@@ -22,6 +25,7 @@
       initHeroParallax();
     }
     initScrollReveals();
+    initImageReveals();
     initCounters();
   }
 
@@ -134,6 +138,26 @@
 
     // Icon cards (páginas de categoria)
     animateGroup('.rg-icon-card');
+  }
+
+  // ── Reveal "cortina" (clip-path) nas imagens grandes de secção ──
+  // Elementos marcados com .rg-img-reveal no JSX. Se o GSAP falhar,
+  // nada fica escondido — o estado inicial só é aplicado aqui.
+  function initImageReveals() {
+    if (typeof ScrollTrigger === 'undefined') return;
+
+    document.querySelectorAll('.rg-img-reveal').forEach(function(el) {
+      gsap.fromTo(el,
+        { clipPath: 'inset(0 0 100% 0)' },
+        {
+          clipPath: 'inset(0 0 0% 0)',
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 82%', once: true },
+          onComplete: function() { el.style.clipPath = ''; }
+        }
+      );
+    });
   }
 
   // ── Counter animation para stats ────────────────────────────

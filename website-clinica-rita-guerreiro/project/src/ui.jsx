@@ -815,9 +815,15 @@ function Footer() {
           paddingTop: 28, paddingBottom: 28,
           borderTop: `1px solid ${FD}`,
         }} className="rg-footer-legal">
-          <img src="/assets/sem-multibanco.png" alt="Não aceitamos Multibanco" title="Não aceitamos Multibanco"
-            style={{ display: 'block', height: 38, width: 'auto', opacity: 0.9 }}
-            loading="lazy" />
+          <span title="Não aceitamos Multibanco" style={{
+            display: 'inline-flex', alignItems: 'center',
+            background: 'rgba(255,255,255,0.92)', borderRadius: 8, padding: '5px 10px',
+            boxShadow: '0 1px 4px rgba(20,20,18,0.08)',
+          }}>
+            <img src="/assets/sem-multibanco.png" alt="Não aceitamos Multibanco"
+              style={{ display: 'block', height: 28, width: 'auto' }}
+              loading="lazy" />
+          </span>
           <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações" title="Livro de Reclamações"
             style={{
               display: 'inline-flex', alignItems: 'center',
