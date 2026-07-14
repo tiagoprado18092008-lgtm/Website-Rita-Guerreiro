@@ -6,7 +6,7 @@ const SERVICES_I18N = {
   EN: {
     fisioterapia: {
       label: 'Physiotherapy',
-      intro: 'Individual assessment and treatment of pain, injury and dysfunction — for children and adults',
+      intro: 'Individual assessment and treatment of pain, injury and dysfunction',
       items: {
         'fisioterapia-geral': { name: 'Clinical Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
         'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted to each stage of growth — for babies, children and adolescents, in a safe, age-appropriate setting' },
@@ -18,7 +18,7 @@ const SERVICES_I18N = {
     },
     saude: {
       label: 'Health Care',
-      intro: 'Specialised clinical care for your health and wellbeing — always with time and attention for each person',
+      intro: 'Clinical care with time and attention for each person',
       items: {
         nutricao: { name: 'Nutrition', blurb: 'A nutrition plan built for your real life — no restrictive diets, clear goals and close follow-up' },
         'terapia-bowen': { name: 'Bowen Therapy', blurb: 'A gentle neuromuscular technique with often profound results — safe for children and adults' },
@@ -27,7 +27,7 @@ const SERVICES_I18N = {
     },
     massagens: {
       label: 'Massages',
-      intro: 'Manual therapies to release tension, recover and restore balance — with the right technique for each moment',
+      intro: 'Manual therapies to release tension and restore balance',
       items: {
         'massagem-relaxamento': { name: 'Relaxation Massage', blurb: 'A space to pause — full-body massage that releases built-up tension and restores balance' },
         'massagem-criancas': { name: "Children's Massage", blurb: 'A gentle massage tailored to the youngest — to promote sleep, calm and wellbeing' },

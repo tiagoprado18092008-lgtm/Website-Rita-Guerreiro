@@ -109,6 +109,23 @@ section.rg-hero-home {
   padding-bottom: 0;
 }
 
+/* Entrada do retrato de equipa no hero — sobe suavemente com a headline */
+@keyframes rg-hero-frame-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rg-hero-home-photo-frame {
+  animation: rg-hero-frame-in 900ms cubic-bezier(0.16, 1, 0.3, 1) 250ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-hero-home-photo-frame { animation: none; }
+}
+
+/* Larguras intermédias — menos padding no painel para o retrato respirar */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .rg-hero-home-photo { padding: 130px 32px 56px 28px !important; }
+}
+
 /* Exceção: Stats strip — padding menor */
 .rg-stats-grid {
   gap: 0 !important;

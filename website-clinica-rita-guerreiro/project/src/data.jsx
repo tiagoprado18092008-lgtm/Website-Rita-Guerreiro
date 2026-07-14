@@ -11,7 +11,7 @@ const IMG = {
   'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.jpg',
   'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg',
   'fisioterapia-oncologica': '/assets/fotos/servico-fisioterapia-oncologica.jpg?v=20260714c',
-  psicologia: null,
+  psicologia: '/assets/fotos/servico-psicologia.jpg?v=20260715',
   nutricao: '/assets/fotos/servico-nutricao.jpg',
   'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg',
   'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
@@ -42,7 +42,7 @@ const IMG = {
 const SERVICES = {
   fisioterapia: {
     label: 'Fisioterapia',
-    intro: 'Avaliação e tratamento individual de dor, lesão e disfunção — para crianças e adultos.',
+    intro: 'Avaliação e tratamento individual de dor, lesão e disfunção.',
     items: [
       { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG['fisioterapia-manual'], blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€' },
       { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€' },
@@ -54,7 +54,7 @@ const SERVICES = {
   },
   saude: {
     label: 'Cuidados de Saúde',
-    intro: 'Cuidados clínicos especializados para a sua saúde e bem-estar — sempre com tempo e atenção a cada pessoa.',
+    intro: 'Cuidados clínicos com tempo e atenção a cada pessoa.',
     items: [
       { slug: 'nutricao', name: 'Nutrição', img: IMG.nutricao, blurb: 'Um plano alimentar pensado para a sua vida real — sem dietas restritivas, com objetivos claros e acompanhamento próximo.', price: '45€ / 40€' },
       { slug: 'terapia-bowen', name: 'Terapia de Bowen', img: IMG['terapia-bowen'], blurb: 'Técnica neuromuscular suave com resultados frequentemente profundos — segura para crianças e adultos.', price: '20€ / 30€ / 60€' },
@@ -63,7 +63,7 @@ const SERVICES = {
   },
   massagens: {
     label: 'Massagens',
-    intro: 'Terapias manuais para libertar tensão, recuperar e devolver equilíbrio — com a técnica certa para cada momento.',
+    intro: 'Terapias manuais para libertar tensão e devolver equilíbrio.',
     items: [
       { slug: 'massagem-relaxamento', name: 'Massagem de Relaxamento', img: IMG['massagem-relaxamento'], blurb: 'Um espaço para parar — massagem de corpo inteiro que liberta tensão acumulada e devolve equilíbrio.', price: '40€ / 65€' },
       { slug: 'massagem-criancas', name: 'Massagem para Crianças', img: IMG['massagem-criancas'], blurb: 'Massagem suave e adaptada aos mais novos — para promover sono, calma e bem-estar.', price: '30€' },
@@ -77,7 +77,7 @@ const SERVICES = {
   },
   holisticas: {
     label: 'Holísticas',
-    intro: 'Terapias holísticas para reequilibrar corpo e mente — com técnicas com séculos de prática e resultados sentidos.',
+    intro: 'Técnicas com séculos de prática para reequilibrar corpo e mente.',
     items: [
       { slug: 'reflexologia', name: 'Reflexologia', img: IMG.reflexologia, blurb: 'Estimulação precisa de pontos reflexos nos pés para reequilibrar os sistemas do organismo.', price: '45€' },
       { slug: 'shiatsu', name: 'Shiatsu', img: IMG.shiatsu, blurb: 'Técnica japonesa de pressão sobre os meridianos energéticos — para devolver equilíbrio e vitalidade.', price: '45€' },
@@ -88,7 +88,7 @@ const SERVICES = {
   },
   estetica: {
     label: 'Estética & Tratamentos',
-    intro: 'Cuidados estéticos e tratamentos corporais com tecnologia avançada — sempre com avaliação prévia e protocolo personalizado.',
+    intro: 'Tecnologia avançada, avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
       { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
