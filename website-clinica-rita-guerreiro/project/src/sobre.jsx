@@ -172,6 +172,34 @@ function Team() {
 function Espaco() {
   const { t } = useLang();
   const photos = t('sobre.espaco_photos');
+  const [lightbox, setLightbox] = React.useState(null); // índice da foto aberta, ou null
+
+  const close = () => setLightbox(null);
+  const step = (d) => setLightbox((i) => (i + d + photos.length) % photos.length);
+
+  React.useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'ArrowLeft') step(-1);
+    };
+    window.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightbox === null]);
+
+  const navBtn = {
+    position: 'absolute', top: '50%', transform: 'translateY(-50%)', zIndex: 2,
+    width: 44, height: 44, borderRadius: 999, border: 'none', cursor: 'pointer',
+    background: 'rgba(255, 255, 255, 0.15)', color: '#fff', fontSize: 22, lineHeight: 1,
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+  };
+
   return (
     <Section bg={RG.white} pad="lg">
       <Container>
@@ -186,17 +214,43 @@ function Espaco() {
             </div>
           </div>
           <Reveal delay={120}>
-            <div className="rg-espaco-grid" style={{ columnCount: 3, columnGap: 16 }}>
-              {photos.map((p, i) => (
-                <div key={i} className="rg-espaco-item" style={{ position: 'relative', breakInside: 'avoid', marginBottom: 16, borderRadius: 12, overflow: 'hidden', background: RG.cream }}>
-                  <img src={p.src} alt={p.label} loading="lazy" decoding="async" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                  <span className="rg-espaco-label" style={{ position: 'absolute', left: 16, bottom: 14, zIndex: 1, fontFamily: F_BODY, fontSize: 13, fontWeight: 600, letterSpacing: '0.04em', color: RG.white }}>{p.label}</span>
-                </div>
-              ))}
+            <div className="rg-espaco-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gridAutoRows: 'clamp(180px, 24vw, 300px)', gap: 16 }}>
+              {photos.map((p, i) => {
+                const tall = p.src.includes('madeira');
+                return (
+                  <div
+                    key={i}
+                    className={`rg-espaco-item${tall ? ' rg-espaco-tall' : ''}`}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={p.label}
+                    onClick={() => setLightbox(i)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLightbox(i); } }}
+                    style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', background: RG.cream, cursor: 'zoom-in', ...(tall ? { gridColumn: '3', gridRow: '1 / span 2' } : null) }}
+                  >
+                    <img src={p.src} alt={p.label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    <span className="rg-espaco-label" style={{ position: 'absolute', left: 16, bottom: 14, zIndex: 1, fontFamily: F_BODY, fontSize: 13, fontWeight: 600, letterSpacing: '0.04em', color: RG.white }}>{p.label}</span>
+                  </div>
+                );
+              })}
             </div>
           </Reveal>
         </div>
       </Container>
+      {lightbox !== null && (
+        <div
+          onClick={close}
+          style={{ position: 'fixed', inset: 0, zIndex: 10000, background: 'rgba(10, 20, 20, 0.92)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'clamp(12px, 4vw, 48px)' }}
+        >
+          <button aria-label="Fechar" onClick={close} style={{ position: 'absolute', top: 18, right: 18, zIndex: 2, width: 44, height: 44, borderRadius: 999, border: 'none', cursor: 'pointer', background: 'rgba(255, 255, 255, 0.15)', color: '#fff', fontSize: 20, lineHeight: 1 }}>✕</button>
+          <button aria-label="Anterior" onClick={(e) => { e.stopPropagation(); step(-1); }} style={{ ...navBtn, left: 14 }}>‹</button>
+          <button aria-label="Seguinte" onClick={(e) => { e.stopPropagation(); step(1); }} style={{ ...navBtn, right: 14 }}>›</button>
+          <figure onClick={(e) => e.stopPropagation()} style={{ margin: 0, maxWidth: '92vw', maxHeight: '88vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+            <img src={photos[lightbox].src} alt={photos[lightbox].label} style={{ maxWidth: '100%', maxHeight: 'calc(88vh - 40px)', objectFit: 'contain', borderRadius: 10, boxShadow: '0 24px 80px rgba(0, 0, 0, 0.5)' }} />
+            <figcaption style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', color: '#fff' }}>{photos[lightbox].label}</figcaption>
+          </figure>
+        </div>
+      )}
     </Section>
   );
 }

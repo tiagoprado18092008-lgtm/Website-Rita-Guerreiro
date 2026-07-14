@@ -830,11 +830,13 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
   .rg-hero-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
   .rg-values-grid { grid-template-columns: minmax(0, 1fr) !important; }
   .rg-team-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .rg-espaco-grid { column-count: 2 !important; }
+  .rg-espaco-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .rg-espaco-tall { grid-column: 2 !important; grid-row: 1 / span 2 !important; }
 }
 @media (max-width: 560px) {
   .rg-team-grid { grid-template-columns: 1fr !important; }
-  .rg-espaco-grid { column-count: 1 !important; }
+  .rg-espaco-grid { grid-template-columns: minmax(0, 1fr) !important; grid-auto-rows: 200px !important; }
+  .rg-espaco-tall { grid-column: auto !important; grid-row: span 2 !important; }
 }
 
 /* Service detail two-column (sticky info + content) → single col */

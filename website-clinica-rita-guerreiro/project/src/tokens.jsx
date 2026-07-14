@@ -287,7 +287,6 @@ const TRANSLATIONS = {
         { src: '/assets/fotos/estudio-pilates.jpg', label: 'Estúdio de Pilates' },
         { src: '/assets/fotos/sala-relaxamento.jpg', label: 'Sala de relaxamento' },
         { src: '/assets/fotos/sala-tratamento-madeira.jpg', label: 'Sala holística' },
-        { src: '/assets/fotos/sala-clinica.jpg', label: 'Sala clínica' },
       ],
     },
     category: {
@@ -585,7 +584,6 @@ const TRANSLATIONS = {
         { src: '/assets/fotos/estudio-pilates.jpg', label: 'Pilates studio' },
         { src: '/assets/fotos/sala-relaxamento.jpg', label: 'Relaxation room' },
         { src: '/assets/fotos/sala-tratamento-madeira.jpg', label: 'Holistic room' },
-        { src: '/assets/fotos/sala-clinica.jpg', label: 'Clinical room' },
       ],
     },
     category: {
@@ -900,7 +898,6 @@ const TRANSLATIONS = {
         { src: '/assets/fotos/estudio-pilates.jpg', label: 'Studio de Pilates' },
         { src: '/assets/fotos/sala-relaxamento.jpg', label: 'Salle de relaxation' },
         { src: '/assets/fotos/sala-tratamento-madeira.jpg', label: 'Salle holistique' },
-        { src: '/assets/fotos/sala-clinica.jpg', label: 'Salle clinique' },
       ],
     },
     category: {
@@ -1215,7 +1212,6 @@ const TRANSLATIONS = {
         { src: '/assets/fotos/estudio-pilates.jpg', label: 'Estudio de Pilates' },
         { src: '/assets/fotos/sala-relaxamento.jpg', label: 'Sala de relajación' },
         { src: '/assets/fotos/sala-tratamento-madeira.jpg', label: 'Sala holística' },
-        { src: '/assets/fotos/sala-clinica.jpg', label: 'Sala clínica' },
       ],
     },
     category: {

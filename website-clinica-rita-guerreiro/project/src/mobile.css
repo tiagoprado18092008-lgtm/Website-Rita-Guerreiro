@@ -801,19 +801,22 @@
 }
 
 
-/* ─── ESPACO (Sobre — masonry) ──────────────────────────── */
+/* ─── ESPACO (Sobre — grelha retangular) ────────────────── */
 
 @media (max-width: 768px) {
   .rg-espaco-grid {
-    column-count: 2 !important;
-    column-gap: 8px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
   }
+  .rg-espaco-tall { grid-column: 2 !important; grid-row: 1 / span 2 !important; }
 }
 
 @media (max-width: 480px) {
   .rg-espaco-grid {
-    column-count: 1 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-rows: 200px !important;
   }
+  .rg-espaco-tall { grid-column: auto !important; grid-row: span 2 !important; }
 }
 
 
