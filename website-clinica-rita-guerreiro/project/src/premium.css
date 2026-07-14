@@ -506,34 +506,20 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Card de serviços "wide" — destaque horizontal (última categoria)
-   Em mobile mantém o layout empilhado normal.
+   Grelha das categorias de serviços — 5 cards numa só linha em desktop largo.
+   O estilo inline (auto-fill minmax 260px) fica intacto para o mobile.css.
    ========================================================================== */
-@media (min-width: 769px) {
-  .rg-service-card-wide {
-    display: grid !important;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    align-items: stretch;
+@media (min-width: 1200px) {
+  section#todos-servicos [style*="auto-fill, minmax(260px"] {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 
-  .rg-service-card-wide .rg-service-card-img {
-    aspect-ratio: auto !important;
-    height: 100%;
-    min-height: 240px;
+  section#todos-servicos .rg-service-card-body {
+    padding: 16px 18px 20px !important;
   }
 
-  .rg-service-card-wide .rg-service-card-body {
-    align-self: center;
-    padding: 32px 40px !important;
-  }
-
-  .rg-service-card-wide .rg-service-card-body h3 {
-    font-size: 24px !important;
-  }
-
-  .rg-service-card-wide .rg-service-card-body p {
-    font-size: 14.5px !important;
-    max-width: 60ch;
+  section#todos-servicos .rg-service-card-body h3 {
+    font-size: 18px !important;
   }
 }
 

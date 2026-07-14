@@ -483,7 +483,7 @@ function ServicesOverview() {
   const SVC = getServices(lang);
   const cats = [
     { id: 'fisioterapia', num: '01', href: '/servico/fisioterapia', img: IMG['fisioterapia-tecar-dupla'], ...SVC.fisioterapia },
-    { id: 'saude', num: '02', href: '/servico/saude', img: IMG['terapia-bowen'], ...SVC.saude },
+    { id: 'saude', num: '02', href: '/servico/saude', img: IMG.nutricao, ...SVC.saude },
     { id: 'massagens', num: '03', href: '/servico/massagens', img: IMG['massagem-profunda'], ...SVC.massagens },
     { id: 'holisticas', num: '04', href: '/servico/holisticas', img: IMG.reflexologia, ...SVC.holisticas },
     { id: 'estetica', num: '05', href: '/servico/estetica', img: IMG['pilates-clinico'], ...SVC.estetica },
@@ -497,10 +497,9 @@ function ServicesOverview() {
         </Reveal>
         <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
           {cats.map((cat, ci) => {
-            const isWide = ci === cats.length - 1;
             return (
-            <Reveal key={cat.id} delay={ci * 60} style={isWide ? { gridColumn: '1 / -1' } : undefined}>
-              <a href={cat.href} className={isWide ? 'rg-service-card rg-service-card-wide' : 'rg-service-card'} style={{
+            <Reveal key={cat.id} delay={ci * 60}>
+              <a href={cat.href} className="rg-service-card" style={{
                 display: 'block', textDecoration: 'none', color: RG.ink,
                 background: RG.white,
                 padding: 0, overflow: 'hidden',
