@@ -17,7 +17,7 @@ const IMG = {
   'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
   'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg?v=20260715',
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg',
-  'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260714c',
+  'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg',
   'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260714c',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
