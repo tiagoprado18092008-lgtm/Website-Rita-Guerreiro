@@ -41,7 +41,7 @@ const SERVICES_I18N = {
     },
     holisticas: {
       label: 'Holistic',
-      intro: 'Holistic therapies to rebalance body and mind — with techniques refined over centuries and results that are truly felt',
+      intro: 'Centuries-old techniques to rebalance body and mind',
       items: {
         reflexologia: { name: 'Reflexology', blurb: "Precise stimulation of reflex points on the feet to rebalance the body's systems" },
         shiatsu: { name: 'Shiatsu', blurb: 'A Japanese technique of pressure along energy meridians — to restore balance and vitality' },
@@ -52,7 +52,7 @@ const SERVICES_I18N = {
     },
     estetica: {
       label: 'Aesthetics & Treatments',
-      intro: 'Aesthetic care and body treatments with advanced technology — always with prior assessment and a personalised protocol',
+      intro: 'Advanced technology, prior assessment and a personalised protocol',
       items: {
         facial: { name: 'Facials', blurb: 'Skin cleansing, extraction and personalised facials — for healthy, balanced skin' },
         'depilacao-laser': { name: 'Laser Hair Removal', blurb: 'Permanent hair removal with state-of-the-art technology — for women and men, all body areas' },
@@ -63,7 +63,7 @@ const SERVICES_I18N = {
   FR: {
     fisioterapia: {
       label: 'Physiothérapie',
-      intro: 'Évaluation et traitement individuel de la douleur, des blessures et des dysfonctionnements — pour enfants et adultes',
+      intro: 'Évaluation et traitement individuel de la douleur et des blessures',
       items: {
         'fisioterapia-geral': { name: 'Physiothérapie clinique', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
         'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée à chaque étape de la croissance — pour bébés, enfants et adolescents, dans un environnement sûr et adapté à chaque âge' },
@@ -75,7 +75,7 @@ const SERVICES_I18N = {
     },
     saude: {
       label: 'Soins de santé',
-      intro: 'Soins cliniques spécialisés pour votre santé et votre bien-être — toujours avec du temps et de l’attention pour chaque personne',
+      intro: 'Des soins cliniques avec du temps et de l’attention pour chacun',
       items: {
         nutricao: { name: 'Nutrition', blurb: 'Un plan alimentaire conçu pour votre vie réelle — sans régimes restrictifs, avec des objectifs clairs et un suivi rapproché' },
         'terapia-bowen': { name: 'Thérapie Bowen', blurb: 'Une technique neuromusculaire douce aux résultats souvent profonds — sûre pour enfants et adultes' },
@@ -84,7 +84,7 @@ const SERVICES_I18N = {
     },
     massagens: {
       label: 'Massages',
-      intro: 'Thérapies manuelles pour libérer les tensions, récupérer et retrouver l’équilibre — avec la bonne technique pour chaque moment',
+      intro: 'Thérapies manuelles pour libérer les tensions et retrouver l’équilibre',
       items: {
         'massagem-relaxamento': { name: 'Massage relaxant', blurb: 'Un espace pour faire une pause — massage du corps entier qui libère les tensions accumulées et restaure l’équilibre' },
         'massagem-criancas': { name: 'Massage pour enfants', blurb: 'Massage doux et adapté aux plus petits — pour favoriser le sommeil, le calme et le bien-être' },
@@ -98,7 +98,7 @@ const SERVICES_I18N = {
     },
     holisticas: {
       label: 'Holistique',
-      intro: 'Thérapies holistiques pour rééquilibrer corps et esprit — avec des techniques affinées au fil des siècles et des résultats véritablement ressentis',
+      intro: 'Des techniques séculaires pour rééquilibrer le corps et l’esprit',
       items: {
         reflexologia: { name: 'Réflexologie', blurb: 'Stimulation précise des points réflexes des pieds pour rééquilibrer les systèmes de l’organisme' },
         shiatsu: { name: 'Shiatsu', blurb: 'Technique japonaise de pression sur les méridiens énergétiques — pour retrouver équilibre et vitalité' },
@@ -109,7 +109,7 @@ const SERVICES_I18N = {
     },
     estetica: {
       label: 'Esthétique & Traitements',
-      intro: 'Soins esthétiques et traitements corporels avec technologie avancée — toujours avec évaluation préalable et protocole personnalisé',
+      intro: 'Technologie avancée, évaluation préalable et protocole personnalisé',
       items: {
         facial: { name: 'Soins du visage', blurb: 'Nettoyage de peau, extraction et soin facial personnalisé — pour une peau saine et équilibrée' },
         'depilacao-laser': { name: 'Épilation au laser', blurb: 'Épilation définitive avec une technologie de dernière génération — pour femme et homme, toutes les zones du corps' },
@@ -120,7 +120,7 @@ const SERVICES_I18N = {
   ES: {
     fisioterapia: {
       label: 'Fisioterapia',
-      intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción — para niños y adultos',
+      intro: 'Evaluación y tratamiento individual del dolor, lesión y disfunción',
       items: {
         'fisioterapia-geral': { name: 'Fisioterapia Clínica', blurb: 'Cuando el dolor o la lesión le limitan el día a día, le ayudamos a recuperarse — con evaluación rigurosa y un plan pensado para usted' },
         'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a cada etapa del crecimiento — para bebés, niños y adolescentes, en un entorno seguro y adecuado a cada edad' },
@@ -132,7 +132,7 @@ const SERVICES_I18N = {
     },
     saude: {
       label: 'Salud y Bienestar',
-      intro: 'Cuidados clínicos especializados para su salud y bienestar — siempre con tiempo y atención a cada persona',
+      intro: 'Cuidados clínicos con tiempo y atención a cada persona',
       items: {
         nutricao: { name: 'Nutrición', blurb: 'Un plan alimentario pensado para su vida real — sin dietas restrictivas, con objetivos claros y seguimiento cercano' },
         'terapia-bowen': { name: 'Terapia Bowen', blurb: 'Técnica neuromuscular suave con resultados a menudo profundos — segura para niños y adultos' },
@@ -141,7 +141,7 @@ const SERVICES_I18N = {
     },
     massagens: {
       label: 'Masajes',
-      intro: 'Terapias manuales para liberar tensiones, recuperarse y restaurar el equilibrio — con la técnica adecuada para cada momento',
+      intro: 'Terapias manuales para liberar tensiones y restaurar el equilibrio',
       items: {
         'massagem-relaxamento': { name: 'Masaje Relajante', blurb: 'Un espacio para parar — masaje de cuerpo entero que libera la tensión acumulada y devuelve el equilibrio' },
         'massagem-criancas': { name: 'Masaje Infantil', blurb: 'Masaje suave adaptado a los más pequeños — para promover sueño, calma y bienestar' },
@@ -155,7 +155,7 @@ const SERVICES_I18N = {
     },
     holisticas: {
       label: 'Holísticas',
-      intro: 'Terapias holísticas para reequilibrar cuerpo y mente — con técnicas con siglos de práctica y resultados que se sienten',
+      intro: 'Técnicas con siglos de práctica para reequilibrar cuerpo y mente',
       items: {
         reflexologia: { name: 'Reflexología', blurb: 'Estimulación precisa de puntos reflejos en los pies para reequilibrar los sistemas del organismo' },
         shiatsu: { name: 'Shiatsu', blurb: 'Técnica japonesa de presión sobre los meridianos energéticos — para devolver equilibrio y vitalidad' },
@@ -166,7 +166,7 @@ const SERVICES_I18N = {
     },
     estetica: {
       label: 'Estética & Tratamientos',
-      intro: 'Cuidado estético y tratamientos corporales con tecnología avanzada — siempre con evaluación previa y protocolo personalizado',
+      intro: 'Tecnología avanzada, evaluación previa y protocolo personalizado',
       items: {
         facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado — para una piel sana y equilibrada' },
         'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación definitiva con tecnología de última generación — para mujer y hombre, todas las zonas' },

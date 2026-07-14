@@ -121,9 +121,23 @@ section.rg-hero-home {
   .rg-hero-home-photo-frame { animation: none; }
 }
 
-/* Larguras intermédias — menos padding no painel para o retrato respirar */
+/* Larguras intermédias (tablet) — dar mais largura ao retrato e evitar que a
+   legenda tape as caras: coluna de texto mais estreita, legenda por baixo */
 @media (min-width: 769px) and (max-width: 1180px) {
-  .rg-hero-home-photo { padding: 130px 32px 56px 28px !important; }
+  .rg-hero-home-content {
+    flex: 0 1 440px !important;
+    padding: 120px 28px 56px 40px !important;
+  }
+  .rg-hero-home-photo { padding: 120px 40px 56px 20px !important; }
+  .rg-hero-home-caption {
+    position: static !important;
+    margin-top: 16px;
+    left: auto !important;
+    bottom: auto !important;
+    display: inline-flex !important;
+    box-shadow: 0 6px 18px -10px rgba(20,20,18,0.28) !important;
+  }
+  .rg-hero-home-photo-frame { width: 100% !important; }
 }
 
 /* Exceção: Stats strip — padding menor */
@@ -529,6 +543,16 @@ button:focus-visible {
 @media (min-width: 1200px) {
   section#todos-servicos [style*="auto-fill, minmax(260px"] {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+
+  /* Alturas iguais: o wrapper Reveal estica com a track; o card acompanha */
+  section#todos-servicos [style*="auto-fill, minmax(260px"] > div {
+    height: 100%;
+  }
+
+  section#todos-servicos .rg-service-card {
+    height: 100%;
+    box-sizing: border-box;
   }
 
   section#todos-servicos .rg-service-card-body {
