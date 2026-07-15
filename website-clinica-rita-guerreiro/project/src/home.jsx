@@ -797,17 +797,17 @@ function HomeCTA() {
     },
   ];
   return (
-    <section style={{ background: 'linear-gradient(135deg, #2F6B68 0%, #1F4846 100%)', padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
-      <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 480, height: 480, borderRadius: '50%', background: 'rgba(111,181,176,0.08)', pointerEvents: 'none' }} />
-      <div aria-hidden="true" style={{ position: 'absolute', bottom: -100, left: -60, width: 320, height: 320, borderRadius: '50%', background: 'rgba(111,181,176,0.06)', pointerEvents: 'none' }} />
+    <section style={{ background: RG.white, padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
+      <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 480, height: 480, borderRadius: '50%', background: 'rgba(111,181,176,0.07)', pointerEvents: 'none' }} />
+      <div aria-hidden="true" style={{ position: 'absolute', bottom: -100, left: -60, width: 320, height: 320, borderRadius: '50%', background: 'rgba(111,181,176,0.05)', pointerEvents: 'none' }} />
       <Container>
         <Reveal>
           <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px', position: 'relative' }}>
-            <Eyebrow color="rgba(111,181,176,0.85)" style={{ marginBottom: 16 }}>{t('homecta.eyebrow')}</Eyebrow>
-            <Heading level="h2" style={{ color: RG.white, marginBottom: 18 }}>
+            <Eyebrow color={RG.tealDeep} style={{ marginBottom: 16 }}>{t('homecta.eyebrow')}</Eyebrow>
+            <Heading level="h2" style={{ color: RG.ink, marginBottom: 18 }}>
               {t('homecta.heading')}
             </Heading>
-            <p style={{ fontFamily: F_BODY, fontSize: 16, color: 'rgba(255,255,255,0.75)', margin: 0, lineHeight: 1.7 }}>
+            <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, margin: 0, lineHeight: 1.7 }}>
               {t('homecta.body')}
             </p>
           </div>
@@ -822,35 +822,35 @@ function HomeCTA() {
                 className="rg-cta-option"
                 style={{
                   display: 'flex', flexDirection: 'column',
-                  background: opt.featured ? 'rgba(255,255,255,0.98)' : 'rgba(255,255,255,0.06)',
-                  border: opt.featured ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.12)',
+                  background: opt.featured ? 'linear-gradient(135deg, #2F6B68 0%, #1F4846 100%)' : RG.white,
+                  border: opt.featured ? '1px solid rgba(47,107,104,0.35)' : `1px solid ${RG.line}`,
                   borderRadius: 18, padding: '28px 26px',
                   textDecoration: 'none',
-                  boxShadow: opt.featured ? '0 24px 60px -20px rgba(0,0,0,0.4)' : 'none',
+                  boxShadow: opt.featured ? '0 24px 60px -24px rgba(31,72,70,0.55)' : '0 2px 14px -6px rgba(20,20,18,0.08)',
                   transition: 'transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms, background 260ms',
                 }}>
                 <div style={{
                   width: 48, height: 48, borderRadius: 14,
-                  background: opt.featured ? '#6FB5B0' : 'rgba(255,255,255,0.1)',
-                  color: opt.featured ? RG.white : 'rgba(255,255,255,0.85)',
+                  background: opt.featured ? 'rgba(255,255,255,0.14)' : RG.tealWash,
+                  color: opt.featured ? RG.white : RG.tealDark,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: 22,
                   flexShrink: 0,
                 }}>{opt.icon}</div>
                 <h3 style={{
                   fontFamily: F_DISPLAY, fontSize: 22, fontWeight: 600, letterSpacing: '-0.015em',
-                  color: opt.featured ? RG.ink : RG.white,
+                  color: opt.featured ? RG.white : RG.ink,
                   margin: 0, marginBottom: 10, lineHeight: 1.2,
                 }}>{opt.title}</h3>
                 <p style={{
                   fontFamily: F_BODY, fontSize: 13.5,
-                  color: opt.featured ? RG.charcoal : 'rgba(255,255,255,0.65)',
+                  color: opt.featured ? 'rgba(255,255,255,0.72)' : RG.charcoal,
                   lineHeight: 1.6, margin: 0, marginBottom: 22, flex: 1,
                 }}>{opt.desc}</p>
                 <div style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                   fontFamily: F_BODY, fontSize: 13, fontWeight: 700,
-                  color: opt.featured ? '#2F6B68' : RG.white,
+                  color: opt.featured ? RG.white : '#2F6B68',
                 }}>
                   {opt.cta}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="rg-cta-arrow"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -862,13 +862,13 @@ function HomeCTA() {
 
         {/* Linha de info abaixo */}
         <Reveal delay={220}>
-          <div style={{ marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>
+          <div style={{ marginTop: 48, paddingTop: 32, borderTop: `1px solid ${RG.line}`, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, color: RG.muted }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               {t('homecta_v2.info_hours')}
             </div>
-            <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'rgba(255,255,255,0.25)' }} />
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>
+            <span style={{ width: 4, height: 4, borderRadius: '50%', background: RG.line }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: F_BODY, fontSize: 13, color: RG.muted }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               {t('homecta.addr')}
             </div>
