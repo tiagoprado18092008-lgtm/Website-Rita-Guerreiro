@@ -11,7 +11,7 @@ function Hero() {
     <section className="rg-hero-home" style={{ position: 'relative', display: 'flex', alignItems: 'stretch', background: RG.cream, overflow: 'hidden' }}>
 
       {/* Conteúdo principal — coluna própria, nunca sobreposta à foto */}
-      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, flex: '0 1 560px', minWidth: 0, display: 'flex', alignItems: 'center', background: RG.cream, padding: '128px 44px 72px 64px', boxSizing: 'border-box' }}>
+      <div className="rg-hero-home-content" style={{ position: 'relative', zIndex: 2, flex: '0 1 520px', minWidth: 0, display: 'flex', alignItems: 'center', background: RG.cream, padding: '128px 40px 72px 64px', boxSizing: 'border-box' }}>
         <div style={{ width: '100%', maxWidth: 520, position: 'relative', paddingLeft: 28, boxSizing: 'border-box' }}>
           {/* Linha vertical decorativa */}
           <div aria-hidden="true" style={{
@@ -99,16 +99,23 @@ function Hero() {
       </div>
 
       {/* Foto — coluna própria à direita, nunca por baixo do texto/CTAs.
-          O aspect-ratio nativo da foto (2000/1215) define a altura da secção, por isso
-          a imagem preenche a coluna sem barras de fundo e sem cortar a equipa. */}
-      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 0%', minWidth: 0, aspectRatio: '2000 / 1215', background: RG.cream, overflow: 'hidden' }}>
+          Em desktop split a altura vem do min-height da secção (ver mobile.css @1700px):
+          a foto preenche a coluna toda até às bordas, sem faixas de fundo em cima,
+          em baixo ou à direita. O corte de cover é vertical e mínimo, por isso a
+          equipa mantém-se enquadrada. */}
+      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 0%', minWidth: 0, background: RG.cream, overflow: 'hidden' }}>
         <img
           src="assets/fotos/equipa-capa.jpg"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
           loading="eager" decoding="async"
         />
+        {/* Degradê de fusão — funde só a margem esquerda da foto no creme da coluna
+            de texto, para não haver um corte reto entre as duas colunas, mais uma
+            vinheta subtil em baixo (nunca branca, que criava faixa visível).
+            Só em desktop split (≥1700px); escondido quando o hero empilha. */}
+        <div className="rg-hero-home-fade" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1 }} />
         {/* Eyebrow pill — visível só em mobile via CSS */}
         <span className="rg-hero-home-eyebrow" aria-hidden="true">Centro de Terapias & Bem-Estar</span>
       </div>
@@ -122,10 +129,12 @@ function Hero() {
 // ────────────────────────────────────────────────────────────────────────────
 function EquipaIntro() {
   const { t } = useLang();
-  const members = (t('sobre.team_members') || []).slice(0, 4);
+  const members = t('sobre.team_members') || [];
   return (
     <Section bg={RG.tealWash} pad="lg">
-      <Container>
+      {/* Container mais largo que o resto do site — os 5 cartões têm de caber
+          todos na mesma linha sem ficarem estreitos demais */}
+      <Container maxWidth={1600}>
         <Reveal>
           <div style={{ textAlign: 'center', maxWidth: 620, margin: '0 auto' }}>
             <Eyebrow style={{ marginBottom: 14 }}>{t('equipa_intro.eyebrow')}</Eyebrow>
@@ -136,7 +145,9 @@ function EquipaIntro() {
           </div>
         </Reveal>
 
-        <div className="rg-team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 22, marginTop: 56 }}>
+        {/* Grelha própria (não rg-team-grid): a do /sobre quebra para 3/2/1
+            colunas e aqui os 5 têm de ficar sempre na horizontal */}
+        <div className="rg-equipa-home-grid" style={{ marginTop: 56 }}>
           {members.map((m, i) => (
             <Reveal key={i} delay={i * 90} y={36}>
               <a href="/sobre" className="rg-team-card" style={{
@@ -667,90 +678,90 @@ function MeetRita() {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// TESTIMONIALS — 1 destaque grande + 2 pequenos
+// TESTIMONIALS — painéis verticais sobre foto de tratamento. Cada painel abre
+// em hover/foco e revela a avaliação; o último painel é a porta para o Google.
 // ────────────────────────────────────────────────────────────────────────────
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Clinica+Rita+Guerreiro+Loul%C3%A9';
+
 function Testimonials() {
   const { t } = useLang();
-  const featured = { q: t('testimonials_v2.featured_q'), who: 'Miguel Moreira', what: t('testimonials_v2.featured_what'), initials: 'MM', color: '#C5E8E5' };
-  const others = [
-    { q: t('testimonials_v2.t1_q'), who: 'Irina Mendes Martins', what: t('testimonials_v2.t1_what'), initials: 'IM', color: '#A8D8D4' },
-    { q: t('testimonials_v2.t2_q'), who: 'Mitchelle Sousa', what: t('testimonials_v2.t2_what'), initials: 'MS', color: '#B8D4D2' },
+  const reviews = [
+    { q: t('testimonials_v2.featured_q'), who: 'Miguel Moreira', what: t('testimonials_v2.featured_what') },
+    { q: t('testimonials_v2.t1_q'), who: 'Irina Mendes Martins', what: t('testimonials_v2.t1_what') },
+    { q: t('testimonials_v2.t2_q'), who: 'Mitchelle Sousa', what: t('testimonials_v2.t2_what') },
   ];
-  const Stars = ({ size = 13 }) => (
-    <div style={{ display: 'flex', gap: 3, marginBottom: 14 }}>
+  const Stars = () => (
+    <div className="rg-rev-stars" aria-hidden="true">
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width={size} height={size} viewBox="0 0 12 12" fill="#F5A623"><path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/></svg>
+        <svg key={i} width="13" height="13" viewBox="0 0 12 12" fill="#F5A623"><path d="M6 1l1.4 2.8 3.1.45-2.25 2.2.53 3.1L6 8.15l-2.78 1.4.53-3.1L1.5 4.25l3.1-.45z"/></svg>
       ))}
     </div>
   );
   return (
-    <Section bg={RG.creamSoft} pad="lg">
-      <Container>
+    <section className="rg-rev">
+      <img
+        className="rg-rev-photo" src="/assets/fotos/servico-massagem-terapeutica.jpg?v=20260715"
+        alt="" aria-hidden="true" loading="lazy" decoding="async"
+      />
+      <div className="rg-rev-scrim" aria-hidden="true" />
+
+      <div className="rg-rev-inner">
         <Reveal>
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap', marginBottom: 48 }}>
-            <div>
-              <Eyebrow style={{ marginBottom: 12 }}>{t('testimonials.eyebrow')}</Eyebrow>
-              <Heading level="h2" style={{ maxWidth: '22ch' }}>{t('testimonials.heading')}</Heading>
-            </div>
-            <a href="https://www.google.com/search?q=Clinica+Rita+Guerreiro+Loul%C3%A9" target="_blank" rel="noopener noreferrer" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 10, textDecoration: 'none',
-              fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.tealDark,
-              padding: '10px 0', borderBottom: `1px solid ${RG.tealDark}`,
-            }}>
-              {t('testimonials_v2.read_more')}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
+          <div className="rg-rev-head">
+            <Eyebrow color={RG.teal} style={{ marginBottom: 14 }}>{t('testimonials.eyebrow')}</Eyebrow>
+            <Heading level="h2" style={{ color: RG.white, maxWidth: '19ch' }}>{t('testimonials.heading')}</Heading>
           </div>
         </Reveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 24 }} className="rg-testimonials-grid">
-          {/* Destaque grande */}
-          <Reveal delay={80}>
-            <div className="rg-hover-lift" style={{ background: RG.white, borderRadius: 20, padding: 'clamp(32px, 4vw, 48px)', border: `1px solid ${RG.line}`, position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-              <div aria-hidden="true" style={{
-                position: 'absolute', top: 24, right: 36,
-                fontFamily: F_DISPLAY, fontSize: 140, lineHeight: 1,
-                color: 'rgba(111,181,176,0.10)', fontWeight: 300, userSelect: 'none', pointerEvents: 'none',
-              }}>&ldquo;</div>
-              <Stars size={15} />
-              <blockquote style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(20px, 1.9vw, 26px)', fontWeight: 300, lineHeight: 1.45, color: RG.ink, letterSpacing: '-0.012em', fontStyle: 'italic', margin: 0, position: 'relative', flex: 1 }}>
-                &ldquo;{featured.q}&rdquo;
-              </blockquote>
-              <div style={{ marginTop: 28, paddingTop: 20, borderTop: `1px solid ${RG.line}`, display: 'flex', alignItems: 'center', gap: 14 }}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: featured.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <span style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 700, color: RG.tealDark }}>{featured.initials}</span>
-                </div>
-                <div>
-                  <div style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, color: RG.ink }}>{featured.who}</div>
-                  <div style={{ fontFamily: F_BODY, fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.muted, marginTop: 3 }}>{featured.what}</div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Coluna direita: 2 testemunhos empilhados */}
-          <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: 24 }}>
-            {others.map((tt, i) => (
-              <Reveal key={i} delay={140 + i * 80}>
-                <div className="rg-hover-lift" style={{ background: RG.white, borderRadius: 16, padding: '24px 22px', border: `1px solid ${RG.line}`, height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <Stars />
-                  <p style={{ fontFamily: F_DISPLAY, fontSize: 16, fontWeight: 300, lineHeight: 1.5, color: RG.ink, letterSpacing: '-0.005em', fontStyle: 'italic', margin: 0, flex: 1 }}>&ldquo;{tt.q}&rdquo;</p>
-                  <div style={{ marginTop: 18, paddingTop: 14, borderTop: `1px solid ${RG.line}`, display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <div style={{ width: 34, height: 34, borderRadius: '50%', background: tt.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 700, color: RG.tealDark }}>{tt.initials}</span>
-                    </div>
-                    <div>
-                      <div style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.ink }}>{tt.who}</div>
-                      <div style={{ fontFamily: F_BODY, fontSize: 10.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.muted, marginTop: 2 }}>{tt.what}</div>
-                    </div>
+        <Reveal delay={120}>
+          <div className="rg-rev-rail">
+            {reviews.map((r, i) => (
+              <a
+                key={i}
+                className={'rg-rev-panel' + (i === 0 ? ' rg-rev-panel--open' : '')}
+                href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
+              >
+                <span className="rg-rev-mark" aria-hidden="true">&rdquo;</span>
+                <div className="rg-rev-body">
+                  <div className="rg-rev-body-in">
+                    <Stars />
+                    <blockquote className="rg-rev-quote">&ldquo;{r.q}&rdquo;</blockquote>
                   </div>
                 </div>
-              </Reveal>
+                <div className="rg-rev-meta">
+                  <span className="rg-rev-who">{r.who}</span>
+                  <span className="rg-rev-what">{r.what}</span>
+                </div>
+              </a>
             ))}
+
+            {/* Porta para o Google — mesma mecânica dos painéis das avaliações */}
+            <a className="rg-rev-panel rg-rev-panel--google" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+              <span className="rg-rev-g" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.45a5.52 5.52 0 0 1-2.39 3.62v3.01h3.87c2.26-2.09 3.57-5.17 3.57-8.82z"/>
+                  <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.94-2.91l-3.87-3.01c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24z"/>
+                  <path fill="#FBBC05" d="M5.27 14.27a7.2 7.2 0 0 1 0-4.55V6.63H1.28a12 12 0 0 0 0 10.74l3.99-3.1z"/>
+                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.43-3.43C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.28 6.63l3.99 3.09C6.22 6.87 8.87 4.75 12 4.75z"/>
+                </svg>
+              </span>
+              <div className="rg-rev-body">
+                <div className="rg-rev-body-in">
+                  <p className="rg-rev-gtext">{t('testimonials_v2.google_body')}</p>
+                </div>
+              </div>
+              <div className="rg-rev-meta">
+                <span className="rg-rev-who rg-rev-who--cta">
+                  {t('testimonials_v2.read_more')}
+                  <svg className="rg-rev-arrow" width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                <span className="rg-rev-what">{t('testimonials_v2.google_label')}</span>
+              </div>
+            </a>
           </div>
-        </div>
-      </Container>
-    </Section>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 

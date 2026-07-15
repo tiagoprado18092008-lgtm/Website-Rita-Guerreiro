@@ -185,10 +185,33 @@
   .rg-scroll-indicator { display: none !important; }
 }
 
-/* Ecrãs muito largos: a coluna de texto cresce para a foto não ficar
-   desproporcionalmente alta (a altura vem do aspect-ratio da foto) */
+/* Ecrãs muito largos: a secção passa a ter altura própria (viewport menos o
+   header fixo) em vez de a herdar do aspect-ratio da foto. Assim a foto enche a
+   coluna toda — sem faixa de fundo em cima, em baixo ou à direita — e fica
+   maior. A coluna de texto encolhe para 31% para dar mais largura à foto; o
+   texto continua confortável (max-width 520px + padding). */
 @media (min-width: 1700px) {
-  .rg-hero-home-content { flex: 0 1 40% !important; }
+  .rg-hero-home {
+    min-height: clamp(640px, calc(100vh - 88px), 900px);
+  }
+  .rg-hero-home-content { flex: 0 1 31% !important; }
+  .rg-hero-home-photo { align-self: stretch; }
+  .rg-hero-home-photo img { height: 100% !important; }
+}
+
+/* Degradê de fusão da foto do hero — só no layout split (≥1700px), onde a foto
+   encosta à coluna de texto creme. À esquerda a transparência chega aos 0
+   depressa (14% da largura) para nunca velar as pessoas das pontas. Em baixo é
+   uma vinheta escura muito ténue, para dar profundidade sem a faixa branca que
+   parecia espaço vazio. */
+.rg-hero-home-fade { display: none; }
+@media (min-width: 1700px) {
+  .rg-hero-home-fade {
+    display: block;
+    background:
+      linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 4%, rgba(255, 255, 255, 0) 14%),
+      linear-gradient(to bottom, rgba(20, 20, 18, 0) 62%, rgba(20, 20, 18, 0.16) 100%);
+  }
 }
 
 /* 769–1699px: a coluna da direita não é larga que chegue para a foto da equipa

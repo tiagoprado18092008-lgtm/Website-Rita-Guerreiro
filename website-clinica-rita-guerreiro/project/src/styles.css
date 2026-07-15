@@ -985,6 +985,32 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
   .rg-team-grid > *:nth-child(even) .rg-team-card { margin-top: 28px; }
 }
 
+/* Equipa (home): os 5 profissionais ficam sempre numa linha horizontal.
+   Grelha separada da .rg-team-grid do /sobre, que quebra para 3/2/1 colunas. */
+.rg-equipa-home-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Abaixo de ~1150px cinco colunas fluidas ficariam estreitas demais para a
+   foto e o nome respirarem: mantém-se a horizontal, mas com scroll lateral. */
+@media (max-width: 1150px) {
+  .rg-equipa-home-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(190px, 1fr);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    /* espaço para a sombra dos cartões não ficar cortada pelo overflow */
+    padding: 4px 4px 12px;
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  .rg-equipa-home-grid > * { scroll-snap-align: start; }
+}
+
 /* Espaço: zoom suave + legenda com scrim que aparece no hover */
 .rg-espaco-item img { transition: transform 800ms cubic-bezier(.2,.7,.2,1); }
 .rg-espaco-item:hover img { transform: scale(1.05); }
