@@ -117,44 +117,63 @@ function Hero() {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// EQUIPA INTRO — apresentação da equipa logo no topo, com CTA para /sobre
+// EQUIPA INTRO — teaser da equipa antes dos testemunhos, com CTA para /sobre.
+// Reutiliza sobre.team_members para não duplicar os dados dos profissionais.
 // ────────────────────────────────────────────────────────────────────────────
 function EquipaIntro() {
   const { t } = useLang();
+  const members = (t('sobre.team_members') || []).slice(0, 4);
   return (
-    <Section bg={RG.white} pad="md">
+    <Section bg={RG.tealWash} pad="lg">
       <Container>
         <Reveal>
-          <div className="rg-hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.05fr 1fr', gap: 56, alignItems: 'center' }}>
-            {/* Foto da equipa */}
-            <div className="rg-img-reveal" style={{ aspectRatio: '4/3', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -24px rgba(20,20,18,0.18)' }}>
-              {/* Foto diferente da do hero — a equipa em contexto, a receber um cliente */}
-              <img src="assets/fotos/rececao-cliente.jpg" alt="Rita Guerreiro a receber um cliente na receção da clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }} />
-            </div>
+          <div style={{ textAlign: 'center', maxWidth: 620, margin: '0 auto' }}>
+            <Eyebrow style={{ marginBottom: 14 }}>{t('equipa_intro.eyebrow')}</Eyebrow>
+            <Heading level="h2" style={{ lineHeight: 1.08 }}>{t('equipa_intro.heading')}</Heading>
+            <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.7, margin: '20px auto 0', maxWidth: '52ch' }}>
+              {t('equipa_intro.body')}
+            </p>
+          </div>
+        </Reveal>
 
-            {/* Texto + CTA */}
-            <div>
-              <Eyebrow style={{ marginBottom: 14 }}>{t('equipa_intro.eyebrow')}</Eyebrow>
-              <Heading level="h2" style={{ maxWidth: '20ch', lineHeight: 1.08 }}>{t('equipa_intro.heading')}</Heading>
-              <p style={{ fontFamily: F_BODY, fontSize: 16, color: RG.charcoal, lineHeight: 1.7, marginTop: 22, maxWidth: '46ch' }}>
-                {t('equipa_intro.body')}
-              </p>
-              <div style={{ marginTop: 30 }}>
-                <a href="/sobre" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 700, color: RG.white,
-                  background: '#6FB5B0', textDecoration: 'none',
-                  padding: '14px 28px', borderRadius: 999,
-                  boxShadow: '0 10px 28px -8px rgba(111,181,176,0.6)',
-                  transition: 'transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms, filter 200ms',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.filter = 'brightness(1.03)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.filter = 'none'; }}>
-                  {t('equipa_intro.cta')}
-                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
-              </div>
-            </div>
+        <div className="rg-team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 22, marginTop: 56 }}>
+          {members.map((m, i) => (
+            <Reveal key={i} delay={i * 90} y={36}>
+              <a href="/sobre" className="rg-team-card" style={{
+                display: 'flex', flexDirection: 'column', height: '100%',
+                textDecoration: 'none', color: 'inherit',
+                background: RG.white, borderRadius: 18,
+                border: `1px solid ${RG.lineSoft}`,
+                boxShadow: '0 12px 32px -14px rgba(20,20,18,0.16)',
+                overflow: 'hidden',
+              }}>
+                <div className="rg-team-photo" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: RG.creamSoft }}>
+                  <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+                <div style={{ padding: '18px 20px 20px' }}>
+                  <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>
+                  <div className="rg-team-role" style={{ fontFamily: F_MONO, fontSize: 10.5, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark }}>{m.role}</div>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={220}>
+          <div style={{ marginTop: 48, textAlign: 'center' }}>
+            <a href="/sobre" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 700, color: RG.white,
+              background: '#6FB5B0', textDecoration: 'none',
+              padding: '14px 28px', borderRadius: 999,
+              boxShadow: '0 10px 28px -8px rgba(111,181,176,0.6)',
+              transition: 'transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms, filter 200ms',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.filter = 'brightness(1.03)'; }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.filter = 'none'; }}>
+              {t('equipa_intro.cta')}
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
           </div>
         </Reveal>
       </Container>
