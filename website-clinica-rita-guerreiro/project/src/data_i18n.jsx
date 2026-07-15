@@ -273,7 +273,7 @@ const SERVICE_DETAIL_I18N = {
     },
     'tecarterapia-winback': {
       tagline: 'State-of-the-art tecar therapy — the technology that speeds up every physiotherapy session',
-      description: 'The Winback BACK3 is a tecar therapy device (capacitive and resistive diathermy) combining high frequency (300 kHz to 1 MHz) with Hi-TENS and Hi-EMS neuromodulation. By heating tissue in depth, it boosts blood flow and cellular metabolism in the treated area, accelerating the body’s natural recovery processes. It is integrated by the physiotherapist into treatment sessions, adapted to each case — no needles, no pain, no downtime.',
+      description: 'The Winback is a tecar therapy device (capacitive and resistive diathermy) combining high frequency (300 kHz to 1 MHz) with Hi-TENS and Hi-EMS neuromodulation. By heating tissue in depth, it boosts blood flow and cellular metabolism in the treated area, accelerating the body’s natural recovery processes. It is integrated by the physiotherapist into treatment sessions, adapted to each case — no needles, no pain, no downtime.',
       prices: [
         { label: 'Physiotherapy session with Winback (50min)', value: '50€' },
         { label: '5-session pack', value: '225€' },
@@ -289,7 +289,7 @@ const SERVICE_DETAIL_I18N = {
       equipment: {
         eyebrow: 'THE EQUIPMENT',
         heading: 'Official, certified Winback technology',
-        text: 'The Winback BACK3 is operated directly by the physiotherapist through a touchscreen, adjusting mode, intensity and current combination in real time to each case. The probe glides over the skin with a specific conductive cream — no needles, no special preparation and no downtime between the session and everyday life.',
+        text: 'The Winback is operated directly by the physiotherapist through a touchscreen, adjusting mode, intensity and current combination in real time to each case. The probe glides over the skin with a specific conductive cream — no needles, no special preparation and no downtime between the session and everyday life.',
         badge: 'Winback Expert Center certified',
         bullets: [
           { t: '300 kHz – 1 MHz', d: 'Adjustable high frequency depending on the depth of tissue being treated.' },
@@ -688,7 +688,7 @@ const SERVICE_DETAIL_I18N = {
     },
     'tecarterapia-winback': {
       tagline: 'Tecarthérapie de dernière génération — la technologie qui accélère chaque séance de physiothérapie',
-      description: 'La Winback BACK3 est un équipement de tecarthérapie (diathermie capacitive et résistive) qui combine haute fréquence (300 kHz à 1 MHz) et neuromodulation Hi-TENS et Hi-EMS. En chauffant les tissus en profondeur, elle active la circulation sanguine et le métabolisme cellulaire dans la zone traitée, accélérant les processus naturels de récupération de l’organisme. Elle est intégrée par le physiothérapeute dans les séances de traitement, adaptée à chaque cas — sans aiguilles, sans douleur, sans temps d’arrêt.',
+      description: 'La Winback est un équipement de tecarthérapie (diathermie capacitive et résistive) qui combine haute fréquence (300 kHz à 1 MHz) et neuromodulation Hi-TENS et Hi-EMS. En chauffant les tissus en profondeur, elle active la circulation sanguine et le métabolisme cellulaire dans la zone traitée, accélérant les processus naturels de récupération de l’organisme. Elle est intégrée par le physiothérapeute dans les séances de traitement, adaptée à chaque cas — sans aiguilles, sans douleur, sans temps d’arrêt.',
       prices: [
         { label: 'Séance de physiothérapie avec Winback (50min)', value: '50€' },
         { label: 'Pack 5 séances', value: '225€' },
@@ -704,7 +704,7 @@ const SERVICE_DETAIL_I18N = {
       equipment: {
         eyebrow: 'L’ÉQUIPEMENT',
         heading: 'Une technologie Winback officielle et certifiée',
-        text: 'Le Winback BACK3 est piloté directement par votre physiothérapeute à l’aide d’un écran tactile, qui permet d’ajuster en temps réel le mode, l’intensité et la combinaison de courants à votre cas. La sonde glisse sur la peau avec une crème conductrice spécifique — sans aiguilles, sans préparation particulière et sans temps d’arrêt entre la séance et votre quotidien.',
+        text: 'Le Winback est piloté directement par votre physiothérapeute à l’aide d’un écran tactile, qui permet d’ajuster en temps réel le mode, l’intensité et la combinaison de courants à votre cas. La sonde glisse sur la peau avec une crème conductrice spécifique — sans aiguilles, sans préparation particulière et sans temps d’arrêt entre la séance et votre quotidien.',
         badge: 'Certifié Winback Expert Center',
         bullets: [
           { t: '300 kHz – 1 MHz', d: 'Haute fréquence réglable selon la profondeur du tissu à traiter.' },
@@ -1103,7 +1103,7 @@ const SERVICE_DETAIL_I18N = {
     },
     'tecarterapia-winback': {
       tagline: 'Tecarterapia de última generación — la tecnología que acelera cada sesión de fisioterapia',
-      description: 'La Winback BACK3 es un equipo de tecarterapia (diatermia capacitiva y resistiva) que combina alta frecuencia (300 kHz a 1 MHz) con neuromodulación Hi-TENS e Hi-EMS. Al calentar los tejidos en profundidad, activa la circulación sanguínea y el metabolismo celular en la zona tratada, acelerando los procesos naturales de recuperación del organismo. La fisioterapeuta la integra en las sesiones de tratamiento, adaptada a cada caso — sin agujas, sin dolor, sin tiempo de parada.',
+      description: 'La Winback es un equipo de tecarterapia (diatermia capacitiva y resistiva) que combina alta frecuencia (300 kHz a 1 MHz) con neuromodulación Hi-TENS e Hi-EMS. Al calentar los tejidos en profundidad, activa la circulación sanguínea y el metabolismo celular en la zona tratada, acelerando los procesos naturales de recuperación del organismo. La fisioterapeuta la integra en las sesiones de tratamiento, adaptada a cada caso — sin agujas, sin dolor, sin tiempo de parada.',
       prices: [
         { label: 'Sesión de fisioterapia con Winback (50min)', value: '50€' },
         { label: 'Pack 5 sesiones', value: '225€' },
@@ -1119,7 +1119,7 @@ const SERVICE_DETAIL_I18N = {
       equipment: {
         eyebrow: 'EL EQUIPO',
         heading: 'Tecnología Winback, oficial y certificada',
-        text: 'El Winback BACK3 lo maneja directamente la fisioterapeuta a través de una pantalla táctil, que permite ajustar en tiempo real el modo, la intensidad y la combinación de corrientes a cada caso. La sonda se desliza sobre la piel con una crema conductora específica — sin agujas, sin preparación especial y sin tiempo de parada entre la sesión y el día a día.',
+        text: 'El Winback lo maneja directamente la fisioterapeuta a través de una pantalla táctil, que permite ajustar en tiempo real el modo, la intensidad y la combinación de corrientes a cada caso. La sonda se desliza sobre la piel con una crema conductora específica — sin agujas, sin preparación especial y sin tiempo de parada entre la sesión y el día a día.',
         badge: 'Certificado Winback Expert Center',
         bullets: [
           { t: '300 kHz – 1 MHz', d: 'Alta frecuencia regulable según la profundidad del tejido a tratar.' },

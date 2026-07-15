@@ -185,6 +185,46 @@
   .rg-scroll-indicator { display: none !important; }
 }
 
+/* Ecrãs muito largos: a coluna de texto cresce para a foto não ficar
+   desproporcionalmente alta (a altura vem do aspect-ratio da foto) */
+@media (min-width: 1700px) {
+  .rg-hero-home-content { flex: 0 1 40% !important; }
+}
+
+/* 769–1699px: a coluna da direita não é larga que chegue para a foto da equipa
+   (2000×1215) ficar tão alta como o texto — em split o cover cortaria as pessoas
+   das pontas. Empilha-se: foto em cima (inteira), texto por baixo. */
+@media (min-width: 769px) and (max-width: 1699px) {
+  .rg-hero-home {
+    flex-direction: column !important;
+    background: #ffffff !important;
+  }
+  .rg-hero-home-photo {
+    order: -1 !important;
+    flex: none !important;
+    width: 100% !important;
+    margin-top: 72px; /* compensa o header fixo */
+    /* Banner: à largura toda a foto ficaria alta demais e empurrava o texto para
+       fora do ecrã. Limita-se a altura — o corte fica na vertical (chão/tecto),
+       que esta foto tolera; na horizontal cortaria as pessoas das pontas. */
+    aspect-ratio: auto !important;
+    height: clamp(400px, 62vh, 700px) !important;
+  }
+  .rg-hero-home-photo img {
+    object-position: center 18% !important;
+  }
+  .rg-hero-home-content {
+    flex: none !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: 48px 48px 72px !important;
+    justify-content: center;
+  }
+  .rg-hero-home-content > div {
+    max-width: 760px !important;
+  }
+}
+
 @media (max-width: 768px) {
 
   /* Apanha o <section> do Hero: minHeight calc(100vh - 0px), background cream */

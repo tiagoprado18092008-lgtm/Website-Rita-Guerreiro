@@ -89,6 +89,12 @@ const TRANSLATIONS = {
       ],
       cta: 'Conhecer toda a equipa',
     },
+    equipa_intro: {
+      eyebrow: 'A nossa equipa',
+      heading: 'Uma equipa multidisciplinar que cuida de si',
+      body: 'Fisioterapeutas, psicólogos, nutricionistas e terapeutas que trabalham lado a lado, em Loulé, para lhe oferecer um acompanhamento coordenado, próximo e verdadeiramente humano — tudo num só sítio.',
+      cta: 'Conhecer a equipa',
+    },
     testimonials_v2: {
       read_more: 'Ler mais avaliações no Google',
       featured_q: 'Durante anos sofri de dores crónicas de costas. A abordagem que a Rita fez ao problema foi sem dúvida transformadora — é como ter um corpo novo. A diferença que isto fez na minha qualidade de vida é difícil de descrever',
@@ -134,7 +140,7 @@ const TRANSLATIONS = {
     },
     tec_teaser: {
       eyebrow: 'Tecnologia',
-      heading: 'Winback BACK3 — tecarterapia que acelera cada sessão',
+      heading: 'Winback — tecarterapia que acelera cada sessão',
       body: 'Integramos tecarterapia de última geração nas sessões de fisioterapia — calor profundo e neuromodulação que aliviam a dor e aceleram a recuperação, sem agulhas nem tempo de paragem.',
       cta: 'Conhecer a tecnologia',
     },
@@ -338,7 +344,7 @@ const TRANSLATIONS = {
       cat_massagens: { title: 'Massagens — Rita Guerreiro · Loulé', description: 'Massagens terapêuticas, deep tissue, pré/pós-natal, sacro-craniana e drenagem linfática em Loulé.' },
       cat_holisticas: { title: 'Holísticas — Rita Guerreiro · Loulé', description: 'Reflexologia, shiatsu, massagem indiana, head spa e acupuntura em Loulé.' },
       cat_estetica: { title: 'Estética — Rita Guerreiro · Loulé', description: 'Tratamentos faciais, depilação a laser, pacotes de tratamento e Pilates clínico em Loulé.' },
-      tec_winback: { title: 'Tecarterapia Winback BACK3 — Rita Guerreiro · Loulé', description: 'Tecarterapia Winback BACK3 em Loulé — diatermia de última geração integrada nas sessões de fisioterapia para acelerar a recuperação e aliviar a dor.' },
+      tec_winback: { title: 'Tecarterapia Winback — Rita Guerreiro · Loulé', description: 'Tecarterapia Winback em Loulé — diatermia de última geração integrada nas sessões de fisioterapia para acelerar a recuperação e aliviar a dor.' },
     },
   },
   EN: {
@@ -403,6 +409,12 @@ const TRANSLATIONS = {
       ],
       cta: 'Meet the full team',
     },
+    equipa_intro: {
+      eyebrow: 'Our team',
+      heading: 'A multidisciplinary team that takes care of you',
+      body: 'Physiotherapists, psychologists, nutritionists and therapists working side by side, in Loulé, to give you coordinated, close and genuinely human care — all in one place.',
+      cta: 'Meet the team',
+    },
     testimonials_v2: {
       read_more: 'Read more reviews on Google',
       featured_q: 'For years I suffered from chronic back pain. The way Rita approached the problem was truly transformative — it feels like having a new body. The difference it has made to my quality of life is hard to describe',
@@ -448,7 +460,7 @@ const TRANSLATIONS = {
     },
     tec_teaser: {
       eyebrow: 'Technology',
-      heading: 'Winback BACK3 — tecar therapy that speeds up every session',
+      heading: 'Winback — tecar therapy that speeds up every session',
       body: 'We integrate state-of-the-art tecar therapy into physiotherapy sessions — deep heat and neuromodulation that relieve pain and speed up recovery, with no needles and no downtime.',
       cta: 'Discover the technology',
     },
@@ -635,7 +647,7 @@ const TRANSLATIONS = {
       cat_massagens: { title: 'Massages — Rita Guerreiro · Loulé', description: 'Therapeutic, deep tissue, pre/post-natal, craniosacral massages and lymphatic drainage in Loulé.' },
       cat_holisticas: { title: 'Holistic — Rita Guerreiro · Loulé', description: 'Reflexology, shiatsu, Indian massage, head spa and acupuncture in Loulé.' },
       cat_estetica: { title: 'Aesthetics — Rita Guerreiro · Loulé', description: 'Facials, laser hair removal, treatment packages and clinical Pilates in Loulé.' },
-      tec_winback: { title: 'Winback BACK3 Tecar Therapy — Rita Guerreiro · Loulé', description: 'Winback BACK3 tecar therapy in Loulé — state-of-the-art diathermy integrated into physiotherapy sessions to speed up recovery and relieve pain.' },
+      tec_winback: { title: 'Winback Tecar Therapy — Rita Guerreiro · Loulé', description: 'Winback tecar therapy in Loulé — state-of-the-art diathermy integrated into physiotherapy sessions to speed up recovery and relieve pain.' },
     },
   },
   FR: {
@@ -700,6 +712,12 @@ const TRANSLATIONS = {
       ],
       cta: 'Rencontrer toute l’équipe',
     },
+    equipa_intro: {
+      eyebrow: 'Notre équipe',
+      heading: 'Une équipe pluridisciplinaire qui prend soin de vous',
+      body: 'Physiothérapeutes, psychologues, nutritionnistes et thérapeutes travaillant côte à côte, à Loulé, pour vous offrir un accompagnement coordonné, proche et véritablement humain — le tout au même endroit.',
+      cta: 'Rencontrer l’équipe',
+    },
     testimonials_v2: {
       read_more: 'Lire plus d’avis sur Google',
       featured_q: 'Pendant des années j’ai souffert de douleurs chroniques au dos. L’approche que Rita a apportée au problème a été véritablement transformatrice — c’est comme avoir un nouveau corps. La différence que cela a fait dans ma qualité de vie est difficile à décrire',
@@ -745,7 +763,7 @@ const TRANSLATIONS = {
     },
     tec_teaser: {
       eyebrow: 'Technologie',
-      heading: 'Winback BACK3 — la tecarthérapie qui accélère chaque séance',
+      heading: 'Winback — la tecarthérapie qui accélère chaque séance',
       body: 'Nous intégrons la tecarthérapie de dernière génération à vos séances de physiothérapie — une chaleur profonde et une neuromodulation qui soulagent la douleur et accélèrent votre récupération, sans aiguilles ni temps d’arrêt.',
       cta: 'Découvrir la technologie',
     },
@@ -949,7 +967,7 @@ const TRANSLATIONS = {
       cat_massagens: { title: 'Massages — Rita Guerreiro · Loulé', description: 'Massages thérapeutiques, deep tissue, pré/post-natal, crânio-sacrés et drainage lymphatique à Loulé.' },
       cat_holisticas: { title: 'Holistique — Rita Guerreiro · Loulé', description: 'Réflexologie, shiatsu, massage indien, head spa et acupuncture à Loulé.' },
       cat_estetica: { title: 'Esthétique — Rita Guerreiro · Loulé', description: 'Soins du visage, épilation au laser, forfaits de soins et Pilates clinique à Loulé.' },
-      tec_winback: { title: 'Tecarthérapie Winback BACK3 — Rita Guerreiro · Loulé', description: 'Tecarthérapie Winback BACK3 à Loulé — diathermie de dernière génération intégrée aux séances de physiothérapie pour accélérer la récupération et soulager la douleur.' },
+      tec_winback: { title: 'Tecarthérapie Winback — Rita Guerreiro · Loulé', description: 'Tecarthérapie Winback à Loulé — diathermie de dernière génération intégrée aux séances de physiothérapie pour accélérer la récupération et soulager la douleur.' },
     },
   },
   ES: {
@@ -1014,6 +1032,12 @@ const TRANSLATIONS = {
       ],
       cta: 'Conocer a todo el equipo',
     },
+    equipa_intro: {
+      eyebrow: 'Nuestro equipo',
+      heading: 'Un equipo multidisciplinar que cuida de usted',
+      body: 'Fisioterapeutas, psicólogos, nutricionistas y terapeutas que trabajan codo a codo, en Loulé, para ofrecerle un acompañamiento coordinado, cercano y verdaderamente humano — todo en un solo sitio.',
+      cta: 'Conocer al equipo',
+    },
     testimonials_v2: {
       read_more: 'Leer más reseñas en Google',
       featured_q: 'Durante años sufrí dolores crónicos de espalda. El enfoque que Rita le dio al problema fue sin duda transformador — es como tener un cuerpo nuevo. La diferencia que esto ha supuesto en mi calidad de vida es difícil de describir',
@@ -1059,7 +1083,7 @@ const TRANSLATIONS = {
     },
     tec_teaser: {
       eyebrow: 'Tecnología',
-      heading: 'Winback BACK3 — tecarterapia que acelera cada sesión',
+      heading: 'Winback — tecarterapia que acelera cada sesión',
       body: 'Integramos tecarterapia de última generación en las sesiones de fisioterapia — calor profundo y neuromodulación que alivian el dolor y aceleran la recuperación, sin agujas ni tiempo de parada.',
       cta: 'Conocer la tecnología',
     },
@@ -1263,7 +1287,7 @@ const TRANSLATIONS = {
       cat_massagens: { title: 'Masajes — Rita Guerreiro · Loulé', description: 'Masajes terapéuticos, deep tissue, pre/postnatal, sacro-craneal y drenaje linfático en Loulé.' },
       cat_holisticas: { title: 'Holísticas — Rita Guerreiro · Loulé', description: 'Reflexología, shiatsu, masaje indio, head spa y acupuntura en Loulé.' },
       cat_estetica: { title: 'Estética — Rita Guerreiro · Loulé', description: 'Tratamientos faciales, depilación láser, paquetes de tratamiento y Pilates clínico en Loulé.' },
-      tec_winback: { title: 'Tecarterapia Winback BACK3 — Rita Guerreiro · Loulé', description: 'Tecarterapia Winback BACK3 en Loulé — diatermia de última generación integrada en las sesiones de fisioterapia para acelerar la recuperación y aliviar el dolor.' },
+      tec_winback: { title: 'Tecarterapia Winback — Rita Guerreiro · Loulé', description: 'Tecarterapia Winback en Loulé — diatermia de última generación integrada en las sesiones de fisioterapia para acelerar la recuperación y aliviar el dolor.' },
     },
   },
 };

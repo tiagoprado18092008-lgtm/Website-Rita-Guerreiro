@@ -22,6 +22,7 @@ const IMG = {
   'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260714c',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg',
+  'massagens-maos': '/assets/fotos/servico-massagens-maos.jpg?v=20260715',
   reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715',
   shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715',
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',
@@ -114,10 +115,10 @@ const SERVICE_DETAIL = {
       { t: 'Dor crónica', d: 'Abordagem integrada com terapia manual, exercício e educação em dor — para uma vida com mais autonomia.' },
     ],
     tech: {
-      name: 'Winback BACK3',
+      name: 'Winback',
       eyebrow: 'Tecnologia',
       tagline: 'Tecarterapia de última geração para acelerar a recuperação.',
-      description: 'Integramos nas sessões de fisioterapia a tecnologia Winback BACK3 — um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ativa o metabolismo dos tecidos em profundidade, reduz dor e inflamação, acelera a regeneração e devolve mobilidade em menos tempo. Particularmente eficaz em lesões músculo-esqueléticas agudas e crónicas, recuperação pós-lesão, pós-cirurgia e dor desportiva.',
+      description: 'Integramos nas sessões de fisioterapia a tecnologia Winback — um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ativa o metabolismo dos tecidos em profundidade, reduz dor e inflamação, acelera a regeneração e devolve mobilidade em menos tempo. Particularmente eficaz em lesões músculo-esqueléticas agudas e crónicas, recuperação pós-lesão, pós-cirurgia e dor desportiva.',
       img: '/assets/winback-back3.jpg',
       link: '/servico/tecarterapia-winback',
       benefits: [
@@ -130,7 +131,7 @@ const SERVICE_DETAIL = {
   },
   'tecarterapia-winback': {
     tagline: 'Tecarterapia de última geração — a tecnologia que acelera cada sessão de fisioterapia.',
-    description: 'A Winback BACK3 é um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ao aquecer os tecidos em profundidade, ativa a circulação sanguínea e o metabolismo celular na zona tratada, acelerando os processos naturais de recuperação do organismo. É integrada pela fisioterapeuta nas sessões de tratamento, adaptada a cada caso — sem agulhas, sem dor, sem tempo de paragem.',
+    description: 'A Winback é um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ao aquecer os tecidos em profundidade, ativa a circulação sanguínea e o metabolismo celular na zona tratada, acelerando os processos naturais de recuperação do organismo. É integrada pela fisioterapeuta nas sessões de tratamento, adaptada a cada caso — sem agulhas, sem dor, sem tempo de paragem.',
     prices: [
       { label: 'Sessão de fisioterapia com Winback (50min)', value: '50€' },
       { label: 'Pack 5 sessões', value: '225€' },
@@ -146,7 +147,7 @@ const SERVICE_DETAIL = {
     equipment: {
       eyebrow: 'O EQUIPAMENTO',
       heading: 'Tecnologia Winback, oficial e certificada',
-      text: 'O Winback BACK3 é operado diretamente pela fisioterapeuta através de um ecrã tátil, que permite ajustar em tempo real o modo, a intensidade e a combinação de correntes ao caso de cada pessoa. A sonda desliza sobre a pele com creme condutor específico — sem agulhas, sem preparação especial e sem tempo de paragem entre a sessão e o dia a dia.',
+      text: 'O Winback é operado diretamente pela fisioterapeuta através de um ecrã tátil, que permite ajustar em tempo real o modo, a intensidade e a combinação de correntes ao caso de cada pessoa. A sonda desliza sobre a pele com creme condutor específico — sem agulhas, sem preparação especial e sem tempo de paragem entre a sessão e o dia a dia.',
       badge: 'Certificado Winback Expert Center',
       bullets: [
         { t: '300 kHz – 1 MHz', d: 'Alta frequência regulável consoante a profundidade do tecido a tratar.' },

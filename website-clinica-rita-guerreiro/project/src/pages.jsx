@@ -372,7 +372,7 @@ function ServicePage({ slug }) {
   </>);
 }
 
-// Tecnologia — página dedicada à máquina Winback BACK3 (tecarterapia).
+// Tecnologia — página dedicada à máquina Winback (tecarterapia).
 // Não é um serviço do catálogo: é aberta a partir da secção "Tecnologia"
 // das páginas de serviço onde a máquina é utilizada.
 function TecarPage() {
@@ -406,7 +406,7 @@ function TecarPage() {
             <span style={{ opacity: 0.4 }}>/</span>
             <span>{catLabel}</span>
             <span style={{ opacity: 0.4 }}>/</span>
-            <span style={{ color: RG.ink, fontWeight: 500 }}>Winback BACK3</span>
+            <span style={{ color: RG.ink, fontWeight: 500 }}>Winback</span>
           </div>
         </Reveal>
 
@@ -428,7 +428,7 @@ function TecarPage() {
                 fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 5vw, 72px)',
                 fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.035em',
                 margin: 0, color: RG.ink,
-              }}>Winback BACK3</h1>
+              }}>Winback</h1>
             </Reveal>
 
             <Reveal delay={120}>
@@ -534,7 +534,7 @@ function TecarPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid rg-sobre-areas-grid">
             <Reveal>
               <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg" alt="Consola do equipamento Winback BACK3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg" alt="Consola do equipamento Winback" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </Reveal>
             <Reveal delay={80}>
