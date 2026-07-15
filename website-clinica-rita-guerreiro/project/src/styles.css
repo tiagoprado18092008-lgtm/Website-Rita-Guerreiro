@@ -801,19 +801,21 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 44%;
+  object-position: 50% 50%;
   z-index: 0;
   /* a foto é quente/rosada: dessaturar deixa o scrim teal assentar por cima */
-  filter: saturate(0.55) contrast(1.04);
+  filter: saturate(0.72) contrast(1.06);
 }
+/* Escuro em cima (título) e em baixo (citações), aberto a meio para a foto
+   respirar — é ela que tem de se ver entre o título e o rail. */
 .rg-rev-scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(20, 49, 47, 0.9) 0%, rgba(20, 49, 47, 0.6) 32%, rgba(14, 37, 36, 0.84) 74%, rgba(11, 30, 29, 0.95) 100%),
-    linear-gradient(to right, rgba(20, 49, 47, 0.6) 0%, rgba(20, 49, 47, 0) 52%);
+    linear-gradient(to bottom, rgba(20, 49, 47, 0.78) 0%, rgba(20, 49, 47, 0.26) 26%, rgba(15, 40, 39, 0.5) 56%, rgba(11, 30, 29, 0.88) 84%, rgba(9, 26, 25, 0.95) 100%),
+    linear-gradient(to right, rgba(20, 49, 47, 0.58) 0%, rgba(20, 49, 47, 0.04) 56%);
 }
 .rg-rev-inner {
   position: relative;
@@ -826,7 +828,7 @@ input:focus, textarea:focus, select:focus {
 
 .rg-rev-rail {
   display: flex;
-  height: clamp(400px, 42vw, 540px);
+  height: clamp(380px, 34vw, 470px);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
@@ -850,26 +852,6 @@ input:focus, textarea:focus, select:focus {
 .rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open {
   flex-grow: 2.6;
   background-color: rgba(255, 255, 255, 0.055);
-}
-
-/* Aspas decorativas — recuam quando a citação ocupa o painel */
-.rg-rev-mark {
-  position: absolute;
-  right: 14px;
-  bottom: 16px;
-  font-family: "Open Sans", system-ui, sans-serif;
-  font-size: 88px;
-  font-weight: 300;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.16);
-  user-select: none;
-  pointer-events: none;
-  transition: opacity 420ms ease;
-}
-.rg-rev-panel:hover .rg-rev-mark,
-.rg-rev-panel:focus-visible .rg-rev-mark,
-.rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open .rg-rev-mark {
-  opacity: 0.4;
 }
 
 /* grid-template-rows 0fr→1fr: a citação não ocupa espaço enquanto fechada */
@@ -917,8 +899,11 @@ input:focus, textarea:focus, select:focus {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Assinatura: a linha teal desenha-se ao longo do painel que está aberto */
-.rg-rev-meta { position: relative; padding-top: 20px; }
+/* Assinatura: a linha teal desenha-se ao longo do painel que está aberto.
+   min-height: o bloco está ancorado em baixo, por isso sem altura reservada os
+   nomes/etiquetas que quebram em mais linhas empurravam o nome para cima e
+   deixavam de alinhar entre painéis. */
+.rg-rev-meta { position: relative; padding-top: 20px; min-height: 96px; }
 .rg-rev-meta::before,
 .rg-rev-meta::after {
   content: '';
@@ -930,6 +915,7 @@ input:focus, textarea:focus, select:focus {
 .rg-rev-meta::before { right: 0; background: rgba(255, 255, 255, 0.2); }
 .rg-rev-meta::after {
   width: 0;
+  height: 2px;
   background: #6FB5B0;
   transition: width 620ms cubic-bezier(.2, .7, .2, 1);
 }
@@ -954,6 +940,7 @@ input:focus, textarea:focus, select:focus {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 10.5px;
   font-weight: 500;
+  line-height: 1.45;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #9FD4D0;
@@ -993,19 +980,24 @@ input:focus, textarea:focus, select:focus {
     border-top: 0;
     border-radius: 14px;
   }
-  .rg-rev-mark { display: none; }
   .rg-rev-g { position: static; align-self: flex-start; margin-bottom: 20px; }
   .rg-rev-body { grid-template-rows: 1fr; }
   .rg-rev-body-in { opacity: 1; transform: none; }
   .rg-rev-meta::after { display: none; }
   .rg-rev-quote { font-size: 16px; }
+  .rg-rev-meta { min-height: 0; }
+  /* Aqui está tudo aberto: destacar um painel deixaria de querer dizer nada */
+  .rg-rev-panel,
+  .rg-rev-panel:hover,
+  .rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open { background-color: transparent; }
+  .rg-rev-panel--google,
+  .rg-rev-panel--google:hover { background-color: rgba(47, 107, 104, 0.42); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .rg-rev-panel,
   .rg-rev-body,
   .rg-rev-body-in,
-  .rg-rev-mark,
   .rg-rev-arrow,
   .rg-rev-meta::after { transition: none; }
 }

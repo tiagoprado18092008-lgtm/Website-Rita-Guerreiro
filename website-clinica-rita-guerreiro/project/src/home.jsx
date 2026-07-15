@@ -111,10 +111,8 @@ function Hero() {
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
           loading="eager" decoding="async"
         />
-        {/* Degradê de fusão — funde só a margem esquerda da foto no creme da coluna
-            de texto, para não haver um corte reto entre as duas colunas, mais uma
-            vinheta subtil em baixo (nunca branca, que criava faixa visível).
-            Só em desktop split (≥1700px); escondido quando o hero empilha. */}
+        {/* Overlay de degradê — desligado via CSS (.rg-hero-home-fade), a foto
+            fica limpa. Mantido para poder voltar a ativar se for preciso. */}
         <div className="rg-hero-home-fade" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1 }} />
         {/* Eyebrow pill — visível só em mobile via CSS */}
         <span className="rg-hero-home-eyebrow" aria-hidden="true">Centro de Terapias & Bem-Estar</span>
@@ -721,7 +719,6 @@ function Testimonials() {
                 className={'rg-rev-panel' + (i === 0 ? ' rg-rev-panel--open' : '')}
                 href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
               >
-                <span className="rg-rev-mark" aria-hidden="true">&rdquo;</span>
                 <div className="rg-rev-body">
                   <div className="rg-rev-body-in">
                     <Stars />
