@@ -851,8 +851,30 @@ input:focus, textarea:focus, select:focus {
 .rg-rev-panel:focus-visible,
 .rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open {
   flex-grow: 2.6;
-  background-color: rgba(255, 255, 255, 0.055);
 }
+
+/* Fundo escuro local do painel aberto. A foto tem um rosto claro por baixo do
+   rail: escurecer a secção toda escondia-o, por isso só o painel que está
+   aberto ganha o degradê, mesmo onde a citação precisa de assentar. */
+.rg-rev-panel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80%;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(9, 26, 25, 0.95) 0%, rgba(9, 26, 25, 0.86) 44%, rgba(11, 30, 29, 0.4) 80%, rgba(11, 30, 29, 0) 100%);
+  transition: opacity 520ms ease;
+}
+.rg-rev-panel:hover::before,
+.rg-rev-panel:focus-visible::before,
+.rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open::before {
+  opacity: 1;
+}
+.rg-rev-body, .rg-rev-meta { position: relative; z-index: 1; }
 
 /* grid-template-rows 0fr→1fr: a citação não ocupa espaço enquanto fechada */
 .rg-rev-body {
@@ -952,6 +974,7 @@ input:focus, textarea:focus, select:focus {
 .rg-rev-panel--google:focus-visible { background-color: rgba(47, 107, 104, 0.5); }
 .rg-rev-g {
   position: absolute;
+  z-index: 1;
   top: 30px;
   left: clamp(18px, 1.8vw, 26px);
   display: flex;
@@ -986,10 +1009,15 @@ input:focus, textarea:focus, select:focus {
   .rg-rev-meta::after { display: none; }
   .rg-rev-quote { font-size: 16px; }
   .rg-rev-meta { min-height: 0; }
-  /* Aqui está tudo aberto: destacar um painel deixaria de querer dizer nada */
-  .rg-rev-panel,
-  .rg-rev-panel:hover,
-  .rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open { background-color: transparent; }
+  /* Aqui está tudo aberto e as citações ocupam quase toda a secção. O véu por
+     painel deixava a faixa fora do container por escurecer; escurece-se antes
+     o scrim da secção, que é full-bleed, e a foto fica como textura. */
+  .rg-rev-panel::before,
+  .rg-rev-panel:hover::before,
+  .rg-rev-rail:not(:hover):not(:focus-within) .rg-rev-panel--open::before { opacity: 0; }
+  .rg-rev-scrim {
+    background: linear-gradient(to bottom, rgba(14, 37, 36, 0.84) 0%, rgba(11, 30, 29, 0.78) 22%, rgba(10, 28, 27, 0.8) 100%);
+  }
   .rg-rev-panel--google,
   .rg-rev-panel--google:hover { background-color: rgba(47, 107, 104, 0.42); }
 }

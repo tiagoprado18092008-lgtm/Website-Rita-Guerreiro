@@ -698,7 +698,7 @@ function Testimonials() {
   return (
     <section className="rg-rev">
       <img
-        className="rg-rev-photo" src="/assets/fotos/servico-massagem-terapeutica.jpg?v=20260715"
+        className="rg-rev-photo" src="/assets/fotos/testemunhos-fundo.jpg?v=20260715"
         alt="" aria-hidden="true" loading="lazy" decoding="async"
       />
       <div className="rg-rev-scrim" aria-hidden="true" />
