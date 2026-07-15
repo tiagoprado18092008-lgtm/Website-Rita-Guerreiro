@@ -30,7 +30,8 @@ const IMG = {
   reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715h',
   shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715f',
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',
-  'head-spa': '/assets/fotos/servico-head-spa.jpg',
+  // Foto nova enviada pela cliente ("Fotos clinica Rita Guerreiro/Head Spa.jpg").
+  'head-spa': '/assets/fotos/servico-head-spa.jpg?v=20260715i',
   facial: '/assets/fotos/servico-facial.jpg?v=20260715f',
   'depilacao-laser': '/assets/fotos/servico-depilacao-laser.jpg?v=20260714c',
   'pilates-clinico': '/assets/pilates.jpg',
