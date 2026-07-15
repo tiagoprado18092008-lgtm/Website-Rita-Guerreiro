@@ -266,8 +266,6 @@ const TRANSLATIONS = {
       story_heading: 'Um projeto nascido do amor por cuidar das pessoas',
       story_p1: 'A Clínica Rita Guerreiro nasceu da visão de criar um espaço diferente — onde a qualidade do cuidado é tão importante quanto a qualidade do tratamento.',
       story_p2: 'Desde 2022 recebemos pessoas de todas as idades, com histórias muito diferentes. O que fica igual em todas elas é a forma como as recebemos: com escuta, com atenção e com continuidade.',
-      story_quote: '«O corpo alcança o que a mente acredita.»',
-      story_quote_cite: 'O lema da clínica',
       stats: [
         { v: '2022', l: 'Ano de fundação' },
         { v: '5', l: 'Profissionais dedicadas' },
@@ -571,8 +569,6 @@ const TRANSLATIONS = {
       story_heading: 'A project born from a love of caring for people',
       story_p1: 'Rita Guerreiro Clinic was born from the vision of creating a different space — where the quality of care is as important as the quality of treatment.',
       story_p2: 'Since 2022 we have welcomed people of all ages, with very different stories. What stays the same for all of them is the way we receive them: with listening, with attention and with continuity.',
-      story_quote: '“The body achieves what the mind believes.”',
-      story_quote_cite: 'The clinic’s motto',
       stats: [
         { v: '2022', l: 'Founded' },
         { v: '5', l: 'Dedicated professionals' },
@@ -893,8 +889,6 @@ const TRANSLATIONS = {
       story_heading: 'Un projet né de l’amour de prendre soin des personnes',
       story_p1: 'La Clinique Rita Guerreiro est née de la vision de créer un espace différent — où la qualité du soin est aussi importante que la qualité du traitement.',
       story_p2: 'Depuis 2022, nous accueillons des personnes de tous âges, avec des histoires très différentes. Ce qui reste le même pour toutes, c’est la façon dont nous les recevons : avec écoute, attention et continuité.',
-      story_quote: '« Le corps réalise ce que l’esprit croit. »',
-      story_quote_cite: 'La devise de la clinique',
       stats: [
         { v: '2022', l: 'Année de fondation' },
         { v: '5', l: 'Professionnelles dévouées' },
@@ -1215,8 +1209,6 @@ const TRANSLATIONS = {
       story_heading: 'Un proyecto nacido del amor por cuidar de las personas',
       story_p1: 'La Clínica Rita Guerreiro nació de la visión de crear un espacio diferente — donde la calidad del cuidado es tan importante como la calidad del tratamiento.',
       story_p2: 'Desde 2022 recibimos personas de todas las edades, con historias muy distintas. Lo que se mantiene igual en todas ellas es la forma en que las recibimos: con escucha, con atención y con continuidad.',
-      story_quote: '«El cuerpo logra lo que la mente cree.»',
-      story_quote_cite: 'El lema de la clínica',
       stats: [
         { v: '2022', l: 'Año de fundación' },
         { v: '5', l: 'Profesionales dedicadas' },

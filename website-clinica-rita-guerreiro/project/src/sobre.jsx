@@ -113,12 +113,6 @@ function Story() {
               <Body size={17} style={{ marginTop: 22 }}>{t('sobre.story_p1')}</Body>
               <Body size={17} style={{ marginTop: 16 }}>{t('sobre.story_p2')}</Body>
             </Reveal>
-            <Reveal delay={200}>
-              <blockquote style={{ margin: '32px 0 0', padding: '4px 0 4px 24px', borderLeft: `3px solid ${RG.teal}` }}>
-                <p style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(19px, 2vw, 24px)', fontWeight: 300, fontStyle: 'italic', letterSpacing: '-0.01em', lineHeight: 1.35, color: RG.tealInk, margin: 0 }}>{t('sobre.story_quote')}</p>
-                <cite style={{ display: 'block', fontFamily: F_BODY, fontSize: 12, fontStyle: 'normal', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.muted, marginTop: 10 }}>{t('sobre.story_quote_cite')}</cite>
-              </blockquote>
-            </Reveal>
           </div>
         </div>
       </Container>
@@ -229,7 +223,6 @@ function Espaco() {
                     style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', background: RG.cream, cursor: 'zoom-in', ...(tall ? { gridColumn: '3', gridRow: '1 / span 2' } : null) }}
                   >
                     <img src={p.src} alt={p.label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                    <span className="rg-espaco-label" style={{ position: 'absolute', left: 16, bottom: 14, zIndex: 1, fontFamily: F_BODY, fontSize: 13, fontWeight: 600, letterSpacing: '0.04em', color: RG.white }}>{p.label}</span>
                   </div>
                 );
               })}
