@@ -7,10 +7,10 @@ const IMG = {
   'fisioterapia-manual': '/assets/fotos/servico-fisioterapia-manual.jpg',
   acupuntura: '/assets/fotos/servico-acupuntura.jpg?v=20260715f',
   mesoterapia: '/assets/fotos/servico-mesoterapia.jpg?v=20260714c',
-  // A cliente indicou que estas 3 fotos não correspondem ao serviço. Até enviar as
+  // Foto certa enviada pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia ATM.jpg").
+  'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg?v=20260715h',
+  // A cliente indicou que estas 2 fotos não correspondem ao serviço. Até enviar as
   // certas ficam a null — o <Photo> cai no placeholder da marca (ui.jsx).
-  // Os ficheiros errados continuam em assets/fotos/ mas não são usados.
-  'fisioterapia-atm': null,
   'fisioterapia-pediatrica': null,
   'fisioterapia-vestibular': null,
   'fisioterapia-oncologica': '/assets/fotos/servico-fisioterapia-oncologica.jpg?v=20260714c',
@@ -27,7 +27,7 @@ const IMG = {
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg',
   'massagens-maos': '/assets/fotos/servico-massagens-maos.jpg?v=20260715',
-  reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715f',
+  reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715h',
   shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715f',
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',
   'head-spa': '/assets/fotos/servico-head-spa.jpg',
