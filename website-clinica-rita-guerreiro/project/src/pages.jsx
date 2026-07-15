@@ -449,7 +449,7 @@ function TecarPage() {
 
           <Reveal delay={100}>
             <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-              <img src="/assets/fotos/servico-tecarterapia.jpg" alt="Tecarterapia Winback na Clínica Rita Guerreiro" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src="/assets/fotos/servico-tecarterapia.jpg?v=20260715f" alt="Tecarterapia Winback na Clínica Rita Guerreiro" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>
@@ -534,7 +534,7 @@ function TecarPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid rg-sobre-areas-grid">
             <Reveal>
               <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg" alt="Consola do equipamento Winback" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg?v=20260715f" alt="Consola do equipamento Winback" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </Reveal>
             <Reveal delay={80}>
@@ -605,7 +605,7 @@ function TecarPage() {
             </Reveal>
             <Reveal delay={80}>
               <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-                <img src="/assets/fotos/servico-tecarterapia-sessao.jpg" alt="Aplicação da sonda Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/assets/fotos/servico-tecarterapia-sessao.jpg?v=20260715f" alt="Aplicação da sonda Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </Reveal>
           </div>

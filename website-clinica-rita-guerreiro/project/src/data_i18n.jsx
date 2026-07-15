@@ -183,7 +183,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'Physiotherapy is a health science focused on the study, prevention, diagnosis and treatment of disorders related to movement, biomechanics and human functional capacity. The goal is to restore, develop and maintain patients’ maximum autonomy, mobility and quality of life.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '5-session pack', value: '225€' },
       ],
       sub: [
         { t: 'Lower back and neck pain', d: 'Postural assessment, manual therapy and progressive exercise for chronic or acute spinal pain' },
@@ -200,7 +199,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'Paediatric Physiotherapy supports babies, children and adolescents at different stages of development. We assess and treat delays in motor development, postural changes, musculoskeletal injuries and neurological conditions — always in a safe environment, adapted to the age of each child. Every session is designed around the pace of the child, with family involvement whenever it makes sense.',
       prices: [
         { label: 'Session (50min)', value: '50€' },
-        { label: '5-session pack', value: '225€' },
       ],
       sub: [
         { t: 'Motor development', d: 'Assessment and stimulation of motor development in babies and children with delay or alterations' },
@@ -598,7 +596,6 @@ const SERVICE_DETAIL_I18N = {
       description: "La physiothérapie est une science de la santé centrée sur l'étude, la prévention, le diagnostic et le traitement des troubles liés au mouvement, à la biomécanique et à la capacité fonctionnelle humaine. L'objectif est de restaurer, développer et maintenir le maximum d'autonomie, de mobilité et de qualité de vie des patients.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 5 séances', value: '225€' },
       ],
       sub: [
         { t: 'Douleur lombaire et cervicale', d: 'Évaluation posturale, thérapie manuelle et exercice progressif pour la douleur chronique ou aiguë du dos' },
@@ -615,7 +612,6 @@ const SERVICE_DETAIL_I18N = {
       description: "La Physiothérapie Pédiatrique accompagne bébés, enfants et adolescents à différentes étapes du développement. Nous évaluons et traitons les retards de développement moteur, les altérations posturales, les blessures musculo-squelettiques et les conditions neurologiques — toujours dans un environnement sûr, adapté à l'âge de chaque enfant. Chaque séance est conçue pour le rythme de l'enfant, avec l'implication de la famille lorsque cela a du sens.",
       prices: [
         { label: 'Séance (50min)', value: '50€' },
-        { label: 'Pack 5 séances', value: '225€' },
       ],
       sub: [
         { t: 'Développement moteur', d: 'Évaluation et stimulation du développement moteur chez les bébés et enfants avec retard ou altérations' },
@@ -1013,7 +1009,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'La fisioterapia es una ciencia de la salud centrada en el estudio, la prevención, el diagnóstico y el tratamiento de los trastornos relacionados con el movimiento, la biomecánica y la capacidad funcional humana. El objetivo es restaurar, desarrollar y mantener la máxima autonomía, movilidad y calidad de vida de los pacientes.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
       ],
       sub: [
         { t: 'Dolor lumbar y cervical', d: 'Evaluación postural, terapia manual y ejercicio progresivo para el dolor crónico o agudo de columna' },
@@ -1030,7 +1025,6 @@ const SERVICE_DETAIL_I18N = {
       description: 'La Fisioterapia Pediátrica acompaña a bebés, niños y adolescentes en diferentes etapas del desarrollo. Evaluamos y tratamos retrasos en el desarrollo motor, alteraciones posturales, lesiones musculoesqueléticas y condiciones neurológicas — siempre en un entorno seguro y adecuado a la edad de cada niño. Cada sesión se diseña para el ritmo del niño, con participación de la familia siempre que tenga sentido.',
       prices: [
         { label: 'Sesión (50min)', value: '50€' },
-        { label: 'Pack 5 sesiones', value: '225€' },
       ],
       sub: [
         { t: 'Desarrollo motor', d: 'Evaluación y estimulación del desarrollo motor en bebés y niños con retraso o alteraciones' },

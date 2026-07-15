@@ -2,35 +2,39 @@
 
 // Fotos reais da clínica — substituir null pela path quando a cliente enviar
 const IMG = {
-  fisioterapia: '/assets/fotos/servico-fisioterapia-rita.jpg',
-  'fisioterapia-tecar-dupla': '/assets/fotos/servico-fisioterapia-tecar-dupla.jpg',
+  fisioterapia: '/assets/fotos/servico-fisioterapia-rita.jpg?v=20260715f',
+  'fisioterapia-tecar-dupla': '/assets/fotos/servico-fisioterapia-tecar-dupla.jpg?v=20260715f',
   'fisioterapia-manual': '/assets/fotos/servico-fisioterapia-manual.jpg',
-  acupuntura: '/assets/fotos/servico-acupuntura.jpg',
+  acupuntura: '/assets/fotos/servico-acupuntura.jpg?v=20260715f',
   mesoterapia: '/assets/fotos/servico-mesoterapia.jpg?v=20260714c',
-  'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg',
-  'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.jpg',
-  'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg',
+  // A cliente indicou que estas 3 fotos não correspondem ao serviço. Até enviar as
+  // certas ficam a null — o <Photo> cai no placeholder da marca (ui.jsx).
+  // Os ficheiros errados continuam em assets/fotos/ mas não são usados.
+  'fisioterapia-atm': null,
+  'fisioterapia-pediatrica': null,
+  'fisioterapia-vestibular': null,
   'fisioterapia-oncologica': '/assets/fotos/servico-fisioterapia-oncologica.jpg?v=20260714c',
   psicologia: '/assets/fotos/servico-psicologia.jpg?v=20260715b',
   nutricao: '/assets/fotos/servico-nutricao.jpg',
-  'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg',
+  'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg?v=20260715f',
   'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
   'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg?v=20260715',
-  'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg',
-  'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715',
+  // Foto que estava na Fisioterapia Pediátrica — é mesmo de massagem a criança.
+  'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
+  'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg',
   'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260714c',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg',
   'massagens-maos': '/assets/fotos/servico-massagens-maos.jpg?v=20260715',
-  reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715',
-  shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715',
+  reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715f',
+  shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715f',
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',
   'head-spa': '/assets/fotos/servico-head-spa.jpg',
-  facial: '/assets/fotos/servico-facial.jpg?v=20260715',
+  facial: '/assets/fotos/servico-facial.jpg?v=20260715f',
   'depilacao-laser': '/assets/fotos/servico-depilacao-laser.jpg?v=20260714c',
   'pilates-clinico': '/assets/pilates.jpg',
-  'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg',
+  'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg?v=20260715f',
   // Genéricos — fotos reais da clínica
   clinicInterior: '/assets/fotos/rita-rececao.jpg',
   clinicDetail: '/assets/fotos/rita-retrato.jpg',
@@ -45,8 +49,8 @@ const SERVICES = {
     label: 'Fisioterapia',
     intro: 'Avaliação e tratamento individual de dor, lesão e disfunção.',
     items: [
-      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG['fisioterapia-manual'], blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€ / Pack 5: 225€' },
-      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€ / Pack 5: 225€' },
+      { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG['fisioterapia-manual'], blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€' },
+      { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
       { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 5: 225€' },
@@ -104,7 +108,6 @@ const SERVICE_DETAIL = {
     description: 'A fisioterapia é uma ciência da saúde focada no estudo, prevenção, diagnóstico e tratamento de distúrbios relacionados com o movimento, a biomecânica e a capacidade funcional humana. O objetivo é restaurar, desenvolver e manter a máxima autonomia, mobilidade e qualidade de vida dos pacientes.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 5 sessões', value: '225€' },
     ],
     sub: [
       { t: 'Dor lombar e cervical', d: 'Avaliação postural, terapia manual e exercício progressivo para dor da coluna — aguda ou crónica.' },
@@ -172,7 +175,6 @@ const SERVICE_DETAIL = {
     description: 'A Fisioterapia Pediátrica acompanha bebés, crianças e adolescentes em diferentes fases do desenvolvimento. Avaliamos e tratamos atrasos no desenvolvimento motor, alterações posturais, lesões músculo-esqueléticas e condições neurológicas — sempre num ambiente seguro, adaptado e adequado à idade. Cada sessão é desenhada para o ritmo da criança, com envolvimento da família sempre que faz sentido.',
     prices: [
       { label: 'Sessão (50min)', value: '50€' },
-      { label: 'Pack 5 sessões', value: '225€' },
     ],
     sub: [
       { t: 'Desenvolvimento motor', d: 'Avaliação e estimulação do desenvolvimento motor em bebés e crianças com atraso ou alterações.' },
