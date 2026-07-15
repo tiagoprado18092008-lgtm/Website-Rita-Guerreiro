@@ -502,19 +502,7 @@
 
 
 /* ─── TESTIMONIALS ──────────────────────────────────────── */
-
-@media (max-width: 768px) {
-  .rg-testimonials-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-  .rg-testimonials-grid > div > div {
-    padding: 24px 22px !important;
-  }
-  .rg-testimonials-grid blockquote {
-    font-size: 18px !important;
-  }
-}
+/* O rail de painéis (.rg-rev-*) trata do seu próprio mobile em styles.css. */
 
 
 /* ─── HOME CTA (3 opções) ───────────────────────────────── */

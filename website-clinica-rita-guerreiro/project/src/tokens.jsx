@@ -97,6 +97,8 @@ const TRANSLATIONS = {
     },
     testimonials_v2: {
       read_more: 'Ler mais avaliações no Google',
+      google_label: 'Perfil da clínica',
+      google_body: 'Estas avaliações estão publicadas no perfil da clínica no Google, na íntegra e sem filtros. Abre numa nova janela.',
       featured_q: 'Durante anos sofri de dores crónicas de costas. A abordagem que a Rita fez ao problema foi sem dúvida transformadora — é como ter um corpo novo. A diferença que isto fez na minha qualidade de vida é difícil de descrever',
       featured_what: 'Fisioterapia · 18 meses de acompanhamento',
       t1_q: 'A minha fisioterapeuta é uma peça fundamental na minha vida. Procuro-a todas as semanas para cuidar da musculatura e aliviar dores',
@@ -149,7 +151,7 @@ const TRANSLATIONS = {
       heading: 'Seja qual for o motivo que o traz, temos alguém para si',
     },
     testimonials: {
-      eyebrow: 'Testemunhos reais',
+      eyebrow: 'Avaliações reais no Google',
       heading: 'O que dizem os que já sentiram a diferença',
     },
     homecta: {
@@ -417,6 +419,8 @@ const TRANSLATIONS = {
     },
     testimonials_v2: {
       read_more: 'Read more reviews on Google',
+      google_label: 'Clinic profile',
+      google_body: 'These reviews are published on the clinic’s Google profile, in full and unfiltered. Opens in a new window.',
       featured_q: 'For years I suffered from chronic back pain. The way Rita approached the problem was truly transformative — it feels like having a new body. The difference it has made to my quality of life is hard to describe',
       featured_what: 'Physiotherapy · 18 months of treatment',
       t1_q: 'My physiotherapist is a key part of my life. I see her every week to care for my muscles and ease pain',
@@ -469,7 +473,7 @@ const TRANSLATIONS = {
       heading: 'Whatever brings you here, we have someone for you',
     },
     testimonials: {
-      eyebrow: 'Real testimonials',
+      eyebrow: 'Real reviews on Google',
       heading: 'What those who felt the difference have to say',
     },
     homecta: {
@@ -720,6 +724,8 @@ const TRANSLATIONS = {
     },
     testimonials_v2: {
       read_more: 'Lire plus d’avis sur Google',
+      google_label: 'Profil de la clinique',
+      google_body: 'Ces avis sont publiés sur le profil Google de la clinique, intégralement et sans filtre. Ouvre dans une nouvelle fenêtre.',
       featured_q: 'Pendant des années j’ai souffert de douleurs chroniques au dos. L’approche que Rita a apportée au problème a été véritablement transformatrice — c’est comme avoir un nouveau corps. La différence que cela a fait dans ma qualité de vie est difficile à décrire',
       featured_what: 'Physiothérapie · 18 mois de suivi',
       t1_q: 'Ma physiothérapeute est une pièce essentielle de ma vie. Je la vois chaque semaine pour prendre soin de mes muscles et soulager les douleurs',
@@ -772,7 +778,7 @@ const TRANSLATIONS = {
       heading: 'Quelle que soit la raison qui vous amène, nous avons quelqu’un pour vous',
     },
     testimonials: {
-      eyebrow: 'Témoignages réels',
+      eyebrow: 'Avis réels sur Google',
       heading: 'Ce que disent ceux qui ont déjà ressenti la différence',
     },
     homecta: {
@@ -1040,6 +1046,8 @@ const TRANSLATIONS = {
     },
     testimonials_v2: {
       read_more: 'Leer más reseñas en Google',
+      google_label: 'Perfil de la clínica',
+      google_body: 'Estas reseñas están publicadas en el perfil de la clínica en Google, íntegras y sin filtros. Abre en una ventana nueva.',
       featured_q: 'Durante años sufrí dolores crónicos de espalda. El enfoque que Rita le dio al problema fue sin duda transformador — es como tener un cuerpo nuevo. La diferencia que esto ha supuesto en mi calidad de vida es difícil de describir',
       featured_what: 'Fisioterapia · 18 meses de seguimiento',
       t1_q: 'Mi fisioterapeuta es una pieza fundamental en mi vida. La busco todas las semanas para cuidar la musculatura y aliviar dolores',
@@ -1092,7 +1100,7 @@ const TRANSLATIONS = {
       heading: 'Sea cual sea el motivo que le trae, tenemos a alguien para usted',
     },
     testimonials: {
-      eyebrow: 'Testimonios reales',
+      eyebrow: 'Reseñas reales en Google',
       heading: 'Lo que dicen quienes ya han sentido la diferencia',
     },
     homecta: {
