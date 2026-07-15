@@ -549,7 +549,7 @@ function TecarPage() {
               {detail.equipment.badge && (
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 24 }}>
                   <div style={{ width: 56, height: 56, borderRadius: 10, overflow: 'hidden', flexShrink: 0, border: `1px solid ${RG.line}` }}>
-                    <img src="/assets/fotos/servico-tecarterapia-winback-selo.jpg?v=20260715b" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    <img src="/assets/fotos/servico-tecarterapia-winback-selo.jpg?v=20260715c" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <span style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 600, color: RG.tealDark }}>{detail.equipment.badge}</span>
                 </div>

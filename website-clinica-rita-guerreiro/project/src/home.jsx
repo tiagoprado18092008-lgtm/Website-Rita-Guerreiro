@@ -20,15 +20,7 @@ function Hero() {
             borderRadius: 2,
           }} />
 
-{/* Kicker — só desktop (mobile tem a eyebrow pill sobre a foto) */}
-          <Reveal delay={60}>
-            <div className="rg-hero-home-kicker" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, fontFamily: F_BODY, fontSize: 11.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 20 }}>
-              <span aria-hidden="true" style={{ width: 6, height: 6, borderRadius: '50%', background: RG.teal, boxShadow: '0 0 0 3px rgba(111,181,176,0.25)', flexShrink: 0 }} />
-              Centro de Terapias & Bem-Estar
-            </div>
-          </Reveal>
-
-          {/* Headline */}
+{/* Headline */}
           <Reveal delay={140}>
             <h1 style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(40px, 4.4vw, 64px)', fontWeight: 700, lineHeight: 1.02, letterSpacing: '-0.028em', margin: 0, color: RG.ink }}>
               {Array.isArray(h1Lines) && h1Lines.map((line, li) => (
@@ -106,37 +98,16 @@ function Hero() {
         </div>
       </div>
 
-      {/* Foto — retrato de equipa emoldurado num painel-galeria; a imagem
-          mantém a proporção nativa (2000:1215), por isso nunca corta ninguém */}
-      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 0%', minWidth: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: RG.tealWash, padding: '150px 64px 72px 56px', boxSizing: 'border-box', overflow: 'hidden' }}>
-
-        {/* Arcos decorativos ténues — eco do traço do logo RG */}
-        <div className="rg-hero-photo-arc" aria-hidden="true" style={{ position: 'absolute', top: '-16%', right: '-12%', width: '54%', aspectRatio: '1 / 1', borderRadius: '50%', border: '1.5px solid rgba(111,181,176,0.30)', pointerEvents: 'none' }} />
-        <div className="rg-hero-photo-arc" aria-hidden="true" style={{ position: 'absolute', bottom: '-22%', left: '-8%', width: '42%', aspectRatio: '1 / 1', borderRadius: '50%', background: 'rgba(111,181,176,0.10)', pointerEvents: 'none' }} />
-
-        <div className="rg-hero-home-photo-frame" style={{ position: 'relative', width: 'min(100%, calc((100vh - 250px) * 1.6461), 880px)' }}>
-          {/* Moldura offset — como um retrato pendurado na parede da clínica */}
-          <div className="rg-hero-frame-offset" aria-hidden="true" style={{ position: 'absolute', inset: 0, transform: 'translate(16px, 16px)', border: '1.5px solid rgba(74,143,138,0.45)', borderRadius: 22, pointerEvents: 'none' }} />
-
-          <div style={{ position: 'relative', aspectRatio: '2000 / 1215', borderRadius: 18, overflow: 'hidden', boxShadow: '0 32px 64px -28px rgba(31,72,70,0.38)' }}>
-            <img
-              src="assets/fotos/equipa-capa.jpg"
-              alt="Equipa da Clínica Rita Guerreiro em Loulé"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              loading="eager" decoding="async"
-            />
-          </div>
-
-          {/* Cartão-legenda */}
-          <div className="rg-hero-home-caption" style={{ position: 'absolute', left: 18, bottom: 18, display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '10px 16px 10px 13px', borderRadius: 13, boxShadow: '0 10px 28px -12px rgba(20,20,18,0.3)' }}>
-            <span aria-hidden="true" style={{ width: 8, height: 8, borderRadius: '50%', background: RG.teal, boxShadow: '0 0 0 3px rgba(111,181,176,0.25)', flexShrink: 0 }} />
-            <div>
-              <div style={{ fontFamily: F_DISPLAY, fontSize: 13, fontWeight: 700, color: RG.ink, lineHeight: 1.3 }}>{t('hero.foto_caption')}</div>
-              <div style={{ fontFamily: F_BODY, fontSize: 11.5, color: RG.charcoal, lineHeight: 1.4 }}>{t('hero.foto_caption_sub')}</div>
-            </div>
-          </div>
-        </div>
-
+      {/* Foto — coluna própria à direita, nunca por baixo do texto/CTAs.
+          object-fit: contain → mostra a equipa toda, sem cortar ninguém */}
+      <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 0%', minWidth: 0, background: RG.cream, overflow: 'hidden' }}>
+        <img
+          src="assets/fotos/equipa-capa.jpg"
+          alt="Equipa da Clínica Rita Guerreiro em Loulé"
+          className="rg-ken-burns"
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center center', display: 'block' }}
+          loading="eager" decoding="async"
+        />
         {/* Eyebrow pill — visível só em mobile via CSS */}
         <span className="rg-hero-home-eyebrow" aria-hidden="true">Centro de Terapias & Bem-Estar</span>
       </div>
