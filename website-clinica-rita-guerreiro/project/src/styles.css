@@ -766,7 +766,7 @@ input:focus, textarea:focus, select:focus {
 /* CTA options (HomeCTA v2) */
 .rg-cta-option:hover {
   transform: translateY(-4px);
-  box-shadow: 0 30px 70px -22px rgba(0,0,0,0.5);
+  box-shadow: 0 26px 60px -24px rgba(31,72,70,0.35);
 }
 .rg-cta-option:hover .rg-cta-arrow { transform: translateX(4px); }
 .rg-cta-arrow { transition: transform 220ms cubic-bezier(.2,.8,.2,1); }
