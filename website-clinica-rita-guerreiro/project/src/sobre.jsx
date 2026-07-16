@@ -227,7 +227,7 @@ function Espaco() {
                     onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLightbox(i); } }}
                     style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', background: RG.cream, cursor: 'zoom-in', ...(tall ? { gridColumn: '3', gridRow: '1 / span 2' } : null) }}
                   >
-                    <img src={p.src} alt={p.label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...(tall ? null : { filter: 'brightness(1.13) saturate(1.03)' }) }} />
+                    <img src={p.src} alt={p.label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...(tall ? null : { filter: 'brightness(1.22) saturate(1.05)' }) }} />
                   </div>
                 );
               })}
@@ -244,7 +244,7 @@ function Espaco() {
           <button aria-label="Anterior" onClick={(e) => { e.stopPropagation(); step(-1); }} style={{ ...navBtn, left: 14 }}>‹</button>
           <button aria-label="Seguinte" onClick={(e) => { e.stopPropagation(); step(1); }} style={{ ...navBtn, right: 14 }}>›</button>
           <figure onClick={(e) => e.stopPropagation()} style={{ margin: 0, maxWidth: '92vw', maxHeight: '88vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-            <img src={photos[lightbox].src} alt={photos[lightbox].label} style={{ maxWidth: '100%', maxHeight: 'calc(88vh - 40px)', objectFit: 'contain', borderRadius: 10, boxShadow: '0 24px 80px rgba(0, 0, 0, 0.5)', ...(photos[lightbox].src.includes('madeira') ? null : { filter: 'brightness(1.13) saturate(1.03)' }) }} />
+            <img src={photos[lightbox].src} alt={photos[lightbox].label} style={{ maxWidth: '100%', maxHeight: 'calc(88vh - 40px)', objectFit: 'contain', borderRadius: 10, boxShadow: '0 24px 80px rgba(0, 0, 0, 0.5)', ...(photos[lightbox].src.includes('madeira') ? null : { filter: 'brightness(1.22) saturate(1.05)' }) }} />
             <figcaption style={{ fontFamily: F_BODY, fontSize: 14, fontWeight: 600, letterSpacing: '0.04em', color: '#fff' }}>{photos[lightbox].label}</figcaption>
           </figure>
         </div>
