@@ -255,6 +255,7 @@ const TRANSLATIONS = {
       mission_eyebrow: 'A nossa missão',
       mission_heading: 'Ajudar cada pessoa a viver melhor, sem limitações',
       mission_body: 'Em Loulé, reunimos uma equipa multidisciplinar pronta a receber qualquer pessoa — com ou sem histórico clínico, com mais ou menos urgência. Aqui não há casos simples nem complicados: há pessoas. E cada uma merece um plano pensado para ela.',
+      mission_motto: 'O corpo alcança o que a mente acredita.',
       mission_cta: 'Ver serviços',
       mission_photo_caption: 'Cada cliente é recebido pelo nome e acompanhado de perto, do primeiro contacto ao fim do tratamento. É este cuidado de excelência que faz tantos voltarem, sessão após sessão.',
       pillars: [
@@ -559,6 +560,7 @@ const TRANSLATIONS = {
       mission_eyebrow: 'Our mission',
       mission_heading: 'Helping each person live better, without limitations',
       mission_body: 'In Loulé, we bring together a multidisciplinary team ready to welcome anyone — with or without a clinical history, with more or less urgency. There are no simple or complicated cases here: there are people. And each one deserves a plan made for them.',
+      mission_motto: 'The body achieves what the mind believes.',
       mission_cta: 'View services',
       mission_photo_caption: 'Every client is welcomed by name and closely cared for, from the first contact to the end of their treatment. It is this standard of care that keeps so many coming back, session after session.',
       pillars: [
@@ -880,6 +882,7 @@ const TRANSLATIONS = {
       mission_eyebrow: 'Notre mission',
       mission_heading: 'Aider chaque personne à mieux vivre, sans limitations',
       mission_body: 'À Loulé, nous réunissons une équipe pluridisciplinaire prête à accueillir toute personne — avec ou sans antécédents cliniques, avec plus ou moins d’urgence. Ici il n’y a pas de cas simples ou compliqués : il y a des personnes. Et chacune mérite un plan pensé pour elle.',
+      mission_motto: 'Le corps atteint ce que l’esprit croit.',
       mission_cta: 'Voir les services',
       mission_photo_caption: 'Chaque client est accueilli par son nom et suivi de près, du premier contact à la fin de son traitement. C’est cette excellence dans le soin qui fait revenir tant de personnes, séance après séance.',
       pillars: [
@@ -1201,6 +1204,7 @@ const TRANSLATIONS = {
       mission_eyebrow: 'Nuestra misión',
       mission_heading: 'Ayudar a cada persona a vivir mejor, sin limitaciones',
       mission_body: 'En Loulé reunimos un equipo multidisciplinar listo para recibir a cualquier persona — con o sin historial clínico, con más o menos urgencia. Aquí no hay casos simples ni complicados: hay personas. Y cada una merece un plan pensado para ella.',
+      mission_motto: 'El cuerpo alcanza lo que la mente cree.',
       mission_cta: 'Ver servicios',
       mission_photo_caption: 'Cada cliente es recibido por su nombre y acompañado de cerca, desde el primer contacto hasta el final del tratamiento. Es esta excelencia en el cuidado la que hace que tantos vuelvan, sesión tras sesión.',
       pillars: [

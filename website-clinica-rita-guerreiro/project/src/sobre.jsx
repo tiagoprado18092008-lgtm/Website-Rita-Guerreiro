@@ -59,11 +59,16 @@ function Mission() {
               <Heading level="h2" style={{ maxWidth: '20ch' }}>{t('sobre.mission_heading')}</Heading>
             </Reveal>
             <Reveal delay={80}>
-              <Body size={17} style={{ marginTop: 24, color: RG.charcoal }}>
+              <Body size={17} style={{ marginTop: 24, color: RG.charcoal, maxWidth: '46ch' }}>
                 {t('sobre.mission_body')}
               </Body>
             </Reveal>
-            <Reveal delay={140}>
+            <Reveal delay={110}>
+              <p style={{ margin: '28px 0 0', paddingLeft: 18, borderLeft: `3px solid ${RG.teal}`, color: RG.tealDark, fontStyle: 'italic', fontSize: 20, lineHeight: 1.4, maxWidth: '32ch' }}>
+                {t('sobre.mission_motto')}
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
               <div style={{ marginTop: 28 }}>
                 <Button href="/#servicos" variant="primary" size="md">{t('sobre.mission_cta')}</Button>
               </div>
