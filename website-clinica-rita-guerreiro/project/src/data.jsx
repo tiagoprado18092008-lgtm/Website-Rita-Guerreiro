@@ -9,16 +9,16 @@ const IMG = {
   mesoterapia: '/assets/fotos/servico-mesoterapia.jpg?v=20260714c',
   // Foto certa enviada pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia ATM.jpg").
   'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg?v=20260715h',
-  // A cliente indicou que estas 2 fotos não correspondem ao serviço. Até enviar as
-  // certas ficam a null — o <Photo> cai no placeholder da marca (ui.jsx).
-  'fisioterapia-pediatrica': null,
-  'fisioterapia-vestibular': null,
+  // Fotos certas enviadas pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia
+  // pediatrica.png" e ".../Vestibular.png").
+  'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.jpg?v=20260716',
+  'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg?v=20260716',
   'fisioterapia-oncologica': '/assets/fotos/servico-fisioterapia-oncologica.jpg?v=20260714c',
   psicologia: '/assets/fotos/servico-psicologia.jpg?v=20260715b',
   nutricao: '/assets/fotos/servico-nutricao.jpg',
   'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg?v=20260715f',
   'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
-  'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg?v=20260715',
+  'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg?v=20260716',
   // Foto que estava na Fisioterapia Pediátrica — é mesmo de massagem a criança.
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
