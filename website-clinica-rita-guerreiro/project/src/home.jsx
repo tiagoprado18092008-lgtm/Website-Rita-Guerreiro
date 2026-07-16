@@ -539,7 +539,7 @@ function TechTeaser() {
                 </span>
               </div>
               <div className="rg-tec-img rg-img-reveal" style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '16/10' }}>
-                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg?v=20260715f" alt="Equipamento de tecarterapia Winback numa sala de tratamento da clínica" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/assets/fotos/servico-tecarterapia-maquina.jpg?v=20260716a" alt="Equipamento de tecarterapia Winback numa sala de tratamento da clínica" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
           </Reveal>
