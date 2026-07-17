@@ -1251,6 +1251,39 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
   .rg-equipa-home-grid > * { scroll-snap-align: start; }
 }
 
+/* Equipa: cartões clicáveis — seta desliza no hover e foco visível */
+.rg-team-card-clickable:focus-visible {
+  outline: 2px solid #2F6B68;
+  outline-offset: 3px;
+}
+.rg-team-card-arrow { transition: transform 320ms cubic-bezier(.2,.8,.2,1); }
+.rg-team-card-clickable:hover .rg-team-card-arrow { transform: translateX(4px); }
+
+/* Modal do perfil: entrada suave (overlay esbate, cartão sobe) */
+.rg-team-modal-overlay { animation: rgTeamFade 240ms ease both; }
+.rg-team-modal { animation: rgTeamRise 320ms cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rgTeamFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rgTeamRise { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* Modal do perfil: chips de serviço reagem ao hover */
+.rg-team-chip { transition: background 220ms ease, color 220ms ease; }
+.rg-team-chip:hover { background: #2F6B68; color: #fff !important; }
+
+/* Modal do perfil: em ecrãs estreitos, foto passa para cima e empilha */
+@media (max-width: 680px) {
+  .rg-team-modal { flex-direction: column; max-height: 92vh; }
+  .rg-team-modal-photo { flex: 0 0 auto; min-height: 0; height: 38vh; }
+  /* as setas ficam ancoradas ao fundo do modal: reserva espaço para o texto
+     não passar por baixo delas quando se chega ao fim do scroll */
+  .rg-team-modal-body { padding-bottom: 68px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-team-modal-overlay, .rg-team-modal { animation: none !important; }
+  .rg-team-card-arrow { transition: none !important; }
+  .rg-team-card-clickable:hover .rg-team-card-arrow { transform: none; }
+}
+
 /* Espaço: zoom suave no hover */
 .rg-espaco-item img { transition: transform 800ms cubic-bezier(.2,.7,.2,1); }
 .rg-espaco-item:hover img { transform: scale(1.05); }

@@ -125,9 +125,92 @@ function Story() {
   );
 }
 
+function TeamModal({ members, index, onClose, onStep }) {
+  const { t } = useLang();
+  const m = members[index];
+  const openable = members.map((x, i) => ((x.bio_long || []).length > 1 ? i : -1)).filter((i) => i >= 0);
+  const multiple = openable.length > 1;
+
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') onStep(1);
+      if (e.key === 'ArrowLeft') onStep(-1);
+    };
+    window.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
+  }, []);
+
+  const wa = `https://wa.me/351961899364?text=${encodeURIComponent('Olá, gostaria de marcar uma consulta com ' + m.name + '.')}`;
+
+  return (
+    <div className="rg-team-modal-overlay" onClick={onClose}
+      style={{ position: 'fixed', inset: 0, zIndex: 10000, background: 'rgba(12, 26, 25, 0.55)', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'clamp(12px, 4vw, 48px)' }}>
+      <div className="rg-team-modal" onClick={(e) => e.stopPropagation()}
+        style={{ position: 'relative', background: RG.white, borderRadius: 22, overflow: 'hidden', width: '100%', maxWidth: 880, maxHeight: '90vh', display: 'flex', boxShadow: '0 40px 120px -30px rgba(12, 26, 25, 0.6)' }}>
+        <button aria-label="Fechar" onClick={onClose}
+          style={{ position: 'absolute', top: 14, right: 14, zIndex: 3, width: 40, height: 40, borderRadius: 999, border: 'none', cursor: 'pointer', background: 'rgba(255,255,255,0.85)', color: RG.ink, fontSize: 18, lineHeight: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 10px rgba(20,20,18,0.18)' }}>✕</button>
+
+        <div className="rg-team-modal-photo" style={{ position: 'relative', flex: '0 0 42%', minHeight: 320, background: RG.creamSoft }}>
+          <img src={m.src} alt={m.name} decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        </div>
+
+        <div className="rg-team-modal-body" style={{ flex: 1, minWidth: 0, padding: 'clamp(26px, 4vw, 44px)', overflowY: 'auto' }}>
+          <div style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark }}>{m.role}</div>
+          <div style={{ width: 40, height: 2, background: RG.teal, margin: '12px 0 16px' }} />
+          <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 4vw, 34px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.ink, lineHeight: 1.05 }}>{m.name}</div>
+          <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {(m.bio_long || [m.bio]).map((p, i) => (
+              <p key={i} style={{ fontFamily: F_BODY, fontSize: 15.5, color: RG.charcoal, lineHeight: 1.7, margin: 0 }}>{p}</p>
+            ))}
+          </div>
+
+          {m.services && m.services.length > 0 && (
+            <div style={{ marginTop: 28 }}>
+              <div style={{ fontFamily: F_MONO, fontSize: 10.5, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: RG.muted, marginBottom: 12 }}>{t('sobre.team_modal_services')}</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 9 }}>
+                {m.services.map((s, i) => (
+                  <a key={i} href={s.href} className="rg-team-chip"
+                    style={{ fontFamily: F_BODY, fontSize: 13.5, fontWeight: 500, color: RG.tealDark, textDecoration: 'none', padding: '7px 15px', border: `1px solid ${RG.teal}`, borderRadius: 999, whiteSpace: 'nowrap' }}>{s.label}</a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <a href={wa} target="_blank" rel="noopener"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 30, fontFamily: F_BODY, fontSize: 14.5, fontWeight: 600, color: RG.white, background: RG.tealDark, textDecoration: 'none', padding: '13px 24px', borderRadius: 999 }}>{t('sobre.team_modal_cta')}</a>
+        </div>
+
+        {multiple && (
+          <React.Fragment>
+            <button aria-label="Anterior" onClick={() => onStep(-1)} className="rg-team-modal-nav"
+              style={{ position: 'absolute', left: 12, bottom: 12, zIndex: 3, width: 38, height: 38, borderRadius: 999, border: 'none', cursor: 'pointer', background: 'rgba(255,255,255,0.85)', color: RG.ink, fontSize: 20, lineHeight: 1, boxShadow: '0 2px 10px rgba(20,20,18,0.18)' }}>‹</button>
+            <button aria-label="Seguinte" onClick={() => onStep(1)} className="rg-team-modal-nav"
+              style={{ position: 'absolute', left: 58, bottom: 12, zIndex: 3, width: 38, height: 38, borderRadius: 999, border: 'none', cursor: 'pointer', background: 'rgba(255,255,255,0.85)', color: RG.ink, fontSize: 20, lineHeight: 1, boxShadow: '0 2px 10px rgba(20,20,18,0.18)' }}>›</button>
+          </React.Fragment>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function Team() {
   const { t } = useLang();
   const members = t('sobre.team_members');
+  const hasProfile = (m) => (m.bio_long || []).length > 1;
+  const [open, setOpen] = React.useState(() => {
+    const p = parseInt(new URLSearchParams(window.location.search).get('prof'), 10);
+    return Number.isInteger(p) && members[p] && hasProfile(members[p]) ? p : null;
+  }); // índice do profissional aberto, ou null
+
+  const step = (d) => setOpen((i) => {
+    const openable = members.map((m, idx) => (hasProfile(m) ? idx : -1)).filter((idx) => idx >= 0);
+    const pos = openable.indexOf(i);
+    return openable[(pos + d + openable.length) % openable.length];
+  });
+
   return (
     <Section bg={RG.white} pad="lg">
       <Container>
@@ -139,21 +222,40 @@ function Team() {
           </p>
         </Reveal>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 22, marginTop: 56 }} className="rg-team-grid">
-          {members.map((m, i) => (
+          {members.map((m, i) => {
+            const clickable = hasProfile(m);
+            return (
             <Reveal key={i} delay={i * 90} y={36}>
-              <div className="rg-team-card" style={{ background: RG.white, borderRadius: 18, border: `1px solid ${RG.lineSoft}`, boxShadow: '0 12px 32px -14px rgba(20,20,18,0.16)', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+              <div
+                className={`rg-team-card${clickable ? ' rg-team-card-clickable' : ''}`}
+                {...(clickable ? {
+                  role: 'button', tabIndex: 0,
+                  'aria-label': `${m.name} — ${t('sobre.team_card_cta')}`,
+                  onClick: () => setOpen(i),
+                  onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(i); } },
+                } : {})}
+                style={{ background: RG.white, borderRadius: 18, border: `1px solid ${RG.lineSoft}`, boxShadow: '0 12px 32px -14px rgba(20,20,18,0.16)', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', cursor: clickable ? 'pointer' : 'default' }}>
                 <div className="rg-team-photo" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: RG.creamSoft }}>
                   <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
-                <div style={{ padding: '20px 20px 22px', flex: 1 }}>
+                <div style={{ padding: '20px 20px 22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ fontFamily: F_DISPLAY, fontSize: 19, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>
                   <div className="rg-team-role" style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 12 }}>{m.role}</div>
                   <div style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, lineHeight: 1.6 }}>{m.bio}</div>
+                  {clickable && (
+                    <div className="rg-team-card-cta" style={{ marginTop: 14, fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.tealDark, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                      {t('sobre.team_card_cta')} <span className="rg-team-card-arrow" aria-hidden="true">→</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
+        {open !== null && (
+          <TeamModal members={members} index={open} onClose={() => setOpen(null)} onStep={step} />
+        )}
         <Reveal delay={200}>
           <div style={{ marginTop: 48, padding: '28px 32px', background: RG.tealWash, borderRadius: 14, border: `1px solid rgba(111,181,176,0.2)`, display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 220 }}>
