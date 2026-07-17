@@ -613,7 +613,7 @@ function MeetRita() {
             {/* Foto + card de credenciais */}
             <div style={{ position: 'relative' }}>
               <div className="rg-img-reveal" style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
-                <img src="assets/fotos/rita-rececao-2.jpg" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '45% center', display: 'block' }} />
+                <img src="assets/fotos/rita-principal.jpg?v=20260717" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '43% center', display: 'block' }} />
               </div>
               {/* Card de credenciais sobreposto */}
               <div className="rg-meet-card" style={{

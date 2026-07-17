@@ -33,7 +33,7 @@ const IMG = {
   // Foto nova enviada pela cliente ("Fotos clinica Rita Guerreiro/Head Spa.jpg").
   'head-spa': '/assets/fotos/servico-head-spa.jpg?v=20260715i',
   facial: '/assets/fotos/servico-facial.jpg?v=20260715f',
-  'depilacao-laser': '/assets/fotos/servico-depilacao-laser.jpg?v=20260714c',
+  'depilacao-laser': '/assets/fotos/servico-depilacao-laser.jpg?v=20260717',
   'pilates-clinico': '/assets/pilates.jpg',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg?v=20260715f',
   // Genéricos — fotos reais da clínica

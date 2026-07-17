@@ -277,7 +277,7 @@ const TRANSLATIONS = {
       team_heading: 'Especialistas que se preocupam com quem têm à frente',
       team_body: 'A nossa equipa é composta por profissionais qualificados em diversas áreas da saúde, que trabalham juntos para lhe oferecer o melhor acompanhamento possível — coordenado, humano e eficaz.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Fundadora · Fisioterapeuta', bio: 'Fisioterapeuta e fundadora da clínica. Acredita num cuidado próximo, que trata a pessoa e não apenas o sintoma.', src: 'assets/fotos/rita-retrato.jpg',
+        { name: 'Rita Guerreiro', role: 'Fundadora · Fisioterapeuta', bio: 'Fisioterapeuta e fundadora da clínica. Acredita num cuidado próximo, que trata a pessoa e não apenas o sintoma.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: ['Fisioterapeuta e fundadora do Centro de Terapias Rita Guerreiro, em Loulé.', 'Acredita num cuidado próximo, que trata a pessoa e não apenas o sintoma, e reuniu à sua volta uma equipa multidisciplinar para que cada paciente encontre num só sítio a continuidade de que precisa.'],
           services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }] },
         { name: 'Dra. Marta Belião', role: 'Fisioterapeuta', bio: 'Fisioterapeuta com experiência clínica, hospitalar e de spa, focada na recuperação e no bem-estar de cada paciente.', src: 'assets/fotos/profissional-1.jpg',
@@ -594,7 +594,7 @@ const TRANSLATIONS = {
       team_heading: 'Specialists who care about the person in front of them',
       team_body: 'Our team is made up of qualified professionals in various health fields, working together to offer you the best possible support — coordinated, human and effective.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Founder · Physiotherapist', bio: 'Physiotherapist and founder of the clinic. She believes in close, personal care that treats the person, not just the symptom.', src: 'assets/fotos/rita-retrato.jpg',
+        { name: 'Rita Guerreiro', role: 'Founder · Physiotherapist', bio: 'Physiotherapist and founder of the clinic. She believes in close, personal care that treats the person, not just the symptom.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: ['Physiotherapist and founder of Centro de Terapias Rita Guerreiro, in Loulé.', 'She believes in close, personal care that treats the person and not just the symptom, and has built a multidisciplinary team around her so that every patient finds the continuity they need in one place.'],
           services: [{ label: 'Physiotherapy', href: '/servico/fisioterapia' }] },
         { name: 'Marta Belião', role: 'Physiotherapist', bio: 'Physiotherapist with clinical, hospital and spa experience, focused on the recovery and well-being of each patient.', src: 'assets/fotos/profissional-1.jpg',
@@ -928,7 +928,7 @@ const TRANSLATIONS = {
       team_heading: 'Des spécialistes qui se soucient de la personne en face',
       team_body: 'Notre équipe est composée de professionnels qualifiés dans divers domaines de la santé, qui travaillent ensemble pour vous offrir le meilleur accompagnement possible — coordonné, humain et efficace.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Fondatrice · Physiothérapeute', bio: 'Physiothérapeute et fondatrice de la clinique. Elle croit en un accompagnement proche, qui soigne la personne et non seulement le symptôme.', src: 'assets/fotos/rita-retrato.jpg',
+        { name: 'Rita Guerreiro', role: 'Fondatrice · Physiothérapeute', bio: 'Physiothérapeute et fondatrice de la clinique. Elle croit en un accompagnement proche, qui soigne la personne et non seulement le symptôme.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: ['Physiothérapeute et fondatrice du Centro de Terapias Rita Guerreiro, à Loulé.', 'Elle croit en un accompagnement proche, qui soigne la personne et non seulement le symptôme, et a réuni autour d’elle une équipe pluridisciplinaire pour que chaque patient trouve en un seul lieu la continuité dont il a besoin.'],
           services: [{ label: 'Physiothérapie', href: '/servico/fisioterapia' }] },
         { name: 'Marta Belião', role: 'Physiothérapeute', bio: 'Physiothérapeute avec une expérience en milieu clinique, hospitalier et de spa, axée sur la récupération et le bien-être de chaque patient.', src: 'assets/fotos/profissional-1.jpg',
@@ -1262,7 +1262,7 @@ const TRANSLATIONS = {
       team_heading: 'Especialistas que se preocupan por quien tienen delante',
       team_body: 'Nuestro equipo está formado por profesionales cualificados en diversas áreas de la salud, que trabajan juntos para ofrecerle el mejor acompañamiento posible — coordinado, humano y eficaz.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Fundadora · Fisioterapeuta', bio: 'Fisioterapeuta y fundadora de la clínica. Cree en un cuidado cercano, que trata a la persona y no solo el síntoma.', src: 'assets/fotos/rita-retrato.jpg',
+        { name: 'Rita Guerreiro', role: 'Fundadora · Fisioterapeuta', bio: 'Fisioterapeuta y fundadora de la clínica. Cree en un cuidado cercano, que trata a la persona y no solo el síntoma.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: ['Fisioterapeuta y fundadora del Centro de Terapias Rita Guerreiro, en Loulé.', 'Cree en un cuidado cercano, que trata a la persona y no solo el síntoma, y ha reunido a su alrededor un equipo multidisciplinar para que cada paciente encuentre en un solo lugar la continuidad que necesita.'],
           services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }] },
         { name: 'Dra. Marta Belião', role: 'Fisioterapeuta', bio: 'Fisioterapeuta con experiencia clínica, hospitalaria y de spa, centrada en la recuperación y el bienestar de cada paciente.', src: 'assets/fotos/profissional-1.jpg',
