@@ -7,6 +7,7 @@
     { "source": "/servico/acupuntura", "destination": "/servico-acupuntura" },
     { "source": "/servico/depilacao-laser", "destination": "/servico-depilacao-laser" },
     { "source": "/servico/drenagem-linfatica", "destination": "/servico-drenagem-linfatica" },
+    { "source": "/servico/drenagem-linfatica-manual", "destination": "/servico-drenagem-linfatica-manual" },
     { "source": "/servico/estetica", "destination": "/servico-estetica" },
     { "source": "/servico/facial", "destination": "/servico-facial" },
     { "source": "/servico/fisioterapia", "destination": "/servico-fisioterapia" },

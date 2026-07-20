@@ -36,7 +36,8 @@ const SERVICES_I18N = {
         'massagem-pre-pos-natal': { name: 'Pre/Post-Natal Massage', blurb: 'Adapted to the body changes of pregnancy and postpartum recovery — with comfort and safe positioning' },
         'massagem-sacro-craniana': { name: 'Craniosacral Massage', blurb: 'A gentle touch on the craniosacral system — relieves tension, headaches and stress effortlessly' },
         'drenagem-linfatica': { name: 'Post-Operative Drainage', blurb: 'Specialised lymphatic drainage for recovery after surgery — reduces oedema and bruising and speeds up healing' },
-        'massagem-terapeutica': { name: 'Lymphatic Drainage / Therapeutic', blurb: 'Manual Lymphatic Drainage (Vodder Method) and therapeutic massage — lightness, circulation and muscle tension relief' },
+        'drenagem-linfatica-manual': { name: 'Manual Lymphatic Drainage', blurb: 'Manual Lymphatic Drainage (Vodder Method) — gentle, rhythmic movements that stimulate circulation and reduce fluid retention' },
+        'massagem-terapeutica': { name: 'Therapeutic Massage', blurb: 'Manual work focused on muscular and joint dysfunction — relieves tension, improves mobility and promotes physical recovery' },
       },
     },
     holisticas: {
@@ -93,7 +94,8 @@ const SERVICES_I18N = {
         'massagem-pre-pos-natal': { name: 'Massage pré/post-natal', blurb: 'Adapté aux changements du corps pendant la grossesse et à la récupération post-partum — avec confort et positionnement sûr' },
         'massagem-sacro-craniana': { name: 'Massage crânio-sacré', blurb: 'Un toucher doux sur le système crânio-sacré — soulage tensions, céphalées et stress sans effort' },
         'drenagem-linfatica': { name: 'Drainage post-opératoire', blurb: 'Drainage lymphatique spécialisé pour la récupération après une chirurgie — réduit l’œdème, les hématomes et accélère la cicatrisation' },
-        'massagem-terapeutica': { name: 'Drainage lymphatique / Thérapeutique', blurb: 'Drainage Lymphatique Manuel (Méthode Vodder) et massage thérapeutique — légèreté, circulation et soulagement de la tension musculaire' },
+        'drenagem-linfatica-manual': { name: 'Drainage Lymphatique Manuel', blurb: 'Drainage Lymphatique Manuel (Méthode Vodder) — mouvements doux et rythmiques qui stimulent la circulation et réduisent la rétention d’eau' },
+        'massagem-terapeutica': { name: 'Massage thérapeutique', blurb: 'Travail manuel axé sur les dysfonctions musculaires et articulaires — soulage la tension, améliore la mobilité et favorise la récupération physique' },
       },
     },
     holisticas: {
@@ -150,7 +152,8 @@ const SERVICES_I18N = {
         'massagem-pre-pos-natal': { name: 'Masaje Pre/Postnatal', blurb: 'Adaptado a los cambios del cuerpo durante el embarazo y a la recuperación posparto — con confort y posicionamiento seguro' },
         'massagem-sacro-craniana': { name: 'Masaje Sacrocraneal', blurb: 'Técnica de toque suave sobre el sistema sacrocraneal — alivia tensiones, cefaleas y estrés sin esfuerzo' },
         'drenagem-linfatica': { name: 'Drenaje Postoperatorio', blurb: 'Drenaje linfático especializado para la recuperación tras la cirugía — reduce el edema, los hematomas y acelera la cicatrización' },
-        'massagem-terapeutica': { name: 'Drenaje Linfático / Terapéutico', blurb: 'Drenaje Linfático Manual (Método Vodder) y masaje terapéutico — ligereza, circulación y alivio de la tensión muscular' },
+        'drenagem-linfatica-manual': { name: 'Drenaje Linfático Manual', blurb: 'Drenaje Linfático Manual (Método Vodder) — movimientos suaves y rítmicos que estimulan la circulación y reducen la retención de líquidos' },
+        'massagem-terapeutica': { name: 'Masaje Terapéutico', blurb: 'Trabajo manual centrado en disfunciones musculares y articulares — alivia la tensión, mejora la movilidad y promueve la recuperación física' },
       },
     },
     holisticas: {
@@ -466,18 +469,27 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Post-operative comfort', d: 'Relief from discomfort and the feeling of heaviness in the first weeks of recovery' },
       ],
     },
-    'massagem-terapeutica': {
-      tagline: 'Lymphatic drainage and therapeutic massage — lightness, circulation and relief from tension that won’t go away',
-      description: 'Manual lymphatic drainage (MLD) is a specialised therapeutic massage technique that uses rhythmic, gentle and slow movements. Its main goal is to stimulate the lymphatic system, speeding up the elimination of fluids, toxins and metabolic waste through urine. Therapeutic massage is a manual technique focused on treating muscular and joint dysfunction and localised pain. It uses specific movements with greater pressure to relieve tension, improve mobility and promote physical recovery. It differs from relaxation massage in having a clinical, curative goal rather than just general wellbeing.',
+    'drenagem-linfatica-manual': {
+      tagline: 'Manual Lymphatic Drainage (Vodder Method) — lightness, circulation and wellbeing',
+      description: 'Manual lymphatic drainage (MLD) is a specialised therapeutic massage technique that uses rhythmic, gentle and slow movements. Its main goal is to stimulate the lymphatic system, speeding up the elimination of fluids, toxins and metabolic waste through urine.',
       prices: [
-        { label: 'Manual Drainage (50min)', value: '50€ / 45€ (Pack 5)' },
-        { label: 'Therapeutic Massage 50min', value: '60€' },
-        { label: 'Therapeutic Massage 90min', value: '80€' },
+        { label: 'Session 50min', value: '50€' },
+        { label: 'Session 80min', value: '80€' },
       ],
       sub: [
         { t: 'Fluid retention', d: 'Reduction of swelling in legs, ankles and belly caused by water retention' },
         { t: 'Lymphoedema', d: 'Management of primary or secondary lymphoedema with specialised Vodder Method technique' },
         { t: 'Cellulite and lightness', d: 'Improved skin appearance, local microcirculation and a feeling of a lighter body' },
+        { t: 'Heavy, tired legs', d: 'Relief from the feeling of heaviness and fatigue in the legs, common at the end of the day or after long trips' },
+      ],
+    },
+    'massagem-terapeutica': {
+      tagline: 'Therapeutic massage — deep muscular work to relieve tension that won’t go away',
+      description: 'Therapeutic massage is a manual technique focused on treating muscular and joint dysfunction and localised pain. It uses specific movements with greater pressure to relieve tension, improve mobility and promote physical recovery. It differs from relaxation massage in having a clinical, curative goal rather than just general wellbeing.',
+      prices: [
+        { label: 'Session 50min', value: '45€' },
+      ],
+      sub: [
         { t: 'Contractures and spasms', d: 'Release of muscle knots and zones of deep tension resistant to relaxation' },
         { t: 'Neck and shoulder tension', d: 'Deep approach to the area most affected by sedentary work and stress' },
         { t: 'Sports recovery', d: 'Specific protocol for athletes — before or after competition or training' },
@@ -879,18 +891,27 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Confort post-opératoire', d: "Soulagement de l'inconfort et de la sensation de lourdeur durant les premières semaines de récupération" },
       ],
     },
-    'massagem-terapeutica': {
-      tagline: 'Drainage lymphatique et massage thérapeutique — légèreté, circulation et soulagement de la tension qui ne s’en va pas',
-      description: "Le drainage lymphatique manuel (DLM) est une technique de massage thérapeutique spécialisée qui utilise des mouvements rythmiques, doux et lents. Son principal objectif est de stimuler le système lymphatique, en accélérant l'élimination des liquides, des toxines et des déchets métaboliques par l'urine. Le massage thérapeutique est une technique manuelle axée sur le traitement des dysfonctions musculaires et articulaires et des douleurs localisées. Il utilise des mouvements spécifiques et plus de pression pour soulager les tensions, améliorer la mobilité et favoriser la récupération physique. Il se distingue du massage relaxant par son objectif clinique et curatif, et non seulement de bien-être général.",
+    'drenagem-linfatica-manual': {
+      tagline: 'Drainage Lymphatique Manuel (Méthode Vodder) — légèreté, circulation et bien-être',
+      description: "Le drainage lymphatique manuel (DLM) est une technique de massage thérapeutique spécialisée qui utilise des mouvements rythmiques, doux et lents. Son principal objectif est de stimuler le système lymphatique, en accélérant l'élimination des liquides, des toxines et des déchets métaboliques par l'urine.",
       prices: [
-        { label: 'Drainage Manuel (50min)', value: '50€ / 45€ (Pack 5)' },
-        { label: 'Massage Thérapeutique 50min', value: '60€' },
-        { label: 'Massage Thérapeutique 90min', value: '80€' },
+        { label: 'Séance 50min', value: '50€' },
+        { label: 'Séance 80min', value: '80€' },
       ],
       sub: [
         { t: 'Rétention de liquides', d: "Réduction du gonflement des jambes, chevilles et ventre causé par la rétention d'eau" },
         { t: 'Lymphœdème', d: 'Gestion du lymphœdème primaire ou secondaire avec une technique spécialisée Méthode Vodder' },
         { t: 'Cellulite et légèreté', d: "Amélioration de l'aspect de la peau, de la microcirculation locale et sensation de corps plus léger" },
+        { t: 'Jambes lourdes et fatiguées', d: 'Soulagement de la sensation de lourdeur et de fatigue dans les jambes, fréquente en fin de journée ou après un long trajet' },
+      ],
+    },
+    'massagem-terapeutica': {
+      tagline: 'Massage thérapeutique — travail musculaire profond pour soulager la tension qui ne s’en va pas',
+      description: "Le massage thérapeutique est une technique manuelle axée sur le traitement des dysfonctions musculaires et articulaires et des douleurs localisées. Il utilise des mouvements spécifiques et plus de pression pour soulager les tensions, améliorer la mobilité et favoriser la récupération physique. Il se distingue du massage relaxant par son objectif clinique et curatif, et non seulement de bien-être général.",
+      prices: [
+        { label: 'Séance 50min', value: '45€' },
+      ],
+      sub: [
         { t: 'Contractures et spasmes', d: 'Libération des nœuds musculaires et zones de tension profonde résistantes à la détente' },
         { t: 'Tension cervicale et épaules', d: 'Approche profonde dans la zone la plus affectée par le travail sédentaire et le stress' },
         { t: 'Récupération sportive', d: "Protocole spécifique pour athlètes — avant ou après la compétition ou l'entraînement" },
@@ -1292,18 +1313,27 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Confort postoperatorio', d: 'Alivio del malestar y la sensación de pesadez en las primeras semanas de recuperación' },
       ],
     },
-    'massagem-terapeutica': {
-      tagline: 'Drenaje linfático y masaje terapéutico — ligereza, circulación y alivio de la tensión que no se va',
-      description: 'El drenaje linfático manual (DLM) es una técnica de masaje terapéutico especializada que utiliza movimientos rítmicos, suaves y lentos. Su principal objetivo es estimular el sistema linfático, acelerando la eliminación de líquidos, toxinas y residuos metabólicos a través de la orina. El masaje terapéutico es una técnica manual centrada en el tratamiento de disfunciones musculares y articulares y dolores localizados. Utiliza movimientos específicos y con más presión para aliviar tensiones, mejorar la movilidad y promover la recuperación física. Se diferencia del masaje de relajación por tener un objetivo clínico y curativo, y no solo de bienestar general.',
+    'drenagem-linfatica-manual': {
+      tagline: 'Drenaje Linfático Manual (Método Vodder) — ligereza, circulación y bienestar',
+      description: 'El drenaje linfático manual (DLM) es una técnica de masaje terapéutico especializada que utiliza movimientos rítmicos, suaves y lentos. Su principal objetivo es estimular el sistema linfático, acelerando la eliminación de líquidos, toxinas y residuos metabólicos a través de la orina.',
       prices: [
-        { label: 'Drenaje Manual (50min)', value: '50€ / 45€ (Pack 5)' },
-        { label: 'Masaje Terapéutico 50min', value: '60€' },
-        { label: 'Masaje Terapéutico 90min', value: '80€' },
+        { label: 'Sesión 50min', value: '50€' },
+        { label: 'Sesión 80min', value: '80€' },
       ],
       sub: [
         { t: 'Retención de líquidos', d: 'Reducción de la hinchazón en piernas, tobillos y vientre causada por la retención de agua' },
         { t: 'Linfedema', d: 'Manejo del linfedema primario o secundario con técnica especializada del Método Vodder' },
         { t: 'Celulitis y ligereza', d: 'Mejora del aspecto de la piel, la microcirculación local y sensación de cuerpo más ligero' },
+        { t: 'Piernas pesadas y cansadas', d: 'Alivio de la sensación de pesadez y cansancio en las piernas, habitual al final del día o tras viajes largos' },
+      ],
+    },
+    'massagem-terapeutica': {
+      tagline: 'Masaje terapéutico — trabajo muscular profundo para aliviar la tensión que no se va',
+      description: 'El masaje terapéutico es una técnica manual centrada en el tratamiento de disfunciones musculares y articulares y dolores localizados. Utiliza movimientos específicos y con más presión para aliviar tensiones, mejorar la movilidad y promover la recuperación física. Se diferencia del masaje de relajación por tener un objetivo clínico y curativo, y no solo de bienestar general.',
+      prices: [
+        { label: 'Sesión 50min', value: '45€' },
+      ],
+      sub: [
         { t: 'Contracturas y espasmos', d: 'Liberación de nudos musculares y zonas de tensión profunda resistentes a la relajación' },
         { t: 'Tensión cervical y de hombros', d: 'Enfoque profundo en la zona más afectada por el trabajo sedentario y el estrés' },
         { t: 'Recuperación deportiva', d: 'Protocolo específico para deportistas — antes o después de competición o entrenamiento' },

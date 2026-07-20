@@ -25,6 +25,9 @@ const IMG = {
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
   'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260714c',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
+  // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
+  // ainda não tem foto própria, a cliente vai enviar.
+  'drenagem-linfatica-manual': '/assets/fotos/servico-drenagem-linfatica-manual.jpg?v=20260720',
   'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg?v=20260717',
   'massagens-maos': '/assets/fotos/servico-massagens-maos.jpg?v=20260715',
   reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715h',
@@ -78,7 +81,8 @@ const SERVICES = {
       { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
       { slug: 'massagem-sacro-craniana', name: 'Massagem Sacro-Craniana', img: IMG['massagem-sacro-craniana'], blurb: 'Técnica de toque suave sobre o sistema sacro-craniano — alivia tensão, cefaleias e stress sem esforço.', price: '40€' },
       { slug: 'drenagem-linfatica', name: 'Drenagem Pós-Operatório', img: IMG['drenagem-linfatica'], blurb: 'Drenagem linfática especializada para a recuperação após cirurgia — reduz edema, hematomas e acelera a cicatrização.', price: '60€ / 80€' },
-      { slug: 'massagem-terapeutica', name: 'Drenagem Linfática / Terapêutica', img: IMG['massagem-terapeutica'], blurb: 'Drenagem Linfática Manual (Método Vodder) e massagem terapêutica — leveza, circulação e alívio de tensão muscular.', price: '45€ / 80€' },
+      { slug: 'drenagem-linfatica-manual', name: 'Drenagem Linfática Manual', img: IMG['drenagem-linfatica-manual'], blurb: 'Drenagem Linfática Manual (Método Vodder) — movimentos suaves e rítmicos que estimulam a circulação e reduzem a retenção de líquidos.', price: '50€ / 80€' },
+      { slug: 'massagem-terapeutica', name: 'Massagem Terapêutica', img: IMG['massagem-terapeutica'], blurb: 'Trabalho manual focado em disfunções musculares e articulares — alivia tensão, melhora a mobilidade e promove a recuperação física.', price: '45€' },
     ],
   },
   holisticas: {
@@ -419,18 +423,27 @@ const SERVICE_DETAIL = {
       { t: 'Conforto pós-operatório', d: 'Alívio do desconforto e da sensação de peso nas primeiras semanas de recuperação.' },
     ],
   },
-  'massagem-terapeutica': {
-    tagline: 'Drenagem linfática e massagem terapêutica — leveza, circulação e alívio da tensão que não passa.',
-    description: 'A drenagem linfática manual (DLM) é uma técnica de massagem terapêutica especializada que utiliza movimentos rítmicos, suaves e lentos. O seu principal objetivo é estimular o sistema linfático, acelerando a eliminação de líquidos, toxinas e resíduos metabólicos através da urina. A massagem terapêutica é uma técnica manual focada no tratamento de disfunções musculares, articulares e dores localizadas. Utiliza movimentos específicos e com mais pressão para aliviar tensões, melhorar a mobilidade e promover a recuperação física. Diferencia-se da massagem de relaxamento por ter um objetivo clínico e curativo, e não apenas de bem-estar geral.',
+  'drenagem-linfatica-manual': {
+    tagline: 'Drenagem Linfática Manual (Método Vodder) — leveza, circulação e bem-estar.',
+    description: 'A drenagem linfática manual (DLM) é uma técnica de massagem terapêutica especializada que utiliza movimentos rítmicos, suaves e lentos. O seu principal objetivo é estimular o sistema linfático, acelerando a eliminação de líquidos, toxinas e resíduos metabólicos através da urina.',
     prices: [
-      { label: 'Drenagem Manual (50min)', value: '50€ / 45€ (Pack 5)' },
-      { label: 'Massagem Terapêutica 50min', value: '60€' },
-      { label: 'Massagem Terapêutica 90min', value: '80€' },
+      { label: 'Sessão 50min', value: '50€' },
+      { label: 'Sessão 80min', value: '80€' },
     ],
     sub: [
       { t: 'Retenção de líquidos', d: 'Redução do inchaço nas pernas, tornozelos e barriga causado por retenção hídrica.' },
       { t: 'Linfedema', d: 'Gestão do linfedema primário ou secundário com técnica especializada Método Vodder.' },
       { t: 'Celulite e leveza', d: 'Melhoria da aparência da pele, da microcirculação local e sensação de corpo mais leve.' },
+      { t: 'Pernas pesadas e cansadas', d: 'Alívio da sensação de peso e cansaço nas pernas, comum ao final do dia ou após viagens longas.' },
+    ],
+  },
+  'massagem-terapeutica': {
+    tagline: 'Massagem terapêutica — trabalho muscular profundo para aliviar a tensão que não passa.',
+    description: 'A massagem terapêutica é uma técnica manual focada no tratamento de disfunções musculares, articulares e dores localizadas. Utiliza movimentos específicos e com mais pressão para aliviar tensões, melhorar a mobilidade e promover a recuperação física. Diferencia-se da massagem de relaxamento por ter um objetivo clínico e curativo, e não apenas de bem-estar geral.',
+    prices: [
+      { label: 'Sessão 50min', value: '45€' },
+    ],
+    sub: [
       { t: 'Contraturas e espasmos', d: 'Libertação de nós musculares e zonas de tensão profunda resistentes ao relaxamento.' },
       { t: 'Tensão cervical e ombros', d: 'Abordagem profunda na zona mais afetada por trabalho sedentário e stress.' },
       { t: 'Recuperação desportiva', d: 'Protocolo específico para atletas — antes ou depois da competição ou treino.' },

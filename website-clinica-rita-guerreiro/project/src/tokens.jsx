@@ -1,4 +1,4 @@
-// Design tokens — Rita Guerreiro · clean, white-first
+﻿// Design tokens — Rita Guerreiro · clean, white-first
 
 const RG = {
   // Teal do logo (usada com parcimónia, como acento)
@@ -287,7 +287,7 @@ const TRANSLATIONS = {
             'Abrir as portas da minha clínica na minha cidade natal, Loulé, representa um enorme orgulho e uma grande responsabilidade. É um privilégio poder cuidar dos louletanos e de todos aqueles que nos procuram, contribuindo diariamente para que vivam com mais saúde, conforto e qualidade de vida.',
           ],
           signature: 'Com dedicação,\nRita Guerreiro',
-          services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }, { label: 'Drenagem Linfática Manual', href: '/servico/drenagem-linfatica' }, { label: 'Pilates Clínico', href: '/servico/pilates-clinico' }, { label: 'Fisioterapia ATM', href: '/servico/fisioterapia-atm' }] },
+          services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }, { label: 'Drenagem Linfática Manual', href: '/servico/drenagem-linfatica-manual' }, { label: 'Pilates Clínico', href: '/servico/pilates-clinico' }, { label: 'Fisioterapia ATM', href: '/servico/fisioterapia-atm' }] },
         { name: 'Marta Belião', role: 'Fisioterapeuta', bio: 'Fisioterapeuta com experiência clínica, hospitalar e de spa, focada na recuperação e no bem-estar de cada paciente.', src: 'assets/fotos/profissional-1.jpg',
           bio_long: ['Licenciada em Fisioterapia, a Marta Belião possui uma vasta experiência em contexto clínico, hospitalar e de spa, incluindo funções de supervisão em unidades de referência no Algarve.', 'Com uma forte ligação ao Turismo de Saúde, distingue-se pela abordagem atenta e personalizada, orientada para a recuperação e o bem-estar de cada paciente, tanto a nível físico como psicológico.'],
           services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }] },
@@ -619,7 +619,7 @@ const TRANSLATIONS = {
             'Opening the doors of my clinic in my home town, Loulé, is an enormous source of pride and a great responsibility. It is a privilege to care for the people of Loulé and for everyone who comes to us, contributing every day to helping them live with more health, comfort and quality of life.',
           ],
           signature: 'With dedication,\nRita Guerreiro',
-          services: [{ label: 'Physiotherapy', href: '/servico/fisioterapia' }, { label: 'Manual Lymphatic Drainage', href: '/servico/drenagem-linfatica' }, { label: 'Clinical Pilates', href: '/servico/pilates-clinico' }, { label: 'TMJ Physiotherapy', href: '/servico/fisioterapia-atm' }] },
+          services: [{ label: 'Physiotherapy', href: '/servico/fisioterapia' }, { label: 'Manual Lymphatic Drainage', href: '/servico/drenagem-linfatica-manual' }, { label: 'Clinical Pilates', href: '/servico/pilates-clinico' }, { label: 'TMJ Physiotherapy', href: '/servico/fisioterapia-atm' }] },
         { name: 'Marta Belião', role: 'Physiotherapist', bio: 'Physiotherapist with clinical, hospital and spa experience, focused on the recovery and well-being of each patient.', src: 'assets/fotos/profissional-1.jpg',
           bio_long: ['With a degree in Physiotherapy, Marta Belião has extensive experience across clinical, hospital and spa settings, including supervisory roles at leading facilities in the Algarve.', 'With a strong connection to Health Tourism, she stands out for her attentive, personalised approach, focused on the physical and psychological recovery and well-being of each patient.'],
           services: [{ label: 'Physiotherapy', href: '/servico/fisioterapia' }] },
@@ -968,7 +968,7 @@ const TRANSLATIONS = {
             'Ouvrir les portes de ma clinique dans ma ville natale, Loulé, représente une immense fierté et une grande responsabilité. C’est un privilège de pouvoir prendre soin des habitants de Loulé et de tous ceux qui viennent à nous, en contribuant chaque jour à ce qu’ils vivent avec plus de santé, de confort et de qualité de vie.',
           ],
           signature: 'Avec dévouement,\nRita Guerreiro',
-          services: [{ label: 'Physiothérapie', href: '/servico/fisioterapia' }, { label: 'Drainage lymphatique manuel', href: '/servico/drenagem-linfatica' }, { label: 'Pilates clinique', href: '/servico/pilates-clinico' }, { label: 'Physiothérapie ATM', href: '/servico/fisioterapia-atm' }] },
+          services: [{ label: 'Physiothérapie', href: '/servico/fisioterapia' }, { label: 'Drainage lymphatique manuel', href: '/servico/drenagem-linfatica-manual' }, { label: 'Pilates clinique', href: '/servico/pilates-clinico' }, { label: 'Physiothérapie ATM', href: '/servico/fisioterapia-atm' }] },
         { name: 'Marta Belião', role: 'Physiothérapeute', bio: 'Physiothérapeute avec une expérience en milieu clinique, hospitalier et de spa, axée sur la récupération et le bien-être de chaque patient.', src: 'assets/fotos/profissional-1.jpg',
           bio_long: ['Diplômée en physiothérapie, Marta Belião possède une vaste expérience en milieu clinique, hospitalier et de spa, y compris des fonctions de supervision dans des établissements de référence en Algarve.', 'Fortement liée au Tourisme de Santé, elle se distingue par une approche attentive et personnalisée, orientée vers la récupération et le bien-être de chaque patient, tant sur le plan physique que psychologique.'],
           services: [{ label: 'Physiothérapie', href: '/servico/fisioterapia' }] },
@@ -1317,7 +1317,7 @@ const TRANSLATIONS = {
             'Abrir las puertas de mi clínica en mi ciudad natal, Loulé, representa un enorme orgullo y una gran responsabilidad. Es un privilegio poder cuidar de los louletanos y de todos los que nos buscan, contribuyendo cada día a que vivan con más salud, confort y calidad de vida.',
           ],
           signature: 'Con dedicación,\nRita Guerreiro',
-          services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }, { label: 'Drenaje Linfático Manual', href: '/servico/drenagem-linfatica' }, { label: 'Pilates Clínico', href: '/servico/pilates-clinico' }, { label: 'Fisioterapia ATM', href: '/servico/fisioterapia-atm' }] },
+          services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }, { label: 'Drenaje Linfático Manual', href: '/servico/drenagem-linfatica-manual' }, { label: 'Pilates Clínico', href: '/servico/pilates-clinico' }, { label: 'Fisioterapia ATM', href: '/servico/fisioterapia-atm' }] },
         { name: 'Marta Belião', role: 'Fisioterapeuta', bio: 'Fisioterapeuta con experiencia clínica, hospitalaria y de spa, centrada en la recuperación y el bienestar de cada paciente.', src: 'assets/fotos/profissional-1.jpg',
           bio_long: ['Licenciada en Fisioterapia, Marta Belião cuenta con una amplia experiencia en contexto clínico, hospitalario y de spa, incluyendo funciones de supervisión en centros de referencia del Algarve.', 'Con una fuerte vinculación al Turismo de Salud, se distingue por un enfoque atento y personalizado, orientado a la recuperación y el bienestar de cada paciente, tanto a nivel físico como psicológico.'],
           services: [{ label: 'Fisioterapia', href: '/servico/fisioterapia' }] },
