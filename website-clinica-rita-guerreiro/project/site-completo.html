@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/src/styles.css?v=20260714">
+<link rel="stylesheet" href="/src/styles.css?v=20260720">
 <link rel="stylesheet" href="/src/premium.css?v=20260715c">
 <link rel="stylesheet" href="/src/mobile.css?v=20260715i">
 </head>
@@ -72,7 +72,7 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
 <!-- tokens -->
-<script type="text/babel" src="/src/tokens.jsx?v=20260717k"></script>
+<script type="text/babel" src="/src/tokens.jsx?v=20260720k"></script>
 <!-- logo -->
 <script type="text/babel" src="/src/logo.jsx?v=20260713b"></script>
 <!-- data -->
@@ -82,7 +82,7 @@
 <script type="text/babel" src="/src/ui.jsx?v=20260714d"></script>
 <!-- page sections -->
 <script type="text/babel" src="/src/home.jsx?v=20260717k"></script>
-<script type="text/babel" src="/src/sobre.jsx?v=20260715"></script>
+<script type="text/babel" src="/src/sobre.jsx?v=20260720"></script>
 <script type="text/babel" src="/src/pages.jsx?v=20260715j"></script>
 
 <script type="text/babel">
@@ -431,6 +431,7 @@ function SobrePage() {
   return (<>
     <NavSPA current="sobre" />
     <SobreHero />
+    <FounderBio />
     <Mission />
     <Pillars />
     <Story />
@@ -724,7 +725,7 @@ const ready = () => {
     'Container','Reveal','Eyebrow','Heading','Body','Button','Photo','Section','Footer','WAFab',
     'SERVICES','SERVICE_DETAIL','IMG','findService',
     'Hero','StatsStrip','ServicesCard','WhyUs','ServicesOverview','Testimonials','HomeCTA',
-    'SobreHero','Mission','Pillars','Story','Team'];
+    'SobreHero','FounderBio','Mission','Pillars','Story','Team'];
   if (needed.every(k => window[k])) {
     ReactDOM.createRoot(document.getElementById('root')).render(<LangProvider><App /></LangProvider>);
   } else {

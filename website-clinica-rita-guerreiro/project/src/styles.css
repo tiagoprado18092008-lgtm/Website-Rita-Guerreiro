@@ -1167,7 +1167,11 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
   .rg-sobre-areas-grid > div:last-child,
   .rg-tech-grid > div:last-child,
   .rg-contact-hero-grid > div:last-child,
-  .rg-contact-channels-grid > div:last-child { order: 0 !important; }
+  .rg-contact-channels-grid > div:last-child,
+  .rg-founder-grid > div:last-child { order: 0 !important; }
+
+  /* Fundadora: foto não fica sticky em 1 coluna */
+  .rg-founder-photo { position: static !important; }
 
   /* Imagem portrait da secção Tecnologia: limitar altura em mobile */
   .rg-tech-grid > div:first-child img {

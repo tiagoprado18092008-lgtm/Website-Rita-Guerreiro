@@ -37,6 +37,42 @@ function SobreHero() {
   );
 }
 
+// Secção da fundadora — biografia na primeira pessoa, logo no topo do /sobre.
+// Reutiliza sobre.team_members[0] (Rita) para não duplicar os textos.
+function FounderBio() {
+  const { t } = useLang();
+  const m = (t('sobre.team_members') || [])[0];
+  if (!m) return null;
+  return (
+    <Section bg={RG.creamSoft} pad="lg">
+      <Container>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 60 }} className="rg-hero-grid rg-founder-grid">
+          <Reveal style={{ height: '100%' }}>
+            <div className="rg-founder-photo" style={{ position: 'sticky', top: 110 }}>
+              <Photo aspect="4/5" label={m.name} src={m.src} style={{ borderRadius: 12 }} />
+              <div style={{ fontFamily: F_MONO, fontSize: 11.5, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.tealDark, lineHeight: 1.7, marginTop: 16, maxWidth: '40ch' }}>
+                {m.role_long || m.role}
+              </div>
+            </div>
+          </Reveal>
+          <div>
+            <Reveal><Eyebrow>{t('sobre.founder_eyebrow')}</Eyebrow></Reveal>
+            <Reveal delay={60}><Heading level="h2" style={{ marginTop: 16 }}>{m.name}</Heading></Reveal>
+            <Reveal delay={120}>
+              {(m.bio_long || [m.bio]).map((p, i) => (
+                <Body key={i} size={17} style={{ marginTop: i === 0 ? 26 : 16 }}>{p}</Body>
+              ))}
+              {m.signature && (
+                <p style={{ fontFamily: F_DISPLAY, fontSize: 19, fontStyle: 'italic', color: RG.tealDark, lineHeight: 1.5, margin: '26px 0 0', whiteSpace: 'pre-line' }}>{m.signature}</p>
+              )}
+            </Reveal>
+          </div>
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
 function Mission() {
   const { t } = useLang();
   return (
@@ -158,7 +194,7 @@ function TeamModal({ members, index, onClose, onStep }) {
         </div>
 
         <div className="rg-team-modal-body" style={{ flex: 1, minWidth: 0, padding: 'clamp(26px, 4vw, 44px)', overflowY: 'auto' }}>
-          <div style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark }}>{m.role}</div>
+          <div style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark }}>{m.role_long || m.role}</div>
           <div style={{ width: 40, height: 2, background: RG.teal, margin: '12px 0 16px' }} />
           <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 4vw, 34px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.ink, lineHeight: 1.05 }}>{m.name}</div>
           <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -166,6 +202,10 @@ function TeamModal({ members, index, onClose, onStep }) {
               <p key={i} style={{ fontFamily: F_BODY, fontSize: 15.5, color: RG.charcoal, lineHeight: 1.7, margin: 0 }}>{p}</p>
             ))}
           </div>
+
+          {m.signature && (
+            <p style={{ fontFamily: F_DISPLAY, fontSize: 17, fontStyle: 'italic', color: RG.tealDark, lineHeight: 1.5, margin: '18px 0 0', whiteSpace: 'pre-line' }}>{m.signature}</p>
+          )}
 
           {m.services && m.services.length > 0 && (
             <div style={{ marginTop: 28 }}>
@@ -355,4 +395,4 @@ function Espaco() {
   );
 }
 
-Object.assign(window, { SobreHero, Mission, Pillars, Story, Team, Espaco });
+Object.assign(window, { SobreHero, FounderBio, Mission, Pillars, Story, Team, Espaco });
