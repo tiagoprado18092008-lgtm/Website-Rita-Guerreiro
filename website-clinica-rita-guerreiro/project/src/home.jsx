@@ -150,7 +150,7 @@ function EquipaIntro() {
         <div className="rg-equipa-home-grid" style={{ marginTop: 56 }}>
           {members.map((m, i) => (
             <Reveal key={i} delay={i * 90} y={36}>
-              <a href={(m.bio_long || []).length > 1 ? `/sobre?prof=${i}` : '/sobre'} className="rg-team-card" style={{
+              <a href={`/sobre?prof=${i}`} className="rg-team-card" style={{
                 display: 'flex', flexDirection: 'column', height: '100%',
                 textDecoration: 'none', color: 'inherit',
                 background: RG.white, borderRadius: 18,

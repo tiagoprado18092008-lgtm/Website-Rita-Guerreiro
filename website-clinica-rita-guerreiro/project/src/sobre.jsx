@@ -59,7 +59,7 @@ function FounderBio() {
             <Reveal><Eyebrow>{t('sobre.founder_eyebrow')}</Eyebrow></Reveal>
             <Reveal delay={60}><Heading level="h2" style={{ marginTop: 16 }}>{m.name}</Heading></Reveal>
             <Reveal delay={120}>
-              {(m.bio_long || [m.bio]).map((p, i) => (
+              {(m.bio_long && m.bio_long.length ? m.bio_long : [m.bio]).map((p, i) => (
                 <Body key={i} size={17} style={{ marginTop: i === 0 ? 26 : 16 }}>{p}</Body>
               ))}
               {m.signature && (
@@ -164,7 +164,8 @@ function Story() {
 function TeamModal({ members, index, onClose, onStep }) {
   const { t } = useLang();
   const m = members[index];
-  const openable = members.map((x, i) => ((x.bio_long || []).length > 1 ? i : -1)).filter((i) => i >= 0);
+  // Todos os membros da grelha (excepto a fundadora, índice 0) têm perfil navegável.
+  const openable = members.map((_, i) => i).filter((i) => i > 0);
   const multiple = openable.length > 1;
 
   React.useEffect(() => {
@@ -200,7 +201,7 @@ function TeamModal({ members, index, onClose, onStep }) {
           <div style={{ width: 40, height: 2, background: RG.teal, margin: '12px 0 16px' }} />
           <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 4vw, 34px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.ink, lineHeight: 1.05 }}>{m.name}</div>
           <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {(m.bio_long || [m.bio]).map((p, i) => (
+            {(m.bio_long && m.bio_long.length ? m.bio_long : [m.bio]).map((p, i) => (
               <p key={i} style={{ fontFamily: F_BODY, fontSize: 15.5, color: RG.charcoal, lineHeight: 1.7, margin: 0 }}>{p}</p>
             ))}
           </div>
@@ -241,18 +242,19 @@ function TeamModal({ members, index, onClose, onStep }) {
 function Team() {
   const { t } = useLang();
   const members = t('sobre.team_members');
-  const hasProfile = (m) => (m.bio_long || []).length > 1;
+  // Todos os profissionais têm perfil (modal) — o botão "Ver perfil" aparece em todos.
+  const hasProfile = () => true;
   // A fundadora (índice 0) já aparece em destaque na secção FounderBio, acima —
   // na grelha da equipa mostramos só "o resto". Mantém-se o índice original para
   // que o modal e os deep-links ?prof= continuem a apontar para a pessoa certa.
   const gridMembers = members.map((m, idx) => ({ m, idx })).filter(({ idx }) => idx > 0);
   const [open, setOpen] = React.useState(() => {
     const p = parseInt(new URLSearchParams(window.location.search).get('prof'), 10);
-    return Number.isInteger(p) && members[p] && hasProfile(members[p]) ? p : null;
+    return Number.isInteger(p) && members[p] ? p : null;
   }); // índice do profissional aberto, ou null
 
   const step = (d) => setOpen((i) => {
-    const openable = members.map((m, idx) => (hasProfile(m) ? idx : -1)).filter((idx) => idx >= 0);
+    const openable = members.map((_, idx) => idx).filter((idx) => idx > 0);
     const pos = openable.indexOf(i);
     return openable[(pos + d + openable.length) % openable.length];
   });
