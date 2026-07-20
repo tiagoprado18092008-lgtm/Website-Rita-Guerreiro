@@ -49,7 +49,7 @@ function FounderBio() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 60 }} className="rg-hero-grid rg-founder-grid">
           <Reveal style={{ height: '100%' }}>
             <div className="rg-founder-photo" style={{ position: 'sticky', top: 110 }}>
-              <Photo aspect="4/5" label={m.name} src={m.src} style={{ borderRadius: 12 }} />
+              <Photo aspect="4/5" label={m.name} src="assets/fotos/rita-biografia.jpg?v=20260720" style={{ borderRadius: 12 }} />
               <div style={{ fontFamily: F_MONO, fontSize: 11.5, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.tealDark, lineHeight: 1.7, marginTop: 16, maxWidth: '40ch' }}>
                 {m.role_long || m.role}
               </div>

@@ -278,7 +278,7 @@ const TRANSLATIONS = {
       team_heading: 'Especialistas que se preocupam com quem têm à frente',
       team_body: 'A nossa equipa é composta por profissionais qualificados em diversas áreas da saúde, que trabalham juntos para lhe oferecer o melhor acompanhamento possível — coordenado, humano e eficaz.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Fisioterapeuta · Fundadora', role_long: 'Fisioterapeuta · Fundadora do Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Fisioterapeuta desde 2009 e fundadora da clínica. Acredito num cuidado próximo, que trata a pessoa e não apenas o sintoma.', src: 'assets/fotos/rita-biografia.jpg?v=20260720',
+        { name: 'Rita Guerreiro', role: 'Fisioterapeuta · Fundadora', role_long: 'Fisioterapeuta · Fundadora do Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Fisioterapeuta desde 2009 e fundadora da clínica. Acredito num cuidado próximo, que trata a pessoa e não apenas o sintoma.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: [
             'A minha paixão pela saúde e pelo bem-estar levou-me a escolher a Fisioterapia como profissão, área onde exerço desde 2009. Ao longo do meu percurso profissional tive a oportunidade de trabalhar em hospitais, clínicas e em alguns dos mais conceituados spas do Algarve, experiências que enriqueceram a minha prática e reforçaram a importância de olhar para cada pessoa de forma única e individual.',
             'Em 2022 nasceu um novo projeto que deu vida a um sonho há muito adormecido: criar a minha própria clínica. Um espaço pensado para oferecer um acompanhamento de excelência, reunindo diferentes valências na área da saúde e proporcionando um atendimento personalizado, humano e de proximidade.',
@@ -612,7 +612,7 @@ const TRANSLATIONS = {
       team_heading: 'Specialists who care about the person in front of them',
       team_body: 'Our team is made up of qualified professionals in various health fields, working together to offer you the best possible support — coordinated, human and effective.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Physiotherapist · Founder', role_long: 'Physiotherapist · Founder of Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Physiotherapist since 2009 and founder of the clinic. I believe in close, personal care that treats the person, not just the symptom.', src: 'assets/fotos/rita-biografia.jpg?v=20260720',
+        { name: 'Rita Guerreiro', role: 'Physiotherapist · Founder', role_long: 'Physiotherapist · Founder of Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Physiotherapist since 2009 and founder of the clinic. I believe in close, personal care that treats the person, not just the symptom.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: [
             'My passion for health and well-being led me to choose Physiotherapy as my profession, a field I have been practising since 2009. Throughout my career I have had the opportunity to work in hospitals, clinics and some of the most renowned spas in the Algarve — experiences that enriched my practice and reinforced the importance of looking at each person in a unique, individual way.',
             'In 2022 a new project was born, bringing to life a long-held dream: creating my own clinic. A space designed to offer excellent care, bringing together different health specialities and providing personalised, human and close support.',
@@ -963,7 +963,7 @@ const TRANSLATIONS = {
       team_heading: 'Des spécialistes qui se soucient de la personne en face',
       team_body: 'Notre équipe est composée de professionnels qualifiés dans divers domaines de la santé, qui travaillent ensemble pour vous offrir le meilleur accompagnement possible — coordonné, humain et efficace.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Physiothérapeute · Fondatrice', role_long: 'Physiothérapeute · Fondatrice du Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Physiothérapeute depuis 2009 et fondatrice de la clinique. Je crois en un accompagnement proche, qui soigne la personne et non seulement le symptôme.', src: 'assets/fotos/rita-biografia.jpg?v=20260720',
+        { name: 'Rita Guerreiro', role: 'Physiothérapeute · Fondatrice', role_long: 'Physiothérapeute · Fondatrice du Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Physiothérapeute depuis 2009 et fondatrice de la clinique. Je crois en un accompagnement proche, qui soigne la personne et non seulement le symptôme.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: [
             'Ma passion pour la santé et le bien-être m’a conduite à choisir la physiothérapie comme profession, domaine que j’exerce depuis 2009. Tout au long de mon parcours professionnel, j’ai eu l’occasion de travailler dans des hôpitaux, des cliniques et certains des spas les plus réputés de l’Algarve — des expériences qui ont enrichi ma pratique et renforcé l’importance de considérer chaque personne de manière unique et individuelle.',
             'En 2022 est né un nouveau projet qui a donné vie à un rêve longtemps endormi : créer ma propre clinique. Un espace pensé pour offrir un accompagnement d’excellence, réunissant différentes spécialités de la santé et proposant une prise en charge personnalisée, humaine et de proximité.',
@@ -1314,7 +1314,7 @@ const TRANSLATIONS = {
       team_heading: 'Especialistas que se preocupan por quien tienen delante',
       team_body: 'Nuestro equipo está formado por profesionales cualificados en diversas áreas de la salud, que trabajan juntos para ofrecerle el mejor acompañamiento posible — coordinado, humano y eficaz.',
       team_members: [
-        { name: 'Rita Guerreiro', role: 'Fisioterapeuta · Fundadora', role_long: 'Fisioterapeuta · Fundadora del Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Fisioterapeuta desde 2009 y fundadora de la clínica. Creo en un cuidado cercano, que trata a la persona y no solo el síntoma.', src: 'assets/fotos/rita-biografia.jpg?v=20260720',
+        { name: 'Rita Guerreiro', role: 'Fisioterapeuta · Fundadora', role_long: 'Fisioterapeuta · Fundadora del Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Fisioterapeuta desde 2009 y fundadora de la clínica. Creo en un cuidado cercano, que trata a la persona y no solo el síntoma.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
           bio_long: [
             'Mi pasión por la salud y el bienestar me llevó a elegir la Fisioterapia como profesión, área que ejerzo desde 2009. A lo largo de mi trayectoria profesional he tenido la oportunidad de trabajar en hospitales, clínicas y algunos de los spas más reconocidos del Algarve — experiencias que enriquecieron mi práctica y reforzaron la importancia de mirar a cada persona de forma única e individual.',
             'En 2022 nació un nuevo proyecto que dio vida a un sueño largamente dormido: crear mi propia clínica. Un espacio pensado para ofrecer un acompañamiento de excelencia, reuniendo diferentes especialidades del área de la salud y proporcionando una atención personalizada, humana y cercana.',
