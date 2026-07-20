@@ -5,8 +5,8 @@ const IMG = {
   fisioterapia: '/assets/fotos/servico-fisioterapia-rita.jpg?v=20260715f',
   'fisioterapia-tecar-dupla': '/assets/fotos/servico-fisioterapia-tecar-dupla.jpg?v=20260715f',
   'fisioterapia-manual': '/assets/fotos/servico-fisioterapia-manual.jpg',
-  acupuntura: '/assets/fotos/servico-acupuntura.jpg?v=20260715f',
-  mesoterapia: '/assets/fotos/servico-mesoterapia.jpg?v=20260714c',
+  acupuntura: '/assets/fotos/servico-acupuntura.jpg?v=20260720',
+  mesoterapia: '/assets/fotos/servico-mesoterapia.jpg?v=20260720',
   // Foto certa enviada pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia ATM.jpg").
   'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg?v=20260715h',
   // Fotos certas enviadas pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia
@@ -23,7 +23,7 @@ const IMG = {
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
-  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260714c',
+  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260720',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
   // ainda não tem foto própria, a cliente vai enviar.
@@ -127,7 +127,7 @@ const SERVICE_DETAIL = {
       eyebrow: 'Tecnologia',
       tagline: 'Tecarterapia de última geração para acelerar a recuperação.',
       description: 'Integramos nas sessões de fisioterapia a tecnologia Winback — um equipamento de tecarterapia (diatermia capacitiva e resistiva) que combina alta frequência (300 kHz a 1 MHz) com neuromodulação Hi-TENS e Hi-EMS. Ativa o metabolismo dos tecidos em profundidade, reduz dor e inflamação, acelera a regeneração e devolve mobilidade em menos tempo. Particularmente eficaz em lesões músculo-esqueléticas agudas e crónicas, recuperação pós-lesão, pós-cirurgia e dor desportiva.',
-      img: '/assets/winback-back3.jpg',
+      img: '/assets/fotos/servico-fisioterapia-tech-winback.png?v=20260720',
       link: '/servico/tecarterapia-winback',
       benefits: [
         'Alívio rápido da dor e da inflamação',
