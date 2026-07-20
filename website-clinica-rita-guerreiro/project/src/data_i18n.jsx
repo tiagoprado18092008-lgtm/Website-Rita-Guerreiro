@@ -290,21 +290,21 @@ const SERVICE_DETAIL_I18N = {
       equipment: {
         eyebrow: 'THE EQUIPMENT',
         heading: 'Official, certified Winback technology',
-        text: 'The Winback is operated directly by the physiotherapist through a touchscreen, adjusting mode, intensity and current combination in real time to each case. The probe glides over the skin with a specific conductive cream — no needles, no special preparation and no downtime between the session and everyday life.',
+        text: 'The Winback is operated directly by the physiotherapist through a touchscreen, adjusting mode, intensity and current combination in real time to each case. The electrode glides over the skin with a specific conductive cream — no needles, no special preparation and no downtime between the session and everyday life.',
         badge: 'Winback Expert Center certified',
         bullets: [
           { t: '300 kHz – 1 MHz', d: 'Adjustable high frequency depending on the depth of tissue being treated.' },
           { t: 'Capacitive and resistive', d: 'Two diathermy modes, for surface or deeper tissue.' },
           { t: 'Hi-TENS + Hi-EMS', d: 'Neuromodulation combined with heat, for pain relief and muscle activation.' },
-          { t: 'Monopolar probe', d: 'Applied directly by the physiotherapist, with full control over the treated area.' },
+          { t: 'Monopolar electrode', d: 'Applied directly by the physiotherapist, with full control over the treated area.' },
         ],
       },
       process: {
         eyebrow: 'DURING THE SESSION',
         heading: 'How the treatment is applied',
         steps: [
-          { t: 'Assessment and setup', d: 'The physiotherapist chooses the mode, intensity and probe according to the area and the goal of the treatment.' },
-          { t: 'Direct application', d: 'The probe glides over the skin with conductive cream, with no needles and no discomfort.' },
+          { t: 'Assessment and setup', d: 'The physiotherapist chooses the mode, intensity and electrode according to the area and the goal of the treatment.' },
+          { t: 'Direct application', d: 'The electrode glides over the skin with conductive cream, with no needles and no discomfort.' },
           { t: 'Heat and neuromodulation', d: 'You feel deep heat and gentle electrical stimulation from the first few minutes.' },
           { t: 'Integrated into the session', d: 'Winback is combined with manual therapy, boosting the result of every physiotherapy session.' },
         ],
@@ -712,21 +712,21 @@ const SERVICE_DETAIL_I18N = {
       equipment: {
         eyebrow: 'L’ÉQUIPEMENT',
         heading: 'Une technologie Winback officielle et certifiée',
-        text: 'Le Winback est piloté directement par votre physiothérapeute à l’aide d’un écran tactile, qui permet d’ajuster en temps réel le mode, l’intensité et la combinaison de courants à votre cas. La sonde glisse sur la peau avec une crème conductrice spécifique — sans aiguilles, sans préparation particulière et sans temps d’arrêt entre la séance et votre quotidien.',
+        text: 'Le Winback est piloté directement par votre physiothérapeute à l’aide d’un écran tactile, qui permet d’ajuster en temps réel le mode, l’intensité et la combinaison de courants à votre cas. L’électrode glisse sur la peau avec une crème conductrice spécifique — sans aiguilles, sans préparation particulière et sans temps d’arrêt entre la séance et votre quotidien.',
         badge: 'Certifié Winback Expert Center',
         bullets: [
           { t: '300 kHz – 1 MHz', d: 'Haute fréquence réglable selon la profondeur du tissu à traiter.' },
           { t: 'Capacitif et résistif', d: 'Deux modes de diathermie, pour un tissu superficiel ou plus profond.' },
           { t: 'Hi-TENS + Hi-EMS', d: 'Neuromodulation combinée à la chaleur, pour soulager la douleur et activer les muscles.' },
-          { t: 'Sonde monopolaire', d: 'Appliquée directement par votre physiothérapeute, avec un contrôle total de la zone traitée.' },
+          { t: 'Électrode monopolaire', d: 'Appliquée directement par votre physiothérapeute, avec un contrôle total de la zone traitée.' },
         ],
       },
       process: {
         eyebrow: 'PENDANT LA SÉANCE',
         heading: 'Comment se déroule l’application',
         steps: [
-          { t: 'Évaluation et réglage', d: 'Votre physiothérapeute choisit le mode, l’intensité et la sonde selon la zone et l’objectif du traitement.' },
-          { t: 'Application directe', d: 'La sonde glisse sur la peau avec une crème conductrice, sans aiguilles ni inconfort.' },
+          { t: 'Évaluation et réglage', d: 'Votre physiothérapeute choisit le mode, l’intensité et l’électrode selon la zone et l’objectif du traitement.' },
+          { t: 'Application directe', d: 'L’électrode glisse sur la peau avec une crème conductrice, sans aiguilles ni inconfort.' },
           { t: 'Chaleur et neuromodulation', d: 'Vous ressentez une chaleur profonde et une stimulation électrique douce dès les premières minutes.' },
           { t: 'Intégré à la séance', d: 'Le Winback est combiné à la thérapie manuelle, pour renforcer le résultat de chaque séance de physiothérapie.' },
         ],
@@ -1134,21 +1134,21 @@ const SERVICE_DETAIL_I18N = {
       equipment: {
         eyebrow: 'EL EQUIPO',
         heading: 'Tecnología Winback, oficial y certificada',
-        text: 'El Winback lo maneja directamente la fisioterapeuta a través de una pantalla táctil, que permite ajustar en tiempo real el modo, la intensidad y la combinación de corrientes a cada caso. La sonda se desliza sobre la piel con una crema conductora específica — sin agujas, sin preparación especial y sin tiempo de parada entre la sesión y el día a día.',
+        text: 'El Winback lo maneja directamente la fisioterapeuta a través de una pantalla táctil, que permite ajustar en tiempo real el modo, la intensidad y la combinación de corrientes a cada caso. El electrodo se desliza sobre la piel con una crema conductora específica — sin agujas, sin preparación especial y sin tiempo de parada entre la sesión y el día a día.',
         badge: 'Certificado Winback Expert Center',
         bullets: [
           { t: '300 kHz – 1 MHz', d: 'Alta frecuencia regulable según la profundidad del tejido a tratar.' },
           { t: 'Capacitivo y resistivo', d: 'Dos modos de diatermia, para tejido superficial o más profundo.' },
           { t: 'Hi-TENS + Hi-EMS', d: 'Neuromodulación combinada con el calor, para el alivio del dolor y la activación muscular.' },
-          { t: 'Sonda monopolar', d: 'Aplicada directamente por la fisioterapeuta, con control total sobre la zona tratada.' },
+          { t: 'Electrodo monopolar', d: 'Aplicado directamente por la fisioterapeuta, con control total sobre la zona tratada.' },
         ],
       },
       process: {
         eyebrow: 'DURANTE LA SESIÓN',
         heading: 'Cómo se realiza la aplicación',
         steps: [
-          { t: 'Evaluación y ajuste', d: 'La fisioterapeuta elige el modo, la intensidad y la sonda según la zona y el objetivo del tratamiento.' },
-          { t: 'Aplicación directa', d: 'La sonda se desliza sobre la piel con crema conductora, sin agujas ni molestias.' },
+          { t: 'Evaluación y ajuste', d: 'La fisioterapeuta elige el modo, la intensidad y el electrodo según la zona y el objetivo del tratamiento.' },
+          { t: 'Aplicación directa', d: 'El electrodo se desliza sobre la piel con crema conductora, sin agujas ni molestias.' },
           { t: 'Calor y neuromodulación', d: 'Se siente calor profundo y una estimulación eléctrica suave ya en los primeros minutos.' },
           { t: 'Integrado en la sesión', d: 'El Winback se combina con terapia manual, potenciando el resultado de cada sesión de fisioterapia.' },
         ],

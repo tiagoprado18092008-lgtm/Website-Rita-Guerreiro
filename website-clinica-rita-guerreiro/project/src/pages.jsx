@@ -134,7 +134,7 @@ function ServicePage({ slug }) {
           {/* Image */}
           <Reveal delay={100}>
             <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/3', position: 'relative' }}>
-              <Photo aspect="4/3" label={`Foto — ${s.name}`} tone="teal" src={s.img} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <Photo aspect="4/3" label={`Foto — ${s.name}`} tone="teal" src={s.img} imgPos={s.imgPos} objFit={s.objFit} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </Reveal>
         </div>
@@ -605,7 +605,7 @@ function TecarPage() {
             </Reveal>
             <Reveal delay={80}>
               <div className="rg-service-hero-img-wrap" style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', background: RG.white, border: `1px solid ${RG.line}` }}>
-                <img src="/assets/fotos/servico-tecarterapia-sessao.jpg?v=20260715f" alt="Aplicação da sonda Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/assets/fotos/servico-tecarterapia-sessao.jpg?v=20260715f" alt="Aplicação do elétrodo Winback numa sessão de fisioterapia" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </Reveal>
           </div>

@@ -514,11 +514,11 @@ function Nav({ current = 'home' }) {
 }
 
 // Image — real photo if src given, otherwise colored placeholder
-function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {} }) {
+function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {}, imgPos, objFit = 'cover' }) {
   if (src) {
     return (
       <div style={{ position: 'relative', width: '100%', aspectRatio: aspect, background: RG.cream, borderRadius: 8, overflow: 'hidden', ...style }}>
-        <img src={src} alt={label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        <img src={src} alt={label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: objFit, objectPosition: imgPos || 'center', display: 'block' }} />
       </div>
     );
   }

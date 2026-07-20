@@ -11,7 +11,7 @@ const IMG = {
   'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg?v=20260715h',
   // Fotos certas enviadas pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia
   // pediatrica.png" e ".../Vestibular.png").
-  'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.jpg?v=20260716',
+  'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.png?v=20260720',
   'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg?v=20260716',
   'fisioterapia-oncologica': '/assets/fotos/servico-fisioterapia-oncologica.jpg?v=20260714c',
   psicologia: '/assets/fotos/servico-psicologia.jpg?v=20260715b',
@@ -78,7 +78,7 @@ const SERVICES = {
       { slug: 'massagem-criancas', name: 'Massagem para Crianças', img: IMG['massagem-criancas'], blurb: 'Massagem suave e adaptada aos mais novos — para promover sono, calma e bem-estar.', price: '30€' },
       { slug: 'massagem-assinatura-rg', name: 'Massagem Assinatura RG', img: IMG['massagem-assinatura-rg'], blurb: 'A massagem de excelência da clínica — 80 minutos para combinar relaxamento profundo e trabalho muscular.', price: '75€' },
       { slug: 'massagem-profunda', name: 'Massagem Profunda / Desportiva', img: IMG['massagem-profunda'], blurb: 'Deep tissue e sport massage — trabalho muscular profundo para quem exige mais do corpo, no treino ou no dia-a-dia.', price: '45€ / 75€' },
-      { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
+      { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], imgPos: 'center 90%', blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
       { slug: 'massagem-sacro-craniana', name: 'Massagem Sacro-Craniana', img: IMG['massagem-sacro-craniana'], blurb: 'Técnica de toque suave sobre o sistema sacro-craniano — alivia tensão, cefaleias e stress sem esforço.', price: '40€' },
       { slug: 'drenagem-linfatica', name: 'Drenagem Pós-Operatório', img: IMG['drenagem-linfatica'], blurb: 'Drenagem linfática especializada para a recuperação após cirurgia — reduz edema, hematomas e acelera a cicatrização.', price: '60€ / 80€' },
       { slug: 'drenagem-linfatica-manual', name: 'Drenagem Linfática Manual', img: IMG['drenagem-linfatica-manual'], blurb: 'Drenagem Linfática Manual (Método Vodder) — movimentos suaves e rítmicos que estimulam a circulação e reduzem a retenção de líquidos.', price: '50€ / 80€' },
@@ -101,7 +101,7 @@ const SERVICES = {
     intro: 'Tecnologia avançada, avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
-      { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
+      { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], objFit: 'contain', blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
     ],
   },
@@ -155,21 +155,21 @@ const SERVICE_DETAIL = {
     equipment: {
       eyebrow: 'O EQUIPAMENTO',
       heading: 'Tecnologia Winback, oficial e certificada',
-      text: 'O Winback é operado diretamente pela fisioterapeuta através de um ecrã tátil, que permite ajustar em tempo real o modo, a intensidade e a combinação de correntes ao caso de cada pessoa. A sonda desliza sobre a pele com creme condutor específico — sem agulhas, sem preparação especial e sem tempo de paragem entre a sessão e o dia a dia.',
+      text: 'O Winback é operado diretamente pela fisioterapeuta através de um ecrã tátil, que permite ajustar em tempo real o modo, a intensidade e a combinação de correntes ao caso de cada pessoa. O elétrodo desliza sobre a pele com creme condutor específico — sem agulhas, sem preparação especial e sem tempo de paragem entre a sessão e o dia a dia.',
       badge: 'Certificado Winback Expert Center',
       bullets: [
         { t: '300 kHz – 1 MHz', d: 'Alta frequência regulável consoante a profundidade do tecido a tratar.' },
         { t: 'Capacitivo e resistivo', d: 'Dois modos de diatermia, para tecido superficial ou mais profundo.' },
         { t: 'Hi-TENS + Hi-EMS', d: 'Neuromodulação combinada com o calor, para alívio da dor e ativação muscular.' },
-        { t: 'Sonda monopolar', d: 'Aplicada diretamente pela fisioterapeuta, com controlo total sobre a zona tratada.' },
+        { t: 'Elétrodo monopolar', d: 'Aplicado diretamente pela fisioterapeuta, com controlo total sobre a zona tratada.' },
       ],
     },
     process: {
       eyebrow: 'DURANTE A SESSÃO',
       heading: 'Como é feita a aplicação',
       steps: [
-        { t: 'Avaliação e ajuste', d: 'A fisioterapeuta escolhe o modo, a intensidade e a sonda de acordo com a zona e o objetivo do tratamento.' },
-        { t: 'Aplicação direta', d: 'A sonda desliza sobre a pele com creme condutor, sem agulhas nem desconforto.' },
+        { t: 'Avaliação e ajuste', d: 'A fisioterapeuta escolhe o modo, a intensidade e o elétrodo de acordo com a zona e o objetivo do tratamento.' },
+        { t: 'Aplicação direta', d: 'O elétrodo desliza sobre a pele com creme condutor, sem agulhas nem desconforto.' },
         { t: 'Calor e neuromodulação', d: 'Sente-se calor profundo e uma estimulação elétrica suave já nos primeiros minutos.' },
         { t: 'Integração na sessão', d: 'O Winback é combinado com terapia manual, potenciando o resultado de cada sessão de fisioterapia.' },
       ],

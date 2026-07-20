@@ -1224,11 +1224,6 @@ html, body { overflow-x: clip !important; max-width: 100% !important; }
 }
 .rg-team-card:hover .rg-team-role::after { width: 52px; }
 
-/* Equipa: ritmo editorial — cartões pares ligeiramente descidos em desktop */
-@media (min-width: 1201px) {
-  .rg-team-grid > *:nth-child(even) .rg-team-card { margin-top: 28px; }
-}
-
 /* Equipa (home): os 5 profissionais ficam sempre numa linha horizontal.
    Grelha separada da .rg-team-grid do /sobre, que quebra para 3/2/1 colunas. */
 .rg-equipa-home-grid {
