@@ -23,7 +23,7 @@ const IMG = {
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
-  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.jpg?v=20260720',
+  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
   // ainda não tem foto própria, a cliente vai enviar.
@@ -36,7 +36,7 @@ const IMG = {
   // Foto nova enviada pela cliente ("Fotos clinica Rita Guerreiro/Head Spa.jpg").
   'head-spa': '/assets/fotos/servico-head-spa.jpg?v=20260715i',
   facial: '/assets/fotos/servico-facial.jpg?v=20260715f',
-  'depilacao-laser': '/assets/fotos/servico-depilacao-laser.jpg?v=20260717',
+  'depilacao-laser': '/assets/fotos/servico-depilacao-laser.png?v=20260721',
   'pilates-clinico': '/assets/pilates.jpg',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg?v=20260715f',
   // Genéricos — fotos reais da clínica
@@ -101,7 +101,7 @@ const SERVICES = {
     intro: 'Tecnologia avançada, avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
-      { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], objFit: 'contain', blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
+      { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
     ],
   },
