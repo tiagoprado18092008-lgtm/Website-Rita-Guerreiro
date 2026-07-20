@@ -192,7 +192,7 @@ function TeamModal({ members, index, onClose, onStep }) {
 
         <div className="rg-team-modal-photo" style={{ position: 'relative', flex: '0 0 42%', minHeight: 320, background: RG.creamSoft }}>
           {m.src
-            ? <img src={m.src} alt={m.name} decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            ? <img src={m.src} alt={m.name} decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.imgPos || 'center top', display: 'block' }} />
             : <AvatarPlaceholder name={m.name} size={56} />}
         </div>
 
@@ -285,7 +285,7 @@ function Team() {
                 style={{ background: RG.white, borderRadius: 18, border: `1px solid ${RG.lineSoft}`, boxShadow: '0 12px 32px -14px rgba(20,20,18,0.16)', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', cursor: clickable ? 'pointer' : 'default' }}>
                 <div className="rg-team-photo" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: RG.creamSoft }}>
                   {m.src
-                    ? <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    ? <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.imgPos || 'center top', display: 'block' }} />
                     : <AvatarPlaceholder name={m.name} size={30} />}
                 </div>
                 <div style={{ padding: '20px 20px 22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
