@@ -190,7 +190,9 @@ function TeamModal({ members, index, onClose, onStep }) {
           style={{ position: 'absolute', top: 14, right: 14, zIndex: 3, width: 40, height: 40, borderRadius: 999, border: 'none', cursor: 'pointer', background: 'rgba(255,255,255,0.85)', color: RG.ink, fontSize: 18, lineHeight: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 10px rgba(20,20,18,0.18)' }}>✕</button>
 
         <div className="rg-team-modal-photo" style={{ position: 'relative', flex: '0 0 42%', minHeight: 320, background: RG.creamSoft }}>
-          <img src={m.src} alt={m.name} decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          {m.src
+            ? <img src={m.src} alt={m.name} decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            : <AvatarPlaceholder name={m.name} size={56} />}
         </div>
 
         <div className="rg-team-modal-body" style={{ flex: 1, minWidth: 0, padding: 'clamp(26px, 4vw, 44px)', overflowY: 'auto' }}>
@@ -240,6 +242,10 @@ function Team() {
   const { t } = useLang();
   const members = t('sobre.team_members');
   const hasProfile = (m) => (m.bio_long || []).length > 1;
+  // A fundadora (índice 0) já aparece em destaque na secção FounderBio, acima —
+  // na grelha da equipa mostramos só "o resto". Mantém-se o índice original para
+  // que o modal e os deep-links ?prof= continuem a apontar para a pessoa certa.
+  const gridMembers = members.map((m, idx) => ({ m, idx })).filter(({ idx }) => idx > 0);
   const [open, setOpen] = React.useState(() => {
     const p = parseInt(new URLSearchParams(window.location.search).get('prof'), 10);
     return Number.isInteger(p) && members[p] && hasProfile(members[p]) ? p : null;
@@ -262,10 +268,10 @@ function Team() {
           </p>
         </Reveal>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 22, marginTop: 56 }} className="rg-team-grid">
-          {members.map((m, i) => {
+          {gridMembers.map(({ m, idx: i }, pos) => {
             const clickable = hasProfile(m);
             return (
-            <Reveal key={i} delay={i * 90} y={36}>
+            <Reveal key={i} delay={(pos % 5) * 90} y={36}>
               <div
                 className={`rg-team-card${clickable ? ' rg-team-card-clickable' : ''}`}
                 {...(clickable ? {
@@ -276,7 +282,9 @@ function Team() {
                 } : {})}
                 style={{ background: RG.white, borderRadius: 18, border: `1px solid ${RG.lineSoft}`, boxShadow: '0 12px 32px -14px rgba(20,20,18,0.16)', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', cursor: clickable ? 'pointer' : 'default' }}>
                 <div className="rg-team-photo" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: RG.creamSoft }}>
-                  <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  {m.src
+                    ? <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    : <AvatarPlaceholder name={m.name} size={30} />}
                 </div>
                 <div style={{ padding: '20px 20px 22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ fontFamily: F_DISPLAY, fontSize: 19, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>

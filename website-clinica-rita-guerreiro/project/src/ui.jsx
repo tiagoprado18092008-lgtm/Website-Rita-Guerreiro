@@ -27,6 +27,24 @@ function Reveal({ children, delay = 0, y = 28, as: Tag = 'div', style = {} }) {
   return <Tag ref={ref} style={{ opacity: seen ? 1 : 0, transform: seen ? 'translateY(0)' : `translateY(${y}px)`, transition: `opacity 800ms cubic-bezier(.16,.8,.2,1) ${delay}ms, transform 800ms cubic-bezier(.16,.8,.2,1) ${delay}ms`, ...style }}>{children}</Tag>;
 }
 
+// Avatar com iniciais — usado enquanto não há foto individual de um profissional
+// da equipa (m.src vazio/undefined). Evita reutilizar por engano a foto de outra
+// pessoa. Substituir por foto real assim que a clínica a enviar.
+function initials(name) {
+  const parts = (name || '').trim().split(/\s+/);
+  const first = parts[0]?.[0] || '';
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : '';
+  return (first + last).toUpperCase();
+}
+
+function AvatarPlaceholder({ name, size }) {
+  return (
+    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: RG.tealWash }}>
+      <span style={{ fontFamily: F_DISPLAY, fontSize: size, fontWeight: 700, color: RG.tealDark }}>{initials(name)}</span>
+    </div>
+  );
+}
+
 function Eyebrow({ children, color = RG.tealDark, style = {} }) {
   return <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color, ...style }}>{children}</div>;
 }
@@ -986,4 +1004,4 @@ function WAFab() {
   );
 }
 
-Object.assign(window, { Container, Reveal, Eyebrow, Heading, Body, Button, Nav, Photo, Section, Footer, WAFab });
+Object.assign(window, { Container, Reveal, Eyebrow, Heading, Body, Button, Nav, Photo, Section, Footer, WAFab, AvatarPlaceholder });

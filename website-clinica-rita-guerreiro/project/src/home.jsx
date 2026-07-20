@@ -127,7 +127,9 @@ function Hero() {
 // ────────────────────────────────────────────────────────────────────────────
 function EquipaIntro() {
   const { t } = useLang();
-  const members = t('sobre.team_members') || [];
+  const allMembers = t('sobre.team_members') || [];
+  // Teaser mostra só os primeiros 5 (a equipa completa tem mais); "Ver equipa" leva ao resto.
+  const members = allMembers.slice(0, 5);
   return (
     <Section bg={RG.tealWash} pad="lg">
       {/* Container mais largo que o resto do site — os 5 cartões têm de caber
@@ -157,7 +159,9 @@ function EquipaIntro() {
                 overflow: 'hidden',
               }}>
                 <div className="rg-team-photo" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: RG.creamSoft }}>
-                  <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  {m.src
+                    ? <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    : <AvatarPlaceholder name={m.name} size={30} />}
                 </div>
                 <div style={{ padding: '18px 20px 20px' }}>
                   <div style={{ fontFamily: F_DISPLAY, fontSize: 18, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>
