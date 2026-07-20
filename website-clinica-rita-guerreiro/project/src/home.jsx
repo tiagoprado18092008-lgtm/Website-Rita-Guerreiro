@@ -160,7 +160,7 @@ function EquipaIntro() {
               }}>
                 <div className="rg-team-photo" style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: RG.creamSoft }}>
                   {m.src
-                    ? <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    ? <img src={m.src} alt={m.name} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.imgPos || 'center top', display: 'block' }} />
                     : <AvatarPlaceholder name={m.name} size={30} />}
                 </div>
                 <div style={{ padding: '18px 20px 20px' }}>

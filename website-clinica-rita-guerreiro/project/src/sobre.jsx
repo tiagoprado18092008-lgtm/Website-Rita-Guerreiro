@@ -290,10 +290,9 @@ function Team() {
                 </div>
                 <div style={{ padding: '20px 20px 22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ fontFamily: F_DISPLAY, fontSize: 19, fontWeight: 700, letterSpacing: '-0.015em', color: RG.ink, marginBottom: 4 }}>{m.name}</div>
-                  <div className="rg-team-role" style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark, marginBottom: 12 }}>{m.role}</div>
-                  <div style={{ fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, lineHeight: 1.6 }}>{m.bio}</div>
+                  <div className="rg-team-role" style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark }}>{m.role}</div>
                   {clickable && (
-                    <div className="rg-team-card-cta" style={{ marginTop: 14, fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.tealDark, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    <div className="rg-team-card-cta" style={{ marginTop: 'auto', paddingTop: 16, fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: RG.tealDark, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                       {t('sobre.team_card_cta')} <span className="rg-team-card-arrow" aria-hidden="true">→</span>
                     </div>
                   )}
