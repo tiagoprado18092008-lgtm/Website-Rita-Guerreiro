@@ -8,7 +8,7 @@ const IMG = {
   acupuntura: '/assets/fotos/servico-acupuntura.jpg?v=20260720',
   mesoterapia: '/assets/fotos/servico-mesoterapia.jpg?v=20260720',
   // Foto certa enviada pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia ATM.jpg").
-  'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.jpg?v=20260715h',
+  'fisioterapia-atm': '/assets/fotos/servico-fisioterapia-atm.png?v=20260721b',
   // Fotos certas enviadas pela cliente ("Fotos clinica Rita Guerreiro/Fisioterapia
   // pediatrica.png" e ".../Vestibular.png").
   'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.png?v=20260720',
