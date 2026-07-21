@@ -21,7 +21,7 @@ const IMG = {
   'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg?v=20260716',
   // Foto que estava na Fisioterapia Pediátrica — é mesmo de massagem a criança.
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
-  'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
+  'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260721d',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
   'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721c',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
