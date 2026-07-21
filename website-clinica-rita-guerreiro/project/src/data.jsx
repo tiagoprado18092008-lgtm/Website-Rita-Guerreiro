@@ -23,7 +23,7 @@ const IMG = {
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
-  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721',
+  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721b',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
   // ainda não tem foto própria, a cliente vai enviar.
@@ -56,7 +56,6 @@ const SERVICES = {
       { slug: 'fisioterapia-geral', name: 'Fisioterapia Clínica', img: IMG['fisioterapia-manual'], blurb: 'Quando a dor ou a lesão limitam o dia-a-dia, ajudamos a recuperar — com avaliação rigorosa e um plano feito a pensar em si.', price: '50€' },
       { slug: 'fisioterapia-pediatrica', name: 'Fisioterapia Pediátrica', img: IMG['fisioterapia-pediatrica'], blurb: 'Fisioterapia adaptada às diferentes fases do crescimento — para bebés, crianças e adolescentes, num ambiente seguro e adequado a cada idade.', price: '50€' },
       { slug: 'fisioterapia-atm', name: 'Fisioterapia ATM', img: IMG['fisioterapia-atm'], blurb: 'Dor, bloqueio ou cliques na mandíbula? Tratamos a articulação temporomandibular com técnica manual especializada.', price: '60€' },
-      { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
       { slug: 'fisioterapia-vestibular', name: 'Fisioterapia Vestibular', img: IMG['fisioterapia-vestibular'], blurb: 'Tonturas, vertigens e desequilíbrios têm tratamento — com manobras específicas e exercícios que recuperam a sua estabilidade.', price: '50€ / Pack 5: 225€' },
       { slug: 'fisioterapia-oncologica', name: 'Fisioterapia Oncológica', img: IMG['fisioterapia-oncologica'], blurb: 'Prevenir, minimizar e tratar as sequelas físicas do cancro e dos seus tratamentos — preservando a funcionalidade, a autonomia e a qualidade de vida em todas as fases.', price: '50€ / Pack 5: 225€' },
     ],
@@ -78,7 +77,7 @@ const SERVICES = {
       { slug: 'massagem-criancas', name: 'Massagem para Crianças', img: IMG['massagem-criancas'], blurb: 'Massagem suave e adaptada aos mais novos — para promover sono, calma e bem-estar.', price: '30€' },
       { slug: 'massagem-assinatura-rg', name: 'Massagem Assinatura RG', img: IMG['massagem-assinatura-rg'], blurb: 'A massagem de excelência da clínica — 80 minutos para combinar relaxamento profundo e trabalho muscular.', price: '75€' },
       { slug: 'massagem-profunda', name: 'Massagem Profunda / Desportiva', img: IMG['massagem-profunda'], blurb: 'Deep tissue e sport massage — trabalho muscular profundo para quem exige mais do corpo, no treino ou no dia-a-dia.', price: '45€ / 75€' },
-      { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], imgPos: 'center 90%', blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
+      { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], imgPos: 'center top', blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
       { slug: 'massagem-sacro-craniana', name: 'Massagem Sacro-Craniana', img: IMG['massagem-sacro-craniana'], blurb: 'Técnica de toque suave sobre o sistema sacro-craniano — alivia tensão, cefaleias e stress sem esforço.', price: '40€' },
       { slug: 'drenagem-linfatica', name: 'Drenagem Pós-Operatório', img: IMG['drenagem-linfatica'], blurb: 'Drenagem linfática especializada para a recuperação após cirurgia — reduz edema, hematomas e acelera a cicatrização.', price: '60€ / 80€' },
       { slug: 'drenagem-linfatica-manual', name: 'Drenagem Linfática Manual', img: IMG['drenagem-linfatica-manual'], blurb: 'Drenagem Linfática Manual (Método Vodder) — movimentos suaves e rítmicos que estimulam a circulação e reduzem a retenção de líquidos.', price: '50€ / 80€' },
@@ -101,6 +100,7 @@ const SERVICES = {
     intro: 'Tecnologia avançada, avaliação prévia e protocolo personalizado.',
     items: [
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
+      { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
       { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
     ],

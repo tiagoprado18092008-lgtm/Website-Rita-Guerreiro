@@ -270,7 +270,7 @@ const TRANSLATIONS = {
       story_p2: 'Desde 2022 recebemos pessoas de todas as idades, com histórias muito diferentes. O que fica igual em todas elas é a forma como as recebemos: com escuta, com atenção e com continuidade.',
       stats: [
         { v: '2022', l: 'Ano de fundação' },
-        { v: '+10', l: 'Profissionais dedicadas' },
+        { v: '+10', l: 'Profissionais dedicados' },
         { v: '+20', l: 'Terapias disponíveis' },
       ],
       founder_eyebrow: 'A fundadora',
@@ -963,7 +963,7 @@ const TRANSLATIONS = {
       story_p2: 'Depuis 2022, nous accueillons des personnes de tous âges, avec des histoires très différentes. Ce qui reste le même pour toutes, c’est la façon dont nous les recevons : avec écoute, attention et continuité.',
       stats: [
         { v: '2022', l: 'Année de fondation' },
-        { v: '+10', l: 'Professionnelles dévouées' },
+        { v: '+10', l: 'Professionnels dévoués' },
         { v: '+20', l: 'Thérapies disponibles' },
       ],
       founder_eyebrow: 'La fondatrice',
@@ -1318,7 +1318,7 @@ const TRANSLATIONS = {
       story_p2: 'Desde 2022 recibimos personas de todas las edades, con historias muy distintas. Lo que se mantiene igual en todas ellas es la forma en que las recibimos: con escucha, con atención y con continuidad.',
       stats: [
         { v: '2022', l: 'Año de fundación' },
-        { v: '+10', l: 'Profesionales dedicadas' },
+        { v: '+10', l: 'Profesionales dedicados' },
         { v: '+20', l: 'Terapias disponibles' },
       ],
       founder_eyebrow: 'La fundadora',

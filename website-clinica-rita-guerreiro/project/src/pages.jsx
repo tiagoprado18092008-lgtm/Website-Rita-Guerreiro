@@ -853,7 +853,7 @@ function ContactosPage() {
               decoding="async"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 32%' }}
             />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(11,43,41,0.80) 0%, rgba(11,43,41,0.20) 40%, rgba(11,43,41,0) 64%)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(11,43,41,0.94) 0%, rgba(11,43,41,0.78) 42%, rgba(11,43,41,0.35) 70%, rgba(11,43,41,0) 92%)' }} />
             <figcaption style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 'clamp(24px, 4vw, 46px)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
                 <div style={{ width: 28, height: 2, background: 'rgba(255,255,255,0.72)' }} />

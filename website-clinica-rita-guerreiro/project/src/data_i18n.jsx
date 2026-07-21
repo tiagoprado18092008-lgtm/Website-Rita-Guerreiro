@@ -11,7 +11,6 @@ const SERVICES_I18N = {
         'fisioterapia-geral': { name: 'Clinical Physiotherapy', blurb: 'When pain or injury limits your daily life, we help you recover — with rigorous assessment and a plan tailored to you' },
         'fisioterapia-pediatrica': { name: 'Paediatric Physiotherapy', blurb: 'Physiotherapy adapted to each stage of growth — for babies, children and adolescents, in a safe, age-appropriate setting' },
         'fisioterapia-atm': { name: 'TMJ Physiotherapy', blurb: 'Pain, locking or clicking in your jaw? We treat the temporomandibular joint with specialised manual technique' },
-        mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
         'fisioterapia-vestibular': { name: 'Vestibular Physiotherapy', blurb: 'Dizziness, vertigo and imbalance can be treated — with specific manoeuvres and exercises that restore your stability' },
         'fisioterapia-oncologica': { name: 'Oncology Physiotherapy', blurb: 'Preventing, minimising and treating the physical after-effects of cancer and its treatments — preserving function, autonomy and quality of life at every stage' },
       },
@@ -56,6 +55,7 @@ const SERVICES_I18N = {
       intro: 'Advanced technology, prior assessment and a personalised protocol',
       items: {
         facial: { name: 'Facials', blurb: 'Skin cleansing, extraction and personalised facials — for healthy, balanced skin' },
+        mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
         'depilacao-laser': { name: 'Laser Hair Removal', blurb: 'Permanent hair removal with state-of-the-art technology — for women and men, all body areas' },
         'pilates-clinico': { name: 'Clinical Pilates', blurb: 'Pilates supervised by a physiotherapist — exercise adapted to injuries, chronic pain or rehabilitation' },
       },
@@ -69,7 +69,6 @@ const SERVICES_I18N = {
         'fisioterapia-geral': { name: 'Physiothérapie clinique', blurb: 'Quand la douleur ou la blessure limite votre quotidien, nous vous aidons à récupérer — avec une évaluation rigoureuse et un plan pensé pour vous' },
         'fisioterapia-pediatrica': { name: 'Physiothérapie pédiatrique', blurb: 'Physiothérapie adaptée à chaque étape de la croissance — pour bébés, enfants et adolescents, dans un environnement sûr et adapté à chaque âge' },
         'fisioterapia-atm': { name: 'Physiothérapie ATM', blurb: 'Douleur, blocage ou claquements de la mâchoire ? Nous traitons l’articulation temporo-mandibulaire avec une technique manuelle spécialisée' },
-        mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
         'fisioterapia-vestibular': { name: 'Physiothérapie vestibulaire', blurb: 'Vertiges, étourdissements et troubles de l’équilibre peuvent être traités — avec des manœuvres spécifiques et des exercices qui rétablissent votre stabilité' },
         'fisioterapia-oncologica': { name: 'Physiothérapie oncologique', blurb: 'Prévenir, réduire et traiter les séquelles physiques du cancer et de ses traitements — en préservant la fonction, l’autonomie et la qualité de vie à chaque étape' },
       },
@@ -114,6 +113,7 @@ const SERVICES_I18N = {
       intro: 'Technologie avancée, évaluation préalable et protocole personnalisé',
       items: {
         facial: { name: 'Soins du visage', blurb: 'Nettoyage de peau, extraction et soin facial personnalisé — pour une peau saine et équilibrée' },
+        mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
         'depilacao-laser': { name: 'Épilation au laser', blurb: 'Épilation définitive avec une technologie de dernière génération — pour femme et homme, toutes les zones du corps' },
         'pilates-clinico': { name: 'Pilates clinique', blurb: 'Pilates supervisé par un physiothérapeute — exercice adapté aux blessures, douleur chronique ou réadaptation' },
       },
@@ -127,7 +127,6 @@ const SERVICES_I18N = {
         'fisioterapia-geral': { name: 'Fisioterapia Clínica', blurb: 'Cuando el dolor o la lesión le limitan el día a día, le ayudamos a recuperarse — con evaluación rigurosa y un plan pensado para usted' },
         'fisioterapia-pediatrica': { name: 'Fisioterapia Pediátrica', blurb: 'Fisioterapia adaptada a cada etapa del crecimiento — para bebés, niños y adolescentes, en un entorno seguro y adecuado a cada edad' },
         'fisioterapia-atm': { name: 'Fisioterapia ATM', blurb: '¿Dolor, bloqueo o chasquidos en la mandíbula? Tratamos la articulación temporomandibular con técnica manual especializada' },
-        mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
         'fisioterapia-vestibular': { name: 'Fisioterapia Vestibular', blurb: 'Mareos, vértigos y desequilibrios tienen tratamiento — con maniobras específicas y ejercicios que recuperan su estabilidad' },
         'fisioterapia-oncologica': { name: 'Fisioterapia Oncológica', blurb: 'Prevenir, minimizar y tratar las secuelas físicas del cáncer y de sus tratamientos — preservando la función, la autonomía y la calidad de vida en todas las fases' },
       },
@@ -172,6 +171,7 @@ const SERVICES_I18N = {
       intro: 'Tecnología avanzada, evaluación previa y protocolo personalizado',
       items: {
         facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado — para una piel sana y equilibrada' },
+        mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
         'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación definitiva con tecnología de última generación — para mujer y hombre, todas las zonas' },
         'pilates-clinico': { name: 'Pilates Clínico', blurb: 'Pilates supervisado por un fisioterapeuta — ejercicio adaptado a lesiones, dolor crónico o rehabilitación' },
       },
