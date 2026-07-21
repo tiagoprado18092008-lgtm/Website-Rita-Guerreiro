@@ -23,7 +23,7 @@ const IMG = {
   'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260715f',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
-  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721b',
+  'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721c',
   'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
   // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
   // ainda não tem foto própria, a cliente vai enviar.
@@ -77,7 +77,7 @@ const SERVICES = {
       { slug: 'massagem-criancas', name: 'Massagem para Crianças', img: IMG['massagem-criancas'], blurb: 'Massagem suave e adaptada aos mais novos — para promover sono, calma e bem-estar.', price: '30€' },
       { slug: 'massagem-assinatura-rg', name: 'Massagem Assinatura RG', img: IMG['massagem-assinatura-rg'], blurb: 'A massagem de excelência da clínica — 80 minutos para combinar relaxamento profundo e trabalho muscular.', price: '75€' },
       { slug: 'massagem-profunda', name: 'Massagem Profunda / Desportiva', img: IMG['massagem-profunda'], blurb: 'Deep tissue e sport massage — trabalho muscular profundo para quem exige mais do corpo, no treino ou no dia-a-dia.', price: '45€ / 75€' },
-      { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], imgPos: 'center top', blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
+      { slug: 'massagem-pre-pos-natal', name: 'Massagem Pré/Pós Natal', img: IMG['massagem-pre-pos-natal'], imgPos: 'center center', blurb: 'Adaptada às mudanças do corpo durante a gravidez e à recuperação no pós-parto — com conforto e posicionamento seguro.', price: '45€' },
       { slug: 'massagem-sacro-craniana', name: 'Massagem Sacro-Craniana', img: IMG['massagem-sacro-craniana'], blurb: 'Técnica de toque suave sobre o sistema sacro-craniano — alivia tensão, cefaleias e stress sem esforço.', price: '40€' },
       { slug: 'drenagem-linfatica', name: 'Drenagem Pós-Operatório', img: IMG['drenagem-linfatica'], blurb: 'Drenagem linfática especializada para a recuperação após cirurgia — reduz edema, hematomas e acelera a cicatrização.', price: '60€ / 80€' },
       { slug: 'drenagem-linfatica-manual', name: 'Drenagem Linfática Manual', img: IMG['drenagem-linfatica-manual'], blurb: 'Drenagem Linfática Manual (Método Vodder) — movimentos suaves e rítmicos que estimulam a circulação e reduzem a retenção de líquidos.', price: '50€ / 80€' },
