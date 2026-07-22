@@ -190,7 +190,7 @@ function TeamModal({ members, index, onClose, onStep }) {
         <button aria-label="Fechar" onClick={onClose}
           style={{ position: 'absolute', top: 14, right: 14, zIndex: 3, width: 40, height: 40, borderRadius: 999, border: 'none', cursor: 'pointer', background: 'rgba(255,255,255,0.85)', color: RG.ink, fontSize: 18, lineHeight: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 10px rgba(20,20,18,0.18)' }}>✕</button>
 
-        <div className="rg-team-modal-photo" style={{ position: 'relative', flex: '0 0 42%', minHeight: 320, background: RG.creamSoft }}>
+        <div className="rg-team-modal-photo" style={{ position: 'relative', flex: '0 0 42%', minHeight: 320, background: RG.creamSoft, overflow: 'hidden' }}>
           {m.src
             ? <img src={m.src} alt={m.name} decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: m.imgPos || 'center top', transform: m.imgScale ? `scale(${m.imgScale})` : undefined, transformOrigin: m.imgPos || 'center top', display: 'block' }} />
             : <AvatarPlaceholder name={m.name} size={56} />}
