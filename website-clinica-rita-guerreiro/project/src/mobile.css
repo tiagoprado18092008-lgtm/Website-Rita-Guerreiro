@@ -195,8 +195,15 @@
     min-height: clamp(640px, calc(100vh - 88px), 900px);
   }
   .rg-hero-home-content { flex: 0 1 31% !important; }
-  .rg-hero-home-photo { align-self: stretch; }
-  .rg-hero-home-photo img { height: 100% !important; }
+  /* Foto na proporção nativa (2400×1324) em vez de esticada à altura da secção —
+     esticar cortaria as pessoas das pontas (o retrato é mais largo que a coluna
+     disponível). Assim mostra-se a equipa toda, sem cortar ninguém. */
+  .rg-hero-home-photo {
+    align-self: center !important;
+    aspect-ratio: 2400 / 1324;
+    height: auto !important;
+  }
+  .rg-hero-home-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center !important; }
 }
 
 /* Sem degradê sobre a foto do hero — a foto fica limpa em todos os tamanhos. */
@@ -222,7 +229,7 @@
     height: clamp(400px, 62vh, 700px) !important;
   }
   .rg-hero-home-photo img {
-    object-position: center 18% !important;
+    object-position: center 10% !important;
   }
   .rg-hero-home-content {
     flex: none !important;
@@ -256,7 +263,7 @@
     flex: none !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 2000 / 1215 !important;
+    aspect-ratio: 2400 / 1324 !important;
     min-height: 0 !important;
     max-height: none !important;
     margin-top: 64px; /* compensa header fixo */
@@ -267,7 +274,7 @@
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 25% !important;
+    object-position: center !important;
     background: #f5f0eb !important;
   }
   /* Gradiente em baixo para transição suave */

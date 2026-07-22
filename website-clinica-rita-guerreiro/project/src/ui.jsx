@@ -90,6 +90,20 @@ function Nav({ current = 'home' }) {
   const [langOpen, setLangOpen] = React.useState(false);
   const [activeCol, setActiveCol] = React.useState(null);
   const dropTimerRef = React.useRef(null);
+  const megaRowRefs = React.useRef([]);
+  const megaPanelRef = React.useRef(null);
+  const megaListRef = React.useRef(null);
+  const [megaPanelTop, setMegaPanelTop] = React.useState(0);
+
+  React.useLayoutEffect(() => {
+    if (activeCol === null) return;
+    const row = megaRowRefs.current[activeCol];
+    const list = megaListRef.current;
+    const panel = megaPanelRef.current;
+    if (!row || !list || !panel) return;
+    const maxTop = Math.max(0, list.offsetHeight - panel.offsetHeight);
+    setMegaPanelTop(Math.min(row.offsetTop, maxTop));
+  }, [activeCol]);
 
   const openServicos = () => { if (dropTimerRef.current) clearTimeout(dropTimerRef.current); setOpenDrop('servicos'); };
   const closeServicos = () => { dropTimerRef.current = setTimeout(() => { setOpenDrop(null); setActiveCol(null); }, 120); };
@@ -228,11 +242,11 @@ function Nav({ current = 'home' }) {
                     onMouseLeave={closeServicos}
                     style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-105px)', zIndex: 1001, paddingTop: 4 }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
+                    <div style={{ position: 'relative', width: 486, height: 'auto' }}>
                       {/* Painel esquerdo: categorias com ícones */}
-                      <div style={{ width: 230, flexShrink: 0, background: 'white', borderRadius: '0 0 16px 16px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF' }}>
+                      <div ref={megaListRef} style={{ width: 230, flexShrink: 0, background: 'white', borderRadius: '0 0 16px 16px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF' }}>
                         {megaCols.map((col, ci) => (
-                          <div key={col.id}>
+                          <div key={col.id} ref={el => { megaRowRefs.current[ci] = el; }}>
                             <div
                               onMouseEnter={() => setActiveCol(ci)}
                               onClick={() => { if (col.href) window.location.href = col.href; }}
@@ -256,8 +270,8 @@ function Nav({ current = 'home' }) {
                         ))}
                       </div>
 
-                      {/* Painel direito: subserviços */}
-                      <div style={{ width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
+                      {/* Painel direito: subserviços — acompanha verticalmente a categoria em foco */}
+                      <div ref={megaPanelRef} style={{ position: 'absolute', left: 236, top: megaPanelTop, transition: 'top 180ms cubic-bezier(.2,.8,.2,1)', width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
                         {activeCol !== null && <>
                           <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF' }}>
                             <div style={{ fontFamily: F_BODY, fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
@@ -276,7 +290,7 @@ function Nav({ current = 'home' }) {
                           {megaCols[activeCol].href && (
                             <div style={{ padding: '10px 16px 14px', borderTop: '1px solid #E8E6DF' }}>
                               <a href={megaCols[activeCol].href}
-                                style={{ fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 400, color: RG.tealDark, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
+                                style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 500, color: RG.tealDark, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
                                 onMouseEnter={e => e.currentTarget.style.color = RG.tealDeep}
                                 onMouseLeave={e => e.currentTarget.style.color = RG.tealDark}
                               >

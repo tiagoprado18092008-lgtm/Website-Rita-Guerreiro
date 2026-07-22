@@ -37,8 +37,8 @@ const IMG = {
   'head-spa': '/assets/fotos/servico-head-spa.jpg?v=20260715i',
   facial: '/assets/fotos/servico-facial.jpg?v=20260715f',
   'depilacao-laser': '/assets/fotos/servico-depilacao-laser.png?v=20260721',
-  'pilates-clinico': '/assets/pilates.jpg',
-  hipopressivos: '/assets/tratamento-movimento.png',
+  'pilates-clinico': '/assets/fotos/pilates-clinico.jpg?v=20260722',
+  hipopressivos: '/assets/fotos/hipopressivos.jpg?v=20260722',
   'personal-trainer': '/assets/fotos/estudio-pilates.jpg',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg?v=20260715f',
   // Genéricos — fotos reais da clínica
