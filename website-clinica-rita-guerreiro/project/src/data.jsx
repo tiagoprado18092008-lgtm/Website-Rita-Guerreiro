@@ -14,7 +14,7 @@ const IMG = {
   'fisioterapia-pediatrica': '/assets/fotos/servico-fisioterapia-pediatrica.png?v=20260720',
   'fisioterapia-vestibular': '/assets/fotos/servico-fisioterapia-vestibular.jpg?v=20260716',
   'fisioterapia-oncologica': '/assets/fotos/servico-fisioterapia-oncologica.jpg?v=20260714c',
-  psicologia: '/assets/fotos/servico-psicologia.jpg?v=20260715b',
+  psicologia: '/assets/fotos/servico-psicologia.jpg?v=20260722',
   nutricao: '/assets/fotos/servico-nutricao.jpg',
   'terapia-bowen': '/assets/fotos/servico-terapia-bowen.jpg?v=20260715f',
   'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
