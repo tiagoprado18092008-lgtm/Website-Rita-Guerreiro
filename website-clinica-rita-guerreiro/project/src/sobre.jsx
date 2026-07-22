@@ -196,7 +196,7 @@ function TeamModal({ members, index, onClose, onStep }) {
             : <AvatarPlaceholder name={m.name} size={56} />}
         </div>
 
-        <div className="rg-team-modal-body" style={{ flex: 1, minWidth: 0, padding: 'clamp(26px, 4vw, 44px)', overflowY: 'auto' }}>
+        <div className="rg-team-modal-body" style={{ flex: 1, minWidth: 0, padding: 'clamp(26px, 4vw, 44px)', paddingLeft: 'clamp(34px, 5vw, 60px)', overflowY: 'auto' }}>
           <div style={{ fontFamily: F_MONO, fontSize: 11, fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: RG.tealDark }}>{m.role_long || m.role}</div>
           <div style={{ width: 40, height: 2, background: RG.teal, margin: '12px 0 16px' }} />
           <div style={{ fontFamily: F_DISPLAY, fontSize: 'clamp(26px, 4vw, 34px)', fontWeight: 700, letterSpacing: '-0.02em', color: RG.ink, lineHeight: 1.05 }}>{m.name}</div>
