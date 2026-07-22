@@ -629,7 +629,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Hypopressive abdominal exercise — strengthening the core and pelvic floor from the inside out',
       description: 'Hypopressives are a set of postural and breathing techniques that reduce the pressure inside the abdominal cavity. Unlike traditional crunches, they reflexively activate the deep core and pelvic floor muscles, making them especially suitable postpartum, for preventing hernias and for improving posture.',
       prices: [
-        { label: 'Session', value: 'On request' },
+        { label: 'Monthly fee', value: '35€' },
       ],
       sub: [
         { t: 'Postpartum', d: 'Recovery of the abdominal wall and pelvic floor after pregnancy, with safe progression' },
@@ -644,7 +644,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Personalised, supervised training — your goals, a plan built for you',
       description: 'Working with a personal trainer ensures an individualised training plan, tailored to your fitness level, goals and availability. With close supervision in every session, exercise is performed with correct technique and appropriate progression — safely, motivating and effectively.',
       prices: [
-        { label: 'Session', value: 'On request' },
+        { label: 'Session', value: '45€' },
+        { label: 'Pack (per session)', value: '40€' },
       ],
       sub: [
         { t: 'Weight loss', d: 'Plans that combine training and energy expenditure for healthy, sustainable weight loss' },
@@ -1081,7 +1082,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Gymnastique abdominale hypopressive — renforcer le core et le plancher pelvien de l’intérieur',
       description: "Les hypopressifs sont un ensemble de techniques posturales et respiratoires qui réduisent la pression à l'intérieur de la cavité abdominale. Contrairement aux abdominaux traditionnels, ils activent de façon réflexe la musculature profonde du core et du plancher pelvien, et sont particulièrement indiqués en post-partum, dans la prévention des hernies et pour améliorer la posture.",
       prices: [
-        { label: 'Séance', value: 'Sur demande' },
+        { label: 'Mensualité', value: '35€' },
       ],
       sub: [
         { t: 'Post-partum', d: 'Récupération de la paroi abdominale et du plancher pelvien après la grossesse, avec une progression sûre' },
@@ -1096,7 +1097,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Entraînement personnalisé et encadré — vos objectifs, un plan sur mesure',
       description: "L'accompagnement par un coach sportif garantit un plan d'entraînement individualisé, ajusté à votre condition physique, vos objectifs et votre disponibilité. Avec un suivi proche à chaque séance, l'exercice est exécuté avec une technique correcte et une progression adaptée — en toute sécurité, motivant et efficace.",
       prices: [
-        { label: 'Séance', value: 'Sur demande' },
+        { label: 'Séance', value: '45€' },
+        { label: 'Pack (par séance)', value: '40€' },
       ],
       sub: [
         { t: 'Perte de poids', d: 'Des plans qui combinent entraînement et dépense énergétique pour une perte de poids saine et durable' },
@@ -1533,7 +1535,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Gimnasia abdominal hipopresiva — fortalecer el core y el suelo pélvico de dentro hacia fuera',
       description: 'Los hipopresivos son un conjunto de técnicas posturales y respiratorias que reducen la presión dentro de la cavidad abdominal. A diferencia de los abdominales tradicionales, activan de forma refleja la musculatura profunda del core y del suelo pélvico, siendo especialmente indicados en el posparto, en la prevención de hernias y en la mejora de la postura.',
       prices: [
-        { label: 'Sesión', value: 'A consultar' },
+        { label: 'Cuota mensual', value: '35€' },
       ],
       sub: [
         { t: 'Posparto', d: 'Recuperación de la pared abdominal y del suelo pélvico tras el embarazo, con progresión segura' },
@@ -1548,7 +1550,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Entrenamiento personalizado y supervisado — sus objetivos, un plan a su medida',
       description: 'El acompañamiento por entrenador personal garantiza un plan de entrenamiento individualizado, ajustado a su condición física, objetivos y disponibilidad. Con supervisión cercana en cada sesión, el ejercicio se ejecuta con técnica correcta y progresión adecuada — de forma segura, motivadora y eficaz.',
       prices: [
-        { label: 'Sesión', value: 'A consultar' },
+        { label: 'Sesión', value: '45€' },
+        { label: 'Pack (por sesión)', value: '40€' },
       ],
       sub: [
         { t: 'Pérdida de peso', d: 'Planes que combinan entrenamiento y gasto energético para una pérdida de peso saludable y sostenible' },

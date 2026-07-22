@@ -111,8 +111,8 @@ const SERVICES = {
     intro: 'Movimento supervisionado e adaptado a si — para prevenir, reabilitar e ganhar qualidade de vida.',
     items: [
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
-      { slug: 'hipopressivos', name: 'Hipopressivos', img: IMG.hipopressivos, blurb: 'Ginástica abdominal hipopressiva — técnica respiratória e postural que fortalece o core e o pavimento pélvico.', price: 'Sob consulta' },
-      { slug: 'personal-trainer', name: 'Personal Trainer', img: IMG['personal-trainer'], blurb: 'Treino personalizado e acompanhado — planos à sua medida para força, mobilidade e condição física.', price: 'Sob consulta' },
+      { slug: 'hipopressivos', name: 'Hipopressivos', img: IMG.hipopressivos, blurb: 'Ginástica abdominal hipopressiva — técnica respiratória e postural que fortalece o core e o pavimento pélvico.', price: '35€/mês' },
+      { slug: 'personal-trainer', name: 'Personal Trainer', img: IMG['personal-trainer'], blurb: 'Treino personalizado e acompanhado — planos à sua medida para força, mobilidade e condição física.', price: '45€ / 40€ pack' },
     ],
   },
 };
@@ -577,7 +577,7 @@ const SERVICE_DETAIL = {
     tagline: 'Ginástica abdominal hipopressiva — fortalecer o core e o pavimento pélvico de dentro para fora.',
     description: 'Os hipopressivos são um conjunto de técnicas posturais e respiratórias que reduzem a pressão dentro da cavidade abdominal. Ao contrário dos abdominais tradicionais, ativam de forma reflexa a musculatura profunda do core e do pavimento pélvico, sendo especialmente indicados no pós-parto, na prevenção de hérnias e na melhoria da postura.',
     prices: [
-      { label: 'Sessão', value: 'Sob consulta' },
+      { label: 'Mensalidade', value: '35€' },
     ],
     sub: [
       { t: 'Pós-parto', d: 'Recuperação da parede abdominal e do pavimento pélvico após a gravidez, com progressão segura.' },
@@ -592,7 +592,8 @@ const SERVICE_DETAIL = {
     tagline: 'Treino personalizado e acompanhado — os seus objetivos, um plano feito à sua medida.',
     description: 'O acompanhamento por personal trainer garante um plano de treino individualizado, ajustado à sua condição física, objetivos e disponibilidade. Com supervisão próxima em cada sessão, o exercício é executado com técnica correta e progressão adequada — de forma segura, motivadora e eficaz.',
     prices: [
-      { label: 'Sessão', value: 'Sob consulta' },
+      { label: 'Sessão', value: '45€' },
+      { label: 'Pack (por sessão)', value: '40€' },
     ],
     sub: [
       { t: 'Perda de peso', d: 'Planos que combinam treino e gasto energético para uma perda de peso saudável e sustentável.' },

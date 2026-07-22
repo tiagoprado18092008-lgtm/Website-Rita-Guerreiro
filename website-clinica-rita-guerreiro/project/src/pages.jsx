@@ -32,6 +32,7 @@ const CAT_ACCENT = {
   massagens:    { bg: '#F5F0EC', border: '#C4A882', dot: '#8A6540' },
   holisticas:   { bg: '#F0EDF6', border: '#A08CC0', dot: '#5E3F8F' },
   estetica:     { bg: '#F6EFF3', border: '#C487AA', dot: '#8F3F63' },
+  exercicio:    { bg: '#EAF3F5', border: '#7FB3C4', dot: '#2F6478' },
 };
 
 function ServicePage({ slug }) {

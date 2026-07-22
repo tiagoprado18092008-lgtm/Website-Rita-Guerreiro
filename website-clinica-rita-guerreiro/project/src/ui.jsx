@@ -145,6 +145,11 @@ function Nav({ current = 'home' }) {
         <path d="M12 2a5 5 0 0 1 5 5c0 3.5-5 13-5 13S7 10.5 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/>
       </svg>
     ),
+    'exercicio': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6.5 6.5 17.5 17.5"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/>
+      </svg>
+    ),
   };
 
   // Constrói o mega-menu dinamicamente a partir do catálogo localizado.
@@ -156,6 +161,7 @@ function Nav({ current = 'home' }) {
     massagens: '/servico/massagens',
     holisticas: '/servico/holisticas',
     estetica: '/servico/estetica',
+    exercicio: '/servico/exercicio',
   };
   const megaCols = Object.keys(servicesByLang).map(catId => ({
     id: catId,
