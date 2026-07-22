@@ -613,7 +613,7 @@ const TRANSLATIONS = {
       ],
       founder_eyebrow: 'The founder',
       team_eyebrow: 'Our team',
-      team_heading: 'Specialists who care about the person in front of them',
+      team_heading: 'Specialists dedicated to your wellbeing',
       team_body: 'Our team is made up of qualified professionals in various health fields, working together to offer you the best possible support — coordinated, human and effective.',
       team_members: [
         { name: 'Rita Guerreiro', role: 'Physiotherapist · Founder', role_long: 'Physiotherapist · Founder of Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Physiotherapist since 2009 and founder of the clinic. I believe in close, personal care that treats the person, not just the symptom.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
@@ -968,7 +968,7 @@ const TRANSLATIONS = {
       ],
       founder_eyebrow: 'La fondatrice',
       team_eyebrow: 'Notre équipe',
-      team_heading: 'Des spécialistes qui se soucient de la personne en face',
+      team_heading: 'Des spécialistes dédiés à votre bien-être',
       team_body: 'Notre équipe est composée de professionnels qualifiés dans divers domaines de la santé, qui travaillent ensemble pour vous offrir le meilleur accompagnement possible — coordonné, humain et efficace.',
       team_members: [
         { name: 'Rita Guerreiro', role: 'Physiothérapeute · Fondatrice', role_long: 'Physiothérapeute · Fondatrice du Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Physiothérapeute depuis 2009 et fondatrice de la clinique. Je crois en un accompagnement proche, qui soigne la personne et non seulement le symptôme.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
@@ -1323,7 +1323,7 @@ const TRANSLATIONS = {
       ],
       founder_eyebrow: 'La fundadora',
       team_eyebrow: 'Nuestro equipo',
-      team_heading: 'Especialistas que se preocupan por quien tienen delante',
+      team_heading: 'Especialistas dedicados a su bienestar',
       team_body: 'Nuestro equipo está formado por profesionales cualificados en diversas áreas de la salud, que trabajan juntos para ofrecerle el mejor acompañamiento posible — coordinado, humano y eficaz.',
       team_members: [
         { name: 'Rita Guerreiro', role: 'Fisioterapeuta · Fundadora', role_long: 'Fisioterapeuta · Fundadora del Centro de Terapias e Bem-Estar Rita Guerreiro', bio: 'Fisioterapeuta desde 2009 y fundadora de la clínica. Creo en un cuidado cercano, que trata a la persona y no solo el síntoma.', src: 'assets/fotos/rita-principal.jpg?v=20260717',
