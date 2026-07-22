@@ -38,6 +38,8 @@ const IMG = {
   facial: '/assets/fotos/servico-facial.jpg?v=20260715f',
   'depilacao-laser': '/assets/fotos/servico-depilacao-laser.png?v=20260721',
   'pilates-clinico': '/assets/pilates.jpg',
+  hipopressivos: '/assets/tratamento-movimento.png',
+  'personal-trainer': '/assets/fotos/estudio-pilates.jpg',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg?v=20260715f',
   // Genéricos — fotos reais da clínica
   clinicInterior: '/assets/fotos/rita-rececao.jpg',
@@ -102,7 +104,15 @@ const SERVICES = {
       { slug: 'facial', name: 'Faciais', img: IMG.facial, blurb: 'Limpeza de pele, extração e facial personalizado — para uma pele saudável e equilibrada.', price: '10€ – 55€' },
       { slug: 'mesoterapia', name: 'Mesoterapia', img: IMG.mesoterapia, blurb: 'Microinjeções com substâncias ativas para chegar à zona exata da dor, contratura ou preocupação estética — com rigor clínico.', price: '55€' },
       { slug: 'depilacao-laser', name: 'Depilação a Laser', img: IMG['depilacao-laser'], blurb: 'Depilação definitiva com tecnologia de última geração — para mulher e homem, todas as zonas.', price: 'Desde 20€/zona' },
+    ],
+  },
+  exercicio: {
+    label: 'Exercícios de Bem-Estar',
+    intro: 'Movimento supervisionado e adaptado a si — para prevenir, reabilitar e ganhar qualidade de vida.',
+    items: [
       { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
+      { slug: 'hipopressivos', name: 'Hipopressivos', img: IMG.hipopressivos, blurb: 'Ginástica abdominal hipopressiva — técnica respiratória e postural que fortalece o core e o pavimento pélvico.', price: 'Sob consulta' },
+      { slug: 'personal-trainer', name: 'Personal Trainer', img: IMG['personal-trainer'], blurb: 'Treino personalizado e acompanhado — planos à sua medida para força, mobilidade e condição física.', price: 'Sob consulta' },
     ],
   },
 };
@@ -561,6 +571,36 @@ const SERVICE_DETAIL = {
       { t: 'Osteoporose', d: 'Treino de força e equilíbrio com baixo impacto articular, para prevenir quedas e fraturas.' },
       { t: 'Escoliose e desvios posturais', d: 'Correção progressiva dos padrões posturais alterados com exercício supervisionado.' },
       { t: 'Performance e prevenção', d: 'Para quem quer melhorar a consciência corporal e prevenir lesões na prática desportiva.' },
+    ],
+  },
+  'hipopressivos': {
+    tagline: 'Ginástica abdominal hipopressiva — fortalecer o core e o pavimento pélvico de dentro para fora.',
+    description: 'Os hipopressivos são um conjunto de técnicas posturais e respiratórias que reduzem a pressão dentro da cavidade abdominal. Ao contrário dos abdominais tradicionais, ativam de forma reflexa a musculatura profunda do core e do pavimento pélvico, sendo especialmente indicados no pós-parto, na prevenção de hérnias e na melhoria da postura.',
+    prices: [
+      { label: 'Sessão', value: 'Sob consulta' },
+    ],
+    sub: [
+      { t: 'Pós-parto', d: 'Recuperação da parede abdominal e do pavimento pélvico após a gravidez, com progressão segura.' },
+      { t: 'Pavimento pélvico', d: 'Fortalecimento reflexo que ajuda na prevenção e no controlo da incontinência urinária.' },
+      { t: 'Diástase abdominal', d: 'Reeducação da parede abdominal para reaproximar os músculos rectos e reduzir a diástase.' },
+      { t: 'Postura e core', d: 'Melhoria da postura, da consciência corporal e da estabilidade central do tronco.' },
+      { t: 'Prevenção de hérnias', d: 'Redução da pressão intra-abdominal para prevenir hérnias e prolapsos.' },
+      { t: 'Complemento ao treino', d: 'Base de estabilidade profunda que potencia o rendimento noutras atividades físicas.' },
+    ],
+  },
+  'personal-trainer': {
+    tagline: 'Treino personalizado e acompanhado — os seus objetivos, um plano feito à sua medida.',
+    description: 'O acompanhamento por personal trainer garante um plano de treino individualizado, ajustado à sua condição física, objetivos e disponibilidade. Com supervisão próxima em cada sessão, o exercício é executado com técnica correta e progressão adequada — de forma segura, motivadora e eficaz.',
+    prices: [
+      { label: 'Sessão', value: 'Sob consulta' },
+    ],
+    sub: [
+      { t: 'Perda de peso', d: 'Planos que combinam treino e gasto energético para uma perda de peso saudável e sustentável.' },
+      { t: 'Força e tonificação', d: 'Programas de reforço muscular adaptados ao seu nível, do iniciante ao avançado.' },
+      { t: 'Condição física geral', d: 'Melhoria da resistência, mobilidade e energia para o dia-a-dia.' },
+      { t: 'Retoma da atividade', d: 'Reintrodução gradual do exercício para quem esteve parado ou vem de lesão.' },
+      { t: 'Preparação desportiva', d: 'Treino específico para melhorar performance numa modalidade ou objetivo.' },
+      { t: 'Motivação e acompanhamento', d: 'Supervisão próxima e responsabilização para manter a consistência e os resultados.' },
     ],
   },
 };

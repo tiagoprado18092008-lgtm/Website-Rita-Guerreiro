@@ -57,7 +57,15 @@ const SERVICES_I18N = {
         facial: { name: 'Facials', blurb: 'Skin cleansing, extraction and personalised facials — for healthy, balanced skin' },
         mesoterapia: { name: 'Mesotherapy', blurb: 'Micro-injections with active substances to reach the exact area of pain, contracture or aesthetic concern — with clinical precision' },
         'depilacao-laser': { name: 'Laser Hair Removal', blurb: 'Permanent hair removal with state-of-the-art technology — for women and men, all body areas' },
+      },
+    },
+    exercicio: {
+      label: 'Wellness Exercise',
+      intro: 'Supervised movement tailored to you — to prevent, rehabilitate and improve quality of life',
+      items: {
         'pilates-clinico': { name: 'Clinical Pilates', blurb: 'Pilates supervised by a physiotherapist — exercise adapted to injuries, chronic pain or rehabilitation' },
+        hipopressivos: { name: 'Hypopressives', blurb: 'Hypopressive abdominal exercise — a breathing and postural technique that strengthens the core and pelvic floor' },
+        'personal-trainer': { name: 'Personal Trainer', blurb: 'Personalised, supervised training — plans tailored to you for strength, mobility and fitness' },
       },
     },
   },
@@ -115,7 +123,15 @@ const SERVICES_I18N = {
         facial: { name: 'Soins du visage', blurb: 'Nettoyage de peau, extraction et soin facial personnalisé — pour une peau saine et équilibrée' },
         mesoterapia: { name: 'Mésothérapie', blurb: 'Micro-injections de substances actives pour atteindre la zone exacte de la douleur, contracture ou préoccupation esthétique — avec rigueur clinique' },
         'depilacao-laser': { name: 'Épilation au laser', blurb: 'Épilation définitive avec une technologie de dernière génération — pour femme et homme, toutes les zones du corps' },
+      },
+    },
+    exercicio: {
+      label: 'Exercices de bien-être',
+      intro: 'Mouvement supervisé et adapté à vous — pour prévenir, rééduquer et gagner en qualité de vie',
+      items: {
         'pilates-clinico': { name: 'Pilates clinique', blurb: 'Pilates supervisé par un physiothérapeute — exercice adapté aux blessures, douleur chronique ou réadaptation' },
+        hipopressivos: { name: 'Hypopressifs', blurb: 'Gymnastique abdominale hypopressive — une technique respiratoire et posturale qui renforce le core et le plancher pelvien' },
+        'personal-trainer': { name: 'Coach sportif', blurb: 'Entraînement personnalisé et encadré — des plans sur mesure pour la force, la mobilité et la condition physique' },
       },
     },
   },
@@ -173,7 +189,15 @@ const SERVICES_I18N = {
         facial: { name: 'Faciales', blurb: 'Limpieza de cutis, extracción y facial personalizado — para una piel sana y equilibrada' },
         mesoterapia: { name: 'Mesoterapia', blurb: 'Microinyecciones con sustancias activas para llegar a la zona exacta del dolor, contractura o preocupación estética — con rigor clínico' },
         'depilacao-laser': { name: 'Depilación Láser', blurb: 'Depilación definitiva con tecnología de última generación — para mujer y hombre, todas las zonas' },
+      },
+    },
+    exercicio: {
+      label: 'Ejercicios de Bienestar',
+      intro: 'Movimiento supervisado y adaptado a usted — para prevenir, rehabilitar y ganar calidad de vida',
+      items: {
         'pilates-clinico': { name: 'Pilates Clínico', blurb: 'Pilates supervisado por un fisioterapeuta — ejercicio adaptado a lesiones, dolor crónico o rehabilitación' },
+        hipopressivos: { name: 'Hipopresivos', blurb: 'Gimnasia abdominal hipopresiva — técnica respiratoria y postural que fortalece el core y el suelo pélvico' },
+        'personal-trainer': { name: 'Entrenador Personal', blurb: 'Entrenamiento personalizado y supervisado — planes a su medida para fuerza, movilidad y condición física' },
       },
     },
   },
@@ -601,6 +625,36 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Performance and prevention', d: 'For those who want to improve body awareness and prevent injuries in sport' },
       ],
     },
+    'hipopressivos': {
+      tagline: 'Hypopressive abdominal exercise — strengthening the core and pelvic floor from the inside out',
+      description: 'Hypopressives are a set of postural and breathing techniques that reduce the pressure inside the abdominal cavity. Unlike traditional crunches, they reflexively activate the deep core and pelvic floor muscles, making them especially suitable postpartum, for preventing hernias and for improving posture.',
+      prices: [
+        { label: 'Session', value: 'On request' },
+      ],
+      sub: [
+        { t: 'Postpartum', d: 'Recovery of the abdominal wall and pelvic floor after pregnancy, with safe progression' },
+        { t: 'Pelvic floor', d: 'Reflexive strengthening that helps prevent and control urinary incontinence' },
+        { t: 'Abdominal diastasis', d: 'Re-education of the abdominal wall to bring the rectus muscles closer and reduce diastasis' },
+        { t: 'Posture and core', d: 'Improved posture, body awareness and central trunk stability' },
+        { t: 'Hernia prevention', d: 'Reduced intra-abdominal pressure to prevent hernias and prolapse' },
+        { t: 'Training complement', d: 'A deep stability base that boosts performance in other physical activities' },
+      ],
+    },
+    'personal-trainer': {
+      tagline: 'Personalised, supervised training — your goals, a plan built for you',
+      description: 'Working with a personal trainer ensures an individualised training plan, tailored to your fitness level, goals and availability. With close supervision in every session, exercise is performed with correct technique and appropriate progression — safely, motivating and effectively.',
+      prices: [
+        { label: 'Session', value: 'On request' },
+      ],
+      sub: [
+        { t: 'Weight loss', d: 'Plans that combine training and energy expenditure for healthy, sustainable weight loss' },
+        { t: 'Strength and toning', d: 'Muscle-building programmes adapted to your level, from beginner to advanced' },
+        { t: 'General fitness', d: 'Improved endurance, mobility and energy for everyday life' },
+        { t: 'Return to activity', d: 'Gradual reintroduction of exercise for those who have been inactive or are recovering from injury' },
+        { t: 'Sports preparation', d: 'Specific training to improve performance in a sport or goal' },
+        { t: 'Motivation and support', d: 'Close supervision and accountability to keep consistency and results' },
+      ],
+    },
   },
   FR: {
     'fisioterapia-geral': {
@@ -1023,6 +1077,36 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Performance et prévention', d: 'Pour ceux qui veulent améliorer la conscience corporelle et prévenir les blessures en sport' },
       ],
     },
+    'hipopressivos': {
+      tagline: 'Gymnastique abdominale hypopressive — renforcer le core et le plancher pelvien de l’intérieur',
+      description: "Les hypopressifs sont un ensemble de techniques posturales et respiratoires qui réduisent la pression à l'intérieur de la cavité abdominale. Contrairement aux abdominaux traditionnels, ils activent de façon réflexe la musculature profonde du core et du plancher pelvien, et sont particulièrement indiqués en post-partum, dans la prévention des hernies et pour améliorer la posture.",
+      prices: [
+        { label: 'Séance', value: 'Sur demande' },
+      ],
+      sub: [
+        { t: 'Post-partum', d: 'Récupération de la paroi abdominale et du plancher pelvien après la grossesse, avec une progression sûre' },
+        { t: 'Plancher pelvien', d: 'Renforcement réflexe qui aide à prévenir et contrôler l’incontinence urinaire' },
+        { t: 'Diastasis abdominal', d: 'Rééducation de la paroi abdominale pour rapprocher les grands droits et réduire le diastasis' },
+        { t: 'Posture et core', d: 'Amélioration de la posture, de la conscience corporelle et de la stabilité centrale du tronc' },
+        { t: 'Prévention des hernies', d: 'Réduction de la pression intra-abdominale pour prévenir hernies et prolapsus' },
+        { t: 'Complément à l’entraînement', d: 'Base de stabilité profonde qui améliore la performance dans d’autres activités physiques' },
+      ],
+    },
+    'personal-trainer': {
+      tagline: 'Entraînement personnalisé et encadré — vos objectifs, un plan sur mesure',
+      description: "L'accompagnement par un coach sportif garantit un plan d'entraînement individualisé, ajusté à votre condition physique, vos objectifs et votre disponibilité. Avec un suivi proche à chaque séance, l'exercice est exécuté avec une technique correcte et une progression adaptée — en toute sécurité, motivant et efficace.",
+      prices: [
+        { label: 'Séance', value: 'Sur demande' },
+      ],
+      sub: [
+        { t: 'Perte de poids', d: 'Des plans qui combinent entraînement et dépense énergétique pour une perte de poids saine et durable' },
+        { t: 'Force et tonification', d: 'Programmes de renforcement musculaire adaptés à votre niveau, du débutant à l’avancé' },
+        { t: 'Condition physique générale', d: 'Amélioration de l’endurance, de la mobilité et de l’énergie au quotidien' },
+        { t: 'Reprise d’activité', d: 'Réintroduction progressive de l’exercice pour ceux qui ont arrêté ou reviennent de blessure' },
+        { t: 'Préparation sportive', d: 'Entraînement spécifique pour améliorer la performance dans une discipline ou un objectif' },
+        { t: 'Motivation et suivi', d: 'Un accompagnement proche et une responsabilisation pour maintenir la régularité et les résultats' },
+      ],
+    },
   },
   ES: {
     'fisioterapia-geral': {
@@ -1443,6 +1527,36 @@ const SERVICE_DETAIL_I18N = {
         { t: 'Osteoporosis', d: 'Entrenamiento de fuerza y equilibrio de bajo impacto articular, para prevenir caídas y fracturas' },
         { t: 'Escoliosis y desviaciones posturales', d: 'Corrección progresiva de patrones posturales alterados con ejercicio supervisado' },
         { t: 'Rendimiento y prevención', d: 'Para quien quiere mejorar la conciencia corporal y prevenir lesiones en el deporte' },
+      ],
+    },
+    'hipopressivos': {
+      tagline: 'Gimnasia abdominal hipopresiva — fortalecer el core y el suelo pélvico de dentro hacia fuera',
+      description: 'Los hipopresivos son un conjunto de técnicas posturales y respiratorias que reducen la presión dentro de la cavidad abdominal. A diferencia de los abdominales tradicionales, activan de forma refleja la musculatura profunda del core y del suelo pélvico, siendo especialmente indicados en el posparto, en la prevención de hernias y en la mejora de la postura.',
+      prices: [
+        { label: 'Sesión', value: 'A consultar' },
+      ],
+      sub: [
+        { t: 'Posparto', d: 'Recuperación de la pared abdominal y del suelo pélvico tras el embarazo, con progresión segura' },
+        { t: 'Suelo pélvico', d: 'Fortalecimiento reflejo que ayuda en la prevención y el control de la incontinencia urinaria' },
+        { t: 'Diástasis abdominal', d: 'Reeducación de la pared abdominal para reaproximar los rectos y reducir la diástasis' },
+        { t: 'Postura y core', d: 'Mejora de la postura, la conciencia corporal y la estabilidad central del tronco' },
+        { t: 'Prevención de hernias', d: 'Reducción de la presión intraabdominal para prevenir hernias y prolapsos' },
+        { t: 'Complemento al entrenamiento', d: 'Base de estabilidad profunda que potencia el rendimiento en otras actividades físicas' },
+      ],
+    },
+    'personal-trainer': {
+      tagline: 'Entrenamiento personalizado y supervisado — sus objetivos, un plan a su medida',
+      description: 'El acompañamiento por entrenador personal garantiza un plan de entrenamiento individualizado, ajustado a su condición física, objetivos y disponibilidad. Con supervisión cercana en cada sesión, el ejercicio se ejecuta con técnica correcta y progresión adecuada — de forma segura, motivadora y eficaz.',
+      prices: [
+        { label: 'Sesión', value: 'A consultar' },
+      ],
+      sub: [
+        { t: 'Pérdida de peso', d: 'Planes que combinan entrenamiento y gasto energético para una pérdida de peso saludable y sostenible' },
+        { t: 'Fuerza y tonificación', d: 'Programas de refuerzo muscular adaptados a su nivel, del principiante al avanzado' },
+        { t: 'Condición física general', d: 'Mejora de la resistencia, la movilidad y la energía para el día a día' },
+        { t: 'Retomar la actividad', d: 'Reintroducción gradual del ejercicio para quien estuvo parado o viene de una lesión' },
+        { t: 'Preparación deportiva', d: 'Entrenamiento específico para mejorar el rendimiento en una modalidad u objetivo' },
+        { t: 'Motivación y acompañamiento', d: 'Supervisión cercana y responsabilización para mantener la constancia y los resultados' },
       ],
     },
   },
