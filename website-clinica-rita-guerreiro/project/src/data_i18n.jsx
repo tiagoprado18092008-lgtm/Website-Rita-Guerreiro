@@ -612,8 +612,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pilates with physiotherapist supervision — exercise that is adapted, always safe',
       description: 'Clinical Pilates is a form of therapeutic exercise focused on the prevention and rehabilitation of musculoskeletal injuries. It differs from traditional Pilates in being delivered exclusively by physiotherapists, who adapt the exercises to the clinical condition and specific needs of each person.',
       prices: [
-        { label: 'Monthly fee', value: '35€ / 60€' },
-        { label: 'Annual insurance', value: '10€' },
+        { label: 'Monthly fee', value: '35€' },
         { label: 'Personalised (50min)', value: '45€' },
       ],
       sub: [
@@ -1065,8 +1064,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pilates supervisé par un physiothérapeute — exercice adapté, toujours sûr',
       description: "Le Pilates clinique est une modalité d'exercice thérapeutique axée sur la prévention et la réadaptation des lésions musculo-squelettiques. Il se distingue du Pilates traditionnel par le fait d'être dispensé exclusivement par des physiothérapeutes, qui adaptent les exercices à la condition clinique et aux besoins spécifiques de chaque personne.",
       prices: [
-        { label: 'Mensualité', value: '35€ / 60€' },
-        { label: 'Assurance annuelle', value: '10€' },
+        { label: 'Mensualité', value: '35€' },
         { label: 'Personnalisé (50min)', value: '45€' },
       ],
       sub: [
@@ -1518,8 +1516,7 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pilates con supervisión de fisioterapeuta — ejercicio adaptado, siempre seguro',
       description: 'El pilates clínico es una modalidad de ejercicio terapéutico, centrada en la prevención y rehabilitación de lesiones musculoesqueléticas. Se distingue del pilates tradicional por ser impartido exclusivamente por fisioterapeutas, que adaptan los ejercicios a la condición clínica y a las necesidades específicas de cada persona.',
       prices: [
-        { label: 'Cuota mensual', value: '35€ / 60€' },
-        { label: 'Seguro anual', value: '10€' },
+        { label: 'Cuota mensual', value: '35€' },
         { label: 'Personalizado (50min)', value: '45€' },
       ],
       sub: [

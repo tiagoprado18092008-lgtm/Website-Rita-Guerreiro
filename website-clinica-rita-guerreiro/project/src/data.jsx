@@ -110,7 +110,7 @@ const SERVICES = {
     label: 'Exercícios de Bem-Estar',
     intro: 'Movimento supervisionado e adaptado a si — para prevenir, reabilitar e ganhar qualidade de vida.',
     items: [
-      { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€ – 60€/mês' },
+      { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€/mês' },
       { slug: 'hipopressivos', name: 'Hipopressivos', img: IMG.hipopressivos, blurb: 'Ginástica abdominal hipopressiva — técnica respiratória e postural que fortalece o core e o pavimento pélvico.', price: '35€/mês' },
       { slug: 'personal-trainer', name: 'Personal Trainer', img: IMG['personal-trainer'], blurb: 'Treino personalizado e acompanhado — planos à sua medida para força, mobilidade e condição física.', price: '45€ / 40€ pack' },
     ],
@@ -560,8 +560,7 @@ const SERVICE_DETAIL = {
     tagline: 'Pilates com supervisão de fisioterapeuta — exercício adaptado, sempre seguro.',
     description: 'O pilates clínico é uma modalidade de exercício terapêutico, focado na prevenção e reabilitação de lesões músculo-esqueléticas. Distingue-se do pilates tradicional por ser ministrado exclusivamente por fisioterapeutas, que adaptam os exercícios à condição clínica e às necessidades específicas de cada pessoa.',
     prices: [
-      { label: 'Mensalidade', value: '35€ / 60€' },
-      { label: 'Seguro Anual', value: '10€' },
+      { label: 'Mensalidade', value: '35€' },
       { label: 'Personalizado (50min)', value: '45€' },
     ],
     sub: [
