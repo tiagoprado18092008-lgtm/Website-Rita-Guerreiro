@@ -185,19 +185,13 @@
   .rg-scroll-indicator { display: none !important; }
 }
 
-/* Ecrãs muito largos: a secção passa a ter altura própria (viewport menos o
-   header fixo) em vez de a herdar do aspect-ratio da foto. Assim a foto enche a
-   coluna toda — sem faixa de fundo em cima, em baixo ou à direita — e fica
-   maior. A coluna de texto encolhe para 31% para dar mais largura à foto; o
-   texto continua confortável (max-width 520px + padding). */
+/* Ecrãs muito largos: a coluna de texto encolhe para 31% para dar mais
+   largura à foto (max-width 520px + padding continua confortável). A secção
+   NÃO tem altura forçada — a altura vem da foto (proporção nativa, sem
+   cortar ninguém) e o texto centra-se dentro dessa altura. Forçar aqui uma
+   altura maior do que a foto precisa deixava uma faixa branca por baixo. */
 @media (min-width: 1700px) {
-  .rg-hero-home {
-    min-height: clamp(640px, calc(100vh - 88px), 900px);
-  }
   .rg-hero-home-content { flex: 0 1 31% !important; }
-  /* Foto na proporção nativa (2400×1324) em vez de esticada à altura da secção —
-     esticar cortaria as pessoas das pontas (o retrato é mais largo que a coluna
-     disponível). Assim mostra-se a equipa toda, sem cortar ninguém. */
   .rg-hero-home-photo {
     align-self: center !important;
     aspect-ratio: 2400 / 1324;
