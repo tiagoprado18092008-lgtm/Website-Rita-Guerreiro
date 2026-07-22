@@ -28,7 +28,7 @@ const IMG = {
   // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
   // ainda não tem foto própria, a cliente vai enviar.
   'drenagem-linfatica-manual': '/assets/fotos/servico-drenagem-linfatica-manual.jpg?v=20260720',
-  'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg?v=20260717',
+  'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg?v=20260722',
   'massagens-maos': '/assets/fotos/servico-massagens-maos.jpg?v=20260715',
   reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715h',
   shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715f',
