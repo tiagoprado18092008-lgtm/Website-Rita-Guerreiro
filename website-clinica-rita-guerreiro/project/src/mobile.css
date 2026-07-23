@@ -185,20 +185,18 @@
   .rg-scroll-indicator { display: none !important; }
 }
 
-/* Ecrãs muito largos: a coluna de texto encolhe para 31% para dar mais
-   largura à foto (max-width 520px + padding continua confortável). A secção
-   NÃO tem altura forçada — a altura vem da foto (proporção nativa, sem
-   cortar ninguém) e o texto centra-se dentro dessa altura. Forçar aqui uma
-   altura maior do que a foto precisa deixava uma faixa branca por baixo. */
+/* Ecrãs muito largos: a coluna de texto encolhe para 26% para dar mais
+   largura à foto. A foto ESTICA para preencher toda a altura da secção
+   (= altura da coluna de texto), ficando colada em cima ao header e em baixo
+   à barra de estatísticas — sem faixas brancas. O corte de cover é vertical
+   e mínimo; object-position top garante que corta os corpos e nunca as cabeças. */
 @media (min-width: 1700px) {
   .rg-hero-home-content { flex: 0 1 26% !important; }
   .rg-hero-home-photo {
-    align-self: center !important;
-    aspect-ratio: 2400 / 1324;
+    align-self: stretch !important;
+    aspect-ratio: auto !important;
     height: auto !important;
   }
-  /* object-position top: se houver corte vertical de cover, corta em baixo
-     (corpos) e nunca as cabeças. */
   .rg-hero-home-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; }
 }
 
