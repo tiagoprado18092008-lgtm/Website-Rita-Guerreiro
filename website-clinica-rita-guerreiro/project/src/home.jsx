@@ -565,6 +565,7 @@ function ServicesOverview() {
     { id: 'massagens', num: '03', href: '/servico/massagens', img: IMG['massagem-profunda'], ...SVC.massagens },
     { id: 'holisticas', num: '04', href: '/servico/holisticas', img: IMG.reflexologia, ...SVC.holisticas },
     { id: 'estetica', num: '05', href: '/servico/estetica', img: IMG.facial, ...SVC.estetica },
+    { id: 'exercicio', num: '06', href: '/servico/exercicio', img: IMG['personal-trainer'], ...SVC.exercicio },
   ];
   return (
     <Section id="todos-servicos" bg={RG.creamSoft} pad="md">
@@ -617,7 +618,7 @@ function MeetRita() {
             {/* Foto + card de credenciais */}
             <div style={{ position: 'relative' }}>
               <div className="rg-img-reveal" style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
-                <img src="assets/fotos/rita-principal.jpg?v=20260717" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '43% center', display: 'block' }} />
+                <img src="assets/fotos/rita-pagina-inicial.jpg?v=20260723" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
               </div>
               {/* Card de credenciais sobreposto */}
               <div className="rg-meet-card" style={{
