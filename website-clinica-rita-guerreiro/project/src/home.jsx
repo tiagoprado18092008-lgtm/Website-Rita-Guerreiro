@@ -105,7 +105,7 @@ function Hero() {
           equipa mantém-se enquadrada. */}
       <div className="rg-hero-home-photo" style={{ position: 'relative', flex: '1 1 0%', minWidth: 0, background: RG.cream, overflow: 'hidden' }}>
         <img
-          src="assets/fotos/equipa-capa.jpg?v=20260723"
+          src="assets/fotos/equipa-capa.jpg?v=20260723b"
           alt="Equipa da Clínica Rita Guerreiro em Loulé"
           className="rg-ken-burns"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 38%', display: 'block' }}
