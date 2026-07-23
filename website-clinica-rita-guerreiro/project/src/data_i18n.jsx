@@ -612,7 +612,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pilates with physiotherapist supervision — exercise that is adapted, always safe',
       description: 'Clinical Pilates is a form of therapeutic exercise focused on the prevention and rehabilitation of musculoskeletal injuries. It differs from traditional Pilates in being delivered exclusively by physiotherapists, who adapt the exercises to the clinical condition and specific needs of each person.',
       prices: [
-        { label: 'Monthly fee', value: '35€' },
+        { label: 'Monthly fee (1x/week)', value: '35€' },
+        { label: 'Monthly fee (2x/week)', value: '60€' },
         { label: 'Personalised (50min)', value: '45€' },
       ],
       sub: [
@@ -628,7 +629,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Hypopressive abdominal exercise — strengthening the core and pelvic floor from the inside out',
       description: 'Hypopressives are a set of postural and breathing techniques that reduce the pressure inside the abdominal cavity. Unlike traditional crunches, they reflexively activate the deep core and pelvic floor muscles, making them especially suitable postpartum, for preventing hernias and for improving posture.',
       prices: [
-        { label: 'Monthly fee', value: '35€' },
+        { label: 'Monthly fee (1x/week)', value: '35€' },
+        { label: 'Monthly fee (2x/week)', value: '60€' },
       ],
       sub: [
         { t: 'Postpartum', d: 'Recovery of the abdominal wall and pelvic floor after pregnancy, with safe progression' },
@@ -1064,7 +1066,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pilates supervisé par un physiothérapeute — exercice adapté, toujours sûr',
       description: "Le Pilates clinique est une modalité d'exercice thérapeutique axée sur la prévention et la réadaptation des lésions musculo-squelettiques. Il se distingue du Pilates traditionnel par le fait d'être dispensé exclusivement par des physiothérapeutes, qui adaptent les exercices à la condition clinique et aux besoins spécifiques de chaque personne.",
       prices: [
-        { label: 'Mensualité', value: '35€' },
+        { label: 'Mensualité (1x/semaine)', value: '35€' },
+        { label: 'Mensualité (2x/semaine)', value: '60€' },
         { label: 'Personnalisé (50min)', value: '45€' },
       ],
       sub: [
@@ -1080,7 +1083,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Gymnastique abdominale hypopressive — renforcer le core et le plancher pelvien de l’intérieur',
       description: "Les hypopressifs sont un ensemble de techniques posturales et respiratoires qui réduisent la pression à l'intérieur de la cavité abdominale. Contrairement aux abdominaux traditionnels, ils activent de façon réflexe la musculature profonde du core et du plancher pelvien, et sont particulièrement indiqués en post-partum, dans la prévention des hernies et pour améliorer la posture.",
       prices: [
-        { label: 'Mensualité', value: '35€' },
+        { label: 'Mensualité (1x/semaine)', value: '35€' },
+        { label: 'Mensualité (2x/semaine)', value: '60€' },
       ],
       sub: [
         { t: 'Post-partum', d: 'Récupération de la paroi abdominale et du plancher pelvien après la grossesse, avec une progression sûre' },
@@ -1516,7 +1520,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Pilates con supervisión de fisioterapeuta — ejercicio adaptado, siempre seguro',
       description: 'El pilates clínico es una modalidad de ejercicio terapéutico, centrada en la prevención y rehabilitación de lesiones musculoesqueléticas. Se distingue del pilates tradicional por ser impartido exclusivamente por fisioterapeutas, que adaptan los ejercicios a la condición clínica y a las necesidades específicas de cada persona.',
       prices: [
-        { label: 'Cuota mensual', value: '35€' },
+        { label: 'Cuota mensual (1x/semana)', value: '35€' },
+        { label: 'Cuota mensual (2x/semana)', value: '60€' },
         { label: 'Personalizado (50min)', value: '45€' },
       ],
       sub: [
@@ -1532,7 +1537,8 @@ const SERVICE_DETAIL_I18N = {
       tagline: 'Gimnasia abdominal hipopresiva — fortalecer el core y el suelo pélvico de dentro hacia fuera',
       description: 'Los hipopresivos son un conjunto de técnicas posturales y respiratorias que reducen la presión dentro de la cavidad abdominal. A diferencia de los abdominales tradicionales, activan de forma refleja la musculatura profunda del core y del suelo pélvico, siendo especialmente indicados en el posparto, en la prevención de hernias y en la mejora de la postura.',
       prices: [
-        { label: 'Cuota mensual', value: '35€' },
+        { label: 'Cuota mensual (1x/semana)', value: '35€' },
+        { label: 'Cuota mensual (2x/semana)', value: '60€' },
       ],
       sub: [
         { t: 'Posparto', d: 'Recuperación de la pared abdominal y del suelo pélvico tras el embarazo, con progresión segura' },
