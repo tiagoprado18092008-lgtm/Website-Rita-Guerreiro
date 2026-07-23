@@ -191,13 +191,15 @@
    cortar ninguém) e o texto centra-se dentro dessa altura. Forçar aqui uma
    altura maior do que a foto precisa deixava uma faixa branca por baixo. */
 @media (min-width: 1700px) {
-  .rg-hero-home-content { flex: 0 1 31% !important; }
+  .rg-hero-home-content { flex: 0 1 26% !important; }
   .rg-hero-home-photo {
     align-self: center !important;
     aspect-ratio: 2400 / 1324;
     height: auto !important;
   }
-  .rg-hero-home-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center !important; }
+  /* object-position top: se houver corte vertical de cover, corta em baixo
+     (corpos) e nunca as cabeças. */
+  .rg-hero-home-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; }
 }
 
 /* Sem degradê sobre a foto do hero — a foto fica limpa em todos os tamanhos. */
