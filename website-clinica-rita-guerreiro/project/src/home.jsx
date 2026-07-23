@@ -565,7 +565,7 @@ function ServicesOverview() {
     { id: 'massagens', num: '03', href: '/servico/massagens', img: IMG['massagem-profunda'], ...SVC.massagens },
     { id: 'holisticas', num: '04', href: '/servico/holisticas', img: IMG.reflexologia, ...SVC.holisticas },
     { id: 'estetica', num: '05', href: '/servico/estetica', img: IMG.facial, ...SVC.estetica },
-    { id: 'exercicio', num: '06', href: '/servico/exercicio', img: IMG['personal-trainer'], ...SVC.exercicio },
+    { id: 'exercicio', num: '06', href: '/servico/exercicio', img: IMG['pilates-clinico'], ...SVC.exercicio },
   ];
   return (
     <Section id="todos-servicos" bg={RG.creamSoft} pad="md">
