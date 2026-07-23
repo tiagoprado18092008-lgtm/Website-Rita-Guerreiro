@@ -614,11 +614,11 @@ function MeetRita() {
     <Section bg={RG.white} pad="lg">
       <Container>
         <Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 64, alignItems: 'center' }} className="rg-hero-grid">
             {/* Foto + card de credenciais */}
             <div style={{ position: 'relative' }}>
-              <div className="rg-img-reveal" style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
-                <img src="assets/fotos/rita-pagina-inicial.jpg?v=20260723" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+              <div className="rg-img-reveal" style={{ aspectRatio: '5/6', borderRadius: 20, overflow: 'hidden', boxShadow: '0 30px 60px -20px rgba(20,20,18,0.18)' }}>
+                <img src="assets/fotos/rita-pagina-inicial.jpg?v=20260723" alt="Rita Guerreiro — Fisioterapeuta, Clínica em Loulé" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 22%', display: 'block' }} />
               </div>
               {/* Card de credenciais sobreposto */}
               <div className="rg-meet-card" style={{
