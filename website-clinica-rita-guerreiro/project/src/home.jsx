@@ -570,14 +570,14 @@ function ServicesOverview() {
   return (
     <Section id="todos-servicos" bg={RG.creamSoft} pad="md">
       <Container>
-        <Reveal><Eyebrow>{t('services_overview.eyebrow')}</Eyebrow></Reveal>
+        <Reveal><div style={{ textAlign: 'center' }}><Eyebrow>{t('services_overview.eyebrow')}</Eyebrow></div></Reveal>
         <Reveal delay={60}>
-          <Heading level="h2" style={{ marginTop: 12, maxWidth: '18ch' }}>{t('services_overview.heading')}</Heading>
+          <Heading level="h2" style={{ marginTop: 12, maxWidth: '18ch', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>{t('services_overview.heading')}</Heading>
         </Reveal>
-        <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
+        <div style={{ marginTop: 64, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 20 }}>
           {cats.map((cat, ci) => {
             return (
-            <Reveal key={cat.id} delay={ci * 60}>
+            <Reveal key={cat.id} delay={ci * 60} style={{ width: 'min(100%, 300px)' }}>
               <a href={cat.href} className="rg-service-card" style={{
                 display: 'block', textDecoration: 'none', color: RG.ink,
                 background: RG.white,
