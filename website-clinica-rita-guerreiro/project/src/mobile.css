@@ -216,14 +216,14 @@
     flex: none !important;
     width: 100% !important;
     margin-top: 72px; /* compensa o header fixo */
-    /* Banner: à largura toda a foto ficaria alta demais e empurrava o texto para
-       fora do ecrã. Limita-se a altura — o corte fica na vertical (chão/tecto),
-       que esta foto tolera; na horizontal cortaria as pessoas das pontas. */
-    aspect-ratio: auto !important;
-    height: clamp(400px, 62vh, 700px) !important;
+    /* Banner com a proporção NATIVA da foto (2800×1798): a equipa inteira fica
+       visível de uma ponta à outra, sem cortar ninguém em cima/baixo nem nas
+       pontas. O texto fica logo abaixo. */
+    aspect-ratio: 2800 / 1798 !important;
+    height: auto !important;
   }
   .rg-hero-home-photo img {
-    object-position: center 10% !important;
+    object-position: center !important;
   }
   .rg-hero-home-content {
     flex: none !important;
@@ -257,7 +257,7 @@
     flex: none !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 2400 / 1324 !important;
+    aspect-ratio: 2800 / 1798 !important;
     min-height: 0 !important;
     max-height: none !important;
     margin-top: 64px; /* compensa header fixo */
