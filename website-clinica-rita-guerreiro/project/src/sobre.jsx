@@ -19,7 +19,7 @@ function SobreHero() {
         </Reveal>
         <Reveal delay={220}>
           <div className="rg-sobre-herowrap" style={{ marginTop: 56, position: 'relative' }}>
-            <Photo aspect="16/10" label="Equipa da Clínica Rita Guerreiro" src="assets/fotos/sobre-hero.jpg?v=20260721c" style={{ borderRadius: 12 }} />
+            <Photo aspect="16/10" label="Equipa da Clínica Rita Guerreiro" src="assets/fotos/sobre-hero.jpg?v=20260723" style={{ borderRadius: 12 }} />
             {stats.length > 0 && (
               <div className="rg-sobre-statcard" style={{ position: 'absolute', left: 'clamp(16px, 4vw, 48px)', bottom: -36, background: RG.white, borderRadius: 14, boxShadow: '0 28px 60px -18px rgba(20,20,18,0.28), 0 4px 14px rgba(20,20,18,0.06)', border: `1px solid ${RG.lineSoft}`, display: 'flex', gap: 0, overflow: 'hidden' }}>
                 {stats.map((s, i) => (
