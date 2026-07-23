@@ -39,7 +39,7 @@ const IMG = {
   'depilacao-laser': '/assets/fotos/servico-depilacao-laser.png?v=20260721',
   'pilates-clinico': '/assets/fotos/pilates-clinico.jpg?v=20260722',
   hipopressivos: '/assets/fotos/hipopressivos.jpg?v=20260722',
-  'personal-trainer': '/assets/fotos/estudio-pilates.jpg',
+  'personal-trainer': '/assets/fotos/servico-personal-trainer.jpg?v=20260723',
   'tecarterapia-winback': '/assets/fotos/servico-tecarterapia.jpg?v=20260715f',
   // Genéricos — fotos reais da clínica
   clinicInterior: '/assets/fotos/rita-rececao.jpg',
