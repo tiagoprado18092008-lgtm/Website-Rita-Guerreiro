@@ -20,18 +20,18 @@ const IMG = {
   'drenagem-linfatica': '/assets/fotos/servico-drenagem-linfatica.jpg',
   'massagem-relaxamento': '/assets/fotos/servico-massagem-relaxamento.jpg?v=20260716',
   // Foto que estava na Fisioterapia Pediátrica — é mesmo de massagem a criança.
-  'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260715g',
+  'massagem-criancas': '/assets/fotos/servico-massagem-criancas.jpg?v=20260723',
   'massagem-assinatura-rg': '/assets/fotos/servico-massagem-assinatura-rg.jpg?v=20260721d',
   'massagem-profunda': '/assets/fotos/servico-massagem-profunda.jpg?v=20260717',
   'massagem-pre-pos-natal': '/assets/fotos/servico-massagem-pre-pos-natal.png?v=20260721c',
-  'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg',
+  'massagem-sacro-craniana': '/assets/fotos/servico-massagem-sacro-craniana.jpg?v=20260723',
   // Foto enviada pela cliente é da drenagem linfática manual — massagem terapêutica
   // ainda não tem foto própria, a cliente vai enviar.
-  'drenagem-linfatica-manual': '/assets/fotos/servico-drenagem-linfatica-manual.jpg?v=20260720',
+  'drenagem-linfatica-manual': '/assets/fotos/servico-drenagem-linfatica-manual.jpg?v=20260723',
   'massagem-terapeutica': '/assets/fotos/servico-massagem-terapeutica.jpg?v=20260722',
   'massagens-maos': '/assets/fotos/servico-massagens-maos.jpg?v=20260715',
   reflexologia: '/assets/fotos/servico-reflexologia.jpg?v=20260715h',
-  shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260715f',
+  shiatsu: '/assets/fotos/servico-shiatsu.jpg?v=20260723',
   'massagem-indiana': '/assets/fotos/servico-massagem-indiana.jpg',
   // Foto nova enviada pela cliente ("Fotos clinica Rita Guerreiro/Head Spa.jpg").
   'head-spa': '/assets/fotos/servico-head-spa.jpg?v=20260715i',
@@ -110,8 +110,8 @@ const SERVICES = {
     label: 'Exercícios de Bem-Estar',
     intro: 'Movimento supervisionado e adaptado a si — para prevenir, reabilitar e ganhar qualidade de vida.',
     items: [
-      { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: '35€/mês' },
-      { slug: 'hipopressivos', name: 'Hipopressivos', img: IMG.hipopressivos, blurb: 'Ginástica abdominal hipopressiva — técnica respiratória e postural que fortalece o core e o pavimento pélvico.', price: '35€/mês' },
+      { slug: 'pilates-clinico', name: 'Pilates Clínico', img: IMG['pilates-clinico'], blurb: 'Pilates supervisionado por fisioterapeuta — exercício adaptado a lesões, dor crónica ou reabilitação.', price: 'Desde 35€/mês' },
+      { slug: 'hipopressivos', name: 'Hipopressivos', img: IMG.hipopressivos, blurb: 'Ginástica abdominal hipopressiva — técnica respiratória e postural que fortalece o core e o pavimento pélvico.', price: 'Desde 35€/mês' },
       { slug: 'personal-trainer', name: 'Personal Trainer', img: IMG['personal-trainer'], blurb: 'Treino personalizado e acompanhado — planos à sua medida para força, mobilidade e condição física.', price: '45€ / 40€ pack' },
     ],
   },
@@ -560,7 +560,8 @@ const SERVICE_DETAIL = {
     tagline: 'Pilates com supervisão de fisioterapeuta — exercício adaptado, sempre seguro.',
     description: 'O pilates clínico é uma modalidade de exercício terapêutico, focado na prevenção e reabilitação de lesões músculo-esqueléticas. Distingue-se do pilates tradicional por ser ministrado exclusivamente por fisioterapeutas, que adaptam os exercícios à condição clínica e às necessidades específicas de cada pessoa.',
     prices: [
-      { label: 'Mensalidade', value: '35€' },
+      { label: 'Mensalidade (1x/semana)', value: '35€' },
+      { label: 'Mensalidade (2x/semana)', value: '60€' },
       { label: 'Personalizado (50min)', value: '45€' },
     ],
     sub: [
@@ -576,7 +577,8 @@ const SERVICE_DETAIL = {
     tagline: 'Ginástica abdominal hipopressiva — fortalecer o core e o pavimento pélvico de dentro para fora.',
     description: 'Os hipopressivos são um conjunto de técnicas posturais e respiratórias que reduzem a pressão dentro da cavidade abdominal. Ao contrário dos abdominais tradicionais, ativam de forma reflexa a musculatura profunda do core e do pavimento pélvico, sendo especialmente indicados no pós-parto, na prevenção de hérnias e na melhoria da postura.',
     prices: [
-      { label: 'Mensalidade', value: '35€' },
+      { label: 'Mensalidade (1x/semana)', value: '35€' },
+      { label: 'Mensalidade (2x/semana)', value: '60€' },
     ],
     sub: [
       { t: 'Pós-parto', d: 'Recuperação da parede abdominal e do pavimento pélvico após a gravidez, com progressão segura.' },
