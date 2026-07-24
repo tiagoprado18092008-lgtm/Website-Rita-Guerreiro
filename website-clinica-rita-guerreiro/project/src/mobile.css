@@ -196,6 +196,11 @@
     align-self: stretch !important;
     aspect-ratio: auto !important;
     height: auto !important;
+    /* O header (89px, fixed) sobrepõe-se ao topo da foto. Sem esta margem, a
+       barra tapa o logo "RG · Rita Guerreiro" que está no topo da imagem.
+       Empurra a foto para baixo do header, tal como fazem os breakpoints
+       empilhados (769–1699px e mobile). */
+    margin-top: 89px !important;
   }
   .rg-hero-home-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; }
 }
