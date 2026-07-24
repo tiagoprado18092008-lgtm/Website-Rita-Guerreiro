@@ -200,7 +200,7 @@
        barra tapa o logo "RG · Rita Guerreiro" que está no topo da imagem.
        Empurra a foto para baixo do header, tal como fazem os breakpoints
        empilhados (769–1699px e mobile). */
-    margin-top: 89px !important;
+    margin-top: 96px !important;
   }
   .rg-hero-home-photo img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; }
 }
@@ -220,7 +220,7 @@
     order: -1 !important;
     flex: none !important;
     width: 100% !important;
-    margin-top: 72px; /* compensa o header fixo */
+    margin-top: 96px; /* header fixo tem 89px — 96 dá folga e não tapa o logo */
     /* Banner com a proporção NATIVA da foto (2800×1798): a equipa inteira fica
        visível de uma ponta à outra, sem cortar ninguém em cima/baixo nem nas
        pontas. O texto fica logo abaixo. */
@@ -265,7 +265,7 @@
     aspect-ratio: 2800 / 1798 !important;
     min-height: 0 !important;
     max-height: none !important;
-    margin-top: 64px; /* compensa header fixo */
+    margin-top: 72px; /* header compacto mobile ~65px — 72 dá folga e não tapa o logo */
     background: #ffffff !important;
     overflow: hidden !important;
   }
