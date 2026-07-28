@@ -251,7 +251,7 @@ const TRANSLATIONS = {
     },
     sobre: {
       eyebrow: 'Sobre',
-      heading: 'A equipa que cuida de si como se fosse da família',
+      heading: 'Cuidar de si é a nossa vocação!',
       sub: 'Na Clínica Rita Guerreiro dedicamo-nos a melhorar a sua saúde, bem-estar e qualidade de vida — com atenção, continuidade e respeito por quem é.',
       mission_eyebrow: 'A nossa missão',
       mission_heading: 'Ajudar cada pessoa a viver melhor, sem limitações',
@@ -590,7 +590,7 @@ const TRANSLATIONS = {
     },
     sobre: {
       eyebrow: 'About',
-      heading: 'The team that cares for you like family',
+      heading: 'Caring for you is our vocation!',
       sub: 'At Rita Guerreiro Clinic we are dedicated to improving your health, well-being and quality of life — with attention, continuity and respect for who you are.',
       mission_eyebrow: 'Our mission',
       mission_heading: 'Helping each person live better, without limitations',
@@ -946,7 +946,7 @@ const TRANSLATIONS = {
     },
     sobre: {
       eyebrow: 'À propos',
-      heading: 'L’équipe qui prend soin de vous comme de la famille',
+      heading: 'Prendre soin de vous est notre vocation !',
       sub: 'À la Clinique Rita Guerreiro, nous nous consacrons à améliorer votre santé, bien-être et qualité de vie — avec attention, continuité et respect pour qui vous êtes.',
       mission_eyebrow: 'Notre mission',
       mission_heading: 'Aider chaque personne à mieux vivre, sans limitations',
@@ -1302,7 +1302,7 @@ const TRANSLATIONS = {
     },
     sobre: {
       eyebrow: 'Sobre nosotros',
-      heading: 'El equipo que le cuida como si fuera de la familia',
+      heading: '¡Cuidar de usted es nuestra vocación!',
       sub: 'En la Clínica Rita Guerreiro nos dedicamos a mejorar su salud, bienestar y calidad de vida — con atención, continuidad y respeto por quien es.',
       mission_eyebrow: 'Nuestra misión',
       mission_heading: 'Ayudar a cada persona a vivir mejor, sin limitaciones',
