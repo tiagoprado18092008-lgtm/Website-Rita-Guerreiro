@@ -371,7 +371,7 @@ const TRANSLATIONS = {
     sobre_title: 'Sobre a Clínica',
     meta: {
       tagline: 'Terapias & Bem-Estar',
-      home: { title: 'Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé', description: 'Centro de Terapias & Bem-Estar em Loulé. Fisioterapia, osteopatia, Pilates clínico, psicologia e mais.' },
+      home: { title: 'Rita Guerreiro — Centro de Terapias & Bem-Estar · Loulé', description: 'Centro de Terapias & Bem-Estar em Loulé. Fisioterapia, massagens, Pilates clínico, psicologia e mais.' },
       sobre: { title: 'Sobre — Centro de Terapias Rita Guerreiro · Loulé', description: 'A equipa multidisciplinar da Clínica Rita Guerreiro em Loulé. Conheça a nossa história, missão e profissionais.' },
       contactos: { title: 'Contactos — Centro de Terapias Rita Guerreiro · Loulé', description: 'Contacte a Clínica Rita Guerreiro em Loulé. Telefone, WhatsApp, morada e horário.' },
       cat_fisioterapia: { title: 'Fisioterapia — Rita Guerreiro · Loulé', description: 'Fisioterapia, fisioterapia ATM, vestibular e mesoterapia em Loulé. Avaliação e tratamento individual.' },
@@ -710,7 +710,7 @@ const TRANSLATIONS = {
     sobre_title: 'About the Clinic',
     meta: {
       tagline: 'Therapies & Wellness',
-      home: { title: 'Rita Guerreiro — Therapy & Wellness Centre · Loulé', description: 'Therapy & Wellness Centre in Loulé. Physiotherapy, osteopathy, clinical Pilates, psychology and more.' },
+      home: { title: 'Rita Guerreiro — Therapy & Wellness Centre · Loulé', description: 'Therapy & Wellness Centre in Loulé. Physiotherapy, massages, clinical Pilates, psychology and more.' },
       sobre: { title: 'About — Rita Guerreiro Therapy Centre · Loulé', description: 'The multidisciplinary team at Rita Guerreiro Clinic in Loulé. Meet our story, mission and professionals.' },
       contactos: { title: 'Contact — Rita Guerreiro Therapy Centre · Loulé', description: 'Contact Rita Guerreiro Clinic in Loulé. Phone, WhatsApp, address and opening hours.' },
       cat_fisioterapia: { title: 'Physiotherapy — Rita Guerreiro · Loulé', description: 'Physiotherapy, TMJ, vestibular and mesotherapy in Loulé. Individual assessment and treatment.' },
@@ -1066,7 +1066,7 @@ const TRANSLATIONS = {
     sobre_title: 'À propos de la Clinique',
     meta: {
       tagline: 'Thérapies & Bien-être',
-      home: { title: 'Rita Guerreiro — Centre de Thérapies & Bien-être · Loulé', description: 'Centre de Thérapies & Bien-être à Loulé. Physiothérapie, ostéopathie, Pilates clinique, psychologie et plus.' },
+      home: { title: 'Rita Guerreiro — Centre de Thérapies & Bien-être · Loulé', description: 'Centre de Thérapies & Bien-être à Loulé. Physiothérapie, massages, Pilates clinique, psychologie et plus.' },
       sobre: { title: 'À propos — Centre de Thérapies Rita Guerreiro · Loulé', description: 'L’équipe pluridisciplinaire de la Clinique Rita Guerreiro à Loulé. Découvrez notre histoire, notre mission et nos professionnels.' },
       contactos: { title: 'Contact — Centre de Thérapies Rita Guerreiro · Loulé', description: 'Contactez la Clinique Rita Guerreiro à Loulé. Téléphone, WhatsApp, adresse et horaires.' },
       cat_fisioterapia: { title: 'Physiothérapie — Rita Guerreiro · Loulé', description: 'Physiothérapie, ATM, vestibulaire et mésothérapie à Loulé. Évaluation et traitement individuel.' },
@@ -1422,7 +1422,7 @@ const TRANSLATIONS = {
     sobre_title: 'Sobre la Clínica',
     meta: {
       tagline: 'Terapias & Bienestar',
-      home: { title: 'Rita Guerreiro — Centro de Terapias & Bienestar · Loulé', description: 'Centro de Terapias & Bienestar en Loulé. Fisioterapia, osteopatía, Pilates clínico, psicología y más.' },
+      home: { title: 'Rita Guerreiro — Centro de Terapias & Bienestar · Loulé', description: 'Centro de Terapias & Bienestar en Loulé. Fisioterapia, masajes, Pilates clínico, psicología y más.' },
       sobre: { title: 'Sobre nosotros — Centro de Terapias Rita Guerreiro · Loulé', description: 'El equipo multidisciplinar de la Clínica Rita Guerreiro en Loulé. Conozca nuestra historia, misión y profesionales.' },
       contactos: { title: 'Contacto — Centro de Terapias Rita Guerreiro · Loulé', description: 'Contacte con la Clínica Rita Guerreiro en Loulé. Teléfono, WhatsApp, dirección y horario.' },
       cat_fisioterapia: { title: 'Fisioterapia — Rita Guerreiro · Loulé', description: 'Fisioterapia, ATM, vestibular y mesoterapia en Loulé. Evaluación y tratamiento individual.' },

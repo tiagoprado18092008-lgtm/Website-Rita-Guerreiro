@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- principais -->
   <url><loc>https://clinicaritaguerreiro.pt/</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://clinicaritaguerreiro.pt/sobre</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://clinicaritaguerreiro.pt/contactos</loc><lastmod>2026-07-28</lastmod></url>
+  <!-- fisioterapia -->
   <url><loc>https://clinicaritaguerreiro.pt/servico/fisioterapia</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/fisioterapia-geral</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/fisioterapia-pediatrica</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/fisioterapia-atm</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/fisioterapia-vestibular</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/fisioterapia-oncologica</loc><lastmod>2026-08-06</lastmod></url>
+  <!-- saude -->
   <url><loc>https://clinicaritaguerreiro.pt/servico/saude</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/nutricao</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/terapia-bowen</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/psicologia</loc><lastmod>2026-08-06</lastmod></url>
+  <!-- massagens -->
   <url><loc>https://clinicaritaguerreiro.pt/servico/massagens</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-relaxamento</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-criancas</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-assinatura-rg</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-profunda</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-pre-pos-natal</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-sacro-craniana</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/drenagem-linfatica</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/drenagem-linfatica-manual</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-terapeutica</loc><lastmod>2026-08-06</lastmod></url>
+  <!-- holisticas -->
   <url><loc>https://clinicaritaguerreiro.pt/servico/holisticas</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/reflexologia</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/shiatsu</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/massagem-indiana</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/head-spa</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/acupuntura</loc><lastmod>2026-08-06</lastmod></url>
+  <!-- estetica -->
   <url><loc>https://clinicaritaguerreiro.pt/servico/estetica</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/facial</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/mesoterapia</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/depilacao-laser</loc><lastmod>2026-08-06</lastmod></url>
+  <!-- exercicio -->
   <url><loc>https://clinicaritaguerreiro.pt/servico/exercicio</loc><lastmod>2026-07-28</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/pilates-clinico</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/hipopressivos</loc><lastmod>2026-08-06</lastmod></url>
+  <url><loc>https://clinicaritaguerreiro.pt/servico/personal-trainer</loc><lastmod>2026-08-06</lastmod></url>
+  <!-- tecarterapia -->
+  <url><loc>https://clinicaritaguerreiro.pt/servico/tecarterapia-winback</loc><lastmod>2026-08-06</lastmod></url>
 </urlset>
