@@ -429,7 +429,7 @@ function TecarPage() {
                 fontFamily: F_DISPLAY, fontSize: 'clamp(36px, 5vw, 72px)',
                 fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.035em',
                 margin: 0, color: RG.ink,
-              }}>Winback</h1>
+              }}>Winback<span className="rg-sr-only"> — {t('service.tecar_h1_sr')}</span></h1>
             </Reveal>
 
             <Reveal delay={120}>

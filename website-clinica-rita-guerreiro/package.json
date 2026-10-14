@@ -1,0 +1,16 @@
+{
+  "name": "clinica-rita-guerreiro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "prerender": "node build/prerender.mjs",
+    "verify": "node build/verify.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12",
+    "playwright": "^1.64.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

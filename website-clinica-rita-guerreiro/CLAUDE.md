@@ -4,7 +4,9 @@ Bundle de handoff vindo do Claude Design (claude.ai/design). Centro de Terapias 
 
 ## Stack
 
-- **Sem build, sem package.json.** É HTML estático que carrega React 18 + ReactDOM + Babel standalone via CDN (unpkg) e compila JSX no browser em runtime.
+- **Fonte em `project/`** (HTML + JSX com `<script type="text/babel">`, corre como está em dev com Babel no browser).
+- **Produção: `npm run build`** (`build/build.mjs`) gera `public/`: JSX pré-compilado com esbuild, React em produção (self-hosted em `/vendor`), `#root` pré-renderizado por página (renderToString no Playwright) + hydrateRoot, JSON-LD/canonical/og e `sitemap.xml` gerados a partir de `build/seo.mjs`. `npm run verify` valida tudo.
+- O Vercel **não** faz build: serve o `public/` commitado. Depois de mexer em `project/`, correr `npm run build && npm run verify` e commitar `public/`.
 - Páginas HTML em `project/` (uma por rota: `index.html`, `sobre.html`, `contactos.html`, `servico-*.html`).
 - Componentes JSX em `project/src/`:
   - `tokens.jsx` — design tokens (cores, espaçamentos, tipografia)
@@ -36,5 +38,4 @@ Abrir `http://localhost:5500` no browser. Cada HTML é uma página separada (nã
 ## O que NÃO fazer sem confirmação
 
 - Não migrar para Next.js / Vite / outra stack sem o utilizador pedir — o handoff foi feito assumindo este formato.
-- Não instalar node_modules nem criar package.json.
 - Não renomear ficheiros que estão referenciados nos `<script src="src/X.jsx">` dos HTML.

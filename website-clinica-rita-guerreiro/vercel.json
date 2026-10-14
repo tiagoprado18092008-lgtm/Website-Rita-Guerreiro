@@ -1,5 +1,6 @@
 {
-  "buildCommand": "mkdir -p public && cp -r project/. public/",
+  "installCommand": "echo \"sem install: public/ e gerado localmente com npm run build\"",
+  "buildCommand": "test -f public/index.html",
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,

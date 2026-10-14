@@ -30,6 +30,7 @@ function Hero() {
                   ))}
                 </span>
               ))}
+              <span className="rg-sr-only">{t('hero.h1_brand')}</span>
             </h1>
           </Reveal>
 

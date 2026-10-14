@@ -1,0 +1,1027 @@
+﻿// Shared primitives — centropro-inspired: sans bold, dense, clinical
+
+function Container({ children, style = {}, maxWidth = 1280 }) {
+  return (
+    <div style={{ maxWidth, margin: '0 auto', padding: '0 clamp(20px, 4vw, 56px)', ...style }}>{children}</div>
+  );
+}
+
+function Reveal({ children, delay = 0, y = 28, as: Tag = 'div', style = {} }) {
+  const ref = React.useRef(null);
+  const [seen, setSeen] = React.useState(true);
+  React.useEffect(() => {
+    const el = ref.current; if (!el) return;
+    requestAnimationFrame(() => {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (r.top > vh * 0.85) {
+        setSeen(false);
+        const io = new IntersectionObserver(
+          (es) => es.forEach(e => { if (e.isIntersecting) { setSeen(true); io.unobserve(e.target); } }),
+          { threshold: 0.12, rootMargin: '0px 0px -64px 0px' }
+        );
+        io.observe(el);
+      }
+    });
+  }, []);
+  return <Tag ref={ref} style={{ opacity: seen ? 1 : 0, transform: seen ? 'translateY(0)' : `translateY(${y}px)`, transition: `opacity 800ms cubic-bezier(.16,.8,.2,1) ${delay}ms, transform 800ms cubic-bezier(.16,.8,.2,1) ${delay}ms`, ...style }}>{children}</Tag>;
+}
+
+// Avatar com iniciais — usado enquanto não há foto individual de um profissional
+// da equipa (m.src vazio/undefined). Evita reutilizar por engano a foto de outra
+// pessoa. Substituir por foto real assim que a clínica a enviar.
+function initials(name) {
+  const parts = (name || '').trim().split(/\s+/);
+  const first = parts[0]?.[0] || '';
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : '';
+  return (first + last).toUpperCase();
+}
+
+function AvatarPlaceholder({ name, size }) {
+  return (
+    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: RG.tealWash }}>
+      <span style={{ fontFamily: F_DISPLAY, fontSize: size, fontWeight: 700, color: RG.tealDark }}>{initials(name)}</span>
+    </div>
+  );
+}
+
+function Eyebrow({ children, color = RG.tealDark, style = {} }) {
+  return <div style={{ fontFamily: F_BODY, fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color, ...style }}>{children}</div>;
+}
+
+function Heading({ children, level = 'h2', style = {} }) {
+  const sizes = { h1: 'clamp(52px, 6vw, 80px)', h2: 'clamp(36px, 4vw, 56px)', h3: 'clamp(22px, 2.5vw, 28px)' };
+  const Tag = level;
+  return <Tag style={{ fontFamily: F_DISPLAY, fontWeight: 300, fontSize: sizes[level], lineHeight: 1.08, letterSpacing: '-0.02em', margin: 0, textWrap: 'balance', color: RG.ink, ...style }}>{children}</Tag>;
+}
+
+function Body({ children, style = {}, size = 16 }) {
+  return <p style={{ fontFamily: F_BODY, fontSize: size, fontWeight: 400, lineHeight: 1.6, color: RG.charcoal, margin: 0, textWrap: 'pretty', maxWidth: '62ch', ...style }}>{children}</p>;
+}
+
+function Button({ children, href = '#', variant = 'primary', size = 'md', target, icon = true, onClick }) {
+  const [hv, setHv] = React.useState(false);
+  const base = { display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: F_DISPLAY, fontWeight: 400, textDecoration: 'none', borderRadius: 999, transition: 'all 220ms', cursor: 'pointer', border: '1px solid transparent', whiteSpace: 'nowrap' };
+  const sz = { sm: { padding: '9px 16px', fontSize: 13 }, md: { padding: '14px 22px', fontSize: 14 }, lg: { padding: '18px 28px', fontSize: 15 } }[size];
+  const vars = {
+    primary: { background: RG.ink, color: RG.cream },
+    teal: { background: RG.tealDeep, color: RG.white },
+    outline: { background: 'transparent', color: RG.ink, borderColor: RG.ink },
+    outlineLight: { background: 'transparent', color: RG.cream, borderColor: 'rgba(246,241,233,0.5)' },
+    white: { background: RG.white, color: RG.ink, borderColor: RG.line },
+  };
+  const hover = hv ? (variant === 'white' ? { background: RG.cream } : { transform: 'translateY(-1px)', boxShadow: '0 10px 24px rgba(0,0,0,0.15)' }) : {};
+  return (
+    <a href={href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} onClick={onClick} onMouseEnter={() => setHv(true)} onMouseLeave={() => setHv(false)} className="rg-btn-primary" style={{ ...base, ...sz, ...vars[variant], ...hover }}>
+      {children}
+      {icon && <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ transform: hv ? 'translateX(4px)' : 'translateX(0)', transition: 'transform 240ms cubic-bezier(.2,.8,.2,1)' }}><path d="M2 6 L10 6 M7 3 L10 6 L7 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>}
+    </a>
+  );
+}
+
+// Navigation — premium luxury header
+function Nav({ current = 'home' }) {
+  const [openDrop, setOpenDrop] = React.useState(null);
+  const [mobile, setMobile] = React.useState(false);
+  const [mobileServicos, setMobileServicos] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const { lang, changeLang } = React.useContext(LangContext);
+  const { t } = useLang();
+  const [langOpen, setLangOpen] = React.useState(false);
+  const [activeCol, setActiveCol] = React.useState(null);
+  const dropTimerRef = React.useRef(null);
+  const megaRowRefs = React.useRef([]);
+  const megaPanelRef = React.useRef(null);
+  const megaListRef = React.useRef(null);
+  const [megaPanelTop, setMegaPanelTop] = React.useState(0);
+
+  React.useLayoutEffect(() => {
+    if (activeCol === null) return;
+    const row = megaRowRefs.current[activeCol];
+    const list = megaListRef.current;
+    const panel = megaPanelRef.current;
+    if (!row || !list || !panel) return;
+    const maxTop = Math.max(0, list.offsetHeight - panel.offsetHeight);
+    setMegaPanelTop(Math.min(row.offsetTop, maxTop));
+  }, [activeCol]);
+
+  const openServicos = () => { if (dropTimerRef.current) clearTimeout(dropTimerRef.current); setOpenDrop('servicos'); };
+  const closeServicos = () => { dropTimerRef.current = setTimeout(() => { setOpenDrop(null); setActiveCol(null); }, 120); };
+
+  const langs = [
+    { code: 'PT', label: 'Portugal',  flagUrl: 'https://flagcdn.com/w40/pt.png' },
+    { code: 'EN', label: 'English',   flagUrl: 'https://flagcdn.com/w40/gb.png' },
+    { code: 'FR', label: 'Français',  flagUrl: 'https://flagcdn.com/w40/fr.png' },
+    { code: 'ES', label: 'Español',   flagUrl: 'https://flagcdn.com/w40/es.png' },
+  ];
+
+  React.useEffect(() => {
+    const onS = () => setScrolled(window.scrollY > 40);
+    onS();
+    window.addEventListener('scroll', onS, { passive: true });
+    return () => window.removeEventListener('scroll', onS);
+  }, []);
+
+  React.useEffect(() => {
+    if (mobile) {
+      document.body.classList.add('rg-mobile-open');
+    } else {
+      document.body.classList.remove('rg-mobile-open');
+    }
+    return () => document.body.classList.remove('rg-mobile-open');
+  }, [mobile]);
+
+  const megaIcons = {
+    'fisioterapia': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18.5 5.5a2.121 2.121 0 0 1 0 3L7 20a2.121 2.121 0 0 1-3-3L15.5 5.5a2.121 2.121 0 0 1 3 0z"/>
+        <path d="M5.5 5.5a2 2 0 0 0 0 2.828l.707.707"/><path d="M18.5 18.5a2 2 0 0 0 0-2.828l-.707-.707"/>
+      </svg>
+    ),
+    'saude': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+    ),
+    'massagens': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+        <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+      </svg>
+    ),
+    'holisticas': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </svg>
+    ),
+    'estetica': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a5 5 0 0 1 5 5c0 3.5-5 13-5 13S7 10.5 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/>
+      </svg>
+    ),
+    'exercicio': (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6.5 6.5 17.5 17.5"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/>
+      </svg>
+    ),
+  };
+
+  // Constrói o mega-menu dinamicamente a partir do catálogo localizado.
+  // Mantém URLs estáveis (independentes de idioma) e devolve labels traduzidos.
+  const servicesByLang = getServices(lang);
+  const CATEGORY_HREF = {
+    fisioterapia: '/servico/fisioterapia',
+    saude: '/servico/saude',
+    massagens: '/servico/massagens',
+    holisticas: '/servico/holisticas',
+    estetica: '/servico/estetica',
+    exercicio: '/servico/exercicio',
+  };
+  const megaCols = Object.keys(servicesByLang).map(catId => ({
+    id: catId,
+    label: servicesByLang[catId].label,
+    href: CATEGORY_HREF[catId] ?? null,
+    items: servicesByLang[catId].items.map(it => ({
+      label: it.name,
+      href: `/servico/${it.slug}`,
+    })),
+  }));
+  const megaDescs = {};
+  for (const cat of megaCols) {
+    megaDescs[cat.id] = t(`nav.mega_descs.${cat.id}`);
+  }
+
+  const navLinks = [
+    { id: 'inicio', label: t('nav.inicio'), href: '/' },
+    { id: 'servicos', label: t('nav.servicos'), mega: true },
+    { id: 'sobre', label: t('nav.sobre'), href: '/sobre' },
+    { id: 'contactos', label: t('nav.contactos'), href: '/contactos' },
+  ];
+
+  const linkBase = {
+    fontFamily: F_BODY, fontSize: 15, fontWeight: 500,
+    color: 'rgba(255,255,255,0.9)', textDecoration: 'none',
+    padding: '10px 15px', display: 'inline-flex', alignItems: 'center', gap: 6,
+    letterSpacing: '0.01em', background: 'none', border: 'none', cursor: 'pointer',
+  };
+
+  return (
+    <>
+      {/* ── Header wrapper ── */}
+      <header className={`rg-header-wrap${scrolled ? ' rg-scrolled' : ''}`}>
+
+        {/* Main nav row */}
+        <div className="rg-nav-row">
+
+          {/* ── Logo ── */}
+          <a href="/" className="rg-logo-link rg-header-logo">
+            <img src="/rita_guerreiro_logo.png" alt="Rita Guerreiro" decoding="async" style={{ height: 110, width: 'auto', display: 'block' }} />
+          </a>
+
+          {/* ── Desktop nav links ── */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 0 }} className="rg-nav">
+            {navLinks.map((link, li) => (
+              <div key={link.id}
+                className={`rg-header-link-${li + 1}`}
+                style={{ position: 'relative' }}
+                onMouseEnter={() => { if (link.mega) openServicos(); }}
+                onMouseLeave={() => { if (link.mega) closeServicos(); }}
+              >
+                {link.href
+                  ? <a href={link.href} className="rg-nav-link rg-nav-item" style={linkBase}>{link.label}</a>
+                  : <button className="rg-nav-link rg-nav-item" aria-expanded={openDrop === 'servicos'} aria-haspopup="true" style={linkBase}>
+                      {link.label}
+                      <svg width="9" height="9" viewBox="0 0 10 10" style={{ transform: openDrop === 'servicos' ? 'rotate(180deg)' : 'none', transition: 'transform 240ms cubic-bezier(.2,.8,.2,1)', opacity: 0.55 }}>
+                        <path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                }
+                {link.mega && openDrop === 'servicos' && (
+                  <div
+                    onMouseEnter={openServicos}
+                    onMouseLeave={closeServicos}
+                    style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-105px)', zIndex: 1001, paddingTop: 4 }}
+                  >
+                    <div style={{ position: 'relative', width: 486, height: 'auto' }}>
+                      {/* Painel esquerdo: categorias com ícones */}
+                      <div ref={megaListRef} style={{ width: 230, flexShrink: 0, background: 'white', borderRadius: '0 0 16px 16px', overflow: 'hidden', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF' }}>
+                        {megaCols.map((col, ci) => (
+                          <div key={col.id} ref={el => { megaRowRefs.current[ci] = el; }}>
+                            <div
+                              onMouseEnter={() => setActiveCol(ci)}
+                              onClick={() => { if (col.href) window.location.href = col.href; }}
+                              style={{
+                                display: 'flex', alignItems: 'center', gap: 12,
+                                padding: '11px 16px', cursor: col.href ? 'pointer' : 'default',
+                                background: activeCol === ci ? '#F1F7F6' : 'transparent',
+                                transition: 'background 150ms',
+                              }}
+                            >
+                              <div style={{ flex: 1 }}>
+                                <div style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: activeCol === ci ? 600 : 500, color: activeCol === ci ? RG.tealDark : RG.ink, lineHeight: 1.2 }}>{col.label}</div>
+                                <div style={{ fontFamily: F_BODY, fontSize: 12, color: RG.muted, marginTop: 3 }}>{megaDescs[col.id]}</div>
+                              </div>
+                              <svg width="8" height="8" viewBox="0 0 10 10" style={{ marginLeft: 'auto', opacity: activeCol === ci ? 0.7 : 0.3 }}>
+                                <path d="M3 2 L7 5 L3 8" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            {ci < megaCols.length - 1 && <div style={{ height: 1, background: '#E8E6DF', margin: '0 12px' }} />}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Painel direito: subserviços — acompanha verticalmente a categoria em foco */}
+                      <div ref={megaPanelRef} style={{ position: 'absolute', left: 236, top: megaPanelTop, transition: 'top 180ms cubic-bezier(.2,.8,.2,1)', width: 250, flexShrink: 0, visibility: activeCol !== null ? 'visible' : 'hidden', background: 'white', borderRadius: '0 0 16px 16px', boxShadow: '0 20px 48px -8px rgba(14,14,12,0.22)', border: '1px solid #E8E6DF', overflow: 'hidden' }}>
+                        {activeCol !== null && <>
+                          <div style={{ padding: '12px 16px 8px', background: '#F8FAF9', borderBottom: '1px solid #E8E6DF' }}>
+                            <div style={{ fontFamily: F_BODY, fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: RG.tealDark }}>{megaCols[activeCol].label}</div>
+                          </div>
+                          <div style={{ padding: '8px' }}>
+                            {megaCols[activeCol].items.map((item) => (
+                              <a key={item.href} href={item.href}
+                                style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 10px', fontFamily: F_BODY, fontSize: 14, color: RG.charcoal, textDecoration: 'none', borderRadius: 8, transition: 'background 150ms, color 150ms' }}
+                                onMouseEnter={e => { e.currentTarget.style.background = '#F1F7F6'; e.currentTarget.style.color = RG.tealDark; }}
+                                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = RG.charcoal; }}
+                              >
+                                {item.label}
+                              </a>
+                            ))}
+                          </div>
+                          {megaCols[activeCol].href && (
+                            <div style={{ padding: '10px 16px 14px', borderTop: '1px solid #E8E6DF' }}>
+                              <a href={megaCols[activeCol].href}
+                                style={{ fontFamily: F_BODY, fontSize: 13, fontWeight: 500, color: RG.tealDark, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
+                                onMouseEnter={e => e.currentTarget.style.color = RG.tealDeep}
+                                onMouseLeave={e => e.currentTarget.style.color = RG.tealDark}
+                              >
+                                {t('service.ver_todos_prefix')} {megaCols[activeCol].label}
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 5h5M5.5 3l2 2-2 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                              </a>
+                            </div>
+                          )}
+                        </>}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+
+
+          {/* ── Right side CTA ── */}
+          <div className="rg-header-cta" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+
+            {/* Language switcher */}
+            {(() => {
+              const langTimerRef = React.useRef(null);
+              const openLang = () => { if (langTimerRef.current) clearTimeout(langTimerRef.current); setLangOpen(true); };
+              const closeLang = () => { langTimerRef.current = setTimeout(() => setLangOpen(false), 150); };
+              const currentLang = langs.find(l => l.code === lang) || langs[0];
+              return (
+                <div style={{ position: 'relative' }}
+                  onMouseEnter={openLang}
+                  onMouseLeave={closeLang}
+                >
+                  <button style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 6,
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    borderRadius: 9, padding: '6px 10px', cursor: 'pointer',
+                    transition: 'background 200ms, border-color 200ms',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.14)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.28)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
+                  >
+                    <img src={currentLang.flagUrl} alt={currentLang.code} style={{ width: 20, height: 14, objectFit: 'cover', borderRadius: 2, display: 'block' }} />
+                    <span style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.06em', fontFamily: F_DISPLAY }}>{currentLang.code}</span>
+                    <svg width="8" height="8" viewBox="0 0 10 10" style={{ transform: langOpen ? 'rotate(180deg)' : 'none', transition: 'transform 220ms', opacity: 0.5 }}>
+                      <path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  {langOpen && (
+                    <div
+                      onMouseEnter={openLang}
+                      onMouseLeave={closeLang}
+                      style={{ position: 'absolute', top: '100%', right: 0, paddingTop: 8, zIndex: 30 }}
+                    >
+                      <div style={{
+                        background: RG.white, borderRadius: 12, padding: '6px',
+                        boxShadow: '0 20px 48px -8px rgba(14,14,12,0.18), 0 0 0 1px rgba(14,14,12,0.06)',
+                        minWidth: 150,
+                      }}>
+                        {langs.filter(l => l.code !== lang).map(l => (
+                          <button key={l.code} onClick={() => { changeLang(l.code); setLangOpen(false); }} style={{
+                            display: 'flex', alignItems: 'center', gap: 10, width: '100%',
+                            padding: '9px 12px', borderRadius: 8, border: 'none',
+                            background: 'none', cursor: 'pointer', transition: 'background 150ms',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.background = RG.tealWash}
+                          onMouseLeave={e => e.currentTarget.style.background = 'none'}
+                          >
+                            <img src={l.flagUrl} alt={l.code} style={{ width: 22, height: 15, objectFit: 'cover', borderRadius: 2, display: 'block', flexShrink: 0 }} />
+                            <span style={{ fontSize: 13, fontWeight: 400, color: RG.dark, fontFamily: F_DISPLAY }}>{l.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* Telefone */}
+            <a href="tel:+351961899364" className="rg-nav-tel rg-tel-link" style={{
+              fontFamily: F_DISPLAY, fontSize: 12.5, fontWeight: 400, color: 'rgba(255,255,255,0.75)',
+              textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '7px 13px 7px 8px', borderRadius: 9,
+              border: '1px solid rgba(255,255,255,0.12)',
+              letterSpacing: '0.02em',
+              transition: 'background 200ms, border-color 200ms, color 200ms',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'white'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}
+            >
+              <span style={{ width: 26, height: 26, borderRadius: 999, background: 'rgba(255,255,255,0.1)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+                </svg>
+              </span>
+              961 899 364
+            </a>
+
+            {/* Agendar CTA */}
+            <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" className="rg-agendar-btn" style={{
+              fontFamily: F_DISPLAY, fontSize: 13, fontWeight: 400,
+              color: RG.tealDeep,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0faf9 100%)',
+              padding: '10px 22px', borderRadius: 999, textDecoration: 'none',
+              display: 'inline-flex', alignItems: 'center', gap: 7,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.14), 0 1px 0 rgba(255,255,255,0.8) inset',
+              letterSpacing: '0.01em',
+            }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+              {t('agendar')}
+            </a>
+
+            {/* Language switcher — mobile header (visível só em mobile via CSS) */}
+            <div className="rg-mobile-lang" style={{ display: 'none', position: 'relative' }}>
+              <button onClick={() => setLangOpen(!langOpen)} style={{
+                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)',
+                borderRadius: 8, padding: '5px 8px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: 5,
+              }}>
+                {(() => { const cur = langs.find(l => l.code === lang) || langs[0]; return (
+                  <>
+                    <img src={cur.flagUrl} alt={cur.code} style={{ width: 20, height: 14, objectFit: 'cover', borderRadius: 2, display: 'block' }} />
+                    <span style={{ fontFamily: F_DISPLAY, fontSize: 10, fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.06em' }}>{cur.code}</span>
+                    <svg width="7" height="7" viewBox="0 0 10 10" style={{ transform: langOpen ? 'rotate(180deg)' : 'none', transition: 'transform 180ms', opacity: 0.6 }}>
+                      <path d="M2 3.5 L5 6.5 L8 3.5" stroke="white" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </>
+                ); })()}
+              </button>
+              {langOpen && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 6px)', right: 0, zIndex: 200,
+                  background: 'white', borderRadius: 10, padding: '6px',
+                  boxShadow: '0 16px 40px -8px rgba(14,14,12,0.2), 0 0 0 1px rgba(14,14,12,0.06)',
+                  minWidth: 130,
+                }}>
+                  {langs.filter(l => l.code !== lang).map(l => (
+                    <button key={l.code} onClick={() => { changeLang(l.code); setLangOpen(false); }} style={{
+                      display: 'flex', alignItems: 'center', gap: 8, width: '100%',
+                      padding: '8px 10px', borderRadius: 7, border: 'none', background: 'none', cursor: 'pointer',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = 'rgba(111,181,176,0.12)'}
+                    onMouseLeave={e => e.currentTarget.style.background = 'none'}
+                    >
+                      <img src={l.flagUrl} alt={l.code} style={{ width: 22, height: 15, objectFit: 'cover', borderRadius: 2, display: 'block', flexShrink: 0 }} />
+                      <span style={{ fontSize: 13, fontWeight: 400, color: '#1a1a18', fontFamily: F_DISPLAY }}>{l.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Burger */}
+            <button className={'rg-burger' + (mobile ? ' rg-burger-open' : '')} onClick={() => setMobile(!mobile)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 6 }} aria-label={mobile ? 'Fechar menu' : 'Menu'} aria-expanded={mobile}>
+              <span className="rg-burger-box" aria-hidden="true">
+                <span className="rg-burger-bar" />
+                <span className="rg-burger-bar" />
+              </span>
+            </button>
+          </div>
+        </div>
+
+
+      </header>
+
+      {/* ── Mobile menu — full screen overlay ── */}
+      {mobile && (
+        <div className="rg-mobile-overlay" style={{
+          position: 'fixed', inset: 0, zIndex: 99,
+          background: '#ffffff',
+          paddingTop: 90, overflow: 'auto',
+          animation: 'rg-fade-in 250ms ease both',
+        }}>
+          <Container style={{ display: 'flex', flexDirection: 'column' }}>
+            {[
+              { href: '/', label: t('nav.inicio') },
+              { href: '/sobre', label: t('nav.sobre') },
+              null,
+              { href: '/contactos', label: t('nav.contactos') },
+            ].map((item, i) => item === null ? (
+              <div key="servicos" style={{ padding: '20px 0' }}>
+                <button className="rg-mobile-menu-link" onClick={() => setMobileServicos(!mobileServicos)} style={{
+                  fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em',
+                  color: RG.ink, background: 'none', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: 12, padding: 0,
+                }}>
+                  {t('nav.servicos')}
+                  <svg width="14" height="14" viewBox="0 0 14 14" style={{ transform: mobileServicos ? 'rotate(90deg)' : 'none', transition: 'transform 220ms' }}>
+                    <path d="M4 3 L9 7 L4 11" stroke={RG.tealDeep} strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {mobileServicos && (
+                  <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    {megaCols.map(col => (
+                      <div key={col.id} style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(20,20,18,0.1)', background: 'white' }}>
+                        {col.href
+                          ? <a href={col.href} style={{ display: 'block', padding: '14px 16px', textDecoration: 'none', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(20,20,18,0.08)' }}>{col.label}</a>
+                          : <div style={{ padding: '14px 16px', fontFamily: F_DISPLAY, fontSize: 12, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: RG.tealDeep, background: 'rgba(111,181,176,0.08)', borderBottom: '1px solid rgba(20,20,18,0.08)' }}>{col.label}</div>
+                        }
+                        <div style={{ display: 'flex', flexDirection: 'column', padding: '6px 0' }}>
+                          {col.items.map(it => (
+                            <a key={it.href} href={it.href} style={{ fontFamily: F_DISPLAY, fontSize: 15, fontWeight: 400, color: RG.ink, textDecoration: 'none', padding: '10px 16px' }}>
+                              {it.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div key={item.href} style={{ borderTop: '1px solid rgba(20,20,18,0.08)', padding: '20px 0' }}>
+                <a className="rg-mobile-menu-link" href={item.href} style={{ fontFamily: F_DISPLAY, fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', color: RG.ink, textDecoration: 'none' }}>{item.label}</a>
+              </div>
+            ))}
+            <div style={{ borderTop: '1px solid rgba(20,20,18,0.08)', paddingTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 500, color: RG.white, background: RG.tealDeep, padding: '14px 28px', borderRadius: 999, textDecoration: 'none' }}>{t('agendar')}</a>
+              <a href="tel:+351961899364" style={{ fontFamily: F_DISPLAY, fontSize: 14, fontWeight: 400, color: RG.ink, background: 'white', border: `1px solid rgba(20,20,18,0.18)`, padding: '14px 28px', borderRadius: 999, textDecoration: 'none' }}>961 899 364</a>
+            </div>
+            {/* Language toggle mobile */}
+            <div style={{ paddingTop: 24, paddingBottom: 40, display: 'flex', gap: 10 }}>
+              {langs.map(l => (
+                <button key={l.code} onClick={() => changeLang(l.code)} style={{
+                  background: lang === l.code ? 'rgba(42,90,87,0.1)' : 'white',
+                  border: lang === l.code ? `1px solid rgba(42,90,87,0.3)` : '1px solid rgba(42,90,87,0.1)',
+                  borderRadius: 8, padding: '6px 10px', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: 6,
+                }}>
+                  <img src={l.flagUrl} alt={l.code} style={{ width: 22, height: 15, objectFit: 'cover', borderRadius: 2, display: 'block' }} />
+                  <span style={{ fontFamily: F_DISPLAY, fontSize: 11, fontWeight: 600, color: RG.ink, letterSpacing: '0.06em' }}>{l.code}</span>
+                </button>
+              ))}
+            </div>
+          </Container>
+        </div>
+      )}
+    </>
+  );
+}
+
+// Image — real photo if src given, otherwise colored placeholder
+function Photo({ aspect = '4/3', label = 'Foto', tone = 'teal', src, style = {}, imgPos, objFit = 'cover' }) {
+  if (src) {
+    return (
+      <div style={{ position: 'relative', width: '100%', aspectRatio: aspect, background: RG.cream, borderRadius: 8, overflow: 'hidden', ...style }}>
+        <img src={src} alt={label} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: objFit, objectPosition: imgPos || 'center', display: 'block' }} />
+      </div>
+    );
+  }
+  const colors = {
+    teal: { bg1: RG.teal, bg2: RG.tealDark, glow: 'rgba(255,255,255,0.22)', fg: 'rgba(255,255,255,0.78)', mark: 'rgba(255,255,255,0.16)' },
+    sand: { bg1: RG.creamSoft, bg2: RG.line, glow: 'rgba(255,255,255,0.6)', fg: RG.muted, mark: 'rgba(31,72,70,0.10)' },
+    ink: { bg1: RG.tealInk, bg2: RG.ink, glow: 'rgba(111,181,176,0.18)', fg: 'rgba(255,255,255,0.6)', mark: 'rgba(255,255,255,0.08)' },
+  }[tone] || { bg1: RG.teal, bg2: RG.tealDark, glow: 'rgba(255,255,255,0.22)', fg: 'rgba(255,255,255,0.78)', mark: 'rgba(255,255,255,0.16)' };
+  // Placeholder elegante até à sessão fotográfica.
+  // Brilho e textura feitos 100% via CSS — sem <rect fill="url(#id)"> (IDs com espaços/acentos
+  // não resolvem em alguns motores e o rect cai para preto, tapando o gradiente).
+  return (
+    <div style={{
+      position: 'relative', width: '100%', aspectRatio: aspect,
+      background: `
+        radial-gradient(120% 90% at 28% 18%, ${colors.glow} 0%, rgba(255,255,255,0) 55%),
+        linear-gradient(150deg, ${colors.bg1} 0%, ${colors.bg2} 100%)`,
+      borderRadius: 8, overflow: 'hidden', ...style,
+    }}>
+      {/* Marca d'água do monograma — discreta, dá identidade ao placeholder */}
+      <div style={{
+        position: 'absolute', right: '-6%', bottom: '-22%',
+        fontFamily: F_DISPLAY, fontWeight: 700, fontSize: '9rem', lineHeight: 1,
+        letterSpacing: '-0.04em', color: colors.mark, userSelect: 'none', pointerEvents: 'none',
+      }}>RG</div>
+      <div style={{
+        position: 'absolute', top: 12, left: 12, padding: '4px 9px',
+        fontFamily: F_MONO, fontSize: 9, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase',
+        color: colors.fg, border: `1px solid ${colors.fg}`, borderRadius: 3,
+        backdropFilter: 'blur(2px)',
+      }}>{label}</div>
+    </div>
+  );
+}
+
+// Section wrapper
+function Section({ id, bg = RG.white, color = RG.ink, pad = 'lg', children, style = {} }) {
+  const pads = { sm: '64px 0', md: '96px 0', lg: '112px 0', xl: '140px 0' };
+  return <section id={id} style={{ background: bg, color, padding: pads[pad], ...style }}>{children}</section>;
+}
+
+// Footer (shared) — minimalist editorial, inspired by easysmile-solum
+function Footer() {
+  const { t, lang } = useLang();
+
+  // Labels traduzíveis com fallback PT
+  const L = {
+    PT: {
+      endereco: 'Endereço',
+      marcacao: 'Marcação de consultas',
+      horario: 'Horário de funcionamento',
+      acessibilidade: 'Acessibilidade',
+      precoFixa: '(preço chamada: rede fixa)',
+      precoMovel: '(preço chamada: rede móvel)',
+      segSex: 'Seg a Sex: 9h00 – 19h00',
+      sabado: 'Sábados: sob marcação',
+      parking: 'Parque de estacionamento gratuito na zona',
+      transportes: 'Transportes: paragem Loulé Centro a 3 min a pé',
+      acesso: 'Acesso facilitado para pessoas com mobilidade reduzida',
+      direcao: 'Direcção Clínica: Rita Guerreiro — Cédula Profissional 12345',
+      registo: 'Registo na Entidade Reguladora da Saúde',
+      licenca: 'Licença de Funcionamento',
+      copy: '© 2026 Clínica Rita Guerreiro — Centro de Terapias & Bem-Estar',
+      desenvolvido: 'Desenvolvido por',
+      itinerario: 'Ver no mapa',
+    },
+    EN: {
+      endereco: 'Address',
+      marcacao: 'Bookings',
+      horario: 'Opening hours',
+      acessibilidade: 'Accessibility',
+      precoFixa: '(call cost: landline rate)',
+      precoMovel: '(call cost: mobile rate)',
+      segSex: 'Mon to Fri: 9:00 am – 7:00 pm',
+      sabado: 'Saturdays: by appointment',
+      parking: 'Free parking nearby',
+      transportes: 'Transport: Loulé Centro stop, 3 min walk',
+      acesso: 'Step-free access for reduced mobility',
+      direcao: 'Clinical Direction: Rita Guerreiro — Professional Licence 12345',
+      registo: 'Registered with the Health Regulator',
+      licenca: 'Operating Licence',
+      copy: '© 2026 Clínica Rita Guerreiro — Therapy & Wellness Centre',
+      desenvolvido: 'Developed by',
+      itinerario: 'Get directions',
+    },
+    FR: {
+      endereco: 'Adresse',
+      marcacao: 'Prise de rendez-vous',
+      horario: 'Horaires d’ouverture',
+      acessibilidade: 'Accessibilité',
+      precoFixa: '(prix appel : réseau fixe)',
+      precoMovel: '(prix appel : réseau mobile)',
+      segSex: 'Lun à Ven : 9h00 – 19h00',
+      sabado: 'Samedis : sur rendez-vous',
+      parking: 'Parking gratuit à proximité',
+      transportes: 'Arrêt Loulé Centro à 3 min à pied',
+      acesso: 'Accès facilité pour personnes à mobilité réduite',
+      direcao: 'Direction Clinique : Rita Guerreiro — Licence Pro 12345',
+      registo: 'Enregistré auprès du Régulateur de Santé',
+      licenca: 'Licence d’Exploitation',
+      copy: '© 2026 Clínica Rita Guerreiro — Centre de Thérapies & Bien-Être',
+      desenvolvido: 'Développé par',
+      itinerario: 'Itinéraire',
+    },
+    ES: {
+      endereco: 'Dirección',
+      marcacao: 'Reservas',
+      horario: 'Horario de apertura',
+      acessibilidade: 'Accesibilidad',
+      precoFixa: '(coste llamada: red fija)',
+      precoMovel: '(coste llamada: red móvil)',
+      segSex: 'Lun a Vie: 9:00 – 19:00',
+      sabado: 'Sábados: con cita previa',
+      parking: 'Aparcamiento gratuito en la zona',
+      transportes: 'Transporte: parada Loulé Centro a 3 min a pie',
+      acesso: 'Acceso facilitado para personas con movilidad reducida',
+      direcao: 'Dirección Clínica: Rita Guerreiro — Cédula Profesional 12345',
+      registo: 'Registro en la Entidad Reguladora de Salud',
+      licenca: 'Licencia de Funcionamiento',
+      copy: '© 2026 Clínica Rita Guerreiro — Centro de Terapias & Bienestar',
+      desenvolvido: 'Desarrollado por',
+      itinerario: 'Cómo llegar',
+    },
+  };
+  const L_ = L[lang] || L.PT;
+
+  // Estilos — footer creme claro com botânica, tipografia teal escuro
+  const FG = '#0F2A2B';       // teal escuro para texto
+  const FA = '#2A6360';       // teal médio para links/accents
+  const FB = 'rgba(15,42,43,0.80)'; // texto secundário — bem legível
+  const FC = 'rgba(15,42,43,0.60)'; // texto muted — mais escuro que antes
+  const FD = 'rgba(15,42,43,0.18)'; // divisores
+
+  const colTitle = {
+    fontFamily: F_DISPLAY, fontSize: 13, fontWeight: 800,
+    letterSpacing: '0.18em', textTransform: 'uppercase',
+    color: FG, marginBottom: 22, lineHeight: 1.2,
+    paddingBottom: 10, borderBottom: `1px solid ${FD}`,
+    display: 'inline-block', minWidth: 120,
+  };
+  const itemRow = {
+    display: 'flex', alignItems: 'flex-start', gap: 12,
+    marginBottom: 14,
+  };
+  const iconWrap = {
+    width: 24, height: 24, borderRadius: 999,
+    border: `1.5px solid rgba(42,99,96,0.5)`,
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+    color: FA, flexShrink: 0, marginTop: 2,
+  };
+  const itemText = {
+    fontFamily: F_BODY, fontSize: 15, color: FG,
+    lineHeight: 1.6, textDecoration: 'none', fontWeight: 500,
+  };
+  const itemMuted = {
+    fontFamily: F_BODY, fontSize: 12.5, color: FB,
+    lineHeight: 1.5, marginTop: 2, display: 'block',
+  };
+
+  // SVG icons mínimos
+  const IcoPin = (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  );
+  const IcoPhone = (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 11.9 19.79 19.79 0 0 1 1.07 3.27 2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+  );
+  const IcoWA = (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2z"/></svg>
+  );
+  const IcoMail = (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  );
+
+  return (
+    <footer style={{
+      position: 'relative',
+      background: '#E8EDE8',
+      color: FG,
+      paddingTop: 96, paddingBottom: 0, overflow: 'hidden',
+      marginTop: -4,
+    }}>
+      {/* BOTÂNICA — multiply: fundo branco desaparece, folhas ficam vivas */}
+      <div aria-hidden="true" style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden',
+      }}>
+        <img src="/assets/footer-botanica.png" alt="" loading="lazy" style={{
+          position: 'absolute', bottom: 0, left: '50%',
+          transform: 'translateX(-50%)',
+          width: '100%', minWidth: 1000,
+          height: 'auto',
+          mixBlendMode: 'multiply',
+          opacity: 0.85,
+        }} />
+      </div>
+
+
+      <Container>
+        {/* GRID 4 colunas editorial */}
+        <div className="rg-footer-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 48,
+          paddingBottom: 64,
+          position: 'relative',
+          /* véu translúcido por baixo do texto — preserva botânica mas garante legibilidade */
+          backdropFilter: 'none',
+        }}>
+          {/* véu de leitura */}
+          <div aria-hidden="true" style={{
+            position: 'absolute', inset: '-24px -32px',
+            background: 'rgba(232,237,232,0.72)',
+            backdropFilter: 'blur(2px)',
+            WebkitBackdropFilter: 'blur(2px)',
+            borderRadius: 4,
+            pointerEvents: 'none',
+            zIndex: 0,
+          }} />
+          {/* COL 1 — Endereço */}
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={colTitle}>{L_.endereco}</div>
+            <div style={itemRow}>
+              <span style={iconWrap}>{IcoPin}</span>
+              <div>
+                <div style={itemText}>Rua Padre António Vieira, nº 58</div>
+                <div style={itemText}>8100-611 Loulé</div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Padre+António+Vieira+58,+8100-611+Loulé,+Portugal"
+                  target="_blank" rel="noopener noreferrer"
+                  style={{ color: FA, marginTop: 8, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11.5, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 700, fontFamily: F_DISPLAY, transition: 'color 180ms' }}
+                  onMouseEnter={e => e.currentTarget.style.color = FG}
+                  onMouseLeave={e => e.currentTarget.style.color = FA}
+                >
+                  {L_.itinerario}
+                  <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7 L12 7 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+            {/* Socials inline */}
+            <div style={{ display: 'flex', gap: 8, marginTop: 24 }}>
+              {[
+                { href: 'https://wa.me/351961899364', label: 'WhatsApp', icon: IcoWA },
+                { href: 'https://www.instagram.com/centro_terapias_rita_guerreiro/', label: 'Instagram', icon: <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> },
+              ].map(({ href, label, icon }) => (
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                  style={{ width: 30, height: 30, borderRadius: 999, border: `1px solid rgba(59,123,120,0.3)`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: FA, textDecoration: 'none', transition: 'all 200ms', background: 'rgba(59,123,120,0.06)' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = FA; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = FA; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(59,123,120,0.06)'; e.currentTarget.style.color = FA; e.currentTarget.style.borderColor = 'rgba(59,123,120,0.3)'; }}
+                >{icon}</a>
+              ))}
+            </div>
+          </div>
+
+          {/* COL 2 — Marcação de consultas */}
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={colTitle}>{L_.marcacao}</div>
+            <div style={itemRow}>
+              <span style={iconWrap}>{IcoPhone}</span>
+              <a href="tel:+351961899364" style={itemText}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
+              >
+                961 899 364
+                <span style={itemMuted}>{L_.precoMovel}</span>
+              </a>
+            </div>
+            <div style={itemRow}>
+              <span style={iconWrap}>{IcoWA}</span>
+              <a href="https://wa.me/351961899364" target="_blank" rel="noopener noreferrer" style={itemText}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
+              >
+                961 899 364
+                <span style={itemMuted}>{L_.precoMovel}</span>
+              </a>
+            </div>
+            <div style={itemRow}>
+              <span style={iconWrap}>{IcoMail}</span>
+              <a href="mailto:fisioritaguerreiro@gmail.com" style={itemText}
+                onMouseEnter={e => e.currentTarget.style.color = FG}
+                onMouseLeave={e => e.currentTarget.style.color = FB}
+              >
+                fisioritaguerreiro@gmail.com
+              </a>
+            </div>
+          </div>
+
+          {/* COL 3 — Horário */}
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={colTitle}>{L_.horario}</div>
+            <div style={{ fontFamily: F_BODY, fontSize: 13.5, color: FB, lineHeight: 1.9 }}>
+              <div>{L_.segSex}</div>
+              <div>{L_.sabado}</div>
+            </div>
+          </div>
+
+          {/* COL 4 — Acessibilidade */}
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={colTitle}>{L_.acessibilidade}</div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontFamily: F_BODY, fontSize: 13.5, color: FB, lineHeight: 1.7 }}>
+              {[L_.parking, L_.transportes, L_.acesso].map((line, i) => (
+                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 12 }}>
+                  <span style={{ width: 4, height: 4, borderRadius: '50%', background: FA, marginTop: 9, flexShrink: 0 }} />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* SUB-FAIXA — livro de reclamações + aviso multibanco */}
+        <div style={{
+          display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 18,
+          paddingTop: 28, paddingBottom: 28,
+          borderTop: `1px solid ${FD}`,
+        }} className="rg-footer-legal">
+          <span title="Não aceitamos Multibanco" style={{
+            display: 'inline-flex', alignItems: 'center',
+            background: 'rgba(255,255,255,0.92)', borderRadius: 8, padding: '5px 10px',
+            boxShadow: '0 1px 4px rgba(20,20,18,0.08)',
+          }}>
+            <img src="/assets/sem-multibanco.png" alt="Não aceitamos Multibanco"
+              style={{ display: 'block', height: 28, width: 'auto' }}
+              loading="lazy" />
+          </span>
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener noreferrer" aria-label="Livro de Reclamações" title="Livro de Reclamações"
+            style={{
+              display: 'inline-flex', alignItems: 'center',
+              padding: 6, borderRadius: 8,
+              textDecoration: 'none',
+              transition: 'opacity 200ms, transform 200ms',
+              opacity: 0.85,
+            }}
+            onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = '0.85'; e.currentTarget.style.transform = 'translateY(0)'; }}
+          >
+            <img src="/assets/livro-reclamacoes.png" alt="Livro de Reclamações"
+              style={{ display: 'block', height: 56, width: 'auto' }}
+              loading="lazy" />
+          </a>
+        </div>
+
+        {/* BARRA FINAL */}
+        <div style={{
+          paddingTop: 22, paddingBottom: 32,
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          gap: 20, flexWrap: 'wrap',
+          borderTop: `1px solid ${FD}`,
+          position: 'relative', zIndex: 1,
+        }} className="rg-footer-bottom">
+          <span style={{ fontFamily: F_BODY, fontSize: 14, color: FG, fontWeight: 600 }}>{L_.copy}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontFamily: F_BODY, fontSize: 14, fontWeight: 600 }}>
+              <a href="/privacidade"
+                style={{ color: FG, textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = FA}
+                onMouseLeave={e => e.currentTarget.style.color = FG}
+              >{t('footer.privacidade')}</a>
+              <span style={{ width: 1, height: 14, background: FD }} />
+              <a href="/termos"
+                style={{ color: FG, textDecoration: 'none', transition: 'color 180ms' }}
+                onMouseEnter={e => e.currentTarget.style.color = FA}
+                onMouseLeave={e => e.currentTarget.style.color = FG}
+              >{t('footer.termos')}</a>
+            </div>
+            <span style={{ width: 1, height: 14, background: FD }} />
+            <a href="https://alphascaleai.com" target="_blank" rel="noopener noreferrer"
+              className="rg-footer-devby"
+              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+            >
+              <span style={{
+                fontFamily: F_BODY, fontSize: 11, fontWeight: 600,
+                letterSpacing: '0.16em', textTransform: 'uppercase', color: FB,
+              }}>{L_.desenvolvido}</span>
+              <img src="/assets/logo-alphascale-footer.png" alt="AlphaScale AI"
+                className="rg-footer-devby-logo"
+                style={{ height: 170, width: 'auto', display: 'block' }} />
+            </a>
+          </div>
+        </div>
+      </Container>
+    </footer>
+  );
+}
+
+// Floating WhatsApp Chat Widget
+function WAFab() {
+  const [open, setOpen] = React.useState(false);
+  const [msg, setMsg] = React.useState('');
+  const WA_NUMBER = '351961899364';
+  const inputRef = React.useRef(null);
+
+  const now = new Date();
+  const timestamp = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+
+  const sendMsg = () => {
+    const text = msg.trim() || 'Olá, gostava de agendar uma sessão.';
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
+  const handleKey = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+  };
+
+  React.useEffect(() => {
+    if (open && inputRef.current) inputRef.current.focus();
+  }, [open]);
+
+  const WaIcon = ({ size = 26 }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.83 9.83 0 0012.04 2zm5.73 14.07c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.17.11-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.36-5.16-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.27-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.24.6.84 2.1.91 2.25.08.15.13.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.05 1.3 2.34 1.44.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.83 2.07.98.3.15.5.22.57.35.08.13.08.76-.16 1.43z" />
+    </svg>
+  );
+
+  return (
+    <div style={{ position: 'fixed', bottom: 22, right: 22, zIndex: 9999, fontFamily: 'inherit' }}>
+      {open && (
+        <div style={{
+          position: 'absolute', bottom: 70, right: 0,
+          width: 320, borderRadius: 16, overflow: 'hidden',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.22)',
+          animation: 'waPopupIn 200ms ease',
+          display: 'flex', flexDirection: 'column',
+        }}>
+          {/* Header */}
+          <div style={{ background: '#075E54', padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 44, height: 44, borderRadius: 999, background: '#128C7E', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', overflow: 'hidden' }}>
+              <img src="/rita_guerreiro_logo.png" alt="Clínica Rita Guerreiro" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 999 }} />
+              <div style={{ position: 'absolute', bottom: 2, right: 2, width: 10, height: 10, borderRadius: 999, background: '#25D366', border: '2px solid #075E54' }} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={{ color: '#fff', fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>Assistente Clínica Rita Guerreiro</div>
+              <div style={{ color: 'rgba(255,255,255,0.72)', fontSize: 12, marginTop: 2 }}>Online</div>
+            </div>
+            <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 22, lineHeight: 1, padding: 4 }} aria-label="Fechar">×</button>
+          </div>
+
+          {/* Chat body */}
+          <div style={{ background: '#ECE5DD', padding: '16px 14px 10px', minHeight: 110, backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'400\' height=\'400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3C/svg%3E")' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 12 }}>
+              <span style={{ background: 'rgba(225,245,254,0.85)', borderRadius: 8, padding: '3px 10px', fontSize: 11, color: '#555' }}>{timestamp}</span>
+            </div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+              <div style={{ background: '#fff', borderRadius: '0 8px 8px 8px', padding: '8px 12px', fontSize: 13, color: '#111', lineHeight: 1.5, maxWidth: '85%', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
+                Olá, como podemos ajudar? 👋
+              </div>
+            </div>
+          </div>
+
+          {/* Input */}
+          <div style={{ background: '#F0F0F0', padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <input
+              ref={inputRef}
+              value={msg}
+              onChange={e => setMsg(e.target.value)}
+              onKeyDown={handleKey}
+              placeholder="Enter Your Message..."
+              style={{
+                flex: 1, border: 'none', borderRadius: 20, padding: '9px 14px',
+                fontSize: 13, fontFamily: 'inherit', outline: 'none',
+                background: '#fff', color: '#111',
+              }}
+            />
+            <button onClick={sendMsg} style={{
+              width: 36, height: 36, borderRadius: 999, background: '#25D366', border: 'none',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0,
+            }} aria-label="Enviar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* FAB */}
+      <button onClick={() => setOpen(o => !o)} aria-label="WhatsApp" className="rg-wafab" style={{
+        width: 56, height: 56, borderRadius: 999, background: '#25D366', color: 'white',
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+        boxShadow: '0 12px 28px -6px rgba(37,211,102,0.5), 0 4px 10px rgba(0,0,0,0.1)',
+        border: 'none', cursor: 'pointer', transition: 'transform 220ms',
+      }}>
+        <WaIcon />
+      </button>
+      <style>{`@keyframes waPopupIn{from{opacity:0;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}`}</style>
+    </div>
+  );
+}
+
+Object.assign(window, { Container, Reveal, Eyebrow, Heading, Body, Button, Nav, Photo, Section, Footer, WAFab, AvatarPlaceholder });
